@@ -6,7 +6,11 @@ Bộ giao diện tùy biến (Custom UI Theme) dành cho **Google Antigravity De
 
 ```text
 antigravity-custom-theme/
-├── stickers/                       # 45 file SVG linh vật (tự động quét theo <id>.svg / -action / -typing)
+├── stickers/                       # 15 thư mục linh vật, mỗi thư mục gồm idle.svg, action.svg, typing.svg
+│   ├── jade-dragon/                # idle.svg | action.svg | typing.svg
+│   ├── ocean-shark/                # idle.svg | action.svg | typing.svg
+│   ├── code-cat/                   # idle.svg | action.svg | typing.svg
+│   └── ... (15 thư mục chủ đề)
 ├── src/
 │   ├── models/                     # [MODEL] Dữ liệu thuần (Single Source of Truth)
 │   │   ├── themes.js               # 15 chủ đề (màu, sparkle, hoverBursts, typingFx)

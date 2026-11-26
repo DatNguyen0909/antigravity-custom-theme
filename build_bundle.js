@@ -19,17 +19,16 @@ function readSvgDataUri(filePath) {
     return 'data:image/svg+xml;base64,' + Buffer.from(content, 'utf8').toString('base64');
 }
 
-// 1. Auto-discover all mascot SVG triplets (<id>.svg, <id>-action.svg, <id>-typing.svg)
+// 1. Auto-discover all mascot SVG folders (stickers/<id>/idle.svg, action.svg, typing.svg)
 const stickersMap = {};
-for (const file of fs.readdirSync(stickersDir)) {
-    if (!file.endsWith('.svg') || file.endsWith('-action.svg') || file.endsWith('-typing.svg')) {
-        continue;
-    }
-    const id = file.slice(0, -4);
+for (const entry of fs.readdirSync(stickersDir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const id = entry.name;
+    const dir = path.join(stickersDir, id);
     stickersMap[id] = {
-        idle: readSvgDataUri(path.join(stickersDir, `${id}.svg`)),
-        action: readSvgDataUri(path.join(stickersDir, `${id}-action.svg`)),
-        typing: readSvgDataUri(path.join(stickersDir, `${id}-typing.svg`))
+        idle: readSvgDataUri(path.join(dir, 'idle.svg')),
+        action: readSvgDataUri(path.join(dir, 'action.svg')),
+        typing: readSvgDataUri(path.join(dir, 'typing.svg'))
     };
 }
 
