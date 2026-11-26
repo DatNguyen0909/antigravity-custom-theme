@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95">
+  <defs>
+    <linearGradient id="shBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="55%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="shBelly" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="75%" stop-color="#e0f2fe"/>
+      <stop offset="100%" stop-color="#bae6fd"/>
+    </linearGradient>
+    <linearGradient id="waveBack" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.75"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="waveFront" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.95"/>
+    </linearGradient>
+    <!-- Clip vùng trên mặt nước (mép trên bong bóng chat tại y=70) -->
+    <clipPath id="aboveBubbleClip">
+      <rect x="0" y="0" width="260" height="71"/>
+    </clipPath>
+    <style>
+      /* Giai đoạn 1 (0% - 46%): Vây cá mập lấp ló rẽ sóng sau đoạn chat */
+      .fin-stealth {
+        animation: finStalk 3.6s ease-in-out infinite;
+      }
+      /* Giai đoạn 2 (44% - 92%): Cá mập tung mình bay vọt lên không trung rồi lặn xuống */
+      .shark-breach {
+        animation: sharkJump 3.6s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+      }
+      .tail-thrash {
+        animation: tailSwim 0.25s ease-in-out infinite alternate;
+        transform-origin: 25px 46px;
+      }
+      /* Bọt nước tung tóe khi cá mập nhảy lên ở x=72 và khi lao xuống ở x=195 */
+      .splash-jump {
+        animation: splashUp 3.6s ease-out infinite;
+        transform-origin: 72px 68px;
+      }
+      .splash-dive {
+        animation: splashDown 3.6s ease-out infinite;
+        transform-origin: 196px 68px;
+      }
+      .wave-b { animation: waveSlideB 1.8s ease-in-out infinite alternate; }
+      .wave-f { animation: waveSlideF 1.4s ease-in-out infinite alternate; }
+
+      @keyframes finStalk {
+        0% { transform: translate(215px, 68px) rotate(8deg); opacity: 0; }
+        6% { transform: translate(200px, 50px) rotate(-4deg); opacity: 1; }
+        20% { transform: translate(145px, 47px) rotate(3deg); opacity: 1; }
+        34% { transform: translate(92px, 49px) rotate(-5deg); opacity: 1; }
+        43% { transform: translate(68px, 56px) rotate(-12deg); opacity: 1; }
+        47% { transform: translate(62px, 76px) rotate(-20deg); opacity: 0; }
+        100% { transform: translate(62px, 76px); opacity: 0; }
+      }
+
+      @keyframes sharkJump {
+        0%, 42% { transform: translate(20px, 85px) rotate(-45deg) scale(0.75); opacity: 0; }
+        46% { transform: translate(28px, 52px) rotate(-38deg) scale(0.95); opacity: 1; }
+        62% { transform: translate(82px, -16px) rotate(-6deg) scale(1.06); opacity: 1; }
+        74% { transform: translate(126px, -6px) rotate(22deg) scale(1.03); opacity: 1; }
+        86% { transform: translate(162px, 48px) rotate(42deg) scale(0.92); opacity: 1; }
+        91% { transform: translate(174px, 84px) rotate(50deg) scale(0.75); opacity: 0; }
+        100% { transform: translate(174px, 84px); opacity: 0; }
+      }
+
+      @keyframes tailSwim {
+        0% { transform: rotate(-16deg); }
+        100% { transform: rotate(16deg); }
+      }
+
+      @keyframes splashUp {
+        0%, 42% { transform: scale(0.2); opacity: 0; }
+        48% { transform: scale(1.15); opacity: 1; }
+        62% { transform: translateY(-10px) scale(1.35); opacity: 0; }
+        100% { opacity: 0; }
+      }
+
+      @keyframes splashDown {
+        0%, 82% { transform: scale(0.2); opacity: 0; }
+        88% { transform: scale(1.2); opacity: 1; }
+        98% { transform: translateY(-8px) scale(1.4); opacity: 0; }
+        100% { opacity: 0; }
+      }
+
+      @keyframes waveSlideB {
+        0% { transform: translateX(-6px); }
+        100% { transform: translateX(6px); }
+      }
+      @keyframes waveSlideF {
+        0% { transform: translateX(6px); }
+        100% { transform: translateX(-6px); }
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#aboveBubbleClip)">
+    <!-- SÓNG BIỂN LỚP SAU (Dọc mép trên bong bóng chat) -->
+    <g class="wave-b">
+      <path d="M -15 72 Q 10 60 35 68 T 85 66 T 135 68 T 185 65 T 235 68 T 275 66 L 275 76 L -15 76 Z" fill="url(#waveBack)"/>
+    </g>
+
+    <!-- GIAI ĐOẠN 1: VÂY CÁ MẬP RẼ SÓNG LẤP LÓ SAU ĐOẠN CHAT -->
+    <g class="fin-stealth">
+      <!-- Vây lưng cá mập nhô lên -->
+      <path d="M 0 22 C 2 8, 12 -2, 22 -4 C 17 5, 16 14, 18 22 Z" fill="url(#shBody)" stroke="#0c4a6e" stroke-width="1.6"/>
+      <path d="M 5 18 C 7 10, 12 4, 17 1" fill="none" stroke="#bae6fd" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- Bọt sóng trắng rẽ nước quanh chân vây -->
+      <path d="M -8 20 Q 4 14 14 20 Q 24 16 32 21" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="-10" cy="15" r="2" fill="#e0f2fe"/>
+      <circle cx="26" cy="14" r="2.4" fill="#ffffff"/>
+      <circle cx="34" cy="17" r="1.6" fill="#bae6fd"/>
+    </g>
+
+    <!-- HIỆU ỨNG CỘT NƯỚC TUNG TÓE KHI CÁ MẬP NHẢY LÊN (X=72) -->
+    <g class="splash-jump">
+      <path d="M 72 68 C 60 52, 50 44, 44 48 M 72 68 C 66 46, 62 36, 56 38 M 72 68 C 78 46, 84 36, 90 38 M 72 68 C 84 52, 94 44, 100 48" fill="none" stroke="#e0f2fe" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="48" cy="42" r="3" fill="#ffffff"/>
+      <circle cx="62" cy="32" r="2.5" fill="#7dd3fc"/>
+      <circle cx="84" cy="32" r="2.8" fill="#ffffff"/>
+      <circle cx="96" cy="42" r="2.2" fill="#bae6fd"/>
+    </g>
+
+    <!-- GIAI ĐOẠN 2: NGUYÊN CON CÁ MẬP CHIBI BAY VỌT LÊN KHÔNG TRUNG (HƯỚNG TỪ TRÁI SANG PHẢI) -->
+    <g class="shark-breach">
+      <!-- Đuôi cá mập vẫy mạnh -->
+      <g class="tail-thrash">
+        <path d="M 28 46 C 16 36, 6 24, 2 18 C 7 29, 11 38, 14 46 C 11 54, 7 62, 4 70 C 9 64, 18 55, 28 46 Z" fill="url(#shBody)" stroke="#0c4a6e" stroke-width="1.4"/>
+      </g>
+      <!-- Vây lưng lớn đặc trưng -->
+      <path d="M 52 31 C 50 15, 42 7, 36 5 C 39 14, 40 23, 38 32 Z" fill="url(#shBody)" stroke="#0c4a6e" stroke-width="1.4"/>
+      <!-- Vây ngực bên kia -->
+      <path d="M 72 52 C 78 60, 84 64, 88 63 C 85 57, 80 52, 76 50 Z" fill="#0369a1" stroke="#0c4a6e" stroke-width="1.2"/>
+      <!-- Thân cá mập thuôn dài khí động học -->
+      <path d="M 22 46 C 34 31, 58 26, 80 31 C 94 34, 104 40, 108 46 C 104 54, 92 60, 76 61 C 56 62, 34 55, 22 46 Z" fill="url(#shBody)" stroke="#0c4a6e" stroke-width="1.5"/>
+      <!-- Bụng trắng sáng -->
+      <path d="M 32 50 C 46 50, 64 49, 80 46 C 90 44, 98 46, 104 49 C 96 57, 82 61, 66 61 C 50 61, 38 56, 32 50 Z" fill="url(#shBelly)"/>
+      <!-- 3 Khe mang cá mập -->
+      <path d="M 70 39 Q 68 44 70 49 M 74 40 Q 72 44 74 48 M 78 41 Q 76 44 78 47" fill="none" stroke="#0c4a6e" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- Mắt to Anime long lanh -->
+      <ellipse cx="89" cy="40" rx="4.5" ry="4.8" fill="#082f49"/>
+      <ellipse cx="89" cy="40" rx="3.3" ry="3.6" fill="#0284c7"/>
+      <circle cx="90.5" cy="38.5" r="1.7" fill="#ffffff"/>
+      <circle cx="87.5" cy="41.8" r="0.9" fill="#bae6fd"/>
+      <!-- Má hồng dễ thương -->
+      <ellipse cx="84" cy="45.5" rx="3" ry="1.6" fill="#f43f5e" opacity="0.55"/>
+      <!-- Miệng cá mập cười ngầu lộ răng trắng -->
+      <path d="M 90 48 Q 97 52 103 47" fill="none" stroke="#082f49" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M 92 49 L 93.5 52 L 95 49.5 L 96.5 52 L 98 49.5" fill="#ffffff" stroke="#082f49" stroke-width="0.7"/>
+      <!-- Vây ngực chính diện -->
+      <path d="M 62 52 C 56 63, 48 69, 43 68 C 46 60, 50 53, 55 50 Z" fill="url(#shBody)" stroke="#0c4a6e" stroke-width="1.4"/>
+      <!-- Giọt nước văng theo mình cá -->
+      <circle cx="46" cy="20" r="2" fill="#e0f2fe"/>
+      <circle cx="98" cy="26" r="2.5" fill="#ffffff"/>
+    </g>
+
+    <!-- HIỆU ỨNG CỘT NƯỚC KHI CÁ MẬP LẶN XUỐNG (X=196) -->
+    <g class="splash-dive">
+      <path d="M 196 68 C 184 50, 174 42, 168 46 M 196 68 C 190 46, 186 34, 180 36 M 196 68 C 202 46, 208 34, 214 36 M 196 68 C 208 50, 218 42, 224 46" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="176" cy="36" r="2.8" fill="#ffffff"/>
+      <circle cx="212" cy="34" r="3" fill="#7dd3fc"/>
+      <circle cx="222" cy="42" r="2.2" fill="#e0f2fe"/>
+    </g>
+
+    <!-- SÓNG BIỂN LỚP TRƯỚC (Che chân vây cá để tạo hiệu ứng nổi từ sau đoạn chat) -->
+    <g class="wave-f">
+      <path d="M -15 72 Q 15 62 45 69 T 105 67 T 165 69 T 225 66 T 275 69 L 275 76 L -15 76 Z" fill="url(#waveFront)"/>
+      <path d="M -10 70 Q 15 63 45 69 T 105 67 T 165 69 T 225 66 T 270 69" fill="none" stroke="#e0f2fe" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="gtIvory" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#e5e7eb"/>
+      <stop offset="100%" stop-color="#9ca3af"/>
+    </linearGradient>
+    <linearGradient id="gtBase" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="100%" stop-color="#6b7280"/>
+    </linearGradient>
+    <linearGradient id="gtGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4b5563"/>
+      <stop offset="45%" stop-color="#030712"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <style>
+      /* Chốt gangster tung đồng xu vàng xoay tít trên không + xòe quạt tiền đô cực ngầu! */
+      .gt-nod { transform-origin: 60px 64px; animation: gtNod 0.7s ease-in-out infinite alternate; }
+      .gt-coin { transform-origin: 96px 52px; animation: gtFlip 0.75s cubic-bezier(0.3, 0, 0.3, 1) infinite; }
+      .gt-fan { transform-origin: 28px 80px; animation: gtFan 0.6s ease-in-out infinite alternate; }
+      .gt-smoke { animation: gtSmoke 1.4s ease-out infinite; opacity: 0; }
+      .gt-glint { animation: gtGlint 1.2s linear infinite; }
+
+      @keyframes gtNod { 0% { transform: rotate(-4deg); } 100% { transform: rotate(4deg) translateY(2px); } }
+      @keyframes gtFlip {
+        0%, 100% { transform: translateY(16px) scaleY(1); }
+        25% { transform: translateY(-14px) scaleY(0.2); }
+        50% { transform: translateY(-28px) scaleY(1); }
+        75% { transform: translateY(-10px) scaleY(0.2); }
+      }
+      @keyframes gtFan { 0% { transform: rotate(-10deg); } 100% { transform: rotate(12deg); } }
+      @keyframes gtSmoke {
+        0% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+        30% { opacity: 0.75; }
+        100% { opacity: 0; transform: translate(12px, -22px) scale(1.6); }
+      }
+      @keyframes gtGlint { 0% { opacity: 0.2; } 50% { opacity: 1; } 100% { opacity: 0.2; } }
+    </style>
+  </defs>
+
+  <ellipse cx="60" cy="110" rx="34" ry="6" fill="#000000" opacity="0.35"/>
+
+  <!-- Đế va thân chốt mặc vest -->
+  <ellipse cx="60" cy="103" rx="32" ry="8" fill="url(#gtBase)" stroke="#374151" stroke-width="1.5"/>
+  <rect x="30" y="94" width="60" height="9" rx="4" fill="url(#gtIvory)" stroke="#374151" stroke-width="1.5"/>
+  <path d="M 38 95 C 40 80, 46 70, 50 64 L 70 64 C 74 70, 80 80, 82 95 Z" fill="url(#gtIvory)" stroke="#374151" stroke-width="1.6"/>
+  <path d="M 44 86 C 50 80, 56 78, 60 84 C 64 78, 70 80, 76 86 L 80 95 L 40 95 Z" fill="#111827" stroke="#030712" stroke-width="1.2"/>
+  <path d="M 56 82 L 60 92 L 64 82 Z" fill="#f9fafb"/>
+  <path d="M 47 80 Q 60 90 73 80" fill="none" stroke="#facc15" stroke-width="2.2" stroke-dasharray="2 1.5"/>
+  <ellipse cx="60" cy="64" rx="15" ry="4.5" fill="url(#gtIvory)" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Đầu chốt gật gù ngầu lòi + điếu xì gà cháy đỏ -->
+  <g class="gt-nod">
+    <circle cx="60" cy="42" r="21" fill="url(#gtIvory)" stroke="#374151" stroke-width="1.6"/>
+    <!-- Mũ Fedora -->
+    <path d="M 34 30 Q 60 36 86 30 Q 88 34 84 35 Q 60 40 36 35 Q 32 34 34 30 Z" fill="#111827" stroke="#030712" stroke-width="1"/>
+    <path d="M 42 31 C 42 18, 50 13, 60 14 C 70 13, 78 18, 78 31 Q 60 35 42 31 Z" fill="#1f2937" stroke="#030712" stroke-width="1.2"/>
+    <path d="M 42 28 Q 60 32 78 28 L 78 31 Q 60 35 42 31 Z" fill="#facc15"/>
+    <!-- Kính râm đen lóe sáng -->
+    <path d="M 41 42 L 79 42" stroke="#030712" stroke-width="2.2"/>
+    <path d="M 42 42 L 57 42 L 56 49 Q 50 52 44 49 Z" fill="url(#gtGlass)" stroke="#030712" stroke-width="1.2"/>
+    <path d="M 63 42 L 78 42 L 76 49 Q 70 52 64 49 Z" fill="url(#gtGlass)" stroke="#030712" stroke-width="1.2"/>
+    <path class="gt-glint" d="M 46 43 L 50 43 L 47 48 L 44 48 Z" fill="#ffffff"/>
+    <path d="M 54 55 Q 60 58 67 54" fill="none" stroke="#111827" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- Xì gà cháy đầu đỏ + khói -->
+    <rect x="65" y="53" width="18" height="4.5" rx="2" fill="#78350f" stroke="#1c0a00" stroke-width="0.8"/>
+    <circle cx="83" cy="55.2" r="2.2" fill="#f97316"/>
+    <g class="gt-smoke">
+      <circle cx="86" cy="48" r="3" fill="#d1d5db"/>
+      <circle cx="91" cy="42" r="4" fill="#e5e7eb"/>
+    </g>
+  </g>
+
+  <!-- Tay trái xòe quạt tiền đô $ -->
+  <g class="gt-fan">
+    <rect x="10" y="68" width="22" height="12" rx="2" transform="rotate(-24 21 74)" fill="#22c55e" stroke="#14532d" stroke-width="1.2"/>
+    <rect x="12" y="72" width="22" height="12" rx="2" transform="rotate(-6 23 78)" fill="#4ade80" stroke="#14532d" stroke-width="1.2"/>
+    <rect x="14" y="76" width="22" height="12" rx="2" transform="rotate(14 25 82)" fill="#16a34a" stroke="#14532d" stroke-width="1.2"/>
+    <text x="24" y="81" font-size="8" font-weight="900" fill="#14532d" text-anchor="middle">$</text>
+    <ellipse cx="32" cy="84" rx="6" ry="4.5" fill="url(#gtIvory)" stroke="#374151" stroke-width="1.2"/>
+  </g>
+
+  <!-- Tay phải tung đồng xu vàng xoay tít trên không -->
+  <ellipse cx="92" cy="76" rx="6" ry="4.5" fill="url(#gtIvory)" stroke="#374151" stroke-width="1.2"/>
+  <g class="gt-coin">
+    <circle cx="96" cy="52" r="7.5" fill="#facc15" stroke="#b45309" stroke-width="1.5"/>
+    <text x="96" y="55" font-size="9" font-weight="900" fill="#92400e" text-anchor="middle">$</text>
+  </g>
+</svg>

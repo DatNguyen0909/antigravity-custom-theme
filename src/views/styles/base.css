@@ -1,0 +1,361 @@
+/* ========================================================
+   ANTIGRAVITY CUSTOM THEME ENGINE - BASE & LAYOUT STYLES
+   ======================================================== */
+
+:root {
+  --ag-bg-dim: 0.69;
+  --ag-theme-accent: #e06030;
+  --ag-theme-bubble-bg: rgba(48, 22, 20, 0.95);
+  --ag-theme-bubble-border: rgba(225, 105, 65, 0.65);
+  --ag-theme-bubble-text: #fff5eb;
+  --ag-theme-input-border: rgba(225, 105, 65, 0.5);
+}
+
+/* 1. Global Wallpaper & Dimming Overlay */
+#ag-custom-bg {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  transition: background 0.35s ease !important;
+}
+
+#ag-custom-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  background-color: var(--ag-overlay-color, rgba(0, 0, 0, 0.35)) !important;
+  pointer-events: none !important;
+  transition: background-color 0.2s ease !important;
+}
+
+body.ag-theme-active #root {
+  position: relative !important;
+  z-index: 1 !important;
+  background-color: transparent !important;
+}
+
+/* Force transparency on container layers in chat & navigation */
+body.ag-theme-active,
+body.ag-theme-active [class*="workbench"],
+body.ag-theme-active [class*="layout"],
+body.ag-theme-active [class*="conversation"],
+body.ag-theme-active [class*="chat"],
+body.ag-theme-active [class*="message-list"],
+body.ag-theme-active main,
+body.ag-theme-active section {
+  background-color: transparent !important;
+  --background: transparent !important;
+}
+
+/* Left Sidebar: frosted glass matching template (Dark & Light adaptive) */
+body.ag-theme-active nav,
+body.ag-theme-active aside,
+body.ag-theme-active [class*="sidebar"] {
+  background-color: var(--ag-theme-panel, rgba(18, 14, 16, 0.78)) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+body.ag-theme-active.ag-light-mode nav,
+body.ag-theme-active.ag-light-mode aside,
+body.ag-theme-active.ag-light-mode [class*="sidebar"] {
+  border-right: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 4px 0 24px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Right Editor Pane (keep readable code view in both Dark & Light modes) */
+body.ag-theme-active:not(.ag-light-mode) [class*="editor"],
+body.ag-theme-active:not(.ag-light-mode) [class*="monaco"] {
+  background-color: rgba(15, 15, 18, 0.90) !important;
+  backdrop-filter: blur(12px) !important;
+}
+body.ag-theme-active.ag-light-mode [class*="editor"],
+body.ag-theme-active.ag-light-mode [class*="monaco"] {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+/* Theme-matching accents: selection, scrollbars, links */
+body.ag-theme-active ::selection {
+  background: var(--ag-theme-accent, #e06030) !important;
+  color: #fff !important;
+}
+body.ag-theme-active ::-webkit-scrollbar-thumb {
+  background: var(--ag-theme-bubble-border, rgba(225, 105, 65, 0.5)) !important;
+  border-radius: 8px !important;
+}
+body.ag-theme-active ::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+body.ag-theme-active a {
+  color: var(--ag-theme-accent, #e06030) !important;
+}
+
+/* 2. User Chat Bubble Styling - Single Bubble Only, Crisp Border & Text */
+body.ag-theme-active .ag-custom-user-bubble {
+  position: relative !important;
+  overflow: visible !important;
+  background: var(--ag-theme-bubble-bg, rgba(48, 22, 20, 0.95)) !important;
+  border: 1.5px solid var(--ag-theme-bubble-border, rgba(225, 105, 65, 0.65)) !important;
+  color: var(--ag-theme-bubble-text, #fff5eb) !important;
+  border-radius: 18px 18px 4px 18px !important;
+  padding: 12px 18px !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 14px var(--ag-theme-bubble-border, rgba(220, 100, 60, 0.25));
+  margin-top: 34px !important;
+  margin-bottom: 6px !important;
+  backdrop-filter: blur(8px) !important;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease !important;
+  animation: agGlowPulse 3.2s ease-in-out infinite !important;
+}
+
+@keyframes agGlowPulse {
+  0%, 100% { box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 8px var(--ag-theme-bubble-border, rgba(220, 100, 60, 0.25)); }
+  50% { box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 22px var(--ag-theme-bubble-border, rgba(220, 100, 60, 0.45)), 0 0 3px var(--ag-theme-accent, #e06030); }
+}
+
+/* Light sweep (shimmer) across the bubble */
+body.ag-theme-active .ag-custom-user-bubble::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  pointer-events: none !important;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.10) 50%, transparent 65%) !important;
+  background-size: 300% 100% !important;
+  animation: agShimmer 5.5s ease-in-out infinite !important;
+}
+
+@keyframes agShimmer {
+  0% { background-position: 150% 0; }
+  55%, 100% { background-position: -50% 0; }
+}
+
+/* Prevent any child element inside the user bubble from creating a second inner bubble */
+body.ag-theme-active .ag-custom-user-bubble *:not(.ag-bubble-sticker):not(.ag-bubble-sticker-action):not(.ag-sparkle):not(.ag-burst-p) {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--ag-theme-bubble-text, #fff5eb) !important;
+  -webkit-text-fill-color: var(--ag-theme-bubble-text, #fff5eb) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+body.ag-theme-active .ag-custom-user-bubble:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* Front Sitting Sticker (Default Idle State) */
+body.ag-theme-active .ag-custom-user-bubble > .ag-bubble-sticker {
+  position: absolute !important;
+  top: -50px !important;
+  right: 8px !important;
+  width: 68px !important;
+  height: 68px !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
+  z-index: 50 !important;
+  opacity: 1 !important;
+  transition: opacity 0.14s ease !important;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.55)) !important;
+  transform-origin: 50% 85% !important;
+}
+
+/* Horizontal Stage-Scene Action Sticker (Appears on Hover with Environmental Props & Locomotion!) */
+body.ag-theme-active .ag-custom-user-bubble > .ag-bubble-sticker-action,
+body.ag-theme-active .ag-custom-input-wrapper > .ag-input-sticker-action {
+  position: absolute !important;
+  top: -76px !important;
+  right: 6px !important;
+  width: 280px !important;
+  height: 104px !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
+  z-index: 55 !important;
+  opacity: 0 !important;
+  transform: translateY(6px) scale(0.96) !important;
+  transition: opacity 0.18s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  transform-origin: 85% 75% !important;
+}
+
+.ag-card-sticker-action {
+  position: absolute !important;
+  top: -50px !important;
+  right: 2px !important;
+  width: 192px !important;
+  height: 70px !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
+  z-index: 55 !important;
+  opacity: 0 !important;
+  transform: translateY(5px) scale(0.95) !important;
+  transition: opacity 0.18s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  transform-origin: 85% 75% !important;
+}
+
+/* Swap Front Pose -> Horizontal Stage Scene on Hover */
+body.ag-theme-active .ag-custom-user-bubble:hover > .ag-bubble-sticker,
+body.ag-theme-active .ag-custom-input-wrapper:hover > .ag-input-sticker,
+.ag-theme-card:hover .ag-card-sticker {
+  opacity: 0 !important;
+}
+
+body.ag-theme-active .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body.ag-theme-active .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card:hover .ag-card-sticker-action {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* ========================================================
+   THEMED ANIMATED DECOR LAYER (Distinct Motion Per Theme!)
+   ======================================================== */
+#ag-custom-decor {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+}
+#ag-custom-decor .ag-art {
+  position: absolute !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center !important;
+}
+#ag-custom-decor .ag-p {
+  position: absolute !important;
+  will-change: transform, opacity !important;
+  line-height: 1 !important;
+  user-select: none !important;
+}
+#ag-custom-decor .ag-p.dot { border-radius: 50% !important; }
+#ag-custom-decor .ag-p.bubble {
+  border-radius: 50% !important;
+  border: 1.5px solid rgba(165, 243, 252, 0.65) !important;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.7), rgba(34,211,238,0.1) 70%) !important;
+}
+#ag-custom-decor .ag-p.flame {
+  border-radius: 50% 0 50% 50% !important;
+  filter: blur(1px) !important;
+}
+#ag-custom-decor .ag-p.bokeh { border-radius: 50% !important; filter: blur(14px) !important; }
+#ag-custom-decor .ag-p.shoot {
+  height: 2px !important;
+  border-radius: 2px !important;
+  background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(160,210,255,0.4) 30%, transparent) !important;
+}
+
+@keyframes agRise {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  10% { opacity: var(--o, 0.8); }
+  50% { transform: translate3d(calc(var(--sx, 20px) * -0.6), -55vh, 0); }
+  90% { opacity: var(--o, 0.8); }
+  100% { transform: translate3d(var(--sx, 20px), -112vh, 0); opacity: 0; }
+}
+@keyframes agFall {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: var(--o, 0.7); }
+  50% { transform: translate3d(var(--sx, 40px), 56vh, 0) rotate(180deg); }
+  90% { opacity: var(--o, 0.7); }
+  100% { transform: translate3d(0, 115vh, 0) rotate(360deg); opacity: 0; }
+}
+@keyframes agDrift {
+  0% { transform: translate3d(-15vw, 0, 0); }
+  25% { transform: translate3d(20vw, var(--sy, -5vh), 0); }
+  50% { transform: translate3d(55vw, calc(var(--sy, -5vh) * -0.7), 0); }
+  75% { transform: translate3d(90vw, var(--sy, -5vh), 0); }
+  100% { transform: translate3d(125vw, 0, 0); }
+}
+@keyframes agDragonSoar {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-2deg) scale(1); }
+  25% { transform: translate3d(35px, -28px, 0) rotate(4deg) scale(1.04); }
+  50% { transform: translate3d(70px, -8px, 0) rotate(-3deg) scale(0.98); }
+  75% { transform: translate3d(30px, 20px, 0) rotate(3deg) scale(1.03); }
+}
+@keyframes agPhoenixSoar {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1, 1); opacity: 0.22; }
+  50% { transform: translate3d(0, -32px, 0) scale(1.08, 0.94); opacity: 0.34; }
+}
+@keyframes agWitchFly {
+  0% { transform: translate3d(115vw, 18vh, 0) rotate(-8deg); }
+  50% { transform: translate3d(45vw, 6vh, 0) rotate(6deg); }
+  100% { transform: translate3d(-25vw, 14vh, 0) rotate(-6deg); }
+}
+@keyframes agLightningFlash {
+  0%, 88%, 94%, 98%, 100% { opacity: 0.06; }
+  90%, 96% { opacity: 0.55; filter: drop-shadow(0 0 25px #facc15); }
+}
+@keyframes agAuroraWave {
+  0%, 100% { transform: translate3d(0, 0, 0) scaleY(1) skewX(0deg); opacity: 0.28; }
+  50% { transform: translate3d(30px, -15px, 0) scaleY(1.25) skewX(-8deg); opacity: 0.45; }
+}
+@keyframes agFloatBob {
+  0%, 100% { transform: translateY(0) scale(1) rotate(-45deg); opacity: var(--o, 0.7); }
+  50% { transform: translateY(-26px) translateX(14px) scale(1.15) rotate(-35deg); opacity: calc(var(--o, 0.7) * 0.55); }
+}
+@keyframes agShoot {
+  0% { transform: translate3d(0, 0, 0) rotate(-35deg); opacity: 0; }
+  2% { opacity: 1; }
+  12% { transform: translate3d(-42vw, 30vw, 0) rotate(-35deg); opacity: 0; }
+  100% { transform: translate3d(-42vw, 30vw, 0) rotate(-35deg); opacity: 0; }
+}
+@keyframes agBokeh {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(var(--sx, 40px), -40px, 0); }
+}
+@keyframes agArtFloat {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-18px) translateX(12px); }
+}
+@keyframes agArtGlow {
+  0%, 100% { opacity: var(--o, 0.5); transform: scale(1); }
+  50% { opacity: calc(var(--o, 0.5) * 0.65); transform: scale(1.05); }
+}
+
+/* Light Mode Decor & Bubble Contrast Enhancement */
+body.ag-theme-active.ag-light-mode #ag-custom-decor {
+  filter: brightness(0.62) saturate(2.5) contrast(1.35) !important;
+}
+body.ag-theme-active.ag-light-mode #ag-custom-decor .ag-art {
+  opacity: 0.42 !important;
+}
+body.ag-theme-active.ag-light-mode .ag-custom-user-bubble {
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.16), 0 0 14px var(--ag-theme-bubble-border, rgba(220, 100, 60, 0.28)) !important;
+}
+
+/* 3. Input Prompt Box & Sticker */
+body.ag-theme-active .ag-custom-input-wrapper {
+  position: relative !important;
+  overflow: visible !important;
+  background-color: rgba(26, 20, 22, 0.85) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1.5px solid var(--ag-theme-input-border, rgba(225, 105, 65, 0.5)) !important;
+  border-radius: 16px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+}
+body.ag-theme-active.ag-light-mode .ag-custom-input-wrapper {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.ag-theme-active .ag-custom-input-wrapper:focus-within {
+  border-color: var(--ag-theme-accent, #e06030) !important;
+  box-shadow: 0 0 14px var(--ag-theme-bubble-border, rgba(224, 96, 48, 0.3)) !important;
+}
+
+body.ag-theme-active .ag-custom-input-wrapper > .ag-input-sticker {
+  position: absolute !important;
+  top: -52px !important;
+  right: 14px !important;
+  width: 66px !important;
+  height: 66px !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
+  z-index: 50 !important;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6)) !important;
+  transform-origin: 50% 90% !important;
+}

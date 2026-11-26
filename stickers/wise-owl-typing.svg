@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="owBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="55%" stop-color="#92400e"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="owBelly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#fde68a"/>
+    </linearGradient>
+    <linearGradient id="owGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="owScroll" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="100%" stop-color="#fcd34d"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .o-head { transform-origin: 60px 70px; animation: oHead 1.6s ease-in-out infinite; }
+    .o-pupil { animation: oPupil 1.6s ease-in-out infinite; }
+    .o-quill { transform-origin: 92px 92px; animation: oQuill 0.42s ease-in-out infinite alternate; }
+    .o-wing { transform-origin: 90px 62px; animation: oWing 0.42s ease-in-out infinite alternate; }
+    .o-l1 { stroke-dasharray: 16; animation: oWrite1 1.8s linear infinite; }
+    .o-l2 { stroke-dasharray: 14; animation: oWrite2 1.8s linear infinite; }
+    .o-l3 { stroke-dasharray: 12; animation: oWrite3 1.8s linear infinite; }
+    .o-ink { animation: oInk 0.84s ease-out infinite; opacity: 0; }
+    .o-ink2 { animation: oInk 0.84s ease-out 0.42s infinite; opacity: 0; }
+    .o-gl { animation: oGlint 1.6s ease-in-out infinite; }
+    @keyframes oHead { 0%,100% { transform: rotate(-2deg) translateY(2px); } 50% { transform: rotate(3deg) translateY(2px); } }
+    @keyframes oPupil { 0%,100% { transform: translate(-1.5px, 2.4px); } 50% { transform: translate(1.5px, 2.4px); } }
+    @keyframes oQuill { 0% { transform: rotate(-12deg) translate(-3px, 0); } 100% { transform: rotate(8deg) translate(3px, -1px); } }
+    @keyframes oWing { 0% { transform: rotate(-4deg); } 100% { transform: rotate(5deg); } }
+    @keyframes oWrite1 { 0% { stroke-dashoffset: 16; } 40%,100% { stroke-dashoffset: 0; } }
+    @keyframes oWrite2 { 0%,30% { stroke-dashoffset: 14; } 70%,100% { stroke-dashoffset: 0; } }
+    @keyframes oWrite3 { 0%,60% { stroke-dashoffset: 12; } 100% { stroke-dashoffset: 0; } }
+    @keyframes oInk { 0% { opacity: 0; transform: translate(0,0) scale(0.5); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(-6px, -14px) scale(1); } }
+    @keyframes oGlint { 0%,100% { opacity: 0.2; } 50% { opacity: 0.85; } }
+  </style>
+
+  <ellipse cx="60" cy="109" rx="32" ry="5.5" fill="#020617" opacity="0.45"/>
+
+  <g>
+    <path d="M30 56 C16 64, 15 86, 28 94 C34 88, 35 72, 34 62 Z" fill="url(#owBody)" stroke="#270e02" stroke-width="2"/>
+    <ellipse cx="60" cy="64" rx="32" ry="38" fill="url(#owBody)" stroke="#270e02" stroke-width="2.2"/>
+    <ellipse cx="60" cy="78" rx="22" ry="21" fill="url(#owBelly)"/>
+    <path d="M47 70 Q51 74 55 70 M56 70 Q60 74 64 70 M65 70 Q69 74 73 70" fill="none" stroke="#b45309" stroke-width="1.6" stroke-linecap="round"/>
+
+    <!-- Head bowed over the scroll -->
+    <g class="o-head">
+      <circle cx="46" cy="49" r="15" fill="url(#owBelly)" stroke="#78350f" stroke-width="1.5"/>
+      <circle cx="74" cy="49" r="15" fill="url(#owBelly)" stroke="#78350f" stroke-width="1.5"/>
+      <path d="M27 38 Q38 36 49 42" fill="none" stroke="#fef3c7" stroke-width="4" stroke-linecap="round"/>
+      <path d="M93 38 Q82 36 71 42" fill="none" stroke="#fef3c7" stroke-width="4" stroke-linecap="round"/>
+      <polygon points="60,10 92,22 60,32 28,22" fill="#291507" stroke="url(#owGold)" stroke-width="2"/>
+      <path d="M40 26 L40 34 Q60 40 80 34 L80 26" fill="#451a03" stroke="url(#owGold)" stroke-width="1.8"/>
+      <circle cx="60" cy="21" r="3.5" fill="url(#owGold)"/>
+      <path d="M60 21 Q78 24 85 38" fill="none" stroke="url(#owGold)" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="85" cy="40" r="3" fill="#ef4444"/>
+
+      <!-- Eyes: pupils sweep left-right, reading while writing -->
+      <circle cx="46" cy="49" r="9.5" fill="#451a03"/>
+      <circle cx="46" cy="49" r="7.5" fill="url(#owGold)"/>
+      <circle cx="74" cy="49" r="9.5" fill="#451a03"/>
+      <circle cx="74" cy="49" r="7.5" fill="url(#owGold)"/>
+      <g class="o-pupil">
+        <circle cx="46" cy="49" r="4" fill="#270e02"/>
+        <circle cx="74" cy="49" r="4" fill="#270e02"/>
+        <circle cx="44.6" cy="47.4" r="1.5" fill="#ffffff"/>
+        <circle cx="72.6" cy="47.4" r="1.5" fill="#ffffff"/>
+      </g>
+      <circle cx="46" cy="49" r="12" fill="none" stroke="url(#owGold)" stroke-width="2.4"/>
+      <circle cx="74" cy="49" r="12" fill="none" stroke="url(#owGold)" stroke-width="2.4"/>
+      <path d="M58 49 Q60 46 62 49" fill="none" stroke="url(#owGold)" stroke-width="2.4"/>
+      <path class="o-gl" d="M38 43 L43 40" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
+      <polygon points="56,54 64,54 60,62" fill="url(#owGold)" stroke="#78350f" stroke-width="1.5" stroke-linejoin="round"/>
+      <ellipse cx="34" cy="56" rx="3.8" ry="2" fill="#fb7185" opacity="0.65"/>
+      <ellipse cx="86" cy="56" rx="3.8" ry="2" fill="#fb7185" opacity="0.65"/>
+    </g>
+
+    <!-- Open scroll held at belly with lines being written -->
+    <g>
+      <rect x="24" y="80" width="72" height="22" rx="3" fill="url(#owScroll)" stroke="#92400e" stroke-width="2"/>
+      <rect x="20" y="77" width="7" height="28" rx="3" fill="#991b1b" stroke="url(#owGold)" stroke-width="1.6"/>
+      <rect x="93" y="77" width="7" height="28" rx="3" fill="#991b1b" stroke="url(#owGold)" stroke-width="1.6"/>
+      <path class="o-l1" d="M32 86 H48" stroke="#78350f" stroke-width="2" stroke-linecap="round"/>
+      <path class="o-l2" d="M32 92 H46" stroke="#78350f" stroke-width="2" stroke-linecap="round"/>
+      <path class="o-l3" d="M32 98 H44" stroke="#78350f" stroke-width="2" stroke-linecap="round"/>
+      <path d="M62 88 H86 M62 94 H82" stroke="#d6a45a" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    </g>
+
+    <!-- Right wing holding quill pen, scribbling -->
+    <g class="o-wing">
+      <path d="M90 56 C104 64, 105 84, 94 92 C88 86, 86 72, 88 62 Z" fill="url(#owBody)" stroke="#270e02" stroke-width="2"/>
+    </g>
+    <g class="o-quill">
+      <path d="M92 92 L74 78" stroke="#f8fafc" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M74 78 Q64 68 56 66 Q62 74 70 82 Z" fill="#f1f5f9" stroke="#94a3b8" stroke-width="0.9"/>
+      <path d="M92 92 L96 98" stroke="#1e1b4b" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="96.5" cy="98.5" r="1.6" fill="#1e1b4b"/>
+    </g>
+    <!-- Ink splashes -->
+    <circle class="o-ink" cx="96" cy="96" r="2" fill="#312e81"/>
+    <circle class="o-ink2" cx="90" cy="100" r="1.6" fill="#312e81"/>
+
+    <path d="M44 101 C44 106, 52 106, 52 101" fill="url(#owGold)" stroke="#451a03" stroke-width="1.8"/>
+    <path d="M68 101 C68 106, 76 106, 76 101" fill="url(#owGold)" stroke="#451a03" stroke-width="1.8"/>
+  </g>
+</svg>

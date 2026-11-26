@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="sbFur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#fff1f2"/>
+      <stop offset="100%" stop-color="#fecdd3"/>
+    </linearGradient>
+    <linearGradient id="sbEar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fda4af"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="sbSakura" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fda4af"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+    <linearGradient id="sbWood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <style>
+      /* Thỏ ngọc anh đào cầm chày gỗ giã bánh Mochi trong cối dưới mưa hoa anh đào! */
+      .sb-body { transform-origin: 54px 100px; animation: sbBounce 0.45s ease-in-out infinite alternate; }
+      .sb-earL { transform-origin: 40px 38px; animation: sbEarL 0.45s ease-in-out infinite alternate; }
+      .sb-earR { transform-origin: 68px 38px; animation: sbEarR 0.45s ease-in-out infinite alternate; }
+      .sb-mallet { transform-origin: 68px 72px; animation: sbPound 0.45s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate; }
+      .sb-mochi { transform-origin: 90px 92px; animation: sbSquish 0.45s ease-in-out infinite alternate; }
+      .sb-petal1 { animation: sbPetal 1.4s linear infinite; opacity: 0; }
+      .sb-petal2 { animation: sbPetal 1.4s linear 0.7s infinite; opacity: 0; }
+
+      @keyframes sbBounce { 0% { transform: translateY(0); } 100% { transform: translateY(-4px); } }
+      @keyframes sbEarL { 0% { transform: rotate(-10deg); } 100% { transform: rotate(8deg); } }
+      @keyframes sbEarR { 0% { transform: rotate(10deg); } 100% { transform: rotate(-8deg); } }
+      @keyframes sbPound { 0% { transform: rotate(-42deg); } 100% { transform: rotate(18deg); } }
+      @keyframes sbSquish { 0% { transform: scale(0.95, 1.12); } 100% { transform: scale(1.2, 0.78); } }
+      @keyframes sbPetal {
+        0% { opacity: 0; transform: translate(0, 0) rotate(0deg); }
+        20% { opacity: 0.95; }
+        100% { opacity: 0; transform: translate(-18px, 34px) rotate(140deg); }
+      }
+    </style>
+  </defs>
+
+  <!-- Cánh hoa anh đào rơi -->
+  <ellipse class="sb-petal1" cx="26" cy="24" rx="4" ry="2.2" fill="#fda4af" stroke="#e11d48" stroke-width="0.6"/>
+  <ellipse class="sb-petal2" cx="102" cy="18" rx="4" ry="2.2" fill="#fb7185" stroke="#e11d48" stroke-width="0.6"/>
+
+  <!-- Thỏ ngọc đứng bên trái giã bánh Mochi -->
+  <g class="sb-body">
+    <circle cx="24" cy="92" r="8" fill="url(#sbFur)" stroke="#881337" stroke-width="1.8"/>
+    <g class="sb-earL">
+      <path d="M40 40 C32 12, 22 6, 20 16 C18 26, 26 38, 34 44 Z" fill="url(#sbFur)" stroke="#881337" stroke-width="2.1"/>
+      <path d="M37 37 C31 18, 25 14, 24 20 C23 26, 29 34, 34 39 Z" fill="url(#sbEar)"/>
+    </g>
+    <g class="sb-earR">
+      <path d="M68 40 C76 12, 86 6, 88 16 C90 26, 82 38, 74 44 Z" fill="url(#sbFur)" stroke="#881337" stroke-width="2.1"/>
+      <path d="M71 37 C77 18, 83 14, 84 20 C85 26, 79 34, 74 39 Z" fill="url(#sbEar)"/>
+    </g>
+
+    <ellipse cx="52" cy="86" rx="21" ry="18" fill="url(#sbFur)" stroke="#881337" stroke-width="2.1"/>
+    <path d="M37 74 Q52 80 67 74" fill="none" stroke="#e11d48" stroke-width="3.2" stroke-linecap="round"/>
+
+    <!-- Đầu thỏ -->
+    <path d="M24 56 C22 36, 38 28, 54 28 C70 28, 84 36, 82 56 C84 70, 70 76, 54 76 C38 76, 22 70, 24 56 Z" fill="url(#sbFur)" stroke="#881337" stroke-width="2.1"/>
+    <g transform="translate(34, 30)">
+      <circle cx="0" cy="-5" r="4" fill="url(#sbSakura)"/>
+      <circle cx="4.8" cy="-1.5" r="4" fill="url(#sbSakura)"/>
+      <circle cx="3" cy="4" r="4" fill="url(#sbSakura)"/>
+      <circle cx="-3" cy="4" r="4" fill="url(#sbSakura)"/>
+      <circle cx="-4.8" cy="-1.5" r="4" fill="url(#sbSakura)"/>
+      <circle cx="0" cy="0" r="2.6" fill="#fef08a"/>
+    </g>
+    <!-- Mắt cười hăng hái -->
+    <path d="M 36 53 Q 42 47 48 53" fill="none" stroke="#4c0519" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M 60 53 Q 66 47 72 53" fill="none" stroke="#4c0519" stroke-width="2.6" stroke-linecap="round"/>
+    <ellipse cx="32" cy="60" rx="4.5" ry="2.4" fill="#fb7185" opacity="0.8"/>
+    <ellipse cx="76" cy="60" rx="4.5" ry="2.4" fill="#fb7185" opacity="0.8"/>
+    <polygon points="52,57 56,57 54,60" fill="#fb7185"/>
+    <path d="M49 62 Q52 65 54 61 Q56 65 59 62" fill="none" stroke="#881337" stroke-width="1.8" stroke-linecap="round"/>
+
+    <ellipse cx="41" cy="103" rx="7" ry="4.5" fill="url(#sbFur)" stroke="#881337" stroke-width="2"/>
+    <ellipse cx="63" cy="103" rx="7" ry="4.5" fill="url(#sbFur)" stroke="#881337" stroke-width="2"/>
+
+    <!-- Chày gỗ giã bánh Mochi (nâng lên đập xuống nhịp nhàng) -->
+    <g class="sb-mallet">
+      <line x1="60" y1="80" x2="94" y2="56" stroke="#b45309" stroke-width="4.5" stroke-linecap="round"/>
+      <rect x="86" y="42" width="14" height="26" rx="5" transform="rotate(-35 93 55)" fill="url(#sbWood)" stroke="#451a03" stroke-width="1.6"/>
+      <ellipse cx="66" cy="77" rx="5.5" ry="4.5" fill="url(#sbFur)" stroke="#881337" stroke-width="1.8"/>
+    </g>
+  </g>
+
+  <!-- Cối gỗ + khối bánh Mochi trắng nảy phồng -->
+  <g>
+    <path d="M 74 92 L 108 92 L 103 108 L 79 108 Z" fill="url(#sbWood)" stroke="#451a03" stroke-width="1.8" stroke-linejoin="round"/>
+    <line x1="76" y1="98" x2="106" y2="98" stroke="#fef08a" stroke-width="2"/>
+    <g class="sb-mochi">
+      <ellipse cx="91" cy="91" rx="13" ry="8" fill="#ffffff" stroke="#fda4af" stroke-width="1.4"/>
+      <circle cx="87" cy="88" r="2.2" fill="#ffe4e6"/>
+    </g>
+  </g>
+</svg>

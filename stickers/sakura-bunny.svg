@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="bunFur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#fff1f2"/>
+      <stop offset="100%" stop-color="#fecdd3"/>
+    </linearGradient>
+    <linearGradient id="earIn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fda4af"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="sakuraG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fda4af"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+    <style>
+      /* Mỗi 15s: Thỏ Ngọc rút xiên bánh Dango 3 màu ra nhai phồng má + bắn tim hồng */
+      .dango-skewer { animation: bunDango 15s ease-in-out infinite; transform-origin: 78px 86px; }
+      .cheeks-munch { animation: bunMunch 15s ease-in-out infinite; transform-origin: 60px 62px; }
+      .heart-pop { animation: bunHeart 15s ease-out infinite; transform-origin: 88px 26px; }
+
+      @keyframes bunDango {
+        0%, 72% { opacity: 0; transform: translateY(20px) rotate(35deg); }
+        76% { opacity: 1; transform: translateY(0px) rotate(-10deg); }
+        82% { opacity: 1; transform: translate(-8px, -14px) rotate(-25deg); }
+        88% { opacity: 1; transform: translate(0px, 0px) rotate(-10deg); }
+        93%, 100% { opacity: 0; transform: translateY(20px) rotate(35deg); }
+      }
+      @keyframes bunMunch {
+        0%, 80% { transform: scale(1, 1); }
+        83% { transform: scale(1.14, 0.94); }
+        85% { transform: scale(0.96, 1.06); }
+        87% { transform: scale(1.14, 0.94); }
+        89% { transform: scale(0.96, 1.06); }
+        91% { transform: scale(1.12, 0.95); }
+        94%, 100% { transform: scale(1, 1); }
+      }
+      @keyframes bunHeart {
+        0%, 83% { opacity: 0; transform: translateY(10px) scale(0.2); }
+        87% { opacity: 1; transform: translateY(-4px) scale(1.25); }
+        94% { opacity: 1; transform: translateY(-12px) scale(1); }
+        98%, 100% { opacity: 0; transform: translateY(-18px) scale(0.2); }
+      }
+    </style>
+  </defs>
+
+  <g>
+    <circle cx="84" cy="92" r="9" fill="url(#bunFur)" stroke="#881337" stroke-width="1.8"/>
+
+    <path d="M44 40 C36 10, 26 4, 24 14 C22 24, 30 38, 38 44 Z" fill="url(#bunFur)" stroke="#881337" stroke-width="2.2"/>
+    <path d="M41 37 C35 16, 29 12, 28 18 C27 24, 33 34, 38 39 Z" fill="url(#earIn)"/>
+
+    <path d="M76 40 C84 10, 94 4, 96 14 C98 24, 90 38, 82 44 Z" fill="url(#bunFur)" stroke="#881337" stroke-width="2.2"/>
+    <path d="M79 37 C85 16, 91 12, 92 18 C93 24, 87 34, 82 39 Z" fill="url(#earIn)"/>
+
+    <ellipse cx="60" cy="86" rx="22" ry="18" fill="url(#bunFur)" stroke="#881337" stroke-width="2.2"/>
+    <path d="M44 74 Q60 80 76 74" fill="none" stroke="#e11d48" stroke-width="3.5" stroke-linecap="round"/>
+
+    <g class="cheeks-munch">
+      <path d="M30 56 C28 36, 44 28, 60 28 C76 28, 92 36, 90 56 C92 70, 78 76, 60 76 C42 76, 28 70, 30 56 Z" fill="url(#bunFur)" stroke="#881337" stroke-width="2.2"/>
+
+      <g transform="translate(38, 30)">
+        <circle cx="0" cy="-6" r="4.5" fill="url(#sakuraG)"/>
+        <circle cx="5.7" cy="-1.8" r="4.5" fill="url(#sakuraG)"/>
+        <circle cx="3.5" cy="4.8" r="4.5" fill="url(#sakuraG)"/>
+        <circle cx="-3.5" cy="4.8" r="4.5" fill="url(#sakuraG)"/>
+        <circle cx="-5.7" cy="-1.8" r="4.5" fill="url(#sakuraG)"/>
+        <circle cx="0" cy="0" r="3" fill="#fef08a"/>
+      </g>
+
+      <ellipse cx="46" cy="54" rx="6.5" ry="7.5" fill="#4c0519"/>
+      <ellipse cx="46" cy="54.5" rx="5.2" ry="6" fill="url(#sakuraG)"/>
+      <ellipse cx="46" cy="56.5" rx="3.8" ry="3.2" fill="#fda4af"/>
+      <circle cx="43.5" cy="51" r="2.5" fill="#ffffff"/>
+      <circle cx="48.5" cy="57" r="1.2" fill="#ffffff"/>
+
+      <ellipse cx="74" cy="54" rx="6.5" ry="7.5" fill="#4c0519"/>
+      <ellipse cx="74" cy="54.5" rx="5.2" ry="6" fill="url(#sakuraG)"/>
+      <ellipse cx="74" cy="56.5" rx="3.8" ry="3.2" fill="#fda4af"/>
+      <circle cx="71.5" cy="51" r="2.5" fill="#ffffff"/>
+      <circle cx="76.5" cy="57" r="1.2" fill="#ffffff"/>
+
+      <ellipse cx="36" cy="60" rx="4.8" ry="2.5" fill="#fb7185" opacity="0.75"/>
+      <ellipse cx="84" cy="60" rx="4.8" ry="2.5" fill="#fb7185" opacity="0.75"/>
+      <polygon points="58,57 62,57 60,60" fill="#fb7185"/>
+      <path d="M55 62 Q58 65 60 61 Q62 65 65 62" fill="none" stroke="#881337" stroke-width="1.8" stroke-linecap="round"/>
+    </g>
+
+    <ellipse cx="47" cy="103" rx="7" ry="4.5" fill="url(#bunFur)" stroke="#881337" stroke-width="2"/>
+    <ellipse cx="73" cy="103" rx="7" ry="4.5" fill="url(#bunFur)" stroke="#881337" stroke-width="2"/>
+
+    <g transform="translate(60, 88)">
+      <circle cx="0" cy="-6" r="5" fill="#fda4af" stroke="#be123c" stroke-width="1.2"/>
+      <circle cx="5.7" cy="-1.8" r="5" fill="#fda4af" stroke="#be123c" stroke-width="1.2"/>
+      <circle cx="3.5" cy="4.8" r="5" fill="#fda4af" stroke="#be123c" stroke-width="1.2"/>
+      <circle cx="-3.5" cy="4.8" r="5" fill="#fda4af" stroke="#be123c" stroke-width="1.2"/>
+      <circle cx="-5.7" cy="-1.8" r="5" fill="#fda4af" stroke="#be123c" stroke-width="1.2"/>
+      <circle cx="0" cy="0" r="3.2" fill="#fef08a"/>
+    </g>
+
+    <!-- Xiên bánh Dango 3 màu Hồng - Trắng - Xanh -->
+    <g class="dango-skewer">
+      <line x1="82" y1="92" x2="68" y2="64" stroke="#b45309" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="78" cy="84" r="5" fill="#86efac" stroke="#15803d" stroke-width="1"/>
+      <circle cx="74" cy="76" r="5" fill="#ffffff" stroke="#881337" stroke-width="1"/>
+      <circle cx="70" cy="68" r="5" fill="#fda4af" stroke="#be123c" stroke-width="1"/>
+    </g>
+
+    <!-- Tim hồng bay lên khi ăn ngon -->
+    <g class="heart-pop">
+      <path d="M 88 28 C 84 22, 78 24, 82 30 L 88 36 L 94 30 C 98 24, 92 22, 88 28 Z" fill="#f43f5e" stroke="#ffffff" stroke-width="1"/>
+    </g>
+
+    <ellipse cx="47" cy="86" rx="5.5" ry="4.2" fill="url(#bunFur)" stroke="#881337" stroke-width="1.8"/>
+    <ellipse cx="73" cy="86" rx="5.5" ry="4.2" fill="url(#bunFur)" stroke="#881337" stroke-width="1.8"/>
+  </g>
+</svg>

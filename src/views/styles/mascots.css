@@ -1,0 +1,413 @@
+/* ========================================================
+   PER-CHARACTER UNIQUE IDLE + STAGE SCENE GLOW EFFECTS
+   ======================================================== */
+
+/* 1. Rồng Ngọc (jade-dragon): Thần Long bay lượn xuyên qua mây lớn & mây nhỏ */
+body[data-ag-theme="jade-dragon"] .ag-bubble-sticker,
+body[data-ag-theme="jade-dragon"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="jade-dragon"] .ag-card-sticker {
+  animation: agIdleDragon 3.6s ease-in-out infinite !important;
+}
+@keyframes agIdleDragon {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(0, -7px) rotate(-4deg); }
+}
+body[data-ag-theme="jade-dragon"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="jade-dragon"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="jade-dragon"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.45)) drop-shadow(0 0 10px rgba(16,185,129,0.65)) !important;
+}
+
+/* 2. Phượng Hoàng Lửa (fire-phoenix): Sải cánh lửa bay qua mây lửa & mặt trời */
+body[data-ag-theme="fire-phoenix"] .ag-bubble-sticker,
+body[data-ag-theme="fire-phoenix"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="fire-phoenix"] .ag-card-sticker {
+  animation: agIdlePhoenix 2.6s ease-in-out infinite !important;
+}
+@keyframes agIdlePhoenix {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  50% { transform: translateY(-8px) scale(1.06, 0.96); }
+}
+body[data-ag-theme="fire-phoenix"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="fire-phoenix"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="fire-phoenix"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.45)) drop-shadow(0 0 12px rgba(236,72,153,0.7)) !important;
+}
+
+/* 3. Phi Hành Gia Thiên Hà (space-astronaut): Bật Jetpack bay lượn giữa Sao Thổ & các hành tinh */
+body[data-ag-theme="space-astronaut"] .ag-bubble-sticker,
+body[data-ag-theme="space-astronaut"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="space-astronaut"] .ag-card-sticker {
+  animation: agIdleAstro 4.0s ease-in-out infinite !important;
+}
+@keyframes agIdleAstro {
+  0%, 100% { transform: translate(0, 0) rotate(-5deg); }
+  50% { transform: translate(0, -9px) rotate(6deg); }
+}
+body[data-ag-theme="space-astronaut"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="space-astronaut"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="space-astronaut"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.5)) drop-shadow(0 0 12px rgba(56,189,248,0.75)) !important;
+}
+
+/* 4. Phù Thủy Ánh Trăng (moon-witch): Cưỡi chổi bay qua trăng lưỡi liềm & tòa tháp */
+body[data-ag-theme="moon-witch"] .ag-bubble-sticker,
+body[data-ag-theme="moon-witch"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="moon-witch"] .ag-card-sticker {
+  animation: agIdleWitch 3.4s ease-in-out infinite !important;
+}
+@keyframes agIdleWitch {
+  0%, 100% { transform: translate(0, 0) rotate(2deg); }
+  50% { transform: translate(0, -7px) rotate(-5deg); }
+}
+body[data-ag-theme="moon-witch"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="moon-witch"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="moon-witch"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.5)) drop-shadow(0 0 12px rgba(168,85,247,0.75)) !important;
+}
+
+/* 5. Hồ Ly Chibi (fox-chibi): Phóng qua cổng Torii & đèn lồng lửa hồ ly */
+body[data-ag-theme="fox-chibi"] .ag-bubble-sticker,
+body[data-ag-theme="fox-chibi"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="fox-chibi"] .ag-card-sticker {
+  animation: agIdleFox 2.8s ease-in-out infinite !important;
+}
+@keyframes agIdleFox {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(0, -6px) rotate(-4deg); }
+}
+body[data-ag-theme="fox-chibi"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="fox-chibi"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="fox-chibi"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.5)) drop-shadow(0 0 10px rgba(255,122,48,0.7)) !important;
+}
+
+/* 6. Mèo Than (black-cat): Phóng trên mái nhà đêm trăng vờn cuộn len vàng */
+body[data-ag-theme="black-cat"] .ag-bubble-sticker,
+body[data-ag-theme="black-cat"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="black-cat"] .ag-card-sticker {
+  animation: agIdleCat 3.0s ease-in-out infinite !important;
+}
+@keyframes agIdleCat {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  50% { transform: translateY(-6px) scale(0.96, 1.05); }
+}
+body[data-ag-theme="black-cat"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="black-cat"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="black-cat"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.5)) drop-shadow(0 0 10px rgba(245,158,11,0.7)) !important;
+}
+
+/* 7. Cú Thông Thái Cổ Thư (wise-owl): Bay qua đỉnh núi cổ phong & đèn lồng */
+body[data-ag-theme="wise-owl"] .ag-bubble-sticker,
+body[data-ag-theme="wise-owl"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="wise-owl"] .ag-card-sticker {
+  animation: agIdleOwl 3.4s ease-in-out infinite !important;
+}
+@keyframes agIdleOwl {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+body[data-ag-theme="wise-owl"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="wise-owl"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="wise-owl"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.5)) drop-shadow(0 0 10px rgba(251,191,36,0.7)) !important;
+}
+
+/* 8. Robot AI Tối Giản (ai-robot): Lướt ván từ trường giữa 2 cổng Hologram */
+body[data-ag-theme="ai-robot"] .ag-bubble-sticker,
+body[data-ag-theme="ai-robot"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="ai-robot"] .ag-card-sticker {
+  animation: agIdleBot 2.6s ease-in-out infinite !important;
+}
+@keyframes agIdleBot {
+  0%, 100% { transform: translateY(0); filter: drop-shadow(0 3px 5px rgba(56,189,248,0.35)); }
+  50% { transform: translateY(-8px); filter: drop-shadow(0 8px 12px rgba(56,189,248,0.75)); }
+}
+body[data-ag-theme="ai-robot"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="ai-robot"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="ai-robot"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.5)) drop-shadow(0 0 12px rgba(56,189,248,0.75)) !important;
+}
+
+/* 9. Thỏ Ngọc Anh Đào (sakura-bunny): Nhảy qua rừng hoa anh đào nở rộ */
+body[data-ag-theme="sakura-bunny"] .ag-bubble-sticker,
+body[data-ag-theme="sakura-bunny"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="sakura-bunny"] .ag-card-sticker {
+  animation: agIdleBunny 1.8s cubic-bezier(0.28, 0.84, 0.42, 1) infinite !important;
+}
+@keyframes agIdleBunny {
+  0%, 100% { transform: translate(0, 2px) scale(1.08, 0.90); }
+  45% { transform: translate(0, -10px) scale(0.95, 1.08); }
+}
+body[data-ag-theme="sakura-bunny"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="sakura-bunny"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="sakura-bunny"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.45)) drop-shadow(0 0 10px rgba(251,113,133,0.75)) !important;
+}
+
+/* 10. Cá Mập Đại Dương (ocean-shark): Vây cá rẽ sóng sau đoạn chat rồi nhảy vọt lên không trung! */
+body[data-ag-theme="ocean-shark"] .ag-bubble-sticker,
+body[data-ag-theme="ocean-shark"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="ocean-shark"] .ag-card-sticker {
+  animation: agIdleShark 3.0s ease-in-out infinite !important;
+}
+@keyframes agIdleShark {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+body[data-ag-theme="ocean-shark"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="ocean-shark"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="ocean-shark"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.45)) drop-shadow(0 0 12px rgba(34,211,238,0.8)) !important;
+}
+
+/* 11. Chốt Gangster (gangster-pawn): Xe cầm chùy lao tới -> Chốt hóa Hậu rút súng bắn bay Xe! */
+body[data-ag-theme="gangster-pawn"] .ag-bubble-sticker,
+body[data-ag-theme="gangster-pawn"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="gangster-pawn"] .ag-card-sticker {
+  animation: agIdlePawn 2.4s ease-in-out infinite !important;
+}
+@keyframes agIdlePawn {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+body[data-ag-theme="gangster-pawn"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="gangster-pawn"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="gangster-pawn"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.6)) drop-shadow(0 0 8px rgba(255,255,255,0.45)) !important;
+}
+
+/* 12. Cánh Cụt Băng Tuyết (ice-penguin): Trượt bụng & nhảy qua các tảng băng nổi */
+body[data-ag-theme="ice-penguin"] .ag-bubble-sticker,
+body[data-ag-theme="ice-penguin"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="ice-penguin"] .ag-card-sticker {
+  animation: agIdlePenguin 2.2s ease-in-out infinite !important;
+}
+@keyframes agIdlePenguin {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: translateY(-4px) rotate(6deg); }
+}
+body[data-ag-theme="ice-penguin"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="ice-penguin"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="ice-penguin"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.45)) drop-shadow(0 0 12px rgba(96,165,250,0.8)) !important;
+}
+
+/* 13. Người Tuyết Giáng Sinh (noel-snowman): Cưỡi tuần lộc mũi đỏ phát quà qua rừng thông Noel */
+body[data-ag-theme="noel-snowman"] .ag-bubble-sticker,
+body[data-ag-theme="noel-snowman"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="noel-snowman"] .ag-card-sticker {
+  animation: agIdleSnowman 2.6s ease-in-out infinite !important;
+}
+@keyframes agIdleSnowman {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-6px) rotate(3deg); }
+}
+body[data-ag-theme="noel-snowman"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="noel-snowman"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="noel-snowman"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.5)) drop-shadow(0 0 12px rgba(250,204,21,0.75)) !important;
+}
+
+/* 14. Kỳ Lân Múa Tết (tet-lion): Nhảy Mai Hoa Thung hái Lộc đầu xuân */
+body[data-ag-theme="tet-lion"] .ag-bubble-sticker,
+body[data-ag-theme="tet-lion"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="tet-lion"] .ag-card-sticker {
+  animation: agIdleTetLion 2.2s ease-in-out infinite !important;
+}
+@keyframes agIdleTetLion {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-7px) rotate(4deg); }
+}
+body[data-ag-theme="tet-lion"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="tet-lion"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="tet-lion"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.55)) drop-shadow(0 0 14px rgba(250,204,21,0.85)) !important;
+}
+
+/* 15. Mèo Code Dạo (code-cat): Cưỡi con trỏ chuột đi bắt bug */
+body[data-ag-theme="code-cat"] .ag-bubble-sticker,
+body[data-ag-theme="code-cat"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="code-cat"] .ag-card-sticker {
+  animation: agIdleCodeCat 3s ease-in-out infinite !important;
+}
+@keyframes agIdleCodeCat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(-2deg); }
+}
+body[data-ag-theme="code-cat"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="code-cat"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="code-cat"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.55)) drop-shadow(0 0 12px rgba(34,197,94,0.7)) !important;
+}
+
+/* ========================================================
+   TYPING REACTION: per-mascot keystroke particles + thinking bubble
+   (3 states: typing / typing-fast / pause)
+   ======================================================== */
+body.ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker {
+  animation: agTypeBob var(--ag-type-speed, 0.9s) ease-in-out infinite !important;
+  transform-origin: 50% 90% !important;
+}
+@keyframes agTypeBob {
+  0%, 100% { transform: translate(0, 0) rotate(-3deg) scale(1); }
+  50% { transform: translate(-3px, -5px) rotate(4deg) scale(1.05); }
+}
+body[data-ag-theme].ag-theme-active .ag-custom-input-wrapper.ag-typing.ag-typing-pause.ag-typing-pause > .ag-input-sticker {
+  animation: agTypePause 2.6s ease-in-out infinite !important;
+}
+@keyframes agTypePause {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-2px) rotate(6deg); }
+}
+
+/* Per-theme fallback CSS motion while typing */
+body[data-ag-theme="jade-dragon"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyDragon calc(var(--ag-type-speed, 0.9s) * 2.2) ease-in-out infinite !important; }
+@keyframes agTyDragon { 0%,100% { transform: translate(0,0) rotate(-6deg); } 25% { transform: translate(-6px,-6px) rotate(4deg); } 50% { transform: translate(-12px,0) rotate(-4deg); } 75% { transform: translate(-6px,5px) rotate(5deg); } }
+
+body[data-ag-theme="fire-phoenix"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyPhoenix var(--ag-type-speed, 0.9s) ease-in-out infinite !important; }
+@keyframes agTyPhoenix { 0%,100% { transform: translateY(0) scale(1,1); filter: drop-shadow(0 0 4px rgba(236,72,153,0.5)); } 50% { transform: translateY(-9px) scale(1.14,0.9); filter: drop-shadow(0 0 12px rgba(251,146,60,0.95)); } }
+
+body[data-ag-theme="space-astronaut"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyAstro calc(var(--ag-type-speed, 0.9s) * 3) linear infinite !important; }
+@keyframes agTyAstro { 0% { transform: translate(0,0) rotate(0deg); } 25% { transform: translate(-5px,-8px) rotate(90deg); } 50% { transform: translate(-10px,-2px) rotate(180deg); } 75% { transform: translate(-5px,-8px) rotate(270deg); } 100% { transform: translate(0,0) rotate(360deg); } }
+
+body[data-ag-theme="wise-owl"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyOwl calc(var(--ag-type-speed, 0.9s) * 2) ease-in-out infinite !important; transform-origin: 50% 70% !important; }
+@keyframes agTyOwl { 0%,100% { transform: rotate(0deg); } 20% { transform: rotate(-22deg); } 45% { transform: rotate(-22deg); } 55% { transform: rotate(20deg); } 80% { transform: rotate(20deg); } }
+
+body[data-ag-theme="moon-witch"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyWitch var(--ag-type-speed, 0.9s) ease-in-out infinite !important; transform-origin: 80% 90% !important; }
+@keyframes agTyWitch { 0%,100% { transform: rotate(-12deg) translateX(0); } 50% { transform: rotate(10deg) translateX(-8px); } }
+
+body[data-ag-theme="fox-chibi"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyFox calc(var(--ag-type-speed, 0.9s) * 0.55) ease-in-out infinite alternate !important; transform-origin: 80% 90% !important; }
+@keyframes agTyFox { 0% { transform: rotate(-14deg) translateX(2px); } 100% { transform: rotate(14deg) translateX(-4px); } }
+
+body[data-ag-theme="sakura-bunny"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyBunny calc(var(--ag-type-speed, 0.9s) * 0.7) cubic-bezier(0.3, 0, 0.4, 1) infinite !important; }
+@keyframes agTyBunny { 0%,100% { transform: translateY(0) scale(1.08,0.9); } 40% { transform: translateY(-13px) scale(0.94,1.1); } 70% { transform: translateY(-2px) scale(1.04,0.96); } }
+
+body[data-ag-theme="ocean-shark"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyShark calc(var(--ag-type-speed, 0.9s) * 2.4) ease-in-out infinite !important; }
+@keyframes agTyShark { 0% { transform: translate(0,0) rotate(0deg); } 25% { transform: translate(-16px,3px) rotate(-12deg); } 50% { transform: translate(-30px,0) rotate(0deg) scaleX(-1); } 75% { transform: translate(-16px,3px) rotate(12deg) scaleX(-1); } 100% { transform: translate(0,0) rotate(0deg); } }
+
+body[data-ag-theme="gangster-pawn"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyPawn calc(var(--ag-type-speed, 0.9s) * 1.3) ease-in-out infinite !important; transform-origin: 50% 100% !important; }
+@keyframes agTyPawn { 0%,100% { transform: translateY(0) rotate(-3deg); } 35% { transform: translateY(5px) rotate(5deg); } 60% { transform: translateY(0) rotate(-3deg); } }
+
+body[data-ag-theme="ice-penguin"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyPenguin calc(var(--ag-type-speed, 0.9s) * 0.6) ease-in-out infinite alternate !important; transform-origin: 50% 100% !important; }
+@keyframes agTyPenguin { 0% { transform: rotate(-12deg) translateX(-2px); } 100% { transform: rotate(12deg) translateX(2px); } }
+
+body[data-ag-theme="ai-robot"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyRobot calc(var(--ag-type-speed, 0.9s) * 0.25) steps(2) infinite !important; }
+@keyframes agTyRobot { 0% { transform: translate(-1.5px,0); filter: drop-shadow(0 0 5px rgba(56,189,248,0.9)); } 100% { transform: translate(1.5px,-1px); filter: drop-shadow(0 0 2px rgba(56,189,248,0.4)); } }
+
+body[data-ag-theme="black-cat"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyBlackCat calc(var(--ag-type-speed, 0.9s) * 1.4) ease-in-out infinite !important; transform-origin: 50% 100% !important; }
+@keyframes agTyBlackCat { 0%,55%,100% { transform: translate(0,0) rotate(0deg) scale(1); } 65% { transform: translate(-3px,3px) rotate(-8deg) scale(1.08,0.88); } 78% { transform: translate(-14px,-6px) rotate(-18deg) scale(1.06); } 90% { transform: translate(-4px,2px) rotate(-4deg); } }
+
+body[data-ag-theme="noel-snowman"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTySnowman calc(var(--ag-type-speed, 0.9s) * 1.1) ease-in-out infinite !important; transform-origin: 50% 100% !important; }
+@keyframes agTySnowman { 0%,100% { transform: rotate(-9deg); } 50% { transform: rotate(9deg) translateY(-3px); } }
+
+body[data-ag-theme="tet-lion"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyLion calc(var(--ag-type-speed, 0.9s) * 0.8) ease-in-out infinite !important; transform-origin: 50% 90% !important; }
+@keyframes agTyLion { 0% { transform: translateX(0) rotate(-12deg); } 25% { transform: translateX(-6px) rotate(0deg) scale(1.1); } 50% { transform: translateX(0) rotate(12deg); } 75% { transform: translateX(-6px) rotate(0deg) scale(1.1); } 100% { transform: translateX(0) rotate(-12deg); } }
+
+body[data-ag-theme="code-cat"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyCodeCat calc(var(--ag-type-speed, 0.9s) * 0.35) ease-in-out infinite alternate !important; transform-origin: 50% 100% !important; }
+@keyframes agTyCodeCat { 0% { transform: translateY(0) rotate(0deg); } 100% { transform: translateY(-3px) rotate(-2deg); } }
+
+/* Themes with a dedicated typing SVG: the SVG animates itself, so disable the CSS motion while typing */
+body.ag-theme-active .ag-custom-input-wrapper.ag-typing:not(.ag-typing-pause).ag-has-typing-svg > .ag-input-sticker {
+  animation: none !important;
+}
+
+.ag-type-p {
+  position: absolute !important;
+  top: -28px !important;
+  right: 42px !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  z-index: 60 !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+  background: transparent !important;
+  white-space: nowrap !important;
+  animation: agTypeFloat 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+.ag-type-p.mono {
+  font-family: Consolas, 'Courier New', monospace !important;
+  font-weight: 700 !important;
+  color: var(--ag-theme-accent, #22c55e) !important;
+  text-shadow: 0 0 6px var(--ag-theme-accent, #22c55e) !important;
+}
+@keyframes agTypeFloat {
+  0% { transform: translate(0, 0) scale(0.5) rotate(0deg); opacity: 1; }
+  70% { opacity: 0.9; }
+  100% { transform: translate(var(--tx, -20px), var(--ty, -34px)) scale(1.1) rotate(var(--tr, 20deg)); opacity: 0; }
+}
+.ag-think-bubble {
+  position: absolute !important;
+  top: -68px !important;
+  right: 80px !important;
+  padding: 3px 9px !important;
+  border-radius: 12px 12px 12px 3px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+  z-index: 62 !important;
+  background: var(--ag-theme-bubble-bg, rgba(48, 22, 20, 0.95)) !important;
+  border: 1px solid var(--ag-theme-bubble-border, rgba(225, 105, 65, 0.65)) !important;
+  color: var(--ag-theme-bubble-text, #fff5eb) !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35) !important;
+  animation: agThinkPop 2.2s ease-in-out infinite !important;
+}
+.ag-think-bubble.mono { font-family: Consolas, 'Courier New', monospace !important; }
+@keyframes agThinkPop {
+  0% { transform: translateY(6px) scale(0.6); opacity: 0; }
+  15% { transform: translateY(0) scale(1.05); opacity: 1; }
+  25%, 85% { transform: translateY(-2px) scale(1); opacity: 1; }
+  100% { transform: translateY(-6px) scale(0.95); opacity: 0; }
+}
+body.ag-theme-active .ag-custom-input-wrapper:hover > .ag-think-bubble,
+body.ag-theme-active .ag-custom-input-wrapper:hover > .ag-type-p {
+  display: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ag-type-p, .ag-think-bubble { display: none !important; }
+}
+
+/* Interactive Hover Burst Particles */
+.ag-burst-p {
+  position: absolute !important;
+  top: -18px !important;
+  right: 26px !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  z-index: 60 !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+  background: transparent !important;
+  animation: agBurstOut 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+@keyframes agBurstOut {
+  0% { transform: translate(0, 0) scale(0.4) rotate(0deg); opacity: 1; }
+  70% { opacity: 0.95; }
+  100% { transform: translate(var(--bx, 0px), var(--by, -40px)) scale(1.15) rotate(var(--br, 45deg)); opacity: 0; }
+}
+
+/* Twinkling sparkles around the bubble */
+body.ag-theme-active .ag-custom-user-bubble > .ag-sparkle {
+  position: absolute !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  background: transparent !important;
+  color: var(--ag-theme-accent, #e06030) !important;
+  -webkit-text-fill-color: var(--ag-theme-accent, #e06030) !important;
+  text-shadow: 0 0 6px var(--ag-theme-accent, #e06030), 0 0 12px var(--ag-theme-bubble-border, rgba(225,105,65,0.6)) !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+  z-index: 51 !important;
+  animation: agTwinkle 2.4s ease-in-out infinite !important;
+}
+body.ag-theme-active .ag-custom-user-bubble > .ag-sparkle.s1 { top: -9px !important; left: -7px !important; animation-delay: 0s !important; }
+body.ag-theme-active .ag-custom-user-bubble > .ag-sparkle.s2 { bottom: -8px !important; right: -6px !important; font-size: 11px !important; animation-delay: 0.8s !important; }
+body.ag-theme-active .ag-custom-user-bubble > .ag-sparkle.s3 { top: 45% !important; left: -15px !important; font-size: 9px !important; animation-delay: 1.6s !important; }
+
+@keyframes agTwinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.6) rotate(0deg); }
+  50% { opacity: var(--o, 1); transform: scale(1.2) rotate(20deg); }
+}

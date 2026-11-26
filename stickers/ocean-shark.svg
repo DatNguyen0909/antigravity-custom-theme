@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="sharkSkin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="55%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="sharkBelly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="sharkFin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <style>
+      /* Mỗi 15s: Cá Mập thổi bong bóng nước chứa vịt vàng cao su, bóng nổ BỤP làm vịt vàng rơi đội lên đầu Cá Mập */
+      .bubble-duck { animation: shkBubble 15s ease-in-out infinite; transform-origin: 60px 62px; }
+      .duck-hat { animation: shkDuck 15s ease-out infinite; transform-origin: 60px 18px; }
+      .splash-pop { animation: shkSplash 15s ease-out infinite; transform-origin: 60px 45px; }
+
+      @keyframes shkBubble {
+        0%, 72% { opacity: 0; transform: scale(0.1); }
+        77% { opacity: 0.9; transform: translateY(-8px) scale(0.9); }
+        83% { opacity: 0.95; transform: translateY(-18px) scale(1.4); }
+        85%, 100% { opacity: 0; transform: translateY(-20px) scale(0.1); }
+      }
+      @keyframes shkSplash {
+        0%, 83% { opacity: 0; transform: scale(0.3); }
+        85% { opacity: 1; transform: scale(1.4); }
+        88%, 100% { opacity: 0; transform: scale(1.8); }
+      }
+      @keyframes shkDuck {
+        0%, 84% { opacity: 0; transform: translateY(25px) scale(0.3); }
+        87% { opacity: 1; transform: translateY(-3px) rotate(-8deg) scale(1.15); }
+        91% { opacity: 1; transform: translateY(1px) rotate(6deg) scale(1); }
+        95% { opacity: 1; transform: translateY(0px) rotate(0deg) scale(1); }
+        98%, 100% { opacity: 0; transform: translateY(-18px) scale(0.3); }
+      }
+    </style>
+  </defs>
+
+  <g>
+    <path d="M78 88 C94 84, 102 74, 108 60 C108 74, 104 86, 96 92 C104 96, 110 102, 110 110 C100 106, 90 100, 78 96 Z" fill="url(#sharkSkin)" stroke="#082f49" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M50 26 C48 8, 58 3, 68 4 C64 11, 65 15, 70 17 C67 20, 68 24, 70 26 Z" fill="url(#sharkFin)" stroke="#082f49" stroke-width="2.2" stroke-linejoin="round"/>
+
+    <path d="M32 68 C14 70, 10 82, 20 88 C28 88, 34 82, 36 76 Z" fill="url(#sharkSkin)" stroke="#082f49" stroke-width="2.2"/>
+    <path d="M88 68 C106 70, 110 82, 100 88 C92 88, 86 82, 84 76 Z" fill="url(#sharkSkin)" stroke="#082f49" stroke-width="2.2"/>
+
+    <path d="M30 56 C28 32, 42 22, 60 22 C78 22, 92 32, 90 56 C92 84, 78 104, 60 104 C42 104, 28 84, 30 56 Z" fill="url(#sharkSkin)" stroke="#082f49" stroke-width="2.3"/>
+    <path d="M34 58 C42 52, 50 55, 60 55 C70 55, 78 52, 86 58 C87 82, 76 102, 60 102 C44 102, 33 82, 34 58 Z" fill="url(#sharkBelly)"/>
+
+    <path d="M37 72 Q35 76 37 80 M41 73 Q39 77 41 81" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M83 72 Q85 76 83 80 M79 73 Q81 77 79 81" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round"/>
+
+    <ellipse cx="45" cy="49" rx="6.5" ry="7.5" fill="#082f49"/>
+    <ellipse cx="45" cy="49.5" rx="5.2" ry="6" fill="#0284c7"/>
+    <ellipse cx="45" cy="51.5" rx="3.8" ry="3.2" fill="#67e8f9"/>
+    <circle cx="42.5" cy="46" r="2.5" fill="#ffffff"/>
+    <circle cx="47.5" cy="52" r="1.2" fill="#ffffff"/>
+
+    <ellipse cx="75" cy="49" rx="6.5" ry="7.5" fill="#082f49"/>
+    <ellipse cx="75" cy="49.5" rx="5.2" ry="6" fill="#0284c7"/>
+    <ellipse cx="75" cy="51.5" rx="3.8" ry="3.2" fill="#67e8f9"/>
+    <circle cx="72.5" cy="46" r="2.5" fill="#ffffff"/>
+    <circle cx="77.5" cy="52" r="1.2" fill="#ffffff"/>
+
+    <ellipse cx="35" cy="56" rx="4.5" ry="2.3" fill="#fb7185" opacity="0.8"/>
+    <ellipse cx="85" cy="56" rx="4.5" ry="2.3" fill="#fb7185" opacity="0.8"/>
+
+    <path d="M49 58 Q60 60 71 58 C70 67, 50 67, 49 58 Z" fill="#e11d48" stroke="#082f49" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="52,58.5 55,62.5 57.5,58.8 60,63 62.5,58.8 65,62.5 68,58.5" fill="#ffffff"/>
+
+    <ellipse cx="47" cy="103" rx="6.5" ry="4" fill="url(#sharkSkin)" stroke="#082f49" stroke-width="1.8"/>
+    <ellipse cx="73" cy="103" rx="6.5" ry="4" fill="url(#sharkSkin)" stroke="#082f49" stroke-width="1.8"/>
+
+    <!-- Bong bóng nước khổng lồ phồng lên -->
+    <g class="bubble-duck">
+      <circle cx="60" cy="58" r="14" fill="#bae6fd" fill-opacity="0.65" stroke="#ffffff" stroke-width="1.6"/>
+      <circle cx="55" cy="52" r="3.5" fill="#ffffff" opacity="0.9"/>
+    </g>
+
+    <!-- Tia nước bắn khi bóng nổ -->
+    <g class="splash-pop">
+      <circle cx="42" cy="36" r="2.5" fill="#ffffff"/>
+      <circle cx="78" cy="36" r="2.5" fill="#7dd3fc"/>
+      <circle cx="60" cy="26" r="2.8" fill="#e0f2fe"/>
+    </g>
+
+    <!-- Vịt vàng cao su rơi xuống đội lên đầu Cá Mập -->
+    <g class="duck-hat">
+      <ellipse cx="60" cy="20" rx="9" ry="6" fill="#fde047" stroke="#ca8a04" stroke-width="1.2"/>
+      <circle cx="56" cy="13" r="5.5" fill="#fde047" stroke="#ca8a04" stroke-width="1.2"/>
+      <circle cx="54.5" cy="12" r="1.3" fill="#0f172a"/>
+      <polygon points="50,12 46,13.5 50,15" fill="#f97316"/>
+    </g>
+
+    <circle cx="20" cy="30" r="5" fill="#e0f2fe" fill-opacity="0.55" stroke="#7dd3fc" stroke-width="1.4"/>
+    <circle cx="18.5" cy="28.5" r="1.6" fill="#ffffff"/>
+    <circle cx="98" cy="24" r="3.8" fill="#e0f2fe" fill-opacity="0.55" stroke="#7dd3fc" stroke-width="1.2"/>
+  </g>
+</svg>

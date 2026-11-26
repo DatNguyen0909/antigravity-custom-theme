@@ -1,0 +1,10 @@
+# Build artifacts & backups
+temp_build.asar
+*.bak
+*.log
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+node_modules/

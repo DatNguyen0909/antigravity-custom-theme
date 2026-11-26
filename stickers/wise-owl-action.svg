@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95">
+  <defs>
+    <linearGradient id="owlFeather" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="60%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+    <linearGradient id="scrollPaper" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <style>
+      .owl-fly { animation: owlFlight 3.6s ease-in-out infinite; }
+      .owl-wing { animation: flapOwl 0.35s ease-in-out infinite alternate; transform-origin: 58px 38px; }
+      .cloud-scroll { animation: driftScroll 2.8s ease-in-out infinite alternate; }
+      @keyframes driftScroll { 0% { transform: translateX(-3px); } 100% { transform: translateX(4px); } }
+      @keyframes owlFlight {
+        0% { transform: translate(115px, 6px) rotate(-3deg); }
+        25% { transform: translate(55px, -8px) rotate(5deg); }
+        50% { transform: translate(8px, 4px) rotate(-3deg); }
+        75% { transform: translate(60px, 8px) rotate(-5deg); }
+        100% { transform: translate(115px, 6px) rotate(-3deg); }
+      }
+      @keyframes flapOwl {
+        0% { transform: rotate(-20deg); }
+        100% { transform: rotate(18deg); }
+      }
+    </style>
+  </defs>
+
+  <!-- NÚI CỔ PHONG va TÙNG BÁCH BÊN TRÁI -->
+  <g opacity="0.88">
+    <polygon points="14,66 36,24 58,66" fill="#78350f" stroke="#fbbf24" stroke-width="1.2"/>
+    <polygon points="38,66 56,34 74,66" fill="#92400e" stroke="#fde68a" stroke-width="1.1"/>
+    <path d="M 10 64 C 24 56, 46 56, 62 64" fill="none" stroke="#fef3c7" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- CÚ THÔNG THÁI ĐƯA THƯ CỔ BAY QUA NÚI -->
+  <g class="owl-fly">
+    <!-- Thân Cú Học Giả Chibi -->
+    <ellipse cx="58" cy="42" rx="18" ry="13" fill="url(#owlFeather)" stroke="#451a03" stroke-width="1.4"/>
+    <ellipse cx="64" cy="44" rx="11" ry="9" fill="#fef3c7"/>
+    <!-- Mũ Bác Sĩ Học Giả va Kính Tròn -->
+    <polygon points="52,26 68,22 82,26 68,30" fill="#1e293b" stroke="#fbbf24" stroke-width="1"/>
+    <circle cx="71" cy="38" r="5" fill="#ffffff" stroke="#fbbf24" stroke-width="1.5"/>
+    <circle cx="72" cy="38" r="2.5" fill="#451a03"/>
+    <polygon points="77,39 83,41 77,43" fill="#fbbf24" stroke="#78350f" stroke-width="0.9"/>
+    <!-- Cuộn Thư Cổ buộc nơ đỏ dưới chân -->
+    <rect x="48" y="53" width="22" height="7" rx="3.5" fill="url(#scrollPaper)" stroke="#92400e" stroke-width="1.1"/>
+    <rect x="57" y="52" width="4" height="9" rx="1" fill="#e11d48"/>
+    <!-- Đôi cánh vỗ -->
+    <g class="owl-wing">
+      <path d="M 58 38 C 46 22, 32 20, 26 28 C 34 36, 46 42, 58 42 Z" fill="url(#owlFeather)" stroke="#fef3c7" stroke-width="1.1"/>
+    </g>
+  </g>
+
+  <!-- ĐÈN LỒNG CỔ va MÂY VÀNG BÊN PHẢI -->
+  <g class="cloud-scroll">
+    <path d="M 188 62 C 180 62, 178 52, 186 48 C 186 38, 198 34, 206 38 C 212 30, 228 30, 234 39 C 244 37, 250 44, 246 53 C 252 58, 244 64, 234 64 Z" fill="url(#scrollPaper)" stroke="#b45309" stroke-width="1.4"/>
+    <ellipse cx="226" cy="32" rx="7" ry="9" fill="#ef4444" stroke="#fbbf24" stroke-width="1.2"/>
+  </g>
+</svg>

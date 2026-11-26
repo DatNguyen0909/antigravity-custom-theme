@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95">
+  <defs>
+    <linearGradient id="caFur" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="caHoodie" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <style>
+      /* Cat rides a giant mouse cursor from right to left, catching bugs */
+      .ca-rider { animation: caFly 3.2s linear infinite; }
+      .ca-bob { animation: caBob 0.6s ease-in-out infinite alternate; }
+      .ca-net { transform-origin: 30px 30px; animation: caSwing 0.53s ease-in-out infinite alternate; }
+      .ca-trail { animation: caTrail 0.4s linear infinite; }
+      .bug1 { transform-origin: 150px 62px; animation: caBug1 3.2s linear infinite; }
+      .bug2 { transform-origin: 95px 40px; animation: caBug2 3.2s linear infinite; }
+      .bug3 { transform-origin: 40px 66px; animation: caBug3 3.2s linear infinite; }
+      .pop1 { animation: caPop1 3.2s ease-out infinite; opacity: 0; }
+      .pop2 { animation: caPop2 3.2s ease-out infinite; opacity: 0; }
+      .pop3 { animation: caPop3 3.2s ease-out infinite; opacity: 0; }
+      .bug-legs { animation: caLegs 0.18s linear infinite alternate; }
+
+      @keyframes caFly { 0% { transform: translate(160px, 0); } 100% { transform: translate(-100px, 0); } }
+      @keyframes caBob { 0% { transform: translateY(-3px) rotate(-2deg); } 100% { transform: translateY(3px) rotate(2deg); } }
+      @keyframes caSwing { 0% { transform: rotate(-25deg); } 100% { transform: rotate(20deg); } }
+      @keyframes caTrail { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -16; } }
+      @keyframes caLegs { 0% { transform: translateX(-0.6px); } 100% { transform: translateX(0.6px); } }
+
+      @keyframes caBug1 { 0%, 8% { opacity: 1; transform: scale(1); } 11%, 100% { opacity: 0; transform: scale(0) rotate(180deg); } }
+      @keyframes caBug2 { 0%, 30% { opacity: 1; transform: scale(1); } 33%, 100% { opacity: 0; transform: scale(0) rotate(180deg); } }
+      @keyframes caBug3 { 0%, 52% { opacity: 1; transform: scale(1); } 55%, 96% { opacity: 0; transform: scale(0) rotate(180deg); } 100% { opacity: 1; transform: scale(1); } }
+      @keyframes caPop1 { 0%, 9% { opacity: 0; transform: translateY(0); } 12% { opacity: 1; } 28%, 100% { opacity: 0; transform: translateY(-16px); } }
+      @keyframes caPop2 { 0%, 31% { opacity: 0; transform: translateY(0); } 34% { opacity: 1; } 50%, 100% { opacity: 0; transform: translateY(-16px); } }
+      @keyframes caPop3 { 0%, 53% { opacity: 0; transform: translateY(0); } 56% { opacity: 1; } 72%, 100% { opacity: 0; transform: translateY(-16px); } }
+    </style>
+  </defs>
+
+  <!-- BACKGROUND: code editor window with code lines + brackets -->
+  <g opacity="0.55">
+    <rect x="6" y="8" width="248" height="80" rx="7" fill="#0d1117" stroke="#30363d" stroke-width="1.4"/>
+    <rect x="6" y="8" width="248" height="11" rx="7" fill="#161b22"/>
+    <circle cx="15" cy="13.5" r="2.3" fill="#ef4444"/>
+    <circle cx="23" cy="13.5" r="2.3" fill="#facc15"/>
+    <circle cx="31" cy="13.5" r="2.3" fill="#22c55e"/>
+    <text x="130" y="16" font-size="6" fill="#8b949e" text-anchor="middle" font-family="monospace">main.ts</text>
+    <g font-family="monospace" font-size="6.5">
+      <text x="14" y="30" fill="#484f58">1</text>
+      <text x="14" y="42" fill="#484f58">2</text>
+      <text x="14" y="54" fill="#484f58">3</text>
+      <text x="14" y="66" fill="#484f58">4</text>
+      <text x="14" y="78" fill="#484f58">5</text>
+    </g>
+    <rect x="26" y="25" width="30" height="4" rx="2" fill="#c084fc"/>
+    <rect x="60" y="25" width="44" height="4" rx="2" fill="#38bdf8"/>
+    <rect x="34" y="37" width="56" height="4" rx="2" fill="#4ade80"/>
+    <rect x="34" y="49" width="38" height="4" rx="2" fill="#facc15"/>
+    <rect x="76" y="49" width="52" height="4" rx="2" fill="#38bdf8"/>
+    <rect x="34" y="61" width="70" height="4" rx="2" fill="#f87171"/>
+    <rect x="26" y="73" width="16" height="4" rx="2" fill="#c084fc"/>
+    <text x="214" y="58" font-size="20" font-weight="900" fill="#22c55e" opacity="0.6" font-family="monospace" text-anchor="middle">&lt;/&gt;</text>
+  </g>
+
+  <!-- BUGS crawling on the code -->
+  <g class="bug1">
+    <g transform="translate(150, 62)">
+      <g class="bug-legs" stroke="#7f1d1d" stroke-width="1.1" stroke-linecap="round">
+        <path d="M -4 -2 L -7 -4 M -4 0 L -8 0 M -4 2 L -7 4 M 4 -2 L 7 -4 M 4 0 L 8 0 M 4 2 L 7 4"/>
+      </g>
+      <ellipse cx="0" cy="0" rx="4.5" ry="5.5" fill="#ef4444" stroke="#7f1d1d" stroke-width="0.8"/>
+      <line x1="0" y1="-5" x2="0" y2="5" stroke="#7f1d1d" stroke-width="0.8"/>
+      <circle cx="0" cy="-6.5" r="2.4" fill="#1e293b"/>
+    </g>
+  </g>
+  <g class="bug2">
+    <g transform="translate(95, 40)">
+      <g class="bug-legs" stroke="#7f1d1d" stroke-width="1.1" stroke-linecap="round">
+        <path d="M -4 -2 L -7 -4 M -4 0 L -8 0 M -4 2 L -7 4 M 4 -2 L 7 -4 M 4 0 L 8 0 M 4 2 L 7 4"/>
+      </g>
+      <ellipse cx="0" cy="0" rx="4.5" ry="5.5" fill="#f97316" stroke="#7c2d12" stroke-width="0.8"/>
+      <line x1="0" y1="-5" x2="0" y2="5" stroke="#7c2d12" stroke-width="0.8"/>
+      <circle cx="0" cy="-6.5" r="2.4" fill="#1e293b"/>
+    </g>
+  </g>
+  <g class="bug3">
+    <g transform="translate(40, 66)">
+      <g class="bug-legs" stroke="#7f1d1d" stroke-width="1.1" stroke-linecap="round">
+        <path d="M -4 -2 L -7 -4 M -4 0 L -8 0 M -4 2 L -7 4 M 4 -2 L 7 -4 M 4 0 L 8 0 M 4 2 L 7 4"/>
+      </g>
+      <ellipse cx="0" cy="0" rx="4.5" ry="5.5" fill="#ef4444" stroke="#7f1d1d" stroke-width="0.8"/>
+      <line x1="0" y1="-5" x2="0" y2="5" stroke="#7f1d1d" stroke-width="0.8"/>
+      <circle cx="0" cy="-6.5" r="2.4" fill="#1e293b"/>
+    </g>
+  </g>
+
+  <!-- "Fixed!" pops -->
+  <text class="pop1" x="150" y="50" font-size="8" font-weight="900" fill="#4ade80" text-anchor="middle" font-family="monospace">✓ fixed</text>
+  <text class="pop2" x="95" y="28" font-size="8" font-weight="900" fill="#4ade80" text-anchor="middle" font-family="monospace">✓ fixed</text>
+  <text class="pop3" x="40" y="54" font-size="8" font-weight="900" fill="#4ade80" text-anchor="middle" font-family="monospace">✓ fixed</text>
+
+  <!-- FOREGROUND: cat riding a giant mouse cursor -->
+  <g class="ca-rider">
+    <g class="ca-bob">
+      <!-- Speed trail -->
+      <path class="ca-trail" d="M 46 52 L 86 52 M 50 60 L 92 60" stroke="#4ade80" stroke-width="2" stroke-dasharray="6 4" stroke-linecap="round" opacity="0.75"/>
+
+      <!-- Giant cursor arrow (pointing left = flying direction) -->
+      <path d="M 4 48 L 44 34 L 36 47 L 52 60 L 46 66 L 30 53 L 24 66 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2" stroke-linejoin="round"/>
+
+      <!-- Cat sitting on cursor -->
+      <path d="M 26 44 Q 24 28 36 26 Q 48 28 46 44 Z" fill="url(#caHoodie)" stroke="#14532d" stroke-width="1"/>
+      <!-- Tail -->
+      <path d="M 44 42 Q 58 40 56 28 Q 55 24 52 26 Q 54 36 43 38 Z" fill="url(#caFur)" stroke="#334155" stroke-width="0.8"/>
+      <!-- Head -->
+      <polygon points="24,16 25,4 32,12" fill="url(#caFur)" stroke="#334155" stroke-width="0.8"/>
+      <polygon points="40,16 39,4 33,12" fill="url(#caFur)" stroke="#334155" stroke-width="0.8"/>
+      <ellipse cx="32" cy="20" rx="11" ry="9.5" fill="url(#caFur)" stroke="#334155" stroke-width="1"/>
+      <ellipse cx="27" cy="23" rx="5" ry="3.5" fill="#e2e8f0"/>
+      <path d="M 23 21 L 25.5 21 L 24 23 Z" fill="#fb7185"/>
+      <!-- Glasses + eyes -->
+      <ellipse cx="27" cy="18" rx="1.6" ry="2" fill="#0f172a"/>
+      <ellipse cx="35" cy="18" rx="1.6" ry="2" fill="#0f172a"/>
+      <rect x="23" y="15" width="8" height="6" rx="2" fill="none" stroke="#0f172a" stroke-width="1.4"/>
+      <rect x="32" y="15" width="8" height="6" rx="2" fill="none" stroke="#0f172a" stroke-width="1.4"/>
+
+      <!-- Bug net swinging forward -->
+      <g class="ca-net">
+        <line x1="30" y1="30" x2="10" y2="20" stroke="#92400e" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="6" cy="18" rx="6" ry="7" fill="#e2e8f0" fill-opacity="0.35" stroke="#e2e8f0" stroke-width="1.4"/>
+        <path d="M 2 14 L 10 22 M 10 14 L 2 22" stroke="#e2e8f0" stroke-width="0.6"/>
+      </g>
+      <!-- Paw holding net -->
+      <circle cx="28" cy="31" r="3" fill="#e2e8f0" stroke="#334155" stroke-width="0.8"/>
+
+      <!-- Bug sack -->
+      <path d="M 46 46 Q 44 38 50 36 Q 56 38 54 46 Q 50 50 46 46 Z" fill="#a16207" stroke="#713f12" stroke-width="0.9"/>
+      <text x="50" y="45" font-size="5" fill="#fef08a" text-anchor="middle" font-family="monospace">BUG</text>
+    </g>
+  </g>
+</svg>

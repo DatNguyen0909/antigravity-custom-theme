@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="fpgBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="50%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#881337"/>
+    </linearGradient>
+    <linearGradient id="fpgGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <linearGradient id="fpgBelly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff1f2"/>
+      <stop offset="100%" stop-color="#fecdd3"/>
+    </linearGradient>
+    <radialGradient id="fpgOrb" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </radialGradient>
+  </defs>
+  <style>
+    .fp-wl { transform-origin: 38px 70px; animation: fpFlapL 0.3s ease-in-out infinite alternate; }
+    .fp-wr { transform-origin: 82px 70px; animation: fpFlapR 0.3s ease-in-out infinite alternate; }
+    .fp-tail { transform-origin: 60px 92px; animation: fpTail 0.5s ease-in-out infinite alternate; }
+    .fp-body { animation: fpBob 0.6s ease-in-out infinite alternate; }
+    .fp-rune { stroke-dasharray: 14; animation: fpRune 1.4s linear infinite; }
+    .fp-r2 { animation-delay: 0.45s; }
+    .fp-r3 { animation-delay: 0.9s; }
+    .fp-spark { animation: fpSpark 0.7s ease-out infinite; opacity: 0; }
+    .fp-s2 { animation-delay: 0.23s; }
+    .fp-s3 { animation-delay: 0.46s; }
+    @keyframes fpFlapL { 0% { transform: rotate(14deg); } 100% { transform: rotate(-16deg); } }
+    @keyframes fpFlapR { 0% { transform: rotate(-14deg); } 100% { transform: rotate(16deg); } }
+    @keyframes fpTail { 0% { transform: scale(0.9,0.92) rotate(-4deg); } 100% { transform: scale(1.12,1.15) rotate(4deg); } }
+    @keyframes fpBob { 0% { transform: translateY(-1px); } 100% { transform: translateY(2px); } }
+    @keyframes fpRune { 0% { stroke-dashoffset: 14; opacity: 1; } 60% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0.1; } }
+    @keyframes fpSpark { 0% { opacity: 0; transform: translate(0,0) scale(0.4); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(5px,-9px) scale(1); } }
+  </style>
+
+  <ellipse cx="60" cy="112" rx="26" ry="4" fill="#4c0519" opacity="0.3"/>
+
+  <!-- Tail flames -->
+  <g class="fp-tail">
+    <path d="M60 86 C40 98, 30 112, 40 116 C46 108, 54 104, 60 100 Z" fill="url(#fpgGold)" stroke="#881337" stroke-width="1.6"/>
+    <path d="M60 86 C80 98, 90 112, 80 116 C74 108, 66 104, 60 100 Z" fill="url(#fpgGold)" stroke="#881337" stroke-width="1.6"/>
+    <path d="M60 88 C52 100, 54 112, 60 118 C66 112, 68 100, 60 88 Z" fill="url(#fpgBody)" stroke="#4c0519" stroke-width="1.6"/>
+    <path d="M60 96 C57 104, 58 110, 60 113 C62 110, 63 104, 60 96 Z" fill="#fde047"/>
+  </g>
+
+  <!-- Wings flapping -->
+  <g class="fp-wl">
+    <path d="M38 62 C14 48, 6 68, 18 82 C12 86, 22 96, 38 86 Z" fill="url(#fpgBody)" stroke="#4c0519" stroke-width="2"/>
+    <path d="M24 68 Q18 74 28 78" fill="none" stroke="url(#fpgGold)" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <g class="fp-wr">
+    <path d="M82 62 C104 50, 112 62, 104 72 C108 74, 106 78, 100 78 L84 82 Z" fill="url(#fpgBody)" stroke="#4c0519" stroke-width="2"/>
+    <path d="M96 62 Q102 68 94 72" fill="none" stroke="url(#fpgGold)" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <g class="fp-body">
+    <ellipse cx="60" cy="70" rx="24" ry="24" fill="url(#fpgBody)" stroke="#4c0519" stroke-width="2.2"/>
+    <ellipse cx="60" cy="76" rx="15" ry="15" fill="url(#fpgBelly)"/>
+    <path d="M52 74 Q56 78 60 74 Q64 78 68 74" fill="none" stroke="#fda4af" stroke-width="1.6" stroke-linecap="round"/>
+    <!-- Crest flames -->
+    <path d="M50 30 C46 18, 52 10, 56 6 C56 14, 60 16, 60 22 C60 14, 64 10, 66 4 C70 14, 72 22, 70 30 Z" fill="url(#fpgGold)" stroke="#881337" stroke-width="1.5"/>
+    <!-- Head -->
+    <circle cx="60" cy="44" r="19" fill="url(#fpgBody)" stroke="#4c0519" stroke-width="2.2"/>
+    <ellipse cx="60" cy="50" rx="13" ry="10" fill="url(#fpgBelly)"/>
+    <ellipse cx="51" cy="44" rx="4.5" ry="5.5" fill="#4c0519"/>
+    <ellipse cx="69" cy="44" rx="4.5" ry="5.5" fill="#4c0519"/>
+    <circle cx="49.8" cy="42" r="1.8" fill="#ffffff"/>
+    <circle cx="67.8" cy="42" r="1.8" fill="#ffffff"/>
+    <path d="M54 52 L66 52 L60 60 Z" fill="url(#fpgGold)" stroke="#b45309" stroke-width="1.2" stroke-linejoin="round"/>
+    <ellipse cx="44" cy="52" rx="3.5" ry="2" fill="#fb7185" opacity="0.7"/>
+    <ellipse cx="76" cy="52" rx="3.5" ry="2" fill="#fb7185" opacity="0.7"/>
+  </g>
+
+  <!-- Glowing runes drawn in the air by right wing-tip -->
+  <g fill="none" stroke="#fde047" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path class="fp-rune" d="M88 34 L92 24 L96 34"/>
+    <path class="fp-rune fp-r2" d="M100 28 L108 28 M104 28 L104 38"/>
+    <path class="fp-rune fp-r3" d="M92 44 Q100 40 108 46"/>
+  </g>
+  <circle cx="106" cy="46" r="3" fill="url(#fpgOrb)"/>
+  <g>
+    <circle class="fp-spark" cx="100" cy="34" r="1.8" fill="#fde047"/>
+    <circle class="fp-spark fp-s2" cx="108" cy="40" r="1.5" fill="#f472b6"/>
+    <circle class="fp-spark fp-s3" cx="94" cy="48" r="1.5" fill="#ffffff"/>
+    <circle class="fp-spark fp-s2" cx="14" cy="50" r="1.5" fill="#fde047"/>
+  </g>
+</svg>

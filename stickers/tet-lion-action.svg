@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95">
+  <defs>
+    <linearGradient id="actTetRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="60%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <linearGradient id="actTetGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <linearGradient id="poleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b91c1c"/>
+      <stop offset="50%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#7f1d1d"/>
+    </linearGradient>
+    <style>
+      .lion-dancer {
+        animation: maiHoaThungJump 3.0s cubic-bezier(0.32, 0.04, 0.35, 1) infinite;
+      }
+      .lion-cape-wave {
+        transform-origin: 24px 18px;
+        animation: capeFlutter 0.38s ease-in-out infinite alternate;
+      }
+      .lion-legs-run {
+        transform-origin: 22px 26px;
+        animation: legsKick 0.35s ease-in-out infinite alternate;
+      }
+      .hanging-lixi {
+        transform-origin: 38px 10px;
+        animation: lixiPluck 3.0s ease-in-out infinite;
+      }
+      .confetti-burst {
+        transform-origin: 38px 28px;
+        animation: tetBurst 3.0s ease-out infinite;
+      }
+      .lantern-sway {
+        transform-origin: 230px 8px;
+        animation: swayLantern 1.8s ease-in-out infinite alternate;
+      }
+
+      /* Lion jumps across the 5 Mai Hoa Thung poles from Right (205px) to Left (36px) to pluck the Lucky Lì Xì! */
+      @keyframes maiHoaThungJump {
+        0% { transform: translate(192px, 34px) rotate(-5deg); }
+        12% { transform: translate(166px, 12px) rotate(12deg); }
+        24% { transform: translate(146px, 28px) rotate(-6deg); }
+        36% { transform: translate(122px, 6px) rotate(14deg); }
+        48% { transform: translate(102px, 22px) rotate(-8deg); }
+        60% { transform: translate(78px, 2px) rotate(15deg); }
+        72% { transform: translate(56px, 16px) rotate(-12deg); }
+        84% { transform: translate(32px, 4px) rotate(8deg) scale(1.08); }
+        94% { transform: translate(26px, 18px) rotate(0deg) scale(1); }
+        100% { transform: translate(192px, 34px) rotate(-5deg); }
+      }
+      @keyframes capeFlutter {
+        0% { transform: rotate(-7deg) scaleY(0.95); }
+        100% { transform: rotate(9deg) scaleY(1.06); }
+      }
+      @keyframes legsKick {
+        0% { transform: rotate(-18deg); }
+        100% { transform: rotate(18deg); }
+      }
+      @keyframes lixiPluck {
+        0%, 76% { opacity: 1; transform: rotate(-6deg) scale(1); }
+        82% { opacity: 1; transform: rotate(18deg) scale(1.25); }
+        88%, 96% { opacity: 0; transform: translateY(12px) scale(0.2); }
+        100% { opacity: 1; transform: rotate(-6deg) scale(1); }
+      }
+      @keyframes tetBurst {
+        0%, 78% { opacity: 0; transform: scale(0.3); }
+        85% { opacity: 1; transform: scale(1.25); }
+        95%, 100% { opacity: 0; transform: scale(1.6) translateY(8px); }
+      }
+      @keyframes swayLantern {
+        0% { transform: rotate(-7deg); }
+        100% { transform: rotate(7deg); }
+      }
+    </style>
+  </defs>
+
+  <!-- BACKGROUND: Golden Apricot Blossom Branch (Cành Mai Vàng) + Red Tết Lantern + Mai Hoa Thung Poles -->
+  <!-- Right Golden Apricot Tree Branch (Cành Mai Vàng) -->
+  <g opacity="0.92">
+    <path d="M 256 26 Q 225 32 198 20 M 232 28 Q 218 42 206 46" fill="none" stroke="#78350f" stroke-width="2.8" stroke-linecap="round"/>
+    <!-- Mai Blossoms -->
+    <g transform="translate(202, 20)">
+      <circle cx="0" cy="-3.5" r="2.5" fill="#facc15"/>
+      <circle cx="3.3" cy="-1" r="2.5" fill="#facc15"/>
+      <circle cx="2" cy="2.8" r="2.5" fill="#facc15"/>
+      <circle cx="-2" cy="2.8" r="2.5" fill="#facc15"/>
+      <circle cx="-3.3" cy="-1" r="2.5" fill="#facc15"/>
+      <circle cx="0" cy="0" r="1.5" fill="#dc2626"/>
+    </g>
+    <g transform="translate(220, 25) scale(0.85)">
+      <circle cx="0" cy="-3.5" r="2.5" fill="#fde047"/>
+      <circle cx="3.3" cy="-1" r="2.5" fill="#fde047"/>
+      <circle cx="2" cy="2.8" r="2.5" fill="#fde047"/>
+      <circle cx="-2" cy="2.8" r="2.5" fill="#fde047"/>
+      <circle cx="-3.3" cy="-1" r="2.5" fill="#fde047"/>
+      <circle cx="0" cy="0" r="1.5" fill="#dc2626"/>
+    </g>
+    <g transform="translate(208, 45) scale(0.8)">
+      <circle cx="0" cy="-3.5" r="2.5" fill="#facc15"/>
+      <circle cx="3.3" cy="-1" r="2.5" fill="#facc15"/>
+      <circle cx="2" cy="2.8" r="2.5" fill="#facc15"/>
+      <circle cx="-2" cy="2.8" r="2.5" fill="#facc15"/>
+      <circle cx="-3.3" cy="-1" r="2.5" fill="#facc15"/>
+      <circle cx="0" cy="0" r="1.5" fill="#dc2626"/>
+    </g>
+  </g>
+
+  <!-- Swaying Red Tết Lantern on Right -->
+  <g class="lantern-sway">
+    <line x1="238" y1="8" x2="238" y2="18" stroke="#facc15" stroke-width="1.5"/>
+    <ellipse cx="238" cy="26" rx="9" ry="7.5" fill="url(#actTetRed)" stroke="url(#actTetGold)" stroke-width="1.2"/>
+    <path d="M 234 19 Q 238 26 234 33 M 242 19 Q 238 26 242 33" fill="none" stroke="#facc15" stroke-width="0.9"/>
+    <rect x="235" y="17.5" width="6" height="2" fill="#facc15"/>
+    <rect x="235" y="32.5" width="6" height="2" fill="#facc15"/>
+    <line x1="238" y1="34.5" x2="238" y2="41" stroke="#facc15" stroke-width="1.6"/>
+  </g>
+
+  <!-- 5 MAI HOA THUNG HIGH POLES (Rising from right to left) -->
+  <g>
+    <!-- Pole 1 (Rightmost - lowest) -->
+    <rect x="206" y="72" width="6" height="20" fill="url(#poleGrad)"/>
+    <ellipse cx="209" cy="72" rx="8" ry="2.8" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="0.9"/>
+    <!-- Pole 2 -->
+    <rect x="160" y="66" width="6" height="26" fill="url(#poleGrad)"/>
+    <ellipse cx="163" cy="66" rx="8" ry="2.8" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="0.9"/>
+    <!-- Pole 3 -->
+    <rect x="116" y="60" width="6" height="32" fill="url(#poleGrad)"/>
+    <ellipse cx="119" cy="60" rx="8" ry="2.8" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="0.9"/>
+    <!-- Pole 4 -->
+    <rect x="72" y="54" width="6" height="38" fill="url(#poleGrad)"/>
+    <ellipse cx="75" cy="54" rx="8" ry="2.8" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="0.9"/>
+    <!-- Pole 5 (Leftmost - Tallest Goal Pole) -->
+    <rect x="34" y="52" width="6" height="40" fill="url(#poleGrad)"/>
+    <ellipse cx="37" cy="52" rx="9" ry="3" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="1"/>
+  </g>
+
+  <!-- HANGING LUCKY LÌ XÌ va "LỘC" PRIZE AT THE LEFT GOAL POLE (Hái Lộc Đầu Xuân!) -->
+  <g class="hanging-lixi">
+    <line x1="38" y1="4" x2="38" y2="16" stroke="#facc15" stroke-width="1.5" stroke-dasharray="2 1"/>
+    <!-- Lucky Green Cabbage (CaiBap Hai Loc) + Red Li Xi Envelope -->
+    <circle cx="38" cy="16" r="5" fill="#22c55e" stroke="#15803d" stroke-width="1"/>
+    <rect x="31" y="18" width="14" height="18" rx="2" fill="url(#actTetRed)" stroke="url(#actTetGold)" stroke-width="1.3"/>
+    <circle cx="38" cy="27" r="4" fill="url(#actTetGold)"/>
+    <text x="38" y="29.5" font-size="6" font-weight="bold" fill="#991b1b" text-anchor="middle" font-family="serif">LỘC</text>
+  </g>
+
+  <!-- Confetti va Gold Coins Explosion when Lion plucks the Lì Xì -->
+  <g class="confetti-burst">
+    <circle cx="20" cy="18" r="3.5" fill="#facc15" stroke="#b45309" stroke-width="0.8"/>
+    <circle cx="54" cy="14" r="3.5" fill="#facc15" stroke="#b45309" stroke-width="0.8"/>
+    <circle cx="24" cy="36" r="3" fill="#ef4444"/>
+    <circle cx="52" cy="34" r="3" fill="#fde047"/>
+    <text x="38" y="14" font-size="9" font-weight="900" fill="#fef08a" text-anchor="middle">✨LỘC✨</text>
+  </g>
+
+  <!-- FOREGROUND: Acrobatic Chibi Lion Dancer leaping across the Mai Hoa Thung poles! -->
+  <g class="lion-dancer">
+    <!-- Flowing Silk Lion Body Cape va Tail (Trailing to the right) -->
+    <g class="lion-cape-wave">
+      <path d="M 20 18 Q 38 8 52 20 Q 58 26 50 31 Q 36 24 20 28 Z" fill="url(#actTetRed)" stroke="url(#actTetGold)" stroke-width="1.5"/>
+      <!-- Golden Scales along the silk back -->
+      <path d="M 28 18 Q 35 15 42 20 M 32 23 Q 39 20 46 25" fill="none" stroke="url(#actTetGold)" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- Fluffy White-Gold Lion Tail Tuft -->
+      <circle cx="53" cy="22" r="5" fill="#ffffff" stroke="#facc15" stroke-width="1.2"/>
+    </g>
+
+    <!-- Acrobatic Lion Dancer Legs (Front va Back legs in red-gold silk pants) -->
+    <g class="lion-legs-run">
+      <!-- Front Legs -->
+      <path d="M 16 26 L 12 36" stroke="#dc2626" stroke-width="5" stroke-linecap="round"/>
+      <ellipse cx="11" cy="37" rx="4.5" ry="2.5" fill="#ffffff" stroke="#ca8a04" stroke-width="1"/>
+      <!-- Rear Dancer Legs -->
+      <path d="M 38 25 L 43 36" stroke="#dc2626" stroke-width="5" stroke-linecap="round"/>
+      <ellipse cx="44" cy="37" rx="4.5" ry="2.5" fill="#ffffff" stroke="#ca8a04" stroke-width="1"/>
+    </g>
+
+    <!-- Chibi Lion Head (Facing Left toward the Lì Xì!) -->
+    <g transform="translate(0, 2)">
+      <!-- Fluffy White Collar va Mane -->
+      <circle cx="22" cy="14" r="7" fill="#ffffff" stroke="#facc15" stroke-width="1"/>
+      <circle cx="23" cy="24" r="6.5" fill="#ffffff" stroke="#facc15" stroke-width="1"/>
+
+      <!-- Main Crimson-Gold Lion Head -->
+      <path d="M 4 22 C 2 8, 24 6, 24 20 C 24 28, 12 30, 4 22 Z" fill="url(#actTetRed)" stroke="url(#actTetGold)" stroke-width="1.6"/>
+
+      <!-- Golden Horn on Forehead -->
+      <path d="M 10 11 L 6 3 L 15 9 Z" fill="url(#actTetGold)" stroke="#b45309" stroke-width="0.9"/>
+      <circle cx="5.5" cy="2.5" r="2.5" fill="#ef4444" stroke="#facc15" stroke-width="0.7"/>
+
+      <!-- Fluffy White Eyebrow -->
+      <path d="M 5 13 Q 11 9 17 14" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- Big Expressive Eye -->
+      <circle cx="11" cy="17" r="4.5" fill="#ffffff" stroke="#facc15" stroke-width="1.3"/>
+      <circle cx="9.5" cy="17" r="2.6" fill="#0f172a"/>
+      <circle cx="9" cy="16" r="1" fill="#ffffff"/>
+
+      <!-- Lion Nose va Open Mouth reaching for the Lì Xì -->
+      <circle cx="4" cy="18" r="3" fill="url(#actTetGold)"/>
+      <path d="M 3 22 Q 10 28 18 24" fill="#7f1d1d" stroke="url(#actTetGold)" stroke-width="1.2"/>
+      <!-- White Beard Tuft -->
+      <circle cx="10" cy="26" r="3.8" fill="#ffffff" stroke="#facc15" stroke-width="0.9"/>
+    </g>
+  </g>
+</svg>

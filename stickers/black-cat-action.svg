@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95">
+  <defs>
+    <linearGradient id="catDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="60%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <style>
+      .cat-prowl { animation: nightCatJump 3.4s ease-in-out infinite; }
+      .yarn-roll { animation: rollYarn 1.7s ease-in-out infinite alternate; transform-origin: 210px 56px; }
+      @keyframes nightCatJump {
+        0% { transform: translate(115px, 8px) rotate(0deg); }
+        25% { transform: translate(65px, -12px) rotate(-10deg); }
+        50% { transform: translate(16px, 8px) rotate(4deg); }
+        75% { transform: translate(68px, -8px) rotate(8deg); }
+        100% { transform: translate(115px, 8px) rotate(0deg); }
+      }
+      @keyframes rollYarn {
+        0% { transform: translateX(-8px) rotate(-40deg); }
+        100% { transform: translateX(8px) rotate(40deg); }
+      }
+    </style>
+  </defs>
+
+  <!-- TRĂNG TRÒN VÀNG va ỐNG KHÓI MÁI NHÀ BÊN TRÁI -->
+  <g>
+    <circle cx="46" cy="36" r="18" fill="#fef08a" opacity="0.22"/>
+    <circle cx="46" cy="36" r="12" fill="#fde047" stroke="#f59e0b" stroke-width="1"/>
+    <rect x="22" y="44" width="14" height="22" fill="#334155" stroke="#64748b" stroke-width="1"/>
+    <rect x="19" y="41" width="20" height="4" rx="1" fill="#475569"/>
+  </g>
+
+  <!-- MÈO ĐEN CHIBI NHẢY TRÊN MÁI NHÀ ĐÊM TRĂNG -->
+  <g class="cat-prowl">
+    <!-- Đuôi mèo cong -->
+    <path d="M 36 48 C 22 42, 18 28, 26 24" fill="none" stroke="#1e293b" stroke-width="4.5" stroke-linecap="round"/>
+    <!-- Thân va Đầu Mèo Đen -->
+    <ellipse cx="52" cy="48" rx="15" ry="10" fill="url(#catDark)" stroke="#fbbf24" stroke-width="1.1"/>
+    <circle cx="68" cy="38" r="11" fill="url(#catDark)" stroke="#fbbf24" stroke-width="1.1"/>
+    <polygon points="60,30 58,18 67,26" fill="url(#catDark)" stroke="#fbbf24" stroke-width="1"/>
+    <polygon points="71,26 78,18 76,30" fill="url(#catDark)" stroke="#fbbf24" stroke-width="1"/>
+    <!-- Mắt vàng hổ phách va Chuông vàng -->
+    <ellipse cx="73" cy="38" rx="3" ry="3.2" fill="#fbbf24"/>
+    <ellipse cx="73" cy="38" rx="1.1" ry="2.6" fill="#0f172a"/>
+    <circle cx="64" cy="49" r="3.2" fill="#fbbf24" stroke="#78350f" stroke-width="0.9"/>
+  </g>
+
+  <!-- CUỘN LEN VÀNG LĂN BÊN PHẢI -->
+  <g class="yarn-roll">
+    <circle cx="210" cy="56" r="8.5" fill="#f59e0b" stroke="#fef08a" stroke-width="1.2"/>
+    <path d="M 204 52 Q 210 58 216 52 M 204 60 Q 210 54 216 60" fill="none" stroke="#fef3c7" stroke-width="1.2"/>
+  </g>
+</svg>

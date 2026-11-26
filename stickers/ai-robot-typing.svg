@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="rbBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="65%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="rbScreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="rbNeon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .r-head { transform-origin: 60px 46px; animation: rHead 0.3s steps(2) infinite; }
+    .r-ring { transform-origin: 60px 12px; animation: rRing 0.8s ease-in-out infinite; }
+    .r-handL { animation: rHand 0.2s ease-in-out infinite alternate; }
+    .r-handR { animation: rHand 0.2s ease-in-out 0.1s infinite alternate; }
+    .r-key1 { animation: rKey 0.4s steps(1) infinite; }
+    .r-key2 { animation: rKey 0.4s steps(1) 0.13s infinite; }
+    .r-key3 { animation: rKey 0.4s steps(1) 0.26s infinite; }
+    .r-cursor { animation: rBlink 0.5s steps(1) infinite; }
+    .r-dot1 { animation: rDot 1.2s steps(1) infinite; }
+    .r-dot2 { animation: rDot 1.2s steps(1) 0.4s infinite; }
+    .r-dot3 { animation: rDot 1.2s steps(1) 0.8s infinite; }
+    .r-bits { animation: rBits 1s linear infinite; opacity: 0; }
+    .r-bits2 { animation: rBits 1s linear 0.5s infinite; opacity: 0; }
+    @keyframes rHead { 0% { transform: translate(-0.8px, 0); } 100% { transform: translate(0.8px, 0.6px); } }
+    @keyframes rRing { 0%,100% { opacity: 0.55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.12); } }
+    @keyframes rHand { 0% { transform: translateY(0); } 100% { transform: translateY(-5px); } }
+    @keyframes rKey { 0% { fill: #38bdf8; } 50% { fill: #e0f2fe; } 100% { fill: #38bdf8; } }
+    @keyframes rBlink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+    @keyframes rDot { 0% { opacity: 0.2; } 33%,100% { opacity: 1; } }
+    @keyframes rBits { 0% { opacity: 0; transform: translateY(0); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(-24px); } }
+  </style>
+
+  <!-- Antenna ring pulsing -->
+  <ellipse class="r-ring" cx="60" cy="12" rx="18" ry="4.5" fill="none" stroke="url(#rbNeon)" stroke-width="2.8"/>
+
+  <ellipse cx="60" cy="109" rx="16" ry="4" fill="#38bdf8" opacity="0.55"/>
+  <ellipse cx="60" cy="109" rx="9" ry="2" fill="#ffffff" opacity="0.9"/>
+
+  <!-- Body -->
+  <path d="M40 72 C38 92, 46 104, 60 104 C74 104, 82 92, 80 72 Z" fill="url(#rbBody)" stroke="#334155" stroke-width="2.2"/>
+  <polygon points="60,78 68,86 60,94 52,86" fill="url(#rbNeon)" stroke="#1e293b" stroke-width="1.5"/>
+  <polygon points="60,81 65,86 60,91 55,86" fill="#ffffff" opacity="0.8"/>
+
+  <!-- Hologram keyboard floating in front -->
+  <g>
+    <polygon points="22,100 98,100 108,112 12,112" fill="#38bdf8" fill-opacity="0.16" stroke="#38bdf8" stroke-width="1.2"/>
+    <rect class="r-key1" x="26" y="103" width="10" height="5" rx="1.2" fill="#38bdf8"/>
+    <rect class="r-key2" x="40" y="103" width="10" height="5" rx="1.2" fill="#38bdf8"/>
+    <rect class="r-key3" x="54" y="103" width="12" height="5" rx="1.2" fill="#38bdf8"/>
+    <rect class="r-key2" x="70" y="103" width="10" height="5" rx="1.2" fill="#38bdf8"/>
+    <rect class="r-key1" x="84" y="103" width="10" height="5" rx="1.2" fill="#38bdf8"/>
+  </g>
+
+  <!-- Both hands hammering on the hologram keys -->
+  <g class="r-handL"><ellipse cx="38" cy="96" rx="6" ry="7" transform="rotate(14 38 96)" fill="url(#rbBody)" stroke="#334155" stroke-width="2"/></g>
+  <g class="r-handR"><ellipse cx="82" cy="96" rx="6" ry="7" transform="rotate(-14 82 96)" fill="url(#rbBody)" stroke="#334155" stroke-width="2"/></g>
+
+  <!-- Head -->
+  <g class="r-head">
+    <rect x="27" y="22" width="66" height="48" rx="24" fill="url(#rbBody)" stroke="#334155" stroke-width="2.3"/>
+    <rect x="20" y="36" width="7" height="20" rx="3.5" fill="#1e293b" stroke="url(#rbNeon)" stroke-width="1.8"/>
+    <rect x="93" y="36" width="7" height="20" rx="3.5" fill="#1e293b" stroke="url(#rbNeon)" stroke-width="1.8"/>
+    <rect x="33" y="29" width="54" height="34" rx="17" fill="url(#rbScreen)" stroke="#475569" stroke-width="1.8"/>
+    <path d="M40 33 Q55 30 72 33" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0.35"/>
+
+    <!-- Face while typing: focused ">_" eyes + loading dots -->
+    <path d="M 40 38 L 50 44 L 40 50" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect class="r-cursor" x="55" y="47" width="9" height="3.4" rx="1" fill="#38bdf8"/>
+    <path d="M 73 42 L 80 42 M 73 47 L 78 47" stroke="#818cf8" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+    <circle class="r-dot1" cx="48" cy="57" r="1.9" fill="#4ade80"/>
+    <circle class="r-dot2" cx="55" cy="57" r="1.9" fill="#4ade80"/>
+    <circle class="r-dot3" cx="62" cy="57" r="1.9" fill="#4ade80"/>
+    <text x="78" y="58" font-family="Consolas, monospace" font-size="6.5" font-weight="900" fill="#38bdf8" text-anchor="middle">typing</text>
+  </g>
+
+  <!-- Binary bits rising from the keyboard -->
+  <text class="r-bits" x="30" y="98" font-family="Consolas, monospace" font-size="8" font-weight="900" fill="#4ade80">01</text>
+  <text class="r-bits2" x="86" y="96" font-family="Consolas, monospace" font-size="8" font-weight="900" fill="#38bdf8">10</text>
+</svg>

@@ -1,0 +1,73 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="tltGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fef08a"/><stop offset="50%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#b45309"/></linearGradient>
+    <linearGradient id="tltRed" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ef4444"/><stop offset="100%" stop-color="#991b1b"/></linearGradient>
+    <linearGradient id="tltFur" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#fef3c7"/></linearGradient>
+  </defs>
+  <style>
+    .tl-head { transform-origin: 60px 80px; animation: tlShake 0.6s ease-in-out infinite alternate; }
+    .tl-jaw { transform-origin: 60px 66px; animation: tlJaw 0.3s ease-in-out infinite alternate; }
+    .tl-pom { transform-origin: center; transform-box: fill-box; animation: tlBounce 0.3s ease-in-out infinite alternate; }
+    .tl-pom2 { animation-delay: 0.15s; }
+    .tl-stickL { transform-origin: 38px 92px; animation: tlHitL 0.3s ease-in infinite alternate; }
+    .tl-stickR { transform-origin: 82px 92px; animation: tlHitR 0.3s ease-in 0.3s infinite alternate; }
+    .tl-drum { transform-origin: 60px 108px; animation: tlThump 0.3s ease-out infinite; }
+    .tl-c1 { animation: tlPopUp 1.2s ease-out infinite; }
+    .tl-c2 { animation: tlPopUp 1.2s ease-out 0.4s infinite; }
+    .tl-c3 { animation: tlPopUp 1.2s ease-out 0.8s infinite; }
+    @keyframes tlShake { 0% { transform: rotate(-6deg) translateY(0); } 100% { transform: rotate(6deg) translateY(-2px); } }
+    @keyframes tlJaw { 0% { transform: translateY(-1px) scaleY(0.7); } 100% { transform: translateY(3px) scaleY(1.2); } }
+    @keyframes tlBounce { 0% { transform: translateY(0) scale(1); } 100% { transform: translateY(-3px) scale(1.12); } }
+    @keyframes tlHitL { 0% { transform: rotate(-22deg); } 100% { transform: rotate(10deg); } }
+    @keyframes tlHitR { 0% { transform: rotate(22deg); } 100% { transform: rotate(-10deg); } }
+    @keyframes tlThump { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04, 0.96); } }
+    @keyframes tlPopUp { 0% { opacity: 0; transform: translateY(8px) scale(0.5); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(-14px) scale(1.1); } }
+  </style>
+  <ellipse cx="60" cy="112" rx="38" ry="5" fill="#450a0a" opacity="0.4"/>
+  <!-- Popping loot -->
+  <g class="tl-c1"><circle cx="16" cy="40" r="5" fill="url(#tltGold)" stroke="#b45309" stroke-width="1"/><rect x="14" y="38" width="4" height="4" fill="#991b1b"/></g>
+  <g class="tl-c2"><rect x="98" y="32" width="10" height="14" rx="1.5" fill="url(#tltRed)" stroke="#facc15" stroke-width="1"/><circle cx="103" cy="39" r="2.4" fill="#facc15"/></g>
+  <g class="tl-c3"><circle cx="104" cy="62" r="4.4" fill="url(#tltGold)" stroke="#b45309" stroke-width="1"/><rect x="102.5" y="60.5" width="3" height="3" fill="#991b1b"/></g>
+  <g class="tl-c3"><rect x="6" y="60" width="9" height="12" rx="1.5" fill="url(#tltRed)" stroke="#facc15" stroke-width="1"/><circle cx="10.5" cy="66" r="2" fill="#facc15"/></g>
+  <!-- Drum -->
+  <g class="tl-drum">
+    <rect x="30" y="88" width="60" height="22" rx="4" fill="url(#tltRed)" stroke="#7f1d1d" stroke-width="2"/>
+    <ellipse cx="60" cy="88" rx="30" ry="6" fill="#fde68a" stroke="url(#tltGold)" stroke-width="2"/>
+    <path d="M36 92 L46 108 M52 94 L58 110 M68 94 L62 110 M84 92 L74 108" stroke="#facc15" stroke-width="1.4" opacity="0.7"/>
+    <circle cx="33" cy="99" r="1.8" fill="#facc15"/><circle cx="87" cy="99" r="1.8" fill="#facc15"/>
+  </g>
+  <!-- Mane and head -->
+  <g class="tl-head">
+    <g fill="url(#tltRed)" stroke="#7f1d1d" stroke-width="1.5">
+      <circle cx="26" cy="46" r="11"/><circle cx="94" cy="46" r="11"/><circle cx="34" cy="72" r="10"/><circle cx="86" cy="72" r="10"/>
+      <circle cx="60" cy="22" r="12"/>
+    </g>
+    <ellipse cx="60" cy="52" rx="34" ry="28" fill="url(#tltRed)" stroke="#7f1d1d" stroke-width="2"/>
+    <circle class="tl-pom" cx="24" cy="38" r="5" fill="#fff" stroke="#fda4af" stroke-width="1"/>
+    <circle class="tl-pom tl-pom2" cx="96" cy="38" r="5" fill="#fff" stroke="#fda4af" stroke-width="1"/>
+    <circle class="tl-pom" cx="60" cy="12" r="5" fill="#fff" stroke="#fda4af" stroke-width="1"/>
+    <!-- Horn -->
+    <path d="M56 28 Q60 14 64 28 Z" fill="url(#tltGold)" stroke="#92400e" stroke-width="1.2"/>
+    <!-- Eyes -->
+    <ellipse cx="44" cy="46" rx="9" ry="10" fill="#fff" stroke="url(#tltGold)" stroke-width="2.4"/>
+    <ellipse cx="76" cy="46" rx="9" ry="10" fill="#fff" stroke="url(#tltGold)" stroke-width="2.4"/>
+    <circle cx="45" cy="48" r="5" fill="#0f172a"/><circle cx="75" cy="48" r="5" fill="#0f172a"/>
+    <circle cx="43.5" cy="46" r="1.8" fill="#fff"/><circle cx="73.5" cy="46" r="1.8" fill="#fff"/>
+    <path d="M34 34 Q44 28 52 34 M68 34 Q76 28 86 34" fill="none" stroke="#fef9c3" stroke-width="3" stroke-linecap="round"/>
+    <!-- Nose -->
+    <ellipse cx="60" cy="58" rx="8" ry="5.5" fill="url(#tltGold)" stroke="#991b1b" stroke-width="1.2"/>
+    <circle cx="36" cy="60" r="4" fill="#fb7185" opacity="0.7"/><circle cx="84" cy="60" r="4" fill="#fb7185" opacity="0.7"/>
+    <path d="M32 66 Q46 61 60 66 Q74 61 88 66 Q82 72 60 70 Q38 72 32 66 Z" fill="url(#tltFur)" stroke="#eab308" stroke-width="1"/>
+    <!-- Mouth -->
+    <g class="tl-jaw">
+      <path d="M40 68 Q60 80 80 68 Z" fill="#7f1d1d" stroke="url(#tltGold)" stroke-width="1.4"/>
+      <ellipse cx="60" cy="72" rx="9" ry="3" fill="#fb7185"/>
+      <circle cx="46" cy="77" r="5" fill="url(#tltFur)" stroke="#eab308" stroke-width="1"/>
+      <circle cx="60" cy="80" r="6" fill="url(#tltFur)" stroke="#eab308" stroke-width="1"/>
+      <circle cx="74" cy="77" r="5" fill="url(#tltFur)" stroke="#eab308" stroke-width="1"/>
+    </g>
+  </g>
+  <!-- Sticks -->
+  <g class="tl-stickL"><path d="M30 76 L46 88" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/><circle cx="30" cy="76" r="3" fill="url(#tltGold)"/></g>
+  <g class="tl-stickR"><path d="M90 76 L74 88" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/><circle cx="90" cy="76" r="3" fill="url(#tltGold)"/></g>
+</svg>

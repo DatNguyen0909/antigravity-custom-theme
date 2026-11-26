@@ -1,0 +1,254 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="tetRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="55%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <linearGradient id="tetGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <linearGradient id="furWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fde68a"/>
+    </linearGradient>
+    <radialGradient id="mirrorGem" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </radialGradient>
+    <filter id="tetGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#f59e0b" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <style>
+    .lion-all {
+      transform-origin: 60px 104px;
+      animation: lionDanceBob 2.4s ease-in-out infinite;
+    }
+    .lion-head {
+      transform-origin: 60px 58px;
+      animation: lionHeadTilt 2.4s ease-in-out infinite;
+    }
+    .lion-eyes {
+      transform-origin: 60px 52px;
+      animation: lionBlink 3.6s infinite;
+    }
+    .lion-jaw {
+      transform-origin: 60px 66px;
+      animation: lionJawChomp 2.4s ease-in-out infinite;
+    }
+    .lion-paw-lixi {
+      transform-origin: 86px 80px;
+      animation: lixiWave 1.8s ease-in-out infinite;
+    }
+
+    /* 15s Non-Interactive Animation: Lion unfurls lucky Tết scroll ("LỘC - PHÚC") from mouth + Firecrackers pop! */
+    .tet-scroll-15s {
+      transform-origin: 60px 70px;
+      animation: scrollUnfurl15s 15s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+      opacity: 0;
+    }
+    .tet-cracker-15s {
+      transform-origin: 20px 40px;
+      animation: crackerPop15s 15s ease-in-out infinite;
+      opacity: 0;
+    }
+    .tet-sparks-15s {
+      transform-origin: 60px 45px;
+      animation: sparksBurst15s 15s ease-out infinite;
+      opacity: 0;
+    }
+
+    @keyframes lionDanceBob {
+      0%, 100% { transform: translateY(0) scale(1, 1); }
+      50% { transform: translateY(-5px) scale(1.02, 0.98); }
+    }
+    @keyframes lionHeadTilt {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3.5deg) translateY(-2px); }
+    }
+    @keyframes lionBlink {
+      0%, 44%, 48%, 94%, 100% { transform: scaleY(1); }
+      46%, 96% { transform: scaleY(0.08); }
+    }
+    @keyframes lionJawChomp {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(2.5px); }
+    }
+    @keyframes lixiWave {
+      0%, 100% { transform: rotate(-6deg); }
+      50% { transform: rotate(12deg) translateY(-2px); }
+    }
+
+    /* 15s Timeline: active between 68% (10.2s) and 95% (14.25s) */
+    @keyframes scrollUnfurl15s {
+      0%, 67% { opacity: 0; transform: scaleY(0.05) translateY(-8px); }
+      72% { opacity: 1; transform: scaleY(1.12) translateY(2px); }
+      75%, 90% { opacity: 1; transform: scaleY(1) translateY(0); }
+      95%, 100% { opacity: 0; transform: scaleY(0.05) translateY(-8px); }
+    }
+    @keyframes crackerPop15s {
+      0%, 66% { opacity: 0; transform: translateY(-12px) scale(0.4); }
+      70% { opacity: 1; transform: translateY(0) scale(1.08) rotate(-6deg); }
+      74% { opacity: 1; transform: rotate(8deg); }
+      78% { opacity: 1; transform: rotate(-7deg); }
+      82% { opacity: 1; transform: rotate(6deg); }
+      86%, 90% { opacity: 1; transform: rotate(0deg); }
+      95%, 100% { opacity: 0; transform: translateY(6px) scale(0.3); }
+    }
+    @keyframes sparksBurst15s {
+      0%, 70% { opacity: 0; transform: scale(0.4); }
+      75%, 85% { opacity: 1; transform: scale(1.12); }
+      80%, 89% { opacity: 0.9; transform: scale(0.96); }
+      95%, 100% { opacity: 0; transform: scale(1.3); }
+    }
+  </style>
+
+  <!-- Festive Golden-Red Stage Shadow -->
+  <ellipse cx="60" cy="109" rx="34" ry="6.5" fill="#450a0a" opacity="0.55"/>
+  <ellipse cx="60" cy="108" rx="26" ry="4" fill="#facc15" opacity="0.35"/>
+
+  <g class="lion-all" filter="url(#tetGlow)">
+    <!-- Lion Dance Body / Silk Costume with Golden Trim -->
+    <path d="M 36 74 Q 32 94 38 104 L 82 104 Q 88 94 84 74 Z" fill="url(#tetRed)" stroke="url(#tetGold)" stroke-width="2"/>
+    <!-- Decorative Gold Scales on Belly -->
+    <path d="M 46 84 Q 60 90 74 84 M 44 92 Q 60 98 76 92" fill="none" stroke="url(#tetGold)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Cute Little Lion Boots (Red-Gold Pants) -->
+    <ellipse cx="46" cy="104" rx="9" ry="5" fill="url(#furWhite)" stroke="#ca8a04" stroke-width="1.2"/>
+    <ellipse cx="74" cy="104" rx="9" ry="5" fill="url(#furWhite)" stroke="#ca8a04" stroke-width="1.2"/>
+
+    <!-- Right Paw holding Bao Li Xi (Lucky Red Envelope) -->
+    <g class="lion-paw-lixi">
+      <circle cx="88" cy="78" r="6" fill="url(#furWhite)" stroke="#ca8a04" stroke-width="1.2"/>
+      <g transform="translate(88, 60) rotate(14)">
+        <rect x="-8" y="-10" width="16" height="22" rx="2.5" fill="url(#tetRed)" stroke="url(#tetGold)" stroke-width="1.5"/>
+        <path d="M -8 -3 Q 0 3 8 -3" fill="none" stroke="url(#tetGold)" stroke-width="1.2"/>
+        <circle cx="0" cy="2" r="4.5" fill="url(#tetGold)"/>
+        <text x="0" y="4.5" font-size="6.5" font-weight="bold" fill="#991b1b" text-anchor="middle" font-family="serif">福</text>
+      </g>
+    </g>
+
+    <!-- Left Paw -->
+    <circle cx="32" cy="78" r="6" fill="url(#furWhite)" stroke="#ca8a04" stroke-width="1.2"/>
+
+    <!-- LION HEAD (Ornate Southern Vietnamese Lion Dance Head) -->
+    <g class="lion-head">
+      <!-- Fluffy White-Gold Mane / Ears around the head -->
+      <circle cx="28" cy="40" r="10" fill="url(#furWhite)" stroke="#eab308" stroke-width="1.3"/>
+      <circle cx="28" cy="40" r="5" fill="#ef4444"/>
+      <circle cx="92" cy="40" r="10" fill="url(#furWhite)" stroke="#eab308" stroke-width="1.3"/>
+      <circle cx="92" cy="40" r="5" fill="#ef4444"/>
+
+      <!-- Side Pom-Poms -->
+      <circle cx="24" cy="56" r="7.5" fill="url(#furWhite)" stroke="#facc15" stroke-width="1.2"/>
+      <circle cx="96" cy="56" r="7.5" fill="url(#furWhite)" stroke="#facc15" stroke-width="1.2"/>
+
+      <!-- Main Lion Head Dome -->
+      <path d="M 28 56 C 26 26, 94 26, 92 56 C 94 70, 82 76, 60 76 C 38 76, 26 70, 28 56 Z" fill="url(#tetRed)" stroke="url(#tetGold)" stroke-width="2.2"/>
+
+      <!-- Forehead Feng-Shui Mirror (Guong Bat Quai) va Golden Swirls -->
+      <circle cx="60" cy="36" r="7.5" fill="url(#tetGold)" stroke="#991b1b" stroke-width="1.2"/>
+      <circle cx="60" cy="36" r="4.5" fill="url(#mirrorGem)"/>
+      <path d="M 46 36 Q 38 30 34 38 M 74 36 Q 82 30 86 38" fill="none" stroke="url(#tetGold)" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Sacred Golden Horn on Top of Head with Red Pom-Pom -->
+      <circle cx="60" cy="14" r="5.5" fill="#ef4444" stroke="url(#tetGold)" stroke-width="1.2"/>
+      <path d="M 53 29 Q 60 12 67 29 Z" fill="url(#tetGold)" stroke="#b45309" stroke-width="1.2"/>
+      <path d="M 55 25 L 65 25 M 57 21 L 63 21" stroke="#b45309" stroke-width="1"/>
+
+      <!-- Fluffy White-Gold Eyebrows -->
+      <path d="M 33 44 Q 44 35 55 44 Q 45 41 33 44 Z" fill="url(#furWhite)" stroke="#ca8a04" stroke-width="1"/>
+      <path d="M 87 44 Q 76 35 65 44 Q 75 41 87 44 Z" fill="url(#furWhite)" stroke="#ca8a04" stroke-width="1"/>
+
+      <!-- Big Expressive Lion Dance Eyes -->
+      <g class="lion-eyes">
+        <!-- Left Eye -->
+        <circle cx="44" cy="52" r="8.5" fill="#ffffff" stroke="url(#tetGold)" stroke-width="2"/>
+        <circle cx="45" cy="52" r="5" fill="#0f172a"/>
+        <circle cx="43" cy="50" r="2" fill="#ffffff"/>
+        <circle cx="47" cy="54" r="1" fill="#facc15"/>
+        <!-- Right Eye -->
+        <circle cx="76" cy="52" r="8.5" fill="#ffffff" stroke="url(#tetGold)" stroke-width="2"/>
+        <circle cx="75" cy="52" r="5" fill="#0f172a"/>
+        <circle cx="73" cy="50" r="2" fill="#ffffff"/>
+        <circle cx="77" cy="54" r="1" fill="#facc15"/>
+      </g>
+
+      <!-- Big Round Lion Nose (Pom-Pom) -->
+      <ellipse cx="60" cy="57" rx="8" ry="5.5" fill="url(#tetGold)" stroke="#991b1b" stroke-width="1.2"/>
+      <circle cx="57.5" cy="55.5" r="2" fill="#fef9c3"/>
+
+      <!-- Cheek Swirls -->
+      <circle cx="35" cy="61" r="4" fill="#fb7185" opacity="0.7"/>
+      <circle cx="85" cy="61" r="4" fill="#fb7185" opacity="0.7"/>
+
+      <!-- Upper Mustache / Fluffy White Trim -->
+      <path d="M 30 64 Q 45 60 60 65 Q 75 60 90 64 Q 84 70 60 69 Q 36 70 30 64 Z" fill="url(#furWhite)" stroke="#eab308" stroke-width="1"/>
+
+      <!-- Lower Jaw va Fluffy White Beard -->
+      <g class="lion-jaw">
+        <!-- Mouth interior -->
+        <path d="M 40 66 Q 60 76 80 66 Z" fill="#7f1d1d" stroke="url(#tetGold)" stroke-width="1.4"/>
+        <ellipse cx="60" cy="69" rx="9" ry="3.2" fill="#fb7185"/>
+        <!-- Fluffy White Beard Tufts -->
+        <circle cx="42" cy="74" r="5.5" fill="url(#furWhite)" stroke="#eab308" stroke-width="1"/>
+        <circle cx="51" cy="76" r="6" fill="url(#furWhite)" stroke="#eab308" stroke-width="1"/>
+        <circle cx="60" cy="77" r="6.5" fill="url(#furWhite)" stroke="#eab308" stroke-width="1"/>
+        <circle cx="69" cy="76" r="6" fill="url(#furWhite)" stroke="#eab308" stroke-width="1"/>
+        <circle cx="78" cy="74" r="5.5" fill="url(#furWhite)" stroke="#eab308" stroke-width="1"/>
+
+        <!-- 15s Non-Interactive Lucky Tết Scroll ("TẾT VẠN LỘC") unfurling from the Lion's mouth! -->
+        <g class="tet-scroll-15s">
+          <!-- Upper Scroll Roller -->
+          <rect x="38" y="68" width="44" height="4" rx="2" fill="url(#tetGold)" stroke="#92400e" stroke-width="1"/>
+          <!-- Crimson Scroll Body -->
+          <rect x="41" y="71" width="38" height="34" rx="2" fill="url(#tetRed)" stroke="url(#tetGold)" stroke-width="1.8"/>
+          <!-- Inner Gold Diamond va Calligraphy -->
+          <polygon points="60,75 71,86 60,97 49,86" fill="url(#tetGold)" stroke="#991b1b" stroke-width="0.8"/>
+          <text x="60" y="89.5" font-size="10.5" font-weight="900" fill="#991b1b" text-anchor="middle" font-family="serif">LỘC</text>
+          <!-- Lower Scroll Roller with Golden Tassel -->
+          <rect x="37" y="103" width="46" height="4.5" rx="2.2" fill="url(#tetGold)" stroke="#92400e" stroke-width="1"/>
+          <line x1="60" y1="107" x2="60" y2="114" stroke="#facc15" stroke-width="2" stroke-linecap="round"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- 15s Non-Interactive Left Firecracker String (Tràng Pháo Đỏ) -->
+    <g class="tet-cracker-15s">
+      <!-- Hanging string -->
+      <line x1="16" y1="18" x2="16" y2="66" stroke="#facc15" stroke-width="1.5"/>
+      <!-- Firecracker cylinders -->
+      <rect x="9" y="24" width="8" height="4.5" rx="1" transform="rotate(-18 13 26)" fill="#ef4444" stroke="#facc15" stroke-width="0.8"/>
+      <rect x="15" y="30" width="8" height="4.5" rx="1" transform="rotate(18 19 32)" fill="#ef4444" stroke="#facc15" stroke-width="0.8"/>
+      <rect x="9" y="36" width="8" height="4.5" rx="1" transform="rotate(-18 13 38)" fill="#ef4444" stroke="#facc15" stroke-width="0.8"/>
+      <rect x="15" y="42" width="8" height="4.5" rx="1" transform="rotate(18 19 44)" fill="#ef4444" stroke="#facc15" stroke-width="0.8"/>
+      <rect x="9" y="48" width="8" height="4.5" rx="1" transform="rotate(-18 13 50)" fill="#ef4444" stroke="#facc15" stroke-width="0.8"/>
+      <!-- Popping firecracker sparks at bottom -->
+      <circle cx="16" cy="64" r="5" fill="#fef08a"/>
+      <path d="M 16 56 L 16 72 M 8 64 L 24 64 M 11 59 L 21 69 M 21 59 L 11 69" stroke="#facc15" stroke-width="1.8" stroke-linecap="round"/>
+    </g>
+
+    <!-- 15s Non-Interactive Golden Apricot Blossoms (Hoa Mai Vàng) va Gold Coins Burst -->
+    <g class="tet-sparks-15s">
+      <!-- Left Gold Coin -->
+      <circle cx="22" cy="18" r="5" fill="url(#tetGold)" stroke="#b45309" stroke-width="1"/>
+      <rect x="20" y="16" width="4" height="4" fill="#991b1b"/>
+      <!-- Right Hoa Mai Vang (5-petal yellow apricot flower) -->
+      <g transform="translate(98, 22)">
+        <circle cx="0" cy="-4.5" r="3" fill="#facc15"/>
+        <circle cx="4.3" cy="-1.4" r="3" fill="#facc15"/>
+        <circle cx="2.6" cy="3.6" r="3" fill="#facc15"/>
+        <circle cx="-2.6" cy="3.6" r="3" fill="#facc15"/>
+        <circle cx="-4.3" cy="-1.4" r="3" fill="#facc15"/>
+        <circle cx="0" cy="0" r="2" fill="#dc2626"/>
+      </g>
+      <!-- Top right Gold Coin -->
+      <circle cx="84" cy="12" r="4.2" fill="url(#tetGold)" stroke="#b45309" stroke-width="1"/>
+      <rect x="82.5" y="10.5" width="3" height="3" fill="#991b1b"/>
+    </g>
+  </g>
+</svg>

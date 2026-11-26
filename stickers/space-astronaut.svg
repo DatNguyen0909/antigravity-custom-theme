@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="suit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="65%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="visor" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="trim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <radialGradient id="planetG" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="55%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </radialGradient>
+    <style>
+      /* Mỗi 15s: Đĩa bay UFO mini bay tới chiếu tia Tractor Beam hút hành tinh Sao Thổ lên rồi trả lại, Phi Hành Gia hiện dấu ? */
+      .ufo-visit { animation: ufoFly 15s ease-in-out infinite; }
+      .ufo-beam { animation: beamPulse 15s ease-in-out infinite; transform-origin: 60px 22px; }
+      .planet-abduct { animation: planetFloat 15s ease-in-out infinite; transform-origin: 60px 89px; }
+      .q-mark { animation: qMarkPop 15s ease-out infinite; transform-origin: 96px 22px; }
+
+      @keyframes ufoFly {
+        0%, 71% { transform: translate(-80px, -25px) rotate(-15deg); opacity: 0; }
+        76% { transform: translate(0px, 0px) rotate(0deg); opacity: 1; }
+        90% { transform: translate(0px, -2px) rotate(3deg); opacity: 1; }
+        96%, 100% { transform: translate(85px, -30px) rotate(15deg); opacity: 0; }
+      }
+      @keyframes beamPulse {
+        0%, 76% { opacity: 0; transform: scaleY(0.1); }
+        79%, 88% { opacity: 0.55; transform: scaleY(1); }
+        91%, 100% { opacity: 0; transform: scaleY(0.1); }
+      }
+      @keyframes planetFloat {
+        0%, 77% { transform: translateY(0) rotate(0deg); }
+        83% { transform: translateY(-38px) rotate(25deg) scale(0.85); }
+        88% { transform: translateY(-42px) rotate(-20deg) scale(0.85); }
+        93%, 100% { transform: translateY(0) rotate(0deg); }
+      }
+      @keyframes qMarkPop {
+        0%, 84% { opacity: 0; transform: scale(0.2); }
+        87%, 95% { opacity: 1; transform: scale(1.15); }
+        98%, 100% { opacity: 0; transform: scale(0.3); }
+      }
+    </style>
+  </defs>
+
+  <g>
+    <rect x="33" y="64" width="54" height="34" rx="10" fill="#64748b" stroke="#1e293b" stroke-width="2"/>
+    <path d="M38 98 Q42 112 45 115 Q48 112 50 98 Z" fill="#38bdf8" opacity="0.85"/>
+    <path d="M70 98 Q73 112 75 115 Q78 112 82 98 Z" fill="#38bdf8" opacity="0.85"/>
+    <path d="M41 98 Q45 107 47 109 Q48 107 48 98 Z" fill="#fde047"/>
+    <path d="M72 98 Q75 107 76 109 Q78 107 79 98 Z" fill="#fde047"/>
+
+    <line x1="60" y1="18" x2="60" y2="8" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="60" cy="7" r="5" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/>
+    <circle cx="58.5" cy="5.5" r="1.8" fill="#ffffff"/>
+
+    <path d="M39 74 C36 90, 41 104, 60 104 C79 104, 84 90, 81 74 Z" fill="url(#suit)" stroke="#1e293b" stroke-width="2.2"/>
+    <path d="M38 73 Q60 81 82 73" fill="none" stroke="url(#trim)" stroke-width="4.5" stroke-linecap="round"/>
+    <rect x="50" y="81" width="20" height="12" rx="3" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+    <circle cx="55" cy="87" r="2.2" fill="#ef4444"/>
+    <circle cx="60" cy="87" r="2.2" fill="#fde047"/>
+    <circle cx="65" cy="87" r="2.2" fill="#22c55e"/>
+
+    <ellipse cx="49" cy="105" rx="8" ry="5.5" fill="url(#suit)" stroke="#1e293b" stroke-width="2"/>
+    <path d="M42 105 Q49 108 56 105" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <ellipse cx="71" cy="105" rx="8" ry="5.5" fill="url(#suit)" stroke="#1e293b" stroke-width="2"/>
+    <path d="M64 105 Q71 108 78 105" fill="none" stroke="#38bdf8" stroke-width="2"/>
+
+    <circle cx="60" cy="46" r="31" fill="url(#suit)" stroke="#1e293b" stroke-width="2.4"/>
+    <rect x="25" y="40" width="6" height="14" rx="3" fill="url(#trim)" stroke="#1e293b" stroke-width="1.8"/>
+    <rect x="89" y="40" width="6" height="14" rx="3" fill="url(#trim)" stroke="#1e293b" stroke-width="1.8"/>
+
+    <rect x="34" y="26" width="52" height="39" rx="19" fill="url(#visor)" stroke="#38bdf8" stroke-width="2.2"/>
+    <path d="M40 31 Q52 27 68 31" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+    <circle cx="40" cy="36" r="2.2" fill="#ffffff" opacity="0.6"/>
+
+    <g>
+      <ellipse cx="47" cy="47" rx="5.5" ry="6.2" fill="#38bdf8"/>
+      <ellipse cx="47" cy="46" rx="4" ry="4.5" fill="#0284c7"/>
+      <circle cx="45" cy="44" r="2.2" fill="#ffffff"/>
+      <circle cx="49" cy="49" r="1.1" fill="#ffffff"/>
+
+      <ellipse cx="73" cy="47" rx="5.5" ry="6.2" fill="#38bdf8"/>
+      <ellipse cx="73" cy="46" rx="4" ry="4.5" fill="#0284c7"/>
+      <circle cx="71" cy="44" r="2.2" fill="#ffffff"/>
+      <circle cx="75" cy="49" r="1.1" fill="#ffffff"/>
+    </g>
+    <ellipse cx="40" cy="53" rx="4" ry="2.2" fill="#f472b6" opacity="0.75"/>
+    <ellipse cx="80" cy="53" rx="4" ry="2.2" fill="#f472b6" opacity="0.75"/>
+    <path d="M56 52 Q60 56 64 52" fill="none" stroke="#bae6fd" stroke-width="2" stroke-linecap="round"/>
+
+    <ellipse cx="42" cy="84" rx="6.5" ry="5" transform="rotate(20 42 84)" fill="url(#suit)" stroke="#1e293b" stroke-width="2"/>
+    <ellipse cx="78" cy="84" rx="6.5" ry="5" transform="rotate(-20 78 84)" fill="url(#suit)" stroke="#1e293b" stroke-width="2"/>
+
+    <!-- Tia sáng UFO hút hành tinh -->
+    <polygon class="ufo-beam" points="52,20 68,20 82,92 38,92" fill="#4ade80"/>
+
+    <g class="planet-abduct">
+      <circle cx="60" cy="89" r="8.5" fill="url(#planetG)" stroke="#78350f" stroke-width="1.4"/>
+      <ellipse cx="60" cy="89" rx="15" ry="3.8" transform="rotate(-15 60 89)" fill="none" stroke="#fef08a" stroke-width="2.4"/>
+    </g>
+
+    <!-- Đĩa bay UFO mini bay tới mỗi 15s -->
+    <g class="ufo-visit">
+      <path d="M 48 16 A 12 10 0 0 1 72 16 Z" fill="#86efac" stroke="#15803d" stroke-width="1.2"/>
+      <ellipse cx="60" cy="17" rx="18" ry="5" fill="#94a3b8" stroke="#1e293b" stroke-width="1.4"/>
+      <circle cx="50" cy="17" r="1.6" fill="#fde047"/>
+      <circle cx="60" cy="18" r="1.6" fill="#ef4444"/>
+      <circle cx="70" cy="17" r="1.6" fill="#38bdf8"/>
+    </g>
+
+    <!-- Dấu chấm hỏi ngơ ngác -->
+    <g class="q-mark">
+      <text x="96" y="26" font-family="Arial Black, sans-serif" font-size="18" font-weight="900" fill="#fde047" stroke="#0f172a" stroke-width="1">?</text>
+    </g>
+  </g>
+</svg>

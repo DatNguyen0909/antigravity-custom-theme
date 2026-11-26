@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95">
+  <defs>
+    <linearGradient id="wIvory" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#e5e7eb"/>
+      <stop offset="100%" stop-color="#9ca3af"/>
+    </linearGradient>
+    <linearGradient id="bEbony" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4b5563"/>
+      <stop offset="55%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="glassG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4b5563"/>
+      <stop offset="50%" stop-color="#030712"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="steelG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="60%" stop-color="#9ca3af"/>
+      <stop offset="100%" stop-color="#4b5563"/>
+    </linearGradient>
+    <radialGradient id="flashG" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f3f4f6" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      /* Toàn bộ kịch bản chạy trong chu kỳ 5s */
+      .rook { animation: rookPath 5s linear infinite; transform-box: fill-box; transform-origin: 50% 60%; }
+      .rook-bob { animation: rookBob 0.32s ease-in-out infinite alternate; }
+      .mace { animation: maceSwing 0.4s ease-in-out infinite alternate; transform-origin: 12px 46px; }
+      .pawn { animation: pawnShow 5s linear infinite; }
+      .queen { animation: queenShow 5s linear infinite; }
+      .gun-arm { animation: gunAim 5s ease-out infinite; transform-origin: 210px 44px; }
+      .burst { animation: burstSeq 5s ease-out infinite; transform-origin: 216px 46px; }
+      .muzzle { animation: muzzleSeq 5s linear infinite; transform-origin: 166px 39px; }
+      .bullet { animation: bulletSeq 5s linear infinite; }
+      .pow { animation: powSeq 5s ease-out infinite; transform-origin: 150px 32px; }
+      .gsmoke { animation: smokeSeq 5s ease-out infinite; }
+      .sweat { animation: sweatSeq 5s ease-out infinite; }
+      .tile-row { animation: tileShift 2s linear infinite; }
+
+      @keyframes rookPath {
+        0% { transform: translate(-70px, 0) rotate(0deg); opacity: 1; }
+        46% { transform: translate(128px, 0) rotate(0deg); opacity: 1; }
+        58% { transform: translate(128px, 0) rotate(0deg); opacity: 1; }
+        61% { transform: translate(122px, -4px) rotate(-15deg); opacity: 1; }
+        72% { transform: translate(40px, -55px) rotate(-300deg); opacity: 1; }
+        82% { transform: translate(-60px, -110px) rotate(-620deg); opacity: 0; }
+        100% { transform: translate(-70px, 0) rotate(0deg); opacity: 0; }
+      }
+      @keyframes rookBob {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-3px); }
+      }
+      @keyframes maceSwing {
+        0% { transform: rotate(-55deg); }
+        100% { transform: rotate(35deg); }
+      }
+      @keyframes pawnShow {
+        0%, 46% { opacity: 1; transform: translate(0, 0) scale(1); }
+        50% { opacity: 0; transform: translate(0, 0) scale(1); }
+        95% { opacity: 0; }
+        99%, 100% { opacity: 1; }
+      }
+      @keyframes queenShow {
+        0%, 47% { opacity: 0; }
+        51%, 94% { opacity: 1; }
+        98%, 100% { opacity: 0; }
+      }
+      @keyframes gunAim {
+        0%, 50% { transform: rotate(75deg); }
+        56% { transform: rotate(0deg); }
+        59% { transform: rotate(0deg); }
+        61% { transform: rotate(18deg); }
+        64%, 86% { transform: rotate(0deg); }
+        92%, 100% { transform: rotate(75deg); }
+      }
+      @keyframes burstSeq {
+        0%, 45% { opacity: 0; transform: scale(0.2); }
+        49% { opacity: 1; transform: scale(1.3); }
+        54% { opacity: 0; transform: scale(1.8); }
+        94% { opacity: 0; transform: scale(0.2); }
+        97% { opacity: 0.9; transform: scale(1); }
+        100% { opacity: 0; transform: scale(1.4); }
+      }
+      @keyframes muzzleSeq {
+        0%, 59% { opacity: 0; transform: scale(0.3); }
+        60% { opacity: 1; transform: scale(1.3); }
+        62%, 100% { opacity: 0; transform: scale(0.5); }
+      }
+      @keyframes bulletSeq {
+        0%, 59.5% { opacity: 0; transform: translateX(0); }
+        60% { opacity: 1; transform: translateX(0); }
+        61.5% { opacity: 1; transform: translateX(-22px); }
+        62%, 100% { opacity: 0; transform: translateX(-24px); }
+      }
+      @keyframes powSeq {
+        0%, 60.5% { opacity: 0; transform: scale(0.2) rotate(-10deg); }
+        63% { opacity: 1; transform: scale(1.25) rotate(4deg); }
+        70% { opacity: 1; transform: scale(1) rotate(0deg); }
+        76%, 100% { opacity: 0; transform: scale(0.8); }
+      }
+      @keyframes smokeSeq {
+        0%, 64% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+        68% { opacity: 0.9; transform: translate(-2px, -4px) scale(1); }
+        84%, 100% { opacity: 0; transform: translate(-4px, -18px) scale(1.6); }
+      }
+      @keyframes sweatSeq {
+        0%, 28% { opacity: 0; transform: translateY(0); }
+        32% { opacity: 1; transform: translateY(0); }
+        46% { opacity: 1; transform: translateY(4px); }
+        48%, 100% { opacity: 0; }
+      }
+      @keyframes tileShift {
+        0% { opacity: 0.55; }
+        50% { opacity: 0.8; }
+        100% { opacity: 0.55; }
+      }
+    </style>
+  </defs>
+
+  <!-- NỀN BÀN CỜ TRẮNG ĐEN DỌC MÉP CHAT -->
+  <g class="tile-row">
+    <polygon points="6,70 18,62 248,62 256,70" fill="#111827" stroke="#e5e7eb" stroke-width="1.2"/>
+    <polygon points="10,69 22,63 50,63 42,69" fill="#f3f4f6"/>
+    <polygon points="74,69 80,63 108,63 106,69" fill="#f3f4f6"/>
+    <polygon points="138,69 138,63 166,63 170,69" fill="#f3f4f6"/>
+    <polygon points="202,69 196,63 224,63 234,69" fill="#f3f4f6"/>
+  </g>
+
+  <!-- QUÂN XE ĐEN CẦM CHÙY XÔNG TỚI -->
+  <g class="rook">
+    <g class="rook-bob">
+      <!-- Chùy gai -->
+      <g class="mace">
+        <line x1="12" y1="46" x2="26" y2="18" stroke="#78350f" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="27" cy="16" r="6" fill="url(#steelG)" stroke="#1f2937" stroke-width="1"/>
+        <path d="M 27 7 L 27 10 M 27 22 L 27 25 M 18 16 L 21 16 M 33 16 L 36 16 M 21 10 L 23 12 M 31 20 L 33 22 M 33 10 L 31 12 M 21 22 L 23 20" stroke="#1f2937" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <!-- Đế -->
+      <ellipse cx="0" cy="66" rx="15" ry="3.5" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="1"/>
+      <rect x="-14" y="58" width="28" height="7" rx="2" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="1"/>
+      <!-- Thân tháp -->
+      <path d="M -10 58 L -9 36 L 9 36 L 10 58 Z" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="1"/>
+      <!-- Lỗ châu mai -->
+      <path d="M -13 36 L -13 24 L -8 24 L -8 28 L -3 28 L -3 24 L 3 24 L 3 28 L 8 28 L 8 24 L 13 24 L 13 36 Z" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="1"/>
+      <!-- Mặt hung hăng -->
+      <path d="M -6 39 L -1 41 M 8 39 L 3 41" stroke="#f9fafb" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="-3" cy="43" r="1.6" fill="#ef4444"/>
+      <circle cx="5" cy="43" r="1.6" fill="#ef4444"/>
+      <path d="M -2 50 Q 2 47 6 50" fill="none" stroke="#f9fafb" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- Tay cầm chùy -->
+      <circle cx="12" cy="46" r="3" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="0.8"/>
+    </g>
+  </g>
+
+  <!-- HIỆU ỨNG LÓE SÁNG BIẾN HÌNH -->
+  <g class="burst">
+    <circle cx="216" cy="46" r="22" fill="url(#flashG)"/>
+    <path d="M 216 18 L 219 40 L 244 46 L 219 52 L 216 74 L 213 52 L 188 46 L 213 40 Z" fill="#ffffff" opacity="0.9"/>
+  </g>
+
+  <!-- CHỐT GANGSTER (ĐEO KÍNH ĐEN, MŨ PHỚT) -->
+  <g class="pawn">
+    <ellipse cx="216" cy="66" rx="14" ry="3.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+    <rect x="203" y="59" width="26" height="6" rx="2.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+    <path d="M 206 60 C 207 52, 210 47, 212 44 L 220 44 C 222 47, 225 52, 226 60 Z" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+    <path d="M 208 56 Q 216 52 224 56 L 225 60 L 207 60 Z" fill="#111827"/>
+    <ellipse cx="216" cy="44" rx="8" ry="2.4" fill="url(#wIvory)" stroke="#374151" stroke-width="1"/>
+    <circle cx="216" cy="34" r="10" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+    <path d="M 204 28 Q 216 31 228 28 L 227 31 Q 216 33 205 31 Z" fill="#111827"/>
+    <path d="M 208 29 C 208 21, 212 18, 216 18 C 220 18, 224 21, 224 29 Z" fill="#1f2937"/>
+    <path d="M 208 27 L 224 27 L 224 29 L 208 29 Z" fill="#9ca3af"/>
+    <path d="M 206 34 L 226 34" stroke="#030712" stroke-width="1.4"/>
+    <path d="M 206 34 L 214 34 L 213 38 Q 210 39.5 207 38 Z" fill="url(#glassG)"/>
+    <path d="M 218 34 L 226 34 L 225 38 Q 222 39.5 219 38 Z" fill="url(#glassG)"/>
+    <path d="M 212 41 Q 216 42 220 40" fill="none" stroke="#111827" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- Giọt mồ hôi khi xe tới gần -->
+    <path class="sweat" d="M 229 26 C 231 29, 231 31, 229 31 C 227 31, 227 29, 229 26 Z" fill="#93c5fd" opacity="0.9"/>
+  </g>
+
+  <!-- HẬU GANGSTER RÚT SÚNG -->
+  <g class="queen">
+    <ellipse cx="216" cy="66" rx="15" ry="3.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+    <rect x="202" y="59" width="28" height="6" rx="2.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+    <path d="M 205 60 C 207 48, 209 40, 210 32 L 222 32 C 223 40, 225 48, 227 60 Z" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+    <!-- Áo choàng đen gangster -->
+    <path d="M 207 54 Q 216 48 225 54 L 226 60 L 206 60 Z" fill="#111827"/>
+    <ellipse cx="216" cy="32" rx="9" ry="2.6" fill="url(#wIvory)" stroke="#374151" stroke-width="1"/>
+    <circle cx="216" cy="23" r="8.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+    <!-- Vương miện Hậu -->
+    <path d="M 206 17 L 205 8 L 209.5 12 L 212 5 L 216 11 L 220 5 L 222.5 12 L 227 8 L 226 17 Z" fill="url(#wIvory)" stroke="#374151" stroke-width="1"/>
+    <circle cx="205" cy="7.5" r="1.6" fill="#111827"/>
+    <circle cx="212" cy="4.5" r="1.6" fill="#111827"/>
+    <circle cx="220" cy="4.5" r="1.6" fill="#111827"/>
+    <circle cx="227" cy="7.5" r="1.6" fill="#111827"/>
+    <!-- Kính đen -->
+    <path d="M 207 23 L 225 23" stroke="#030712" stroke-width="1.4"/>
+    <path d="M 207 23 L 214 23 L 213 27 Q 210 28.5 208 27 Z" fill="url(#glassG)"/>
+    <path d="M 218 23 L 225 23 L 224 27 Q 222 28.5 219 27 Z" fill="url(#glassG)"/>
+    <path d="M 212 30 Q 216 31.5 220 29" fill="none" stroke="#111827" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- Tay cầm súng lục chĩa về phía Xe -->
+    <g class="gun-arm">
+      <path d="M 210 44 L 200 44" stroke="#e5e7eb" stroke-width="5" stroke-linecap="round"/>
+      <path d="M 210 44 L 200 44" fill="none" stroke="#374151" stroke-width="0.8"/>
+      <rect x="182" y="36.5" width="16" height="5" rx="1" fill="#111827" stroke="#9ca3af" stroke-width="0.7"/>
+      <path d="M 192 41 L 198 41 L 199 48 L 194 48 Z" fill="#1f2937" stroke="#9ca3af" stroke-width="0.7"/>
+      <circle cx="200" cy="44" r="3" fill="url(#wIvory)" stroke="#374151" stroke-width="0.8"/>
+      <!-- Khói súng -->
+      <g class="gsmoke">
+        <circle cx="180" cy="36" r="2.6" fill="#d1d5db"/>
+        <circle cx="178" cy="32" r="2" fill="#9ca3af"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- LỬA ĐẦU NÒNG -->
+  <g class="muzzle">
+    <path d="M 181 39 L 172 34 L 175 38.5 L 166 39 L 175 40 L 172 44 Z" fill="#fef08a" stroke="#f59e0b" stroke-width="0.8"/>
+  </g>
+  <!-- VIÊN ĐẠN -->
+  <g class="bullet">
+    <rect x="170" y="38" width="6" height="2.4" rx="1.2" fill="#f3f4f6"/>
+    <path d="M 176 39.2 L 188 39.2" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+  </g>
+  <!-- CHỮ BANG! KHI TRÚNG ĐẠN -->
+  <g class="pow">
+    <path d="M 150 14 L 155 24 L 166 20 L 160 30 L 170 36 L 158 37 L 158 48 L 150 40 L 141 48 L 142 37 L 130 36 L 140 30 L 134 20 L 145 24 Z" fill="#ffffff" stroke="#111827" stroke-width="1.4"/>
+    <text x="150" y="35" font-family="Impact, Arial Black, sans-serif" font-size="10" font-weight="900" fill="#111827" text-anchor="middle">BANG!</text>
+  </g>
+</svg>
