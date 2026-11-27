@@ -1245,13 +1245,13 @@ const SoundService = (function () {
         'ice-penguin':       { vi: 'Giẫm tuyết xốp & băng vỡ • Vũ điệu Cánh Cụt',   en: 'Crunchy Snowstep • Penguin Polka & Glass' },
         'ai-robot':          { vi: 'Giọng Robot R2-D2 đa tần • Cyberpunk Electro', en: 'R2-D2 Robot Chirps • Cyberpunk Electro Arp' },
         'black-cat':         { vi: 'Tiếng Mèo Meow~ & gừ ấm • Mưa đêm Jazz Piano', en: 'Cute Meow & Purr • Rainy Lo-Fi Jazz Piano' },
-        'noel-snowman':      { vi: 'Chùm lục lạc rung vang • Giai điệu Jingle Noel', en: 'Sleigh Bell Shake • Festive Jingle Groove' },
-        'tet-lion':          { vi: 'Trống Lân & Chũm chọe đồng • Hội Xuân Rộn Ràng', en: 'Lion Drum & Cymbal Crash • Festive Tet Beat' },
+        'noel-snowman':      { vi: 'Lục lạc Giáng Sinh • Hộp nhạc & Đàn Hạc đêm đông', en: 'Sleigh Bell • Cozy Fireside Music Box & Harp' },
+        'tet-lion':          { vi: 'Trống Lân & Chũm chọe • Hòa tấu Đàn Tranh & Sáo Xuân', en: 'Lion Drum & Cymbal • Graceful Spring Zither & Flute' },
         'code-cat':          { vi: 'Phím cơ Custom Thocky • Lo-Fi Hip-Hop Chill',  en: 'Creamy Thocky Switch • Boom-Bap Lo-Fi Beat' },
         'pixel-knight':      { vi: 'Nhảy & Ăn xu 8-bit NES • Chiptune 4 Kênh RPG', en: 'NES Jump & 1UP Coin • 4-Ch 8-Bit Chiptune' },
         'cloud-whale':       { vi: 'Cá Voi ngân vang & Hạc • Ghibli Sky Waltz 3/4', en: 'Echoing Whale & Harp • Ghibli Sky Waltz' },
         'halloween-pumpkin': { vi: 'Xương khô lốc cốc & Ma trơi • Waltz Organ Cổ',  en: 'Rattling Bones & Ghost • Haunted Organ Waltz' },
-        'midautumn-carp':    { vi: 'Trống ếch & Đàn Bầu • Rước đèn đêm Trung Thu',  en: 'Frog Drum & Dan Bau • Lantern Parade Beat' },
+        'midautumn-carp':    { vi: 'Trống ếch & Đàn Bầu • Hòa tấu Trăng Rằm Hồ Sen',  en: 'Frog Drum & Dan Bau • Serene Moonlit Lotus Zither' },
         'valentine-cupid':   { vi: 'Bắn dây cung xé gió • Bossa Nova Lãng mạn',    en: 'Bowstring Arrow Twang • Romantic Bossa Nova' },
         'summer-corgi':      { vi: 'Steel Drum & Ukulele • Sóng biển & Bongo Hè',  en: 'Steelpan & Bark • Surf Ukulele & Bongo' }
     };
@@ -1932,35 +1932,94 @@ const SoundService = (function () {
                 if (piano[s]) tone('triangle', m2f(piano[s]), m2f(piano[s]), 0.55, 0.075, bgmGain, 0, 1150);
             }
         },
-        // 13. Noel Snowman: Festive Sleigh-Bell Rhythm & Classic Holiday Jingle Melody!
+        // 13. Noel Snowman: Cozy Fireside 3/4 Christmas Lullaby (Warm Harp, Strings & Soft Music-Box)
         'noel-snowman': {
-            ms: 175, len: 32,
+            ms: 250, len: 48, // 8 lush bars of 3/4 Waltz (~12s breathing cycle)
             tick: (s) => {
-                if (s % 2 === 0) {
-                    noise('highpass', 5800, 5800, 1.3, 0.045, 0.055, bgmGain);
-                    fm(2637, 2.3, 1.2, 0.06, 0.03, bgmGain);
+                const bars = [
+                    [48, 55, 60, 64], // Cmaj7
+                    [48, 55, 60, 64], // Cmaj7
+                    [43, 50, 59, 62], // G6
+                    [48, 55, 60, 64], // Cmaj7
+                    [53, 57, 60, 65], // Fmaj7
+                    [48, 55, 60, 64], // Cmaj7
+                    [50, 57, 60, 65], // Dm7
+                    [43, 50, 55, 59]  // G
+                ];
+                const c = bars[Math.floor(s / 6)];
+                const beat = s % 6;
+                const rubato = 0.008 + Math.random() * 0.018;
+
+                // Warm fireside felt pad on bar downbeat + gentle hand-rolled harp on inner beats
+                if (beat === 0) {
+                    chord(c, 'sine', 1.55, 0.075, 920, bgmGain, 42);
+                } else if (beat === 2 || beat === 4) {
+                    const toneNote = c[beat === 2 ? 2 : 3];
+                    pluck(m2f(toneNote), 0.85, 0.042, bgmGain, rubato, 1750, null, true);
                 }
-                const bass = [48, 55, 48, 55, 53, 60, 55, 43];
-                if (s % 4 === 0) pluck(m2f(bass[Math.floor(s / 4)]), 0.28, 0.10, bgmGain, 0, 1000);
-                // Cheerful holiday bell melody!
-                const jingle = {
-                    0: 76, 2: 76, 4: 76, 8: 76, 10: 76, 12: 76,
-                    16: 76, 18: 79, 20: 72, 23: 74, 24: 76
+
+                // Whisper-soft distant sleigh bell shimmer only once every 4 bars
+                if (s === 0 || s === 24) {
+                    noise('highpass', 6200, 6200, 1.1, 0.09, 0.022, bgmGain, 0.02);
+                    fm(2637, 2.0, 0.6, 0.28, 0.020, bgmGain, 0.02, true);
+                }
+
+                // Tender, lyrical pastoral Christmas melody [note, durationSec]
+                const lullaby = {
+                    0: [79, 1.10], 3: [81, 0.48], 4: [79, 0.72], 6: [76, 1.45],
+                    12: [81, 0.95], 16: [79, 0.65], 18: [74, 1.40],
+                    24: [77, 0.95], 27: [79, 0.48], 28: [77, 0.72], 30: [76, 1.35],
+                    36: [74, 0.90], 39: [76, 0.48], 40: [74, 0.72], 42: [72, 1.65]
                 };
-                if (jingle[s]) fm(m2f(jingle[s]), 2.0, 1.1, 0.34, 0.09, bgmGain, 0, true);
+                if (lullaby[s]) {
+                    const f = m2f(lullaby[s][0]);
+                    const dur = lullaby[s][1];
+                    fm(f, 2.0, 0.58, dur, 0.068, bgmGain, rubato, true);
+                    sing('sine', f, f, dur, 0.048, bgmGain, rubato + 0.015, 4.8, 3.5, 1600, true);
+                }
             }
         },
-        // 14. Tet Lion: Festive Mai Hoa Thung Lion Drum Groove + Spring Zither!
+        // 14. Tet Lion: Graceful Spring Blossom Ensemble (Rolled Silk Đàn Tranh + Lyrical Sáo Xuân)
         'tet-lion': {
-            ms: 155, len: 32,
+            ms: 230, len: 48, // Flowing, warm Vietnamese Spring melody (~11s cycle)
             tick: (s) => {
-                const p = s % 8;
-                // Authentic Lion Drum rhythm: TUNG - cac - TUNG - TUNG - XOENG!
-                if (p === 0 || p === 3 || p === 4) tone('sine', 155, 62, 0.14, 0.20, bgmGain);
-                if (p === 2 || p === 7) rim(0.11, 880);
-                if (s === 0 || s === 16) noise('bandpass', 3800, 2500, 0.9, 0.22, 0.09, bgmGain); // Cymbal!
-                const tetMel = { 0: 72, 2: 74, 4: 76, 6: 79, 8: 81, 10: 79, 12: 76, 16: 79, 18: 81, 20: 84, 22: 81, 24: 79, 28: 72 };
-                if (tetMel[s]) pluck(m2f(tetMel[s]), 0.28, 0.09, bgmGain, 0, 3600, null, true);
+                const bars = [
+                    [53, 57, 60, 67], // Fadd9
+                    [50, 57, 60, 65], // Dm7
+                    [46, 53, 58, 62], // Bbadd9
+                    [48, 55, 60, 64], // C6
+                    [50, 57, 62, 65], // Dm
+                    [53, 60, 65, 69]  // F
+                ];
+                const barIdx = Math.floor(s / 8);
+                const sub = s % 8;
+                const c = bars[barIdx];
+                const rubato = 0.008 + Math.random() * 0.020;
+
+                // Soft hand-rolled silk Đàn Tranh chord at phrase opening + flowing silk arpeggio
+                if (sub === 0) {
+                    c.forEach((m, i) => pluck(m2f(m), 1.15, 0.048, bgmGain, i * 0.036 + rubato, 2050, null, true));
+                } else if (sub === 3 || sub === 5 || sub === 6) {
+                    const pick = c[sub === 3 ? 2 : (sub === 5 ? 3 : 1)];
+                    pluck(m2f(pick + 12), 0.75, 0.038, bgmGain, rubato, 1950, null, true);
+                }
+
+                // Warm, gentle distant New Year drum heartbeat only on major phrase openings
+                if (s === 0 || s === 24) {
+                    tone('sine', 112, 50, 0.38, 0.085, bgmGain, 0, 260);
+                }
+
+                // Joyful yet graceful lyrical Sáo Xuân (Spring Bamboo Flute) with soft grace slides
+                const xuan = {
+                    0: [77, 0.85], 3: [81, 0.65], 5: [79, 0.55], 8: [74, 1.25],
+                    16: [74, 0.65], 19: [77, 0.65], 21: [79, 0.65], 24: [81, 1.30],
+                    32: [84, 0.80], 35: [81, 0.60], 37: [79, 0.65], 40: [77, 1.45]
+                };
+                if (xuan[s]) {
+                    const target = m2f(xuan[s][0]);
+                    const dur = xuan[s][1];
+                    sing('sine', target * 0.965, target, dur, 0.075, bgmGain, rubato, 5.2, 5.0, 1850, true);
+                }
             }
         },
         // 15. Code Cat: True Boom-Bap Lo-Fi Hip-Hop Chillhop (Kick + Snare + Vinyl + Rhodes 7ths)
@@ -2031,18 +2090,41 @@ const SoundService = (function () {
                 }
             }
         },
-        // 19. Mid-Autumn Carp: Festive Lantern Parade (Frog Drum + Expressive Pitch-Bent Dan Bau!)
+        // 19. Mid-Autumn Carp: Serene Moonlit Lotus Pond (Rippling Silk Đàn Tranh & Soulful Đàn Bầu)
         'midautumn-carp': {
-            ms: 175, len: 32,
+            ms: 245, len: 48, // Unhurried, poetic full-moon night (~11.8s cycle)
             tick: (s) => {
-                const p = s % 8;
-                // Cheerful Vietnamese lantern parade frog-drum rhythm!
-                if (p === 0 || p === 3) tone('triangle', 210, 125, 0.09, 0.13, bgmGain);
-                if (p === 2 || p === 6 || p === 7) rim(0.08, 940);
-                const bau = { 0: 67, 3: 69, 4: 71, 8: 74, 11: 76, 12: 79, 16: 76, 19: 74, 20: 71, 24: 69, 28: 67 };
-                if (bau[s]) {
-                    const target = m2f(bau[s]);
-                    sing('triangle', target * 0.91, target, 0.45, 0.085, bgmGain, 0, 6, 7, 2300, true);
+                const bars = [
+                    [55, 59, 62, 67], // G
+                    [52, 59, 64, 67], // Em
+                    [48, 55, 60, 64], // Cmaj7
+                    [50, 57, 62, 66], // D
+                    [52, 59, 62, 67], // Em7
+                    [55, 62, 67, 71]  // Gmaj7
+                ];
+                const c = bars[Math.floor(s / 8)];
+                const sub = s % 8;
+                const rubato = 0.010 + Math.random() * 0.022;
+
+                // Soft, water-rippling silk Đàn Tranh notes with natural human breathing
+                const rippleOrder = [0, 2, 1, 3, 2, 1, 3, 2];
+                if (sub !== 4 && sub !== 7) {
+                    const vel = sub === 0 ? 0.055 : 0.036;
+                    pluck(m2f(c[rippleOrder[sub]]), 0.95, vel, bgmGain, rubato, 1820, null, true);
+                }
+
+                // Soulful, softly gliding Vietnamese Đàn Bầu harmonics (pure warm sine + octave overtone)
+                const trangRam = {
+                    1: [74, 1.15, 71], 5: [76, 0.70, 74], 8: [79, 1.40, 76],
+                    17: [76, 0.95, 74], 21: [74, 0.70, 71], 24: [71, 1.35, 69],
+                    33: [69, 0.90, 67], 37: [71, 0.70, 69], 40: [67, 1.65, 64]
+                };
+                if (trangRam[s]) {
+                    const target = m2f(trangRam[s][0]);
+                    const dur = trangRam[s][1];
+                    const from = m2f(trangRam[s][2]);
+                    sing('sine', from, target, dur, 0.072, bgmGain, rubato, 5.0, 5.5, 1750, true);
+                    sing('sine', from * 2, target * 2, dur * 0.85, 0.022, bgmGain, rubato, 5.0, 8.0, 2200, true);
                 }
             }
         },
