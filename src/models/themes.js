@@ -221,6 +221,34 @@ const THEME_DEFINITIONS = [
         sparkle: '</>',
         hoverBursts: ['🐛', '💻', '☕', '✓', '🐱'],
         typingFx: { particles: [';', '{ }', '</>', '=>'], think: '☕ compiling...', mono: true }
+    },
+    {
+        id: 'pixel-knight',
+        name: 'Pixel Hiệp Sĩ 8-bit',
+        motionDesc: '🗡️ Nhảy qua ống nước & cụng gạch rơi xu vàng',
+        previewText: 'INSERT COIN 🗡️',
+        accent: '#facc15',
+        bubbleBg: 'rgba(18, 22, 46, 0.95)',
+        bubbleBorder: 'rgba(250, 204, 21, 0.72)',
+        bubbleText: '#fef9c3',
+        inputBorder: 'rgba(250, 204, 21, 0.55)',
+        sparkle: '🪙',
+        hoverBursts: ['🗡️', '🪙', '🛡️', '+100', '⭐'],
+        typingFx: { particles: ['+1', '🪙', '⚔️'], think: '🕹️ LV.1...', mono: true }
+    },
+    {
+        id: 'cloud-whale',
+        name: 'Cá Voi Mây',
+        motionDesc: '🐋 Bơi giữa đảo nổi hoàng hôn & quẫy đuôi tạo mây',
+        previewText: 'Xin chào 🐋🌈',
+        accent: '#f472b6',
+        bubbleBg: 'rgba(32, 22, 58, 0.94)',
+        bubbleBorder: 'rgba(244, 114, 182, 0.68)',
+        bubbleText: '#fdf2f8',
+        inputBorder: 'rgba(244, 114, 182, 0.52)',
+        sparkle: '☁️',
+        hoverBursts: ['🐋', '🌈', '☁️', '🫧', '✨'],
+        typingFx: { particles: ['☁️', '♪', '🫧'], think: '🌈 ...' }
     }
 ];
 

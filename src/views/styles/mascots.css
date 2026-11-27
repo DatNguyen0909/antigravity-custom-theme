@@ -242,6 +242,39 @@ body[data-ag-theme="code-cat"] .ag-custom-input-wrapper:hover > .ag-input-sticke
   filter: drop-shadow(0 3px 8px rgba(0,0,0,0.55)) drop-shadow(0 0 12px rgba(34,197,94,0.7)) !important;
 }
 
+/* 16. Pixel Hiệp Sĩ 8-bit (pixel-knight): Chạy side-scroll nhảy qua ống nước & cụng gạch rơi xu */
+body[data-ag-theme="pixel-knight"] .ag-bubble-sticker,
+body[data-ag-theme="pixel-knight"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="pixel-knight"] .ag-card-sticker {
+  animation: agIdlePixelKnight 0.9s steps(2) infinite !important;
+  image-rendering: pixelated !important;
+}
+@keyframes agIdlePixelKnight {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+body[data-ag-theme="pixel-knight"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="pixel-knight"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="pixel-knight"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.6)) drop-shadow(0 0 10px rgba(250,204,21,0.8)) !important;
+}
+
+/* 17. Cá Voi Mây (cloud-whale): Bơi ngang giữa đảo nổi hoàng hôn & quẫy đuôi tạo mây */
+body[data-ag-theme="cloud-whale"] .ag-bubble-sticker,
+body[data-ag-theme="cloud-whale"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="cloud-whale"] .ag-card-sticker {
+  animation: agIdleCloudWhale 3.6s ease-in-out infinite !important;
+}
+@keyframes agIdleCloudWhale {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-7px) rotate(3deg); }
+}
+body[data-ag-theme="cloud-whale"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="cloud-whale"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="cloud-whale"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.45)) drop-shadow(0 0 14px rgba(244,114,182,0.8)) !important;
+}
+
 /* ========================================================
    TYPING REACTION: per-mascot keystroke particles + thinking bubble
    (3 states: typing / typing-fast / pause)

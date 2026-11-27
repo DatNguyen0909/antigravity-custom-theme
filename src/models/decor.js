@@ -22,7 +22,9 @@ const SVG = {
     cyberWave: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 140' fill='none' stroke='" + c + "'><path d='M0 70 Q125 10 250 70 T500 70' stroke-width='2' stroke-opacity='0.45'/><path d='M0 90 Q125 30 250 90 T500 90' stroke-width='1.2' stroke-opacity='0.25'/></svg>",
     christmasTree: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 260' fill='none' stroke='" + c + "' stroke-linecap='round' stroke-linejoin='round'><polygon points='110,25 60,95 160,95' stroke-width='3.5' fill='" + c + "' fill-opacity='0.12'/><polygon points='110,70 42,155 178,155' stroke-width='3.5' fill='" + c + "' fill-opacity='0.12'/><polygon points='110,120 24,215 196,215' stroke-width='3.5' fill='" + c + "' fill-opacity='0.12'/><rect x='96' y='215' width='28' height='32' stroke-width='3'/><circle cx='110' cy='18' r='9' fill='#facc15' stroke='#fef08a' stroke-width='2'/><circle cx='85' cy='82' r='4.5' fill='#ef4444' stroke='none'/><circle cx='135' cy='135' r='5' fill='#facc15' stroke='none'/><circle cx='75' cy='142' r='4.5' fill='#38bdf8' stroke='none'/><circle cx='148' cy='192' r='5.5' fill='#ef4444' stroke='none'/><circle cx='70' cy='195' r='5' fill='#facc15' stroke='none'/></svg>",
     codeWindow: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200' fill='none'><rect x='6' y='6' width='288' height='188' rx='12' stroke='" + c + "' stroke-width='3'/><line x1='6' y1='34' x2='294' y2='34' stroke='" + c + "' stroke-width='2'/><circle cx='26' cy='20' r='5' fill='#ef4444'/><circle cx='44' cy='20' r='5' fill='#facc15'/><circle cx='62' cy='20' r='5' fill='#22c55e'/><rect x='26' y='54' width='70' height='9' rx='4.5' fill='#c084fc'/><rect x='104' y='54' width='90' height='9' rx='4.5' fill='#38bdf8'/><rect x='46' y='80' width='120' height='9' rx='4.5' fill='" + c + "'/><rect x='46' y='106' width='80' height='9' rx='4.5' fill='#facc15'/><rect x='134' y='106' width='100' height='9' rx='4.5' fill='#38bdf8'/><rect x='46' y='132' width='140' height='9' rx='4.5' fill='#f87171'/><rect x='26' y='158' width='34' height='9' rx='4.5' fill='#c084fc'/></svg>",
-    tetBranch: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200' fill='none'><path d='M320 25 Q215 55 135 35 Q70 20 15 72 M195 44 Q150 92 92 110' stroke='#92400e' stroke-width='4.5' stroke-linecap='round'/><line x1='245' y1='42' x2='245' y2='78' stroke='#facc15' stroke-width='2'/><ellipse cx='245' cy='94' rx='18' ry='14' fill='#ef4444' stroke='#facc15' stroke-width='2.5'/><rect x='237' y='78' width='16' height='4' fill='#facc15'/><rect x='237' y='106' width='16' height='4' fill='#facc15'/><line x1='245' y1='110' x2='245' y2='128' stroke='#facc15' stroke-width='2.5'/><circle cx='135' cy='35' r='11' fill='" + c + "'/><circle cx='135' cy='35' r='4' fill='#dc2626'/><circle cx='188' cy='46' r='12' fill='" + c + "'/><circle cx='188' cy='46' r='4.5' fill='#dc2626'/><circle cx='92' cy='110' r='10' fill='" + c + "'/><circle cx='92' cy='110' r='3.5' fill='#dc2626'/><circle cx='52' cy='52' r='11' fill='" + c + "'/><circle cx='52' cy='52' r='4' fill='#dc2626'/></svg>"
+    tetBranch: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200' fill='none'><path d='M320 25 Q215 55 135 35 Q70 20 15 72 M195 44 Q150 92 92 110' stroke='#92400e' stroke-width='4.5' stroke-linecap='round'/><line x1='245' y1='42' x2='245' y2='78' stroke='#facc15' stroke-width='2'/><ellipse cx='245' cy='94' rx='18' ry='14' fill='#ef4444' stroke='#facc15' stroke-width='2.5'/><rect x='237' y='78' width='16' height='4' fill='#facc15'/><rect x='237' y='106' width='16' height='4' fill='#facc15'/><line x1='245' y1='110' x2='245' y2='128' stroke='#facc15' stroke-width='2.5'/><circle cx='135' cy='35' r='11' fill='" + c + "'/><circle cx='135' cy='35' r='4' fill='#dc2626'/><circle cx='188' cy='46' r='12' fill='" + c + "'/><circle cx='188' cy='46' r='4.5' fill='#dc2626'/><circle cx='92' cy='110' r='10' fill='" + c + "'/><circle cx='92' cy='110' r='3.5' fill='#dc2626'/><circle cx='52' cy='52' r='11' fill='" + c + "'/><circle cx='52' cy='52' r='4' fill='#dc2626'/></svg>",
+    pixelBlocks: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180' shape-rendering='crispEdges'><rect x='40' y='40' width='36' height='36' fill='#c2410c' stroke='#7c2d12' stroke-width='4'/><rect x='76' y='40' width='36' height='36' fill='" + c + "' stroke='#92400e' stroke-width='4'/><text x='94' y='66' font-family='Consolas,monospace' font-size='24' font-weight='900' fill='#78350f' text-anchor='middle'>?</text><rect x='112' y='40' width='36' height='36' fill='#c2410c' stroke='#7c2d12' stroke-width='4'/><rect x='210' y='100' width='52' height='70' fill='#16a34a' stroke='#14532d' stroke-width='4'/><rect x='202' y='84' width='68' height='18' fill='#22c55e' stroke='#14532d' stroke-width='4'/></svg>",
+    skyIsland: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200' fill='none'><polygon points='70,95 250,95 190,175 130,175' fill='#92400e' fill-opacity='0.45' stroke='" + c + "' stroke-width='2.5'/><ellipse cx='160' cy='92' rx='96' ry='18' fill='#34d399' fill-opacity='0.35' stroke='" + c + "' stroke-width='2.5'/><circle cx='135' cy='58' r='24' fill='" + c + "' fill-opacity='0.35'/><rect x='132' y='74' width='6' height='18' fill='#92400e' fill-opacity='0.6'/><path d='M185 98 Q192 145 184 195' stroke='#bae6fd' stroke-width='5' stroke-linecap='round' stroke-opacity='0.55'/></svg>"
 };
 
 const DECOR = {
@@ -169,6 +171,27 @@ const DECOR = {
             { type: 'char', chars: ['{ }', '</>', '01', ';', '=>', '()'], color: '#4ade80', glow: '#22c55e', font: 'monospace', count: 18, anim: 'rise', size: [11, 17], dur: [12, 22], o: 0.6 },
             { type: 'char', chars: ['🐛', '☕'], count: 5, anim: 'drift', size: [13, 17], dur: [24, 36], o: 0.55 },
             { type: 'dot', color: '#4ade80', glow: '#22c55e', count: 14, anim: 'twinkle', size: [2, 4], dur: [2, 5], o: 0.85 }
+        ]
+    },
+    'pixel-knight': {
+        art: [
+            { svg: SVG.pixelBlocks('#facc15'), css: 'right:4%;bottom:3%;width:300px;height:170px;--o:0.24;opacity:0.24;animation:agArtFloat 7s steps(6) infinite;' }
+        ],
+        particles: [
+            { type: 'char', chars: ['🪙', '+1', '★', '⚔️', '❤️'], color: '#facc15', glow: '#eab308', font: 'monospace', count: 16, anim: 'rise', size: [11, 17], dur: [10, 20], o: 0.7 },
+            { type: 'dot', color: '#fde047', glow: '#facc15', count: 16, anim: 'twinkle', size: [3, 5], dur: [2, 4], o: 0.9 }
+        ]
+    },
+    'cloud-whale': {
+        art: [
+            { svg: SVG.skyIsland('#f472b6'), css: 'right:3%;top:8%;width:310px;height:195px;--o:0.42;opacity:0.42;animation:agArtFloat 9s ease-in-out infinite;' },
+            { svg: SVG.clouds('#fbcfe8'), css: 'left:0;top:18%;width:300px;height:120px;--o:0.24;opacity:0.24;animation:agDrift 36s linear infinite;' },
+            { svg: SVG.clouds('#fed7aa'), css: 'left:0;bottom:14%;width:260px;height:105px;--o:0.20;opacity:0.20;animation:agDrift 44s linear -18s infinite;' }
+        ],
+        particles: [
+            { type: 'bubble', color: '#fbcfe8', glow: '#f472b6', count: 18, anim: 'rise', size: [7, 16], dur: [9, 18], o: 0.72 },
+            { type: 'char', chars: ['☁️', '✨', '🌈'], count: 9, anim: 'drift', size: [12, 18], dur: [22, 36], o: 0.65 },
+            { type: 'dot', color: '#fef08a', glow: '#f472b6', count: 18, anim: 'twinkle', size: [2, 4.5], dur: [2, 5], o: 0.9 }
         ]
     }
 };

@@ -1,16 +1,18 @@
 # Antigravity Custom Theme Engine ✨ (v7 MVVM)
 
-Bộ giao diện tùy biến (Custom UI Theme) dành cho **Google Antigravity Desktop Client** với 15 chủ đề linh vật Chibi, hiệu ứng tự động mỗi 15 giây, tư thế riêng khi gõ phím và hoạt cảnh sân khấu khi rê chuột — được tổ chức theo kiến trúc **MVVM**.
+Bộ giao diện tùy biến (Custom UI Theme) dành cho **Google Antigravity Desktop Client** với 17 chủ đề linh vật Chibi, hiệu ứng tự động mỗi 15 giây, tư thế riêng khi gõ phím và hoạt cảnh sân khấu khi rê chuột — được tổ chức theo kiến trúc **MVVM**.
 
 ## 📂 Cấu trúc dự án (Kiến trúc MVVM)
 
 ```text
 antigravity-custom-theme/
-├── stickers/                       # 15 thư mục linh vật, mỗi thư mục gồm idle.svg, action.svg, typing.svg
+├── stickers/                       # 17 thư mục linh vật, mỗi thư mục gồm idle.svg, action.svg, typing.svg
+│   ├── pixel-knight/               # idle.svg | action.svg | typing.svg
+│   ├── cloud-whale/                # idle.svg | action.svg | typing.svg
 │   ├── jade-dragon/                # idle.svg | action.svg | typing.svg
 │   ├── ocean-shark/                # idle.svg | action.svg | typing.svg
 │   ├── code-cat/                   # idle.svg | action.svg | typing.svg
-│   └── ... (15 thư mục chủ đề)
+│   └── ... (17 thư mục chủ đề)
 ├── src/
 │   ├── models/                     # [MODEL] Dữ liệu thuần (Single Source of Truth)
 │   │   ├── themes.js               # 15 chủ đề (màu, sparkle, hoverBursts, typingFx)

@@ -109,6 +109,21 @@ const THEME_BG = {
         glow('16%', '86%', '50%', '44%', 'rgba(168,85,247,0.20)'),
         'repeating-linear-gradient(0deg, rgba(139,148,158,0.035) 0px, rgba(139,148,158,0.035) 1px, transparent 1px, transparent 22px)',
         'linear-gradient(160deg, #0d1117 0%, #0a0e14 55%, #05070a 100%)'
+    ].join(', '),
+    'pixel-knight': [
+        stars('rgba(250,204,21,0.75)', 200),
+        stars('rgba(96,165,250,0.65)', 280),
+        glow('82%', '18%', '46%', '40%', 'rgba(59,130,246,0.28)'),
+        glow('16%', '86%', '50%', '44%', 'rgba(234,179,8,0.22)'),
+        'repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 2px, transparent 2px, transparent 16px), repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 2px, transparent 2px, transparent 16px)',
+        'linear-gradient(160deg, #15193b 0%, #0d1026 55%, #070814 100%)'
+    ].join(', '),
+    'cloud-whale': [
+        stars('rgba(254,240,138,0.8)', 240),
+        glow('80%', '20%', '52%', '46%', 'rgba(244,114,182,0.34)'),
+        glow('20%', '84%', '55%', '48%', 'rgba(251,146,60,0.30)'),
+        glow('50%', '45%', '60%', '50%', 'rgba(129,140,248,0.26)'),
+        'linear-gradient(165deg, #1e1b4b 0%, #3b1c4a 52%, #4a1d35 100%)'
     ].join(', ')
 };
 
@@ -127,7 +142,9 @@ const THEME_PANEL = {
     'ice-penguin': 'rgba(10, 22, 42, 0.78)',
     'noel-snowman': 'rgba(24, 12, 15, 0.80)',
     'tet-lion': 'rgba(32, 8, 10, 0.82)',
-    'code-cat': 'rgba(13, 17, 23, 0.84)'
+    'code-cat': 'rgba(13, 17, 23, 0.84)',
+    'pixel-knight': 'rgba(14, 17, 38, 0.84)',
+    'cloud-whale': 'rgba(28, 20, 52, 0.80)'
 };
 
 const THEME_BG_LIGHT = {
@@ -227,6 +244,20 @@ const THEME_BG_LIGHT = {
         glow('15%', '86%', '50%', '44%', 'rgba(168,85,247,0.18)'),
         'repeating-linear-gradient(0deg, rgba(15,23,42,0.035) 0px, rgba(15,23,42,0.035) 1px, transparent 1px, transparent 22px)',
         'linear-gradient(145deg, #ffffff 0%, #f8fafc 50%, #f0fdf4 100%)'
+    ].join(', '),
+    'pixel-knight': [
+        stars('rgba(37,99,235,0.28)', 220),
+        glow('84%', '16%', '46%', '42%', 'rgba(250,204,21,0.28)'),
+        glow('15%', '86%', '50%', '44%', 'rgba(59,130,246,0.22)'),
+        'repeating-linear-gradient(0deg, rgba(15,23,42,0.03) 0px, rgba(15,23,42,0.03) 2px, transparent 2px, transparent 16px), repeating-linear-gradient(90deg, rgba(15,23,42,0.03) 0px, rgba(15,23,42,0.03) 2px, transparent 2px, transparent 16px)',
+        'linear-gradient(145deg, #ffffff 0%, #f8fafc 50%, #eff6ff 100%)'
+    ].join(', '),
+    'cloud-whale': [
+        stars('rgba(236,72,153,0.28)', 240),
+        glow('84%', '16%', '50%', '44%', 'rgba(244,114,182,0.32)'),
+        glow('16%', '84%', '52%', '46%', 'rgba(251,146,60,0.26)'),
+        glow('50%', '48%', '58%', '50%', 'rgba(129,140,248,0.22)'),
+        'linear-gradient(145deg, #ffffff 0%, #fff7fa 48%, #fff1e6 100%)'
     ].join(', ')
 };
 
@@ -245,5 +276,7 @@ const THEME_PANEL_LIGHT = {
     'ice-penguin': 'rgba(255, 255, 255, 0.88)',
     'noel-snowman': 'rgba(255, 255, 255, 0.88)',
     'tet-lion': 'rgba(255, 255, 255, 0.88)',
-    'code-cat': 'rgba(255, 255, 255, 0.90)'
+    'code-cat': 'rgba(255, 255, 255, 0.90)',
+    'pixel-knight': 'rgba(255, 255, 255, 0.90)',
+    'cloud-whale': 'rgba(255, 255, 255, 0.88)'
 };
