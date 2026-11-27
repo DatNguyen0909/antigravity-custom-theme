@@ -99,10 +99,16 @@
       transition: all 0.18s ease;
     }
     body.ag-light-mode .seg-btn { border-color: rgba(15,23,42,0.14); background: rgba(15,23,42,0.04); }
-    .seg-btn.active, .seg-btn:hover {
+    .seg-btn.active, .seg-btn:hover, .lang-select:hover, .lang-select:focus {
       border-color: var(--ag-theme-accent);
       box-shadow: 0 0 0 1px var(--ag-theme-accent);
     }
+    .lang-select {
+      padding: 6px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(20,24,34,0.88); color: inherit; cursor: pointer; font-size: 12.5px; font-weight: 600;
+      outline: none; transition: all 0.18s ease;
+    }
+    body.ag-light-mode .lang-select { border-color: rgba(15,23,42,0.14); background: rgba(255,255,255,0.92); color: #0f172a; }
     .dim-ctrl { display: flex; align-items: center; gap: 7px; font-size: 12px; opacity: 0.9; }
     .dim-ctrl input { width: 82px; accent-color: var(--ag-theme-accent); cursor: pointer; }
     .gh-link {
@@ -269,7 +275,10 @@
           <input type="range" id="dim-range" min="0" max="100" value="65" />
           <span id="dim-label">65%</span>
         </label>
-        <button class="seg-btn" id="lang-btn" title="Switch Language / Đổi ngôn ngữ">🌐 EN / VI</button>
+        <select class="lang-select" id="lang-select" aria-label="Language">
+          <option value="en">🇺🇸 English</option>
+          <option value="vi">🇻🇳 Tiếng Việt</option>
+        </select>
         <a class="gh-link" href="https://github.com/DatNguyen0909/antigravity-custom-theme" target="_blank" rel="noopener">⭐ GitHub</a>
       </div>
     </header>
@@ -544,7 +553,7 @@
         document.getElementById('tab-sim').textContent = ui.tabSim;
         document.getElementById('tab-gal').textContent = ui.tabGal;
         document.getElementById('dim-title').textContent = ui.dim;
-        document.getElementById('lang-btn').textContent = ui.langBtn;
+        document.getElementById('lang-select').value = lang;
         document.getElementById('side-title').textContent = ui.sideTitle(THEMES.length);
         document.getElementById('hint-text').innerHTML = ui.hint;
         document.getElementById('sample-bubble-1').textContent = ui.bubble1;
@@ -693,9 +702,9 @@
         applyAll();
       });
 
-      document.getElementById('lang-btn').addEventListener('click', () => {
-        lang = lang === 'en' ? 'vi' : 'en';
-        try { localStorage.setItem('ag_preview_lang', lang); } catch (e) {}
+      document.getElementById('lang-select').addEventListener('change', (e) => {
+        lang = e.target.value === 'vi' ? 'vi' : 'en';
+        try { localStorage.setItem('ag_preview_lang', lang); } catch (err) {}
         applyLanguageText();
         applyAll();
       });

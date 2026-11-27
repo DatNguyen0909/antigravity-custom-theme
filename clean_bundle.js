@@ -1808,9 +1808,10 @@ const SettingsView = (function () {
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;">
                 <div style="font-size: 18px; font-weight: 600; color: #fff;">Custom Theme</div>
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <button id="ag-lang-toggle-btn" title="Switch Language (English / Tiếng Việt)" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); color: #eee; padding: 4px 11px; border-radius: 99px; cursor: pointer; font-size: 12px; font-weight: 600;">
-                        🌐 ${lang === 'en' ? 'EN · Switch to VI' : 'VI · Đổi sang EN'}
-                    </button>
+                    <select id="ag-lang-select" title="Language / Ngôn ngữ" style="background: #1c1c22; border: 1px solid rgba(255,255,255,0.18); color: #eee; padding: 4px 10px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 600; outline: none;">
+                        <option value="en" ${lang === 'en' ? 'selected' : ''}>🇺🇸 English</option>
+                        <option value="vi" ${lang === 'vi' ? 'selected' : ''}>🇻🇳 Tiếng Việt</option>
+                    </select>
                     <button id="ag-close-settings-btn" title="Close" style="background: rgba(255,255,255,0.08); border: none; color: #bbb; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center;">✕</button>
                 </div>
             </div>
@@ -1866,10 +1867,10 @@ const SettingsView = (function () {
             </div>
         `;
 
-        const langBtn = panel.querySelector('#ag-lang-toggle-btn');
-        if (langBtn) {
-            langBtn.addEventListener('click', () => {
-                vm.setLang(lang === 'en' ? 'vi' : 'en');
+        const langSelect = panel.querySelector('#ag-lang-select');
+        if (langSelect) {
+            langSelect.addEventListener('change', (e) => {
+                vm.setLang(e.target.value);
                 renderOverlay(modal, vm);
             });
         }
