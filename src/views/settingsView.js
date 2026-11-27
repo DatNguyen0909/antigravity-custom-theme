@@ -7,8 +7,11 @@ const SettingsView = (function () {
         vi: {
             toggleTitle: 'Giao diện tùy chỉnh (Custom Theme)',
             toggleDesc: 'Gạt tắt (OFF) để quay về giao diện mặc định gốc (Default) ngay lập tức.',
-            seasonTitle: '🗓️ Tự động đổi theo mùa / lễ hội',
-            seasonDesc: (label, name) => `Tự động chọn linh vật theo lịch năm (Tết 🦁 • Valentine 💘 • Xuân 🌸 • Hè 🏖️ • Trung Thu 🏮 • Thu 🦊 • Halloween 🎃 • Đông ❄️ • Noel ⛄). Hôm nay: <b>${label} → ${name}</b>. Bấm mẫu bất kỳ bên dưới để đổi tay.`,
+            seasonTitle: '🗓️ Đồng bộ theo Mùa & Lễ hội',
+            seasonDesc: 'Tự động chuyển đổi linh vật theo lịch 4 mùa và các kỳ lễ lớn trong năm. Bạn vẫn có thể chọn thủ công bất kỳ mẫu nào bên dưới.',
+            seasonTodayLabel: 'Chủ đề hôm nay:',
+            seasonActiveTag: 'ĐANG ÁP DỤNG',
+            seasonReadyTag: 'GỢI Ý THEO LỊCH',
             dimTitle: 'Độ tối',
             dimDesc: 'Điều chỉnh độ rõ của nền để dễ đọc nội dung.',
             themesTitle: (n) => `Bong bóng chat & Chủ đề (${n} Mẫu)`,
@@ -21,8 +24,11 @@ const SettingsView = (function () {
         en: {
             toggleTitle: 'Enable Custom Theme',
             toggleDesc: 'Switch OFF to instantly restore the native default Antigravity interface.',
-            seasonTitle: '🗓️ Auto-Switch by Season & Holiday',
-            seasonDesc: (label, name) => `Automatically picks mascots across the year (Lunar New Year 🦁 • Valentine 💘 • Spring 🌸 • Summer 🏖️ • Mid-Autumn 🏮 • Autumn 🦊 • Halloween 🎃 • Winter ❄️ • Christmas ⛄). Today: <b>${label} → ${name}</b>. Click any card below to override manually.`,
+            seasonTitle: '🗓️ Seasonal & Holiday Sync',
+            seasonDesc: 'Automatically adapts your mascot to the four seasons and major holidays throughout the year. Click any preset below to switch manually.',
+            seasonTodayLabel: 'Today’s Theme:',
+            seasonActiveTag: 'ACTIVE',
+            seasonReadyTag: 'SCHEDULED',
             dimTitle: 'Background Dimming',
             dimDesc: 'Adjust background contrast for comfortable text readability.',
             themesTitle: (n) => `Chat Bubbles & Mascot Themes (${n} Presets)`,
@@ -128,12 +134,22 @@ const SettingsView = (function () {
             </div>
 
             <div id="ag-theme-controls-body" style="opacity: ${opacityStyle}; pointer-events: ${pointerStyle}; transition: opacity 0.25s ease;">
-                <div class="ag-toggle-card" style="margin-bottom: 22px; background: rgba(255,255,255,0.035) !important;">
-                    <div style="padding-right: 14px;">
+                <div class="ag-toggle-card" style="margin-bottom: 24px; background: rgba(255,255,255,0.04) !important; align-items: flex-start !important;">
+                    <div style="padding-right: 16px; flex: 1;">
                         <div class="ag-section-title" style="margin: 0; font-size: 14px;">${txt.seasonTitle}</div>
-                        <div class="ag-section-desc" style="margin: 4px 0 0; font-size: 12px; line-height: 1.45;">${txt.seasonDesc(seasonLabel, seasonThemeLoc.name)}</div>
+                        <div class="ag-section-desc" style="margin: 5px 0 0; font-size: 12px; line-height: 1.5; color: #a1a1aa !important;">${txt.seasonDesc}</div>
+                        <div class="ag-season-callout" style="border-color: ${seasonTheme.bubbleBorder} !important; background: ${seasonTheme.bubbleBg} !important; box-shadow: 0 2px 10px rgba(0,0,0,0.28);">
+                            <img class="ag-season-callout-icon" src="${seasonTheme.sticker}" alt="" />
+                            <span style="opacity: 0.8; font-size: 11.5px; color: ${seasonTheme.bubbleText};">${txt.seasonTodayLabel}</span>
+                            <strong style="color: ${seasonTheme.bubbleText}; font-weight: 600;">${seasonLabel}</strong>
+                            <span style="opacity: 0.6; color: ${seasonTheme.bubbleText};">•</span>
+                            <strong style="color: ${seasonTheme.accent}; font-weight: 700;">${seasonThemeLoc.name}</strong>
+                            <span class="ag-season-status-pill" style="background: ${config.autoSeason ? 'rgba(16, 185, 129, 0.22)' : 'rgba(255, 255, 255, 0.10)'}; color: ${config.autoSeason ? '#6ee7b7' : '#d4d4d8'}; border: 1px solid ${config.autoSeason ? 'rgba(16, 185, 129, 0.45)' : 'rgba(255, 255, 255, 0.16)'};">
+                                ${config.autoSeason ? txt.seasonActiveTag : txt.seasonReadyTag}
+                            </span>
+                        </div>
                     </div>
-                    <label class="ag-switch">
+                    <label class="ag-switch" style="margin-top: 2px;">
                         <input type="checkbox" id="ag-season-toggle" ${config.autoSeason ? 'checked' : ''}>
                         <span class="ag-toggle-slider"></span>
                     </label>

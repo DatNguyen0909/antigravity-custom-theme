@@ -43,6 +43,35 @@
   margin-bottom: 24px !important;
 }
 
+.ag-season-callout {
+  display: inline-flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 10px !important;
+  padding: 6px 12px 6px 8px !important;
+  border-radius: 99px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  font-size: 12px !important;
+  color: #f4f4f5 !important;
+}
+
+.ag-season-callout-icon {
+  width: 22px !important;
+  height: 22px !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+}
+
+.ag-season-status-pill {
+  padding: 2px 8px !important;
+  border-radius: 99px !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+}
+
 .ag-switch {
   position: relative !important;
   display: inline-block !important;
