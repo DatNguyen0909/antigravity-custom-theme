@@ -12,6 +12,13 @@ const SettingsView = (function () {
             seasonTodayLabel: 'Chủ đề hôm nay:',
             seasonActiveTag: 'ĐANG ÁP DỤNG',
             seasonReadyTag: 'GỢI Ý THEO LỊCH',
+            soundTitle: '🎧 Âm thanh Tương tác & Nhạc nền (21 Bộ độc bản)',
+            soundDesc: 'Tổng hợp trực tiếp bằng Web Audio (0 KB MP3) — mỗi linh vật sở hữu tiếng gõ phím và giai điệu nền riêng biệt.',
+            soundProfileLabel: 'Âm sắc hiện tại:',
+            soundTestBtn: '▶️ Nghe thử',
+            sfxLabel: '🎹 Tiếng gõ phím riêng theo linh vật',
+            bgmLabel: '🎶 Nhạc nền thư giãn theo chủ đề',
+            volLabel: '🔊 Âm lượng',
             dimTitle: 'Độ tối',
             dimDesc: 'Điều chỉnh độ rõ của nền để dễ đọc nội dung.',
             themesTitle: (n) => `Bong bóng chat & Chủ đề (${n} Mẫu)`,
@@ -29,6 +36,13 @@ const SettingsView = (function () {
             seasonTodayLabel: 'Today’s Theme:',
             seasonActiveTag: 'ACTIVE',
             seasonReadyTag: 'SCHEDULED',
+            soundTitle: '🎧 Interactive Sound FX & Ambient BGM (21 Bespoke Profiles)',
+            soundDesc: 'Real-time Web Audio synthesizer (0 KB MP3) — every mascot has its own signature keystroke sound and ambient melody.',
+            soundProfileLabel: 'Active Sound:',
+            soundTestBtn: '▶️ Test Sound',
+            sfxLabel: '🎹 Mascot Keystroke Sound FX',
+            bgmLabel: '🎶 Theme Ambient Background Music',
+            volLabel: '🔊 Volume',
             dimTitle: 'Background Dimming',
             dimDesc: 'Adjust background contrast for comfortable text readability.',
             themesTitle: (n) => `Chat Bubbles & Mascot Themes (${n} Presets)`,
@@ -107,6 +121,11 @@ const SettingsView = (function () {
         const seasonTheme = vm.getThemeById(seasonInfo.themeId);
         const seasonThemeLoc = localizeTheme(seasonTheme, lang);
         const seasonLabel = lang === 'en' ? seasonInfo.labelEn : seasonInfo.labelVi;
+        const activeTheme = vm.getActiveTheme();
+        const activeSoundMeta = SoundService.getMeta(activeTheme.id, lang);
+        const sfxOn = config.sfxEnabled !== false;
+        const bgmOn = !!config.bgmEnabled;
+        const vol = typeof config.soundVolume === 'number' ? config.soundVolume : 55;
         const opacityStyle = config.enabled ? '1' : '0.4';
         const pointerStyle = config.enabled ? 'auto' : 'none';
 
@@ -153,6 +172,36 @@ const SettingsView = (function () {
                         <input type="checkbox" id="ag-season-toggle" ${config.autoSeason ? 'checked' : ''}>
                         <span class="ag-toggle-slider"></span>
                     </label>
+                </div>
+
+                <div class="ag-sound-card">
+                    <div class="ag-section-title" style="margin: 0; font-size: 14px;">${txt.soundTitle}</div>
+                    <div class="ag-section-desc" style="margin: 5px 0 10px; font-size: 12px; line-height: 1.5; color: #a1a1aa !important;">${txt.soundDesc}</div>
+                    <div class="ag-season-callout" style="margin: 0 0 12px; border-color: ${activeTheme.bubbleBorder} !important; background: ${activeTheme.bubbleBg} !important;">
+                        <img class="ag-season-callout-icon" src="${activeTheme.sticker}" alt="" />
+                        <span style="opacity: 0.8; font-size: 11.5px; color: ${activeTheme.bubbleText};">${txt.soundProfileLabel}</span>
+                        <strong style="color: ${activeTheme.accent}; font-weight: 700;">${activeSoundMeta}</strong>
+                        <button type="button" class="ag-sound-test-btn" id="ag-sound-test-btn">${txt.soundTestBtn}</button>
+                    </div>
+                    <div class="ag-sound-row">
+                        <span style="font-size: 13px; color: #e4e4e7; font-weight: 500;">${txt.sfxLabel}</span>
+                        <label class="ag-switch">
+                            <input type="checkbox" id="ag-sfx-toggle" ${sfxOn ? 'checked' : ''}>
+                            <span class="ag-toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="ag-sound-row">
+                        <span style="font-size: 13px; color: #e4e4e7; font-weight: 500;">${txt.bgmLabel}</span>
+                        <label class="ag-switch">
+                            <input type="checkbox" id="ag-bgm-toggle" ${bgmOn ? 'checked' : ''}>
+                            <span class="ag-toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="ag-sound-row" style="padding-bottom: 2px !important;">
+                        <span style="font-size: 13px; color: #e4e4e7; font-weight: 500; min-width: 95px;">${txt.volLabel}</span>
+                        <input type="range" class="ag-slider" id="ag-vol-slider" min="0" max="100" value="${vol}" />
+                        <span class="ag-slider-val" id="ag-vol-val">${vol}%</span>
+                    </div>
                 </div>
 
                 <div class="ag-section-title">${txt.dimTitle}</div>
@@ -229,6 +278,37 @@ const SettingsView = (function () {
             });
         }
 
+        const testBtn = panel.querySelector('#ag-sound-test-btn');
+        if (testBtn) {
+            testBtn.addEventListener('click', () => {
+                SoundService.playSample(vm.getState().activeTheme);
+            });
+        }
+
+        const sfxToggle = panel.querySelector('#ag-sfx-toggle');
+        if (sfxToggle) {
+            sfxToggle.addEventListener('change', (e) => {
+                vm.setSfxEnabled(e.target.checked);
+                if (e.target.checked) SoundService.playSample(vm.getState().activeTheme);
+            });
+        }
+
+        const bgmToggle = panel.querySelector('#ag-bgm-toggle');
+        if (bgmToggle) {
+            bgmToggle.addEventListener('change', (e) => {
+                vm.setBgmEnabled(e.target.checked);
+            });
+        }
+
+        const volSlider = panel.querySelector('#ag-vol-slider');
+        const volVal = panel.querySelector('#ag-vol-val');
+        if (volSlider && volVal) {
+            volSlider.addEventListener('input', (e) => {
+                vm.setSoundVolume(e.target.value);
+                volVal.innerText = vm.getState().soundVolume + '%';
+            });
+        }
+
         const slider = panel.querySelector('#ag-dim-slider');
         const valSpan = panel.querySelector('#ag-dim-val');
         slider.addEventListener('input', (e) => {
@@ -246,6 +326,7 @@ const SettingsView = (function () {
             card.addEventListener('click', () => {
                 if (!vm.getState().enabled) return;
                 vm.setActiveTheme(tid);
+                if (vm.getState().sfxEnabled !== false) SoundService.playKeystroke(tid, true);
                 renderOverlay(modal, vm);
             });
         });

@@ -316,6 +316,8 @@
         <button class="seg-btn active" id="tab-sim">💬 Chat Simulator</button>
         <button class="seg-btn" id="tab-gal">🎨 63-SVG Showcase</button>
         <button class="seg-btn" id="season-btn" title="Auto-switch mascot by current season / holiday">🗓️ Auto-Season</button>
+        <button class="seg-btn active" id="sfx-btn" title="Toggle mascot keystroke sound FX">🎹 SFX: ON</button>
+        <button class="seg-btn" id="bgm-btn" title="Toggle theme ambient background music">🎶 BGM: OFF</button>
         <button class="seg-btn" id="mode-btn">🌙 Dark</button>
         <label class="dim-ctrl">
           <span id="dim-title">Dim</span>
@@ -410,6 +412,7 @@
   <script src="./src/models/themes.js"></script>
   <script src="./src/models/backgrounds.js"></script>
   <script src="./src/models/decor.js"></script>
+  <script src="./src/services/soundService.js"></script>
   <script>
     (function () {
       const UI_TEXT = {
@@ -423,6 +426,10 @@
           seasonTodayLabel: 'Today’s Theme:',
           seasonActiveTag: 'ACTIVE',
           seasonReadyTag: 'SCHEDULED',
+          sfxOn: '🎹 SFX: ON',
+          sfxOff: '🔇 SFX: OFF',
+          bgmOn: '🎶 BGM: ON',
+          bgmOff: '🎶 BGM: OFF',
           dim: 'Dim',
           sideTitle: (n) => `Choose Theme (${n} presets)`,
           hint: '💡 <b>Try interacting:</b> Hover any chat bubble for the <b>panoramic stage scene</b> • Type below to trigger <b>character-specific typing poses</b> • Watch every <b>15s</b> for funny auto-skits!',
@@ -444,6 +451,10 @@
           seasonTodayLabel: 'Chủ đề hôm nay:',
           seasonActiveTag: 'ĐANG ÁP DỤNG',
           seasonReadyTag: 'GỢI Ý THEO LỊCH',
+          sfxOn: '🎹 Phím: BẬT',
+          sfxOff: '🔇 Phím: TẮT',
+          bgmOn: '🎶 Nhạc: BẬT',
+          bgmOff: '🎶 Nhạc: TẮT',
           dim: 'Độ tối',
           sideTitle: (n) => `Chọn chủ đề (${n} mẫu)`,
           hint: '💡 <b>Thử tương tác:</b> Rê chuột vào bong bóng chat để xem <b>hoạt cảnh sân khấu</b> • Gõ chữ vào ô bên dưới để xem <b>linh vật diễn tư thế riêng</b> • Đợi mỗi <b>15s</b> để xem hoạt cảnh tự động!',
@@ -469,6 +480,8 @@
 
       let activeId = 'halloween-pumpkin';
       let autoSeason = false;
+      let sfxEnabled = true;
+      let bgmEnabled = false;
       let isLight = false;
       let bgDim = 65;
       let lang = detectInitialLang();
@@ -581,6 +594,7 @@
                 <div class="card-quote" style="background: ${t.bubbleBg}; border: 1px solid ${t.bubbleBorder}; color: ${t.bubbleText};">${loc.previewText}</div>
                 <div class="card-name">${loc.name}</div>
                 <div class="card-desc">${loc.motionDesc}</div>
+                <div class="card-desc" style="opacity:0.88; color:${t.accent}; font-weight:600;">🎧 ${SoundService.getMeta(t.id, lang)}</div>
               </div>
               <img class="ag-card-sticker" src="${t.sticker}" alt="" />
             </div>
@@ -590,6 +604,7 @@
             activeId = t.id;
             syncSeasonBtn();
             applyAll();
+            if (sfxEnabled) SoundService.playKeystroke(t.id, true);
           });
           listEl.appendChild(card);
 
@@ -651,6 +666,23 @@
         `;
       }
 
+      function syncAudioControls() {
+        const ui = UI_TEXT[lang];
+        const sfxBtn = document.getElementById('sfx-btn');
+        const bgmBtn = document.getElementById('bgm-btn');
+        sfxBtn.classList.toggle('active', sfxEnabled);
+        bgmBtn.classList.toggle('active', bgmEnabled);
+        sfxBtn.textContent = sfxEnabled ? ui.sfxOn : ui.sfxOff;
+        bgmBtn.textContent = bgmEnabled ? ui.bgmOn : ui.bgmOff;
+        SoundService.configure({
+          enabled: true,
+          sfxEnabled: sfxEnabled,
+          bgmEnabled: bgmEnabled,
+          volume: 60,
+          themeId: activeId
+        });
+      }
+
       function applyLanguageText() {
         const ui = UI_TEXT[lang];
         document.documentElement.lang = lang;
@@ -665,10 +697,12 @@
         inputEl.placeholder = ui.placeholder;
         document.getElementById('send-btn').textContent = ui.send;
         syncSeasonBtn();
+        syncAudioControls();
         buildCards();
       }
 
       function applyAll() {
+        syncAudioControls();
         const t = getTheme();
         const loc = localizeTheme(t, lang);
         document.body.setAttribute('data-ag-theme', t.id);
@@ -727,6 +761,12 @@
         typeState.keys = [];
         syncInputSticker();
       }
+
+      const IGNORED_PREVIEW_KEYS = /^(Shift|Control|Alt|Meta|CapsLock|Tab|Escape|ArrowUp|ArrowDown|ArrowLeft|ArrowRight)$/;
+      inputEl.addEventListener('keydown', (e) => {
+        if (e.ctrlKey || e.metaKey || e.altKey || IGNORED_PREVIEW_KEYS.test(e.key || '')) return;
+        SoundService.playKeystroke(activeId, e.key === 'Enter' || e.key === ' ');
+      });
 
       inputEl.addEventListener('input', () => {
         const val = inputEl.value.trim();
@@ -807,6 +847,17 @@
       document.getElementById('season-btn').addEventListener('click', () => toggleAutoSeason());
       document.getElementById('season-switch').addEventListener('change', (e) => toggleAutoSeason(e.target.checked));
       document.getElementById('season-callout').addEventListener('click', () => toggleAutoSeason());
+
+      document.getElementById('sfx-btn').addEventListener('click', () => {
+        sfxEnabled = !sfxEnabled;
+        syncAudioControls();
+        if (sfxEnabled) SoundService.playSample(activeId);
+      });
+
+      document.getElementById('bgm-btn').addEventListener('click', () => {
+        bgmEnabled = !bgmEnabled;
+        syncAudioControls();
+      });
 
       document.getElementById('mode-btn').addEventListener('click', (e) => {
         isLight = !isLight;

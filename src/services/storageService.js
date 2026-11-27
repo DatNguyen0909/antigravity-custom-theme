@@ -73,8 +73,13 @@ const StorageService = (function () {
                 const lightPayload = JSON.stringify({
                     enabled: config.enabled,
                     activeTheme: config.activeTheme,
+                    autoSeason: config.autoSeason,
                     bgDim: config.bgDim,
-                    bgMode: config.bgMode
+                    bgMode: config.bgMode,
+                    lang: config.lang,
+                    sfxEnabled: config.sfxEnabled,
+                    bgmEnabled: config.bgmEnabled,
+                    soundVolume: config.soundVolume
                 });
                 const changes = {};
                 changes[STORAGE_KEY] = lightPayload;

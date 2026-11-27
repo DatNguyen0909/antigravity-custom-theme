@@ -11,7 +11,10 @@ const ThemeViewModel = (function () {
         bgDim: 69,
         bgMode: 'theme',          // 'theme' | 'custom'
         customWallpaper: null,
-        lang: defaultLang         // 'en' | 'vi'
+        lang: defaultLang,        // 'en' | 'vi'
+        sfxEnabled: true,
+        bgmEnabled: false,
+        soundVolume: 55
     };
 
     const typingState = {
@@ -140,6 +143,25 @@ const ThemeViewModel = (function () {
         StorageService.save(config);
     }
 
+    function setSfxEnabled(enabled) {
+        config.sfxEnabled = !!enabled;
+        notify('sound-changed');
+        StorageService.save(config);
+    }
+
+    function setBgmEnabled(enabled) {
+        config.bgmEnabled = !!enabled;
+        notify('sound-changed');
+        StorageService.save(config);
+    }
+
+    function setSoundVolume(vol) {
+        const parsed = parseInt(vol, 10);
+        config.soundVolume = isNaN(parsed) ? 55 : Math.max(0, Math.min(100, parsed));
+        notify('sound-changed');
+        StorageService.save(config);
+    }
+
     // ---- Typing Reaction State Logic ----
     function recordKeystroke() {
         const now = Date.now();
@@ -188,6 +210,9 @@ const ThemeViewModel = (function () {
         setBgMode,
         setCustomWallpaper,
         setLang,
+        setSfxEnabled,
+        setBgmEnabled,
+        setSoundVolume,
         recordKeystroke,
         scheduleTypingTimers,
         resetTypingTimers

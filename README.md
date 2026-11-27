@@ -42,6 +42,7 @@
   2. **Hành động đặc trưng khi bạn đang gõ (`typing.svg`)**: Khi nhập tin nhắn, mỗi linh vật diễn đúng bản chất riêng (Corgi xúc cát đắp lâu đài, Cá chép múa đèn ông sao, Cupid bắn thư tình, Bí ngô khuấy vạc kẹo, Cá mập mài răng...) kèm hạt hiệu ứng theo từng phím và bong bóng suy nghĩ khi dừng tay 1,5 giây.
   3. **Hoạt cảnh sân khấu ngang khi rê chuột (`action.svg`)**: Rê chuột vào bong bóng chat sẽ mở ra cả một sân khấu ngang có bối cảnh đi kèm (lướt ván sóng biển rặng dừa, cá chép vượt Vũ Môn, mây kẹo bông Valentine, nghĩa địa trăng máu, cọc Mai Hoa Thung...) được căn lề chuẩn xác không che chữ.
   4. **🗓️ Đồng bộ theo Mùa & Lễ hội (`Seasonal & Holiday Sync`) + Song ngữ Anh/Việt**: Tự động chuyển đổi linh vật theo lịch 4 mùa và các kỳ lễ lớn trong năm, đi kèm **thẻ Chủ đề hôm nay (`ĐANG ÁP DỤNG` / `GỢI Ý THEO LỊCH`)** nổi bật ngay trong Settings. Hỗ trợ chọn ngôn ngữ **EN / VI**, **Dark / Light**, chỉnh độ tối nền, ảnh nền cá nhân và lưu cứng trên ổ đĩa.
+  5. **🎧 21 Bộ Âm thanh Foley & Phối khí Nhạc nền Đa kênh (`Multi-Track Web Audio Sequencer` — 0 KB MP3)**: Mỗi linh vật sở hữu hiệu ứng phím vật lý và thể loại nhạc nền riêng biệt 100% — từ *Máy đánh chữ cổ + chuông TING! & Jazz Noir đi bộ Contrabass* (Chốt Gangster), *Phím cơ Thocky & Lo-Fi Hip-Hop Boom-Bap* (Mèo Code), *Ukulele quạt chả nghịch phách + Bongo + Sóng biển* (Corgi Hè), *Waltz 3/4 Đàn Organ ma quái & Theremin* (Bí Ngô), *Bộ đàm NASA & Synthwave 80s* (Phi Hành Gia) đến *Trống Lân chũm chọe đồng* (Kỳ Lân Tết).
 
 > [!TIP]
 > **🗓️ Lịch Đồng bộ 9 Mùa & Lễ hội trong năm (`Auto-Season`)**:
@@ -119,9 +120,10 @@ antigravity-custom-theme/
 │   │   ├── themes.js               # Khai báo 21 chủ đề & lịch Auto-Season (màu, tên Anh/Việt, FX)
 │   │   ├── backgrounds.js          # Bảng màu nền & Sidebar kính mờ (Dark / Light)
 │   │   └── decor.js                # Họa tiết nền SVG & cấu hình hạt bay DECOR
-│   ├── services/                   # [SERVICE] Lưu trữ & môi trường
+│   ├── services/                   # [SERVICE] Lưu trữ, môi trường & âm thanh Web Audio
 │   │   ├── storageService.js       # Đồng bộ localStorage + Electron storage.json trên ổ đĩa
-│   │   └── environmentService.js   # Nhận diện Light/Dark mode, lọc portal/tooltip, reset SVG
+│   │   ├── environmentService.js   # Nhận diện Light/Dark mode, lọc portal/tooltip, reset SVG
+│   │   └── soundService.js         # Tổng hợp 21 bộ âm gõ phím & nhạc nền Ambient (0 KB MP3)
 │   ├── viewmodels/                 # [VIEWMODEL] State & điều phối logic phản ứng
 │   │   └── themeViewModel.js       # Quản lý config, ngôn ngữ EN/VI, trạng thái gõ phím
 │   ├── views/                      # [VIEW] Giao diện DOM & CSS tách biệt
@@ -180,6 +182,7 @@ Phát hành theo giấy phép **MIT License** — tự do sử dụng, tùy bi�
   2. **Character-Specific Typing Reactions (`typing.svg`)**: While you type a prompt, your mascot switches to an authentic activity pose (Corgi shovels a sandcastle, Carp spins a star lantern, Cupid fires love letters, Pumpkin stirs a candy cauldron, Shark files its teeth...) with per-keystroke particles and a thinking bubble when you pause for 1.5s.
   3. **Panoramic Hover Stage (`action.svg`)**: Hovering over any user chat bubble unveils a full wide-screen animated stage (Tropical Surf Beach, Carp leaping the Dragon Gate, Cotton-Candy Valentine Sky, Blood-Moon Graveyard, Torii gates...) cleanly aligned above bubble text.
   4. **🗓️ Seasonal & Holiday Sync + Bilingual UI**: Automatically adapts your mascot to the four seasons and major holidays throughout the year, complete with a highlighted **Today’s Theme (`ACTIVE` / `SCHEDULED`)** callout pill in Settings, built-in **English / Tiếng Việt** selector, **Dark & Light** glassmorphism, dimming slider, custom wallpaper upload, and persistent disk storage.
+  5. **🎧 21 Iconic Foley Keystroke FX & Multi-Track Genre Soundtracks (`Web Audio Sequencer` — 0 KB MP3)**: Every mascot features unmistakable physical keystroke foley and a full multi-track musical genre — *1940s Typewriter & Carriage Bell + Walking-Bass Jazz Noir* (Gangster Pawn), *Thocky Switches + Boom-Bap Lo-Fi Chillhop* (Code Cat), *Off-beat Ukulele + Bongo + Surf + Steelpan* (Summer Corgi), *3/4 Haunted Pipe-Organ Waltz & Theremin* (Halloween Pumpkin), *NASA Radio Squelch + 80s Synthwave* (Astronaut), *4-Channel NES Chiptune* (Pixel Knight), and more.
 
 > [!TIP]
 > **🗓️ 9-Period Seasonal & Holiday Sync Calendar (`Auto-Season`)**:
@@ -257,9 +260,10 @@ antigravity-custom-theme/
 │   │   ├── themes.js               # 21 theme definitions + Auto-Season calendar
 │   │   ├── backgrounds.js          # Dark & Light gradients + frosted sidebar palettes
 │   │   └── decor.js                # Background SVG scenery & ambient particle configs
-│   ├── services/                   # [SERVICE] Persistence & runtime environment
+│   ├── services/                   # [SERVICE] Persistence, runtime & Web Audio synthesis
 │   │   ├── storageService.js       # Syncs localStorage + Electron disk storage.json
-│   │   └── environmentService.js   # Light/Dark detection, portal filtering, SVG reset
+│   │   ├── environmentService.js   # Light/Dark detection, portal filtering, SVG reset
+│   │   └── soundService.js         # 21 bespoke keystroke FX & procedural BGM (0 KB MP3)
 │   ├── viewmodels/                 # [VIEWMODEL] Reactive state & user commands
 │   │   └── themeViewModel.js       # State store, EN/VI language state, typing timers
 │   ├── views/                      # [VIEW] Decoupled DOM renderers & stylesheets

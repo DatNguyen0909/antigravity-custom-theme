@@ -73,6 +73,18 @@ const ChatView = (function () {
     function wireTypingEvents(vm) {
         if (window.__agTypeWired) return;
         window.__agTypeWired = true;
+        const IGNORED_KEYS = /^(Shift|Control|Alt|Meta|CapsLock|Tab|Escape|ArrowUp|ArrowDown|ArrowLeft|ArrowRight|PageUp|PageDown|Home|End|Insert|F\d+)$/;
+        document.addEventListener('keydown', (e) => {
+            const st = vm.getState();
+            if (!st.enabled || st.sfxEnabled === false) return;
+            if (e.ctrlKey || e.metaKey || e.altKey) return;
+            if (IGNORED_KEYS.test(e.key || '')) return;
+            const t = e.target;
+            if (!t || !(t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+            if (!t.closest('.ag-custom-input-wrapper')) return;
+            SoundService.playKeystroke(st.activeTheme, e.key === 'Enter' || e.key === ' ');
+        }, true);
+
         document.addEventListener('input', (e) => {
             if (!vm.getState().enabled) return;
             const t = e.target;

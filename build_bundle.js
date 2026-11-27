@@ -49,6 +49,7 @@ const jsModules = [
     'models/decor.js',
     'services/storageService.js',
     'services/environmentService.js',
+    'services/soundService.js',
     'viewmodels/themeViewModel.js',
     'views/backgroundView.js',
     'views/chatView.js',

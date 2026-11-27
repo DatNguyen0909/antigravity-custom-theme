@@ -72,6 +72,40 @@
   letter-spacing: 0.02em !important;
 }
 
+.ag-sound-card {
+  padding: 16px 18px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  margin-bottom: 24px !important;
+}
+
+.ag-sound-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding: 9px 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.07) !important;
+}
+
+.ag-sound-test-btn {
+  padding: 4px 10px !important;
+  border-radius: 99px !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  background: rgba(255, 255, 255, 0.09) !important;
+  color: #f4f4f5 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.18s ease !important;
+}
+
+.ag-sound-test-btn:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: var(--ag-theme-accent, #10b981) !important;
+}
+
 .ag-switch {
   position: relative !important;
   display: inline-block !important;
