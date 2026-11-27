@@ -4,18 +4,21 @@
       <stop offset="0%" stop-color="#22d3ee"/>
       <stop offset="100%" stop-color="#0284c7"/>
     </linearGradient>
+    <clipPath id="scaClip">
+      <rect x="0" y="0" width="260" height="71"/>
+    </clipPath>
     <style>
-      /* Bãi biển nhiệt đới nắng vàng: Corgi đeo kính râm lướt ván cưỡi sóng xanh qua đảo dừa! */
+      /* Tropical Surf Stage: Waves sit flush on top of chat bubble at y=70! */
       .sca-surfer { animation: scaSurfRide 3.0s ease-in-out infinite; }
-      .sca-sun { transform-origin: 222px 24px; animation: scaSunSpin 8s linear infinite; }
+      .sca-sun { transform-origin: 222px 20px; animation: scaSunSpin 8s linear infinite; }
       .sca-spray { animation: scaSprayPop 0.45s ease-in-out infinite alternate; }
 
       @keyframes scaSurfRide {
-        0%   { transform: translate(236px, 56px) rotate(-6deg); }
-        25%  { transform: translate(172px, 38px) rotate(8deg); }
-        50%  { transform: translate(112px, 54px) rotate(-8deg); }
-        75%  { transform: translate(52px, 36px) rotate(6deg); }
-        100% { transform: translate(-44px, 52px) rotate(-4deg); }
+        0%   { transform: translate(236px, 36px) rotate(-6deg); }
+        25%  { transform: translate(172px, 20px) rotate(8deg); }
+        50%  { transform: translate(112px, 34px) rotate(-8deg); }
+        75%  { transform: translate(52px, 18px) rotate(6deg); }
+        100% { transform: translate(-44px, 32px) rotate(-4deg); }
       }
       @keyframes scaSunSpin {
         0% { transform: rotate(0deg); }
@@ -28,53 +31,45 @@
     </style>
   </defs>
 
-  <!-- Blazing Tropical Sun -->
-  <g class="sca-sun">
-    <circle cx="222" cy="24" r="18" fill="#fde047" opacity="0.28"/>
-    <circle cx="222" cy="24" r="12.5" fill="#facc15" stroke="#f97316" stroke-width="1.8"/>
-  </g>
-
-  <!-- Sandy Island with Palm Tree va Beach Umbrella (left background) -->
-  <path d="M10 84 Q46 64 86 84 Z" fill="#fde68a" stroke="#d97706" stroke-width="1.4"/>
-  <!-- Palm trunk va fronds -->
-  <path d="M42 74 Q36 52 46 34" fill="none" stroke="#92400e" stroke-width="4" stroke-linecap="round"/>
-  <path d="M46 34 Q30 28 24 38 M46 34 Q38 20 52 22 M46 34 Q62 26 66 38 M46 34 Q58 38 60 46" fill="none" stroke="#16a34a" stroke-width="3.5" stroke-linecap="round"/>
-  <!-- Striped Beach Umbrella -->
-  <line x1="66" y1="76" x2="70" y2="56" stroke="#78350f" stroke-width="1.8"/>
-  <path d="M56 58 Q70 46 82 60 Z" fill="#ef4444" stroke="#ffffff" stroke-width="1.2"/>
-
-  <!-- Back Ocean Swell -->
-  <path d="M4 80 Q44 70 84 80 T164 80 T256 80 L256 94 L4 94 Z" fill="url(#scaWave)"/>
-
-  <!-- Surfing Chibi Corgi riding Surfboard (right to left) -->
-  <g class="sca-surfer">
-    <!-- White Surf Spray behind board -->
-    <g class="sca-spray" fill="#e0f2fe">
-      <circle cx="24" cy="20" r="4.5"/>
-      <circle cx="31" cy="17" r="3.2"/>
+  <g clip-path="url(#scaClip)">
+    <!-- Blazing Tropical Sun -->
+    <g class="sca-sun">
+      <circle cx="222" cy="20" r="16" fill="#fde047" opacity="0.28"/>
+      <circle cx="222" cy="20" r="11" fill="#facc15" stroke="#f97316" stroke-width="1.8"/>
     </g>
 
-    <!-- Striped Surfboard -->
-    <ellipse cx="4" cy="20" rx="24" ry="5.5" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.8"/>
-    <line x1="-14" y1="20" x2="22" y2="20" stroke="#f43f5e" stroke-width="2"/>
+    <!-- Sandy Island with Palm Tree and Beach Umbrella (sitting on y=64) -->
+    <path d="M10 64 Q46 46 86 64 Z" fill="#fde68a" stroke="#d97706" stroke-width="1.4"/>
+    <path d="M42 54 Q36 34 46 18" fill="none" stroke="#92400e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M46 18 Q30 12 24 22 M46 18 Q38 5 52 7 M46 18 Q62 10 66 22 M46 18 Q58 22 60 30" fill="none" stroke="#16a34a" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="66" y1="56" x2="70" y2="38" stroke="#78350f" stroke-width="1.8"/>
+    <path d="M56 40 Q70 28 82 42 Z" fill="#ef4444" stroke="#ffffff" stroke-width="1.2"/>
 
-    <!-- Corgi Body in Hawaiian Shirt -->
-    <rect x="-6" y="6" width="18" height="13" rx="6" fill="#06b6d4" stroke="#0e7490" stroke-width="1.3"/>
-    <!-- Pointy Ears + Golden Corgi Head -->
-    <polygon points="-6,-4 -10,-16 -1,-8" fill="#fbbf24" stroke="#78350f" stroke-width="1.3"/>
-    <polygon points="10,-4 15,-16 6,-8" fill="#fbbf24" stroke="#78350f" stroke-width="1.3"/>
-    <ellipse cx="2" cy="0" rx="12" ry="10" fill="#fbbf24" stroke="#78350f" stroke-width="1.5"/>
-    <ellipse cx="-2" cy="3" rx="6.5" ry="5.5" fill="#fffbeb"/>
-    <!-- Cool Sunglasses facing left -->
-    <rect x="-9" y="-3" width="8" height="5" rx="1.5" fill="#0f172a"/>
-    <rect x="1" y="-3" width="7" height="5" rx="1.5" fill="#0f172a"/>
-    <line x1="-1" y1="-1" x2="1" y2="-1" stroke="#0f172a" stroke-width="1.5"/>
-    <!-- Happy Tongue -->
-    <circle cx="-6" cy="3" r="1.6" fill="#1e293b"/>
-    <path d="M-4 6 Q-2 10 1 6 Z" fill="#fb7185"/>
+    <!-- Back Ocean Swell (flush on bubble top border y=70) -->
+    <path d="M4 60 Q44 51 84 60 T164 60 T256 60 L256 71 L4 71 Z" fill="url(#scaWave)"/>
+
+    <!-- Surfing Chibi Corgi riding Surfboard (right to left) -->
+    <g class="sca-surfer">
+      <g class="sca-spray" fill="#e0f2fe">
+        <circle cx="24" cy="20" r="4.5"/>
+        <circle cx="31" cy="17" r="3.2"/>
+      </g>
+      <ellipse cx="4" cy="20" rx="24" ry="5.5" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.8"/>
+      <line x1="-14" y1="20" x2="22" y2="20" stroke="#f43f5e" stroke-width="2"/>
+      <rect x="-6" y="6" width="18" height="13" rx="6" fill="#06b6d4" stroke="#0e7490" stroke-width="1.3"/>
+      <polygon points="-6,-4 -10,-15 -1,-8" fill="#fbbf24" stroke="#78350f" stroke-width="1.3"/>
+      <polygon points="10,-4 15,-15 6,-8" fill="#fbbf24" stroke="#78350f" stroke-width="1.3"/>
+      <ellipse cx="2" cy="0" rx="12" ry="10" fill="#fbbf24" stroke="#78350f" stroke-width="1.5"/>
+      <ellipse cx="-2" cy="3" rx="6.5" ry="5.5" fill="#fffbeb"/>
+      <rect x="-9" y="-3" width="8" height="5" rx="1.5" fill="#0f172a"/>
+      <rect x="1" y="-3" width="7" height="5" rx="1.5" fill="#0f172a"/>
+      <line x1="-1" y1="-1" x2="1" y2="-1" stroke="#0f172a" stroke-width="1.5"/>
+      <circle cx="-6" cy="3" r="1.6" fill="#1e293b"/>
+      <path d="M-4 6 Q-2 10 1 6 Z" fill="#fb7185"/>
+    </g>
+
+    <!-- Front White-Crested Ocean Wave sitting cleanly on y=70 -->
+    <path d="M4 65 Q36 58 68 65 T132 65 T196 65 T256 65 L256 71 L4 71 Z" fill="#0ea5e9" opacity="0.9"/>
+    <path d="M4 65 Q36 58 68 65 T132 65 T196 65 T256 65" fill="none" stroke="#f0f9ff" stroke-width="2" opacity="0.9"/>
   </g>
-
-  <!-- Front White-Crested Ocean Wave -->
-  <path d="M4 86 Q36 78 68 86 T132 86 T196 86 T256 86 L256 94 L4 94 Z" fill="#0ea5e9" opacity="0.88"/>
-  <path d="M4 86 Q36 78 68 86 T132 86 T196 86 T256 86" fill="none" stroke="#f0f9ff" stroke-width="2" opacity="0.85"/>
 </svg>

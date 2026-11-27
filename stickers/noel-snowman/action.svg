@@ -19,6 +19,9 @@
       <stop offset="0%" stop-color="#ffffff"/>
       <stop offset="100%" stop-color="#bae6fd"/>
     </linearGradient>
+    <clipPath id="noelClip">
+      <rect x="0" y="0" width="260" height="71"/>
+    </clipPath>
     <style>
       .sleigh-team {
         animation: sleighFly 3.2s ease-in-out infinite;
@@ -48,16 +51,16 @@
         100% { transform: rotate(16deg); }
       }
       @keyframes dropGift1 {
-        0%, 20% { opacity: 0; transform: translate(145px, 35px) scale(0.4); }
-        28% { opacity: 1; transform: translate(145px, 42px) scale(1); }
-        65% { opacity: 1; transform: translate(145px, 76px) rotate(18deg) scale(1); }
-        80%, 100% { opacity: 0; transform: translate(145px, 82px) scale(0.6); }
+        0%, 20% { opacity: 0; transform: translate(145px, 32px) scale(0.4); }
+        28% { opacity: 1; transform: translate(145px, 38px) scale(1); }
+        65% { opacity: 1; transform: translate(145px, 60px) rotate(18deg) scale(1); }
+        80%, 100% { opacity: 0; transform: translate(145px, 64px) scale(0.6); }
       }
       @keyframes dropGift2 {
-        0%, 50% { opacity: 0; transform: translate(75px, 32px) scale(0.4); }
-        58% { opacity: 1; transform: translate(75px, 40px) scale(1); }
-        88% { opacity: 1; transform: translate(75px, 76px) rotate(-15deg) scale(1); }
-        98%, 100% { opacity: 0; transform: translate(75px, 82px) scale(0.6); }
+        0%, 50% { opacity: 0; transform: translate(75px, 30px) scale(0.4); }
+        58% { opacity: 1; transform: translate(75px, 36px) scale(1); }
+        88% { opacity: 1; transform: translate(75px, 60px) rotate(-15deg) scale(1); }
+        98%, 100% { opacity: 0; transform: translate(75px, 64px) scale(0.6); }
       }
       @keyframes twinkleTree {
         0% { opacity: 0.45; filter: drop-shadow(0 0 2px #facc15); }
@@ -66,11 +69,12 @@
     </style>
   </defs>
 
-  <!-- BACKGROUND: Snowy Hills va Decorated Christmas Pine Trees -->
-  <path d="M 8 88 Q 65 74 130 85 T 252 86 L 252 92 L 8 92 Z" fill="#e0f2fe" opacity="0.35"/>
+  <g clip-path="url(#noelClip)">
+  <!-- BACKGROUND: Snowy Hills va Decorated Christmas Pine Trees flush on y=70 -->
+  <path d="M 8 66 Q 65 56 130 64 T 252 65 L 252 71 L 8 71 Z" fill="#e0f2fe" opacity="0.38"/>
 
   <!-- Left Big Christmas Tree -->
-  <g transform="translate(22, 26)">
+  <g transform="translate(22, 10)">
     <rect x="15" y="48" width="6" height="12" rx="1" fill="#78350f"/>
     <polygon points="18,4 4,24 32,24" fill="url(#pineGreen)"/>
     <polygon points="18,15 1,38 35,38" fill="url(#pineGreen)"/>
@@ -88,7 +92,7 @@
   </g>
 
   <!-- Center-Right Medium Christmas Tree -->
-  <g transform="translate(112, 38) scale(0.78)">
+  <g transform="translate(112, 22) scale(0.78)">
     <rect x="15" y="48" width="6" height="12" rx="1" fill="#78350f"/>
     <polygon points="18,4 4,24 32,24" fill="url(#pineGreen)"/>
     <polygon points="18,15 1,38 35,38" fill="url(#pineGreen)"/>
@@ -101,7 +105,7 @@
   </g>
 
   <!-- Right Christmas Tree -->
-  <g transform="translate(208, 30) scale(0.9)">
+  <g transform="translate(208, 14) scale(0.9)">
     <rect x="15" y="48" width="6" height="12" rx="1" fill="#78350f"/>
     <polygon points="18,4 4,24 32,24" fill="url(#pineGreen)"/>
     <polygon points="18,15 1,38 35,38" fill="url(#pineGreen)"/>
@@ -192,5 +196,6 @@
       <!-- Gold Sleigh Scrollwork -->
       <path d="M 12 27 Q 28 31 46 26" fill="none" stroke="url(#goldTrim)" stroke-width="2" stroke-linecap="round"/>
     </g>
+  </g>
   </g>
 </svg>

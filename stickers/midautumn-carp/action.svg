@@ -10,20 +10,22 @@
       <stop offset="50%" stop-color="#fb923c"/>
       <stop offset="100%" stop-color="#ef4444"/>
     </linearGradient>
+    <clipPath id="mcaClip">
+      <rect x="0" y="0" width="260" height="71"/>
+    </clipPath>
     <style>
-      /* Cá Chép Vượt Vũ Môn dưới Trăng Rằm Trung Thu và sông hoa đăng! */
       .mca-leaper { animation: mcaDragonGateLeap 3.0s ease-in-out infinite; }
-      .mca-splash { transform-origin: 175px 80px; animation: mcaSplashPop 3.0s ease-out infinite; opacity: 0; }
+      .mca-splash { transform-origin: 175px 62px; animation: mcaSplashPop 3.0s ease-out infinite; opacity: 0; }
       .mca-lotus1 { animation: mcaDriftLotus 4.5s ease-in-out infinite alternate; }
-      .mca-moon { transform-origin: 218px 28px; animation: mcaMoonHalo 2.6s ease-in-out infinite alternate; }
+      .mca-moon { transform-origin: 218px 22px; animation: mcaMoonHalo 2.6s ease-in-out infinite alternate; }
 
       @keyframes mcaDragonGateLeap {
-        0%   { transform: translate(226px, 84px) rotate(-35deg) scale(0.9); opacity: 0; }
+        0%   { transform: translate(226px, 68px) rotate(-35deg) scale(0.9); opacity: 0; }
         12%  { opacity: 1; }
-        38%  { transform: translate(156px, 24px) rotate(-18deg) scale(1.05); opacity: 1; }
-        55%  { transform: translate(118px, 16px) rotate(8deg) scale(1.08); opacity: 1; }
-        82%  { transform: translate(58px, 68px) rotate(32deg) scale(0.96); opacity: 1; }
-        95%, 100% { transform: translate(34px, 88px) rotate(40deg) scale(0.85); opacity: 0; }
+        38%  { transform: translate(156px, 18px) rotate(-18deg) scale(1.05); opacity: 1; }
+        55%  { transform: translate(118px, 12px) rotate(8deg) scale(1.08); opacity: 1; }
+        82%  { transform: translate(58px, 52px) rotate(32deg) scale(0.96); opacity: 1; }
+        95%, 100% { transform: translate(34px, 70px) rotate(40deg) scale(0.85); opacity: 0; }
       }
       @keyframes mcaSplashPop {
         0%, 6%, 32%, 100% { opacity: 0; transform: scale(0.4); }
@@ -40,59 +42,56 @@
     </style>
   </defs>
 
-  <!-- Giant Full Harvest Moon (Trăng Rằm Trung Thu) -->
-  <g class="mca-moon">
-    <circle cx="218" cy="28" r="25" fill="#fde047" opacity="0.22"/>
-    <circle cx="218" cy="28" r="18" fill="url(#mcaMoon)"/>
-  </g>
+  <g clip-path="url(#mcaClip)">
+    <!-- Full Harvest Moon -->
+    <g class="mca-moon">
+      <circle cx="218" cy="22" r="21" fill="#fde047" opacity="0.22"/>
+      <circle cx="218" cy="22" r="15" fill="url(#mcaMoon)"/>
+    </g>
 
-  <!-- Floating Sky Lanterns -->
-  <g fill="#fb923c" stroke="#fef08a" stroke-width="1">
-    <rect x="42" y="16" width="8" height="11" rx="2"/>
-    <rect x="182" y="14" width="7" height="9" rx="2"/>
-  </g>
+    <!-- Floating Sky Lanterns -->
+    <g fill="#fb923c" stroke="#fef08a" stroke-width="1">
+      <rect x="42" y="12" width="8" height="11" rx="2"/>
+      <rect x="182" y="10" width="7" height="9" rx="2"/>
+    </g>
 
-  <!-- Golden Vũ Môn Gate (Dragon Gate Archway) in center -->
-  <g>
-    <line x1="108" y1="36" x2="108" y2="84" stroke="#dc2626" stroke-width="5"/>
-    <line x1="148" y1="36" x2="148" y2="84" stroke="#dc2626" stroke-width="5"/>
-    <path d="M96 38 Q128 24 160 38 L154 44 Q128 33 102 44 Z" fill="#facc15" stroke="#92400e" stroke-width="1.5"/>
-    <rect x="118" y="36" width="20" height="8" rx="2" fill="#991b1b" stroke="#fef08a" stroke-width="1"/>
-    <!-- Hanging red lanterns on gate -->
-    <circle cx="102" cy="48" r="4" fill="#ef4444" stroke="#fde047" stroke-width="1"/>
-    <circle cx="154" cy="48" r="4" fill="#ef4444" stroke="#fde047" stroke-width="1"/>
-  </g>
+    <!-- Golden Vu Mon Gate sitting on river at y=65 -->
+    <g>
+      <line x1="108" y1="22" x2="108" y2="66" stroke="#dc2626" stroke-width="5"/>
+      <line x1="148" y1="22" x2="148" y2="66" stroke="#dc2626" stroke-width="5"/>
+      <path d="M96 24 Q128 10 160 24 L154 30 Q128 19 102 30 Z" fill="#facc15" stroke="#92400e" stroke-width="1.5"/>
+      <rect x="118" y="22" width="20" height="8" rx="2" fill="#991b1b" stroke="#fef08a" stroke-width="1"/>
+      <circle cx="102" cy="34" r="3.8" fill="#ef4444" stroke="#fde047" stroke-width="1"/>
+      <circle cx="154" cy="34" r="3.8" fill="#ef4444" stroke="#fde08a" stroke-width="1"/>
+    </g>
 
-  <!-- Shimmering River Waves va Floating Lotus Lanterns -->
-  <path d="M6 82 Q45 75 85 82 T165 82 T254 82 L254 94 L6 94 Z" fill="#1e3a8a" opacity="0.78"/>
-  <path d="M14 86 Q55 80 95 86 T185 86 T248 86" fill="none" stroke="#fde047" stroke-width="1.5" opacity="0.55"/>
+    <!-- Shimmering River Waves flush on y=70 -->
+    <path d="M6 63 Q45 57 85 63 T165 63 T254 63 L254 71 L6 71 Z" fill="#1e3a8a" opacity="0.82"/>
+    <path d="M14 67 Q55 61 95 67 T185 67 T248 67" fill="none" stroke="#fde047" stroke-width="1.5" opacity="0.6"/>
 
-  <g class="mca-lotus1">
-    <polygon points="68,83 74,77 80,83" fill="#f472b6"/>
-    <ellipse cx="74" cy="84" rx="8" ry="2.5" fill="#fbcfe8"/>
-    <circle cx="74" cy="81" r="2" fill="#fef08a"/>
-    <polygon points="196,84 202,78 208,84" fill="#f472b6"/>
-    <ellipse cx="202" cy="85" rx="8" ry="2.5" fill="#fbcfe8"/>
-    <circle cx="202" cy="82" r="2" fill="#fef08a"/>
-  </g>
+    <g class="mca-lotus1">
+      <polygon points="68,64 74,58 80,64" fill="#f472b6"/>
+      <ellipse cx="74" cy="65" rx="8" ry="2.5" fill="#fbcfe8"/>
+      <circle cx="74" cy="62" r="2" fill="#fef08a"/>
+      <polygon points="196,65 202,59 208,65" fill="#f472b6"/>
+      <ellipse cx="202" cy="66" rx="8" ry="2.5" fill="#fbcfe8"/>
+      <circle cx="202" cy="63" r="2" fill="#fef08a"/>
+    </g>
 
-  <!-- Water Splash when Carp leaps -->
-  <g class="mca-splash" stroke="#bae6fd" stroke-width="2" stroke-linecap="round" fill="none">
-    <path d="M168 80 Q162 68 156 72"/>
-    <path d="M182 80 Q188 68 194 72"/>
-  </g>
+    <g class="mca-splash" stroke="#bae6fd" stroke-width="2" stroke-linecap="round" fill="none">
+      <path d="M168 62 Q162 50 156 54"/>
+      <path d="M182 62 Q188 50 194 54"/>
+    </g>
 
-  <!-- Leaping Golden Carp holding Mystic Pearl va Star Trail -->
-  <g class="mca-leaper">
-    <!-- Tail -->
-    <path d="M18 0 L32 -9 L29 0 L32 9 Z" fill="#ef4444" stroke="#991b1b" stroke-width="1.2"/>
-    <!-- Body facing left -->
-    <ellipse cx="4" cy="0" rx="16" ry="10.5" fill="url(#mcaCarp)" stroke="#7c2d12" stroke-width="1.5"/>
-    <path d="M0 -10 Q6 -17 12 -9 Z" fill="#ef4444"/>
-    <circle cx="-5" cy="-2" r="2.2" fill="#1e1b4b"/>
-    <circle cx="-5.6" cy="-2.6" r="0.8" fill="#ffffff"/>
-    <path d="M-9 2 Q-16 0 -18 -5" fill="none" stroke="#fef08a" stroke-width="1.6" stroke-linecap="round"/>
-    <!-- Glowing Moon Pearl in front of Carp -->
-    <circle cx="-18" cy="1" r="4.5" fill="#fef9c3" stroke="#f59e0b" stroke-width="1.2"/>
+    <!-- Leaping Golden Carp -->
+    <g class="mca-leaper">
+      <path d="M18 0 L32 -9 L29 0 L32 9 Z" fill="#ef4444" stroke="#991b1b" stroke-width="1.2"/>
+      <ellipse cx="4" cy="0" rx="16" ry="10.5" fill="url(#mcaCarp)" stroke="#7c2d12" stroke-width="1.5"/>
+      <path d="M0 -10 Q6 -17 12 -9 Z" fill="#ef4444"/>
+      <circle cx="-5" cy="-2" r="2.2" fill="#1e1b4b"/>
+      <circle cx="-5.6" cy="-2.6" r="0.8" fill="#ffffff"/>
+      <path d="M-9 2 Q-16 0 -18 -5" fill="none" stroke="#fef08a" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="-18" cy="1" r="4.5" fill="#fef9c3" stroke="#f59e0b" stroke-width="1.2"/>
+    </g>
   </g>
 </svg>

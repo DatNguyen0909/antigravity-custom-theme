@@ -15,6 +15,9 @@
       <stop offset="50%" stop-color="#ef4444"/>
       <stop offset="100%" stop-color="#7f1d1d"/>
     </linearGradient>
+    <clipPath id="tetClip">
+      <rect x="0" y="0" width="260" height="71"/>
+    </clipPath>
     <style>
       .lion-dancer {
         animation: maiHoaThungJump 3.0s cubic-bezier(0.32, 0.04, 0.35, 1) infinite;
@@ -42,16 +45,16 @@
 
       /* Lion jumps across the 5 Mai Hoa Thung poles from Right (205px) to Left (36px) to pluck the Lucky Lì Xì! */
       @keyframes maiHoaThungJump {
-        0% { transform: translate(192px, 34px) rotate(-5deg); }
-        12% { transform: translate(166px, 12px) rotate(12deg); }
-        24% { transform: translate(146px, 28px) rotate(-6deg); }
-        36% { transform: translate(122px, 6px) rotate(14deg); }
-        48% { transform: translate(102px, 22px) rotate(-8deg); }
-        60% { transform: translate(78px, 2px) rotate(15deg); }
-        72% { transform: translate(56px, 16px) rotate(-12deg); }
-        84% { transform: translate(32px, 4px) rotate(8deg) scale(1.08); }
-        94% { transform: translate(26px, 18px) rotate(0deg) scale(1); }
-        100% { transform: translate(192px, 34px) rotate(-5deg); }
+        0% { transform: translate(192px, 22px) rotate(-5deg); }
+        12% { transform: translate(166px, 6px) rotate(12deg); }
+        24% { transform: translate(146px, 18px) rotate(-6deg); }
+        36% { transform: translate(122px, 3px) rotate(14deg); }
+        48% { transform: translate(102px, 14px) rotate(-8deg); }
+        60% { transform: translate(78px, 1px) rotate(15deg); }
+        72% { transform: translate(56px, 10px) rotate(-12deg); }
+        84% { transform: translate(32px, 2px) rotate(8deg) scale(1.08); }
+        94% { transform: translate(26px, 11px) rotate(0deg) scale(1); }
+        100% { transform: translate(192px, 22px) rotate(-5deg); }
       }
       @keyframes capeFlutter {
         0% { transform: rotate(-7deg) scaleY(0.95); }
@@ -79,6 +82,7 @@
     </style>
   </defs>
 
+  <g clip-path="url(#tetClip)">
   <!-- BACKGROUND: Golden Apricot Blossom Branch (Cành Mai Vàng) + Red Tết Lantern + Mai Hoa Thung Poles -->
   <!-- Right Golden Apricot Tree Branch (Cành Mai Vàng) -->
   <g opacity="0.92">
@@ -120,23 +124,23 @@
     <line x1="238" y1="34.5" x2="238" y2="41" stroke="#facc15" stroke-width="1.6"/>
   </g>
 
-  <!-- 5 MAI HOA THUNG HIGH POLES (Rising from right to left) -->
+  <!-- 5 MAI HOA THUNG HIGH POLES (Standing flush on bubble roof y=70!) -->
   <g>
     <!-- Pole 1 (Rightmost - lowest) -->
-    <rect x="206" y="72" width="6" height="20" fill="url(#poleGrad)"/>
-    <ellipse cx="209" cy="72" rx="8" ry="2.8" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="0.9"/>
+    <rect x="206" y="59" width="6" height="12" fill="url(#poleGrad)"/>
+    <ellipse cx="209" cy="59" rx="8" ry="2.8" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="0.9"/>
     <!-- Pole 2 -->
-    <rect x="160" y="66" width="6" height="26" fill="url(#poleGrad)"/>
-    <ellipse cx="163" cy="66" rx="8" ry="2.8" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="0.9"/>
+    <rect x="160" y="55" width="6" height="16" fill="url(#poleGrad)"/>
+    <ellipse cx="163" cy="55" rx="8" ry="2.8" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="0.9"/>
     <!-- Pole 3 -->
-    <rect x="116" y="60" width="6" height="32" fill="url(#poleGrad)"/>
-    <ellipse cx="119" cy="60" rx="8" ry="2.8" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="0.9"/>
+    <rect x="116" y="51" width="6" height="20" fill="url(#poleGrad)"/>
+    <ellipse cx="119" cy="51" rx="8" ry="2.8" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="0.9"/>
     <!-- Pole 4 -->
-    <rect x="72" y="54" width="6" height="38" fill="url(#poleGrad)"/>
-    <ellipse cx="75" cy="54" rx="8" ry="2.8" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="0.9"/>
+    <rect x="72" y="47" width="6" height="24" fill="url(#poleGrad)"/>
+    <ellipse cx="75" cy="47" rx="8" ry="2.8" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="0.9"/>
     <!-- Pole 5 (Leftmost - Tallest Goal Pole) -->
-    <rect x="34" y="52" width="6" height="40" fill="url(#poleGrad)"/>
-    <ellipse cx="37" cy="52" rx="9" ry="3" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="1"/>
+    <rect x="34" y="45" width="6" height="26" fill="url(#poleGrad)"/>
+    <ellipse cx="37" cy="45" rx="9" ry="3" fill="url(#actTetGold)" stroke="#991b1b" stroke-width="1"/>
   </g>
 
   <!-- HANGING LUCKY LÌ XÌ va "LỘC" PRIZE AT THE LEFT GOAL POLE (Hái Lộc Đầu Xuân!) -->
@@ -206,5 +210,6 @@
       <!-- White Beard Tuft -->
       <circle cx="10" cy="26" r="3.8" fill="#ffffff" stroke="#facc15" stroke-width="0.9"/>
     </g>
+  </g>
   </g>
 </svg>

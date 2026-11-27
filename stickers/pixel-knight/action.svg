@@ -1,117 +1,110 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95" shape-rendering="crispEdges">
   <defs>
+    <clipPath id="pkaClip">
+      <rect x="0" y="0" width="260" height="71"/>
+    </clipPath>
     <style>
-      /* Retro 8-bit Side-Scroll Stage: Knight runs right-to-left, jumps over Warp Pipe, hits '?' Block -> Coin pops! */
+      /* Retro 8-bit Stage sitting flush on bubble top border y=70! */
       .pk-runner { animation: pkRunStage 2.8s linear infinite; }
       .pk-legs { animation: pkStride 0.22s steps(2) infinite; }
-      .pk-qblock { transform-origin: 96px 26px; animation: pkBumpBlock 2.8s ease-out infinite; }
+      .pk-qblock { transform-origin: 96px 18px; animation: pkBumpBlock 2.8s ease-out infinite; }
       .pk-coin { animation: pkCoinPop 2.8s ease-out infinite; opacity: 0; }
       .pk-score { animation: pkScorePop 2.8s ease-out infinite; opacity: 0; }
 
       @keyframes pkRunStage {
-        0%   { transform: translate(220px, 52px); }
-        18%  { transform: translate(178px, 52px); }
-        30%  { transform: translate(150px, 20px); }
-        42%  { transform: translate(122px, 52px); }
-        52%  { transform: translate(100px, 52px); }
-        62%  { transform: translate(86px, 28px); }
-        74%  { transform: translate(62px, 52px); }
-        100% { transform: translate(-36px, 52px); }
+        0%   { transform: translate(220px, 31px); }
+        18%  { transform: translate(178px, 31px); }
+        30%  { transform: translate(150px, 5px); }
+        42%  { transform: translate(122px, 31px); }
+        52%  { transform: translate(100px, 31px); }
+        62%  { transform: translate(86px, 16px); }
+        74%  { transform: translate(62px, 31px); }
+        100% { transform: translate(-36px, 31px); }
       }
       @keyframes pkStride { 0% { transform: translateY(0); } 100% { transform: translateY(-2px); } }
       @keyframes pkBumpBlock {
         0%, 59%, 70%, 100% { transform: translateY(0); }
-        63% { transform: translateY(-7px); }
+        63% { transform: translateY(-5px); }
       }
       @keyframes pkCoinPop {
-        0%, 60% { opacity: 0; transform: translate(94px, 20px) scaleX(1); }
-        64% { opacity: 1; transform: translate(94px, 2px) scaleX(0.3); }
-        72% { opacity: 1; transform: translate(94px, -4px) scaleX(1); }
-        84%, 100% { opacity: 0; transform: translate(94px, 10px) scaleX(0.3); }
+        0%, 60% { opacity: 0; transform: translate(94px, 12px) scaleX(1); }
+        64% { opacity: 1; transform: translate(94px, 1px) scaleX(0.3); }
+        72% { opacity: 1; transform: translate(94px, -1px) scaleX(1); }
+        84%, 100% { opacity: 0; transform: translate(94px, 6px) scaleX(0.3); }
       }
       @keyframes pkScorePop {
         0%, 63% { opacity: 0; transform: translateY(0); }
-        68%, 82% { opacity: 1; transform: translateY(-6px); }
-        90%, 100% { opacity: 0; transform: translateY(-12px); }
+        68%, 82% { opacity: 1; transform: translateY(-3px); }
+        90%, 100% { opacity: 0; transform: translateY(-6px); }
       }
     </style>
   </defs>
 
-  <!-- Retro Pixel Clouds -->
-  <g fill="#e0f2fe" opacity="0.8">
-    <rect x="28" y="14" width="22" height="6"/>
-    <rect x="32" y="10" width="14" height="4"/>
-    <rect x="196" y="12" width="26" height="6"/>
-    <rect x="202" y="8" width="14" height="4"/>
-  </g>
-
-  <!-- 8-bit Grass va Brick Ground Strip -->
-  <rect x="6" y="82" width="248" height="4" fill="#22c55e"/>
-  <rect x="6" y="86" width="248" height="7" fill="#b45309"/>
-  <path d="M 20 86 V 93 M 40 86 V 93 M 60 86 V 93 M 80 86 V 93 M 100 86 V 93 M 120 86 V 93 M 140 86 V 93 M 160 86 V 93 M 180 86 V 93 M 200 86 V 93 M 220 86 V 93 M 240 86 V 93" stroke="#78350f" stroke-width="2"/>
-
-  <!-- Green Warp Pipe (at x=148) -->
-  <g>
-    <rect x="148" y="60" width="22" height="22" fill="#16a34a"/>
-    <rect x="151" y="60" width="5" height="22" fill="#4ade80"/>
-    <rect x="145" y="54" width="28" height="7" fill="#22c55e"/>
-    <rect x="148" y="54" width="6" height="7" fill="#86efac"/>
-    <rect x="145" y="54" width="28" height="2" fill="#14532d"/>
-  </g>
-
-  <!-- Floating Brick Row + Golden '?' Block (at x=88) -->
-  <g>
-    <!-- Left Brick -->
-    <rect x="72" y="20" width="16" height="16" fill="#c2410c"/>
-    <rect x="73" y="21" width="14" height="6" fill="#ea580c"/>
-    <rect x="73" y="29" width="6" height="6" fill="#ea580c"/>
-    <rect x="81" y="29" width="6" height="6" fill="#ea580c"/>
-    <!-- Right Brick -->
-    <rect x="104" y="20" width="16" height="16" fill="#c2410c"/>
-    <rect x="105" y="21" width="14" height="6" fill="#ea580c"/>
-    <rect x="105" y="29" width="6" height="6" fill="#ea580c"/>
-    <rect x="113" y="29" width="6" height="6" fill="#ea580c"/>
-    <!-- Center '?' Lucky Block -->
-    <g class="pk-qblock">
-      <rect x="88" y="20" width="16" height="16" fill="#d97706"/>
-      <rect x="89" y="21" width="14" height="14" fill="#facc15"/>
-      <rect x="90" y="22" width="2" height="2" fill="#92400e"/>
-      <rect x="100" y="22" width="2" height="2" fill="#92400e"/>
-      <rect x="90" y="32" width="2" height="2" fill="#92400e"/>
-      <rect x="100" y="32" width="2" height="2" fill="#92400e"/>
-      <text x="96" y="32" font-family="Consolas, monospace" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">?</text>
+  <g clip-path="url(#pkaClip)">
+    <!-- Retro Pixel Clouds -->
+    <g fill="#e0f2fe" opacity="0.8">
+      <rect x="28" y="10" width="22" height="5"/>
+      <rect x="32" y="6" width="14" height="4"/>
+      <rect x="196" y="10" width="26" height="5"/>
+      <rect x="202" y="6" width="14" height="4"/>
     </g>
-  </g>
 
-  <!-- Popping Golden 8-bit Coin + "+100" -->
-  <g class="pk-coin">
-    <rect x="-4" y="0" width="8" height="12" fill="#facc15"/>
-    <rect x="-2" y="2" width="4" height="8" fill="#fef08a"/>
-  </g>
-  <text class="pk-score" x="96" y="14" font-family="Consolas, monospace" font-size="8" font-weight="900" fill="#fef08a" text-anchor="middle">+100</text>
+    <!-- 8-bit Grass and Brick Ground Strip flush on y=70 -->
+    <rect x="6" y="61" width="248" height="3" fill="#22c55e"/>
+    <rect x="6" y="64" width="248" height="6" fill="#b45309"/>
+    <path d="M 20 64 V 70 M 40 64 V 70 M 60 64 V 70 M 80 64 V 70 M 100 64 V 70 M 120 64 V 70 M 140 64 V 70 M 160 64 V 70 M 180 64 V 70 M 200 64 V 70 M 220 64 V 70 M 240 64 V 70" stroke="#78350f" stroke-width="2"/>
 
-  <!-- Running Chibi Pixel Knight (facing left) -->
-  <g class="pk-runner">
-    <g class="pk-legs">
-      <!-- Flowing red cape -->
-      <rect x="18" y="14" width="12" height="12" fill="#dc2626"/>
-      <rect x="28" y="16" width="6" height="8" fill="#ef4444"/>
-      <!-- Boots -->
-      <rect x="8" y="26" width="6" height="5" fill="#1e293b"/>
-      <rect x="18" y="26" width="6" height="5" fill="#1e293b"/>
-      <!-- Armor Body -->
-      <rect x="8" y="14" width="14" height="12" fill="#cbd5e1"/>
-      <rect x="8" y="22" width="14" height="3" fill="#ca8a04"/>
-      <!-- Helmet + Red Plume -->
-      <rect x="10" y="-4" width="14" height="5" fill="#ef4444"/>
-      <rect x="6" y="0" width="18" height="15" fill="#94a3b8"/>
-      <rect x="8" y="2" width="14" height="11" fill="#e2e8f0"/>
-      <rect x="6" y="6" width="10" height="6" fill="#0f172a"/>
-      <rect x="8" y="8" width="3" height="3" fill="#38bdf8"/>
-      <!-- Pixel Sword held forward -->
-      <rect x="-8" y="14" width="14" height="4" fill="#e2e8f0"/>
-      <rect x="-6" y="15" width="10" height="2" fill="#38bdf8"/>
-      <rect x="4" y="12" width="3" height="8" fill="#facc15"/>
+    <!-- Green Warp Pipe sitting on y=61 -->
+    <g>
+      <rect x="148" y="42" width="22" height="19" fill="#16a34a"/>
+      <rect x="151" y="42" width="5" height="19" fill="#4ade80"/>
+      <rect x="145" y="36" width="28" height="6" fill="#22c55e"/>
+      <rect x="148" y="36" width="6" height="6" fill="#86efac"/>
+      <rect x="145" y="36" width="28" height="2" fill="#14532d"/>
+    </g>
+
+    <!-- Floating Brick Row + Golden '?' Block -->
+    <g>
+      <rect x="72" y="10" width="16" height="15" fill="#c2410c"/>
+      <rect x="73" y="11" width="14" height="6" fill="#ea580c"/>
+      <rect x="73" y="18" width="6" height="6" fill="#ea580c"/>
+      <rect x="81" y="18" width="6" height="6" fill="#ea580c"/>
+      <rect x="104" y="10" width="16" height="15" fill="#c2410c"/>
+      <rect x="105" y="11" width="14" height="6" fill="#ea580c"/>
+      <rect x="105" y="18" width="6" height="6" fill="#ea580c"/>
+      <rect x="113" y="18" width="6" height="6" fill="#ea580c"/>
+      <g class="pk-qblock">
+        <rect x="88" y="10" width="16" height="15" fill="#d97706"/>
+        <rect x="89" y="11" width="14" height="13" fill="#facc15"/>
+        <text x="96" y="21" font-family="Consolas, monospace" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">?</text>
+      </g>
+    </g>
+
+    <!-- Popping Golden 8-bit Coin + "+100" -->
+    <g class="pk-coin">
+      <rect x="-4" y="0" width="8" height="10" fill="#facc15"/>
+      <rect x="-2" y="2" width="4" height="6" fill="#fef08a"/>
+    </g>
+    <text class="pk-score" x="116" y="9" font-family="Consolas, monospace" font-size="7.5" font-weight="900" fill="#fef08a" text-anchor="middle">+100</text>
+
+    <!-- Running Chibi Pixel Knight -->
+    <g class="pk-runner">
+      <g class="pk-legs">
+        <rect x="18" y="14" width="12" height="12" fill="#dc2626"/>
+        <rect x="28" y="16" width="6" height="8" fill="#ef4444"/>
+        <rect x="8" y="26" width="6" height="4" fill="#1e293b"/>
+        <rect x="18" y="26" width="6" height="4" fill="#1e293b"/>
+        <rect x="8" y="14" width="14" height="12" fill="#cbd5e1"/>
+        <rect x="8" y="22" width="14" height="3" fill="#ca8a04"/>
+        <rect x="10" y="-4" width="14" height="5" fill="#ef4444"/>
+        <rect x="6" y="0" width="18" height="15" fill="#94a3b8"/>
+        <rect x="8" y="2" width="14" height="11" fill="#e2e8f0"/>
+        <rect x="6" y="6" width="10" height="6" fill="#0f172a"/>
+        <rect x="8" y="8" width="3" height="3" fill="#38bdf8"/>
+        <rect x="-8" y="14" width="14" height="4" fill="#e2e8f0"/>
+        <rect x="-6" y="15" width="10" height="2" fill="#38bdf8"/>
+        <rect x="4" y="12" width="3" height="8" fill="#facc15"/>
+      </g>
     </g>
   </g>
 </svg>
