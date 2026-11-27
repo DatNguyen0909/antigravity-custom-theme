@@ -5,7 +5,9 @@ const crypto = require('crypto');
 const asarBinding = process._linkedBinding('electron_common_asar');
 
 const rootDir = __dirname;
-const resourcesDir = 'C:/Users/dat-nt/AppData/Local/Programs/antigravity/resources';
+const os = require('os');
+const localAppData = process.env.LOCALAPPDATA || path.join(os.homedir(), 'AppData', 'Local');
+const resourcesDir = path.join(localAppData, 'Programs', 'antigravity', 'resources');
 const asarBakPath = path.join(resourcesDir, 'app.asar.bak');
 const liveAsarPath = path.join(resourcesDir, 'app.asar');
 const tempAsarPath = path.join(rootDir, 'temp_build.asar');
