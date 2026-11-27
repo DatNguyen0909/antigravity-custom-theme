@@ -2,15 +2,16 @@
 
 # ✨ Antigravity Custom Theme Engine (v7 MVVM)
 
-<img src="./stickers/jade-dragon/idle.svg" width="64" alt="Jade Dragon" />
-<img src="./stickers/fire-phoenix/idle.svg" width="64" alt="Fire Phoenix" />
-<img src="./stickers/tet-lion/idle.svg" width="64" alt="Lunar New Year Lion" />
-<img src="./stickers/code-cat/idle.svg" width="64" alt="Hacker Code Cat" />
-<img src="./stickers/pixel-knight/idle.svg" width="64" alt="8-Bit Pixel Knight" />
-<img src="./stickers/cloud-whale/idle.svg" width="64" alt="Sunset Cloud Whale" />
-<img src="./stickers/gangster-pawn/idle.svg" width="60" alt="Gangster Pawn" />
-<img src="./stickers/noel-snowman/idle.svg" width="60" alt="Christmas Snowman" />
-<img src="./stickers/halloween-pumpkin/idle.svg" width="60" alt="Halloween Pumpkin" />
+<img src="./stickers/jade-dragon/idle.svg" width="54" alt="Jade Dragon" />
+<img src="./stickers/tet-lion/idle.svg" width="54" alt="Lunar New Year Lion" />
+<img src="./stickers/valentine-cupid/idle.svg" width="54" alt="Valentine Cupid" />
+<img src="./stickers/summer-corgi/idle.svg" width="54" alt="Summer Beach Corgi" />
+<img src="./stickers/midautumn-carp/idle.svg" width="54" alt="Mid-Autumn Carp" />
+<img src="./stickers/halloween-pumpkin/idle.svg" width="54" alt="Halloween Pumpkin" />
+<img src="./stickers/noel-snowman/idle.svg" width="54" alt="Christmas Snowman" />
+<img src="./stickers/code-cat/idle.svg" width="54" alt="Hacker Code Cat" />
+<img src="./stickers/pixel-knight/idle.svg" width="54" alt="8-Bit Pixel Knight" />
+<img src="./stickers/cloud-whale/idle.svg" width="54" alt="Sunset Cloud Whale" />
 
 </div>
 
@@ -23,28 +24,28 @@
 
 <p align="center">
   <b>Bộ giao diện Chibi chuyển động toàn diện dành cho Google Antigravity Desktop Client</b><br /><br />
-  <img src="https://img.shields.io/badge/Ch%E1%BB%A7_%C4%91%E1%BB%81_Chibi-18_M%E1%BA%ABu-10b981?style=for-the-badge" alt="18 mẫu" />
-  <img src="https://img.shields.io/badge/Vector_Animations-54_File_SVG-f59e0b?style=for-the-badge" alt="54 SVG" />
+  <img src="https://img.shields.io/badge/Ch%E1%BB%A7_%C4%91%E1%BB%81_Chibi-21_M%E1%BA%ABu-10b981?style=for-the-badge" alt="21 mẫu" />
+  <img src="https://img.shields.io/badge/Vector_Animations-63_File_SVG-f59e0b?style=for-the-badge" alt="63 SVG" />
   <img src="https://img.shields.io/badge/L%E1%BB%85_H%E1%BB%99i_%26_M%C3%B9a-Auto_Switch-a855f7?style=for-the-badge" alt="Auto Season" />
   <img src="https://img.shields.io/badge/Giao_di%E1%BB%87n-Dark_%26_Light-ec4899?style=for-the-badge" alt="Dark & Light" />
   <br /><br />
   👉 <a href="https://datnguyen0909.github.io/antigravity-custom-theme/?lang=vi"><b>Mở bản Xem Trước Tương Tác Trực Tiếp (GitHub Pages — Tiếng Việt)</b></a><br />
-  <i>(Thử gõ chat, rê chuột, bật chế độ Theo Mùa, đổi Dark/Light &amp; Anh/Việt cho cả 18 chủ đề ngay trên trình duyệt!)</i>
+  <i>(Thử gõ chat, rê chuột, bật chế độ Theo Mùa, đổi Dark/Light &amp; Anh/Việt cho cả 21 chủ đề ngay trên trình duyệt!)</i>
 </p>
 
 ---
 
 ## 🌟 Tính năng nổi bật
 
-- **🎭 Hệ thống chuyển động 4 tầng cho mỗi linh vật (54 file SVG thuần CSS, siêu nhẹ)**:
-  1. **Tĩnh + Diễn cảnh tự động mỗi 15 giây (`idle.svg`)**: Đứng nhịp nhàng trên bong bóng chat; cứ mỗi 15 giây tự diễn một tình huống hài hước riêng (Bí ngô Halloween bật nắp đầu cho bé ma con "BOO!" tung kẹo, Mèo Code gặp `ERROR` đập laptop, Hiệp sĩ mở rương ra `+1 EXP` thất vọng, Cá voi phun cầu vồng...).
-  2. **Hành động đặc trưng khi bạn đang gõ (`typing.svg`)**: Khi nhập tin nhắn, mỗi linh vật diễn đúng bản chất riêng (Bí ngô khuấy kẹo bằng kẹo mút phép thuật, Cá mập mài răng, Mèo than vờn cuộn len, Thỏ giã bánh Mochi, Hiệp sĩ rèn kiếm trên đe...) kèm hạt hiệu ứng theo từng phím và bong bóng suy nghĩ khi dừng tay 1,5 giây.
-  3. **Hoạt cảnh sân khấu ngang khi rê chuột (`action.svg`)**: Rê chuột vào bong bóng chat hoặc ô nhập sẽ mở ra cả một sân khấu ngang có bối cảnh đi kèm (nghĩa địa trăng máu Halloween, cổng Torii, cọc Mai Hoa Thung, ống nước & gạch `?`, đảo nổi hoàng hôn...).
-  4. **🗓️ Tự động đổi Linh vật theo Mùa / Lễ hội & Song ngữ Anh/Việt**: Công tắc **Auto-Season** tự động diện đúng chủ đề theo lịch năm (Tết 🦁 • Xuân 🌸 • Hè 🦈 • Thu 🦊 • Halloween 🎃 • Đông ❄️ • Noel ⛄), hỗ trợ hộp chọn ngôn ngữ **EN / VI**, **Dark / Light**, chỉnh độ tối nền, ảnh nền cá nhân và lưu cứng trên ổ đĩa.
+- **🎭 Hệ thống chuyển động 4 tầng cho mỗi linh vật (63 file SVG thuần CSS, siêu nhẹ)**:
+  1. **Tĩnh + Diễn cảnh tự động mỗi 15 giây (`idle.svg`)**: Đứng nhịp nhàng trên bong bóng chat; cứ mỗi 15 giây tự diễn một tình huống hài hước riêng (Bí ngô Halloween bật nắp đầu ma con tung kẹo, Corgi uống dừa bị cua kẹp mũi, Cupid bắn nứt tim rồi dán băng cá nhân, Cá chép cắn bánh nướng Trung Thu...).
+  2. **Hành động đặc trưng khi bạn đang gõ (`typing.svg`)**: Khi nhập tin nhắn, mỗi linh vật diễn đúng bản chất riêng (Corgi xúc cát đắp lâu đài, Cá chép múa đèn ông sao, Cupid bắn thư tình, Bí ngô khuấy vạc kẹo, Cá mập mài răng...) kèm hạt hiệu ứng theo từng phím và bong bóng suy nghĩ khi dừng tay 1,5 giây.
+  3. **Hoạt cảnh sân khấu ngang khi rê chuột (`action.svg`)**: Rê chuột vào bong bóng chat hoặc ô nhập sẽ mở ra cả một sân khấu ngang có bối cảnh đi kèm (lướt ván sóng biển rặng dừa, cá chép vượt Vũ Môn, mây kẹo bông Valentine, nghĩa địa trăng máu, cọc Mai Hoa Thung...).
+  4. **🗓️ Tự động đổi Linh vật theo Mùa / Lễ hội & Song ngữ Anh/Việt**: Công tắc **Auto-Season** tự động diện đúng chủ đề xuyên suốt cả năm (Tết 🦁 • Valentine 💘 • Xuân 🌸 • Hè 🏖️ • Trung Thu 🏮 • Thu 🦊 • Halloween 🎃 • Đông ❄️ • Noel ⛄), hỗ trợ hộp chọn ngôn ngữ **EN / VI**, **Dark / Light**, chỉnh độ tối nền, ảnh nền cá nhân và lưu cứng trên ổ đĩa.
 
 ---
 
-## 🖼️ Bộ sưu tập 18 Chủ đề (Xem trực tiếp)
+## 🖼️ Bộ sưu tập 21 Chủ đề (Xem trực tiếp)
 
 > 💡 Các ảnh bên dưới là **SVG chuyển động trực tiếp** từ thư mục `stickers/` — nếu đợi đủ nhịp 15s bạn sẽ thấy từng bé tự diễn trò ngay trong bảng này!
 
@@ -68,6 +69,9 @@
 | 16 | **🗡️ Pixel Hiệp Sĩ 8-bit**<br/>`pixel-knight` | <img src="./stickers/pixel-knight/idle.svg" width="64" /><br/><sub>Mở rương ra +1 EXP xịu mặt</sub> | <img src="./stickers/pixel-knight/typing.svg" width="64" /><br/><sub>Đập búa rèn kiếm nung đỏ</sub> | <img src="./stickers/pixel-knight/action.svg" width="190" /><br/><sub>Nhảy qua ống nước & cụng gạch rơi xu</sub> |
 | 17 | **🐋 Cá Voi Mây**<br/>`cloud-whale` | <img src="./stickers/cloud-whale/idle.svg" width="64" /><br/><sub>Phun cầu vồng & chim én đậu</sub> | <img src="./stickers/cloud-whale/typing.svg" width="64" /><br/><sub>Hát nốt nhạc & bong bóng mây</sub> | <img src="./stickers/cloud-whale/action.svg" width="190" /><br/><sub>Bơi giữa đảo nổi hoàng hôn tạo mây</sub> |
 | 18 | **🎃 Bí Ngô Ma Trơi**<br/>`halloween-pumpkin` | <img src="./stickers/halloween-pumpkin/idle.svg" width="64" /><br/><sub>Mở nắp đầu ma con BOO! thả kẹo</sub> | <img src="./stickers/halloween-pumpkin/typing.svg" width="64" /><br/><sub>Khuấy vạc kẹo bằng kẹo mút phép</sub> | <img src="./stickers/halloween-pumpkin/action.svg" width="190" /><br/><sub>Cưỡi chổi bay qua nghĩa địa trăng máu</sub> |
+| 19 | **🏮 Cá Chép Trung Thu**<br/>`midautumn-carp` | <img src="./stickers/midautumn-carp/idle.svg" width="64" /><br/><sub>Cắn bánh nướng nhân trứng muối</sub> | <img src="./stickers/midautumn-carp/typing.svg" width="64" /><br/><sub>Múa rước đèn ông sao xoay tròn</sub> | <img src="./stickers/midautumn-carp/action.svg" width="190" /><br/><sub>Cá chép vượt Vũ Môn dưới trăng rằm</sub> |
+| 20 | **💘 Tiểu Thần Cupid**<br/>`valentine-cupid` | <img src="./stickers/valentine-cupid/idle.svg" width="64" /><br/><sub>Bắn nứt tim rồi dán băng cá nhân</sub> | <img src="./stickers/valentine-cupid/typing.svg" width="64" /><br/><sub>Bắn tên tim & thư tình liên thanh</sub> | <img src="./stickers/valentine-cupid/action.svg" width="190" /><br/><sub>Bay lượn giữa bầu trời mây kẹo bông</sub> |
+| 21 | **🏖️ Corgi Mùa Hè**<br/>`summer-corgi` | <img src="./stickers/summer-corgi/idle.svg" width="64" /><br/><sub>Uống dừa bị cua đỏ kẹp mũi</sub> | <img src="./stickers/summer-corgi/typing.svg" width="64" /><br/><sub>Xúc xẻng đắp lâu đài cát vàng</sub> | <img src="./stickers/summer-corgi/action.svg" width="190" /><br/><sub>Đeo kính râm lướt ván sóng biển</sub> |
 
 ---
 
@@ -101,14 +105,14 @@ Mỗi khi Antigravity cập nhật phiên bản mới, bộ cài của hãng s�
 antigravity-custom-theme/
 ├── index.html                      # Trang Web xem trước tương tác trực tiếp (EN / VI)
 ├── README.md                       # Tài liệu song ngữ tích hợp (English / Tiếng Việt)
-├── stickers/                       # 18 thư mục linh vật, mỗi thư mục gồm 3 trạng thái SVG
+├── stickers/                       # 21 thư mục linh vật, mỗi thư mục gồm 3 trạng thái SVG
 │   ├── jade-dragon/                # idle.svg | action.svg | typing.svg
 │   ├── halloween-pumpkin/          # idle.svg | action.svg | typing.svg
-│   ├── cloud-whale/                # idle.svg | action.svg | typing.svg
-│   └── ... (18 thư mục chủ đề)
+│   ├── summer-corgi/               # idle.svg | action.svg | typing.svg
+│   └── ... (21 thư mục chủ đề)
 ├── src/
 │   ├── models/                     # [MODEL] Dữ liệu thuần (Single Source of Truth - VI & EN)
-│   │   ├── themes.js               # Khai báo 18 chủ đề & lịch Auto-Season (màu, tên Anh/Việt, FX)
+│   │   ├── themes.js               # Khai báo 21 chủ đề & lịch Auto-Season (màu, tên Anh/Việt, FX)
 │   │   ├── backgrounds.js          # Bảng màu nền & Sidebar kính mờ (Dark / Light)
 │   │   └── decor.js                # Họa tiết nền SVG & cấu hình hạt bay DECOR
 │   ├── services/                   # [SERVICE] Lưu trữ & môi trường
@@ -154,28 +158,28 @@ Phát hành theo giấy phép **MIT License** — tự do sử dụng, tùy bi�
 
 <p align="center">
   <b>Animated Chibi Mascot &amp; Glassmorphism UI Theme Engine for Google Antigravity Desktop Client</b><br /><br />
-  <img src="https://img.shields.io/badge/Chibi_Themes-18_Presets-10b981?style=for-the-badge" alt="18 Presets" />
-  <img src="https://img.shields.io/badge/Vector_Animations-54_SVGs-f59e0b?style=for-the-badge" alt="54 SVGs" />
+  <img src="https://img.shields.io/badge/Chibi_Themes-21_Presets-10b981?style=for-the-badge" alt="21 Presets" />
+  <img src="https://img.shields.io/badge/Vector_Animations-63_SVGs-f59e0b?style=for-the-badge" alt="63 SVGs" />
   <img src="https://img.shields.io/badge/Seasonal_Mode-Auto_Switch-a855f7?style=for-the-badge" alt="Auto Season" />
   <img src="https://img.shields.io/badge/Appearance-Dark_%26_Light-ec4899?style=for-the-badge" alt="Dark & Light" />
   <br /><br />
   👉 <a href="https://datnguyen0909.github.io/antigravity-custom-theme/?lang=en"><b>Launch Live Interactive Web Preview (GitHub Pages)</b></a><br />
-  <i>(Try typing in the chat box, hovering bubbles, toggling Auto-Season, Dark/Light &amp; EN/VI across all 18 themes right in your browser!)</i>
+  <i>(Try typing in the chat box, hovering bubbles, toggling Auto-Season, Dark/Light &amp; EN/VI across all 21 themes right in your browser!)</i>
 </p>
 
 ---
 
 ## 🌟 Key Features
 
-- **🎭 4-Tier Interactive Mascot System (54 pure CSS-animated SVGs, ultra-lightweight)**:
-  1. **Idle + 15-Second Auto-Skits (`idle.svg`)**: Mascots perch atop your chat bubbles and perform a funny character skit every 15 seconds (Halloween Pumpkin pops its witch hat so a baby ghost shouts `BOO!` with candy, Code Cat hits `ERROR` and smashes its laptop, Pixel Knight opens a chest for `+1 EXP`, Cloud Whale spouts a rainbow...).
-  2. **Character-Specific Typing Reactions (`typing.svg`)**: While you type a prompt, your mascot switches to an authentic activity pose (Pumpkin stirs a candy cauldron with a giant lollipop wand, Shark files its teeth, Midnight Cat bats red yarn, Bunny pounds Mochi, Knight hammers a glowing blade...) with per-keystroke particles and a thinking bubble when you pause for 1.5s.
-  3. **Panoramic Hover Stage (`action.svg`)**: Hovering over any user chat bubble or the prompt input unveils a full wide-screen animated stage (Haunted Blood-Moon Graveyard, Torii gates, plum-blossom poles, retro pipes & `?` blocks, sunset floating islands...).
-  4. **🗓️ Auto-Season / Holiday Switcher & Bilingual UI**: Optional **Auto-Season** toggle automatically switches mascots throughout the year (Lunar New Year 🦁 • Spring 🌸 • Summer 🦈 • Autumn 🦊 • Halloween 🎃 • Winter ❄️ • Christmas ⛄), alongside a built-in **English / Tiếng Việt** selector, **Dark & Light** glassmorphism, dimming slider, custom wallpaper upload, and persistent disk storage.
+- **🎭 4-Tier Interactive Mascot System (63 pure CSS-animated SVGs, ultra-lightweight)**:
+  1. **Idle + 15-Second Auto-Skits (`idle.svg`)**: Mascots perch atop your chat bubbles and perform a funny character skit every 15 seconds (Halloween Pumpkin pops a baby ghost with candy, Beach Corgi gets nose-pinched by a crab, Cupid cracks & band-aids a heart, Mid-Autumn Carp bites a glowing mooncake...).
+  2. **Character-Specific Typing Reactions (`typing.svg`)**: While you type a prompt, your mascot switches to an authentic activity pose (Corgi shovels a sandcastle, Carp spins a star lantern, Cupid fires love letters, Pumpkin stirs a candy cauldron, Shark files its teeth...) with per-keystroke particles and a thinking bubble when you pause for 1.5s.
+  3. **Panoramic Hover Stage (`action.svg`)**: Hovering over any user chat bubble or the prompt input unveils a full wide-screen animated stage (Tropical Surf Beach, Carp leaping the Dragon Gate, Cotton-Candy Valentine Sky, Blood-Moon Graveyard, Torii gates...).
+  4. **🗓️ Full-Year Auto-Season / Holiday Switcher & Bilingual UI**: Optional **Auto-Season** toggle automatically switches mascots throughout the entire year (Lunar New Year 🦁 • Valentine 💘 • Spring 🌸 • Summer 🏖️ • Mid-Autumn 🏮 • Autumn 🦊 • Halloween 🎃 • Winter ❄️ • Christmas ⛄), alongside a built-in **English / Tiếng Việt** selector, **Dark & Light** glassmorphism, dimming slider, custom wallpaper upload, and persistent disk storage.
 
 ---
 
-## 🖼️ 18 Animated Theme Showcase (Live SVG)
+## 🖼️ 21 Animated Theme Showcase (Live SVG)
 
 > 💡 Every image below is a **live animated SVG** rendered directly from `stickers/` — watch for 15 seconds to see each mascot perform its mini-skit right inside this table!
 
@@ -199,6 +203,9 @@ Phát hành theo giấy phép **MIT License** — tự do sử dụng, tùy bi�
 | 16 | **🗡️ 8-Bit Pixel Knight**<br/>`pixel-knight` | <img src="./stickers/pixel-knight/idle.svg" width="64" /><br/><sub>Opens chest to tiny +1 EXP</sub> | <img src="./stickers/pixel-knight/typing.svg" width="64" /><br/><sub>Forges glowing sword on anvil</sub> | <img src="./stickers/pixel-knight/action.svg" width="190" /><br/><sub>Jumps pipes & hits coin blocks</sub> |
 | 17 | **🐋 Sunset Cloud Whale**<br/>`cloud-whale` | <img src="./stickers/cloud-whale/idle.svg" width="64" /><br/><sub>Spouts rainbow & swallow perches</sub> | <img src="./stickers/cloud-whale/typing.svg" width="64" /><br/><sub>Sings notes & cloud bubbles</sub> | <img src="./stickers/cloud-whale/action.svg" width="190" /><br/><sub>Swims past sunset floating islands</sub> |
 | 18 | **🎃 Halloween Pumpkin**<br/>`halloween-pumpkin` | <img src="./stickers/halloween-pumpkin/idle.svg" width="64" /><br/><sub>Ghost pops out shouting BOO!</sub> | <img src="./stickers/halloween-pumpkin/typing.svg" width="64" /><br/><sub>Stirs candy pot with lollipop wand</sub> | <img src="./stickers/halloween-pumpkin/action.svg" width="190" /><br/><sub>Broomstick flight over blood-moon crypt</sub> |
+| 19 | **🏮 Mid-Autumn Carp**<br/>`midautumn-carp` | <img src="./stickers/midautumn-carp/idle.svg" width="64" /><br/><sub>Chomps glowing salted-yolk mooncake</sub> | <img src="./stickers/midautumn-carp/typing.svg" width="64" /><br/><sub>Spins festive 5-point star lantern</sub> | <img src="./stickers/midautumn-carp/action.svg" width="190" /><br/><sub>Leaps the golden Dragon Gate</sub> |
+| 20 | **💘 Valentine Cupid**<br/>`valentine-cupid` | <img src="./stickers/valentine-cupid/idle.svg" width="64" /><br/><sub>Cracks heart & patches with band-aid</sub> | <img src="./stickers/valentine-cupid/typing.svg" width="64" /><br/><sub>Shoots heart arrows & love letters</sub> | <img src="./stickers/valentine-cupid/action.svg" width="190" /><br/><sub>Flies across cotton-candy clouds</sub> |
+| 21 | **🏖️ Summer Beach Corgi**<br/>`summer-corgi` | <img src="./stickers/summer-corgi/idle.svg" width="64" /><br/><sub>Sips coconut & crab pinches nose</sub> | <img src="./stickers/summer-corgi/typing.svg" width="64" /><br/><sub>Shovels sand to build sandcastle</sub> | <img src="./stickers/summer-corgi/action.svg" width="190" /><br/><sub>Surfs turquoise waves past palm island</sub> |
 
 ---
 
@@ -232,14 +239,14 @@ Whenever Antigravity updates to a newer version, its updater replaces `app.asar`
 antigravity-custom-theme/
 ├── index.html                      # Interactive Live Web Simulator & Gallery (EN / VI)
 ├── README.md                       # In-place Bilingual Documentation (English & Tiếng Việt)
-├── stickers/                       # 18 mascot folders, 3 animated SVG states each
+├── stickers/                       # 21 mascot folders, 3 animated SVG states each
 │   ├── jade-dragon/                # idle.svg | action.svg | typing.svg
 │   ├── halloween-pumpkin/          # idle.svg | action.svg | typing.svg
-│   ├── cloud-whale/                # idle.svg | action.svg | typing.svg
-│   └── ... (18 theme folders)
+│   ├── summer-corgi/               # idle.svg | action.svg | typing.svg
+│   └── ... (21 theme folders)
 ├── src/
 │   ├── models/                     # [MODEL] Single Source of Truth (EN & VI metadata)
-│   │   ├── themes.js               # 18 theme definitions + Auto-Season calendar
+│   │   ├── themes.js               # 21 theme definitions + Auto-Season calendar
 │   │   ├── backgrounds.js          # Dark & Light gradients + frosted sidebar palettes
 │   │   └── decor.js                # Background SVG scenery & ambient particle configs
 │   ├── services/                   # [SERVICE] Persistence & runtime environment

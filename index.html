@@ -268,7 +268,7 @@
       </div>
       <div class="controls">
         <button class="seg-btn active" id="tab-sim">💬 Chat Simulator</button>
-        <button class="seg-btn" id="tab-gal">🎨 54-SVG Showcase</button>
+        <button class="seg-btn" id="tab-gal">🎨 63-SVG Showcase</button>
         <button class="seg-btn" id="season-btn" title="Auto-switch mascot by current season / holiday">🗓️ Auto-Season</button>
         <button class="seg-btn" id="mode-btn">🌙 Dark</button>
         <label class="dim-ctrl">
@@ -339,7 +339,8 @@
       'jade-dragon', 'fire-phoenix', 'space-astronaut', 'wise-owl', 'moon-witch',
       'fox-chibi', 'sakura-bunny', 'ocean-shark', 'gangster-pawn', 'ice-penguin',
       'ai-robot', 'black-cat', 'noel-snowman', 'tet-lion', 'code-cat',
-      'pixel-knight', 'cloud-whale', 'halloween-pumpkin'
+      'pixel-knight', 'cloud-whale', 'halloween-pumpkin',
+      'midautumn-carp', 'valentine-cupid', 'summer-corgi'
     ];
     const STICKERS = {};
     PREVIEW_IDS.forEach(id => {
@@ -358,14 +359,14 @@
       const UI_TEXT = {
         en: {
           tabSim: '💬 Chat Simulator',
-          tabGal: '🎨 54-SVG Showcase',
+          tabGal: '🎨 63-SVG Showcase',
           seasonOff: '🗓️ Auto-Season',
           seasonOn: (lbl) => `🗓️ ${lbl}`,
           dim: 'Dim',
           sideTitle: (n) => `Choose Theme (${n} presets)`,
           hint: '💡 <b>Try interacting:</b> Hover any chat bubble for the <b>panoramic stage scene</b> • Type below to trigger <b>character-specific typing poses</b> • Watch every <b>15s</b> for funny auto-skits!',
           bubble1: 'Hover over this chat bubble to trigger the full panoramic hover stage! ✨',
-          aiMsg: 'Welcome! Click any of the <b>18 Chibi themes</b> on the left (including the new <b>🎃 Halloween Pumpkin</b>), toggle <b>🗓️ Auto-Season</b> or <b>Dark / Light</b> mode, or <b>start typing below</b> to watch each mascot perform its signature action!',
+          aiMsg: 'Welcome! Explore all <b>21 Chibi themes</b> on the left (including <b>🎃 Halloween</b>, <b>🏮 Mid-Autumn Carp</b>, <b>💘 Valentine Cupid</b> & <b>🏖️ Summer Corgi</b>), toggle <b>🗓️ Auto-Season</b> or <b>Dark / Light</b>, or <b>type below</b>!',
           placeholder: 'Type here to watch the mascot react to every keystroke...',
           send: 'Send ↵',
           galIdle: 'Idle + 15s Skit',
@@ -374,14 +375,14 @@
         },
         vi: {
           tabSim: '💬 Mô phỏng khung Chat',
-          tabGal: '🎨 Trưng bày 54 SVG',
+          tabGal: '🎨 Trưng bày 63 SVG',
           seasonOff: '🗓️ Theo mùa',
           seasonOn: (lbl) => `🗓️ ${lbl}`,
           dim: 'Độ tối',
           sideTitle: (n) => `Chọn chủ đề (${n} mẫu)`,
           hint: '💡 <b>Thử tương tác:</b> Rê chuột vào bong bóng chat để xem <b>hoạt cảnh sân khấu</b> • Gõ chữ vào ô bên dưới để xem <b>linh vật diễn tư thế riêng</b> • Đợi mỗi <b>15s</b> để xem hoạt cảnh tự động!',
           bubble1: 'Rê chuột vào bong bóng chat này để xem hoạt cảnh bay lượn / hành động ngang nhé! ✨',
-          aiMsg: 'Chào bạn! Bạn có thể chọn bất kỳ mẫu nào trong <b>18 chủ đề Chibi</b> ở cột bên trái (mới nhất: <b>🎃 Bí Ngô Ma Trơi Halloween</b>), bật thử <b>🗓️ Theo mùa</b>, đổi <b>Dark / Light</b>, hoặc <b>gõ thử vào ô nhập bên dưới</b> nhé!',
+          aiMsg: 'Chào bạn! Khám phá trọn bộ <b>21 chủ đề Chibi</b> ở cột trái (mới nhất: <b>🎃 Bí Ngô Halloween</b>, <b>🏮 Cá Chép Trung Thu</b>, <b>💘 Tiểu Thần Cupid</b> & <b>🏖️ Corgi Mùa Hè</b>), bật thử <b>🗓️ Theo mùa</b> hoặc <b>gõ vào ô bên dưới</b> nhé!',
           placeholder: 'Gõ thử vào đây để xem linh vật phản ứng theo từng phím gõ...',
           send: 'Gửi ↵',
           galIdle: 'Tĩnh + 15s',

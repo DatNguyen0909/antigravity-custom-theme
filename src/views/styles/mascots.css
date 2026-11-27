@@ -291,6 +291,54 @@ body[data-ag-theme="halloween-pumpkin"] .ag-custom-input-wrapper:hover > .ag-inp
   filter: drop-shadow(0 3px 8px rgba(0,0,0,0.55)) drop-shadow(0 0 14px rgba(249,115,22,0.85)) !important;
 }
 
+/* 19. Cá Chép Trung Thu (midautumn-carp): Rước đèn ông sao & vượt Vũ Môn dưới trăng rằm */
+body[data-ag-theme="midautumn-carp"] .ag-bubble-sticker,
+body[data-ag-theme="midautumn-carp"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="midautumn-carp"] .ag-card-sticker {
+  animation: agIdleCarp 2.8s ease-in-out infinite !important;
+}
+@keyframes agIdleCarp {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-7px) rotate(3deg); }
+}
+body[data-ag-theme="midautumn-carp"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="midautumn-carp"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="midautumn-carp"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.55)) drop-shadow(0 0 14px rgba(251,191,36,0.85)) !important;
+}
+
+/* 20. Tiểu Thần Cupid (valentine-cupid): Vỗ cánh bắn tên tình yêu trên mây kẹo bông */
+body[data-ag-theme="valentine-cupid"] .ag-bubble-sticker,
+body[data-ag-theme="valentine-cupid"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="valentine-cupid"] .ag-card-sticker {
+  animation: agIdleCupid 2.6s ease-in-out infinite !important;
+}
+@keyframes agIdleCupid {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+body[data-ag-theme="valentine-cupid"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="valentine-cupid"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="valentine-cupid"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.5)) drop-shadow(0 0 14px rgba(244,63,94,0.8)) !important;
+}
+
+/* 21. Corgi Mùa Hè (summer-corgi): Uống dừa phao vịt & lướt ván sóng biển nhiệt đới */
+body[data-ag-theme="summer-corgi"] .ag-bubble-sticker,
+body[data-ag-theme="summer-corgi"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="summer-corgi"] .ag-card-sticker {
+  animation: agIdleCorgi 2.4s ease-in-out infinite !important;
+}
+@keyframes agIdleCorgi {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-5px) rotate(2deg); }
+}
+body[data-ag-theme="summer-corgi"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="summer-corgi"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="summer-corgi"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.5)) drop-shadow(0 0 14px rgba(6,182,212,0.85)) !important;
+}
+
 /* ========================================================
    TYPING REACTION: per-mascot keystroke particles + thinking bubble
    (3 states: typing / typing-fast / pause)

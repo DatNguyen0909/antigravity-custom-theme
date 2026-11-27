@@ -25,7 +25,10 @@ const SVG = {
     tetBranch: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200' fill='none'><path d='M320 25 Q215 55 135 35 Q70 20 15 72 M195 44 Q150 92 92 110' stroke='#92400e' stroke-width='4.5' stroke-linecap='round'/><line x1='245' y1='42' x2='245' y2='78' stroke='#facc15' stroke-width='2'/><ellipse cx='245' cy='94' rx='18' ry='14' fill='#ef4444' stroke='#facc15' stroke-width='2.5'/><rect x='237' y='78' width='16' height='4' fill='#facc15'/><rect x='237' y='106' width='16' height='4' fill='#facc15'/><line x1='245' y1='110' x2='245' y2='128' stroke='#facc15' stroke-width='2.5'/><circle cx='135' cy='35' r='11' fill='" + c + "'/><circle cx='135' cy='35' r='4' fill='#dc2626'/><circle cx='188' cy='46' r='12' fill='" + c + "'/><circle cx='188' cy='46' r='4.5' fill='#dc2626'/><circle cx='92' cy='110' r='10' fill='" + c + "'/><circle cx='92' cy='110' r='3.5' fill='#dc2626'/><circle cx='52' cy='52' r='11' fill='" + c + "'/><circle cx='52' cy='52' r='4' fill='#dc2626'/></svg>",
     pixelBlocks: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180' shape-rendering='crispEdges'><rect x='40' y='40' width='36' height='36' fill='#c2410c' stroke='#7c2d12' stroke-width='4'/><rect x='76' y='40' width='36' height='36' fill='" + c + "' stroke='#92400e' stroke-width='4'/><text x='94' y='66' font-family='Consolas,monospace' font-size='24' font-weight='900' fill='#78350f' text-anchor='middle'>?</text><rect x='112' y='40' width='36' height='36' fill='#c2410c' stroke='#7c2d12' stroke-width='4'/><rect x='210' y='100' width='52' height='70' fill='#16a34a' stroke='#14532d' stroke-width='4'/><rect x='202' y='84' width='68' height='18' fill='#22c55e' stroke='#14532d' stroke-width='4'/></svg>",
     skyIsland: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200' fill='none'><polygon points='70,95 250,95 190,175 130,175' fill='#92400e' fill-opacity='0.45' stroke='" + c + "' stroke-width='2.5'/><ellipse cx='160' cy='92' rx='96' ry='18' fill='#34d399' fill-opacity='0.35' stroke='" + c + "' stroke-width='2.5'/><circle cx='135' cy='58' r='24' fill='" + c + "' fill-opacity='0.35'/><rect x='132' y='74' width='6' height='18' fill='#92400e' fill-opacity='0.6'/><path d='M185 98 Q192 145 184 195' stroke='#bae6fd' stroke-width='5' stroke-linecap='round' stroke-opacity='0.55'/></svg>",
-    hauntedHill: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 220' fill='none'><circle cx='255' cy='62' r='38' fill='" + c + "' fill-opacity='0.28'/><path d='M15 205 Q95 145 185 178 T330 170 L330 215 L15 215 Z' fill='#3b0764' fill-opacity='0.45' stroke='" + c + "' stroke-width='2'/><polygon points='78,172 78,96 98,58 118,96 118,172' fill='#2e1065' fill-opacity='0.55' stroke='#a855f7' stroke-width='2'/><polygon points='68,102 98,50 128,102' fill='#4c1d95' fill-opacity='0.55'/><rect x='93' y='112' width='10' height='16' rx='5' fill='#facc15' fill-opacity='0.75'/><path d='M215 178 L215 122 M215 142 L195 124 M215 134 L236 116' stroke='#a855f7' stroke-width='4' stroke-linecap='round' stroke-opacity='0.55'/></svg>"
+    hauntedHill: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 220' fill='none'><circle cx='255' cy='62' r='38' fill='" + c + "' fill-opacity='0.28'/><path d='M15 205 Q95 145 185 178 T330 170 L330 215 L15 215 Z' fill='#3b0764' fill-opacity='0.45' stroke='" + c + "' stroke-width='2'/><polygon points='78,172 78,96 98,58 118,96 118,172' fill='#2e1065' fill-opacity='0.55' stroke='#a855f7' stroke-width='2'/><polygon points='68,102 98,50 128,102' fill='#4c1d95' fill-opacity='0.55'/><rect x='93' y='112' width='10' height='16' rx='5' fill='#facc15' fill-opacity='0.75'/><path d='M215 178 L215 122 M215 142 L195 124 M215 134 L236 116' stroke='#a855f7' stroke-width='4' stroke-linecap='round' stroke-opacity='0.55'/></svg>",
+    starLanternArt: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 240' fill='none'><circle cx='130' cy='105' r='58' stroke='" + c + "' stroke-width='3' stroke-opacity='0.55'/><polygon points='130,35 147,82 197,82 156,112 172,160 130,132 88,160 104,112 63,82 113,82' fill='#ef4444' fill-opacity='0.24' stroke='" + c + "' stroke-width='3.5' stroke-linejoin='round'/><path d='M122 165 Q116 198 110 222 M138 165 Q144 198 150 222' stroke='#ef4444' stroke-width='3' stroke-linecap='round' stroke-opacity='0.6'/></svg>",
+    loveArch: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 220' fill='none'><path d='M150 165 C95 120, 75 65, 115 65 C132 65, 144 76, 150 90 C156 76, 168 65, 185 65 C225 65, 205 120, 150 165 Z' fill='" + c + "' fill-opacity='0.18' stroke='" + c + "' stroke-width='3.5'/><path d='M45 135 L255 85' stroke='#facc15' stroke-width='3' stroke-linecap='round' stroke-opacity='0.6'/><polygon points='262,83 248,79 252,92' fill='#facc15' fill-opacity='0.7'/></svg>",
+    palmBeach: (c) => "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 220' fill='none'><circle cx='245' cy='58' r='32' fill='#facc15' fill-opacity='0.32'/><path d='M25 198 Q115 152 225 198 Z' fill='#fde68a' fill-opacity='0.28' stroke='" + c + "' stroke-width='2.5'/><path d='M105 176 Q92 118 118 68' stroke='#b45309' stroke-width='7' stroke-linecap='round' stroke-opacity='0.55'/><path d='M118 68 Q75 55 58 82 M118 68 Q98 35 134 40 M118 68 Q162 50 174 80 M118 68 Q148 82 154 104' stroke='#22c55e' stroke-width='5' stroke-linecap='round' stroke-opacity='0.55'/></svg>"
 };
 
 const DECOR = {
@@ -204,6 +207,37 @@ const DECOR = {
             { type: 'char', chars: ['🎃', '👻', '🍬', '🍭'], color: '#fdba74', glow: '#f97316', count: 14, anim: 'fall', size: [12, 19], dur: [11, 21], o: 0.78 },
             { type: 'char', chars: ['🦇'], count: 6, anim: 'drift', size: [14, 21], dur: [18, 30], o: 0.7 },
             { type: 'flame', color: '#a855f7', glow: '#f97316', count: 10, anim: 'bob', size: [10, 18], dur: [3, 6], o: 0.7 }
+        ]
+    },
+    'midautumn-carp': {
+        art: [
+            { svg: SVG.starLanternArt('#facc15'), css: 'right:4%;top:6%;width:240px;height:220px;--o:0.38;opacity:0.38;filter:drop-shadow(0 0 16px rgba(250,204,21,0.55));animation:agArtFloat 7s ease-in-out infinite;' },
+            { svg: SVG.clouds('#fde047'), css: 'left:0;bottom:12%;width:280px;height:115px;--o:0.20;opacity:0.20;animation:agDrift 38s linear infinite;' }
+        ],
+        particles: [
+            { type: 'char', chars: ['🏮', '🥮', '⭐', '🌕'], color: '#fef08a', glow: '#f59e0b', count: 15, anim: 'rise', size: [12, 19], dur: [11, 21], o: 0.78 },
+            { type: 'dot', color: '#fde047', glow: '#ef4444', count: 18, anim: 'twinkle', size: [2.5, 5], dur: [2, 5], o: 0.9 }
+        ]
+    },
+    'valentine-cupid': {
+        art: [
+            { svg: SVG.loveArch('#f43f5e'), css: 'right:3%;bottom:6%;width:300px;height:220px;--o:0.36;opacity:0.36;filter:drop-shadow(0 0 14px rgba(244,63,94,0.45));animation:agArtGlow 6s ease-in-out infinite;' },
+            { svg: SVG.clouds('#fbcfe8'), css: 'left:0;top:14%;width:280px;height:115px;--o:0.22;opacity:0.22;animation:agDrift 36s linear infinite;' }
+        ],
+        particles: [
+            { type: 'char', chars: ['💘', '💕', '💌', '🌹'], color: '#fda4af', glow: '#f43f5e', count: 15, anim: 'rise', size: [12, 19], dur: [10, 20], o: 0.78 },
+            { type: 'dot', color: '#fecdd3', glow: '#f43f5e', count: 18, anim: 'twinkle', size: [2.5, 5], dur: [2, 5], o: 0.9 }
+        ]
+    },
+    'summer-corgi': {
+        art: [
+            { svg: SVG.palmBeach('#22d3ee'), css: 'right:2%;bottom:0;width:320px;height:220px;--o:0.40;opacity:0.40;animation:agArtFloat 8s ease-in-out infinite;' },
+            { svg: SVG.clouds('#bae6fd'), css: 'left:0;top:12%;width:280px;height:110px;--o:0.22;opacity:0.22;animation:agDrift 36s linear infinite;' }
+        ],
+        particles: [
+            { type: 'bubble', color: '#a5f3fc', glow: '#06b6d4', count: 16, anim: 'rise', size: [6, 15], dur: [9, 17], o: 0.75 },
+            { type: 'char', chars: ['🏖️', '🥥', '🐚', '🌺', '🦀'], count: 12, anim: 'fall', size: [12, 18], dur: [12, 22], o: 0.75 },
+            { type: 'dot', color: '#fef08a', glow: '#06b6d4', count: 16, anim: 'twinkle', size: [2.5, 5], dur: [2, 5], o: 0.88 }
         ]
     }
 };

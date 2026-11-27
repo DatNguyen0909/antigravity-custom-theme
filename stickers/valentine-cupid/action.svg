@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95">
+  <defs>
+    <linearGradient id="vcaCloud" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff1f2"/>
+      <stop offset="100%" stop-color="#fbcfe8"/>
+    </linearGradient>
+    <style>
+      /* Bầu trời mây kẹo bông hồng: Cupid bay lượn bắn mũi tên cầu vồng thắp sáng các trái tim! */
+      .vca-flyer { animation: vcaFlyAcross 3.2s ease-in-out infinite; }
+      .vca-wing { transform-origin: 8px 6px; animation: vcaWingFlap 0.3s ease-in-out infinite alternate; }
+      .vca-heart1 { transform-origin: 155px 30px; animation: vcaHeartPop1 3.2s ease-out infinite; }
+      .vca-heart2 { transform-origin: 84px 24px; animation: vcaHeartPop2 3.2s ease-out infinite; }
+
+      @keyframes vcaFlyAcross {
+        0%   { transform: translate(236px, 44px) rotate(4deg); }
+        25%  { transform: translate(172px, 26px) rotate(-5deg); }
+        50%  { transform: translate(112px, 40px) rotate(4deg); }
+        75%  { transform: translate(52px, 24px) rotate(-4deg); }
+        100% { transform: translate(-40px, 36px) rotate(2deg); }
+      }
+      @keyframes vcaWingFlap {
+        0% { transform: rotate(-10deg) scaleY(1); }
+        100% { transform: rotate(16deg) scaleY(0.75); }
+      }
+      @keyframes vcaHeartPop1 {
+        0%, 28% { transform: scale(0.75); opacity: 0.45; }
+        36%, 62% { transform: scale(1.22); opacity: 1; }
+        100% { transform: scale(0.85); opacity: 0.5; }
+      }
+      @keyframes vcaHeartPop2 {
+        0%, 58% { transform: scale(0.75); opacity: 0.45; }
+        66%, 88% { transform: scale(1.25); opacity: 1; }
+        100% { transform: scale(0.85); opacity: 0.5; }
+      }
+    </style>
+  </defs>
+
+  <!-- Pastel Rainbow Ribbon Arch across the sky -->
+  <path d="M24 82 Q130 8 236 82" fill="none" stroke="#f472b6" stroke-width="5" opacity="0.3"/>
+  <path d="M30 82 Q130 16 230 82" fill="none" stroke="#fde047" stroke-width="3.5" opacity="0.28"/>
+
+  <!-- Cotton-Candy Pink Clouds va Marble Love Arch -->
+  <g fill="url(#vcaCloud)" stroke="#f9a8d4" stroke-width="1.4">
+    <path d="M12 90 q0 -16 18 -16 q8 -14 26 -8 q16 -10 26 6 q16 0 16 18 Z"/>
+    <path d="M168 90 q0 -15 18 -15 q8 -15 28 -8 q16 -8 24 7 q14 0 14 16 Z"/>
+  </g>
+  <!-- Rose Arch on left cloud -->
+  <path d="M34 76 L34 52 A14 14 0 0 1 62 52 L62 76" fill="none" stroke="#fff1f2" stroke-width="4"/>
+  <circle cx="34" cy="54" r="3.5" fill="#f43f5e"/>
+  <circle cx="48" cy="38" r="4" fill="#f43f5e"/>
+  <circle cx="62" cy="54" r="3.5" fill="#f43f5e"/>
+
+  <!-- Glowing Floating Hearts lit up as Cupid flies past -->
+  <g class="vca-heart1">
+    <path d="M155 38 C145 30, 144 20, 151 20 C153 20, 154 22, 155 24 C156 22, 157 20, 159 20 C166 20, 165 30, 155 38 Z" fill="#f43f5e" stroke="#fff1f2" stroke-width="1.4"/>
+  </g>
+  <g class="vca-heart2">
+    <path d="M84 32 C74 24, 73 14, 80 14 C82 14, 83 16, 84 18 C85 16, 86 14, 88 14 C95 14, 94 24, 84 32 Z" fill="#ec4899" stroke="#fff1f2" stroke-width="1.4"/>
+  </g>
+
+  <!-- Flying Chibi Cupid (right to left) -->
+  <g class="vca-flyer">
+    <!-- Wing -->
+    <path class="vca-wing" d="M8 6 C18 -8, 28 -2, 20 8 C26 10, 22 17, 10 12 Z" fill="#ffffff" stroke="#fb7185" stroke-width="1.4"/>
+    <!-- Toga body -->
+    <ellipse cx="8" cy="14" rx="11" ry="8" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.4"/>
+    <!-- Head + Golden Curls + Halo -->
+    <ellipse cx="-2" cy="-12" rx="8" ry="2.2" fill="none" stroke="#facc15" stroke-width="1.6"/>
+    <circle cx="-2" cy="4" r="11.5" fill="#ffedd5" stroke="#9a3412" stroke-width="1.5"/>
+    <path d="M-13 1 C-13 -9, -3 -11, 2 -8 C8 -10, 12 -3, 9 3 C5 -2, -5 -3, -13 1 Z" fill="#facc15" stroke="#b45309" stroke-width="1.2"/>
+    <circle cx="-6" cy="5" r="2.2" fill="#881337"/>
+    <ellipse cx="-3" cy="8" rx="2.5" ry="1.3" fill="#fb7185" opacity="0.7"/>
+    <!-- Golden Bow facing left -->
+    <path d="M-14 -4 C-22 2, -22 14, -14 20" fill="none" stroke="#facc15" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="-10" y1="8" x2="-26" y2="8" stroke="#b45309" stroke-width="1.6"/>
+    <circle cx="-26" cy="8" r="2.8" fill="#f43f5e"/>
+  </g>
+</svg>

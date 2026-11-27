@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <radialGradient id="mcBody" cx="45%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="48%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </radialGradient>
+    <radialGradient id="mcStarGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#fef9c3"/>
+      <stop offset="60%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </radialGradient>
+    <style>
+      .mc-fish { transform-origin: 58px 74px; animation: mcSwimBob 2.8s ease-in-out infinite; }
+      .mc-tail { transform-origin: 58px 98px; animation: mcTailWave 1.4s ease-in-out infinite alternate; }
+      .mc-lantern { transform-origin: 24px 62px; animation: mcLanternSwing 2.2s ease-in-out infinite; }
+      .mc-star-spin { transform-origin: 22px 82px; animation: mcPulse 1.8s ease-in-out infinite alternate; }
+
+      /* 15s Skit: Golden Mooncake appears -> Carp chomps a bite -> salted-yolk glow + festive stars burst! */
+      .mc-cake-whole { animation: mcCakeWhole15s 15s ease-out infinite; opacity: 0; }
+      .mc-cake-bitten { animation: mcCakeBit15s 15s ease-out infinite; opacity: 0; }
+      .mc-burst { transform-origin: 92px 48px; animation: mcBurst15s 15s ease-out infinite; opacity: 0; }
+      .mc-eyes-norm { animation: mcEyeNorm15s 15s steps(1) infinite; }
+      .mc-eyes-happy { animation: mcEyeHappy15s 15s steps(1) infinite; opacity: 0; }
+
+      @keyframes mcSwimBob {
+        0%, 100% { transform: translateY(0) rotate(-2deg); }
+        50% { transform: translateY(-5px) rotate(2deg); }
+      }
+      @keyframes mcTailWave {
+        0% { transform: rotate(-10deg) scaleX(0.96); }
+        100% { transform: rotate(10deg) scaleX(1.04); }
+      }
+      @keyframes mcLanternSwing {
+        0%, 100% { transform: rotate(-7deg); }
+        50% { transform: rotate(8deg); }
+      }
+      @keyframes mcPulse {
+        0% { transform: scale(0.95); opacity: 0.9; }
+        100% { transform: scale(1.08); opacity: 1; }
+      }
+
+      @keyframes mcCakeWhole15s {
+        0%, 68%, 77%, 100% { opacity: 0; transform: translateY(6px) scale(0.7); }
+        71%, 76% { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      @keyframes mcCakeBit15s {
+        0%, 76%, 93%, 100% { opacity: 0; }
+        77%, 90% { opacity: 1; }
+      }
+      @keyframes mcBurst15s {
+        0%, 76%, 93%, 100% { opacity: 0; transform: scale(0.4); }
+        80%, 88% { opacity: 1; transform: scale(1.1); }
+      }
+      @keyframes mcEyeNorm15s { 0%, 76%, 91%, 100% { opacity: 1; } 77%, 90% { opacity: 0; } }
+      @keyframes mcEyeHappy15s { 0%, 76%, 91%, 100% { opacity: 0; } 77%, 90% { opacity: 1; } }
+    </style>
+  </defs>
+
+  <!-- Water ripple shadow -->
+  <ellipse cx="58" cy="109" rx="30" ry="5" fill="#451a03" opacity="0.38"/>
+
+  <g class="mc-fish">
+    <!-- Flowing Fan Tail -->
+    <g class="mc-tail">
+      <path d="M58 94 C42 104, 36 114, 48 114 C54 114, 57 107, 58 104 C59 107, 62 114, 68 114 C80 114, 74 104, 58 94 Z" fill="#f97316" stroke="#9a3412" stroke-width="1.8"/>
+      <path d="M58 96 L50 110 M58 96 L66 110" stroke="#fde047" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- Dorsal Crown Fin on head -->
+    <path d="M48 30 Q58 16 68 30 Z" fill="#ef4444" stroke="#991b1b" stroke-width="1.8"/>
+    <circle cx="58" cy="24" r="3.5" fill="#fef08a"/>
+
+    <!-- Side Pectoral Fins -->
+    <path d="M32 66 C18 62, 16 76, 32 78 Z" fill="#fb923c" stroke="#9a3412" stroke-width="1.8"/>
+    <path d="M84 66 C98 62, 100 76, 84 78 Z" fill="#fb923c" stroke="#9a3412" stroke-width="1.8"/>
+
+    <!-- Chubby Chibi Carp Body -->
+    <ellipse cx="58" cy="64" rx="28" ry="33" fill="url(#mcBody)" stroke="#7c2d12" stroke-width="2.3"/>
+    <!-- Cream belly patch + golden scales -->
+    <ellipse cx="58" cy="73" rx="18" ry="20" fill="#fef3c7" opacity="0.88"/>
+    <path d="M48 68 a5 5 0 0 0 10 0 a5 5 0 0 0 10 0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M53 77 a5 5 0 0 0 10 0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"/>
+
+    <!-- Golden Whiskers (Râu cá chép) -->
+    <path d="M36 58 Q24 54 22 47" fill="none" stroke="#facc15" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M80 58 Q92 54 94 47" fill="none" stroke="#facc15" stroke-width="2.2" stroke-linecap="round"/>
+
+    <!-- Normal Big Sparkling Eyes -->
+    <g class="mc-eyes-norm">
+      <circle cx="46" cy="50" r="5" fill="#1e1b4b"/>
+      <circle cx="70" cy="50" r="5" fill="#1e1b4b"/>
+      <circle cx="44.5" cy="48.2" r="1.8" fill="#ffffff"/>
+      <circle cx="68.5" cy="48.2" r="1.8" fill="#ffffff"/>
+    </g>
+    <!-- Happy Munching Eyes during 15s Mooncake bite -->
+    <g class="mc-eyes-happy">
+      <path d="M41 50 Q46 44 51 50" fill="none" stroke="#451a03" stroke-width="2.8" stroke-linecap="round"/>
+      <path d="M65 50 Q70 44 75 50" fill="none" stroke="#451a03" stroke-width="2.8" stroke-linecap="round"/>
+    </g>
+
+    <!-- Rosy Cheeks va Cute 'O' Carp Mouth -->
+    <ellipse cx="38" cy="56" rx="4" ry="2.4" fill="#f43f5e" opacity="0.6"/>
+    <ellipse cx="78" cy="56" rx="4" ry="2.4" fill="#f43f5e" opacity="0.6"/>
+    <ellipse cx="58" cy="56" rx="4.2" ry="3.4" fill="#ef4444" stroke="#7c2d12" stroke-width="1.5"/>
+
+    <!-- Vietnamese Star Lantern (Đèn Ông Sao) held in left fin -->
+    <g class="mc-lantern">
+      <line x1="26" y1="64" x2="18" y2="74" stroke="#92400e" stroke-width="2.2" stroke-linecap="round"/>
+      <g class="mc-star-spin">
+        <polygon points="22,68 25,77 35,77 27,83 30,92 22,86 14,92 17,83 9,77 19,77" fill="url(#mcStarGlow)" stroke="#b91c1c" stroke-width="1.4" stroke-linejoin="round"/>
+        <circle cx="22" cy="81" r="3" fill="#ffffff" opacity="0.85"/>
+      </g>
+      <!-- Red tassel -->
+      <line x1="22" y1="92" x2="22" y2="100" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- 15s Skit: Golden Baked Mooncake (Bánh Nướng Trung Thu) -->
+  <g class="mc-cake-whole">
+    <circle cx="94" cy="56" r="13" fill="#d97706" stroke="#78350f" stroke-width="2"/>
+    <circle cx="94" cy="56" r="9.5" fill="#f59e0b" stroke="#92400e" stroke-width="1.2"/>
+    <rect x="90" y="52" width="8" height="8" rx="1.5" fill="none" stroke="#78350f" stroke-width="1.3"/>
+  </g>
+
+  <!-- Bitten Mooncake revealing glowing Salted Egg Yolk! -->
+  <g class="mc-cake-bitten">
+    <path d="M84 48 A13 13 0 1 1 83 63 Q90 58 88 53 Q91 49 84 48 Z" fill="#d97706" stroke="#78350f" stroke-width="2"/>
+    <circle cx="95" cy="56" r="4.2" fill="#fde047" stroke="#ea580c" stroke-width="1.2"/>
+  </g>
+
+  <!-- Yummy Sparkles va Stars around Mooncake -->
+  <g class="mc-burst">
+    <text x="94" y="34" font-family="'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="900" fill="#fef08a" stroke="#9a3412" stroke-width="2.4" paint-order="stroke" text-anchor="middle">YUM! ★</text>
+    <circle cx="78" cy="40" r="2.2" fill="#fde047"/>
+    <circle cx="108" cy="42" r="2.5" fill="#fb7185"/>
+  </g>
+</svg>

@@ -317,6 +317,57 @@ const THEME_DEFINITIONS = [
         sparkle: '🎃',
         hoverBursts: ['🎃', '👻', '🍬', '🦇', '🍭'],
         typingFx: { particles: ['🍬', '👻', '🍭'], think: '👻 ghẹo nè...', thinkEn: '👻 Trick or Treat?...' }
+    },
+    {
+        id: 'midautumn-carp',
+        name: 'Cá Chép Trung Thu',
+        nameEn: 'Mid-Autumn Lantern Carp',
+        motionDesc: '🏮 Ăn bánh nướng & vượt Vũ Môn dưới trăng rằm',
+        motionDescEn: '🏮 Munches mooncake & leaps the Dragon Gate',
+        previewText: 'Tết Trung Thu rước đèn 🏮🌕',
+        previewTextEn: 'Happy Mid-Autumn 🏮🌕',
+        accent: '#fbbf24',
+        bubbleBg: 'rgba(42, 18, 12, 0.94)',
+        bubbleBorder: 'rgba(251, 191, 36, 0.75)',
+        bubbleText: '#fef9c3',
+        inputBorder: 'rgba(251, 191, 36, 0.55)',
+        sparkle: '🏮',
+        hoverBursts: ['🏮', '🥮', '🌕', '⭐', '🐟'],
+        typingFx: { particles: ['🏮', '⭐', '🥮'], think: '🌕 trông trăng...', thinkEn: '🌕 mooncake?...' }
+    },
+    {
+        id: 'valentine-cupid',
+        name: 'Tiểu Thần Cupid',
+        nameEn: 'Valentine Cupid',
+        motionDesc: '💘 Dán tim hồng & bay lượn giữa mây kẹo bông',
+        motionDescEn: '💘 Patches hearts & flies across cotton-candy clouds',
+        previewText: 'Gửi ngàn yêu thương 💘💌',
+        previewTextEn: 'Happy Valentine 💘💌',
+        accent: '#f43f5e',
+        bubbleBg: 'rgba(46, 14, 26, 0.94)',
+        bubbleBorder: 'rgba(244, 63, 94, 0.72)',
+        bubbleText: '#fff1f2',
+        inputBorder: 'rgba(244, 63, 94, 0.55)',
+        sparkle: '💘',
+        hoverBursts: ['💘', '💌', '💕', '🌹', '✨'],
+        typingFx: { particles: ['💘', '💌', '💕'], think: '💌 thương ai...', thinkEn: '💌 Dear you...' }
+    },
+    {
+        id: 'summer-corgi',
+        name: 'Corgi Mùa Hè',
+        nameEn: 'Summer Beach Corgi',
+        motionDesc: '🏖️ Uống dừa bị cua kẹp & lướt ván sóng biển',
+        motionDescEn: '🏖️ Sips coconut, crab pinch & rides ocean waves',
+        previewText: 'Chào mùa hè rực rỡ 🏖️🥥',
+        previewTextEn: 'Sunny Aloha Vibes 🏖️🥥',
+        accent: '#06b6d4',
+        bubbleBg: 'rgba(8, 38, 46, 0.94)',
+        bubbleBorder: 'rgba(6, 182, 212, 0.72)',
+        bubbleText: '#ecfeff',
+        inputBorder: 'rgba(6, 182, 212, 0.55)',
+        sparkle: '🏖️',
+        hoverBursts: ['🏖️', '🥥', '🦀', '🌺', '🌊'],
+        typingFx: { particles: ['🏖️', '🐚', '🦀'], think: '🥥 mát quá...', thinkEn: '🥥 Aloha!...' }
     }
 ];
 
@@ -325,25 +376,31 @@ function resolveSeasonalTheme(now) {
     const m = d.getMonth() + 1;
     const day = d.getDate();
 
-    // 1. Major Holidays take priority
+    // 1. Special Holidays take priority
+    if (m === 2 && day >= 10 && day <= 16) {
+        return { themeId: 'valentine-cupid', labelVi: '💘 Mùa Valentine', labelEn: '💘 Valentine Season' };
+    }
     if ((m === 10 && day >= 15) || (m === 11 && day <= 2)) {
         return { themeId: 'halloween-pumpkin', labelVi: '🎃 Lễ hội Halloween', labelEn: '🎃 Halloween Season' };
     }
     if (m === 12 && day >= 10) {
         return { themeId: 'noel-snowman', labelVi: '🎄 Mùa Giáng Sinh (Noel)', labelEn: '🎄 Christmas Season' };
     }
-    if (m === 1 || (m === 2 && day <= 20)) {
+    if (m === 1 || (m === 2 && day <= 22)) {
         return { themeId: 'tet-lion', labelVi: '🧧 Mùa Lễ Tết Đầu Năm', labelEn: '🧧 Lunar New Year Season' };
     }
 
-    // 2. Four-Season Calendar
-    if ((m === 2 && day > 20) || m === 3 || m === 4) {
+    // 2. Full Seasonal & Festival Calendar
+    if ((m === 2 && day > 22) || m === 3 || m === 4) {
         return { themeId: 'sakura-bunny', labelVi: '🌸 Mùa Xuân Anh Đào', labelEn: '🌸 Cherry Blossom Spring' };
     }
-    if (m >= 5 && m <= 7) {
-        return { themeId: 'ocean-shark', labelVi: '🌊 Mùa Hè Đại Dương', labelEn: '🌊 Ocean Summer' };
+    if (m >= 5 && (m < 8 || (m === 8 && day < 15))) {
+        return { themeId: 'summer-corgi', labelVi: '🏖️ Mùa Hè Bãi Biển', labelEn: '🏖️ Tropical Beach Summer' };
     }
-    if (m === 8 || m === 9 || (m === 10 && day < 15)) {
+    if ((m === 8 && day >= 15) || m === 9 || (m === 10 && day <= 5)) {
+        return { themeId: 'midautumn-carp', labelVi: '🏮 Mùa Trăng Trung Thu', labelEn: '🏮 Mid-Autumn Moon Season' };
+    }
+    if (m === 10 && day >= 6 && day < 15) {
         return { themeId: 'fox-chibi', labelVi: '🍁 Mùa Thu Lá Phong', labelEn: '🍁 Autumn Maple Season' };
     }
     return { themeId: 'ice-penguin', labelVi: '❄️ Chớm Đông Băng Tuyết', labelEn: '❄️ Early Winter Frost' };

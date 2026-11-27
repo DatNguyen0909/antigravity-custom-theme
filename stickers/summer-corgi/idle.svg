@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="scFur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="scRing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <style>
+      .sc-dog { transform-origin: 58px 102px; animation: scChillBob 2.4s ease-in-out infinite; }
+      .sc-ear-l { transform-origin: 40px 36px; animation: scEarTwitch 3s ease-in-out infinite; }
+      .sc-ear-r { transform-origin: 76px 36px; animation: scEarTwitch 3s ease-in-out -1.5s infinite; }
+
+      /* 15s Summer Skit: Red Crab crawls up and pinches Corgi nose - Shades drop, shocked eyes - flicks crab away! */
+      .sc-crab { animation: scCrabPinch15s 15s ease-in-out infinite; opacity: 0; }
+      .sc-shades { animation: scShades15s 15s ease-in-out infinite; }
+      .sc-eyes-ouch { animation: scOuch15s 15s steps(1) infinite; opacity: 0; }
+      .sc-sweat { animation: scSweat15s 15s linear infinite; opacity: 0; }
+
+      @keyframes scChillBob {
+        0%, 100% { transform: translateY(0) scale(1, 1); }
+        50% { transform: translateY(-3px) scale(1.02, 0.98); }
+      }
+      @keyframes scEarTwitch {
+        0%, 88%, 100% { transform: rotate(0deg); }
+        93% { transform: rotate(-9deg); }
+      }
+
+      @keyframes scCrabPinch15s {
+        0%, 67% { opacity: 0; transform: translate(34px, 38px) scale(0.6); }
+        71% { opacity: 1; transform: translate(0px, 0px) scale(1); }
+        84% { opacity: 1; transform: translate(0px, -2px) scale(1.05); }
+        91%, 100% { opacity: 0; transform: translate(42px, -34px) rotate(180deg) scale(0.7); }
+      }
+      @keyframes scShades15s {
+        0%, 70%, 91%, 100% { transform: translateY(0) rotate(0deg); }
+        73%, 87% { transform: translateY(-12px) rotate(-6deg); }
+      }
+      @keyframes scOuch15s { 0%, 71%, 89%, 100% { opacity: 0; } 72%, 88% { opacity: 1; } }
+      @keyframes scSweat15s { 0%, 72%, 88%, 100% { opacity: 0; } 74%, 86% { opacity: 1; } }
+    </style>
+  </defs>
+
+  <!-- Sandy beach shadow -->
+  <ellipse cx="58" cy="108" rx="34" ry="6" fill="#78350f" opacity="0.32"/>
+
+  <g class="sc-dog">
+    <!-- Stubby Corgi Paws -->
+    <ellipse cx="44" cy="103" rx="7.5" ry="4.5" fill="#fffbeb" stroke="#78350f" stroke-width="1.8"/>
+    <ellipse cx="72" cy="103" rx="7.5" ry="4.5" fill="#fffbeb" stroke="#78350f" stroke-width="1.8"/>
+
+    <!-- Tropical Turquoise Hawaiian Shirt Torso -->
+    <rect x="34" y="66" width="48" height="32" rx="14" fill="#06b6d4" stroke="#0e7490" stroke-width="2"/>
+    <circle cx="44" cy="76" r="3" fill="#fb7185"/>
+    <circle cx="70" cy="78" r="3" fill="#fde047"/>
+    <path d="M52 66 L58 76 L64 66" fill="#fffbeb" stroke="#0e7490" stroke-width="1.5"/>
+
+    <!-- Yellow Duckie Swim Ring around waist! -->
+    <ellipse cx="58" cy="90" rx="33" ry="11" fill="url(#scRing)" stroke="#b45309" stroke-width="2"/>
+    <!-- Duckie head on front-left of swim ring -->
+    <circle cx="30" cy="83" r="8" fill="#fde047" stroke="#b45309" stroke-width="1.8"/>
+    <ellipse cx="23" cy="84" rx="4.2" ry="2.4" fill="#f97316" stroke="#9a3412" stroke-width="1.2"/>
+    <circle cx="29" cy="81.5" r="1.5" fill="#1e293b"/>
+
+    <!-- Big Pointy Corgi Ears -->
+    <g class="sc-ear-l">
+      <polygon points="32,42 26,14 48,30" fill="url(#scFur)" stroke="#78350f" stroke-width="2" stroke-linejoin="round"/>
+      <polygon points="34,39 30,20 44,31" fill="#fda4af"/>
+    </g>
+    <g class="sc-ear-r">
+      <polygon points="84,42 90,14 68,30" fill="url(#scFur)" stroke="#78350f" stroke-width="2" stroke-linejoin="round"/>
+      <polygon points="82,39 86,20 72,31" fill="#fda4af"/>
+    </g>
+
+    <!-- Fluffy Corgi Head (Golden + White blaze) -->
+    <ellipse cx="58" cy="48" rx="27" ry="23" fill="url(#scFur)" stroke="#78350f" stroke-width="2.2"/>
+    <path d="M58 28 C52 40, 42 48, 42 58 C42 66, 50 70, 58 70 C66 70, 74 66, 74 58 C74 48, 64 40, 58 28 Z" fill="#fffbeb"/>
+
+    <!-- Shocked '> <' Eyes underneath sunglasses (revealed during crab pinch!) -->
+    <g class="sc-eyes-ouch" stroke="#451a03" stroke-width="2.6" stroke-linecap="round" fill="none">
+      <path d="M42 44 L49 48 L42 52"/>
+      <path d="M74 44 L67 48 L74 52"/>
+    </g>
+
+    <!-- Cool Dark Sunglasses -->
+    <g class="sc-shades">
+      <line x1="33" y1="45" x2="83" y2="45" stroke="#0f172a" stroke-width="2.5"/>
+      <rect x="36" y="42" width="18" height="11" rx="3" fill="#0f172a" stroke="#f8fafc" stroke-width="1.2"/>
+      <rect x="62" y="42" width="18" height="11" rx="3" fill="#0f172a" stroke="#f8fafc" stroke-width="1.2"/>
+      <line x1="39" y1="44" x2="44" y2="50" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="65" y1="44" x2="70" y2="50" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
+    </g>
+
+    <!-- Sweat drop -->
+    <path class="sc-sweat" d="M84 34 C84 34, 88 40, 84 42 C80 40, 84 34, 84 34 Z" fill="#38bdf8"/>
+
+    <!-- Cute Nose va Happy Pink Tongue -->
+    <ellipse cx="58" cy="55" rx="4.2" ry="3" fill="#1e293b"/>
+    <path d="M53 60 Q58 64 63 60" fill="none" stroke="#78350f" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M55 61 Q58 68 61 61 Z" fill="#fb7185" stroke="#9f1239" stroke-width="1.1"/>
+
+    <!-- Fresh Green Coconut Drink held in right paw -->
+    <g>
+      <line x1="88" y1="68" x2="94" y2="56" stroke="#f43f5e" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="88" cy="76" r="10" fill="#16a34a" stroke="#14532d" stroke-width="1.8"/>
+      <ellipse cx="88" cy="70" rx="6.5" ry="2.5" fill="#fefce8"/>
+      <!-- Tiny pink cocktail umbrella -->
+      <path d="M76 62 Q83 54 90 62 Z" fill="#ec4899" stroke="#831843" stroke-width="1.1"/>
+      <line x1="83" y1="62" x2="86" y2="70" stroke="#92400e" stroke-width="1.4"/>
+    </g>
+  </g>
+
+  <!-- 15s Cheeky Red Beach Crab pinching Corgi's nose! -->
+  <g class="sc-crab">
+    <ellipse cx="66" cy="58" rx="7.5" ry="5.5" fill="#ef4444" stroke="#991b1b" stroke-width="1.5"/>
+    <circle cx="63.5" cy="54" r="1.4" fill="#1e293b"/>
+    <circle cx="68.5" cy="54" r="1.4" fill="#1e293b"/>
+    <!-- Left claw pinching nose (58,55) -->
+    <path d="M60 56 C55 52, 55 58, 60 58" fill="#ef4444" stroke="#991b1b" stroke-width="1.5"/>
+    <path d="M72 56 C77 52, 77 58, 72 58" fill="#ef4444" stroke="#991b1b" stroke-width="1.5"/>
+  </g>
+</svg>
