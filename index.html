@@ -317,7 +317,11 @@
         <button class="seg-btn" id="tab-gal">🎨 63-SVG Showcase</button>
         <button class="seg-btn" id="season-btn" title="Auto-switch mascot by current season / holiday">🗓️ Auto-Season</button>
         <button class="seg-btn active" id="sfx-btn" title="Toggle mascot keystroke sound FX">🎹 SFX: ON</button>
-        <button class="seg-btn" id="bgm-btn" title="Toggle theme ambient background music">🎶 BGM: OFF</button>
+        <button class="seg-btn" id="bgm-btn" title="Toggle theme studio background music">🎶 BGM: OFF</button>
+        <label class="dim-ctrl" title="Audio Volume">
+          <span>🔊</span>
+          <input type="range" id="vol-range" min="0" max="100" value="65" style="width:66px;" />
+        </label>
         <button class="seg-btn" id="mode-btn">🌙 Dark</button>
         <label class="dim-ctrl">
           <span id="dim-title">Dim</span>
@@ -432,9 +436,9 @@
           bgmOff: '🎶 BGM: OFF',
           dim: 'Dim',
           sideTitle: (n) => `Choose Theme (${n} presets)`,
-          hint: '💡 <b>Try interacting:</b> Hover any chat bubble for the <b>panoramic stage scene</b> • Type below to trigger <b>character-specific typing poses</b> • Watch every <b>15s</b> for funny auto-skits!',
+          hint: '💡 <b>Try interacting:</b> Toggle <b>🎶 BGM: ON</b> to hear <b>21 Studio Acoustic &amp; Chiptune Soundtracks</b> • Type below for <b>bespoke keystroke FX</b> • Hover any bubble for the <b>panoramic stage</b>!',
           bubble1: 'Hover over this chat bubble to trigger the full panoramic hover stage! ✨',
-          aiMsg: 'Welcome! Explore all <b>21 Chibi themes</b> on the left (each with its own <b>signature catchphrase</b>, typing pose &amp; hover stage), toggle <b>🗓️ Seasonal &amp; Holiday Sync</b> or <b>Dark / Light</b>, or <b>type below</b>!',
+          aiMsg: 'Welcome! Explore all <b>21 Chibi themes</b> on the left — turn on <b>🎶 BGM</b> to experience our <b>Velvet Studio Audio Engine</b> (try <b>🐾 Midnight Cat’s 2-Movement Rainy Piano</b>, <b>⛄ Christmas Piano</b>, <b>♟ Jazz Lounge</b> &amp; <b>🗡️ 8-Bit Chiptune</b>), or <b>type below</b>!',
           placeholder: 'Type here to watch the mascot react to every keystroke...',
           send: 'Send ↵',
           galIdle: 'Idle + 15s Skit',
@@ -457,9 +461,9 @@
           bgmOff: '🎶 Nhạc: TẮT',
           dim: 'Độ tối',
           sideTitle: (n) => `Chọn chủ đề (${n} mẫu)`,
-          hint: '💡 <b>Thử tương tác:</b> Rê chuột vào bong bóng chat để xem <b>hoạt cảnh sân khấu</b> • Gõ chữ vào ô bên dưới để xem <b>linh vật diễn tư thế riêng</b> • Đợi mỗi <b>15s</b> để xem hoạt cảnh tự động!',
+          hint: '💡 <b>Thử tương tác:</b> Bật <b>🎶 Nhạc: BẬT</b> để thưởng thức <b>21 bản hòa tấu Piano, Guitar, Đàn Tranh &amp; 8-Bit</b> • Gõ chữ bên dưới để nghe <b>tiếng phím riêng</b> • Rê chuột xem <b>sân khấu ngang</b>!',
           bubble1: 'Rê chuột vào bong bóng chat này để xem hoạt cảnh bay lượn / hành động ngang nhé! ✨',
-          aiMsg: 'Chào bạn! Khám phá trọn bộ <b>21 chủ đề Chibi</b> ở cột trái (mỗi bé đều có <b>câu chào riêng biệt</b>, tư thế gõ phím &amp; sân khấu ngang), bật thử <b>🗓️ Đồng bộ theo Mùa &amp; Lễ hội</b> hoặc <b>gõ vào ô bên dưới</b> nhé!',
+          aiMsg: 'Chào bạn! Khám phá trọn bộ <b>21 chủ đề Chibi</b> ở cột trái — bật thử <b>🎶 Nhạc: BẬT</b> để nghe <b>Velvet Studio Audio</b> (đặc biệt là <b>🐾 Mèo Than Đêm Mưa 2 Chương</b>, <b>⛄ Piano Giáng Sinh</b>, <b>♟ Jazz Lounge</b> &amp; <b>🗡️ Chiptune 8-bit</b>), hoặc <b>gõ vào ô bên dưới</b> nhé!',
           placeholder: 'Gõ thử vào đây để xem linh vật phản ứng theo từng phím gõ...',
           send: 'Gửi ↵',
           galIdle: 'Tĩnh + 15s',
@@ -478,10 +482,11 @@
         return /^vi\b/i.test(navigator.language || '') ? 'vi' : 'en';
       }
 
-      let activeId = 'halloween-pumpkin';
+      let activeId = 'black-cat';
       let autoSeason = false;
       let sfxEnabled = true;
       let bgmEnabled = false;
+      let soundVol = 65;
       let isLight = false;
       let bgDim = 65;
       let lang = detectInitialLang();
@@ -612,8 +617,14 @@
           gCard.className = 'gal-card';
           gCard.innerHTML = `
             <div class="gal-head">
-              <span>${loc.name}</span>
-              <span style="font-size:12px; color:${t.accent};">${loc.previewText}</span>
+              <div>
+                <div>${loc.name}</div>
+                <div style="font-size:11px; font-weight:600; opacity:0.8; margin-top:2px;">🎧 ${SoundService.getMeta(t.id, lang)}</div>
+              </div>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <span style="font-size:11.5px; color:${t.accent};">${loc.previewText}</span>
+                <button type="button" class="seg-btn gal-play-btn" data-play-id="${t.id}" style="padding:3px 8px; font-size:11px;">▶️</button>
+              </div>
             </div>
             <div class="gal-stages">
               <div class="gal-box">
@@ -631,6 +642,19 @@
             </div>
           `;
           galGrid.appendChild(gCard);
+        });
+
+        galGrid.querySelectorAll('.gal-play-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const tid = btn.getAttribute('data-play-id');
+            autoSeason = false;
+            activeId = tid;
+            bgmEnabled = true;
+            syncSeasonBtn();
+            applyAll();
+            SoundService.playSample(tid);
+          });
         });
       }
 
@@ -678,7 +702,7 @@
           enabled: true,
           sfxEnabled: sfxEnabled,
           bgmEnabled: bgmEnabled,
-          volume: 60,
+          volume: soundVol,
           themeId: activeId
         });
       }
@@ -856,6 +880,11 @@
 
       document.getElementById('bgm-btn').addEventListener('click', () => {
         bgmEnabled = !bgmEnabled;
+        syncAudioControls();
+      });
+
+      document.getElementById('vol-range').addEventListener('input', (e) => {
+        soundVol = parseInt(e.target.value, 10) || 0;
         syncAudioControls();
       });
 
