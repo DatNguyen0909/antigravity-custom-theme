@@ -7,6 +7,7 @@ const ThemeViewModel = (function () {
     let config = {
         enabled: true,
         activeTheme: 'jade-dragon',
+        autoSeason: false,
         bgDim: 69,
         bgMode: 'theme',          // 'theme' | 'custom'
         customWallpaper: null,
@@ -60,14 +61,22 @@ const ThemeViewModel = (function () {
         return lastLightMode;
     }
 
+    function applySeasonalIfActive() {
+        if (config.autoSeason && typeof resolveSeasonalTheme === 'function') {
+            config.activeTheme = resolveSeasonalTheme().themeId;
+        }
+    }
+
     function initPersistence() {
         const local = StorageService.loadLocal();
         if (local) {
             config = Object.assign(config, local);
+            applySeasonalIfActive();
         }
         StorageService.loadDisk(
             (diskParsed) => {
                 config = Object.assign(config, diskParsed);
+                applySeasonalIfActive();
                 StorageService.saveLocal(config);
                 notify('disk-loaded');
             },
@@ -75,6 +84,7 @@ const ThemeViewModel = (function () {
                 const existingLocal = StorageService.loadLocal();
                 if (existingLocal) {
                     config = Object.assign(config, existingLocal);
+                    applySeasonalIfActive();
                     StorageService.save(config);
                 }
             }
@@ -96,7 +106,17 @@ const ThemeViewModel = (function () {
 
     function setActiveTheme(themeId) {
         if (!config.enabled) return;
+        config.autoSeason = false;
         config.activeTheme = themeId;
+        notify('theme-changed');
+        StorageService.save(config);
+    }
+
+    function setAutoSeason(enabled) {
+        config.autoSeason = !!enabled;
+        if (config.autoSeason && typeof resolveSeasonalTheme === 'function') {
+            config.activeTheme = resolveSeasonalTheme().themeId;
+        }
         notify('theme-changed');
         StorageService.save(config);
     }
@@ -164,6 +184,7 @@ const ThemeViewModel = (function () {
         setEnabled,
         setBgDim,
         setActiveTheme,
+        setAutoSeason,
         setBgMode,
         setCustomWallpaper,
         setLang,

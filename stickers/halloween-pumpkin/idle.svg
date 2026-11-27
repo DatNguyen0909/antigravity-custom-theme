@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <radialGradient id="hpBodyGrad" cx="45%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="62%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#9a3412"/>
+    </radialGradient>
+    <radialGradient id="hpEyeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef9c3"/>
+      <stop offset="65%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </radialGradient>
+    <linearGradient id="hpHatGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9333ea"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </linearGradient>
+    <style>
+      .hp-root { transform-origin: 60px 104px; animation: hpBob 2.6s ease-in-out infinite; }
+      .hp-wisp-l { animation: hpWisp 2.2s ease-in-out infinite; }
+      .hp-wisp-r { animation: hpWisp 2.2s ease-in-out -1.1s infinite; }
+      .hp-lantern { transform-origin: 95px 76px; animation: hpSwing 2.2s ease-in-out infinite; }
+
+      /* 15s Halloween Skit: Witch hat + pumpkin lid pops up -> Cute Baby Ghost pops out with BOO! and candies! */
+      .hp-lid-group { transform-origin: 42px 48px; animation: hpLidPop15s 15s ease-in-out infinite; }
+      .hp-ghost { transform-origin: 60px 52px; animation: hpGhostPop15s 15s cubic-bezier(0.22, 1, 0.36, 1) infinite; opacity: 0; }
+      .hp-boo { animation: hpBoo15s 15s ease-out infinite; opacity: 0; }
+      .hp-candy1 { animation: hpCandyL15s 15s ease-out infinite; opacity: 0; }
+      .hp-candy2 { animation: hpCandyR15s 15s ease-out infinite; opacity: 0; }
+      .hp-eyes-norm { animation: hpEyesNorm15s 15s steps(1) infinite; }
+      .hp-eyes-happy { animation: hpEyesHappy15s 15s steps(1) infinite; opacity: 0; }
+
+      @keyframes hpBob {
+        0%, 100% { transform: translateY(0) scale(1, 1); }
+        50% { transform: translateY(-3px) scale(1.02, 0.98); }
+      }
+      @keyframes hpWisp {
+        0%, 100% { transform: translateY(0) scale(0.95); opacity: 0.75; }
+        50% { transform: translateY(-6px) scale(1.12); opacity: 1; }
+      }
+      @keyframes hpSwing {
+        0%, 100% { transform: rotate(-8deg); }
+        50% { transform: rotate(9deg); }
+      }
+
+      @keyframes hpLidPop15s {
+        0%, 67%, 95%, 100% { transform: translate(0, 0) rotate(0deg); }
+        71%, 90% { transform: translate(-10px, -24px) rotate(-26deg); }
+      }
+      @keyframes hpGhostPop15s {
+        0%, 69%, 94%, 100% { opacity: 0; transform: translateY(14px) scale(0.5); }
+        73%, 88% { opacity: 1; transform: translateY(-12px) scale(1); }
+      }
+      @keyframes hpBoo15s {
+        0%, 72%, 91%, 100% { opacity: 0; transform: translateY(4px) scale(0.7); }
+        76%, 87% { opacity: 1; transform: translateY(-6px) scale(1); }
+      }
+      @keyframes hpCandyL15s {
+        0%, 73% { opacity: 0; transform: translate(54px, 42px) rotate(0deg); }
+        78% { opacity: 1; transform: translate(22px, 18px) rotate(-120deg); }
+        88%, 100% { opacity: 0; transform: translate(14px, 46px) rotate(-240deg); }
+      }
+      @keyframes hpCandyR15s {
+        0%, 73% { opacity: 0; transform: translate(66px, 42px) rotate(0deg); }
+        78% { opacity: 1; transform: translate(98px, 16px) rotate(130deg); }
+        88%, 100% { opacity: 0; transform: translate(106px, 44px) rotate(250deg); }
+      }
+      @keyframes hpEyesNorm15s { 0%, 71%, 92%, 100% { opacity: 1; } 72%, 91% { opacity: 0; } }
+      @keyframes hpEyesHappy15s { 0%, 71%, 92%, 100% { opacity: 0; } 72%, 91% { opacity: 1; } }
+    </style>
+  </defs>
+
+  <!-- Ground shadow -->
+  <ellipse cx="60" cy="108" rx="32" ry="6" fill="#09040f" opacity="0.5"/>
+
+  <!-- Floating spooky purple-green wisps -->
+  <g class="hp-wisp-l">
+    <circle cx="18" cy="58" r="5" fill="#a855f7" opacity="0.45"/>
+    <path d="M18 62 C14 62, 14 55, 18 49 C22 55, 22 62, 18 62 Z" fill="#c084fc"/>
+    <circle cx="18" cy="58" r="2" fill="#f3e8ff"/>
+  </g>
+  <g class="hp-wisp-r">
+    <circle cx="104" cy="44" r="4.5" fill="#22c55e" opacity="0.4"/>
+    <path d="M104 48 C101 48, 101 42, 104 37 C107 42, 107 48, 104 48 Z" fill="#4ade80"/>
+    <circle cx="104" cy="45" r="1.8" fill="#dcfce7"/>
+  </g>
+
+  <g class="hp-root">
+    <!-- Cute Purple Vampire Collar / Cape behind -->
+    <path d="M30 74 Q22 92 26 102 Q60 108 94 102 Q98 92 90 74 Z" fill="#581c87" stroke="#3b0764" stroke-width="2"/>
+    <polygon points="34,72 24,58 42,66" fill="#7e22ce" stroke="#3b0764" stroke-width="1.5"/>
+    <polygon points="86,72 96,58 78,66" fill="#7e22ce" stroke="#3b0764" stroke-width="1.5"/>
+
+    <!-- Little Leafy Feet -->
+    <ellipse cx="46" cy="104" rx="9" ry="5" fill="#15803d" stroke="#052e16" stroke-width="1.8"/>
+    <ellipse cx="74" cy="104" rx="9" ry="5" fill="#15803d" stroke="#052e16" stroke-width="1.8"/>
+
+    <!-- Dark hollow opening inside pumpkin top (visible when lid pops open) -->
+    <ellipse cx="60" cy="52" rx="20" ry="7" fill="#2e1065"/>
+
+    <!-- 15s Baby Ghost popping out of pumpkin head -->
+    <g class="hp-ghost">
+      <path d="M46 56 C46 38, 74 38, 74 56 L74 64 L69 60 L64 64 L60 60 L56 64 L51 60 L46 64 Z" fill="#f8fafc" stroke="#6b21a8" stroke-width="2"/>
+      <!-- Cute ghost arms raised -->
+      <ellipse cx="43" cy="52" rx="4.5" ry="3" transform="rotate(-25 43 52)" fill="#f8fafc" stroke="#6b21a8" stroke-width="1.8"/>
+      <ellipse cx="77" cy="52" rx="4.5" ry="3" transform="rotate(25 77 52)" fill="#f8fafc" stroke="#6b21a8" stroke-width="1.8"/>
+      <!-- Ghost face -->
+      <circle cx="55" cy="49" r="2.3" fill="#1e1b4b"/>
+      <circle cx="65" cy="49" r="2.3" fill="#1e1b4b"/>
+      <ellipse cx="51" cy="52" rx="2.5" ry="1.4" fill="#fb7185" opacity="0.7"/>
+      <ellipse cx="69" cy="52" rx="2.5" ry="1.4" fill="#fb7185" opacity="0.7"/>
+      <ellipse cx="60" cy="53" rx="2.8" ry="3.4" fill="#ef4444"/>
+    </g>
+
+    <!-- Main Chibi Pumpkin Head/Body -->
+    <ellipse cx="60" cy="76" rx="34" ry="26" fill="url(#hpBodyGrad)" stroke="#431407" stroke-width="2.4"/>
+    <!-- Pumpkin vertical ribs -->
+    <path d="M46 51 C38 64, 38 88, 47 101" fill="none" stroke="#9a3412" stroke-width="2" opacity="0.7"/>
+    <path d="M74 51 C82 64, 82 88, 73 101" fill="none" stroke="#9a3412" stroke-width="2" opacity="0.7"/>
+    <path d="M60 50 L60 102" fill="none" stroke="#9a3412" stroke-width="1.6" opacity="0.45"/>
+
+    <!-- Glowing Carved Eyes (Normal) -->
+    <g class="hp-eyes-norm">
+      <polygon points="41,72 48,62 54,72" fill="url(#hpEyeGlow)" stroke="#7c2d12" stroke-width="1.4"/>
+      <polygon points="66,72 72,62 79,72" fill="url(#hpEyeGlow)" stroke="#7c2d12" stroke-width="1.4"/>
+      <circle cx="48" cy="69" r="1.6" fill="#ffffff"/>
+      <circle cx="72" cy="69" r="1.6" fill="#ffffff"/>
+    </g>
+
+    <!-- Glowing Laughing Arcs during 15s BOO skit -->
+    <g class="hp-eyes-happy">
+      <path d="M41 71 Q47 62 54 71" fill="none" stroke="#fef08a" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M66 71 Q73 62 79 71" fill="none" stroke="#fef08a" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- Cute rosy cheeks + Triangle nose -->
+    <ellipse cx="37" cy="77" rx="4" ry="2.3" fill="#fb7185" opacity="0.55"/>
+    <ellipse cx="83" cy="77" rx="4" ry="2.3" fill="#fb7185" opacity="0.55"/>
+    <polygon points="57,76 60,72 63,76" fill="#fef08a"/>
+
+    <!-- Glowing Jack-o'-Lantern Toothy Grin -->
+    <path d="M41 81 Q60 95 79 81 Q73 92 60 92 Q47 92 41 81 Z" fill="url(#hpEyeGlow)" stroke="#7c2d12" stroke-width="1.5"/>
+    <rect x="51" y="83" width="4" height="4" fill="#ea580c"/>
+    <rect x="65" y="83" width="4" height="4" fill="#ea580c"/>
+    <rect x="58" y="88" width="4" height="4" fill="#ea580c"/>
+
+    <!-- Left hand + Right hand holding tiny spooky lantern -->
+    <ellipse cx="27" cy="80" rx="5.5" ry="4.2" fill="#ea580c" stroke="#431407" stroke-width="2"/>
+    <ellipse cx="92" cy="77" rx="5.5" ry="4.2" fill="#ea580c" stroke="#431407" stroke-width="2"/>
+    <g class="hp-lantern">
+      <line x1="95" y1="77" x2="103" y2="83" stroke="#78350f" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="103" y1="83" x2="103" y2="89" stroke="#475569" stroke-width="1.5"/>
+      <rect x="98" y="89" width="10" height="11" rx="3" fill="#3b0764" stroke="#facc15" stroke-width="1.5"/>
+      <circle cx="103" cy="94.5" r="3" fill="#fef08a"/>
+    </g>
+
+    <!-- Popping Top Lid + Crooked Witch Hat -->
+    <g class="hp-lid-group">
+      <!-- Green curly vine va stem -->
+      <path d="M68 48 Q78 42 75 50 Q72 55 66 51" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round"/>
+      <!-- Witch Hat Brim -->
+      <ellipse cx="60" cy="49" rx="34" ry="8.5" fill="url(#hpHatGrad)" stroke="#2e1065" stroke-width="2.2"/>
+      <!-- Witch Hat Cone with crooked tip -->
+      <path d="M38 48 Q46 20 56 14 Q66 10 78 18 Q68 22 66 28 L82 48 Z" fill="url(#hpHatGrad)" stroke="#2e1065" stroke-width="2.2" stroke-linejoin="round"/>
+      <!-- Orange Hat Ribbon va Gold Buckle -->
+      <path d="M40 46 Q60 51 80 46 L78 41 Q60 45 42 41 Z" fill="#f97316"/>
+      <rect x="55" y="40" width="10" height="8" rx="1.5" fill="none" stroke="#facc15" stroke-width="2.2"/>
+    </g>
+  </g>
+
+  <!-- 15s Popping Candies va "BOO!" Text -->
+  <g class="hp-candy1">
+    <polygon points="-7,-4 -3,0 -7,4" fill="#ec4899"/>
+    <polygon points="7,-4 3,0 7,4" fill="#ec4899"/>
+    <circle cx="0" cy="0" r="4.5" fill="#f472b6" stroke="#831843" stroke-width="1.2"/>
+  </g>
+  <g class="hp-candy2">
+    <polygon points="-7,-4 -3,0 -7,4" fill="#a855f7"/>
+    <polygon points="7,-4 3,0 7,4" fill="#a855f7"/>
+    <circle cx="0" cy="0" r="4.5" fill="#facc15" stroke="#713f12" stroke-width="1.2"/>
+  </g>
+  <g class="hp-boo">
+    <text x="60" y="20" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="900" fill="#fef08a" stroke="#581c87" stroke-width="3" paint-order="stroke" text-anchor="middle">BOO!</text>
+  </g>
+</svg>

@@ -7,6 +7,8 @@ const SettingsView = (function () {
         vi: {
             toggleTitle: 'Giao diện tùy chỉnh (Custom Theme)',
             toggleDesc: 'Gạt tắt (OFF) để quay về giao diện mặc định gốc (Default) ngay lập tức.',
+            seasonTitle: '🗓️ Tự động đổi theo mùa / lễ hội',
+            seasonDesc: (label, name) => `Tự động chọn linh vật theo lịch năm (Tết 🦁 • Xuân 🌸 • Hè 🦈 • Thu 🦊 • Halloween 🎃 • Đông ❄️ • Noel ⛄). Hôm nay: <b>${label} → ${name}</b>. Bấm chọn mẫu bất kỳ bên dưới để đổi tay.`,
             dimTitle: 'Độ tối',
             dimDesc: 'Điều chỉnh độ rõ của nền để dễ đọc nội dung.',
             themesTitle: (n) => `Bong bóng chat & Chủ đề (${n} Mẫu)`,
@@ -19,6 +21,8 @@ const SettingsView = (function () {
         en: {
             toggleTitle: 'Enable Custom Theme',
             toggleDesc: 'Switch OFF to instantly restore the native default Antigravity interface.',
+            seasonTitle: '🗓️ Auto-Switch by Season & Holiday',
+            seasonDesc: (label, name) => `Automatically picks mascots across the year (Lunar New Year 🦁 • Spring 🌸 • Summer 🦈 • Autumn 🦊 • Halloween 🎃 • Winter ❄️ • Christmas ⛄). Today: <b>${label} → ${name}</b>. Click any card below to override manually.`,
             dimTitle: 'Background Dimming',
             dimDesc: 'Adjust background contrast for comfortable text readability.',
             themesTitle: (n) => `Chat Bubbles & Mascot Themes (${n} Presets)`,
@@ -93,6 +97,10 @@ const SettingsView = (function () {
         const lang = config.lang === 'en' ? 'en' : 'vi';
         const txt = SETTINGS_I18N[lang];
         const themes = vm.getThemes();
+        const seasonInfo = resolveSeasonalTheme();
+        const seasonTheme = vm.getThemeById(seasonInfo.themeId);
+        const seasonThemeLoc = localizeTheme(seasonTheme, lang);
+        const seasonLabel = lang === 'en' ? seasonInfo.labelEn : seasonInfo.labelVi;
         const opacityStyle = config.enabled ? '1' : '0.4';
         const pointerStyle = config.enabled ? 'auto' : 'none';
 
@@ -120,6 +128,17 @@ const SettingsView = (function () {
             </div>
 
             <div id="ag-theme-controls-body" style="opacity: ${opacityStyle}; pointer-events: ${pointerStyle}; transition: opacity 0.25s ease;">
+                <div class="ag-toggle-card" style="margin-bottom: 22px; background: rgba(255,255,255,0.035) !important;">
+                    <div style="padding-right: 14px;">
+                        <div class="ag-section-title" style="margin: 0; font-size: 14px;">${txt.seasonTitle}</div>
+                        <div class="ag-section-desc" style="margin: 4px 0 0; font-size: 12px; line-height: 1.45;">${txt.seasonDesc(seasonLabel, seasonThemeLoc.name)}</div>
+                    </div>
+                    <label class="ag-switch">
+                        <input type="checkbox" id="ag-season-toggle" ${config.autoSeason ? 'checked' : ''}>
+                        <span class="ag-toggle-slider"></span>
+                    </label>
+                </div>
+
                 <div class="ag-section-title">${txt.dimTitle}</div>
                 <div class="ag-section-desc">${txt.dimDesc}</div>
                 <div class="ag-slider-row">
@@ -185,6 +204,14 @@ const SettingsView = (function () {
                 controls.style.pointerEvents = enabledNow ? 'auto' : 'none';
             }
         });
+
+        const seasonToggle = panel.querySelector('#ag-season-toggle');
+        if (seasonToggle) {
+            seasonToggle.addEventListener('change', (e) => {
+                vm.setAutoSeason(e.target.checked);
+                renderOverlay(modal, vm);
+            });
+        }
 
         const slider = panel.querySelector('#ag-dim-slider');
         const valSpan = panel.querySelector('#ag-dim-val');

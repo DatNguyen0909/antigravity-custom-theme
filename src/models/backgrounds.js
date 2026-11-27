@@ -124,6 +124,13 @@ const THEME_BG = {
         glow('20%', '84%', '55%', '48%', 'rgba(251,146,60,0.30)'),
         glow('50%', '45%', '60%', '50%', 'rgba(129,140,248,0.26)'),
         'linear-gradient(165deg, #1e1b4b 0%, #3b1c4a 52%, #4a1d35 100%)'
+    ].join(', '),
+    'halloween-pumpkin': [
+        stars('rgba(251,146,60,0.8)', 230),
+        stars('rgba(192,132,252,0.7)', 300),
+        glow('82%', '18%', '48%', '42%', 'rgba(249,115,22,0.34)'),
+        glow('16%', '86%', '52%', '46%', 'rgba(147,51,234,0.36)'),
+        'linear-gradient(160deg, #1e0b2b 0%, #14081c 55%, #09040e 100%)'
     ].join(', ')
 };
 
@@ -144,7 +151,8 @@ const THEME_PANEL = {
     'tet-lion': 'rgba(32, 8, 10, 0.82)',
     'code-cat': 'rgba(13, 17, 23, 0.84)',
     'pixel-knight': 'rgba(14, 17, 38, 0.84)',
-    'cloud-whale': 'rgba(28, 20, 52, 0.80)'
+    'cloud-whale': 'rgba(28, 20, 52, 0.80)',
+    'halloween-pumpkin': 'rgba(24, 10, 32, 0.82)'
 };
 
 const THEME_BG_LIGHT = {
@@ -258,6 +266,13 @@ const THEME_BG_LIGHT = {
         glow('16%', '84%', '52%', '46%', 'rgba(251,146,60,0.26)'),
         glow('50%', '48%', '58%', '50%', 'rgba(129,140,248,0.22)'),
         'linear-gradient(145deg, #ffffff 0%, #fff7fa 48%, #fff1e6 100%)'
+    ].join(', '),
+    'halloween-pumpkin': [
+        stars('rgba(234,88,12,0.30)', 240),
+        stars('rgba(147,51,234,0.26)', 300),
+        glow('85%', '15%', '48%', '42%', 'rgba(251,146,60,0.34)'),
+        glow('15%', '86%', '50%', '44%', 'rgba(168,85,247,0.26)'),
+        'linear-gradient(145deg, #ffffff 0%, #fff9f2 48%, #f8f0ff 100%)'
     ].join(', ')
 };
 
@@ -278,5 +293,6 @@ const THEME_PANEL_LIGHT = {
     'tet-lion': 'rgba(255, 255, 255, 0.88)',
     'code-cat': 'rgba(255, 255, 255, 0.90)',
     'pixel-knight': 'rgba(255, 255, 255, 0.90)',
-    'cloud-whale': 'rgba(255, 255, 255, 0.88)'
+    'cloud-whale': 'rgba(255, 255, 255, 0.88)',
+    'halloween-pumpkin': 'rgba(255, 255, 255, 0.88)'
 };

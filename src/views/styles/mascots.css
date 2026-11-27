@@ -275,6 +275,22 @@ body[data-ag-theme="cloud-whale"] .ag-custom-input-wrapper:hover > .ag-input-sti
   filter: drop-shadow(0 3px 8px rgba(0,0,0,0.45)) drop-shadow(0 0 14px rgba(244,114,182,0.8)) !important;
 }
 
+/* 18. Bí Ngô Ma Trơi (halloween-pumpkin): Ma con thả kẹo & cưỡi chổi bay qua nghĩa địa trăng máu */
+body[data-ag-theme="halloween-pumpkin"] .ag-bubble-sticker,
+body[data-ag-theme="halloween-pumpkin"] .ag-input-sticker,
+.ag-theme-card[data-theme-id="halloween-pumpkin"] .ag-card-sticker {
+  animation: agIdlePumpkin 2.6s ease-in-out infinite !important;
+}
+@keyframes agIdlePumpkin {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-6px) rotate(3deg); }
+}
+body[data-ag-theme="halloween-pumpkin"] .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
+body[data-ag-theme="halloween-pumpkin"] .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
+.ag-theme-card[data-theme-id="halloween-pumpkin"]:hover .ag-card-sticker-action {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.55)) drop-shadow(0 0 14px rgba(249,115,22,0.85)) !important;
+}
+
 /* ========================================================
    TYPING REACTION: per-mascot keystroke particles + thinking bubble
    (3 states: typing / typing-fast / pause)

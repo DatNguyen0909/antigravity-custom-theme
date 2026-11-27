@@ -8,8 +8,9 @@
 <img src="./stickers/code-cat/idle.svg" width="64" alt="Hacker Code Cat" />
 <img src="./stickers/pixel-knight/idle.svg" width="64" alt="8-Bit Pixel Knight" />
 <img src="./stickers/cloud-whale/idle.svg" width="64" alt="Sunset Cloud Whale" />
-<img src="./stickers/gangster-pawn/idle.svg" width="64" alt="Gangster Pawn" />
-<img src="./stickers/noel-snowman/idle.svg" width="64" alt="Christmas Snowman" />
+<img src="./stickers/gangster-pawn/idle.svg" width="60" alt="Gangster Pawn" />
+<img src="./stickers/noel-snowman/idle.svg" width="60" alt="Christmas Snowman" />
+<img src="./stickers/halloween-pumpkin/idle.svg" width="60" alt="Halloween Pumpkin" />
 
 </div>
 
@@ -22,28 +23,28 @@
 
 <p align="center">
   <b>Bộ giao diện Chibi chuyển động toàn diện dành cho Google Antigravity Desktop Client</b><br /><br />
-  <img src="https://img.shields.io/badge/Ch%E1%BB%A7_%C4%91%E1%BB%81_Chibi-17_M%E1%BA%ABu-10b981?style=for-the-badge" alt="17 mẫu" />
-  <img src="https://img.shields.io/badge/Vector_Animations-51_File_SVG-f59e0b?style=for-the-badge" alt="51 SVG" />
-  <img src="https://img.shields.io/badge/Ki%E1%BA%BFn_tr%C3%BAc-MVVM_Zero_Deps-38bdf8?style=for-the-badge" alt="MVVM" />
+  <img src="https://img.shields.io/badge/Ch%E1%BB%A7_%C4%91%E1%BB%81_Chibi-18_M%E1%BA%ABu-10b981?style=for-the-badge" alt="18 mẫu" />
+  <img src="https://img.shields.io/badge/Vector_Animations-54_File_SVG-f59e0b?style=for-the-badge" alt="54 SVG" />
+  <img src="https://img.shields.io/badge/L%E1%BB%85_H%E1%BB%99i_%26_M%C3%B9a-Auto_Switch-a855f7?style=for-the-badge" alt="Auto Season" />
   <img src="https://img.shields.io/badge/Giao_di%E1%BB%87n-Dark_%26_Light-ec4899?style=for-the-badge" alt="Dark & Light" />
   <br /><br />
   👉 <a href="https://datnguyen0909.github.io/antigravity-custom-theme/?lang=vi"><b>Mở bản Xem Trước Tương Tác Trực Tiếp (GitHub Pages — Tiếng Việt)</b></a><br />
-  <i>(Thử gõ chat, rê chuột, đổi Dark/Light &amp; Anh/Việt cho cả 17 chủ đề ngay trên trình duyệt!)</i>
+  <i>(Thử gõ chat, rê chuột, bật chế độ Theo Mùa, đổi Dark/Light &amp; Anh/Việt cho cả 18 chủ đề ngay trên trình duyệt!)</i>
 </p>
 
 ---
 
 ## 🌟 Tính năng nổi bật
 
-- **🎭 Hệ thống chuyển động 4 tầng cho mỗi linh vật (51 file SVG thuần CSS, siêu nhẹ)**:
-  1. **Tĩnh + Diễn cảnh tự động mỗi 15 giây (`idle.svg`)**: Đứng nhịp nhàng trên bong bóng chat; cứ mỗi 15 giây tự diễn một tình huống hài hước riêng (Mèo Code gặp `ERROR` đập laptop, Chốt gangster quẹt lửa xì gà hỏng quăng đi, Hiệp sĩ mở rương ra `+1 EXP` thất vọng, Cá voi phun cầu vồng...).
-  2. **Hành động đặc trưng khi bạn đang gõ (`typing.svg`)**: Khi nhập tin nhắn, mỗi linh vật diễn đúng bản chất riêng (Cá mập mài răng, Mèo than vờn cuộn len, Thỏ giã bánh Mochi, Hiệp sĩ rèn kiếm trên đe, Rồng vờn ngọc...) kèm hạt hiệu ứng theo từng phím và bong bóng suy nghĩ khi dừng tay 1,5 giây.
-  3. **Hoạt cảnh sân khấu ngang khi rê chuột (`action.svg`)**: Rê chuột vào bong bóng chat hoặc ô nhập sẽ mở ra cả một sân khấu ngang có bối cảnh đi kèm (cổng Torii, cọc Mai Hoa Thung, ống nước & gạch `?`, đảo nổi hoàng hôn, Sao Thổ...).
-  4. **Cảnh nền sống động, Song ngữ Anh/Việt & Thích ứng Dark / Light**: Tích hợp trực tiếp vào **Settings → Custom theme** của Antigravity với hộp chọn ngôn ngữ **EN / VI**, hỗ trợ đầy đủ cả chế độ **Dark** và **Light**, thanh kéo chỉnh độ tối nền, tải ảnh nền cá nhân và lưu cứng cấu hình trên ổ đĩa qua Electron Storage.
+- **🎭 Hệ thống chuyển động 4 tầng cho mỗi linh vật (54 file SVG thuần CSS, siêu nhẹ)**:
+  1. **Tĩnh + Diễn cảnh tự động mỗi 15 giây (`idle.svg`)**: Đứng nhịp nhàng trên bong bóng chat; cứ mỗi 15 giây tự diễn một tình huống hài hước riêng (Bí ngô Halloween bật nắp đầu cho bé ma con "BOO!" tung kẹo, Mèo Code gặp `ERROR` đập laptop, Hiệp sĩ mở rương ra `+1 EXP` thất vọng, Cá voi phun cầu vồng...).
+  2. **Hành động đặc trưng khi bạn đang gõ (`typing.svg`)**: Khi nhập tin nhắn, mỗi linh vật diễn đúng bản chất riêng (Bí ngô khuấy kẹo bằng kẹo mút phép thuật, Cá mập mài răng, Mèo than vờn cuộn len, Thỏ giã bánh Mochi, Hiệp sĩ rèn kiếm trên đe...) kèm hạt hiệu ứng theo từng phím và bong bóng suy nghĩ khi dừng tay 1,5 giây.
+  3. **Hoạt cảnh sân khấu ngang khi rê chuột (`action.svg`)**: Rê chuột vào bong bóng chat hoặc ô nhập sẽ mở ra cả một sân khấu ngang có bối cảnh đi kèm (nghĩa địa trăng máu Halloween, cổng Torii, cọc Mai Hoa Thung, ống nước & gạch `?`, đảo nổi hoàng hôn...).
+  4. **🗓️ Tự động đổi Linh vật theo Mùa / Lễ hội & Song ngữ Anh/Việt**: Công tắc **Auto-Season** tự động diện đúng chủ đề theo lịch năm (Tết 🦁 • Xuân 🌸 • Hè 🦈 • Thu 🦊 • Halloween 🎃 • Đông ❄️ • Noel ⛄), hỗ trợ hộp chọn ngôn ngữ **EN / VI**, **Dark / Light**, chỉnh độ tối nền, ảnh nền cá nhân và lưu cứng trên ổ đĩa.
 
 ---
 
-## 🖼️ Bộ sưu tập 17 Chủ đề (Xem trực tiếp)
+## 🖼️ Bộ sưu tập 18 Chủ đề (Xem trực tiếp)
 
 > 💡 Các ảnh bên dưới là **SVG chuyển động trực tiếp** từ thư mục `stickers/` — nếu đợi đủ nhịp 15s bạn sẽ thấy từng bé tự diễn trò ngay trong bảng này!
 
@@ -66,6 +67,7 @@
 | 15 | **🐱‍💻 Mèo Code dạo**<br/>`code-cat` | <img src="./stickers/code-cat/idle.svg" width="64" /><br/><sub>ERROR đập laptop lấy máy mới</sub> | <img src="./stickers/code-cat/typing.svg" width="64" /><br/><sub>Gõ code cuộn màn hình</sub> | <img src="./stickers/code-cat/action.svg" width="190" /><br/><sub>Cưỡi con trỏ chuột đi vợt bug</sub> |
 | 16 | **🗡️ Pixel Hiệp Sĩ 8-bit**<br/>`pixel-knight` | <img src="./stickers/pixel-knight/idle.svg" width="64" /><br/><sub>Mở rương ra +1 EXP xịu mặt</sub> | <img src="./stickers/pixel-knight/typing.svg" width="64" /><br/><sub>Đập búa rèn kiếm nung đỏ</sub> | <img src="./stickers/pixel-knight/action.svg" width="190" /><br/><sub>Nhảy qua ống nước & cụng gạch rơi xu</sub> |
 | 17 | **🐋 Cá Voi Mây**<br/>`cloud-whale` | <img src="./stickers/cloud-whale/idle.svg" width="64" /><br/><sub>Phun cầu vồng & chim én đậu</sub> | <img src="./stickers/cloud-whale/typing.svg" width="64" /><br/><sub>Hát nốt nhạc & bong bóng mây</sub> | <img src="./stickers/cloud-whale/action.svg" width="190" /><br/><sub>Bơi giữa đảo nổi hoàng hôn tạo mây</sub> |
+| 18 | **🎃 Bí Ngô Ma Trơi**<br/>`halloween-pumpkin` | <img src="./stickers/halloween-pumpkin/idle.svg" width="64" /><br/><sub>Mở nắp đầu ma con BOO! thả kẹo</sub> | <img src="./stickers/halloween-pumpkin/typing.svg" width="64" /><br/><sub>Khuấy vạc kẹo bằng kẹo mút phép</sub> | <img src="./stickers/halloween-pumpkin/action.svg" width="190" /><br/><sub>Cưỡi chổi bay qua nghĩa địa trăng máu</sub> |
 
 ---
 
@@ -99,14 +101,14 @@ Mỗi khi Antigravity cập nhật phiên bản mới, bộ cài của hãng s�
 antigravity-custom-theme/
 ├── index.html                      # Trang Web xem trước tương tác trực tiếp (EN / VI)
 ├── README.md                       # Tài liệu song ngữ tích hợp (English / Tiếng Việt)
-├── stickers/                       # 17 thư mục linh vật, mỗi thư mục gồm 3 trạng thái SVG
+├── stickers/                       # 18 thư mục linh vật, mỗi thư mục gồm 3 trạng thái SVG
 │   ├── jade-dragon/                # idle.svg | action.svg | typing.svg
-│   ├── pixel-knight/               # idle.svg | action.svg | typing.svg
+│   ├── halloween-pumpkin/          # idle.svg | action.svg | typing.svg
 │   ├── cloud-whale/                # idle.svg | action.svg | typing.svg
-│   └── ... (17 thư mục chủ đề)
+│   └── ... (18 thư mục chủ đề)
 ├── src/
 │   ├── models/                     # [MODEL] Dữ liệu thuần (Single Source of Truth - VI & EN)
-│   │   ├── themes.js               # Khai báo 17 chủ đề (màu, tên Anh/Việt, hoverBursts, typingFx)
+│   │   ├── themes.js               # Khai báo 18 chủ đề & lịch Auto-Season (màu, tên Anh/Việt, FX)
 │   │   ├── backgrounds.js          # Bảng màu nền & Sidebar kính mờ (Dark / Light)
 │   │   └── decor.js                # Họa tiết nền SVG & cấu hình hạt bay DECOR
 │   ├── services/                   # [SERVICE] Lưu trữ & môi trường
@@ -152,28 +154,28 @@ Phát hành theo giấy phép **MIT License** — tự do sử dụng, tùy bi�
 
 <p align="center">
   <b>Animated Chibi Mascot &amp; Glassmorphism UI Theme Engine for Google Antigravity Desktop Client</b><br /><br />
-  <img src="https://img.shields.io/badge/Chibi_Themes-17_Presets-10b981?style=for-the-badge" alt="17 Presets" />
-  <img src="https://img.shields.io/badge/Vector_Animations-51_SVGs-f59e0b?style=for-the-badge" alt="51 SVGs" />
-  <img src="https://img.shields.io/badge/Architecture-MVVM_Zero_Deps-38bdf8?style=for-the-badge" alt="MVVM" />
+  <img src="https://img.shields.io/badge/Chibi_Themes-18_Presets-10b981?style=for-the-badge" alt="18 Presets" />
+  <img src="https://img.shields.io/badge/Vector_Animations-54_SVGs-f59e0b?style=for-the-badge" alt="54 SVGs" />
+  <img src="https://img.shields.io/badge/Seasonal_Mode-Auto_Switch-a855f7?style=for-the-badge" alt="Auto Season" />
   <img src="https://img.shields.io/badge/Appearance-Dark_%26_Light-ec4899?style=for-the-badge" alt="Dark & Light" />
   <br /><br />
   👉 <a href="https://datnguyen0909.github.io/antigravity-custom-theme/?lang=en"><b>Launch Live Interactive Web Preview (GitHub Pages)</b></a><br />
-  <i>(Try typing in the chat box, hovering bubbles, toggling Dark/Light &amp; EN/VI across all 17 themes right in your browser!)</i>
+  <i>(Try typing in the chat box, hovering bubbles, toggling Auto-Season, Dark/Light &amp; EN/VI across all 18 themes right in your browser!)</i>
 </p>
 
 ---
 
 ## 🌟 Key Features
 
-- **🎭 4-Tier Interactive Mascot System (51 pure CSS-animated SVGs, ultra-lightweight)**:
-  1. **Idle + 15-Second Auto-Skits (`idle.svg`)**: Mascots perch atop your chat bubbles and perform a funny character skit every 15 seconds (Code Cat hits `ERROR` and smashes its laptop, Gangster Pawn's cigar misfires, Pixel Knight opens a chest for a disappointing `+1 EXP`, Cloud Whale spouts a rainbow...).
-  2. **Character-Specific Typing Reactions (`typing.svg`)**: While you type a prompt, your mascot switches to an authentic activity pose (Shark files its teeth, Midnight Cat bats a red yarn ball, Bunny pounds Mochi, Knight hammers a glowing blade on an anvil, Dragon swirls its mystic pearl...) with per-keystroke particles and a thinking bubble when you pause for 1.5s.
-  3. **Panoramic Hover Stage (`action.svg`)**: Hovering over any user chat bubble or the prompt input unveils a full wide-screen animated stage (Torii gates, plum-blossom poles, retro pipes & `?` blocks, sunset floating islands, ringed planets...).
-  4. **Adaptive Dark / Light Glassmorphism & Bilingual UI**: Seamlessly hooks into **Settings → Custom theme** inside Antigravity with a built-in **English / Tiếng Việt** language selector, full **Dark** & **Light** mode palettes, background dimming slider, custom wallpaper upload, and persistent disk storage via Electron IPC.
+- **🎭 4-Tier Interactive Mascot System (54 pure CSS-animated SVGs, ultra-lightweight)**:
+  1. **Idle + 15-Second Auto-Skits (`idle.svg`)**: Mascots perch atop your chat bubbles and perform a funny character skit every 15 seconds (Halloween Pumpkin pops its witch hat so a baby ghost shouts `BOO!` with candy, Code Cat hits `ERROR` and smashes its laptop, Pixel Knight opens a chest for `+1 EXP`, Cloud Whale spouts a rainbow...).
+  2. **Character-Specific Typing Reactions (`typing.svg`)**: While you type a prompt, your mascot switches to an authentic activity pose (Pumpkin stirs a candy cauldron with a giant lollipop wand, Shark files its teeth, Midnight Cat bats red yarn, Bunny pounds Mochi, Knight hammers a glowing blade...) with per-keystroke particles and a thinking bubble when you pause for 1.5s.
+  3. **Panoramic Hover Stage (`action.svg`)**: Hovering over any user chat bubble or the prompt input unveils a full wide-screen animated stage (Haunted Blood-Moon Graveyard, Torii gates, plum-blossom poles, retro pipes & `?` blocks, sunset floating islands...).
+  4. **🗓️ Auto-Season / Holiday Switcher & Bilingual UI**: Optional **Auto-Season** toggle automatically switches mascots throughout the year (Lunar New Year 🦁 • Spring 🌸 • Summer 🦈 • Autumn 🦊 • Halloween 🎃 • Winter ❄️ • Christmas ⛄), alongside a built-in **English / Tiếng Việt** selector, **Dark & Light** glassmorphism, dimming slider, custom wallpaper upload, and persistent disk storage.
 
 ---
 
-## 🖼️ 17 Animated Theme Showcase (Live SVG)
+## 🖼️ 18 Animated Theme Showcase (Live SVG)
 
 > 💡 Every image below is a **live animated SVG** rendered directly from `stickers/` — watch for 15 seconds to see each mascot perform its mini-skit right inside this table!
 
@@ -196,6 +198,7 @@ Phát hành theo giấy phép **MIT License** — tự do sử dụng, tùy bi�
 | 15 | **🐱‍💻 Hacker Code Cat**<br/>`code-cat` | <img src="./stickers/code-cat/idle.svg" width="64" /><br/><sub>ERROR → smashes laptop & grabs new</sub> | <img src="./stickers/code-cat/typing.svg" width="64" /><br/><sub>Codes furiously on glowing screen</sub> | <img src="./stickers/code-cat/action.svg" width="190" /><br/><sub>Surfs mouse cursor catching bugs</sub> |
 | 16 | **🗡️ 8-Bit Pixel Knight**<br/>`pixel-knight` | <img src="./stickers/pixel-knight/idle.svg" width="64" /><br/><sub>Opens chest to tiny +1 EXP</sub> | <img src="./stickers/pixel-knight/typing.svg" width="64" /><br/><sub>Forges glowing sword on anvil</sub> | <img src="./stickers/pixel-knight/action.svg" width="190" /><br/><sub>Jumps pipes & hits coin blocks</sub> |
 | 17 | **🐋 Sunset Cloud Whale**<br/>`cloud-whale` | <img src="./stickers/cloud-whale/idle.svg" width="64" /><br/><sub>Spouts rainbow & swallow perches</sub> | <img src="./stickers/cloud-whale/typing.svg" width="64" /><br/><sub>Sings notes & cloud bubbles</sub> | <img src="./stickers/cloud-whale/action.svg" width="190" /><br/><sub>Swims past sunset floating islands</sub> |
+| 18 | **🎃 Halloween Pumpkin**<br/>`halloween-pumpkin` | <img src="./stickers/halloween-pumpkin/idle.svg" width="64" /><br/><sub>Ghost pops out shouting BOO!</sub> | <img src="./stickers/halloween-pumpkin/typing.svg" width="64" /><br/><sub>Stirs candy pot with lollipop wand</sub> | <img src="./stickers/halloween-pumpkin/action.svg" width="190" /><br/><sub>Broomstick flight over blood-moon crypt</sub> |
 
 ---
 
@@ -229,14 +232,14 @@ Whenever Antigravity updates to a newer version, its updater replaces `app.asar`
 antigravity-custom-theme/
 ├── index.html                      # Interactive Live Web Simulator & Gallery (EN / VI)
 ├── README.md                       # In-place Bilingual Documentation (English & Tiếng Việt)
-├── stickers/                       # 17 mascot folders, 3 animated SVG states each
+├── stickers/                       # 18 mascot folders, 3 animated SVG states each
 │   ├── jade-dragon/                # idle.svg | action.svg | typing.svg
-│   ├── pixel-knight/               # idle.svg | action.svg | typing.svg
+│   ├── halloween-pumpkin/          # idle.svg | action.svg | typing.svg
 │   ├── cloud-whale/                # idle.svg | action.svg | typing.svg
-│   └── ... (17 theme folders)
+│   └── ... (18 theme folders)
 ├── src/
 │   ├── models/                     # [MODEL] Single Source of Truth (EN & VI metadata)
-│   │   ├── themes.js               # 17 theme definitions (colors, localized text, FX)
+│   │   ├── themes.js               # 18 theme definitions + Auto-Season calendar
 │   │   ├── backgrounds.js          # Dark & Light gradients + frosted sidebar palettes
 │   │   └── decor.js                # Background SVG scenery & ambient particle configs
 │   ├── services/                   # [SERVICE] Persistence & runtime environment

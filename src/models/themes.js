@@ -300,8 +300,54 @@ const THEME_DEFINITIONS = [
         sparkle: '☁️',
         hoverBursts: ['🐋', '🌈', '☁️', '🫧', '✨'],
         typingFx: { particles: ['☁️', '♪', '🫧'], think: '🌈 ...', thinkEn: '🌈 ...' }
+    },
+    {
+        id: 'halloween-pumpkin',
+        name: 'Bí Ngô Ma Trơi',
+        nameEn: 'Halloween Pumpkin',
+        motionDesc: '🎃 Mở nắp đầu ma con thả kẹo & bay dưới trăng máu',
+        motionDescEn: '🎃 Baby ghost pops out with candy & broomstick flight',
+        previewText: 'Cho kẹo hay bị ghẹo 🎃🍬',
+        previewTextEn: 'Trick or Treat 🎃🍬',
+        accent: '#f97316',
+        bubbleBg: 'rgba(34, 14, 28, 0.95)',
+        bubbleBorder: 'rgba(249, 115, 22, 0.72)',
+        bubbleText: '#fff7ed',
+        inputBorder: 'rgba(249, 115, 22, 0.55)',
+        sparkle: '🎃',
+        hoverBursts: ['🎃', '👻', '🍬', '🦇', '🍭'],
+        typingFx: { particles: ['🍬', '👻', '🍭'], think: '👻 ghẹo nè...', thinkEn: '👻 Trick or Treat?...' }
     }
 ];
+
+function resolveSeasonalTheme(now) {
+    const d = now || new Date();
+    const m = d.getMonth() + 1;
+    const day = d.getDate();
+
+    // 1. Major Holidays take priority
+    if ((m === 10 && day >= 15) || (m === 11 && day <= 2)) {
+        return { themeId: 'halloween-pumpkin', labelVi: '🎃 Lễ hội Halloween', labelEn: '🎃 Halloween Season' };
+    }
+    if (m === 12 && day >= 10) {
+        return { themeId: 'noel-snowman', labelVi: '🎄 Mùa Giáng Sinh (Noel)', labelEn: '🎄 Christmas Season' };
+    }
+    if (m === 1 || (m === 2 && day <= 20)) {
+        return { themeId: 'tet-lion', labelVi: '🧧 Mùa Lễ Tết Đầu Năm', labelEn: '🧧 Lunar New Year Season' };
+    }
+
+    // 2. Four-Season Calendar
+    if ((m === 2 && day > 20) || m === 3 || m === 4) {
+        return { themeId: 'sakura-bunny', labelVi: '🌸 Mùa Xuân Anh Đào', labelEn: '🌸 Cherry Blossom Spring' };
+    }
+    if (m >= 5 && m <= 7) {
+        return { themeId: 'ocean-shark', labelVi: '🌊 Mùa Hè Đại Dương', labelEn: '🌊 Ocean Summer' };
+    }
+    if (m === 8 || m === 9 || (m === 10 && day < 15)) {
+        return { themeId: 'fox-chibi', labelVi: '🍁 Mùa Thu Lá Phong', labelEn: '🍁 Autumn Maple Season' };
+    }
+    return { themeId: 'ice-penguin', labelVi: '❄️ Chớm Đông Băng Tuyết', labelEn: '❄️ Early Winter Frost' };
+}
 
 function localizeTheme(theme, lang) {
     const isEn = lang === 'en';
