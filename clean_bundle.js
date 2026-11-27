@@ -28,8 +28,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Jade Dragon',
         motionDesc: '🐉 Bay lượn xuyên qua mây lớn & mây nhỏ',
         motionDescEn: '🐉 Soars gracefully through drifting jade clouds',
-        previewText: 'Xin chào 🐉',
-        previewTextEn: 'Hello there 🐉',
+        previewText: 'Chân long hộ mệnh 🐉❖',
+        previewTextEn: 'Awaken the Jade Pearl 🐉',
         accent: '#10b981',
         bubbleBg: 'rgba(12, 38, 30, 0.94)',
         bubbleBorder: 'rgba(16, 185, 129, 0.65)',
@@ -37,7 +37,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(16, 185, 129, 0.5)',
         sparkle: '❖',
         hoverBursts: ['🐉', '❖', '🍃', '✨', '🟢'],
-        typingFx: { particles: ['☁️', '☁', '💨'], think: '💨 hừm...', thinkEn: '💨 hmm...' }
+        typingFx: { particles: ['☁️', '☁', '💨'], think: '💨 tích linh khí...', thinkEn: '💨 gathering qi...' }
     },
     {
         id: 'fire-phoenix',
@@ -45,8 +45,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Fire Phoenix',
         motionDesc: '🔥 Sải cánh bay qua mây lửa & thái dương',
         motionDescEn: '🔥 Glides across blazing clouds & golden sun',
-        previewText: 'Xin chào 🔥',
-        previewTextEn: 'Hello there 🔥',
+        previewText: 'Niết bàn rực lửa 🔥🪶',
+        previewTextEn: 'Rise from the Ashes 🔥',
         accent: '#ec4899',
         bubbleBg: 'rgba(40, 15, 35, 0.94)',
         bubbleBorder: 'rgba(236, 72, 153, 0.65)',
@@ -54,7 +54,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(236, 72, 153, 0.5)',
         sparkle: '🔥',
         hoverBursts: ['🔥', '🪶', '✨', '💛', '💖'],
-        typingFx: { particles: ['🔥', '✦', '🪶'], think: '🔥 ...', thinkEn: '🔥 ...' }
+        typingFx: { particles: ['🔥', '✦', '🪶'], think: '🔥 ủ lửa...', thinkEn: '🔥 igniting...' }
     },
     {
         id: 'space-astronaut',
@@ -62,8 +62,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Galaxy Astronaut',
         motionDesc: '🪐 Bật Jetpack bay quanh các hành tinh',
         motionDescEn: '🪐 Jetpack flight around ringed planets',
-        previewText: 'Xin chào 🚀',
-        previewTextEn: 'Hello there 🚀',
+        previewText: 'Houston, rõ tín hiệu! 🚀',
+        previewTextEn: '3... 2... 1... Liftoff! 🚀',
         accent: '#38bdf8',
         bubbleBg: 'rgba(15, 23, 42, 0.95)',
         bubbleBorder: 'rgba(56, 189, 248, 0.65)',
@@ -71,7 +71,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(56, 189, 248, 0.5)',
         sparkle: '★',
         hoverBursts: ['🚀', '🪐', '☄️', '🌟', '💫'],
-        typingFx: { particles: ['📡', '✦', '★'], think: '📡 ...', thinkEn: '📡 ...' }
+        typingFx: { particles: ['📡', '✦', '★'], think: '📡 dò sóng...', thinkEn: '📡 scanning...' }
     },
     {
         id: 'wise-owl',
@@ -79,8 +79,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Ancient Scroll Owl',
         motionDesc: '🦉 Bay qua đỉnh núi cổ phong & đèn lồng',
         motionDescEn: '🦉 Delivers secret scrolls over misty peaks',
-        previewText: 'Xin chào 📜',
-        previewTextEn: 'Greetings 📜',
+        previewText: 'Thiên cơ bất khả lộ 📜',
+        previewTextEn: 'Ancient Wisdom Awaits 📜',
         accent: '#d97706',
         bubbleBg: 'rgba(246, 235, 209, 0.95)',
         bubbleBorder: 'rgba(180, 120, 50, 0.75)',
@@ -88,7 +88,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(180, 120, 50, 0.55)',
         sparkle: '✿',
         hoverBursts: ['🦉', '龍', '福', '📜', '✨'],
-        typingFx: { particles: ['🪶', '✒️', '福'], think: '📜 để xem...', thinkEn: '📜 let me see...' }
+        typingFx: { particles: ['🪶', '✒️', '福'], think: '📜 tra cổ thư...', thinkEn: '📜 reading scroll...' }
     },
     {
         id: 'moon-witch',
@@ -96,8 +96,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Moonlight Witch',
         motionDesc: '🌙 Cưỡi chổi bay qua trăng khuyết & tháp cổ',
         motionDescEn: '🌙 Broomstick flight past crescent moon & spire',
-        previewText: 'Xin chào 🌙',
-        previewTextEn: 'Hello there 🌙',
+        previewText: 'Úm ba la hóa phép! 🌙✨',
+        previewTextEn: 'Brewing Midnight Magic 🌙',
         accent: '#a855f7',
         bubbleBg: 'rgba(35, 18, 50, 0.94)',
         bubbleBorder: 'rgba(168, 85, 247, 0.65)',
@@ -105,7 +105,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(168, 85, 247, 0.5)',
         sparkle: '✧',
         hoverBursts: ['🌙', '🦇', '✨', '⭐', '💜'],
-        typingFx: { particles: ['✨', '🔮', '⭐'], think: '🔮 ...', thinkEn: '🔮 ...' }
+        typingFx: { particles: ['✨', '🔮', '⭐'], think: '🔮 niệm chú...', thinkEn: '🔮 casting spell...' }
     },
     {
         id: 'fox-chibi',
@@ -113,8 +113,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Chibi Kitsune',
         motionDesc: '⛩️ Phóng qua cổng Torii & lửa hồ ly',
         motionDescEn: '⛩️ Dashes through Torii gates & foxfire',
-        previewText: 'Xin chào 🦊',
-        previewTextEn: 'Hello there 🦊',
+        previewText: 'Kon-kon! Có đậu phụ ko? 🦊',
+        previewTextEn: 'Kon-kon! Foxfire Ready 🦊',
         accent: '#e06030',
         bubbleBg: 'rgba(48, 22, 20, 0.95)',
         bubbleBorder: 'rgba(225, 105, 65, 0.65)',
@@ -122,7 +122,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(225, 105, 65, 0.5)',
         sparkle: '✦',
         hoverBursts: ['🔥', '🍁', '🦊', '✦', '🧡'],
-        typingFx: { particles: ['🔥', '🍁', '✦'], think: '❓ ...', thinkEn: '❓ ...' }
+        typingFx: { particles: ['🔥', '🍁', '✦'], think: '🦊 bày trò gì đây...', thinkEn: '🦊 plotting tricks...' }
     },
     {
         id: 'sakura-bunny',
@@ -130,8 +130,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Sakura Mochi Bunny',
         motionDesc: '🌸 Nhảy lò cò qua rừng hoa anh đào',
         motionDescEn: '🌸 Hops happily through cherry blossom woods',
-        previewText: 'Xin chào 🌸',
-        previewTextEn: 'Hello there 🌸',
+        previewText: 'Mời bạn xiên bánh Mochi 🌸🍡',
+        previewTextEn: 'Fresh Sakura Mochi! 🌸🍡',
         accent: '#fb7185',
         bubbleBg: 'rgba(46, 16, 28, 0.94)',
         bubbleBorder: 'rgba(251, 113, 133, 0.68)',
@@ -139,7 +139,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(251, 113, 133, 0.52)',
         sparkle: '🌸',
         hoverBursts: ['🌸', '🐰', '🍡', '💗', '🌸'],
-        typingFx: { particles: ['🌸', '🌸', '💗'], think: '🥕 ...', thinkEn: '🥕 ...' }
+        typingFx: { particles: ['🌸', '🌸', '💗'], think: '🍡 thèm bánh quá...', thinkEn: '🍡 craving mochi...' }
     },
     {
         id: 'ocean-shark',
@@ -147,8 +147,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Ocean Shark',
         motionDesc: '🦈 Vây cá rẽ sóng sau chat rồi phóng vọt lên',
         motionDescEn: '🦈 Dorsal fin slices waves before breaching high',
-        previewText: 'Xin chào 🦈',
-        previewTextEn: 'Hello there 🦈',
+        previewText: 'Rẽ sóng săn mồi! 🦈🌊',
+        previewTextEn: 'Chomp! Making Waves 🦈🌊',
         accent: '#22d3ee',
         bubbleBg: 'rgba(8, 34, 48, 0.94)',
         bubbleBorder: 'rgba(34, 211, 238, 0.65)',
@@ -156,7 +156,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(34, 211, 238, 0.5)',
         sparkle: '🫧',
         hoverBursts: ['🦈', '🌊', '🫧', '💧', '🐟'],
-        typingFx: { particles: ['🫧', '💧', '🫧'], think: '🌊 ...', thinkEn: '🌊 ...' }
+        typingFx: { particles: ['🫧', '💧', '🫧'], think: '🌊 rình mồi...', thinkEn: '🌊 circling...' }
     },
     {
         id: 'gangster-pawn',
@@ -164,8 +164,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Gangster Pawn',
         motionDesc: '😎 Xe cầm chùy tới → Chốt hóa Hậu rút súng',
         motionDescEn: '😎 Rook attacks → Pawn promotes to Queen & draws',
-        previewText: 'Xin chào ♟',
-        previewTextEn: 'Sup boss ♟',
+        previewText: 'Lên hàng 8 thành Trùm! ♟😎',
+        previewTextEn: 'Checkmate, Boss. ♟😎',
         accent: '#e5e7eb',
         bubbleBg: 'rgba(14, 14, 16, 0.95)',
         bubbleBorder: 'rgba(229, 231, 235, 0.62)',
@@ -173,7 +173,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(229, 231, 235, 0.45)',
         sparkle: '♟',
         hoverBursts: ['♟', '😎', '♛', '💥', '🔫'],
-        typingFx: { particles: ['💵', '♟', '💥'], think: '😎 hmm...', thinkEn: '😎 hmm...' }
+        typingFx: { particles: ['💵', '♟', '💥'], think: '😎 tính nước cờ...', thinkEn: '😎 plotting move...' }
     },
     {
         id: 'ice-penguin',
@@ -181,8 +181,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Glacier Penguin',
         motionDesc: '🧊 Trượt bụng & nhảy qua các tảng băng nổi',
         motionDescEn: '🧊 Belly-slides & leaps across Arctic icebergs',
-        previewText: 'Xin chào ❄️',
-        previewTextEn: 'Stay cool ❄️',
+        previewText: 'Trượt băng cực mát! ❄️🐧',
+        previewTextEn: 'Zero Degrees, 100% Chill ❄️',
         accent: '#60a5fa',
         bubbleBg: 'rgba(12, 26, 48, 0.94)',
         bubbleBorder: 'rgba(96, 165, 250, 0.68)',
@@ -190,7 +190,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(96, 165, 250, 0.52)',
         sparkle: '❄️',
         hoverBursts: ['❄️', '🐧', '❅', '💎', '❄️'],
-        typingFx: { particles: ['❄️', '❅', '❄️'], think: '🧊 ...', thinkEn: '🧊 ...' }
+        typingFx: { particles: ['❄️', '❅', '❄️'], think: '🧊 buốt não quá...', thinkEn: '🧊 brain freeze...' }
     },
     {
         id: 'ai-robot',
@@ -198,8 +198,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Minimalist AI Bot',
         motionDesc: '🤖 Lướt ván từ trường qua cổng Hologram',
         motionDescEn: '🤖 Hoverboards through neon hologram gates',
-        previewText: 'Xin chào 🤖',
-        previewTextEn: 'Hello Human 🤖',
+        previewText: 'Bíp bíp! Hệ thống sẵn sàng 🤖',
+        previewTextEn: 'BEEP BOOP // ONLINE 🤖',
         accent: '#94a3b8',
         bubbleBg: 'rgba(28, 28, 32, 0.92)',
         bubbleBorder: 'rgba(255, 255, 255, 0.35)',
@@ -215,8 +215,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Midnight Cat',
         motionDesc: '🐾 Nhảy trên mái nhà đêm trăng & cuộn len',
         motionDescEn: '🐾 Leaps across moonlit rooftops & red yarn',
-        previewText: 'Xin chào 🐾',
-        previewTextEn: 'Meow there 🐾',
+        previewText: 'Meow~ Đưa cá khô đây 🐾🐟',
+        previewTextEn: 'Purr... Feed Me Now 🐾🐟',
         accent: '#f5a623',
         bubbleBg: 'rgba(28, 24, 22, 0.95)',
         bubbleBorder: 'rgba(245, 166, 35, 0.65)',
@@ -224,7 +224,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(245, 166, 35, 0.5)',
         sparkle: '✦',
         hoverBursts: ['🐾', '🐟', '✨', '💛', '🐾'],
-        typingFx: { particles: ['🐾', '🐾', '✦'], think: '💤 ...', thinkEn: '💤 ...' }
+        typingFx: { particles: ['🐾', '🐾', '✦'], think: '🐾 rình chấm đỏ...', thinkEn: '🐾 laser target...' }
     },
     {
         id: 'noel-snowman',
@@ -232,8 +232,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Christmas Snowman',
         motionDesc: '🎄 Cưỡi tuần lộc phát quà qua rừng thông Noel',
         motionDescEn: '🎄 Rides reindeer sleigh over snowy pine woods',
-        previewText: 'Giáng Sinh an lành ⛄🎄',
-        previewTextEn: 'Merry Christmas ⛄🎄',
+        previewText: 'Ho Ho Ho! Phát quà thôi ⛄🎄',
+        previewTextEn: 'Jingle All the Way! ⛄🎄',
         accent: '#ef4444',
         bubbleBg: 'rgba(34, 14, 18, 0.94)',
         bubbleBorder: 'rgba(248, 113, 113, 0.72)',
@@ -241,7 +241,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(239, 68, 68, 0.55)',
         sparkle: '🎄',
         hoverBursts: ['⛄', '🎄', '🎁', '❄️', '🔔'],
-        typingFx: { particles: ['🔔', '❄️', '🎁'], think: '🥕 ...', thinkEn: '🥕 ...' }
+        typingFx: { particles: ['🔔', '❄️', '🎁'], think: '🎁 gói quà nào...', thinkEn: '🎁 wrapping gifts...' }
     },
     {
         id: 'tet-lion',
@@ -249,8 +249,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Lunar New Year Lion',
         motionDesc: '🦁 Nhảy Mai Hoa Thung hái Lộc & pháo Tết',
         motionDescEn: '🦁 Leaps plum-blossom poles with lucky firecrackers',
-        previewText: 'Chúc Mừng Năm Mới 🧧🦁',
-        previewTextEn: 'Happy Lunar New Year 🧧🦁',
+        previewText: 'Tùng dinh dinh! Hái Lộc 🧧🦁',
+        previewTextEn: 'Lucky Drums & Prosperity 🧧🦁',
         accent: '#f59e0b',
         bubbleBg: 'rgba(46, 10, 14, 0.95)',
         bubbleBorder: 'rgba(250, 204, 21, 0.78)',
@@ -258,7 +258,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(245, 158, 11, 0.6)',
         sparkle: '🧧',
         hoverBursts: ['🦁', '🧧', '🌼', '🪙', '🏮'],
-        typingFx: { particles: ['🥁', '🪙', '🧧'], think: '🧧 ...', thinkEn: '🧧 ...' }
+        typingFx: { particles: ['🥁', '🪙', '🧧'], think: '🧧 xin lì xì...', thinkEn: '🧧 lucky money...' }
     },
     {
         id: 'code-cat',
@@ -266,8 +266,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Hacker Code Cat',
         motionDesc: '🐛 Cưỡi con trỏ chuột đi bắt bug',
         motionDescEn: '🐛 Surfs a mouse cursor to catch flying bugs',
-        previewText: 'Hello World 💻',
-        previewTextEn: 'Hello World 💻',
+        previewText: 'Code mượt 0 Bug! 💻🐛',
+        previewTextEn: 'git push --force 💻🐱',
         accent: '#22c55e',
         bubbleBg: 'rgba(13, 17, 23, 0.95)',
         bubbleBorder: 'rgba(34, 197, 94, 0.65)',
@@ -283,8 +283,8 @@ const THEME_DEFINITIONS = [
         nameEn: '8-Bit Pixel Knight',
         motionDesc: '🗡️ Nhảy qua ống nước & cụng gạch rơi xu vàng',
         motionDescEn: '🗡️ Side-scrolls over pipes & hits coin blocks',
-        previewText: 'INSERT COIN 🗡️',
-        previewTextEn: 'INSERT COIN 🗡️',
+        previewText: 'INSERT COIN • 1UP! 🗡️🪙',
+        previewTextEn: 'INSERT COIN • 1UP! 🗡️🪙',
         accent: '#facc15',
         bubbleBg: 'rgba(18, 22, 46, 0.95)',
         bubbleBorder: 'rgba(250, 204, 21, 0.72)',
@@ -300,8 +300,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Sunset Cloud Whale',
         motionDesc: '🐋 Bơi giữa đảo nổi hoàng hôn & quẫy đuôi tạo mây',
         motionDescEn: '🐋 Swims past floating islands & trails clouds',
-        previewText: 'Xin chào 🐋🌈',
-        previewTextEn: 'Hello sky 🐋🌈',
+        previewText: 'Cưỡi mây trôi hoàng hôn 🐋🌈',
+        previewTextEn: 'Drifting Above the Clouds 🐋🌈',
         accent: '#f472b6',
         bubbleBg: 'rgba(32, 22, 58, 0.94)',
         bubbleBorder: 'rgba(244, 114, 182, 0.68)',
@@ -309,7 +309,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(244, 114, 182, 0.52)',
         sparkle: '☁️',
         hoverBursts: ['🐋', '🌈', '☁️', '🫧', '✨'],
-        typingFx: { particles: ['☁️', '♪', '🫧'], think: '🌈 ...', thinkEn: '🌈 ...' }
+        typingFx: { particles: ['☁️', '♪', '🫧'], think: '🌈 ngân nga...', thinkEn: '🌈 humming...' }
     },
     {
         id: 'halloween-pumpkin',
@@ -317,8 +317,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Halloween Pumpkin',
         motionDesc: '🎃 Mở nắp đầu ma con thả kẹo & bay dưới trăng máu',
         motionDescEn: '🎃 Baby ghost pops out with candy & broomstick flight',
-        previewText: 'Cho kẹo hay bị ghẹo 🎃🍬',
-        previewTextEn: 'Trick or Treat 🎃🍬',
+        previewText: 'Cho kẹo hay bị ghẹo! 🎃🍬',
+        previewTextEn: 'Trick or Treat! BOO! 🎃🍬',
         accent: '#f97316',
         bubbleBg: 'rgba(34, 14, 28, 0.95)',
         bubbleBorder: 'rgba(249, 115, 22, 0.72)',
@@ -326,7 +326,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(249, 115, 22, 0.55)',
         sparkle: '🎃',
         hoverBursts: ['🎃', '👻', '🍬', '🦇', '🍭'],
-        typingFx: { particles: ['🍬', '👻', '🍭'], think: '👻 ghẹo nè...', thinkEn: '👻 Trick or Treat?...' }
+        typingFx: { particles: ['🍬', '👻', '🍭'], think: '👻 ghẹo ai giờ...', thinkEn: '👻 spooky vibes...' }
     },
     {
         id: 'midautumn-carp',
@@ -334,8 +334,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Mid-Autumn Lantern Carp',
         motionDesc: '🏮 Ăn bánh nướng & vượt Vũ Môn dưới trăng rằm',
         motionDescEn: '🏮 Munches mooncake & leaps the Dragon Gate',
-        previewText: 'Tết Trung Thu rước đèn 🏮🌕',
-        previewTextEn: 'Happy Mid-Autumn 🏮🌕',
+        previewText: 'Rước đèn vượt Vũ Môn! 🏮🌕',
+        previewTextEn: 'Over the Dragon Gate! 🏮🌕',
         accent: '#fbbf24',
         bubbleBg: 'rgba(42, 18, 12, 0.94)',
         bubbleBorder: 'rgba(251, 191, 36, 0.75)',
@@ -343,7 +343,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(251, 191, 36, 0.55)',
         sparkle: '🏮',
         hoverBursts: ['🏮', '🥮', '🌕', '⭐', '🐟'],
-        typingFx: { particles: ['🏮', '⭐', '🥮'], think: '🌕 trông trăng...', thinkEn: '🌕 mooncake?...' }
+        typingFx: { particles: ['🏮', '⭐', '🥮'], think: '🥮 nhân thập cẩm...', thinkEn: '🥮 mooncake time...' }
     },
     {
         id: 'valentine-cupid',
@@ -351,8 +351,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Valentine Cupid',
         motionDesc: '💘 Dán tim hồng & bay lượn giữa mây kẹo bông',
         motionDescEn: '💘 Patches hearts & flies across cotton-candy clouds',
-        previewText: 'Gửi ngàn yêu thương 💘💌',
-        previewTextEn: 'Happy Valentine 💘💌',
+        previewText: 'Nhắm trúng tim bạn rồi! 💘',
+        previewTextEn: 'Target Locked: Your Heart 💘',
         accent: '#f43f5e',
         bubbleBg: 'rgba(46, 14, 26, 0.94)',
         bubbleBorder: 'rgba(244, 63, 94, 0.72)',
@@ -360,7 +360,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(244, 63, 94, 0.55)',
         sparkle: '💘',
         hoverBursts: ['💘', '💌', '💕', '🌹', '✨'],
-        typingFx: { particles: ['💘', '💌', '💕'], think: '💌 thương ai...', thinkEn: '💌 Dear you...' }
+        typingFx: { particles: ['💘', '💌', '💕'], think: '💌 viết thư tình...', thinkEn: '💌 sealing love...' }
     },
     {
         id: 'summer-corgi',
@@ -368,8 +368,8 @@ const THEME_DEFINITIONS = [
         nameEn: 'Summer Beach Corgi',
         motionDesc: '🏖️ Uống dừa bị cua kẹp & lướt ván sóng biển',
         motionDescEn: '🏖️ Sips coconut, crab pinch & rides ocean waves',
-        previewText: 'Chào mùa hè rực rỡ 🏖️🥥',
-        previewTextEn: 'Sunny Aloha Vibes 🏖️🥥',
+        previewText: 'Aloha! Lướt sóng uống dừa 🏖️🥥',
+        previewTextEn: 'Surf’s Up, Good Boy! 🏖️🥥',
         accent: '#06b6d4',
         bubbleBg: 'rgba(8, 38, 46, 0.94)',
         bubbleBorder: 'rgba(6, 182, 212, 0.72)',
@@ -377,7 +377,7 @@ const THEME_DEFINITIONS = [
         inputBorder: 'rgba(6, 182, 212, 0.55)',
         sparkle: '🏖️',
         hoverBursts: ['🏖️', '🥥', '🦀', '🌺', '🌊'],
-        typingFx: { particles: ['🏖️', '🐚', '🦀'], think: '🥥 mát quá...', thinkEn: '🥥 Aloha!...' }
+        typingFx: { particles: ['🏖️', '🐚', '🦀'], think: '🥥 chill chút đã...', thinkEn: '🥥 beach mode...' }
     }
 ];
 
