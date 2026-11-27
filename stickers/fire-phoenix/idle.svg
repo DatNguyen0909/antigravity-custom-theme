@@ -25,6 +25,15 @@
       .orb-pop { animation: phxOrbPop 15s ease-out infinite; transform-origin: 60px 88px; }
       .chick-pop { animation: phxChick 15s ease-out infinite; transform-origin: 60px 18px; }
       .blush-shy { animation: phxBlush 15s ease-in-out infinite; }
+      .phx-blink { transform-origin: 60px 51.5px; animation: phxBlink 3.5s infinite; }
+      .phx-flap-l { transform-origin: 34px 72px; animation: phxFlapL 1.8s ease-in-out infinite alternate; }
+      .phx-flap-r { transform-origin: 86px 72px; animation: phxFlapR 1.8s ease-in-out infinite alternate; }
+      .phx-crest { transform-origin: 60px 26px; animation: phxCrest 2.2s ease-in-out infinite alternate; }
+
+      @keyframes phxBlink { 0%, 44%, 48%, 94%, 100% { transform: scaleY(1); } 46%, 96% { transform: scaleY(0.08); } }
+      @keyframes phxFlapL { 0% { transform: rotate(-6deg); } 100% { transform: rotate(8deg); } }
+      @keyframes phxFlapR { 0% { transform: rotate(6deg); } 100% { transform: rotate(-8deg); } }
+      @keyframes phxCrest { 0% { transform: rotate(-4deg); } 100% { transform: rotate(4deg); } }
 
       @keyframes phxWings {
         0%, 73% { transform: scale(1); }
@@ -60,19 +69,25 @@
     <path d="M80 94 C102 98, 112 80, 106 64 C102 76, 92 84, 78 86 Z" fill="url(#phxGold)" stroke="#881337" stroke-width="1.8"/>
 
     <g class="wings-poof">
-      <path d="M34 62 C12 52, 6 70, 18 82 C12 86, 20 94, 36 86 Z" fill="url(#phxBody)" stroke="#4c0519" stroke-width="2"/>
-      <path d="M22 68 Q16 74 26 78" fill="none" stroke="url(#phxGold)" stroke-width="2.5" stroke-linecap="round"/>
-      <path d="M86 62 C108 52, 114 70, 102 82 C108 86, 100 94, 84 86 Z" fill="url(#phxBody)" stroke="#4c0519" stroke-width="2"/>
-      <path d="M98 68 Q104 74 94 78" fill="none" stroke="url(#phxGold)" stroke-width="2.5" stroke-linecap="round"/>
+      <g class="phx-flap-l">
+        <path d="M34 62 C12 52, 6 70, 18 82 C12 86, 20 94, 36 86 Z" fill="url(#phxBody)" stroke="#4c0519" stroke-width="2"/>
+        <path d="M22 68 Q16 74 26 78" fill="none" stroke="url(#phxGold)" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+      <g class="phx-flap-r">
+        <path d="M86 62 C108 52, 114 70, 102 82 C108 86, 100 94, 84 86 Z" fill="url(#phxBody)" stroke="#4c0519" stroke-width="2"/>
+        <path d="M98 68 Q104 74 94 78" fill="none" stroke="url(#phxGold)" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
     </g>
 
     <ellipse cx="60" cy="82" rx="22" ry="20" fill="url(#phxBody)" stroke="#4c0519" stroke-width="2.2"/>
     <ellipse cx="60" cy="85" rx="14" ry="14" fill="url(#phxBelly)"/>
 
-    <path d="M60 26 C53 12, 57 4, 60 3 C63 4, 67 12, 60 26 Z" fill="url(#phxGold)" stroke="#881337" stroke-width="1.8"/>
-    <path d="M54 27 C42 16, 42 8, 46 8 C50 9, 53 17, 56 26 Z" fill="url(#phxBody)" stroke="#881337" stroke-width="1.6"/>
-    <path d="M66 27 C78 16, 78 8, 74 8 C70 9, 67 17, 64 26 Z" fill="url(#phxBody)" stroke="#881337" stroke-width="1.6"/>
-    <circle cx="60" cy="9" r="2.5" fill="#fef08a"/>
+    <g class="phx-crest">
+      <path d="M60 26 C53 12, 57 4, 60 3 C63 4, 67 12, 60 26 Z" fill="url(#phxGold)" stroke="#881337" stroke-width="1.8"/>
+      <path d="M54 27 C42 16, 42 8, 46 8 C50 9, 53 17, 56 26 Z" fill="url(#phxBody)" stroke="#881337" stroke-width="1.6"/>
+      <path d="M66 27 C78 16, 78 8, 74 8 C70 9, 67 17, 64 26 Z" fill="url(#phxBody)" stroke="#881337" stroke-width="1.6"/>
+      <circle cx="60" cy="9" r="2.5" fill="#fef08a"/>
+    </g>
 
     <ellipse cx="60" cy="50" rx="28" ry="25" fill="url(#phxBody)" stroke="#4c0519" stroke-width="2.2"/>
     <path d="M36 48 C36 36, 84 36, 84 48 C84 65, 68 72, 60 72 C52 72, 36 65, 36 48 Z" fill="url(#phxBelly)"/>
@@ -81,17 +96,19 @@
     <path d="M88 48 Q98 44 95 54 Q100 58 87 60" fill="url(#phxGold)" stroke="#881337" stroke-width="1.6"/>
     <path d="M60 31 C64 36, 63 41, 60 43 C57 41, 56 36, 60 31 Z" fill="url(#phxGold)" stroke="#be185d" stroke-width="1"/>
 
-    <ellipse cx="47" cy="51" rx="6.5" ry="7.5" fill="#4c0519"/>
-    <ellipse cx="47" cy="51.5" rx="5.2" ry="6" fill="url(#phxBody)"/>
-    <ellipse cx="47" cy="53" rx="3.8" ry="3.5" fill="#fde047"/>
-    <circle cx="44.5" cy="48" r="2.5" fill="#ffffff"/>
-    <circle cx="49.5" cy="54" r="1.2" fill="#ffffff"/>
+    <g class="phx-blink">
+      <ellipse cx="47" cy="51" rx="6.5" ry="7.5" fill="#4c0519"/>
+      <ellipse cx="47" cy="51.5" rx="5.2" ry="6" fill="url(#phxBody)"/>
+      <ellipse cx="47" cy="53" rx="3.8" ry="3.5" fill="#fde047"/>
+      <circle cx="44.5" cy="48" r="2.5" fill="#ffffff"/>
+      <circle cx="49.5" cy="54" r="1.2" fill="#ffffff"/>
 
-    <ellipse cx="73" cy="51" rx="6.5" ry="7.5" fill="#4c0519"/>
-    <ellipse cx="73" cy="51.5" rx="5.2" ry="6" fill="url(#phxBody)"/>
-    <ellipse cx="73" cy="53" rx="3.8" ry="3.5" fill="#fde047"/>
-    <circle cx="70.5" cy="48" r="2.5" fill="#ffffff"/>
-    <circle cx="75.5" cy="54" r="1.2" fill="#ffffff"/>
+      <ellipse cx="73" cy="51" rx="6.5" ry="7.5" fill="#4c0519"/>
+      <ellipse cx="73" cy="51.5" rx="5.2" ry="6" fill="url(#phxBody)"/>
+      <ellipse cx="73" cy="53" rx="3.8" ry="3.5" fill="#fde047"/>
+      <circle cx="70.5" cy="48" r="2.5" fill="#ffffff"/>
+      <circle cx="75.5" cy="54" r="1.2" fill="#ffffff"/>
+    </g>
 
     <polygon points="56,55 64,55 60,61" fill="url(#phxGold)" stroke="#9a3412" stroke-width="1.4" stroke-linejoin="round"/>
     <ellipse class="blush-shy" cx="38" cy="57" rx="4.2" ry="2.2" fill="#fb7185" style="transform-origin:38px 57px"/>

@@ -16,6 +16,8 @@
       /* 15s Summer Skit: Red Crab crawls up and pinches Corgi nose - Shades drop, shocked eyes - flicks crab away! */
       .sc-crab { animation: scCrabPinch15s 15s ease-in-out infinite; opacity: 0; }
       .sc-shades { animation: scShades15s 15s ease-in-out infinite; }
+      .sc-shades-blink { transform-origin: 58px 46px; animation: scShadesBlink 3.6s ease-in-out infinite; }
+      @keyframes scShadesBlink { 0%, 42%, 52%, 100% { transform: translateY(0) rotate(0deg); } 47% { transform: translateY(2.5px) rotate(-2.5deg); } }
       .sc-eyes-ouch { animation: scOuch15s 15s steps(1) infinite; opacity: 0; }
       .sc-sweat { animation: scSweat15s 15s linear infinite; opacity: 0; }
 
@@ -86,11 +88,13 @@
 
     <!-- Cool Dark Sunglasses -->
     <g class="sc-shades">
-      <line x1="33" y1="45" x2="83" y2="45" stroke="#0f172a" stroke-width="2.5"/>
-      <rect x="36" y="42" width="18" height="11" rx="3" fill="#0f172a" stroke="#f8fafc" stroke-width="1.2"/>
-      <rect x="62" y="42" width="18" height="11" rx="3" fill="#0f172a" stroke="#f8fafc" stroke-width="1.2"/>
-      <line x1="39" y1="44" x2="44" y2="50" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="65" y1="44" x2="70" y2="50" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
+      <g class="sc-shades-blink">
+        <line x1="33" y1="45" x2="83" y2="45" stroke="#0f172a" stroke-width="2.5"/>
+        <rect x="36" y="42" width="18" height="11" rx="3" fill="#0f172a" stroke="#f8fafc" stroke-width="1.2"/>
+        <rect x="62" y="42" width="18" height="11" rx="3" fill="#0f172a" stroke="#f8fafc" stroke-width="1.2"/>
+        <line x1="39" y1="44" x2="44" y2="50" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="65" y1="44" x2="70" y2="50" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
+      </g>
     </g>
 
     <!-- Sweat drop -->

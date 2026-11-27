@@ -18,6 +18,15 @@
       .dango-skewer { animation: bunDango 15s ease-in-out infinite; transform-origin: 78px 86px; }
       .cheeks-munch { animation: bunMunch 15s ease-in-out infinite; transform-origin: 60px 62px; }
       .heart-pop { animation: bunHeart 15s ease-out infinite; transform-origin: 88px 26px; }
+      .bun-blink { transform-origin: 60px 54.5px; animation: bunBlink 3.4s infinite; }
+      .bun-ear-l { transform-origin: 40px 42px; animation: bunEarL 2.2s ease-in-out infinite alternate; }
+      .bun-ear-r { transform-origin: 80px 42px; animation: bunEarR 2.2s ease-in-out infinite alternate; }
+      .bun-tail { transform-origin: 80px 92px; animation: bunTail 1.4s ease-in-out infinite alternate; }
+
+      @keyframes bunBlink { 0%, 44%, 48%, 94%, 100% { transform: scaleY(1); } 46%, 96% { transform: scaleY(0.08); } }
+      @keyframes bunEarL { 0% { transform: rotate(-5deg); } 100% { transform: rotate(7deg); } }
+      @keyframes bunEarR { 0% { transform: rotate(5deg); } 100% { transform: rotate(-7deg); } }
+      @keyframes bunTail { 0% { transform: translateY(0) scale(1); } 100% { transform: translateY(-2px) scale(1.1); } }
 
       @keyframes bunDango {
         0%, 72% { opacity: 0; transform: translateY(20px) rotate(35deg); }
@@ -45,13 +54,17 @@
   </defs>
 
   <g>
-    <circle cx="84" cy="92" r="9" fill="url(#bunFur)" stroke="#881337" stroke-width="1.8"/>
+    <circle class="bun-tail" cx="84" cy="92" r="9" fill="url(#bunFur)" stroke="#881337" stroke-width="1.8"/>
 
-    <path d="M44 40 C36 10, 26 4, 24 14 C22 24, 30 38, 38 44 Z" fill="url(#bunFur)" stroke="#881337" stroke-width="2.2"/>
-    <path d="M41 37 C35 16, 29 12, 28 18 C27 24, 33 34, 38 39 Z" fill="url(#earIn)"/>
+    <g class="bun-ear-l">
+      <path d="M44 40 C36 10, 26 4, 24 14 C22 24, 30 38, 38 44 Z" fill="url(#bunFur)" stroke="#881337" stroke-width="2.2"/>
+      <path d="M41 37 C35 16, 29 12, 28 18 C27 24, 33 34, 38 39 Z" fill="url(#earIn)"/>
+    </g>
 
-    <path d="M76 40 C84 10, 94 4, 96 14 C98 24, 90 38, 82 44 Z" fill="url(#bunFur)" stroke="#881337" stroke-width="2.2"/>
-    <path d="M79 37 C85 16, 91 12, 92 18 C93 24, 87 34, 82 39 Z" fill="url(#earIn)"/>
+    <g class="bun-ear-r">
+      <path d="M76 40 C84 10, 94 4, 96 14 C98 24, 90 38, 82 44 Z" fill="url(#bunFur)" stroke="#881337" stroke-width="2.2"/>
+      <path d="M79 37 C85 16, 91 12, 92 18 C93 24, 87 34, 82 39 Z" fill="url(#earIn)"/>
+    </g>
 
     <ellipse cx="60" cy="86" rx="22" ry="18" fill="url(#bunFur)" stroke="#881337" stroke-width="2.2"/>
     <path d="M44 74 Q60 80 76 74" fill="none" stroke="#e11d48" stroke-width="3.5" stroke-linecap="round"/>
@@ -68,17 +81,19 @@
         <circle cx="0" cy="0" r="3" fill="#fef08a"/>
       </g>
 
-      <ellipse cx="46" cy="54" rx="6.5" ry="7.5" fill="#4c0519"/>
-      <ellipse cx="46" cy="54.5" rx="5.2" ry="6" fill="url(#sakuraG)"/>
-      <ellipse cx="46" cy="56.5" rx="3.8" ry="3.2" fill="#fda4af"/>
-      <circle cx="43.5" cy="51" r="2.5" fill="#ffffff"/>
-      <circle cx="48.5" cy="57" r="1.2" fill="#ffffff"/>
+      <g class="bun-blink">
+        <ellipse cx="46" cy="54" rx="6.5" ry="7.5" fill="#4c0519"/>
+        <ellipse cx="46" cy="54.5" rx="5.2" ry="6" fill="url(#sakuraG)"/>
+        <ellipse cx="46" cy="56.5" rx="3.8" ry="3.2" fill="#fda4af"/>
+        <circle cx="43.5" cy="51" r="2.5" fill="#ffffff"/>
+        <circle cx="48.5" cy="57" r="1.2" fill="#ffffff"/>
 
-      <ellipse cx="74" cy="54" rx="6.5" ry="7.5" fill="#4c0519"/>
-      <ellipse cx="74" cy="54.5" rx="5.2" ry="6" fill="url(#sakuraG)"/>
-      <ellipse cx="74" cy="56.5" rx="3.8" ry="3.2" fill="#fda4af"/>
-      <circle cx="71.5" cy="51" r="2.5" fill="#ffffff"/>
-      <circle cx="76.5" cy="57" r="1.2" fill="#ffffff"/>
+        <ellipse cx="74" cy="54" rx="6.5" ry="7.5" fill="#4c0519"/>
+        <ellipse cx="74" cy="54.5" rx="5.2" ry="6" fill="url(#sakuraG)"/>
+        <ellipse cx="74" cy="56.5" rx="3.8" ry="3.2" fill="#fda4af"/>
+        <circle cx="71.5" cy="51" r="2.5" fill="#ffffff"/>
+        <circle cx="76.5" cy="57" r="1.2" fill="#ffffff"/>
+      </g>
 
       <ellipse cx="36" cy="60" rx="4.8" ry="2.5" fill="#fb7185" opacity="0.75"/>
       <ellipse cx="84" cy="60" rx="4.8" ry="2.5" fill="#fb7185" opacity="0.75"/>

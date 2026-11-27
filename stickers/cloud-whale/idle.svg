@@ -18,6 +18,8 @@
       .cw-float { transform-origin: 60px 72px; animation: cwFloat 3.4s ease-in-out infinite; }
       .cw-tail { transform-origin: 94px 68px; animation: cwTail 2.2s ease-in-out infinite alternate; }
       .cw-fin { transform-origin: 58px 78px; animation: cwFin 2.2s ease-in-out infinite alternate; }
+      .cw-blink { transform-origin: 35px 60px; animation: cwBlink 3.9s infinite; }
+      @keyframes cwBlink { 0%, 45%, 49%, 95%, 100% { transform: scaleY(1); } 47%, 97% { transform: scaleY(0.1); } }
       /* 15s gag: Whale spouts water fountain -> arcs into a glowing 7-color rainbow -> cute swallow bird swoops in and perches on its back! */
       .cw-spout-15s { transform-origin: 48px 44px; animation: cwSpout15s 15s ease-out infinite; opacity: 0; }
       .cw-rainbow-15s { transform-origin: 62px 44px; animation: cwRainbow15s 15s ease-in-out infinite; opacity: 0; }
@@ -89,8 +91,10 @@
     <circle cx="78" cy="62" r="1.6" fill="#fef08a"/>
 
     <!-- Cute Eye, Rosy Cheek va Gentle Smile -->
-    <circle cx="35" cy="60" r="4.2" fill="#1e1b4b"/>
-    <circle cx="33.6" cy="58.5" r="1.6" fill="#ffffff"/>
+    <g class="cw-blink">
+      <circle cx="35" cy="60" r="4.2" fill="#1e1b4b"/>
+      <circle cx="33.6" cy="58.5" r="1.6" fill="#ffffff"/>
+    </g>
     <ellipse cx="42" cy="65" rx="4.5" ry="2.4" fill="#fb7185" opacity="0.75"/>
     <path d="M 23 68 Q 30 73 37 69" fill="none" stroke="#312e81" stroke-width="1.8" stroke-linecap="round"/>
 

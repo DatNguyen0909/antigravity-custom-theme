@@ -21,6 +21,13 @@
       .face-ok { animation: botOk 15s linear infinite; }
       .hand-bonk { animation: botBonk 15s ease-in-out infinite; transform-origin: 90px 82px; }
       .head-shake { animation: botShake 15s linear infinite; transform-origin: 60px 46px; }
+      .bot-blink { transform-origin: 60px 46px; animation: botBlink 3.7s infinite; }
+      .bot-halo { transform-origin: 60px 12px; animation: botHalo 2.2s ease-in-out infinite alternate; }
+      .bot-hand-l { transform-origin: 30px 82px; animation: botWaveL 2.1s ease-in-out infinite alternate; }
+
+      @keyframes botBlink { 0%, 45%, 49%, 95%, 100% { transform: scaleY(1); } 47%, 97% { transform: scaleY(0.1); } }
+      @keyframes botHalo { 0% { transform: translateY(0) scaleX(0.95); } 100% { transform: translateY(-3px) scaleX(1.06); } }
+      @keyframes botWaveL { 0% { transform: translateY(0) rotate(0deg); } 100% { transform: translateY(-5px) rotate(-14deg); } }
 
       @keyframes botNorm { 0%, 73% { opacity: 1; } 74%, 95% { opacity: 0; } 96%, 100% { opacity: 1; } }
       @keyframes botErr { 0%, 73% { opacity: 0; } 74%, 87% { opacity: 1; } 88%, 100% { opacity: 0; } }
@@ -44,7 +51,7 @@
   </defs>
 
   <g>
-    <ellipse cx="60" cy="12" rx="18" ry="4.5" fill="none" stroke="url(#neon)" stroke-width="2.8"/>
+    <ellipse class="bot-halo" cx="60" cy="12" rx="18" ry="4.5" fill="none" stroke="url(#neon)" stroke-width="2.8"/>
 
     <ellipse cx="60" cy="109" rx="16" ry="4" fill="#38bdf8" opacity="0.55"/>
     <ellipse cx="60" cy="109" rx="9" ry="2" fill="#ffffff" opacity="0.9"/>
@@ -53,7 +60,9 @@
     <polygon points="60,78 68,86 60,94 52,86" fill="url(#neon)" stroke="#1e293b" stroke-width="1.5"/>
     <polygon points="60,81 65,86 60,91 55,86" fill="#ffffff" opacity="0.8"/>
 
-    <ellipse cx="30" cy="82" rx="6" ry="8" transform="rotate(18 30 82)" fill="url(#botBody)" stroke="#334155" stroke-width="2"/>
+    <g class="bot-hand-l">
+      <ellipse cx="30" cy="82" rx="6" ry="8" transform="rotate(18 30 82)" fill="url(#botBody)" stroke="#334155" stroke-width="2"/>
+    </g>
 
     <g class="head-shake">
       <rect x="27" y="22" width="66" height="48" rx="24" fill="url(#botBody)" stroke="#334155" stroke-width="2.3"/>
@@ -65,13 +74,15 @@
 
       <!-- Mặt bình thường -->
       <g class="face-normal">
-        <ellipse cx="47" cy="46" rx="5.5" ry="6.5" fill="#38bdf8"/>
-        <ellipse cx="47" cy="46" rx="3.2" ry="4" fill="#e0f2fe"/>
-        <circle cx="45" cy="43.5" r="1.8" fill="#ffffff"/>
+        <g class="bot-blink">
+          <ellipse cx="47" cy="46" rx="5.5" ry="6.5" fill="#38bdf8"/>
+          <ellipse cx="47" cy="46" rx="3.2" ry="4" fill="#e0f2fe"/>
+          <circle cx="45" cy="43.5" r="1.8" fill="#ffffff"/>
 
-        <ellipse cx="73" cy="46" rx="5.5" ry="6.5" fill="#38bdf8"/>
-        <ellipse cx="73" cy="46" rx="3.2" ry="4" fill="#e0f2fe"/>
-        <circle cx="71" cy="43.5" r="1.8" fill="#ffffff"/>
+          <ellipse cx="73" cy="46" rx="5.5" ry="6.5" fill="#38bdf8"/>
+          <ellipse cx="73" cy="46" rx="3.2" ry="4" fill="#e0f2fe"/>
+          <circle cx="71" cy="43.5" r="1.8" fill="#ffffff"/>
+        </g>
 
         <ellipse cx="39" cy="52" rx="3.5" ry="1.8" fill="#f472b6" opacity="0.8"/>
         <ellipse cx="81" cy="52" rx="3.5" ry="1.8" fill="#f472b6" opacity="0.8"/>

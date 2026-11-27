@@ -25,6 +25,15 @@
       .ufo-beam { animation: beamPulse 15s ease-in-out infinite; transform-origin: 60px 22px; }
       .planet-abduct { animation: planetFloat 15s ease-in-out infinite; transform-origin: 60px 89px; }
       .q-mark { animation: qMarkPop 15s ease-out infinite; transform-origin: 96px 22px; }
+      .ast-blink { transform-origin: 60px 46.5px; animation: astBlink 4.1s infinite; }
+      .ast-jet { transform-origin: 60px 98px; animation: astJet 0.4s ease-in-out infinite alternate; }
+      .ast-beacon { animation: astBeacon 1.6s ease-in-out infinite alternate; }
+      .ast-arm-l { transform-origin: 42px 84px; animation: astWave 2.4s ease-in-out infinite; }
+
+      @keyframes astBlink { 0%, 46%, 50%, 96%, 100% { transform: scaleY(1); } 48%, 98% { transform: scaleY(0.08); } }
+      @keyframes astJet { 0% { transform: scaleY(0.82); opacity: 0.75; } 100% { transform: scaleY(1.18); opacity: 1; } }
+      @keyframes astBeacon { 0% { fill: #38bdf8; } 100% { fill: #fef08a; } }
+      @keyframes astWave { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-18deg) translateY(-2px); } }
 
       @keyframes ufoFly {
         0%, 71% { transform: translate(-80px, -25px) rotate(-15deg); opacity: 0; }
@@ -53,13 +62,15 @@
 
   <g>
     <rect x="33" y="64" width="54" height="34" rx="10" fill="#64748b" stroke="#1e293b" stroke-width="2"/>
-    <path d="M38 98 Q42 112 45 115 Q48 112 50 98 Z" fill="#38bdf8" opacity="0.85"/>
-    <path d="M70 98 Q73 112 75 115 Q78 112 82 98 Z" fill="#38bdf8" opacity="0.85"/>
-    <path d="M41 98 Q45 107 47 109 Q48 107 48 98 Z" fill="#fde047"/>
-    <path d="M72 98 Q75 107 76 109 Q78 107 79 98 Z" fill="#fde047"/>
+    <g class="ast-jet">
+      <path d="M38 98 Q42 112 45 115 Q48 112 50 98 Z" fill="#38bdf8" opacity="0.85"/>
+      <path d="M70 98 Q73 112 75 115 Q78 112 82 98 Z" fill="#38bdf8" opacity="0.85"/>
+      <path d="M41 98 Q45 107 47 109 Q48 107 48 98 Z" fill="#fde047"/>
+      <path d="M72 98 Q75 107 76 109 Q78 107 79 98 Z" fill="#fde047"/>
+    </g>
 
     <line x1="60" y1="18" x2="60" y2="8" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round"/>
-    <circle cx="60" cy="7" r="5" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/>
+    <circle class="ast-beacon" cx="60" cy="7" r="5" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/>
     <circle cx="58.5" cy="5.5" r="1.8" fill="#ffffff"/>
 
     <path d="M39 74 C36 90, 41 104, 60 104 C79 104, 84 90, 81 74 Z" fill="url(#suit)" stroke="#1e293b" stroke-width="2.2"/>
@@ -82,7 +93,7 @@
     <path d="M40 31 Q52 27 68 31" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
     <circle cx="40" cy="36" r="2.2" fill="#ffffff" opacity="0.6"/>
 
-    <g>
+    <g class="ast-blink">
       <ellipse cx="47" cy="47" rx="5.5" ry="6.2" fill="#38bdf8"/>
       <ellipse cx="47" cy="46" rx="4" ry="4.5" fill="#0284c7"/>
       <circle cx="45" cy="44" r="2.2" fill="#ffffff"/>
@@ -97,7 +108,9 @@
     <ellipse cx="80" cy="53" rx="4" ry="2.2" fill="#f472b6" opacity="0.75"/>
     <path d="M56 52 Q60 56 64 52" fill="none" stroke="#bae6fd" stroke-width="2" stroke-linecap="round"/>
 
-    <ellipse cx="42" cy="84" rx="6.5" ry="5" transform="rotate(20 42 84)" fill="url(#suit)" stroke="#1e293b" stroke-width="2"/>
+    <g class="ast-arm-l">
+      <ellipse cx="42" cy="84" rx="6.5" ry="5" transform="rotate(20 42 84)" fill="url(#suit)" stroke="#1e293b" stroke-width="2"/>
+    </g>
     <ellipse cx="78" cy="84" rx="6.5" ry="5" transform="rotate(-20 78 84)" fill="url(#suit)" stroke="#1e293b" stroke-width="2"/>
 
     <!-- Tia sáng UFO hút hành tinh -->

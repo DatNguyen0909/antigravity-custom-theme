@@ -459,10 +459,6 @@ body.ag-theme-active .ag-custom-input-wrapper.ag-typing:not(.ag-typing-pause).ag
   25%, 85% { transform: translateY(-2px) scale(1); opacity: 1; }
   100% { transform: translateY(-6px) scale(0.95); opacity: 0; }
 }
-body.ag-theme-active .ag-custom-input-wrapper:hover > .ag-think-bubble,
-body.ag-theme-active .ag-custom-input-wrapper:hover > .ag-type-p {
-  display: none !important;
-}
 @media (prefers-reduced-motion: reduce) {
   .ag-type-p, .ag-think-bubble { display: none !important; }
 }

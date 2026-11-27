@@ -10,6 +10,8 @@
       .pk-ray { transform-origin: 92px 84px; animation: pkRay15s 15s ease-out infinite; opacity: 0; }
       .pk-exp { animation: pkExp15s 15s linear infinite; opacity: 0; }
       .pk-eyes-norm { animation: pkEyeNorm15s 15s steps(1) infinite; }
+      .pk-blink { transform-origin: 52px 46px; animation: pkBlink 3.8s steps(1) infinite; }
+      @keyframes pkBlink { 0%, 45%, 49%, 95%, 100% { transform: scaleY(1); } 47%, 97% { transform: scaleY(0.2); } }
       .pk-eyes-sad { animation: pkEyeSad15s 15s steps(1) infinite; opacity: 0; }
       .pk-sweat { animation: pkSweat15s 15s linear infinite; opacity: 0; }
 
@@ -97,10 +99,12 @@
 
     <!-- Normal Determined Pixel Eyes -->
     <g class="pk-eyes-norm">
-      <rect x="40" y="43" width="6" height="6" fill="#ffffff"/>
-      <rect x="42" y="43" width="4" height="4" fill="#38bdf8"/>
-      <rect x="58" y="43" width="6" height="6" fill="#ffffff"/>
-      <rect x="60" y="43" width="4" height="4" fill="#38bdf8"/>
+      <g class="pk-blink">
+        <rect x="40" y="43" width="6" height="6" fill="#ffffff"/>
+        <rect x="42" y="43" width="4" height="4" fill="#38bdf8"/>
+        <rect x="58" y="43" width="6" height="6" fill="#ffffff"/>
+        <rect x="60" y="43" width="4" height="4" fill="#38bdf8"/>
+      </g>
     </g>
 
     <!-- Disappointed '= =' Eyes when getting +1 EXP -->

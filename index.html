@@ -189,16 +189,13 @@
       object-fit: contain; pointer-events: none; z-index: 50; transition: opacity 0.14s ease;
       filter: drop-shadow(0 3px 5px rgba(0,0,0,0.55)); transform-origin: 50% 85%;
     }
-    .ag-custom-user-bubble > .ag-bubble-sticker-action,
-    .ag-custom-input-wrapper > .ag-input-sticker-action {
+    .ag-custom-user-bubble > .ag-bubble-sticker-action {
       position: absolute; top: -76px; right: 6px; width: 280px; height: 104px;
       object-fit: contain; pointer-events: none; z-index: 55; opacity: 0;
       transform: translateY(6px) scale(0.96); transition: opacity 0.18s ease, transform 0.22s ease;
     }
-    .ag-custom-user-bubble:hover > .ag-bubble-sticker,
-    .ag-custom-input-wrapper:hover > .ag-input-sticker { opacity: 0 !important; }
-    .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
-    .ag-custom-input-wrapper:hover > .ag-input-sticker-action { opacity: 1 !important; transform: translateY(0) scale(1) !important; }
+    .ag-custom-user-bubble:hover > .ag-bubble-sticker { opacity: 0 !important; }
+    .ag-custom-user-bubble:hover > .ag-bubble-sticker-action { opacity: 1 !important; transform: translateY(0) scale(1) !important; }
 
     /* Input Composer */
     .ag-custom-input-wrapper {
@@ -320,7 +317,6 @@
 
         <form class="ag-custom-input-wrapper ag-has-typing-svg" id="composer-form">
           <img class="ag-input-sticker" id="input-sticker" alt="" />
-          <img class="ag-input-sticker-action" id="input-sticker-action" alt="" />
           <input id="demo-input" type="text" placeholder="" autocomplete="off" />
           <button type="submit" class="send-btn" id="send-btn">Send ↵</button>
         </form>
@@ -496,7 +492,6 @@
         const t = getTheme();
         const typingNow = composer.classList.contains('ag-typing') && !composer.classList.contains('ag-typing-pause');
         inputSticker.src = typingNow ? t.typingSticker : t.sticker;
-        inputAction.src = t.actionSticker;
       }
 
       function buildCards() {

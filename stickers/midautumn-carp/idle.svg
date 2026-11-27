@@ -21,6 +21,8 @@
       .mc-cake-bitten { animation: mcCakeBit15s 15s ease-out infinite; opacity: 0; }
       .mc-burst { transform-origin: 92px 48px; animation: mcBurst15s 15s ease-out infinite; opacity: 0; }
       .mc-eyes-norm { animation: mcEyeNorm15s 15s steps(1) infinite; }
+      .mc-blink { transform-origin: 58px 50px; animation: mcBlink 3.7s infinite; }
+      @keyframes mcBlink { 0%, 45%, 49%, 95%, 100% { transform: scaleY(1); } 47%, 97% { transform: scaleY(0.1); } }
       .mc-eyes-happy { animation: mcEyeHappy15s 15s steps(1) infinite; opacity: 0; }
 
       @keyframes mcSwimBob {
@@ -88,10 +90,12 @@
 
     <!-- Normal Big Sparkling Eyes -->
     <g class="mc-eyes-norm">
-      <circle cx="46" cy="50" r="5" fill="#1e1b4b"/>
-      <circle cx="70" cy="50" r="5" fill="#1e1b4b"/>
-      <circle cx="44.5" cy="48.2" r="1.8" fill="#ffffff"/>
-      <circle cx="68.5" cy="48.2" r="1.8" fill="#ffffff"/>
+      <g class="mc-blink">
+        <circle cx="46" cy="50" r="5" fill="#1e1b4b"/>
+        <circle cx="70" cy="50" r="5" fill="#1e1b4b"/>
+        <circle cx="44.5" cy="48.2" r="1.8" fill="#ffffff"/>
+        <circle cx="68.5" cy="48.2" r="1.8" fill="#ffffff"/>
+      </g>
     </g>
     <!-- Happy Munching Eyes during 15s Mooncake bite -->
     <g class="mc-eyes-happy">

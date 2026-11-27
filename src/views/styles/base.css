@@ -163,9 +163,8 @@ body.ag-theme-active .ag-custom-user-bubble > .ag-bubble-sticker {
   transform-origin: 50% 85% !important;
 }
 
-/* Horizontal Stage-Scene Action Sticker (Appears on Hover with Environmental Props & Locomotion!) */
-body.ag-theme-active .ag-custom-user-bubble > .ag-bubble-sticker-action,
-body.ag-theme-active .ag-custom-input-wrapper > .ag-input-sticker-action {
+/* Horizontal Stage-Scene Action Sticker (Appears on Hover over Chat Bubbles!) */
+body.ag-theme-active .ag-custom-user-bubble > .ag-bubble-sticker-action {
   position: absolute !important;
   top: -76px !important;
   right: 6px !important;
@@ -178,6 +177,10 @@ body.ag-theme-active .ag-custom-input-wrapper > .ag-input-sticker-action {
   transform: translateY(6px) scale(0.96) !important;
   transition: opacity 0.18s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1) !important;
   transform-origin: 85% 75% !important;
+}
+
+body.ag-theme-active .ag-custom-input-wrapper > .ag-input-sticker-action {
+  display: none !important;
 }
 
 .ag-card-sticker-action {
@@ -195,15 +198,13 @@ body.ag-theme-active .ag-custom-input-wrapper > .ag-input-sticker-action {
   transform-origin: 85% 75% !important;
 }
 
-/* Swap Front Pose -> Horizontal Stage Scene on Hover */
+/* Swap Front Pose -> Horizontal Stage Scene on Hover (Bubbles & Theme Cards only; Input Box stays dedicated to Idle + Typing!) */
 body.ag-theme-active .ag-custom-user-bubble:hover > .ag-bubble-sticker,
-body.ag-theme-active .ag-custom-input-wrapper:hover > .ag-input-sticker,
 .ag-theme-card:hover .ag-card-sticker {
   opacity: 0 !important;
 }
 
 body.ag-theme-active .ag-custom-user-bubble:hover > .ag-bubble-sticker-action,
-body.ag-theme-active .ag-custom-input-wrapper:hover > .ag-input-sticker-action,
 .ag-theme-card:hover .ag-card-sticker-action {
   opacity: 1 !important;
   transform: translateY(0) scale(1) !important;

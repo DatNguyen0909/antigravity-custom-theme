@@ -18,6 +18,8 @@
       .vc-heart-healed { transform-origin: 96px 40px; animation: vcHeal15s 15s cubic-bezier(0.22, 1, 0.36, 1) infinite; opacity: 0; }
       .vc-sweat { animation: vcSweat15s 15s linear infinite; opacity: 0; }
       .vc-eyes-norm { animation: vcEyeN15s 15s steps(1) infinite; }
+      .vc-blink { transform-origin: 54px 48px; animation: vcBlink 3.5s infinite; }
+      @keyframes vcBlink { 0%, 44%, 48%, 94%, 100% { transform: scaleY(1); } 46%, 96% { transform: scaleY(0.08); } }
       .vc-eyes-oops { animation: vcEyeO15s 15s steps(1) infinite; opacity: 0; }
 
       @keyframes vcFloat {
@@ -82,10 +84,12 @@
 
     <!-- Normal Sweet Sparkling Eyes -->
     <g class="vc-eyes-norm">
-      <circle cx="45" cy="48" r="4.3" fill="#881337"/>
-      <circle cx="63" cy="48" r="4.3" fill="#881337"/>
-      <circle cx="43.6" cy="46.5" r="1.6" fill="#ffffff"/>
-      <circle cx="61.6" cy="46.5" r="1.6" fill="#ffffff"/>
+      <g class="vc-blink">
+        <circle cx="45" cy="48" r="4.3" fill="#881337"/>
+        <circle cx="63" cy="48" r="4.3" fill="#881337"/>
+        <circle cx="43.6" cy="46.5" r="1.6" fill="#ffffff"/>
+        <circle cx="61.6" cy="46.5" r="1.6" fill="#ffffff"/>
+      </g>
     </g>
     <!-- Panicked '> <' Eyes when heart cracks -->
     <g class="vc-eyes-oops" stroke="#881337" stroke-width="2.4" stroke-linecap="round" fill="none">

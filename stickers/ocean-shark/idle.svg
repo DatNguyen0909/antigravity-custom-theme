@@ -18,6 +18,15 @@
       .bubble-duck { animation: shkBubble 15s ease-in-out infinite; transform-origin: 60px 62px; }
       .duck-hat { animation: shkDuck 15s ease-out infinite; transform-origin: 60px 18px; }
       .splash-pop { animation: shkSplash 15s ease-out infinite; transform-origin: 60px 45px; }
+      .shk-blink { transform-origin: 60px 49.5px; animation: shkBlink 3.9s infinite; }
+      .shk-tail { transform-origin: 78px 92px; animation: shkTail 1.9s ease-in-out infinite alternate; }
+      .shk-fin-l { transform-origin: 34px 72px; animation: shkFinL 1.9s ease-in-out infinite alternate; }
+      .shk-fin-r { transform-origin: 86px 72px; animation: shkFinR 1.9s ease-in-out infinite alternate; }
+
+      @keyframes shkBlink { 0%, 45%, 49%, 95%, 100% { transform: scaleY(1); } 47%, 97% { transform: scaleY(0.08); } }
+      @keyframes shkTail { 0% { transform: rotate(-8deg); } 100% { transform: rotate(9deg); } }
+      @keyframes shkFinL { 0% { transform: rotate(-6deg); } 100% { transform: rotate(10deg); } }
+      @keyframes shkFinR { 0% { transform: rotate(6deg); } 100% { transform: rotate(-10deg); } }
 
       @keyframes shkBubble {
         0%, 72% { opacity: 0; transform: scale(0.1); }
@@ -41,11 +50,11 @@
   </defs>
 
   <g>
-    <path d="M78 88 C94 84, 102 74, 108 60 C108 74, 104 86, 96 92 C104 96, 110 102, 110 110 C100 106, 90 100, 78 96 Z" fill="url(#sharkSkin)" stroke="#082f49" stroke-width="2.2" stroke-linejoin="round"/>
+    <path class="shk-tail" d="M78 88 C94 84, 102 74, 108 60 C108 74, 104 86, 96 92 C104 96, 110 102, 110 110 C100 106, 90 100, 78 96 Z" fill="url(#sharkSkin)" stroke="#082f49" stroke-width="2.2" stroke-linejoin="round"/>
     <path d="M50 26 C48 8, 58 3, 68 4 C64 11, 65 15, 70 17 C67 20, 68 24, 70 26 Z" fill="url(#sharkFin)" stroke="#082f49" stroke-width="2.2" stroke-linejoin="round"/>
 
-    <path d="M32 68 C14 70, 10 82, 20 88 C28 88, 34 82, 36 76 Z" fill="url(#sharkSkin)" stroke="#082f49" stroke-width="2.2"/>
-    <path d="M88 68 C106 70, 110 82, 100 88 C92 88, 86 82, 84 76 Z" fill="url(#sharkSkin)" stroke="#082f49" stroke-width="2.2"/>
+    <path class="shk-fin-l" d="M32 68 C14 70, 10 82, 20 88 C28 88, 34 82, 36 76 Z" fill="url(#sharkSkin)" stroke="#082f49" stroke-width="2.2"/>
+    <path class="shk-fin-r" d="M88 68 C106 70, 110 82, 100 88 C92 88, 86 82, 84 76 Z" fill="url(#sharkSkin)" stroke="#082f49" stroke-width="2.2"/>
 
     <path d="M30 56 C28 32, 42 22, 60 22 C78 22, 92 32, 90 56 C92 84, 78 104, 60 104 C42 104, 28 84, 30 56 Z" fill="url(#sharkSkin)" stroke="#082f49" stroke-width="2.3"/>
     <path d="M34 58 C42 52, 50 55, 60 55 C70 55, 78 52, 86 58 C87 82, 76 102, 60 102 C44 102, 33 82, 34 58 Z" fill="url(#sharkBelly)"/>
@@ -53,17 +62,19 @@
     <path d="M37 72 Q35 76 37 80 M41 73 Q39 77 41 81" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round"/>
     <path d="M83 72 Q85 76 83 80 M79 73 Q81 77 79 81" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round"/>
 
-    <ellipse cx="45" cy="49" rx="6.5" ry="7.5" fill="#082f49"/>
-    <ellipse cx="45" cy="49.5" rx="5.2" ry="6" fill="#0284c7"/>
-    <ellipse cx="45" cy="51.5" rx="3.8" ry="3.2" fill="#67e8f9"/>
-    <circle cx="42.5" cy="46" r="2.5" fill="#ffffff"/>
-    <circle cx="47.5" cy="52" r="1.2" fill="#ffffff"/>
+    <g class="shk-blink">
+      <ellipse cx="45" cy="49" rx="6.5" ry="7.5" fill="#082f49"/>
+      <ellipse cx="45" cy="49.5" rx="5.2" ry="6" fill="#0284c7"/>
+      <ellipse cx="45" cy="51.5" rx="3.8" ry="3.2" fill="#67e8f9"/>
+      <circle cx="42.5" cy="46" r="2.5" fill="#ffffff"/>
+      <circle cx="47.5" cy="52" r="1.2" fill="#ffffff"/>
 
-    <ellipse cx="75" cy="49" rx="6.5" ry="7.5" fill="#082f49"/>
-    <ellipse cx="75" cy="49.5" rx="5.2" ry="6" fill="#0284c7"/>
-    <ellipse cx="75" cy="51.5" rx="3.8" ry="3.2" fill="#67e8f9"/>
-    <circle cx="72.5" cy="46" r="2.5" fill="#ffffff"/>
-    <circle cx="77.5" cy="52" r="1.2" fill="#ffffff"/>
+      <ellipse cx="75" cy="49" rx="6.5" ry="7.5" fill="#082f49"/>
+      <ellipse cx="75" cy="49.5" rx="5.2" ry="6" fill="#0284c7"/>
+      <ellipse cx="75" cy="51.5" rx="3.8" ry="3.2" fill="#67e8f9"/>
+      <circle cx="72.5" cy="46" r="2.5" fill="#ffffff"/>
+      <circle cx="77.5" cy="52" r="1.2" fill="#ffffff"/>
+    </g>
 
     <ellipse cx="35" cy="56" rx="4.5" ry="2.3" fill="#fb7185" opacity="0.8"/>
     <ellipse cx="85" cy="56" rx="4.5" ry="2.3" fill="#fb7185" opacity="0.8"/>

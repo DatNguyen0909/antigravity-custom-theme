@@ -26,6 +26,17 @@
       .tofu-appear { animation: foxTofu 15s ease-in-out infinite; transform-origin: 60px 84px; }
       .leaf-fail { animation: foxLeaf 15s ease-in-out infinite; transform-origin: 60px 82px; }
       .poof-smoke { animation: foxPoof 15s ease-out infinite; transform-origin: 60px 84px; }
+      .fox-blink { transform-origin: 60px 52.5px; animation: foxBlink 3.6s infinite; }
+      .fox-tail-l { transform-origin: 38px 88px; animation: foxTailL 2.2s ease-in-out infinite alternate; }
+      .fox-tail-r { transform-origin: 82px 88px; animation: foxTailR 2.2s ease-in-out infinite alternate; }
+      .fox-ear-l { transform-origin: 42px 34px; animation: foxEarL 3.2s ease-in-out infinite; }
+      .fox-ear-r { transform-origin: 78px 34px; animation: foxEarR 3.2s ease-in-out -1.6s infinite; }
+
+      @keyframes foxBlink { 0%, 45%, 49%, 95%, 100% { transform: scaleY(1); } 47%, 97% { transform: scaleY(0.08); } }
+      @keyframes foxTailL { 0% { transform: rotate(-6deg); } 100% { transform: rotate(8deg); } }
+      @keyframes foxTailR { 0% { transform: rotate(6deg); } 100% { transform: rotate(-8deg); } }
+      @keyframes foxEarL { 0%, 86%, 100% { transform: rotate(0deg); } 92% { transform: rotate(-9deg); } }
+      @keyframes foxEarR { 0%, 86%, 100% { transform: rotate(0deg); } 92% { transform: rotate(9deg); } }
 
       @keyframes foxOrbHide {
         0%, 73% { opacity: 1; }
@@ -56,19 +67,27 @@
   </defs>
 
   <g>
-    <path d="M36 92 C12 96, 6 72, 18 58 C26 62, 32 76, 40 86 Z" fill="url(#foxFur)" stroke="#431407" stroke-width="2"/>
-    <path d="M18 58 C12 65, 13 73, 21 74 C24 68, 23 62, 18 58 Z" fill="url(#foxCream)"/>
+    <g class="fox-tail-l">
+      <path d="M36 92 C12 96, 6 72, 18 58 C26 62, 32 76, 40 86 Z" fill="url(#foxFur)" stroke="#431407" stroke-width="2"/>
+      <path d="M18 58 C12 65, 13 73, 21 74 C24 68, 23 62, 18 58 Z" fill="url(#foxCream)"/>
+    </g>
 
-    <path d="M84 92 C108 96, 114 72, 102 58 C94 62, 88 76, 80 86 Z" fill="url(#foxFur)" stroke="#431407" stroke-width="2"/>
-    <path d="M102 58 C108 65, 107 73, 99 74 C96 68, 97 62, 102 58 Z" fill="url(#foxCream)"/>
+    <g class="fox-tail-r">
+      <path d="M84 92 C108 96, 114 72, 102 58 C94 62, 88 76, 80 86 Z" fill="url(#foxFur)" stroke="#431407" stroke-width="2"/>
+      <path d="M102 58 C108 65, 107 73, 99 74 C96 68, 97 62, 102 58 Z" fill="url(#foxCream)"/>
+    </g>
 
-    <path d="M34 42 C24 18, 22 6, 30 8 C40 10, 48 24, 50 34 Z" fill="url(#foxFur)" stroke="#431407" stroke-width="2.2"/>
-    <path d="M35 38 C28 22, 27 13, 31 14 C37 16, 43 26, 45 34 Z" fill="url(#foxCream)"/>
-    <path d="M27 11 C25 8, 28 7, 32 9 C30 12, 28 12, 27 11 Z" fill="#431407"/>
+    <g class="fox-ear-l">
+      <path d="M34 42 C24 18, 22 6, 30 8 C40 10, 48 24, 50 34 Z" fill="url(#foxFur)" stroke="#431407" stroke-width="2.2"/>
+      <path d="M35 38 C28 22, 27 13, 31 14 C37 16, 43 26, 45 34 Z" fill="url(#foxCream)"/>
+      <path d="M27 11 C25 8, 28 7, 32 9 C30 12, 28 12, 27 11 Z" fill="#431407"/>
+    </g>
 
-    <path d="M86 42 C96 18, 98 6, 90 8 C80 10, 72 24, 70 34 Z" fill="url(#foxFur)" stroke="#431407" stroke-width="2.2"/>
-    <path d="M85 38 C92 22, 93 13, 89 14 C83 16, 77 26, 75 34 Z" fill="url(#foxCream)"/>
-    <path d="M93 11 C95 8, 92 7, 88 9 C90 12, 92 12, 93 11 Z" fill="#431407"/>
+    <g class="fox-ear-r">
+      <path d="M86 42 C96 18, 98 6, 90 8 C80 10, 72 24, 70 34 Z" fill="url(#foxFur)" stroke="#431407" stroke-width="2.2"/>
+      <path d="M85 38 C92 22, 93 13, 89 14 C83 16, 77 26, 75 34 Z" fill="url(#foxCream)"/>
+      <path d="M93 11 C95 8, 92 7, 88 9 C90 12, 92 12, 93 11 Z" fill="#431407"/>
+    </g>
 
     <ellipse cx="60" cy="86" rx="22" ry="18" fill="url(#foxFur)" stroke="#431407" stroke-width="2.2"/>
     <ellipse cx="60" cy="88" rx="14" ry="14" fill="url(#foxCream)"/>
@@ -83,17 +102,19 @@
     <circle cx="53" cy="39" r="1.8" fill="#dc2626"/>
     <circle cx="67" cy="39" r="1.8" fill="#dc2626"/>
 
-    <ellipse cx="46" cy="52" rx="6.5" ry="7.5" fill="#431407"/>
-    <ellipse cx="46" cy="52.5" rx="5.2" ry="6" fill="#ea580c"/>
-    <ellipse cx="46" cy="54.5" rx="3.8" ry="3.2" fill="#fde047"/>
-    <circle cx="43.5" cy="49" r="2.5" fill="#ffffff"/>
-    <circle cx="48.5" cy="55" r="1.2" fill="#ffffff"/>
+    <g class="fox-blink">
+      <ellipse cx="46" cy="52" rx="6.5" ry="7.5" fill="#431407"/>
+      <ellipse cx="46" cy="52.5" rx="5.2" ry="6" fill="#ea580c"/>
+      <ellipse cx="46" cy="54.5" rx="3.8" ry="3.2" fill="#fde047"/>
+      <circle cx="43.5" cy="49" r="2.5" fill="#ffffff"/>
+      <circle cx="48.5" cy="55" r="1.2" fill="#ffffff"/>
 
-    <ellipse cx="74" cy="52" rx="6.5" ry="7.5" fill="#431407"/>
-    <ellipse cx="74" cy="52.5" rx="5.2" ry="6" fill="#ea580c"/>
-    <ellipse cx="74" cy="54.5" rx="3.8" ry="3.2" fill="#fde047"/>
-    <circle cx="71.5" cy="49" r="2.5" fill="#ffffff"/>
-    <circle cx="76.5" cy="55" r="1.2" fill="#ffffff"/>
+      <ellipse cx="74" cy="52" rx="6.5" ry="7.5" fill="#431407"/>
+      <ellipse cx="74" cy="52.5" rx="5.2" ry="6" fill="#ea580c"/>
+      <ellipse cx="74" cy="54.5" rx="3.8" ry="3.2" fill="#fde047"/>
+      <circle cx="71.5" cy="49" r="2.5" fill="#ffffff"/>
+      <circle cx="76.5" cy="55" r="1.2" fill="#ffffff"/>
+    </g>
 
     <ellipse cx="36" cy="59" rx="4.5" ry="2.3" fill="#fb7185" opacity="0.75"/>
     <ellipse cx="84" cy="59" rx="4.5" ry="2.3" fill="#fb7185" opacity="0.75"/>

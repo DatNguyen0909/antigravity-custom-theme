@@ -27,6 +27,8 @@
       .hp-candy1 { animation: hpCandyL15s 15s ease-out infinite; opacity: 0; }
       .hp-candy2 { animation: hpCandyR15s 15s ease-out infinite; opacity: 0; }
       .hp-eyes-norm { animation: hpEyesNorm15s 15s steps(1) infinite; }
+      .hp-blink { transform-origin: 60px 67px; animation: hpBlink 3.6s infinite; }
+      @keyframes hpBlink { 0%, 44%, 48%, 94%, 100% { transform: scaleY(1); } 46%, 96% { transform: scaleY(0.1); } }
       .hp-eyes-happy { animation: hpEyesHappy15s 15s steps(1) infinite; opacity: 0; }
 
       @keyframes hpBob {
@@ -120,10 +122,12 @@
 
     <!-- Glowing Carved Eyes (Normal) -->
     <g class="hp-eyes-norm">
-      <polygon points="41,72 48,62 54,72" fill="url(#hpEyeGlow)" stroke="#7c2d12" stroke-width="1.4"/>
-      <polygon points="66,72 72,62 79,72" fill="url(#hpEyeGlow)" stroke="#7c2d12" stroke-width="1.4"/>
-      <circle cx="48" cy="69" r="1.6" fill="#ffffff"/>
-      <circle cx="72" cy="69" r="1.6" fill="#ffffff"/>
+      <g class="hp-blink">
+        <polygon points="41,72 48,62 54,72" fill="url(#hpEyeGlow)" stroke="#7c2d12" stroke-width="1.4"/>
+        <polygon points="66,72 72,62 79,72" fill="url(#hpEyeGlow)" stroke="#7c2d12" stroke-width="1.4"/>
+        <circle cx="48" cy="69" r="1.6" fill="#ffffff"/>
+        <circle cx="72" cy="69" r="1.6" fill="#ffffff"/>
+      </g>
     </g>
 
     <!-- Glowing Laughing Arcs during 15s BOO skit -->

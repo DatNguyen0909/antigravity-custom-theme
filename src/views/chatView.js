@@ -180,30 +180,8 @@ const ChatView = (function () {
             });
             syncInputSticker(inputContainer, vm);
         }
-        const existingInputActionStickers = inputContainer.querySelectorAll(':scope > .ag-input-sticker-action');
-        if (existingInputActionStickers.length === 0) {
-            const actImg = document.createElement('img');
-            actImg.className = 'ag-input-sticker-action';
-            actImg.src = actionStickerData;
-            actImg.dataset.agSrc = actionStickerData;
-            inputContainer.appendChild(actImg);
-        } else {
-            existingInputActionStickers.forEach((img, idx) => {
-                if (idx > 0) img.remove();
-                else if ((img.dataset.agSrc || img.src) !== actionStickerData) {
-                    img.src = actionStickerData;
-                    img.dataset.agSrc = actionStickerData;
-                }
-            });
-        }
+        inputContainer.querySelectorAll(':scope > .ag-input-sticker-action').forEach(img => img.remove());
         updateTypingSafetyNet(inputContainer, textarea, vm);
-        if (!inputContainer.dataset.agHoverWired) {
-            inputContainer.dataset.agHoverWired = '1';
-            inputContainer.addEventListener('mouseenter', () => {
-                if (!vm.getState().enabled) return;
-                EnvironmentService.restartActionSticker(inputContainer.querySelector(':scope > .ag-input-sticker-action'));
-            });
-        }
 
         const inputRect = inputContainer.getBoundingClientRect();
         if (inputRect.width < 100) return;
