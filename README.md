@@ -38,14 +38,15 @@
 
 ## 🌟 Tính năng nổi bật
 
-- **🎭 Hệ thống chuyển động 4 tầng cho mỗi linh vật (63 file SVG thuần CSS, siêu nhẹ)**:
-  1. **Tĩnh + Diễn cảnh tự động mỗi 15 giây (`idle.svg`)**: Đứng nhịp nhàng trên bong bóng chat; cứ mỗi 15 giây tự diễn một tình huống hài hước riêng (Bí ngô Halloween bật nắp đầu ma con tung kẹo, Corgi uống dừa bị cua kẹp mũi, Cupid bắn nứt tim rồi dán băng cá nhân, Cá chép cắn bánh nướng Trung Thu...).
-  2. **Hành động đặc trưng khi bạn đang gõ (`typing.svg`)**: Khi nhập tin nhắn, mỗi linh vật diễn đúng bản chất riêng (Corgi xúc cát đắp lâu đài, Cá chép múa đèn ông sao, Cupid bắn thư tình, Bí ngô khuấy vạc kẹo, Cá mập mài răng...) kèm hạt hiệu ứng theo từng phím và bong bóng suy nghĩ khi dừng tay 1,5 giây.
-  3. **Hoạt cảnh sân khấu ngang khi rê chuột (`action.svg`)**: Rê chuột vào bong bóng chat sẽ mở ra cả một sân khấu ngang có bối cảnh đi kèm (lướt ván sóng biển rặng dừa, cá chép vượt Vũ Môn, mây kẹo bông Valentine, nghĩa địa trăng máu, cọc Mai Hoa Thung...) được căn lề chuẩn xác không che chữ.
-  4. **🗓️ Đồng bộ theo Mùa & Lễ hội (`Seasonal & Holiday Sync`) + Song ngữ Anh/Việt**: Tự động chuyển đổi linh vật theo lịch 4 mùa và các kỳ lễ lớn trong năm, đi kèm **thẻ Chủ đề hôm nay (`ĐANG ÁP DỤNG` / `GỢI Ý THEO LỊCH`)** nổi bật ngay trong Settings. Hỗ trợ chọn ngôn ngữ **EN / VI**, **Dark / Light**, chỉnh độ tối nền, ảnh nền cá nhân và lưu cứng trên ổ đĩa.
-  5. **🎧 Velvet Studio Audio Engine — 21 Bộ Tiếng Phím & Nhạc Nền Nhạc Cụ Thật (`0 KB MP3`)**:
-     - **Mô phỏng vật lý nhạc cụ phòng thu + Phòng hòa nhạc Stereo Reverb (`ConvolverNode`)**: Tổng hợp trực tiếp tiếng **Đại Dương Cầm nỉ ấm (`Felt Grand Piano` đạp pedal ngân Stereo)**, **dây gảy vật lý `Karplus-Strong` (Guitar Nylon, Đàn Tranh tơ, Đàn Hạc, Koto, Ukulele)**, **Upright Bass** và **Sáo Trúc / Ocarina** cho 18 chủ đề tự nhiên (nổi bật với *Bản Nocturne Piano Đêm Mưa 2 Chương* của **Mèo Than**, *Ballad Piano Giáng Sinh*, *Velvet Jazz Lounge* của **Chốt Gangster**, *Hòa tấu Ghibli* của **Cá Voi Mây**), đồng thời giữ chuẩn chất **Chiptune 8-bit / Synthwave** cho 3 chủ đề công nghệ (**Pixel Hiệp Sĩ**, **Phi Hành Gia**, **Robot AI**).
-     - **Bộ định thời phần cứng (`Hardware Lookahead Audio Clock` `0.000ms` jitter)**: Nhạc trôi mượt mà tuyệt đối không khựng vấp kể cả khi giao diện đang tải nặng, kèm công tắc độc lập **🎹 Tiếng phím**, **🎶 Nhạc nền**, **▶️ Nghe thử** và thanh **🔊 Âm lượng**.
+1. **🎭 Linh vật động theo từng chủ đề (21 mẫu — 63 file SVG siêu nhẹ)**:
+   - Mỗi linh vật có 3 trạng thái riêng biệt: **Tự diễn hoạt cảnh vui mỗi 15s**, **Tư thế phản ứng khi bạn gõ phím** (kèm bong bóng suy nghĩ) và **Sân khấu bối cảnh ngang** khi rê chuột vào đoạn chat.
+2. **🎧 Nhạc nền & Tiếng gõ phím sống động theo từng chủ đề (`0 KB MP3`)**:
+   - Mô phỏng nhạc cụ thực tế (Piano, Guitar thùng, Đàn Tranh, Đàn Hạc, Sáo Trúc, Contrabass) du dương ấm áp, kết hợp Chiptune 8-bit / Synthwave riêng cho nhóm game & vũ trụ.
+   - Có công tắc bật/tắt độc lập cho **🎹 Tiếng phím**, **🎶 Nhạc nền**, nút nghe thử và thanh chỉnh âm lượng.
+3. **🗓️ Đồng bộ tự động theo Mùa & Lễ hội (`Seasonal & Holiday Sync`)**:
+   - Tự động chuyển đổi linh vật theo 4 mùa và các dịp lễ lớn trong năm (Tết, Valentine, Hè, Trung Thu, Halloween, Noel...) kèm thẻ nổi bật hiển thị **Chủ đề hôm nay**.
+4. **🎨 Tùy biến giao diện toàn diện & Lưu trữ bền vững**:
+   - Hỗ trợ song ngữ **Tiếng Việt / English**, tương thích mượt cả **Dark & Light Mode**, chỉnh độ tối nền, tải ảnh nền riêng và lưu cấu hình tự động trên ổ đĩa.
 
 > [!TIP]
 > **🗓️ Lịch Đồng bộ 9 Mùa & Lễ hội trong năm (`Auto-Season`)**:
@@ -181,14 +182,15 @@ Phát hành theo giấy phép **MIT License** — tự do sử dụng, tùy bi�
 
 ## 🌟 Key Features
 
-- **🎭 4-Tier Interactive Mascot System (63 pure CSS-animated SVGs, ultra-lightweight)**:
-  1. **Idle + 15-Second Auto-Skits (`idle.svg`)**: Mascots perch atop your chat bubbles and perform a funny character skit every 15 seconds (Halloween Pumpkin pops a baby ghost with candy, Beach Corgi gets nose-pinched by a crab, Cupid cracks & band-aids a heart, Mid-Autumn Carp bites a glowing mooncake...).
-  2. **Character-Specific Typing Reactions (`typing.svg`)**: While you type a prompt, your mascot switches to an authentic activity pose (Corgi shovels a sandcastle, Carp spins a star lantern, Cupid fires love letters, Pumpkin stirs a candy cauldron, Shark files its teeth...) with per-keystroke particles and a thinking bubble when you pause for 1.5s.
-  3. **Panoramic Hover Stage (`action.svg`)**: Hovering over any user chat bubble unveils a full wide-screen animated stage (Tropical Surf Beach, Carp leaping the Dragon Gate, Cotton-Candy Valentine Sky, Blood-Moon Graveyard, Torii gates...) cleanly aligned above bubble text.
-  4. **🗓️ Seasonal & Holiday Sync + Bilingual UI**: Automatically adapts your mascot to the four seasons and major holidays throughout the year, complete with a highlighted **Today’s Theme (`ACTIVE` / `SCHEDULED`)** callout pill in Settings, built-in **English / Tiếng Việt** selector, **Dark & Light** glassmorphism, dimming slider, custom wallpaper upload, and persistent disk storage.
-  5. **🎧 Velvet Studio Physical-Modeling & Lookahead Audio Engine (`0 KB MP3`)**:
-     - **Real Acoustic Instrument Synthesis + Stereo Concert Hall `ConvolverNode` Reverb**: Synthesizes stereo-panned **Unison Felt Grand Piano (with sustain pedal)**, **Karplus-Strong physical plucked strings (Nylon Guitar, Silk Guzheng/Đàn Tranh, Concert Harp, Koto, Ukulele)**, **Velvet Upright Bass**, and **Breathy Bamboo Flute** for 18 natural themes (featuring *Midnight Cat’s 2-Movement Rainy Piano Nocturne*, *Fireside Christmas Piano*, *Velvet Jazz Lounge*, and *Ghibli Sky Waltz*), while preserving authentic **4-Channel 8-Bit Chiptune & Cosmic Synthwave** exclusively for **Pixel Knight**, **Galaxy Astronaut**, and **AI Bot**.
-     - **Hardware-Clock Lookahead Scheduler (`0.000ms` jitter)**: Sample-accurate Web Audio clock scheduling guarantees silky, stutter-free playback alongside independent **🎹 SFX**, **🎶 BGM**, **▶️ Test Sound**, and **🔊 Volume** controls.
+1. **🎭 Animated Mascots per Theme (21 Presets — 63 Lightweight SVGs)**:
+   - Each mascot brings 3 interactive states: **15-second funny auto-skits**, **character-specific typing poses** (with particles & thinking bubbles), and a **panoramic stage scene** on chat hover.
+2. **🎧 Lifelike Theme Soundtracks & Keystroke FX (`0 KB MP3`)**:
+   - Models realistic acoustic instruments (Grand Piano, Nylon Guitar, Guzheng/Zither, Harp, Flute, Upright Bass) alongside retro 8-bit Chiptune & Synthwave for tech/game themes.
+   - Features independent **🎹 Keystroke SFX**, **🎶 Ambient BGM**, **▶️ Preview**, and **🔊 Volume** controls.
+3. **🗓️ Automatic Seasonal & Holiday Sync**:
+   - Automatically switches mascots across all four seasons and major holidays (Lunar New Year, Valentine, Summer, Mid-Autumn, Halloween, Christmas...) with a highlighted **Today’s Theme** badge.
+4. **🎨 Full UI Personalization & Persistent Storage**:
+   - Includes a built-in **English / Tiếng Việt** selector, **Dark & Light** glassmorphism, background dimming slider, custom wallpaper upload, and automatic disk persistence.
 
 > [!TIP]
 > **🗓️ 9-Period Seasonal & Holiday Sync Calendar (`Auto-Season`)**:
