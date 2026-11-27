@@ -3,6 +3,33 @@
 // ========================================================
 
 const SettingsView = (function () {
+    const SETTINGS_I18N = {
+        vi: {
+            toggleTitle: 'Giao diện tùy chỉnh (Custom Theme)',
+            toggleDesc: 'Gạt tắt (OFF) để quay về giao diện mặc định gốc (Default) ngay lập tức.',
+            dimTitle: 'Độ tối',
+            dimDesc: 'Điều chỉnh độ rõ của nền để dễ đọc nội dung.',
+            themesTitle: (n) => `Bong bóng chat & Chủ đề (${n} Mẫu)`,
+            themesDesc: 'Mỗi mẫu có linh vật, màu nền và chuyển động riêng biệt (bay lượn, bơi lội, trôi nổi...).',
+            bgTitle: 'Hình nền khung chat',
+            bgDesc: '"Theo màu chủ đề" sẽ tự đổi nền cùng tông và hiệu ứng cảnh vật theo mẫu bạn chọn.',
+            bgThemeBtn: '🎨 Theo màu chủ đề',
+            bgCustomBtn: '📁 Ảnh của tôi...'
+        },
+        en: {
+            toggleTitle: 'Enable Custom Theme',
+            toggleDesc: 'Switch OFF to instantly restore the native default Antigravity interface.',
+            dimTitle: 'Background Dimming',
+            dimDesc: 'Adjust background contrast for comfortable text readability.',
+            themesTitle: (n) => `Chat Bubbles & Mascot Themes (${n} Presets)`,
+            themesDesc: 'Each preset features a unique Chibi mascot, color palette, typing pose, and hover stage.',
+            bgTitle: 'Chat Wallpaper',
+            bgDesc: '"Match Theme" automatically adapts background scenery and ambient particles to your chosen mascot.',
+            bgThemeBtn: '🎨 Match Theme',
+            bgCustomBtn: '📁 Custom Image...'
+        }
+    };
+
     function isLeafText(el, txt) {
         return el && el.children.length === 0 && (el.textContent || '').trim() === txt;
     }
@@ -63,6 +90,8 @@ const SettingsView = (function () {
         panel.style.display = 'block';
 
         const config = vm.getState();
+        const lang = config.lang === 'en' ? 'en' : 'vi';
+        const txt = SETTINGS_I18N[lang];
         const themes = vm.getThemes();
         const opacityStyle = config.enabled ? '1' : '0.4';
         const pointerStyle = config.enabled ? 'auto' : 'none';
@@ -70,13 +99,18 @@ const SettingsView = (function () {
         panel.innerHTML = `
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;">
                 <div style="font-size: 18px; font-weight: 600; color: #fff;">Custom Theme</div>
-                <button id="ag-close-settings-btn" title="Close" style="background: rgba(255,255,255,0.08); border: none; color: #bbb; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center;">✕</button>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <button id="ag-lang-toggle-btn" title="Switch Language (English / Tiếng Việt)" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); color: #eee; padding: 4px 11px; border-radius: 99px; cursor: pointer; font-size: 12px; font-weight: 600;">
+                        🌐 ${lang === 'en' ? 'EN · Switch to VI' : 'VI · Đổi sang EN'}
+                    </button>
+                    <button id="ag-close-settings-btn" title="Close" style="background: rgba(255,255,255,0.08); border: none; color: #bbb; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center;">✕</button>
+                </div>
             </div>
 
             <div class="ag-toggle-card">
                 <div>
-                    <div class="ag-section-title" style="margin: 0; font-size: 14px;">Giao diện tùy chỉnh (Custom Theme)</div>
-                    <div class="ag-section-desc" style="margin: 4px 0 0; font-size: 12px;">Gạt tắt (OFF) để quay về giao diện mặc định gốc (Default) ngay lập tức.</div>
+                    <div class="ag-section-title" style="margin: 0; font-size: 14px;">${txt.toggleTitle}</div>
+                    <div class="ag-section-desc" style="margin: 4px 0 0; font-size: 12px;">${txt.toggleDesc}</div>
                 </div>
                 <label class="ag-switch">
                     <input type="checkbox" id="ag-enable-toggle" ${config.enabled ? 'checked' : ''}>
@@ -85,43 +119,52 @@ const SettingsView = (function () {
             </div>
 
             <div id="ag-theme-controls-body" style="opacity: ${opacityStyle}; pointer-events: ${pointerStyle}; transition: opacity 0.25s ease;">
-                <div class="ag-section-title">Độ tối</div>
-                <div class="ag-section-desc">Điều chỉnh độ rõ của nền để dễ đọc nội dung.</div>
+                <div class="ag-section-title">${txt.dimTitle}</div>
+                <div class="ag-section-desc">${txt.dimDesc}</div>
                 <div class="ag-slider-row">
                     <input type="range" class="ag-slider" id="ag-dim-slider" min="0" max="100" value="${config.bgDim}" />
                     <span class="ag-slider-val" id="ag-dim-val">${config.bgDim}%</span>
                 </div>
 
-                <div class="ag-section-title">Bong bóng chat & Chủ đề (${themes.length} Mẫu)</div>
-                <div class="ag-section-desc">Mỗi mẫu có linh vật, màu nền và chuyển động riêng biệt (bay lượn, bơi lội, trôi nổi...).</div>
+                <div class="ag-section-title">${txt.themesTitle(themes.length)}</div>
+                <div class="ag-section-desc">${txt.themesDesc}</div>
                 <div class="ag-theme-grid" id="ag-theme-grid">
                     ${themes.map(t => {
                         const isSel = t.id === config.activeTheme;
+                        const loc = localizeTheme(t, lang);
                         return `
                             <div class="ag-theme-card ${isSel ? 'selected' : ''}" data-theme-id="${t.id}">
                                 <div class="ag-card-bg-swatch" style="background: ${THEME_BG[t.id]};"></div>
                                 <div class="ag-card-bubble-preview" style="background: ${t.bubbleBg}; border: 1px solid ${t.bubbleBorder}; color: ${t.bubbleText};">
                                     <img class="ag-card-sticker" src="${t.sticker}" alt="" />
                                     <img class="ag-card-sticker-action" src="${t.actionSticker || t.sticker}" alt="" />
-                                    <span>${t.previewText}</span>
+                                    <span>${loc.previewText}</span>
                                 </div>
-                                <div class="ag-card-title" style="position: relative;">${t.name}</div>
-                                <div class="ag-card-motion-tag">${t.motionDesc}</div>
+                                <div class="ag-card-title" style="position: relative;">${loc.name}</div>
+                                <div class="ag-card-motion-tag">${loc.motionDesc}</div>
                                 ${isSel ? '<span class="ag-card-check">✓</span>' : ''}
                             </div>
                         `;
                     }).join('')}
                 </div>
 
-                <div class="ag-section-title">Hình nền khung chat</div>
-                <div class="ag-section-desc">"Theo màu chủ đề" sẽ tự đổi nền cùng tông và hiệu ứng cảnh vật theo mẫu bạn chọn.</div>
+                <div class="ag-section-title">${txt.bgTitle}</div>
+                <div class="ag-section-desc">${txt.bgDesc}</div>
                 <div class="ag-bg-mode-row">
-                    <button class="ag-bg-mode-btn ${config.bgMode !== 'custom' ? 'selected' : ''}" data-bg-mode="theme">🎨 Theo màu chủ đề</button>
-                    <button class="ag-bg-mode-btn ${config.bgMode === 'custom' ? 'selected' : ''}" data-bg-mode="custom">📁 Ảnh của tôi...</button>
+                    <button class="ag-bg-mode-btn ${config.bgMode !== 'custom' ? 'selected' : ''}" data-bg-mode="theme">${txt.bgThemeBtn}</button>
+                    <button class="ag-bg-mode-btn ${config.bgMode === 'custom' ? 'selected' : ''}" data-bg-mode="custom">${txt.bgCustomBtn}</button>
                     <input type="file" id="ag-wallpaper-input" accept="image/*" style="display: none;" />
                 </div>
             </div>
         `;
+
+        const langBtn = panel.querySelector('#ag-lang-toggle-btn');
+        if (langBtn) {
+            langBtn.addEventListener('click', () => {
+                vm.setLang(lang === 'en' ? 'vi' : 'en');
+                renderOverlay(modal, vm);
+            });
+        }
 
         const closeBtn = panel.querySelector('#ag-close-settings-btn');
         if (closeBtn) {

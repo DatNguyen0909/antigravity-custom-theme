@@ -3,12 +3,14 @@
 // ========================================================
 
 const ThemeViewModel = (function () {
+    const defaultLang = (typeof navigator !== 'undefined' && /^vi\b/i.test(navigator.language || '')) ? 'vi' : 'en';
     let config = {
         enabled: true,
         activeTheme: 'jade-dragon',
         bgDim: 69,
         bgMode: 'theme',          // 'theme' | 'custom'
-        customWallpaper: null
+        customWallpaper: null,
+        lang: defaultLang         // 'en' | 'vi'
     };
 
     const typingState = {
@@ -112,6 +114,12 @@ const ThemeViewModel = (function () {
         StorageService.save(config);
     }
 
+    function setLang(lang) {
+        config.lang = lang === 'en' ? 'en' : 'vi';
+        notify('lang-changed');
+        StorageService.save(config);
+    }
+
     // ---- Typing Reaction State Logic ----
     function recordKeystroke() {
         const now = Date.now();
@@ -158,6 +166,7 @@ const ThemeViewModel = (function () {
         setActiveTheme,
         setBgMode,
         setCustomWallpaper,
+        setLang,
         recordKeystroke,
         scheduleTypingTimers,
         resetTypingTimers

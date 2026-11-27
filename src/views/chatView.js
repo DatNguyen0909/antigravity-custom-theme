@@ -62,11 +62,11 @@ const ChatView = (function () {
         setTimeout(() => { if (p.parentNode) p.remove(); }, 900);
     }
 
-    function showThinkBubble(wrap, fx) {
+    function showThinkBubble(wrap, fx, lang) {
         if (wrap.querySelector(':scope > .ag-think-bubble')) return;
         const b = document.createElement('span');
         b.className = 'ag-think-bubble' + (fx.mono ? ' mono' : '');
-        b.textContent = fx.think;
+        b.textContent = (lang === 'en' && fx.thinkEn) ? fx.thinkEn : fx.think;
         wrap.appendChild(b);
     }
 
@@ -102,7 +102,7 @@ const ChatView = (function () {
                     wrap.classList.remove('ag-typing-fast');
                     wrap.classList.add('ag-typing-pause');
                     syncInputSticker(wrap, vm);
-                    showThinkBubble(wrap, result.fx);
+                    showThinkBubble(wrap, result.fx, vm.getState().lang);
                 },
                 () => clearTypingState(wrap, vm)
             );

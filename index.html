@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -92,9 +92,9 @@
       background: var(--ag-theme-bubble-bg); border: 1px solid var(--ag-theme-bubble-border);
       color: var(--ag-theme-bubble-text);
     }
-    .controls { display: flex; align-items: center; gap: 12px; }
+    .controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     .seg-btn {
-      padding: 6px 13px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.16);
+      padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.16);
       background: rgba(255,255,255,0.06); color: inherit; cursor: pointer; font-size: 12.5px; font-weight: 600;
       transition: all 0.18s ease;
     }
@@ -103,10 +103,10 @@
       border-color: var(--ag-theme-accent);
       box-shadow: 0 0 0 1px var(--ag-theme-accent);
     }
-    .dim-ctrl { display: flex; align-items: center; gap: 8px; font-size: 12px; opacity: 0.9; }
-    .dim-ctrl input { width: 90px; accent-color: var(--ag-theme-accent); cursor: pointer; }
+    .dim-ctrl { display: flex; align-items: center; gap: 7px; font-size: 12px; opacity: 0.9; }
+    .dim-ctrl input { width: 82px; accent-color: var(--ag-theme-accent); cursor: pointer; }
     .gh-link {
-      text-decoration: none; padding: 6px 13px; border-radius: 8px; font-size: 12.5px; font-weight: 600;
+      text-decoration: none; padding: 6px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 600;
       background: var(--ag-theme-accent); color: #fff !important;
     }
 
@@ -258,23 +258,24 @@
     <header class="topbar">
       <div class="brand">
         <span>✨ Antigravity Custom Theme</span>
-        <span class="badge" id="active-badge">Rồng ngọc</span>
+        <span class="badge" id="active-badge">Jade Dragon</span>
       </div>
       <div class="controls">
-        <button class="seg-btn active" id="tab-sim">💬 Mô phỏng khung Chat</button>
-        <button class="seg-btn" id="tab-gal">🎨 Trưng bày 51 SVG</button>
+        <button class="seg-btn active" id="tab-sim">💬 Chat Simulator</button>
+        <button class="seg-btn" id="tab-gal">🎨 51-SVG Showcase</button>
         <button class="seg-btn" id="mode-btn">🌙 Dark</button>
         <label class="dim-ctrl">
-          <span>Độ tối</span>
+          <span id="dim-title">Dim</span>
           <input type="range" id="dim-range" min="0" max="100" value="65" />
           <span id="dim-label">65%</span>
         </label>
+        <button class="seg-btn" id="lang-btn" title="Switch Language / Đổi ngôn ngữ">🌐 EN / VI</button>
         <a class="gh-link" href="https://github.com/DatNguyen0909/antigravity-custom-theme" target="_blank" rel="noopener">⭐ GitHub</a>
       </div>
     </header>
 
     <aside class="sidebar">
-      <div class="side-title">Chọn chủ đề (<span id="theme-count">17</span> mẫu)</div>
+      <div class="side-title" id="side-title">Choose Theme (17 presets)</div>
       <div class="theme-list" id="theme-list"></div>
     </aside>
 
@@ -282,7 +283,7 @@
       <!-- Interactive Live Chat Simulator -->
       <section class="chat-sim" id="view-sim">
         <div class="hint-banner">
-          <span>💡 <b>Thử tương tác:</b> Rê chuột vào bong bóng chat để xem <b>hoạt cảnh sân khấu</b> • Gõ chữ vào ô bên dưới để xem <b>linh vật diễn tư thế riêng</b> • Đợi mỗi <b>15s</b> để xem hoạt cảnh tự động!</span>
+          <span id="hint-text"></span>
         </div>
 
         <div class="messages" id="msg-list">
@@ -292,12 +293,10 @@
             <span class="ag-sparkle s1">❖</span>
             <span class="ag-sparkle s2">❖</span>
             <span class="ag-sparkle s3">❖</span>
-            <div>Rê chuột vào bong bóng chat này để xem hoạt cảnh bay lượn / hành động ngang nhé! ✨</div>
+            <div id="sample-bubble-1"></div>
           </div>
 
-          <div class="ai-msg">
-            Chào bạn! Bạn có thể bấm chọn bất kỳ mẫu nào trong <b>17 chủ đề Chibi</b> ở cột bên trái, chuyển đổi <b>Dark / Light</b>, hoặc <b>gõ thử vào ô nhập bên dưới</b> để xem linh vật đổi sang tư thế đặc trưng riêng (mài răng, vờn cuộn len, rèn kiếm 8-bit, gõ laptop, giã bánh Mochi...).
-          </div>
+          <div class="ai-msg" id="sample-ai-msg"></div>
 
           <div class="ag-custom-user-bubble">
             <img class="ag-bubble-sticker" alt="" />
@@ -305,15 +304,15 @@
             <span class="ag-sparkle s1">❖</span>
             <span class="ag-sparkle s2">❖</span>
             <span class="ag-sparkle s3">❖</span>
-            <div id="sample-greeting">Xin chào 🐉</div>
+            <div id="sample-greeting">Hello there 🐉</div>
           </div>
         </div>
 
         <form class="ag-custom-input-wrapper ag-has-typing-svg" id="composer-form">
           <img class="ag-input-sticker" id="input-sticker" alt="" />
           <img class="ag-input-sticker-action" id="input-sticker-action" alt="" />
-          <input id="demo-input" type="text" placeholder="Gõ thử vào đây để xem linh vật phản ứng theo từng phím gõ..." autocomplete="off" />
-          <button type="submit" class="send-btn">Gửi ↵</button>
+          <input id="demo-input" type="text" placeholder="" autocomplete="off" />
+          <button type="submit" class="send-btn" id="send-btn">Send ↵</button>
         </form>
       </section>
 
@@ -346,9 +345,53 @@
   <script src="./src/models/decor.js"></script>
   <script>
     (function () {
+      const UI_TEXT = {
+        en: {
+          tabSim: '💬 Chat Simulator',
+          tabGal: '🎨 51-SVG Showcase',
+          dim: 'Dim',
+          langBtn: '🇺🇸 EN · VI',
+          sideTitle: (n) => `Choose Theme (${n} presets)`,
+          hint: '💡 <b>Try interacting:</b> Hover any chat bubble for the <b>panoramic stage scene</b> • Type below to trigger <b>character-specific typing poses</b> • Watch every <b>15s</b> for funny auto-skits!',
+          bubble1: 'Hover over this chat bubble to trigger the full panoramic hover stage! ✨',
+          aiMsg: 'Welcome! Click any of the <b>17 Chibi themes</b> on the left, toggle <b>Dark / Light</b> mode, or <b>start typing below</b> to watch each mascot perform its signature action (filing shark teeth, batting red yarn, forging an 8-bit sword, pounding Mochi, coding...).',
+          placeholder: 'Type here to watch the mascot react to every keystroke...',
+          send: 'Send ↵',
+          galIdle: 'Idle + 15s Skit',
+          galTyping: 'While Typing',
+          galHover: 'Hover Stage'
+        },
+        vi: {
+          tabSim: '💬 Mô phỏng khung Chat',
+          tabGal: '🎨 Trưng bày 51 SVG',
+          dim: 'Độ tối',
+          langBtn: '🇻🇳 VI · EN',
+          sideTitle: (n) => `Chọn chủ đề (${n} mẫu)`,
+          hint: '💡 <b>Thử tương tác:</b> Rê chuột vào bong bóng chat để xem <b>hoạt cảnh sân khấu</b> • Gõ chữ vào ô bên dưới để xem <b>linh vật diễn tư thế riêng</b> • Đợi mỗi <b>15s</b> để xem hoạt cảnh tự động!',
+          bubble1: 'Rê chuột vào bong bóng chat này để xem hoạt cảnh bay lượn / hành động ngang nhé! ✨',
+          aiMsg: 'Chào bạn! Bạn có thể bấm chọn bất kỳ mẫu nào trong <b>17 chủ đề Chibi</b> ở cột bên trái, chuyển đổi <b>Dark / Light</b>, hoặc <b>gõ thử vào ô nhập bên dưới</b> để xem linh vật đổi sang tư thế đặc trưng riêng (mài răng, vờn cuộn len, rèn kiếm 8-bit, gõ laptop, giã bánh Mochi...).',
+          placeholder: 'Gõ thử vào đây để xem linh vật phản ứng theo từng phím gõ...',
+          send: 'Gửi ↵',
+          galIdle: 'Tĩnh + 15s',
+          galTyping: 'Khi đang gõ',
+          galHover: 'Rê chuột (Sân khấu)'
+        }
+      };
+
+      function detectInitialLang() {
+        try {
+          const q = new URLSearchParams(window.location.search).get('lang');
+          if (q === 'en' || q === 'vi') return q;
+          const saved = localStorage.getItem('ag_preview_lang');
+          if (saved === 'en' || saved === 'vi') return saved;
+        } catch (e) {}
+        return /^vi\b/i.test(navigator.language || '') ? 'vi' : 'en';
+      }
+
       let activeId = 'jade-dragon';
       let isLight = false;
       let bgDim = 65;
+      let lang = detectInitialLang();
       const typeState = { keys: [], lastParticle: 0, pauseTimer: null, clearTimer: null };
 
       const bgEl = document.getElementById('ag-custom-bg');
@@ -358,6 +401,8 @@
       const inputSticker = document.getElementById('input-sticker');
       const inputAction = document.getElementById('input-sticker-action');
       const msgList = document.getElementById('msg-list');
+      const listEl = document.getElementById('theme-list');
+      const galGrid = document.getElementById('gallery-grid');
 
       function getTheme(id) {
         return THEMES.find(t => t.id === (id || activeId)) || THEMES[0];
@@ -440,12 +485,82 @@
         inputAction.src = t.actionSticker;
       }
 
+      function buildCards() {
+        const ui = UI_TEXT[lang];
+        listEl.innerHTML = '';
+        galGrid.innerHTML = '';
+
+        THEMES.forEach(t => {
+          const loc = localizeTheme(t, lang);
+          const card = document.createElement('div');
+          card.className = 'ag-theme-card' + (t.id === activeId ? ' selected' : '');
+          card.dataset.themeId = t.id;
+          card.innerHTML = `
+            <div class="card-swatch" style="background: ${THEME_BG[t.id]};"></div>
+            <img class="ag-card-sticker-action" src="${t.actionSticker}" alt="" />
+            <div class="card-row">
+              <div>
+                <div class="card-name">${loc.name}</div>
+                <div class="card-desc">${loc.motionDesc}</div>
+              </div>
+              <img class="ag-card-sticker" src="${t.sticker}" alt="" />
+            </div>
+          `;
+          card.addEventListener('click', () => {
+            activeId = t.id;
+            applyAll();
+          });
+          listEl.appendChild(card);
+
+          const gCard = document.createElement('div');
+          gCard.className = 'gal-card';
+          gCard.innerHTML = `
+            <div class="gal-head">
+              <span>${loc.name}</span>
+              <span style="font-size:12px; color:${t.accent};">${loc.previewText}</span>
+            </div>
+            <div class="gal-stages">
+              <div class="gal-box">
+                <img class="sq" src="${t.sticker}" alt="${loc.name} idle" />
+                <div class="gal-lbl">${ui.galIdle}</div>
+              </div>
+              <div class="gal-box">
+                <img class="sq" src="${t.typingSticker}" alt="${loc.name} typing" />
+                <div class="gal-lbl">${ui.galTyping}</div>
+              </div>
+              <div class="gal-box">
+                <img class="wide" src="${t.actionSticker}" alt="${loc.name} hover" />
+                <div class="gal-lbl">${ui.galHover}</div>
+              </div>
+            </div>
+          `;
+          galGrid.appendChild(gCard);
+        });
+      }
+
+      function applyLanguageText() {
+        const ui = UI_TEXT[lang];
+        document.documentElement.lang = lang;
+        document.getElementById('tab-sim').textContent = ui.tabSim;
+        document.getElementById('tab-gal').textContent = ui.tabGal;
+        document.getElementById('dim-title').textContent = ui.dim;
+        document.getElementById('lang-btn').textContent = ui.langBtn;
+        document.getElementById('side-title').textContent = ui.sideTitle(THEMES.length);
+        document.getElementById('hint-text').innerHTML = ui.hint;
+        document.getElementById('sample-bubble-1').textContent = ui.bubble1;
+        document.getElementById('sample-ai-msg').innerHTML = ui.aiMsg;
+        inputEl.placeholder = ui.placeholder;
+        document.getElementById('send-btn').textContent = ui.send;
+        buildCards();
+      }
+
       function applyAll() {
         const t = getTheme();
+        const loc = localizeTheme(t, lang);
         document.body.setAttribute('data-ag-theme', t.id);
         document.body.classList.toggle('ag-light-mode', isLight);
-        document.getElementById('active-badge').textContent = t.name;
-        document.getElementById('sample-greeting').textContent = t.previewText;
+        document.getElementById('active-badge').textContent = loc.name;
+        document.getElementById('sample-greeting').textContent = loc.previewText;
 
         const root = document.documentElement;
         root.style.setProperty('--ag-theme-accent', t.accent);
@@ -482,57 +597,6 @@
           c.classList.toggle('selected', c.dataset.themeId === t.id);
         });
       }
-
-      // Build Sidebar Cards & Gallery Grid
-      document.getElementById('theme-count').textContent = THEMES.length;
-      const listEl = document.getElementById('theme-list');
-      const galGrid = document.getElementById('gallery-grid');
-
-      THEMES.forEach(t => {
-        const card = document.createElement('div');
-        card.className = 'ag-theme-card' + (t.id === activeId ? ' selected' : '');
-        card.dataset.themeId = t.id;
-        card.innerHTML = `
-          <div class="card-swatch" style="background: ${THEME_BG[t.id]};"></div>
-          <img class="ag-card-sticker-action" src="${t.actionSticker}" alt="" />
-          <div class="card-row">
-            <div>
-              <div class="card-name">${t.name}</div>
-              <div class="card-desc">${t.motionDesc}</div>
-            </div>
-            <img class="ag-card-sticker" src="${t.sticker}" alt="" />
-          </div>
-        `;
-        card.addEventListener('click', () => {
-          activeId = t.id;
-          applyAll();
-        });
-        listEl.appendChild(card);
-
-        const gCard = document.createElement('div');
-        gCard.className = 'gal-card';
-        gCard.innerHTML = `
-          <div class="gal-head">
-            <span>${t.name}</span>
-            <span style="font-size:12px; color:${t.accent};">${t.previewText}</span>
-          </div>
-          <div class="gal-stages">
-            <div class="gal-box">
-              <img class="sq" src="${t.sticker}" alt="${t.name} idle" />
-              <div class="gal-lbl">Tĩnh + 15s</div>
-            </div>
-            <div class="gal-box">
-              <img class="sq" src="${t.typingSticker}" alt="${t.name} typing" />
-              <div class="gal-lbl">Khi đang gõ</div>
-            </div>
-            <div class="gal-box">
-              <img class="wide" src="${t.actionSticker}" alt="${t.name} hover" />
-              <div class="gal-lbl">Rê chuột (Sân khấu)</div>
-            </div>
-          </div>
-        `;
-        galGrid.appendChild(gCard);
-      });
 
       // Wire bubble hover burst
       function wireBubbleHover(b) {
@@ -586,7 +650,7 @@
           if (!composer.querySelector('.ag-think-bubble')) {
             const b = document.createElement('span');
             b.className = 'ag-think-bubble' + (fx.mono ? ' mono' : '');
-            b.textContent = fx.think;
+            b.textContent = (lang === 'en' && fx.thinkEn) ? fx.thinkEn : fx.think;
             composer.appendChild(b);
           }
         }, 1500);
@@ -629,6 +693,13 @@
         applyAll();
       });
 
+      document.getElementById('lang-btn').addEventListener('click', () => {
+        lang = lang === 'en' ? 'vi' : 'en';
+        try { localStorage.setItem('ag_preview_lang', lang); } catch (e) {}
+        applyLanguageText();
+        applyAll();
+      });
+
       const tabSim = document.getElementById('tab-sim');
       const tabGal = document.getElementById('tab-gal');
       const viewSim = document.getElementById('view-sim');
@@ -642,6 +713,7 @@
         viewGal.style.display = 'block'; viewSim.style.display = 'none';
       });
 
+      applyLanguageText();
       applyAll();
     })();
   </script>
