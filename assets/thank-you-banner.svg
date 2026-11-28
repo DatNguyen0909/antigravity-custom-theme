@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 190" width="460" height="190">
+  <defs>
+    <filter id="tyShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.42"/>
+    </filter>
+    <linearGradient id="tyC1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="tyC2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fda4af"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="tyC3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c4b5fd"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="tyC4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#facc15"/>
+    </linearGradient>
+    <linearGradient id="tyC5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="tyC6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9a8d4"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+    <style>
+      .ty-ray { transform-origin: 230px 96px; animation: tyRayPulse 1.6s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .ty-l { font-family: 'Arial Rounded MT Bold', 'Fredoka', 'Comic Sans MS', 'Segoe UI', sans-serif; font-weight: 900; stroke: #1e293b; stroke-width: 5.5; paint-order: stroke fill; stroke-linejoin: round; }
+      .ty-b1 { animation: tyBounce 1.15s cubic-bezier(0.37, 0, 0.63, 1) 0.00s infinite alternate; }
+      .ty-b2 { animation: tyBounce 1.15s cubic-bezier(0.37, 0, 0.63, 1) 0.12s infinite alternate; }
+      .ty-b3 { animation: tyBounce 1.15s cubic-bezier(0.37, 0, 0.63, 1) 0.24s infinite alternate; }
+      .ty-b4 { animation: tyBounce 1.15s cubic-bezier(0.37, 0, 0.63, 1) 0.36s infinite alternate; }
+      .ty-b5 { animation: tyBounce 1.15s cubic-bezier(0.37, 0, 0.63, 1) 0.48s infinite alternate; }
+      .ty-b6 { animation: tyBounce 1.15s cubic-bezier(0.37, 0, 0.63, 1) 0.18s infinite alternate; }
+      .ty-b7 { animation: tyBounce 1.15s cubic-bezier(0.37, 0, 0.63, 1) 0.32s infinite alternate; }
+      .ty-b8 { animation: tyBounce 1.15s cubic-bezier(0.37, 0, 0.63, 1) 0.46s infinite alternate; }
+      .ty-b9 { animation: tyBounce 1.15s cubic-bezier(0.37, 0, 0.63, 1) 0.58s infinite alternate; }
+      .ty-spark { animation: tyTwinkle 1.4s ease-in-out infinite alternate; }
+      .ty-spark2 { animation: tyTwinkle 1.4s ease-in-out 0.6s infinite alternate; }
+      @keyframes tyBounce {
+        0% { transform: translateY(0px) rotate(-2deg); }
+        100% { transform: translateY(-7px) rotate(2.5deg); }
+      }
+      @keyframes tyRayPulse {
+        0% { transform: scale(0.95); opacity: 0.78; }
+        100% { transform: scale(1.06); opacity: 1; }
+      }
+      @keyframes tyTwinkle {
+        0% { transform: scale(0.75); opacity: 0.6; }
+        100% { transform: scale(1.2); opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- Colorful Joyful Burst Rays -->
+  <g class="ty-ray">
+    <polygon points="150,24 134,4 146,2" fill="#38bdf8"/>
+    <polygon points="196,18 190,0 202,2" fill="#fb7185"/>
+    <polygon points="264,18 270,0 282,4" fill="#a78bfa"/>
+    <polygon points="310,24 328,6 336,16" fill="#facc15"/>
+    <polygon points="48,76 20,64 26,76" fill="#34d399"/>
+    <polygon points="412,76 440,64 434,76" fill="#f472b6"/>
+    <polygon points="62,148 34,158 42,168" fill="#facc15"/>
+    <polygon points="398,148 426,158 418,168" fill="#38bdf8"/>
+  </g>
+
+  <!-- Sparkles & Mini Hearts -->
+  <g class="ty-spark" transform="translate(88, 34)">
+    <path d="M0,-10 L2.6,-2.6 L10,0 L2.6,2.6 L0,10 L-2.6,2.6 L-10,0 L-2.6,-2.6 Z" fill="#fef08a"/>
+  </g>
+  <g class="ty-spark2" transform="translate(372, 34)">
+    <path d="M0,-9 L2.4,-2.4 L9,0 L2.4,2.4 L0,9 L-2.4,2.4 L-9,0 L-2.4,-2.4 Z" fill="#fda4af"/>
+  </g>
+  <g class="ty-spark2" transform="translate(96, 152)">
+    <path d="M0,4 C-7,-3 -11,3 -6,9 L0,14 L6,9 C11,3 7,-3 0,4 Z" fill="#fb7185"/>
+  </g>
+  <g class="ty-spark" transform="translate(364, 150)">
+    <path d="M0,4 C-7,-3 -11,3 -6,9 L0,14 L6,9 C11,3 7,-3 0,4 Z" fill="#f472b6"/>
+  </g>
+
+  <!-- Row 1: T H A N K -->
+  <g filter="url(#tyShadow)" font-size="68" text-anchor="middle">
+    <g class="ty-b1"><text x="98"  y="88" class="ty-l" fill="url(#tyC1)">T</text></g>
+    <g class="ty-b2"><text x="162" y="88" class="ty-l" fill="url(#tyC2)">H</text></g>
+    <g class="ty-b3"><text x="230" y="88" class="ty-l" fill="url(#tyC3)">A</text></g>
+    <g class="ty-b4"><text x="298" y="88" class="ty-l" fill="url(#tyC4)">N</text></g>
+    <g class="ty-b5"><text x="364" y="88" class="ty-l" fill="url(#tyC6)">K</text></g>
+  </g>
+
+  <!-- Row 2: Y O U ! -->
+  <g filter="url(#tyShadow)" font-size="66" text-anchor="middle">
+    <g class="ty-b6"><text x="148" y="160" class="ty-l" fill="url(#tyC4)">Y</text></g>
+    <g class="ty-b7"><text x="216" y="160" class="ty-l" fill="url(#tyC2)">O</text></g>
+    <g class="ty-b8"><text x="284" y="160" class="ty-l" fill="url(#tyC1)">U</text></g>
+    <g class="ty-b9"><text x="336" y="160" class="ty-l" fill="url(#tyC5)">!</text></g>
+  </g>
+</svg>
