@@ -294,6 +294,103 @@
     .gal-lbl { font-size: 10px; opacity: 0.75; margin-top: 5px; font-weight: 600; }
     .ai-demo-bar { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-left: auto; }
 
+    /* Donate Button, Modal & Grand Mascot Thank-You Celebration */
+    .donate-btn {
+      padding: 6px 12px; border-radius: 9px; font-size: 12px; font-weight: 700; cursor: pointer;
+      background: linear-gradient(135deg, #0070ba, #003087); color: #fff;
+      border: 1px solid rgba(255,255,255,0.22); box-shadow: 0 2px 10px rgba(0, 112, 186, 0.35);
+      transition: transform 0.16s ease, box-shadow 0.16s ease;
+    }
+    .donate-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0, 112, 186, 0.55); }
+
+    .donate-backdrop {
+      position: fixed; inset: 0; z-index: 900; display: none; align-items: center; justify-content: center;
+      background: rgba(2, 6, 23, 0.72); backdrop-filter: blur(8px); padding: 16px;
+    }
+    .donate-backdrop.open { display: flex; animation: donFadeIn 0.22s ease; }
+    @keyframes donFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .donate-card {
+      width: 100%; max-width: 390px; border-radius: 20px; padding: 22px 22px 20px;
+      background: rgba(15, 23, 42, 0.94); border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.6), 0 0 28px var(--ag-theme-bubble-border);
+      text-align: center; position: relative; color: #f8fafc;
+      animation: donPop 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    body.ag-light-mode .donate-card { background: rgba(255,255,255,0.97); color: #0f172a; border-color: rgba(15,23,42,0.14); }
+    @keyframes donPop { from { opacity: 0; transform: scale(0.9) translateY(14px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    .donate-close {
+      position: absolute; top: 12px; right: 12px; width: 28px; height: 28px; border-radius: 50%;
+      border: none; background: rgba(255,255,255,0.1); color: inherit; cursor: pointer; font-size: 13px;
+    }
+    .donate-qr-wrap {
+      display: inline-flex; padding: 10px; border-radius: 16px; background: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.28); margin: 12px 0 10px;
+    }
+    .donate-qr-wrap img { width: 176px; height: 176px; display: block; border-radius: 8px; }
+    .donate-amounts { display: flex; justify-content: center; gap: 7px; flex-wrap: wrap; margin: 10px 0 14px; }
+    .amt-chip {
+      padding: 5px 11px; border-radius: 999px; font-size: 12px; font-weight: 700; cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.07); color: inherit;
+      transition: all 0.15s ease;
+    }
+    body.ag-light-mode .amt-chip { border-color: rgba(15,23,42,0.16); background: rgba(15,23,42,0.05); }
+    .amt-chip.active { background: var(--ag-theme-accent); color: #fff; border-color: transparent; }
+    .donate-primary-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+      padding: 11px 16px; border-radius: 12px; border: none; cursor: pointer; text-decoration: none;
+      font-weight: 700; font-size: 13.5px; color: #fff;
+      background: linear-gradient(135deg, #0070ba, #003087);
+      box-shadow: 0 6px 20px rgba(0, 112, 186, 0.4); transition: transform 0.15s ease;
+    }
+    .donate-primary-btn:hover { transform: translateY(-1px); }
+    .donate-done-btn {
+      margin-top: 9px; width: 100%; padding: 8px 12px; border-radius: 10px; cursor: pointer;
+      border: 1px solid rgba(244, 114, 182, 0.45); background: rgba(244, 114, 182, 0.14);
+      color: inherit; font-weight: 600; font-size: 12px; transition: all 0.15s ease;
+    }
+    .donate-done-btn:hover { background: rgba(244, 114, 182, 0.26); }
+
+    /* Grand Mascot Thank-You Parade Overlay */
+    #donate-celebration {
+      position: fixed; inset: 0; z-index: 950; pointer-events: none; overflow: hidden;
+    }
+    .don-toast {
+      position: fixed; top: 68px; left: 50%; transform: translateX(-50%);
+      padding: 12px 22px; border-radius: 999px; font-weight: 700; font-size: 14px;
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.94), rgba(168, 85, 247, 0.94));
+      color: #fff; border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: 0 12px 36px rgba(236, 72, 153, 0.45); white-space: nowrap;
+      animation: donToastIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    @keyframes donToastIn {
+      0% { opacity: 0; transform: translate(-50%, -20px) scale(0.85); }
+      100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+    }
+    .don-mascot-pop {
+      position: fixed; width: 92px; height: 92px; object-fit: contain;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,0.55));
+      animation: donMascotRise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both, donMascotCheer 1.2s ease-in-out 0.6s infinite alternate;
+    }
+    @keyframes donMascotRise {
+      0% { opacity: 0; transform: translateY(70px) scale(0.4) rotate(-12deg); }
+      100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+    }
+    @keyframes donMascotCheer {
+      0% { transform: translateY(0) rotate(-5deg) scale(1); }
+      100% { transform: translateY(-12px) rotate(6deg) scale(1.08); }
+    }
+    .don-confetti {
+      position: fixed; font-size: 20px; line-height: 1;
+      animation: donConfettiFall var(--dur, 3.2s) cubic-bezier(0.2, 0.7, 0.4, 1) forwards;
+    }
+    @keyframes donConfettiFall {
+      0% { opacity: 0; transform: translate(0, 0) scale(0.5) rotate(0deg); }
+      12% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { opacity: 0; transform: translate(var(--dx, 30px), var(--dy, -260px)) scale(1.15) rotate(var(--rot, 180deg)); }
+    }
+
     @media (max-width: 860px) {
       .shell { grid-template-columns: 1fr; grid-template-rows: auto auto 1fr; }
       .topbar { flex-wrap: wrap; gap: 8px; padding: 10px 14px; }
@@ -334,6 +431,7 @@
           <option value="en">🇺🇸 English</option>
           <option value="vi">🇻🇳 Tiếng Việt</option>
         </select>
+        <button type="button" class="donate-btn" id="donate-btn">☕ Donate</button>
         <a class="gh-link" href="https://github.com/DatNguyen0909/antigravity-custom-theme" target="_blank" rel="noopener">⭐ GitHub</a>
       </div>
     </header>
@@ -401,6 +499,36 @@
     </main>
   </div>
 
+  <!-- Donate Modal (PayPal.Me + Scannable Local SVG QR) -->
+  <div class="donate-backdrop" id="donate-modal" role="dialog" aria-modal="true">
+    <div class="donate-card">
+      <button type="button" class="donate-close" id="donate-close" aria-label="Close">✕</button>
+      <div style="font-size:17px; font-weight:800;" id="don-title">☕ Support Antigravity Custom Theme</div>
+      <div style="font-size:12.5px; opacity:0.8; margin-top:6px; line-height:1.45;" id="don-desc">
+        Scan the PayPal QR code or click below to buy the creator a coffee!
+      </div>
+      <div class="donate-qr-wrap">
+        <img src="./assets/paypal-qr.svg" alt="PayPal.Me QR Code (paypal.me/TonDat2211)" />
+      </div>
+      <div style="font-size:11.5px; opacity:0.75; font-family:monospace;">paypal.me/TonDat2211</div>
+      <div class="donate-amounts" id="don-amounts">
+        <button type="button" class="amt-chip" data-amt="2">$2 ☕</button>
+        <button type="button" class="amt-chip active" data-amt="5">$5 🍱</button>
+        <button type="button" class="amt-chip" data-amt="10">$10 🚀</button>
+        <button type="button" class="amt-chip" data-amt="">Custom 💖</button>
+      </div>
+      <a class="donate-primary-btn" id="don-paypal-link" href="https://paypal.me/TonDat2211/5" target="_blank" rel="noopener">
+        💳 <span id="don-open-label">Open PayPal.Me ($5)</span>
+      </a>
+      <button type="button" class="donate-done-btn" id="don-done-btn">
+        💖 <span id="don-done-label">I Just Donated! (Summon Mascot Parade)</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mascot Thank-You Celebration Layer -->
+  <div id="donate-celebration"></div>
+
   <!-- Wire STICKERS map directly to ./stickers/<id>/*.svg and load real MVVM Models -->
   <script>
     const PREVIEW_IDS = [
@@ -455,7 +583,14 @@
           galTyping: 'Typing',
           galThinking: 'AI Thinking',
           galDone: 'AI Done',
-          galHover: 'Hover Panoramic Stage'
+          galHover: 'Hover Panoramic Stage',
+          donBtn: '☕ Donate',
+          donTitle: '☕ Support Antigravity Custom Theme',
+          donDesc: 'Love these 21 Chibi mascots & studio soundtracks? Scan the QR code or open PayPal.Me to fuel future updates!',
+          donCustom: 'Custom 💖',
+          donOpen: (amt) => amt ? `Open PayPal.Me ($${amt})` : 'Open PayPal.Me',
+          donDoneBtn: 'I Just Donated! (Summon Mascot Parade)',
+          donToast: '💖 Thank you so much! All 21 mascots send you love & sparkles! ✨'
         },
         vi: {
           tabSim: '💬 Mô phỏng khung Chat',
@@ -484,7 +619,14 @@
           galTyping: 'Đang gõ',
           galThinking: 'AI Suy nghĩ',
           galDone: 'AI Xong',
-          galHover: 'Rê chuột (Sân khấu ngang)'
+          galHover: 'Rê chuột (Sân khấu ngang)',
+          donBtn: '☕ Ủng hộ',
+          donTitle: '☕ Ủng hộ Antigravity Custom Theme',
+          donDesc: 'Yêu thích bộ 21 linh vật Chibi & nhạc nền Studio? Quét mã QR PayPal bên dưới hoặc bấm nút để mời tác giả 1 ly cà phê nhé!',
+          donCustom: 'Tùy chọn 💖',
+          donOpen: (amt) => amt ? `Mở PayPal.Me ($${amt})` : 'Mở PayPal.Me',
+          donDoneBtn: 'Mình vừa quét QR / ủng hộ xong! (Gọi dàn linh vật cảm ơn)',
+          donToast: '💖 Cảm ơn bạn rất nhiều! Cả 21 linh vật gửi ngàn tim đến bạn! ✨'
         }
       };
 
@@ -508,7 +650,78 @@
       let lang = detectInitialLang();
       let aiSimState = 'idle'; // 'idle' | 'thinking' | 'done'
       let aiSimTimer = null;
+      let selectedDonAmt = '5';
       const typeState = { keys: [], lastParticle: 0, pauseTimer: null, clearTimer: null };
+
+      function syncDonateAmount(amt) {
+        selectedDonAmt = amt || '';
+        const link = document.getElementById('don-paypal-link');
+        const lbl = document.getElementById('don-open-label');
+        const ui = UI_TEXT[lang];
+        if (link) link.href = selectedDonAmt ? ('https://paypal.me/TonDat2211/' + selectedDonAmt) : 'https://paypal.me/TonDat2211';
+        if (lbl) lbl.textContent = ui.donOpen(selectedDonAmt);
+        document.querySelectorAll('#don-amounts .amt-chip').forEach(ch => {
+          ch.classList.toggle('active', ch.getAttribute('data-amt') === selectedDonAmt);
+        });
+      }
+
+      let celebrationTimer = null;
+      function triggerDonateCelebration() {
+        const layer = document.getElementById('donate-celebration');
+        if (!layer) return;
+        clearTimeout(celebrationTimer);
+        layer.innerHTML = '';
+
+        const ui = UI_TEXT[lang];
+        const toast = document.createElement('div');
+        toast.className = 'don-toast';
+        toast.textContent = ui.donToast;
+        layer.appendChild(toast);
+
+        // Summon 8 cheering mascots (done.svg) around the screen perimeter!
+        const paradeIds = [
+          activeId, 'valentine-cupid', 'jade-dragon', 'tet-lion',
+          'noel-snowman', 'sakura-bunny', 'summer-corgi', 'code-cat'
+        ].filter((v, i, a) => a.indexOf(v) === i).slice(0, 8);
+        const slots = [
+          { left: '4%', bottom: '18px' }, { left: '16%', bottom: '12px' },
+          { left: '29%', bottom: '16px' }, { left: '43%', bottom: '10px' },
+          { right: '43%', bottom: '12px' }, { right: '29%', bottom: '16px' },
+          { right: '16%', bottom: '12px' }, { right: '4%', bottom: '18px' }
+        ];
+        paradeIds.forEach((id, idx) => {
+          const img = document.createElement('img');
+          img.className = 'don-mascot-pop';
+          img.src = './stickers/' + id + '/done.svg';
+          img.alt = id;
+          const pos = slots[idx];
+          if (pos.left) img.style.left = pos.left;
+          if (pos.right) img.style.right = pos.right;
+          img.style.bottom = pos.bottom;
+          img.style.animationDelay = (idx * 0.08) + 's, ' + (0.6 + idx * 0.08) + 's';
+          layer.appendChild(img);
+        });
+
+        // Shower of hearts, stars, coins & sparkles
+        const glyphs = ['💖', '✨', '🎉', '⭐', '🪙', '🌸', '☕', '💘'];
+        for (let i = 0; i < 30; i++) {
+          const p = document.createElement('span');
+          p.className = 'don-confetti';
+          p.textContent = glyphs[i % glyphs.length];
+          p.style.left = (4 + Math.random() * 92).toFixed(1) + 'vw';
+          p.style.bottom = (8 + Math.random() * 16).toFixed(1) + 'vh';
+          p.style.setProperty('--dx', ((Math.random() - 0.5) * 140).toFixed(0) + 'px');
+          p.style.setProperty('--dy', (-180 - Math.random() * 340).toFixed(0) + 'px');
+          p.style.setProperty('--rot', ((Math.random() - 0.5) * 320).toFixed(0) + 'deg');
+          p.style.setProperty('--dur', (2.2 + Math.random() * 1.8).toFixed(2) + 's');
+          p.style.animationDelay = (Math.random() * 0.65).toFixed(2) + 's';
+          layer.appendChild(p);
+        }
+
+        // Play celebratory chime + switch active mascot to done.svg
+        setAiSimState('done', 5500);
+        celebrationTimer = setTimeout(() => { layer.innerHTML = ''; }, 6200);
+      }
 
       const bgEl = document.getElementById('ag-custom-bg');
       const decorEl = document.getElementById('ag-custom-decor');
@@ -785,6 +998,13 @@
         document.getElementById('tab-gal').textContent = ui.tabGal;
         document.getElementById('ai-think-btn').textContent = ui.aiThinkBtn;
         document.getElementById('ai-done-btn').textContent = ui.aiDoneBtn;
+        document.getElementById('donate-btn').textContent = ui.donBtn;
+        document.getElementById('don-title').textContent = ui.donTitle;
+        document.getElementById('don-desc').textContent = ui.donDesc;
+        document.getElementById('don-done-label').textContent = ui.donDoneBtn;
+        const customChip = document.querySelector('#don-amounts .amt-chip[data-amt=""]');
+        if (customChip) customChip.textContent = ui.donCustom;
+        syncDonateAmount(selectedDonAmt);
         document.getElementById('dim-title').textContent = ui.dim;
         document.getElementById('lang-select').value = lang;
         document.getElementById('side-title').textContent = ui.sideTitle(THEMES.length);
@@ -939,6 +1159,29 @@
       });
       document.getElementById('ai-done-btn').addEventListener('click', () => {
         setAiSimState('done', 5000);
+      });
+
+      // Donate Modal & Mascot Celebration Wiring
+      const donateModal = document.getElementById('donate-modal');
+      document.getElementById('donate-btn').addEventListener('click', () => {
+        donateModal.classList.add('open');
+      });
+      document.getElementById('donate-close').addEventListener('click', () => {
+        donateModal.classList.remove('open');
+      });
+      donateModal.addEventListener('click', (e) => {
+        if (e.target === donateModal) donateModal.classList.remove('open');
+      });
+      document.querySelectorAll('#don-amounts .amt-chip').forEach(ch => {
+        ch.addEventListener('click', () => syncDonateAmount(ch.getAttribute('data-amt')));
+      });
+      document.getElementById('don-paypal-link').addEventListener('click', () => {
+        donateModal.classList.remove('open');
+        setTimeout(triggerDonateCelebration, 350);
+      });
+      document.getElementById('don-done-btn').addEventListener('click', () => {
+        donateModal.classList.remove('open');
+        triggerDonateCelebration();
       });
 
       // Top & Sidebar Seasonal Sync Controls

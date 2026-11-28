@@ -155,6 +155,24 @@ antigravity-custom-theme/
 
 ---
 
+## ☕ Ủng hộ tác giả (Donate)
+
+Nếu bạn yêu thích bộ **21 linh vật Chibi & 105 SVG chuyển động** này và muốn tiếp thêm cà phê cho các bản cập nhật tiếp theo, bạn có thể ủng hộ qua **PayPal.Me** *(hỗ trợ PayPal, Visa/Mastercard & thanh toán quốc tế)*:
+
+<p align="center">
+  <a href="https://paypal.me/TonDat2211" target="_blank">
+    <img src="https://img.shields.io/badge/Donate-PayPal.Me%2FTonDat2211-0070BA?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate via PayPal.Me" />
+  </a>
+  <br /><br />
+  <a href="https://paypal.me/TonDat2211" target="_blank">
+    <img src="./assets/paypal-qr.svg" width="155" alt="QR PayPal.Me TonDat2211" />
+  </a>
+  <br />
+  <sub>Quét mã QR hoặc bấm nút trên để mở <b>paypal.me/TonDat2211</b> — Cảm ơn bạn rất nhiều! 💖</sub>
+</p>
+
+---
+
 ## 📄 Giấy phép (License)
 
 Phát hành theo giấy phép **MIT License** — tự do sử dụng, tùy biến và đóng góp thêm linh vật mới!
@@ -296,6 +314,24 @@ antigravity-custom-theme/
 1. Create `stickers/<theme-id>/` containing `idle.svg`, `typing.svg`, `thinking.svg`, `done.svg` (`120×120`), and `action.svg` (`260×95`).
 2. Add `<theme-id>` entries to `src/models/themes.js`, `src/models/backgrounds.js`, `src/models/decor.js`, and its CSS rules in `src/views/styles/mascots.css`.
 3. Run `install.bat` — the bundler automatically embeds the new folder and deploys it into Antigravity!
+
+---
+
+## ☕ Support the Project (Donate)
+
+If you enjoy these **21 animated Chibi mascots & 105 live SVGs** and want to fuel future themes & features, you can buy the creator a coffee via **PayPal.Me** *(supports PayPal & international cards)*:
+
+<p align="center">
+  <a href="https://paypal.me/TonDat2211" target="_blank">
+    <img src="https://img.shields.io/badge/Donate-PayPal.Me%2FTonDat2211-0070BA?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate via PayPal.Me" />
+  </a>
+  <br /><br />
+  <a href="https://paypal.me/TonDat2211" target="_blank">
+    <img src="./assets/paypal-qr.svg" width="155" alt="QR PayPal.Me TonDat2211" />
+  </a>
+  <br />
+  <sub>Scan the QR code or click above to open <b>paypal.me/TonDat2211</b> — Thank you for your support! 💖</sub>
+</p>
 
 ---
 
