@@ -1,6 +1,8 @@
 <div align="center">
 
-# ✨ Antigravity Custom Theme Engine (v7 MVVM)
+<img src="./assets/kurolab-icon.svg" width="84" alt="KuroLab Logo" />
+
+# KuroLab — Antigravity Custom Theme Studio (v7 MVVM)
 
 <img src="./stickers/jade-dragon/idle.svg" width="54" alt="Jade Dragon" />
 <img src="./stickers/tet-lion/idle.svg" width="54" alt="Lunar New Year Lion" />
@@ -172,9 +174,10 @@ Nếu bạn yêu thích bộ **21 linh vật Chibi & 105 SVG chuyển động** 
 
 ---
 
-## 📄 Giấy phép (License)
+## 📄 Giấy phép & Bản quyền (License)
 
-Phát hành theo giấy phép **MIT License** — tự do sử dụng, tùy biến và đóng góp thêm linh vật mới!
+**© 2026 KuroLab — All Rights Reserved (Miễn phí cho mục đích sử dụng cá nhân).**  
+Bạn được tự do cài đặt và trải nghiệm cho mục đích cá nhân. Nghiêm cấm sao chép, chỉnh sửa hoặc phân phối lại bộ linh vật SVG, âm thanh Studio và mã nguồn vì mục đích thương mại khi chưa có sự đồng ý của **KuroLab**.
 
 </details>
 
@@ -333,8 +336,9 @@ If you enjoy these **21 animated Chibi mascots & 105 live SVGs** and want to fue
 
 ---
 
-## 📄 License
+## 📄 License & Copyright
 
-Released under the **MIT License** — free to use, customize, and contribute new mascots!
+**© 2026 KuroLab — All Rights Reserved (Free for Personal Use).**  
+Free to install and enjoy for personal use on your own device. Redistribution, resale, or commercial use of the SVG mascot artwork, Studio Audio engine, or source code without prior permission from **KuroLab** is prohibited.
 
 </details>

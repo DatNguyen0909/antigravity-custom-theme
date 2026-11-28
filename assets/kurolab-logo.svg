@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" width="360" height="96">
+  <defs>
+    <linearGradient id="klwBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+    <linearGradient id="klwRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="klwLab" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="55%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Mini KuroLab App Icon -->
+  <g transform="translate(8, 8)">
+    <rect x="0" y="0" width="80" height="80" rx="20" fill="url(#klwBg)" stroke="url(#klwRim)" stroke-width="2.6"/>
+    <path d="M62,12 L64,17 L69,19 L64,21 L62,26 L60,21 L55,19 L60,17 Z" fill="#fde047"/>
+    <path d="M48,65 C59,66 64,59 62,51 C61,48 57,49 58,52 C59,56 56,61 48,61 Z" fill="#09090b"/>
+    <path d="M29,54 C26,62 28,68 39,68 C50,68 52,62 49,54 Z" fill="#09090b"/>
+    <g stroke="#e2e8f0" stroke-width="1.6" stroke-linecap="round">
+      <line x1="20" y1="44" x2="10" y2="42"/><line x1="20" y1="48" x2="12" y2="51"/>
+      <line x1="60" y1="44" x2="70" y2="42"/><line x1="60" y1="48" x2="68" y2="51"/>
+    </g>
+    <path d="M23,29 C21,19 24,14 28,16 C32,17 34,21 36,23 C39,22 41,22 44,23 C46,21 48,17 52,16 C56,14 59,19 57,29 C62,34 63,40 61,47 C59,54 51,58 40,58 C29,58 21,54 19,47 C17,40 18,34 23,29 Z" fill="#09090b" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1.2"/>
+    <ellipse cx="30" cy="40" rx="8.2" ry="9.4" fill="#ffffff"/>
+    <ellipse cx="50" cy="40" rx="8.2" ry="9.4" fill="#ffffff"/>
+    <ellipse cx="33.5" cy="41" rx="4.2" ry="5.5" fill="#09090b"/>
+    <circle cx="32" cy="38.5" r="1.7" fill="#ffffff"/>
+    <ellipse cx="53.5" cy="41" rx="4.2" ry="5.5" fill="#09090b"/>
+    <circle cx="52" cy="38.5" r="1.7" fill="#ffffff"/>
+    <circle cx="40" cy="59" r="2.6" fill="#fbbf24"/>
+  </g>
+
+  <!-- Brand Wordmark: KuroLab -->
+  <text x="106" y="54" font-family="'Segoe UI', 'Inter', -apple-system, sans-serif" font-size="42" font-weight="900" letter-spacing="-1">
+    <tspan fill="#f8fafc">Kuro</tspan><tspan fill="url(#klwLab)">Lab</tspan>
+  </text>
+  <text x="108" y="76" font-family="'Segoe UI', 'Inter', -apple-system, sans-serif" font-size="11.5" font-weight="700" letter-spacing="2.8" fill="#94a3b8">
+    CURIOUS THEME STUDIO
+  </text>
+</svg>

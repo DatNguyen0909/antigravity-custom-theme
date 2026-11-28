@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Flagship App Icon Squircle Background (Dark Cosmic Lab Palette) -->
+    <linearGradient id="klBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="52%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+    <radialGradient id="klAura" cx="50%" cy="46%" r="52%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.28"/>
+      <stop offset="55%" stop-color="#a855f7" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="klRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="klCat" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#050507"/>
+    </linearGradient>
+    <linearGradient id="klSpark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="klShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+    <style>
+      .kl-pupils { animation: klGlance 5.5s cubic-bezier(0.37, 0, 0.63, 1) infinite; }
+      .kl-tail { transform-origin: 332px 394px; animation: klTailWag 2.8s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .kl-spark { transform-origin: 396px 116px; animation: klSparkPop 2.2s ease-in-out infinite alternate; }
+      @keyframes klGlance {
+        0%, 62%, 100% { transform: translate(0px, 0px); }
+        70%, 86% { transform: translate(-18px, -2px); }
+      }
+      @keyframes klTailWag {
+        0% { transform: rotate(-6deg); }
+        100% { transform: rotate(9deg); }
+      }
+      @keyframes klSparkPop {
+        0% { transform: scale(0.86) rotate(-8deg); opacity: 0.82; }
+        100% { transform: scale(1.12) rotate(8deg); opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- App Icon Rounded Squircle Container -->
+  <rect x="20" y="20" width="472" height="472" rx="116" fill="url(#klBg)"/>
+  <rect x="20" y="20" width="472" height="472" rx="116" fill="url(#klAura)"/>
+  <!-- Subtle Top Glass Highlight -->
+  <path d="M136,28 L376,28 C436,28 484,76 484,136 L484,168 C392,208 120,208 28,168 L28,136 C28,76 76,28 136,28 Z" fill="#ffffff" opacity="0.06"/>
+  <!-- Luminous Rim Border -->
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="none" stroke="url(#klRim)" stroke-width="8" opacity="0.88"/>
+
+  <!-- Creative Lab Sparkle Star (Top Right) -->
+  <g class="kl-spark">
+    <path d="M396,76 L406,106 L436,116 L406,126 L396,156 L386,126 L356,116 L386,106 Z" fill="url(#klSpark)"/>
+    <circle cx="426" cy="84" r="6" fill="#38bdf8"/>
+  </g>
+  <!-- Mini Lab Bubbles (Top Left) -->
+  <circle cx="100" cy="116" r="10" fill="#a855f7" opacity="0.72"/>
+  <circle cx="122" cy="92" r="6" fill="#38bdf8" opacity="0.8"/>
+
+  <!-- Iconic KuroLab Curious Side-Glancing Black Cat -->
+  <g filter="url(#klShadow)">
+    <!-- Curved Playful Tail -->
+    <path class="kl-tail" d="M312,412 C376,416 408,374 394,324 C388,304 366,308 370,328 C376,356 356,386 312,386 Z" fill="url(#klCat)" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="4"/>
+
+    <!-- Cute Compact Sitting Body -->
+    <path d="M188,340 C172,388 182,428 248,428 C314,428 326,388 308,340 Z" fill="url(#klCat)" stroke="#ffffff" stroke-opacity="0.14" stroke-width="4"/>
+
+    <!-- Whiskers (Clean Iconic Silhouette) -->
+    <g stroke="#e2e8f0" stroke-width="7" stroke-linecap="round" opacity="0.92">
+      <line x1="128" y1="278" x2="72" y2="270"/>
+      <line x1="132" y1="302" x2="80" y2="320"/>
+      <line x1="384" y1="278" x2="440" y2="270"/>
+      <line x1="380" y1="302" x2="432" y2="320"/>
+    </g>
+
+    <!-- Big Round Chibi Head + Pointy Ears (Exact Curious Silhouette!) -->
+    <path d="M150,186 C140,126 154,94 180,104 C202,112 218,134 228,150 C246,146 266,146 284,150 C294,134 310,112 332,104 C358,94 372,126 362,186 C392,216 400,256 388,298 C374,344 324,366 256,366 C188,366 138,344 124,298 C112,256 120,216 150,186 Z" fill="url(#klCat)" stroke="#ffffff" stroke-opacity="0.18" stroke-width="5" stroke-linejoin="round"/>
+
+    <!-- Subtle Soft Inner Ear Accents -->
+    <path d="M168,172 C164,138 172,124 186,130 C198,136 206,148 212,160 Z" fill="#a855f7" opacity="0.22"/>
+    <path d="M344,172 C348,138 340,124 326,130 C314,136 306,148 300,160 Z" fill="#38bdf8" opacity="0.22"/>
+
+    <!-- Huge Expressive White Eyes -->
+    <ellipse cx="196" cy="252" rx="50" ry="58" fill="#ffffff"/>
+    <ellipse cx="316" cy="252" rx="50" ry="58" fill="#ffffff"/>
+
+    <!-- Mischievous Side-Glancing Pupils -->
+    <g class="kl-pupils">
+      <ellipse cx="218" cy="258" rx="25" ry="33" fill="#09090b"/>
+      <circle cx="209" cy="244" r="10" fill="#ffffff"/>
+      <circle cx="226" cy="272" r="4.5" fill="#fbbf24"/>
+
+      <ellipse cx="338" cy="258" rx="25" ry="33" fill="#09090b"/>
+      <circle cx="329" cy="244" r="10" fill="#ffffff"/>
+      <circle cx="346" cy="272" r="4.5" fill="#fbbf24"/>
+    </g>
+
+    <!-- Tiny Subtle Golden Bell Collar Accent -->
+    <circle cx="256" cy="370" r="13" fill="url(#klSpark)" stroke="#09090b" stroke-width="4"/>
+    <circle cx="256" cy="373" r="3" fill="#09090b"/>
+  </g>
+</svg>
