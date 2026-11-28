@@ -66,10 +66,31 @@
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: 350px 1fr;
-      grid-template-rows: 60px 1fr;
+      grid-template-columns: 350px minmax(0, 1fr);
+      grid-template-rows: 60px minmax(0, 1fr);
       height: 100vh;
+      transition: grid-template-columns 0.25s cubic-bezier(0.22, 1, 0.36, 1);
     }
+    .shell.sidebar-collapsed {
+      grid-template-columns: 0px minmax(0, 1fr);
+    }
+    .shell.sidebar-collapsed .sidebar {
+      padding: 0 !important;
+      border-right: none !important;
+      opacity: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .sidebar-toggle-btn {
+      width: 32px; height: 32px; border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08); color: inherit;
+      cursor: pointer; font-size: 14px; font-weight: 700;
+      display: inline-flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: all 0.18s ease;
+    }
+    body.ag-light-mode .sidebar-toggle-btn { border-color: rgba(15,23,42,0.16); background: rgba(15,23,42,0.05); }
+    .sidebar-toggle-btn:hover { border-color: var(--ag-theme-accent); box-shadow: 0 0 0 1px var(--ag-theme-accent); }
 
     /* Top Header */
     .topbar {
@@ -444,14 +465,19 @@
     }
 
     @media (max-width: 860px) {
-      html, body { width: 100%; max-width: 100vw; overflow: hidden; }
+      html, body { width: 100%; height: 100%; max-width: 100vw; overflow: hidden; }
       .shell {
-        grid-template-columns: 126px minmax(0, 1fr);
+        position: fixed;
+        inset: 0;
+        grid-template-columns: 124px minmax(0, 1fr);
         grid-template-rows: auto minmax(0, 1fr);
-        height: 100dvh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
         max-width: 100vw;
         overflow: hidden;
+      }
+      .shell.sidebar-collapsed {
+        grid-template-columns: 0px minmax(0, 1fr);
       }
       .topbar {
         grid-column: 1 / -1;
@@ -461,8 +487,11 @@
         padding: 7px 10px;
         min-width: 0;
         width: 100%;
+        z-index: 30;
       }
-      .brand { font-size: 13px; justify-content: space-between; gap: 6px; }
+      .brand { font-size: 13px; justify-content: flex-start; gap: 7px; }
+      .brand .badge { margin-left: auto; }
+      .sidebar-toggle-btn { width: 28px; height: 28px; font-size: 13px; }
       .controls {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -551,9 +580,10 @@
   <div id="ag-custom-overlay"></div>
   <div id="ag-custom-decor"></div>
 
-  <div class="shell">
+  <div class="shell" id="app-shell">
     <header class="topbar">
       <div class="brand">
+        <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle-btn" title="Thu gọn / Mở rộng danh sách chủ đề">☰</button>
         <span>✨ Antigravity Custom Theme</span>
         <span class="badge" id="active-badge">Jade Dragon</span>
       </div>
@@ -1402,6 +1432,17 @@
       document.getElementById('season-btn').addEventListener('click', () => toggleAutoSeason());
       document.getElementById('season-switch').addEventListener('change', (e) => toggleAutoSeason(e.target.checked));
       document.getElementById('season-callout').addEventListener('click', () => toggleAutoSeason());
+
+      // Collapsible Left Theme Sidebar (PC & Mobile)
+      const appShell = document.getElementById('app-shell');
+      const sidebarToggleBtn = document.getElementById('sidebar-toggle-btn');
+      if (appShell && sidebarToggleBtn) {
+        sidebarToggleBtn.addEventListener('click', () => {
+          const collapsed = appShell.classList.toggle('sidebar-collapsed');
+          sidebarToggleBtn.textContent = collapsed ? '☰' : '◀';
+        });
+        sidebarToggleBtn.textContent = '◀';
+      }
 
       document.getElementById('sfx-btn').addEventListener('click', () => {
         sfxEnabled = !sfxEnabled;
