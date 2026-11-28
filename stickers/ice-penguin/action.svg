@@ -1,124 +1,305 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95" width="260" height="95">
   <defs>
-    <linearGradient id="pgBody" x1="0%" y1="0%" x2="0%" y2="100%">
+    <clipPath id="pg-clip">
+      <rect x="0" y="0" width="260" height="71"/>
+    </clipPath>
+
+    <!-- Arctic sky and aurora gradients -->
+    <linearGradient id="pg-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0.52"/>
+      <stop offset="55%" stop-color="#1e3a8a" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="pg-aurora1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#2dd4bf" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#38bdf8" stop-opacity="0.48"/>
+      <stop offset="80%" stop-color="#818cf8" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pg-aurora2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#a78bfa" stop-opacity="0.45"/>
+      <stop offset="65%" stop-color="#34d399" stop-opacity="0.52"/>
+      <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pg-aurora-fade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="35%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Iceberg, glacier floe, and Arctic water gradients -->
+    <linearGradient id="pg-ice-far" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.85"/>
+      <stop offset="55%" stop-color="#7dd3fc" stop-opacity="0.72"/>
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.78"/>
+    </linearGradient>
+    <linearGradient id="pg-ice-top" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="pg-ice-side" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#bae6fd"/>
+      <stop offset="58%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="pg-water" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#0c4a6e" stop-opacity="0.88"/>
+    </linearGradient>
+
+    <!-- Penguin gradients -->
+    <linearGradient id="pg-body" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#38bdf8"/>
       <stop offset="55%" stop-color="#0284c7"/>
       <stop offset="100%" stop-color="#1e3a8a"/>
     </linearGradient>
-    <linearGradient id="pgScarf" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="pg-scarf" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#fb7185"/>
       <stop offset="100%" stop-color="#e11d48"/>
     </linearGradient>
-    <linearGradient id="iceTop" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#e0f2fe"/>
-    </linearGradient>
-    <linearGradient id="iceSide" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#bae6fd"/>
-      <stop offset="60%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#0284c7"/>
-    </linearGradient>
+
     <style>
-      .floe-1 { animation: bobIce1 2.2s ease-in-out infinite alternate; }
-      .floe-2 { animation: bobIce2 1.8s ease-in-out infinite alternate; }
-      .floe-3 { animation: bobIce1 2.5s ease-in-out infinite alternate-reverse; }
-      /* Cánh cụt trượt qua tảng băng phải, nhảy vọt qua khe nước sang tảng băng giữa rồi trượt sang tảng băng trái */
-      .penguin-journey {
-        animation: penguinSlideHop 3.6s ease-in-out infinite;
+      /* Shimmering aurora ribbons */
+      .pg-aur1 { animation: pgAuroraDrift1 5.2s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .pg-aur2 { animation: pgAuroraDrift2 4.4s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .pg-star1 { animation: pgTwinkle 2.1s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .pg-star2 { animation: pgTwinkle 2.8s cubic-bezier(0.37, 0, 0.63, 1) 0.9s infinite alternate; }
+
+      /* Gently bobbing ice floes and water ripples */
+      .pg-floe-1 { animation: pgBobIce1 2.4s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .pg-floe-2 { animation: pgBobIce2 2.0s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .pg-floe-3 { animation: pgBobIce1 2.6s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate-reverse; }
+      .pg-ripple { animation: pgRippleShift 3.2s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+
+      /* Falling snowflakes: linear vertical drop + decoupled sine horizontal drift */
+      .pg-snow-y1 { animation: pgSnowFall 4.8s linear infinite; }
+      .pg-snow-y2 { animation: pgSnowFall 6.2s linear -2.6s infinite; }
+      .pg-snow-x1 { animation: pgSnowSway 2.4s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .pg-snow-x2 { animation: pgSnowSway 3.1s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate-reverse; }
+
+      /* Penguin: decoupled linear X travel (4.4s = 360px across 3 floes) + smooth sine hop (0.55s alternate = 1.1s period aligned to floe gaps) */
+      .pg-slide-x { animation: pgGlideX 4.4s linear infinite; }
+      .pg-hop-y {
+        animation: pgHopArc 0.55s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
+        transform-origin: 55px 48px;
       }
-      .flipper { animation: flapFlipper 0.3s ease-in-out infinite alternate; transform-origin: 48px 50px; }
-      .feet { animation: kickFeet 0.25s ease-in-out infinite alternate; transform-origin: 24px 52px; }
-      @keyframes bobIce1 {
+      .pg-flipper {
+        animation: pgFlapFlipper 0.28s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
+        transform-origin: 48px 50px;
+      }
+      .pg-feet {
+        animation: pgKickFeet 0.22s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
+        transform-origin: 24px 52px;
+      }
+      .pg-scarf-tail {
+        animation: pgScarfFlutter 0.36s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
+        transform-origin: 65px 36px;
+      }
+      .pg-spray-1 { animation: pgSprayFly 0.55s linear infinite; }
+      .pg-spray-2 { animation: pgSprayFly 0.55s linear -0.27s infinite; }
+
+      @keyframes pgAuroraDrift1 {
+        0% { transform: translate(-10px, 0px) scaleY(1); opacity: 0.72; }
+        100% { transform: translate(12px, -3px) scaleY(1.12); opacity: 0.96; }
+      }
+      @keyframes pgAuroraDrift2 {
+        0% { transform: translate(10px, 2px) scaleY(1.08); opacity: 0.62; }
+        100% { transform: translate(-12px, -2px) scaleY(0.95); opacity: 0.92; }
+      }
+      @keyframes pgTwinkle {
+        0% { opacity: 0.28; }
+        100% { opacity: 0.95; }
+      }
+      @keyframes pgBobIce1 {
         0% { transform: translateY(0px); }
-        100% { transform: translateY(3px); }
+        100% { transform: translateY(2.4px); }
       }
-      @keyframes bobIce2 {
+      @keyframes pgBobIce2 {
         0% { transform: translateY(2px); }
-        100% { transform: translateY(-2px); }
+        100% { transform: translateY(-1.8px); }
       }
-      @keyframes penguinSlideHop {
-        0% { transform: translate(155px, 6px) rotate(0deg) scaleX(-1); }
-        18% { transform: translate(118px, 6px) rotate(6deg) scaleX(-1); }
-        28% { transform: translate(92px, -14px) rotate(-12deg) scaleX(-1); }
-        38% { transform: translate(68px, 5px) rotate(4deg) scaleX(-1); }
-        50% { transform: translate(18px, 4px) rotate(0deg) scaleX(-1); }
-        53% { transform: translate(18px, 4px) rotate(0deg) scaleX(1); }
-        68% { transform: translate(68px, 5px) rotate(-6deg) scaleX(1); }
-        78% { transform: translate(95px, -14px) rotate(12deg) scaleX(1); }
-        88% { transform: translate(122px, 6px) rotate(-4deg) scaleX(1); }
-        97% { transform: translate(155px, 6px) rotate(0deg) scaleX(1); }
-        100% { transform: translate(155px, 6px) rotate(0deg) scaleX(-1); }
+      @keyframes pgRippleShift {
+        0% { transform: translateX(-6px); }
+        100% { transform: translateX(6px); }
       }
-      @keyframes flapFlipper {
+      @keyframes pgSnowFall {
+        0% { transform: translateY(-12px); }
+        100% { transform: translateY(72px); }
+      }
+      @keyframes pgSnowSway {
+        0% { transform: translateX(-5px); }
+        100% { transform: translateX(5px); }
+      }
+      @keyframes pgGlideX {
+        0% { transform: translateX(-105px); }
+        100% { transform: translateX(255px); }
+      }
+      @keyframes pgHopArc {
+        0% { transform: translateY(5px) rotate(3deg); }
+        100% { transform: translateY(-13px) rotate(-9deg); }
+      }
+      @keyframes pgFlapFlipper {
         0% { transform: rotate(-14deg); }
         100% { transform: rotate(16deg); }
       }
-      @keyframes kickFeet {
+      @keyframes pgKickFeet {
         0% { transform: rotate(-15deg); }
         100% { transform: rotate(15deg); }
+      }
+      @keyframes pgScarfFlutter {
+        0% { transform: rotate(-7deg); }
+        100% { transform: rotate(8deg); }
+      }
+      @keyframes pgSprayFly {
+        0% { transform: translate(0px, 0px) scale(1); opacity: 0.95; }
+        100% { transform: translate(-18px, -11px) scale(0.35); opacity: 0; }
       }
     </style>
   </defs>
 
-  <!-- NÚI BĂNG TRÔI NỀN XA (Background Icebergs) -->
-  <g opacity="0.75">
-    <polygon points="28,66 44,32 58,48 68,26 88,66" fill="url(#iceSide)" stroke="#e0f2fe" stroke-width="1"/>
-    <polygon points="44,32 52,48 40,66 28,66" fill="#ffffff" opacity="0.6"/>
-    <polygon points="184,66 198,38 212,50 222,34 240,66" fill="url(#iceSide)" stroke="#e0f2fe" stroke-width="1"/>
-  </g>
+  <g clip-path="url(#pg-clip)">
+    <!-- ARCTIC NIGHT-GLOW SKY BACKDROP -->
+    <rect x="0" y="0" width="260" height="71" rx="8" fill="url(#pg-sky)"/>
 
-  <!-- TẢNG BĂNG NỔI 1 (BÊN TRÁI) -->
-  <g class="floe-1">
-    <polygon points="10,62 22,55 78,55 88,62 82,70 16,70" fill="url(#iceSide)" stroke="#ffffff" stroke-width="1.2"/>
-    <polygon points="10,62 22,55 78,55 88,62 76,64 20,64" fill="url(#iceTop)"/>
-    <path d="M 6 70 Q 48 73 92 70" fill="none" stroke="#7dd3fc" stroke-width="1.6" stroke-linecap="round"/>
-  </g>
-
-  <!-- TẢNG BĂNG NỔI 2 (Ở GIỮA) -->
-  <g class="floe-2">
-    <polygon points="98,63 108,56 156,56 166,63 160,71 104,71" fill="url(#iceSide)" stroke="#ffffff" stroke-width="1.2"/>
-    <polygon points="98,63 108,56 156,56 166,63 154,65 108,65" fill="url(#iceTop)"/>
-    <path d="M 95 71 Q 132 74 170 71" fill="none" stroke="#7dd3fc" stroke-width="1.6" stroke-linecap="round"/>
-  </g>
-
-  <!-- TẢNG BĂNG NỔI 3 (BÊN PHẢI) -->
-  <g class="floe-3">
-    <polygon points="176,62 188,55 242,55 252,62 246,70 182,70" fill="url(#iceSide)" stroke="#ffffff" stroke-width="1.2"/>
-    <polygon points="176,62 188,55 242,55 252,62 240,64 186,64" fill="url(#iceTop)"/>
-    <path d="M 172 70 Q 214 73 255 70" fill="none" stroke="#7dd3fc" stroke-width="1.6" stroke-linecap="round"/>
-  </g>
-
-  <!-- CHIM CÁNH CỤT CHIBI TRƯỢT BỤNG va NHẢY QUA CÁC TẢNG BĂNG NỔI -->
-  <g class="penguin-journey">
-    <!-- Bông tuyết va hạt băng bắn lên sau chân -->
-    <circle cx="8" cy="52" r="2.2" fill="#ffffff" opacity="0.9"/>
-    <circle cx="14" cy="46" r="1.6" fill="#bae6fd" opacity="0.85"/>
-    <!-- Hai chân vàng đập nước/băng -->
-    <g class="feet">
-      <ellipse cx="19" cy="51" rx="5.5" ry="2.8" transform="rotate(-25 19 51)" fill="#f59e0b" stroke="#78350f" stroke-width="1"/>
-      <ellipse cx="22" cy="54" rx="5.5" ry="2.8" transform="rotate(-10 22 54)" fill="#fbbf24" stroke="#78350f" stroke-width="1"/>
+    <!-- TWINKLING ARCTIC STARS -->
+    <g fill="#e0f2fe">
+      <circle class="pg-star1" cx="22" cy="11" r="1.1"/>
+      <circle class="pg-star2" cx="64" cy="8" r="0.9"/>
+      <circle class="pg-star1" cx="118" cy="14" r="1.2"/>
+      <circle class="pg-star2" cx="162" cy="9" r="1.0"/>
+      <circle class="pg-star1" cx="206" cy="15" r="0.9"/>
+      <circle class="pg-star2" cx="242" cy="10" r="1.2"/>
     </g>
-    <!-- Thân cánh cụt nằm sấp trượt băng -->
-    <path d="M 21 46 C 28 32, 54 30, 74 37 C 84 40, 90 46, 88 52 C 86 58, 72 60, 52 59 C 34 59, 20 54, 21 46 Z" fill="url(#pgBody)" stroke="#0f172a" stroke-width="1.5"/>
-    <!-- Bụng trắng tròn trịa áp sát mặt băng -->
-    <path d="M 27 51 C 38 47, 58 47, 74 50 C 82 51, 86 54, 84 56 C 78 60, 62 60, 46 59 C 34 59, 26 55, 27 51 Z" fill="#ffffff"/>
-    <!-- Khăn choàng cổ đỏ bay phấp phới -->
-    <path d="M 66 35 C 69 43, 68 52, 64 58" fill="none" stroke="url(#pgScarf)" stroke-width="5.5" stroke-linecap="round"/>
-    <path d="M 65 38 C 53 33, 41 35, 32 31 C 37 26, 51 28, 65 34 Z" fill="url(#pgScarf)" stroke="#881337" stroke-width="1"/>
-    <!-- Mũ len mùa đông va quả bông trắng -->
-    <path d="M 66 34 C 66 23, 78 21, 84 29 Z" fill="url(#pgScarf)" stroke="#881337" stroke-width="1.2"/>
-    <path d="M 65 34 Q 75 31 85 30" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
-    <circle cx="69" cy="22" r="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-    <!-- Mắt to long lanh va má hồng -->
-    <ellipse cx="79" cy="42" rx="3.8" ry="4.2" fill="#0f172a"/>
-    <circle cx="80.2" cy="40.6" r="1.5" fill="#ffffff"/>
-    <circle cx="77.8" cy="43.2" r="0.8" fill="#7dd3fc"/>
-    <ellipse cx="75" cy="46.5" rx="2.8" ry="1.5" fill="#fb7185" opacity="0.65"/>
-    <!-- Mỏ vàng xinh xắn -->
-    <path d="M 87 43 C 93 44, 94 47, 87 48 Z" fill="#fbbf24" stroke="#78350f" stroke-width="1"/>
-    <!-- Cánh vẫy giữ thăng bằng -->
-    <g class="flipper">
-      <path d="M 52 46 C 43 52, 35 56, 31 53 C 34 48, 43 43, 52 46 Z" fill="url(#pgBody)" stroke="#0f172a" stroke-width="1.3"/>
+
+    <!-- AURORA BOREALIS RIBBONS -->
+    <g class="pg-aur1">
+      <path d="M -15 26 C 22 6, 68 34, 118 14 C 165 -4, 212 28, 275 10 L 275 34 C 212 50, 165 20, 118 38 C 68 56, 22 28, -15 44 Z" fill="url(#pg-aurora1)"/>
+      <path d="M -10 24 C 26 8, 70 30, 120 14 C 166 0, 214 26, 270 12" fill="none" stroke="#5eead4" stroke-width="1.6" opacity="0.65"/>
+    </g>
+    <g class="pg-aur2">
+      <path d="M -15 16 C 35 32, 85 4, 142 22 C 192 38, 230 8, 275 20 L 275 40 C 228 28, 190 54, 140 38 C 84 22, 34 48, -15 32 Z" fill="url(#pg-aurora2)"/>
+      <path d="M -10 18 C 36 30, 86 8, 142 24 C 192 36, 232 10, 270 22" fill="none" stroke="#c4b5fd" stroke-width="1.2" opacity="0.55"/>
+    </g>
+
+    <!-- LAYERED CRYSTALLINE BACKGROUND ICEBERGS -->
+    <g opacity="0.88">
+      <!-- Left distant iceberg cluster -->
+      <polygon points="8,66 26,34 38,46 50,24 72,66" fill="url(#pg-ice-far)" stroke="#e0f2fe" stroke-width="0.9"/>
+      <polygon points="26,34 33,48 22,66 8,66" fill="#ffffff" opacity="0.55"/>
+      <polygon points="50,24 56,48 44,66 36,66" fill="#ffffff" opacity="0.5"/>
+      <!-- Mid distant crystalline peak -->
+      <polygon points="104,66 122,36 134,48 148,30 166,66" fill="url(#pg-ice-far)" stroke="#bae6fd" stroke-width="0.85" opacity="0.78"/>
+      <polygon points="122,36 129,50 118,66 104,66" fill="#ffffff" opacity="0.45"/>
+      <polygon points="148,30 153,49 142,66 134,66" fill="#e0f2fe" opacity="0.5"/>
+      <!-- Right distant iceberg cluster -->
+      <polygon points="184,66 202,32 216,46 230,26 252,66" fill="url(#pg-ice-far)" stroke="#e0f2fe" stroke-width="0.9"/>
+      <polygon points="202,32 210,48 198,66 184,66" fill="#ffffff" opacity="0.55"/>
+      <polygon points="230,26 236,48 224,66 216,66" fill="#ffffff" opacity="0.48"/>
+    </g>
+
+    <!-- ICY ARCTIC WATER SURFACE ALONG Y=62..71 -->
+    <rect x="0" y="62" width="260" height="10" fill="url(#pg-water)"/>
+    <g class="pg-ripple" fill="none" stroke-linecap="round">
+      <path d="M 12 65 Q 32 63.5 52 65 M 84 67 Q 108 65.5 132 67 M 162 65 Q 186 63.5 210 65 M 224 68 Q 242 66.8 258 68" stroke="#7dd3fc" stroke-width="1.2" opacity="0.7"/>
+      <path d="M 48 69 Q 68 67.5 88 69 M 138 69 Q 160 67.8 182 69" stroke="#e0f2fe" stroke-width="1" opacity="0.6"/>
+    </g>
+
+    <!-- GLACIER FLOE 1 (LEFT: x=4..76) -->
+    <g class="pg-floe-1">
+      <polygon points="4,62 14,55 66,55 76,62 71,70 10,70" fill="url(#pg-ice-side)" stroke="#ffffff" stroke-width="1.1"/>
+      <polygon points="4,62 14,55 66,55 76,62 64,64 14,64" fill="url(#pg-ice-top)"/>
+      <polygon points="18,64 32,64 26,70 14,70" fill="#bae6fd" opacity="0.45"/>
+      <path d="M 2 70 Q 40 72.5 78 70" fill="none" stroke="#7dd3fc" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- GLACIER FLOE 2 (CENTER: x=94..166) -->
+    <g class="pg-floe-2">
+      <polygon points="94,63 104,56 156,56 166,63 161,70 100,70" fill="url(#pg-ice-side)" stroke="#ffffff" stroke-width="1.1"/>
+      <polygon points="94,63 104,56 156,56 166,63 154,65 104,65" fill="url(#pg-ice-top)"/>
+      <polygon points="112,65 128,65 122,70 108,70" fill="#bae6fd" opacity="0.45"/>
+      <path d="M 91 70 Q 130 72.5 169 70" fill="none" stroke="#7dd3fc" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- GLACIER FLOE 3 (RIGHT: x=184..256) -->
+    <g class="pg-floe-3">
+      <polygon points="184,62 194,55 246,55 256,62 251,70 190,70" fill="url(#pg-ice-side)" stroke="#ffffff" stroke-width="1.1"/>
+      <polygon points="184,62 194,55 246,55 256,62 244,64 194,64" fill="url(#pg-ice-top)"/>
+      <polygon points="204,64 220,64 214,70 200,70" fill="#bae6fd" opacity="0.45"/>
+      <path d="M 182 70 Q 220 72.5 258 70" fill="none" stroke="#7dd3fc" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- CHIBI PENGUIN BELLY-SLIDING AND HOPPING ACROSS ICE FLOES -->
+    <g class="pg-slide-x">
+      <g class="pg-hop-y">
+        <!-- Animated snow spray particles behind feet -->
+        <g class="pg-spray-1">
+          <circle cx="10" cy="52" r="2.2" fill="#ffffff"/>
+          <circle cx="15" cy="46" r="1.5" fill="#bae6fd"/>
+          <circle cx="6" cy="48" r="1.2" fill="#e0f2fe"/>
+        </g>
+        <g class="pg-spray-2">
+          <circle cx="13" cy="54" r="1.8" fill="#ffffff"/>
+          <circle cx="8" cy="44" r="1.3" fill="#7dd3fc"/>
+        </g>
+
+        <!-- Kicking yellow feet -->
+        <g class="pg-feet">
+          <ellipse cx="19" cy="51" rx="5.5" ry="2.8" transform="rotate(-25 19 51)" fill="#f59e0b" stroke="#78350f" stroke-width="1"/>
+          <ellipse cx="22" cy="54" rx="5.5" ry="2.8" transform="rotate(-10 22 54)" fill="#fbbf24" stroke="#78350f" stroke-width="1"/>
+        </g>
+
+        <!-- Penguin body belly-sliding -->
+        <path d="M 21 46 C 28 32, 54 30, 74 37 C 84 40, 90 46, 88 52 C 86 58, 72 60, 52 59 C 34 59, 20 54, 21 46 Z" fill="url(#pg-body)" stroke="#0f172a" stroke-width="1.5"/>
+        <!-- Round white belly -->
+        <path d="M 27 51 C 38 47, 58 47, 74 50 C 82 51, 86 54, 84 56 C 78 60, 62 60, 46 59 C 34 59, 26 55, 27 51 Z" fill="#ffffff"/>
+
+        <!-- Fluttering red scarf -->
+        <g class="pg-scarf-tail">
+          <path d="M 65 38 C 53 33, 41 35, 32 31 C 37 26, 51 28, 65 34 Z" fill="url(#pg-scarf)" stroke="#881337" stroke-width="1"/>
+        </g>
+        <path d="M 66 35 C 69 43, 68 52, 64 58" fill="none" stroke="url(#pg-scarf)" stroke-width="5.5" stroke-linecap="round"/>
+
+        <!-- Winter beanie hat + white pom-pom -->
+        <path d="M 66 34 C 66 23, 78 21, 84 29 Z" fill="url(#pg-scarf)" stroke="#881337" stroke-width="1.2"/>
+        <path d="M 65 34 Q 75 31 85 30" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="69" cy="22" r="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+
+        <!-- Sparkling eyes and rosy cheek -->
+        <ellipse cx="79" cy="42" rx="3.8" ry="4.2" fill="#0f172a"/>
+        <circle cx="80.2" cy="40.6" r="1.5" fill="#ffffff"/>
+        <circle cx="77.8" cy="43.2" r="0.8" fill="#7dd3fc"/>
+        <ellipse cx="75" cy="46.5" rx="2.8" ry="1.5" fill="#fb7185" opacity="0.65"/>
+
+        <!-- Golden beak -->
+        <path d="M 87 43 C 93 44, 94 47, 87 48 Z" fill="#fbbf24" stroke="#78350f" stroke-width="1"/>
+
+        <!-- Balancing flipper -->
+        <g class="pg-flipper">
+          <path d="M 52 46 C 43 52, 35 56, 31 53 C 34 48, 43 43, 52 46 Z" fill="url(#pg-body)" stroke="#0f172a" stroke-width="1.3"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- GENTLY FALLING SPARKLING SNOWFLAKES (FOREGROUND) -->
+    <g class="pg-snow-x1">
+      <g class="pg-snow-y1" fill="#ffffff">
+        <circle cx="28" cy="6" r="1.6" opacity="0.9"/>
+        <circle cx="76" cy="22" r="1.3" opacity="0.8"/>
+        <circle cx="128" cy="10" r="1.8" opacity="0.92"/>
+        <circle cx="182" cy="26" r="1.4" opacity="0.85"/>
+        <circle cx="234" cy="8" r="1.6" opacity="0.9"/>
+      </g>
+    </g>
+    <g class="pg-snow-x2">
+      <g class="pg-snow-y2" fill="#e0f2fe">
+        <circle cx="52" cy="14" r="1.2" opacity="0.75"/>
+        <circle cx="104" cy="30" r="1.5" opacity="0.82"/>
+        <circle cx="156" cy="4" r="1.1" opacity="0.7"/>
+        <circle cx="208" cy="18" r="1.6" opacity="0.85"/>
+        <circle cx="250" cy="28" r="1.2" opacity="0.75"/>
+      </g>
     </g>
   </g>
 </svg>

@@ -1,97 +1,302 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95" width="260" height="95">
   <defs>
-    <radialGradient id="mcaMoon" cx="45%" cy="45%" r="55%">
+    <radialGradient id="mcaSkyGlow" cx="82%" cy="24%" r="72%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.34"/>
+      <stop offset="45%" stop-color="#1e1b4b" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mcaMoon" cx="42%" cy="40%" r="58%">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="55%" stop-color="#fef08a"/>
+      <stop offset="48%" stop-color="#fef08a"/>
+      <stop offset="85%" stop-color="#fbbf24"/>
       <stop offset="100%" stop-color="#f59e0b"/>
     </radialGradient>
-    <linearGradient id="mcaCarp" x1="0" y1="0" x2="1" y2="0">
+    <radialGradient id="mcaMoonAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#fbbf24" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mcaRoof" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#fde047"/>
-      <stop offset="50%" stop-color="#fb923c"/>
+      <stop offset="55%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="mcaPillar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#991b1b"/>
+      <stop offset="45%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <linearGradient id="mcaRiverBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0.82"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.94"/>
+    </linearGradient>
+    <linearGradient id="mcaRiverFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d4ed8" stop-opacity="0.86"/>
+      <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="mcaCarp" x1="0" y1="0" x2="1" y2="0.2">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="35%" stop-color="#fb923c"/>
       <stop offset="100%" stop-color="#ef4444"/>
     </linearGradient>
+    <radialGradient id="mcaLanternGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#fef08a" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
     <clipPath id="mcaClip">
       <rect x="0" y="0" width="260" height="71"/>
     </clipPath>
     <style>
-      .mca-leaper { animation: mcaDragonGateLeap 3.0s ease-in-out infinite; }
-      .mca-splash { transform-origin: 175px 62px; animation: mcaSplashPop 3.0s ease-out infinite; opacity: 0; }
-      .mca-lotus1 { animation: mcaDriftLotus 4.5s ease-in-out infinite alternate; }
-      .mca-moon { transform-origin: 218px 22px; animation: mcaMoonHalo 2.6s ease-in-out infinite alternate; }
+      .mca-moon-halo { transform-origin: 216px 22px; animation: mcaHaloPulse 2.8s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .mca-cloud1 { animation: mcaCloudDrift1 5.6s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .mca-cloud2 { animation: mcaCloudDrift2 6.8s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .mca-star1 { transform-origin: 28px 16px; animation: mcaStarTwinkle 2.0s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .mca-star2 { transform-origin: 86px 12px; animation: mcaStarTwinkle 2.4s cubic-bezier(0.37, 0, 0.63, 1) 0.7s infinite alternate; }
+      .mca-star3 { transform-origin: 172px 15px; animation: mcaStarTwinkle 1.9s cubic-bezier(0.37, 0, 0.63, 1) 1.1s infinite alternate; }
+      .mca-skylantern1 { animation: mcaSkyLanternFloat 3.4s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .mca-skylantern2 { animation: mcaSkyLanternFloat 4.0s cubic-bezier(0.37, 0, 0.63, 1) 0.9s infinite alternate; }
+      .mca-gate-lanternL { transform-origin: 96px 28px; animation: mcaLanternSwing 2.2s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .mca-gate-lanternR { transform-origin: 160px 28px; animation: mcaLanternSwing 2.2s cubic-bezier(0.37, 0, 0.63, 1) 0.6s infinite alternate; }
+      .mca-wave-back { animation: mcaWaveShift 4.2s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .mca-wave-front { animation: mcaWaveShiftRev 3.4s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .mca-lotus1 { animation: mcaLotusDrift 4.6s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .mca-lotus2 { animation: mcaLotusDriftRev 5.2s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
 
-      @keyframes mcaDragonGateLeap {
-        0%   { transform: translate(226px, 68px) rotate(-35deg) scale(0.9); opacity: 0; }
-        12%  { opacity: 1; }
-        38%  { transform: translate(156px, 18px) rotate(-18deg) scale(1.05); opacity: 1; }
-        55%  { transform: translate(118px, 12px) rotate(8deg) scale(1.08); opacity: 1; }
-        82%  { transform: translate(58px, 52px) rotate(32deg) scale(0.96); opacity: 1; }
-        95%, 100% { transform: translate(34px, 70px) rotate(40deg) scale(0.85); opacity: 0; }
+      /* Silky 60fps decoupled parabolic Dragon Gate leap */
+      .mca-leapX { animation: mcaLeapX 3.2s linear infinite; }
+      .mca-leapY { animation: mcaLeapY 3.2s infinite; }
+      .mca-leapRot { animation: mcaLeapRot 3.2s linear infinite; }
+      .mca-tail { transform-origin: 17px 0px; animation: mcaTailWag 0.28s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .mca-splash-in { transform-origin: 214px 64px; animation: mcaSplashTakeoff 3.2s cubic-bezier(0.22, 0.61, 0.36, 1) infinite; opacity: 0; }
+      .mca-splash-out { transform-origin: 42px 64px; animation: mcaSplashLand 3.2s cubic-bezier(0.22, 0.61, 0.36, 1) infinite; opacity: 0; }
+
+      @keyframes mcaHaloPulse {
+        0% { transform: scale(0.94); opacity: 0.78; }
+        100% { transform: scale(1.07); opacity: 1; }
       }
-      @keyframes mcaSplashPop {
-        0%, 6%, 32%, 100% { opacity: 0; transform: scale(0.4); }
-        14%, 24% { opacity: 0.95; transform: scale(1.1); }
+      @keyframes mcaCloudDrift1 {
+        0% { transform: translateX(-6px); }
+        100% { transform: translateX(10px); }
       }
-      @keyframes mcaDriftLotus {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-14px); }
+      @keyframes mcaCloudDrift2 {
+        0% { transform: translateX(8px); }
+        100% { transform: translateX(-8px); }
       }
-      @keyframes mcaMoonHalo {
-        0% { transform: scale(0.96); }
-        100% { transform: scale(1.05); }
+      @keyframes mcaStarTwinkle {
+        0% { transform: scale(0.65); opacity: 0.35; }
+        100% { transform: scale(1.15); opacity: 1; }
+      }
+      @keyframes mcaSkyLanternFloat {
+        0% { transform: translateY(3px); }
+        100% { transform: translateY(-4px); }
+      }
+      @keyframes mcaLanternSwing {
+        0% { transform: rotate(-7deg); }
+        100% { transform: rotate(7deg); }
+      }
+      @keyframes mcaWaveShift {
+        0% { transform: translateX(-6px); }
+        100% { transform: translateX(6px); }
+      }
+      @keyframes mcaWaveShiftRev {
+        0% { transform: translateX(5px); }
+        100% { transform: translateX(-5px); }
+      }
+      @keyframes mcaLotusDrift {
+        0% { transform: translate(0px, 0px); }
+        100% { transform: translate(-11px, -1.5px); }
+      }
+      @keyframes mcaLotusDriftRev {
+        0% { transform: translate(0px, 0px); }
+        100% { transform: translate(9px, -1.5px); }
+      }
+      @keyframes mcaLeapX {
+        0%   { transform: translateX(228px); opacity: 0; }
+        7%   { opacity: 1; }
+        92%  { opacity: 1; }
+        100% { transform: translateX(28px); opacity: 0; }
+      }
+      @keyframes mcaLeapY {
+        0% {
+          transform: translateY(68px);
+          animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+        }
+        50% {
+          transform: translateY(15px);
+          animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
+        }
+        100% {
+          transform: translateY(68px);
+        }
+      }
+      @keyframes mcaLeapRot {
+        0%   { transform: rotate(-34deg); }
+        50%  { transform: rotate(0deg); }
+        100% { transform: rotate(34deg); }
+      }
+      @keyframes mcaTailWag {
+        0%   { transform: rotate(-10deg) scaleX(0.95); }
+        100% { transform: rotate(10deg) scaleX(1.04); }
+      }
+      @keyframes mcaSplashTakeoff {
+        0%, 2%   { opacity: 0; transform: scale(0.35) translateY(3px); }
+        10%      { opacity: 0.95; transform: scale(1.08) translateY(-2px); }
+        22%, 100%{ opacity: 0; transform: scale(1.28) translateY(-6px); }
+      }
+      @keyframes mcaSplashLand {
+        0%, 82%  { opacity: 0; transform: scale(0.35) translateY(3px); }
+        90%      { opacity: 0.95; transform: scale(1.08) translateY(-2px); }
+        100%     { opacity: 0; transform: scale(1.28) translateY(-6px); }
       }
     </style>
   </defs>
 
   <g clip-path="url(#mcaClip)">
-    <!-- Full Harvest Moon -->
-    <g class="mca-moon">
-      <circle cx="218" cy="22" r="21" fill="#fde047" opacity="0.22"/>
-      <circle cx="218" cy="22" r="15" fill="url(#mcaMoon)"/>
+    <!-- Moonlit Festival Sky Glow -->
+    <rect x="0" y="0" width="260" height="71" fill="url(#mcaSkyGlow)"/>
+
+    <!-- Twinkling Festival Stars -->
+    <g fill="#fef08a">
+      <path class="mca-star1" d="M28 12 L29.2 14.8 L32 16 L29.2 17.2 L28 20 L26.8 17.2 L24 16 L26.8 14.8 Z"/>
+      <path class="mca-star2" d="M86 8.5 L87 11 L89.5 12 L87 13 L86 15.5 L85 13 L82.5 12 L85 11 Z"/>
+      <path class="mca-star3" d="M172 11.5 L173 14 L175.5 15 L173 16 L172 18.5 L171 16 L168.5 15 L171 14 Z"/>
+    </g>
+
+    <!-- Huge Glowing Harvest Moon -->
+    <g>
+      <circle class="mca-moon-halo" cx="216" cy="22" r="29" fill="url(#mcaMoonAura)"/>
+      <circle cx="216" cy="22" r="16.5" fill="url(#mcaMoon)"/>
+      <circle cx="211" cy="18" r="2.8" fill="#f59e0b" opacity="0.22"/>
+      <circle cx="222" cy="25" r="3.4" fill="#f59e0b" opacity="0.18"/>
+      <circle cx="219" cy="15" r="1.7" fill="#ffffff" opacity="0.45"/>
+    </g>
+
+    <!-- Drifting Moonlit Clouds -->
+    <g class="mca-cloud1" fill="#e0e7ff" opacity="0.24">
+      <path d="M14 28 q5 -7 14 -5 q7 -6 16 -1 q9 -3 13 6 Z"/>
+      <path d="M192 34 q6 -6 15 -4 q8 -5 16 0 q8 -2 12 4 Z"/>
+    </g>
+    <g class="mca-cloud2" fill="#fef3c7" opacity="0.22">
+      <path d="M150 22 q4 -5 11 -3 q6 -5 14 -1 q7 -2 10 4 Z"/>
     </g>
 
     <!-- Floating Sky Lanterns -->
-    <g fill="#fb923c" stroke="#fef08a" stroke-width="1">
-      <rect x="42" y="12" width="8" height="11" rx="2"/>
-      <rect x="182" y="10" width="7" height="9" rx="2"/>
+    <g class="mca-skylantern1">
+      <circle cx="48" cy="22" r="9" fill="url(#mcaLanternGlow)" opacity="0.45"/>
+      <path d="M44 17 Q48 14 52 17 L51 25 Q48 27 45 25 Z" fill="#fb923c" stroke="#fef08a" stroke-width="0.9"/>
+      <ellipse cx="48" cy="25" rx="2.2" ry="1" fill="#fef9c3"/>
+    </g>
+    <g class="mca-skylantern2">
+      <circle cx="182" cy="18" r="7.5" fill="url(#mcaLanternGlow)" opacity="0.4"/>
+      <path d="M179 14 Q182 11.5 185 14 L184.2 21 Q182 22.5 179.8 21 Z" fill="#f97316" stroke="#fef08a" stroke-width="0.8"/>
+      <ellipse cx="182" cy="21" rx="1.8" ry="0.8" fill="#fef9c3"/>
     </g>
 
-    <!-- Golden Vu Mon Gate sitting on river at y=65 -->
+    <!-- Ornate Vermilion-Gold Dragon Gate (Vu Mon) sitting on river -->
     <g>
-      <line x1="108" y1="22" x2="108" y2="66" stroke="#dc2626" stroke-width="5"/>
-      <line x1="148" y1="22" x2="148" y2="66" stroke="#dc2626" stroke-width="5"/>
-      <path d="M96 24 Q128 10 160 24 L154 30 Q128 19 102 30 Z" fill="#facc15" stroke="#92400e" stroke-width="1.5"/>
-      <rect x="118" y="22" width="20" height="8" rx="2" fill="#991b1b" stroke="#fef08a" stroke-width="1"/>
-      <circle cx="102" cy="34" r="3.8" fill="#ef4444" stroke="#fde047" stroke-width="1"/>
-      <circle cx="154" cy="34" r="3.8" fill="#ef4444" stroke="#fde08a" stroke-width="1"/>
+      <!-- Pillars va stone bases -->
+      <rect x="103" y="25" width="6.5" height="41" rx="1.5" fill="url(#mcaPillar)" stroke="#7f1d1d" stroke-width="0.9"/>
+      <rect x="146.5" y="25" width="6.5" height="41" rx="1.5" fill="url(#mcaPillar)" stroke="#7f1d1d" stroke-width="0.9"/>
+      <rect x="101.5" y="59" width="9.5" height="5" rx="1.2" fill="#facc15" stroke="#92400e" stroke-width="0.8"/>
+      <rect x="145" y="59" width="9.5" height="5" rx="1.2" fill="#facc15" stroke="#92400e" stroke-width="0.8"/>
+
+      <!-- Crossbeam -->
+      <rect x="103" y="31" width="50" height="4.5" rx="1" fill="#dc2626" stroke="#fde047" stroke-width="0.9"/>
+
+      <!-- Upper va Lower Upturned Pagoda Roofs -->
+      <path d="M90 28 Q128 15 166 28 L161 32.5 Q128 22 95 32.5 Z" fill="url(#mcaRoof)" stroke="#92400e" stroke-width="1.2"/>
+      <path d="M100 22 Q128 11 156 22 L152 25.5 Q128 17 104 25.5 Z" fill="url(#mcaRoof)" stroke="#92400e" stroke-width="1.1"/>
+      <circle cx="128" cy="14" r="2.6" fill="#fef08a" stroke="#b45309" stroke-width="0.9"/>
+
+      <!-- Center Plaque -->
+      <rect x="116" y="23.5" width="24" height="9.5" rx="2" fill="#991b1b" stroke="#fef08a" stroke-width="1.1"/>
+      <path d="M122 28.2 L126 26.2 L128 28.2 L130 26.2 L134 28.2" fill="none" stroke="#fde047" stroke-width="1.2" stroke-linecap="round"/>
+
+      <!-- Hanging Glowing Star Lanterns -->
+      <g class="mca-gate-lanternL">
+        <line x1="96" y1="28" x2="96" y2="35" stroke="#fde047" stroke-width="1"/>
+        <circle cx="96" cy="39" r="7.5" fill="url(#mcaLanternGlow)" opacity="0.55"/>
+        <polygon points="96,33.5 97.6,37.2 101.5,37.5 98.5,40 99.4,43.8 96,41.7 92.6,43.8 93.5,40 90.5,37.5 94.4,37.2" fill="#ef4444" stroke="#fef08a" stroke-width="0.9"/>
+        <line x1="96" y1="43" x2="96" y2="46.5" stroke="#facc15" stroke-width="1"/>
+      </g>
+      <g class="mca-gate-lanternR">
+        <line x1="160" y1="28" x2="160" y2="35" stroke="#fde047" stroke-width="1"/>
+        <circle cx="160" cy="39" r="7.5" fill="url(#mcaLanternGlow)" opacity="0.55"/>
+        <polygon points="160,33.5 161.6,37.2 165.5,37.5 162.5,40 163.4,43.8 160,41.7 156.6,43.8 157.5,40 154.5,37.5 158.4,37.2" fill="#ef4444" stroke="#fef08a" stroke-width="0.9"/>
+        <line x1="160" y1="43" x2="160" y2="46.5" stroke="#facc15" stroke-width="1"/>
+      </g>
     </g>
 
-    <!-- Shimmering River Waves flush on y=70 -->
-    <path d="M6 63 Q45 57 85 63 T165 63 T254 63 L254 71 L6 71 Z" fill="#1e3a8a" opacity="0.82"/>
-    <path d="M14 67 Q55 61 95 67 T185 67 T248 67" fill="none" stroke="#fde047" stroke-width="1.5" opacity="0.6"/>
+    <!-- Back Shimmering River Layer -->
+    <g class="mca-wave-back">
+      <path d="M-10 62 Q28 56 66 62 T142 62 T218 62 T270 62 L270 72 L-10 72 Z" fill="url(#mcaRiverBack)"/>
+      <path d="M188 64 L236 64 M196 67.5 L230 67.5" stroke="#fde047" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/>
+    </g>
 
+    <!-- Golden Water-Splash Arcs va Droplets -->
+    <g class="mca-splash-in" fill="none" stroke-linecap="round">
+      <path d="M208 63 Q202 51 196 55" stroke="#fde047" stroke-width="1.8"/>
+      <path d="M220 63 Q226 50 232 54" stroke="#bae6fd" stroke-width="1.8"/>
+      <circle cx="204" cy="48" r="1.6" fill="#fef08a"/>
+      <circle cx="226" cy="47" r="1.5" fill="#e0f2fe"/>
+      <circle cx="215" cy="45" r="1.3" fill="#fde047"/>
+    </g>
+    <g class="mca-splash-out" fill="none" stroke-linecap="round">
+      <path d="M36 63 Q30 51 24 55" stroke="#bae6fd" stroke-width="1.8"/>
+      <path d="M48 63 Q54 50 60 54" stroke="#fde047" stroke-width="1.8"/>
+      <circle cx="33" cy="48" r="1.5" fill="#e0f2fe"/>
+      <circle cx="53" cy="47" r="1.6" fill="#fef08a"/>
+      <circle cx="43" cy="45" r="1.3" fill="#fde047"/>
+    </g>
+
+    <!-- Leaping Golden Lantern Carp (Decoupled Linear X + Parabolic Y + Tangent Rotation) -->
+    <g class="mca-leapX">
+      <g class="mca-leapY">
+        <g class="mca-leapRot">
+          <!-- Swishing Tail Fin -->
+          <path class="mca-tail" d="M17 0 L32 -9.5 L28 0 L32 9.5 Z" fill="#ef4444" stroke="#991b1b" stroke-width="1.2" stroke-linejoin="round"/>
+          <!-- Dorsal Fin -->
+          <path d="M-1 -9.5 Q6 -18 13 -8.5 Z" fill="#ef4444" stroke="#991b1b" stroke-width="1.1"/>
+          <!-- Carp Body -->
+          <ellipse cx="4" cy="0" rx="16" ry="10.5" fill="url(#mcaCarp)" stroke="#7c2d12" stroke-width="1.5"/>
+          <!-- Golden Scale Shimmer -->
+          <path d="M3 -4 Q6 -1 3 2 M9 -4 Q12 -1 9 2 M6 1 Q9 4 6 6.5" fill="none" stroke="#fef08a" stroke-width="1.1" stroke-linecap="round" opacity="0.72"/>
+          <!-- Pectoral Fin -->
+          <path d="M2 5 Q8 13 13 8" fill="#fb923c" stroke="#991b1b" stroke-width="1.1" stroke-linecap="round"/>
+          <!-- Eye va Blush -->
+          <circle cx="-5" cy="-2" r="2.3" fill="#1e1b4b"/>
+          <circle cx="-5.7" cy="-2.7" r="0.85" fill="#ffffff"/>
+          <ellipse cx="-2.5" cy="2.5" rx="2.2" ry="1.1" fill="#fb7185" opacity="0.55"/>
+          <!-- Whisker va Glowing Lantern -->
+          <path d="M-9 2 Q-16 0 -18.5 -5" fill="none" stroke="#fef08a" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="-18.5" cy="1.2" r="8.5" fill="url(#mcaLanternGlow)" opacity="0.65"/>
+          <circle cx="-18.5" cy="1.2" r="4.5" fill="#fef9c3" stroke="#f59e0b" stroke-width="1.2"/>
+          <circle cx="-19.5" cy="0" r="1.2" fill="#ffffff" opacity="0.9"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- Front River Wave va Floating Lotus Lanterns flush on y=71 -->
+    <g class="mca-wave-front">
+      <path d="M-10 66 Q24 61 58 66 T126 66 T194 66 T270 66 L270 72 L-10 72 Z" fill="url(#mcaRiverFront)"/>
+      <path d="M-10 66 Q24 61 58 66 T126 66 T194 66 T270 66" fill="none" stroke="#fde047" stroke-width="1.4" opacity="0.65"/>
+    </g>
+
+    <!-- Floating Lotus Lanterns (Hoa Dang) -->
     <g class="mca-lotus1">
-      <polygon points="68,64 74,58 80,64" fill="#f472b6"/>
-      <ellipse cx="74" cy="65" rx="8" ry="2.5" fill="#fbcfe8"/>
+      <circle cx="74" cy="61" r="7" fill="url(#mcaLanternGlow)" opacity="0.45"/>
+      <ellipse cx="74" cy="65.5" rx="9" ry="2.6" fill="#fbcfe8" stroke="#f472b6" stroke-width="0.7"/>
+      <polygon points="67.5,64.5 74,57.5 80.5,64.5" fill="#f472b6"/>
+      <polygon points="70,65 74,59 78,65" fill="#fbcfe8"/>
       <circle cx="74" cy="62" r="2" fill="#fef08a"/>
-      <polygon points="196,65 202,59 208,65" fill="#f472b6"/>
-      <ellipse cx="202" cy="66" rx="8" ry="2.5" fill="#fbcfe8"/>
-      <circle cx="202" cy="63" r="2" fill="#fef08a"/>
     </g>
-
-    <g class="mca-splash" stroke="#bae6fd" stroke-width="2" stroke-linecap="round" fill="none">
-      <path d="M168 62 Q162 50 156 54"/>
-      <path d="M182 62 Q188 50 194 54"/>
-    </g>
-
-    <!-- Leaping Golden Carp -->
-    <g class="mca-leaper">
-      <path d="M18 0 L32 -9 L29 0 L32 9 Z" fill="#ef4444" stroke="#991b1b" stroke-width="1.2"/>
-      <ellipse cx="4" cy="0" rx="16" ry="10.5" fill="url(#mcaCarp)" stroke="#7c2d12" stroke-width="1.5"/>
-      <path d="M0 -10 Q6 -17 12 -9 Z" fill="#ef4444"/>
-      <circle cx="-5" cy="-2" r="2.2" fill="#1e1b4b"/>
-      <circle cx="-5.6" cy="-2.6" r="0.8" fill="#ffffff"/>
-      <path d="M-9 2 Q-16 0 -18 -5" fill="none" stroke="#fef08a" stroke-width="1.6" stroke-linecap="round"/>
-      <circle cx="-18" cy="1" r="4.5" fill="#fef9c3" stroke="#f59e0b" stroke-width="1.2"/>
+    <g class="mca-lotus2">
+      <circle cx="196" cy="62" r="7" fill="url(#mcaLanternGlow)" opacity="0.45"/>
+      <ellipse cx="196" cy="66.2" rx="8.5" ry="2.4" fill="#fbcfe8" stroke="#f472b6" stroke-width="0.7"/>
+      <polygon points="190,65.2 196,58.5 202,65.2" fill="#f472b6"/>
+      <polygon points="192.5,65.5 196,60 199.5,65.5" fill="#fbcfe8"/>
+      <circle cx="196" cy="63" r="1.9" fill="#fef08a"/>
     </g>
   </g>
 </svg>

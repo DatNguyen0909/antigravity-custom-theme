@@ -1,109 +1,294 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95" shape-rendering="crispEdges">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95" width="260" height="95" shape-rendering="crispEdges">
   <defs>
-    <clipPath id="pkaClip">
+    <clipPath id="pka-clip">
       <rect x="0" y="0" width="260" height="71"/>
     </clipPath>
+    <linearGradient id="pka-sky-fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="12%" stop-color="#38bdf8" stop-opacity="0.16"/>
+      <stop offset="50%" stop-color="#60a5fa" stop-opacity="0.22"/>
+      <stop offset="88%" stop-color="#38bdf8" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
     <style>
-      /* Retro 8-bit Stage sitting flush on bubble top border y=70! */
-      .pk-runner { animation: pkRunStage 2.8s linear infinite; }
-      .pk-legs { animation: pkStride 0.22s steps(2) infinite; }
-      .pk-qblock { transform-origin: 96px 18px; animation: pkBumpBlock 2.8s ease-out infinite; }
-      .pk-coin { animation: pkCoinPop 2.8s ease-out infinite; opacity: 0; }
-      .pk-score { animation: pkScorePop 2.8s ease-out infinite; opacity: 0; }
+      /* Silky 60fps decoupled horizontal travel + gravity-arc platformer jumps */
+      .pka-run-x { animation: pkaRunX 3.6s linear infinite; }
+      .pka-jump-y { animation: pkaJumpY 3.6s linear infinite; }
+      .pka-stride { animation: pkaStride 0.2s steps(2) infinite; }
+      .pka-cape { animation: pkaCapeWave 0.24s steps(2) infinite; }
+      .pka-flag { animation: pkaFlagWave 0.6s steps(2) infinite; }
+      .pka-cloud-slow { animation: pkaCloudDrift 18s linear infinite; }
+      .pka-cloud-fast { animation: pkaCloudDrift 12s linear -5s infinite; }
+      .pka-star1 { animation: pkaTwinkle 1.4s steps(2) infinite; }
+      .pka-star2 { animation: pkaTwinkle 1.8s steps(2) -0.7s infinite; }
+      .pka-qblock { animation: pkaBumpBlock 3.6s cubic-bezier(0.33, 1, 0.68, 1) infinite; }
+      .pka-qshine { animation: pkaShimmer 0.9s steps(2) infinite; }
+      .pka-coin { animation: pkaCoinPop 3.6s linear infinite; opacity: 0; }
+      .pka-score { animation: pkaScorePop 3.6s linear infinite; opacity: 0; }
+      .pka-spark { animation: pkaSparkPop 3.6s linear infinite; opacity: 0; }
 
-      @keyframes pkRunStage {
-        0%   { transform: translate(220px, 31px); }
-        18%  { transform: translate(178px, 31px); }
-        30%  { transform: translate(150px, 5px); }
-        42%  { transform: translate(122px, 31px); }
-        52%  { transform: translate(100px, 31px); }
-        62%  { transform: translate(86px, 16px); }
-        74%  { transform: translate(62px, 31px); }
-        100% { transform: translate(-36px, 31px); }
+      @keyframes pkaRunX {
+        0%   { transform: translateX(265px); opacity: 0; }
+        4%   { opacity: 1; }
+        94%  { opacity: 1; }
+        100% { transform: translateX(-45px); opacity: 0; }
       }
-      @keyframes pkStride { 0% { transform: translateY(0); } 100% { transform: translateY(-2px); } }
-      @keyframes pkBumpBlock {
-        0%, 59%, 70%, 100% { transform: translateY(0); }
-        63% { transform: translateY(-5px); }
+      @keyframes pkaJumpY {
+        0%, 10% { transform: translateY(31px); animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1); }
+        17%     { transform: translateY(15px); animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0); }
+        24%, 29%{ transform: translateY(31px); animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1); }
+        37.5%   { transform: translateY(4px);  animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0); }
+        46%, 52%{ transform: translateY(31px); animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1); }
+        59%     { transform: translateY(15px); animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0); }
+        66%, 100%{ transform: translateY(31px); }
       }
-      @keyframes pkCoinPop {
-        0%, 60% { opacity: 0; transform: translate(94px, 12px) scaleX(1); }
-        64% { opacity: 1; transform: translate(94px, 1px) scaleX(0.3); }
-        72% { opacity: 1; transform: translate(94px, -1px) scaleX(1); }
-        84%, 100% { opacity: 0; transform: translate(94px, 6px) scaleX(0.3); }
+      @keyframes pkaStride {
+        0%   { transform: translateY(0); }
+        100% { transform: translateY(-2px); }
       }
-      @keyframes pkScorePop {
-        0%, 63% { opacity: 0; transform: translateY(0); }
-        68%, 82% { opacity: 1; transform: translateY(-3px); }
-        90%, 100% { opacity: 0; transform: translateY(-6px); }
+      @keyframes pkaCapeWave {
+        0%   { transform: translateY(0); }
+        100% { transform: translateY(-1px); }
+      }
+      @keyframes pkaFlagWave {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(1px); }
+      }
+      @keyframes pkaCloudDrift {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-260px); }
+      }
+      @keyframes pkaTwinkle {
+        0%   { opacity: 0.3; }
+        100% { opacity: 1; }
+      }
+      @keyframes pkaBumpBlock {
+        0%, 57%, 66%, 100% { transform: translateY(0); }
+        60% { transform: translateY(-5px); }
+      }
+      @keyframes pkaShimmer {
+        0%   { opacity: 0.35; }
+        100% { opacity: 0.95; }
+      }
+      @keyframes pkaCoinPop {
+        0%, 58% { opacity: 0; transform: translate(96px, 12px) scaleX(1); animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1); }
+        63%     { opacity: 1; transform: translate(96px, 1px) scaleX(0.35); animation-timing-function: linear; }
+        68%     { opacity: 1; transform: translate(96px, 0px) scaleX(1); animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0); }
+        76%, 100% { opacity: 0; transform: translate(96px, 8px) scaleX(0.35); }
+      }
+      @keyframes pkaScorePop {
+        0%, 61% { opacity: 0; transform: translateY(2px); }
+        65%, 78%{ opacity: 1; transform: translateY(-2px); }
+        86%, 100%{ opacity: 0; transform: translateY(-5px); }
+      }
+      @keyframes pkaSparkPop {
+        0%, 58% { opacity: 0; }
+        62%, 72%{ opacity: 1; }
+        78%, 100%{ opacity: 0; }
       }
     </style>
   </defs>
 
-  <g clip-path="url(#pkaClip)">
-    <!-- Retro Pixel Clouds -->
-    <g fill="#e0f2fe" opacity="0.8">
-      <rect x="28" y="10" width="22" height="5"/>
-      <rect x="32" y="6" width="14" height="4"/>
-      <rect x="196" y="10" width="26" height="5"/>
-      <rect x="202" y="6" width="14" height="4"/>
+  <g clip-path="url(#pka-clip)">
+    <!-- Soft Atmospheric Retro Sky Band -->
+    <rect x="0" y="0" width="260" height="62" fill="url(#pka-sky-fade)"/>
+
+    <!-- Twinkling 8-bit Pixel Stars -->
+    <g fill="#fef08a">
+      <rect class="pka-star1" x="14" y="6" width="2" height="2"/>
+      <rect class="pka-star2" x="62" y="4" width="2" height="2"/>
+      <rect class="pka-star1" x="142" y="7" width="2" height="2"/>
+      <rect class="pka-star2" x="184" y="5" width="2" height="2"/>
+      <rect class="pka-star1" x="242" y="8" width="2" height="2"/>
     </g>
 
-    <!-- 8-bit Grass and Brick Ground Strip flush on y=70 -->
-    <rect x="6" y="61" width="248" height="3" fill="#22c55e"/>
-    <rect x="6" y="64" width="248" height="6" fill="#b45309"/>
-    <path d="M 20 64 V 70 M 40 64 V 70 M 60 64 V 70 M 80 64 V 70 M 100 64 V 70 M 120 64 V 70 M 140 64 V 70 M 160 64 V 70 M 180 64 V 70 M 200 64 V 70 M 220 64 V 70 M 240 64 V 70" stroke="#78350f" stroke-width="2"/>
-
-    <!-- Green Warp Pipe sitting on y=61 -->
-    <g>
-      <rect x="148" y="42" width="22" height="19" fill="#16a34a"/>
-      <rect x="151" y="42" width="5" height="19" fill="#4ade80"/>
-      <rect x="145" y="36" width="28" height="6" fill="#22c55e"/>
-      <rect x="148" y="36" width="6" height="6" fill="#86efac"/>
-      <rect x="145" y="36" width="28" height="2" fill="#14532d"/>
-    </g>
-
-    <!-- Floating Brick Row + Golden '?' Block -->
-    <g>
-      <rect x="72" y="10" width="16" height="15" fill="#c2410c"/>
-      <rect x="73" y="11" width="14" height="6" fill="#ea580c"/>
-      <rect x="73" y="18" width="6" height="6" fill="#ea580c"/>
-      <rect x="81" y="18" width="6" height="6" fill="#ea580c"/>
-      <rect x="104" y="10" width="16" height="15" fill="#c2410c"/>
-      <rect x="105" y="11" width="14" height="6" fill="#ea580c"/>
-      <rect x="105" y="18" width="6" height="6" fill="#ea580c"/>
-      <rect x="113" y="18" width="6" height="6" fill="#ea580c"/>
-      <g class="pk-qblock">
-        <rect x="88" y="10" width="16" height="15" fill="#d97706"/>
-        <rect x="89" y="11" width="14" height="13" fill="#facc15"/>
-        <text x="96" y="21" font-family="Consolas, monospace" font-size="11" font-weight="900" fill="#78350f" text-anchor="middle">?</text>
+    <!-- Parallax Floating Pixel Clouds (seamless 260px wrap) -->
+    <g class="pka-cloud-slow" opacity="0.82">
+      <g>
+        <rect x="26" y="10" width="24" height="5" fill="#bae6fd"/>
+        <rect x="28" y="8" width="20" height="4" fill="#f0f9ff"/>
+        <rect x="33" y="5" width="10" height="3" fill="#ffffff"/>
+        <rect x="132" y="14" width="20" height="4" fill="#bae6fd"/>
+        <rect x="135" y="11" width="14" height="3" fill="#f0f9ff"/>
+        <rect x="210" y="9" width="28" height="5" fill="#bae6fd"/>
+        <rect x="213" y="6" width="22" height="4" fill="#f0f9ff"/>
+        <rect x="218" y="4" width="12" height="2" fill="#ffffff"/>
+      </g>
+      <g transform="translate(260, 0)">
+        <rect x="26" y="10" width="24" height="5" fill="#bae6fd"/>
+        <rect x="28" y="8" width="20" height="4" fill="#f0f9ff"/>
+        <rect x="33" y="5" width="10" height="3" fill="#ffffff"/>
+        <rect x="132" y="14" width="20" height="4" fill="#bae6fd"/>
+        <rect x="135" y="11" width="14" height="3" fill="#f0f9ff"/>
+        <rect x="210" y="9" width="28" height="5" fill="#bae6fd"/>
+        <rect x="213" y="6" width="22" height="4" fill="#f0f9ff"/>
+        <rect x="218" y="4" width="12" height="2" fill="#ffffff"/>
       </g>
     </g>
 
-    <!-- Popping Golden 8-bit Coin + "+100" -->
-    <g class="pk-coin">
-      <rect x="-4" y="0" width="8" height="10" fill="#facc15"/>
-      <rect x="-2" y="2" width="4" height="6" fill="#fef08a"/>
+    <!-- Distant 8-bit Rolling Hills -->
+    <g opacity="0.72">
+      <rect x="52" y="55" width="44" height="6" fill="#15803d"/>
+      <rect x="58" y="50" width="32" height="5" fill="#15803d"/>
+      <rect x="65" y="46" width="18" height="4" fill="#16a34a"/>
+      <rect x="172" y="56" width="46" height="5" fill="#15803d"/>
+      <rect x="180" y="51" width="30" height="5" fill="#16a34a"/>
+      <rect x="188" y="48" width="14" height="3" fill="#22c55e"/>
     </g>
-    <text class="pk-score" x="116" y="9" font-family="Consolas, monospace" font-size="7.5" font-weight="900" fill="#fef08a" text-anchor="middle">+100</text>
 
-    <!-- Running Chibi Pixel Knight -->
-    <g class="pk-runner">
-      <g class="pk-legs">
-        <rect x="18" y="14" width="12" height="12" fill="#dc2626"/>
-        <rect x="28" y="16" width="6" height="8" fill="#ef4444"/>
-        <rect x="8" y="26" width="6" height="4" fill="#1e293b"/>
-        <rect x="18" y="26" width="6" height="4" fill="#1e293b"/>
-        <rect x="8" y="14" width="14" height="12" fill="#cbd5e1"/>
-        <rect x="8" y="22" width="14" height="3" fill="#ca8a04"/>
-        <rect x="10" y="-4" width="14" height="5" fill="#ef4444"/>
-        <rect x="6" y="0" width="18" height="15" fill="#94a3b8"/>
-        <rect x="8" y="2" width="14" height="11" fill="#e2e8f0"/>
-        <rect x="6" y="6" width="10" height="6" fill="#0f172a"/>
-        <rect x="8" y="8" width="3" height="3" fill="#38bdf8"/>
-        <rect x="-8" y="14" width="14" height="4" fill="#e2e8f0"/>
-        <rect x="-6" y="15" width="10" height="2" fill="#38bdf8"/>
-        <rect x="4" y="12" width="3" height="8" fill="#facc15"/>
+    <!-- Distant Pixel Castle Silhouette (Left) -->
+    <g>
+      <!-- Left and Right Turrets -->
+      <rect x="14" y="37" width="8" height="24" fill="#334155"/>
+      <rect x="44" y="37" width="8" height="24" fill="#334155"/>
+      <!-- Turret Battlements -->
+      <rect x="13" y="34" width="3" height="3" fill="#475569"/>
+      <rect x="18" y="34" width="4" height="3" fill="#475569"/>
+      <rect x="44" y="34" width="3" height="3" fill="#475569"/>
+      <rect x="49" y="34" width="4" height="3" fill="#475569"/>
+      <!-- Main Keep Wall -->
+      <rect x="22" y="41" width="22" height="20" fill="#475569"/>
+      <rect x="24" y="38" width="4" height="3" fill="#64748b"/>
+      <rect x="31" y="38" width="4" height="3" fill="#64748b"/>
+      <rect x="38" y="38" width="4" height="3" fill="#64748b"/>
+      <!-- Central Keep Spire -->
+      <rect x="28" y="27" width="10" height="14" fill="#334155"/>
+      <rect x="30" y="23" width="6" height="4" fill="#dc2626"/>
+      <rect x="32" y="19" width="2" height="4" fill="#ef4444"/>
+      <!-- Fluttering Castle Flag -->
+      <rect x="33" y="14" width="1" height="6" fill="#cbd5e1"/>
+      <g class="pka-flag">
+        <rect x="34" y="14" width="6" height="3" fill="#ef4444"/>
+        <rect x="38" y="15" width="3" height="2" fill="#facc15"/>
+      </g>
+      <!-- Glowing Amber Castle Windows and Arch Gate -->
+      <rect x="17" y="42" width="2" height="4" fill="#facc15"/>
+      <rect x="47" y="42" width="2" height="4" fill="#facc15"/>
+      <rect x="32" y="31" width="2" height="4" fill="#fef08a"/>
+      <rect x="29" y="51" width="8" height="10" fill="#0f172a"/>
+      <rect x="31" y="49" width="4" height="2" fill="#0f172a"/>
+    </g>
+
+    <!-- Pixel Bushes along Grass -->
+    <g>
+      <rect x="64" y="57" width="14" height="4" fill="#16a34a"/>
+      <rect x="67" y="54" width="8" height="3" fill="#22c55e"/>
+      <rect x="69" y="56" width="2" height="2" fill="#facc15"/>
+      <rect x="122" y="57" width="16" height="4" fill="#16a34a"/>
+      <rect x="125" y="54" width="10" height="3" fill="#22c55e"/>
+      <rect x="131" y="56" width="2" height="2" fill="#f472b6"/>
+      <rect x="196" y="58" width="12" height="3" fill="#16a34a"/>
+      <rect x="199" y="56" width="6" height="2" fill="#4ade80"/>
+    </g>
+
+    <!-- Tall Green Warp Pipe sitting flush on y=61 -->
+    <g>
+      <rect x="152" y="42" width="22" height="19" fill="#16a34a"/>
+      <rect x="155" y="42" width="5" height="19" fill="#4ade80"/>
+      <rect x="161" y="42" width="2" height="19" fill="#86efac"/>
+      <rect x="170" y="42" width="4" height="19" fill="#15803d"/>
+      <rect x="149" y="36" width="28" height="6" fill="#22c55e"/>
+      <rect x="152" y="36" width="6" height="6" fill="#86efac"/>
+      <rect x="173" y="36" width="4" height="6" fill="#15803d"/>
+      <rect x="149" y="36" width="28" height="2" fill="#14532d"/>
+      <rect x="152" y="42" width="22" height="1" fill="#14532d"/>
+    </g>
+
+    <!-- Second Shorter Green Warp Pipe on Right -->
+    <g>
+      <rect x="218" y="49" width="18" height="12" fill="#16a34a"/>
+      <rect x="220" y="49" width="4" height="12" fill="#4ade80"/>
+      <rect x="233" y="49" width="3" height="12" fill="#15803d"/>
+      <rect x="216" y="44" width="22" height="5" fill="#22c55e"/>
+      <rect x="218" y="44" width="5" height="5" fill="#86efac"/>
+      <rect x="216" y="44" width="22" height="1" fill="#14532d"/>
+      <rect x="218" y="49" width="18" height="1" fill="#14532d"/>
+    </g>
+
+    <!-- Floating Brick Row + Glowing '?' Coin Block -->
+    <g>
+      <!-- Left Brick -->
+      <rect x="72" y="13" width="16" height="14" fill="#9a3412"/>
+      <rect x="73" y="14" width="14" height="5" fill="#ea580c"/>
+      <rect x="73" y="14" width="14" height="1" fill="#fb923c"/>
+      <rect x="73" y="20" width="6" height="6" fill="#ea580c"/>
+      <rect x="81" y="20" width="6" height="6" fill="#ea580c"/>
+      <!-- Right Brick -->
+      <rect x="104" y="13" width="16" height="14" fill="#9a3412"/>
+      <rect x="105" y="14" width="14" height="5" fill="#ea580c"/>
+      <rect x="105" y="14" width="14" height="1" fill="#fb923c"/>
+      <rect x="105" y="20" width="6" height="6" fill="#ea580c"/>
+      <rect x="113" y="20" width="6" height="6" fill="#ea580c"/>
+      <!-- Animated Glowing '?' Block -->
+      <g class="pka-qblock">
+        <rect x="88" y="13" width="16" height="14" fill="#b45309"/>
+        <rect x="89" y="14" width="14" height="12" fill="#facc15"/>
+        <rect class="pka-qshine" x="89" y="14" width="14" height="2" fill="#fef08a"/>
+        <rect x="90" y="15" width="1" height="1" fill="#92400e"/>
+        <rect x="101" y="15" width="1" height="1" fill="#92400e"/>
+        <rect x="90" y="24" width="1" height="1" fill="#92400e"/>
+        <rect x="101" y="24" width="1" height="1" fill="#92400e"/>
+        <text x="96" y="23" font-family="Consolas, monospace" font-size="10.5" font-weight="900" fill="#78350f" text-anchor="middle">?</text>
+      </g>
+    </g>
+
+    <!-- Second Standalone Glowing '?' Block on Right -->
+    <g>
+      <rect x="184" y="18" width="14" height="13" fill="#b45309"/>
+      <rect x="185" y="19" width="12" height="11" fill="#facc15"/>
+      <rect class="pka-qshine" x="185" y="19" width="12" height="2" fill="#fef08a"/>
+      <text x="191" y="27.5" font-family="Consolas, monospace" font-size="9.5" font-weight="900" fill="#78350f" text-anchor="middle">?</text>
+    </g>
+
+    <!-- Popping Golden 8-bit Coin + Sparkles + "+100" -->
+    <g class="pka-coin">
+      <rect x="-4" y="0" width="8" height="10" fill="#eab308"/>
+      <rect x="-3" y="1" width="6" height="8" fill="#facc15"/>
+      <rect x="-1" y="2" width="2" height="6" fill="#fef08a"/>
+    </g>
+    <g class="pka-spark" fill="#fef08a">
+      <rect x="85" y="5" width="2" height="2"/>
+      <rect x="105" y="7" width="2" height="2"/>
+      <rect x="95" y="1" width="2" height="2"/>
+    </g>
+    <text class="pka-score" x="116" y="10" font-family="Consolas, monospace" font-size="7.5" font-weight="900" fill="#fef08a" text-anchor="middle">+100</text>
+
+    <!-- 8-bit Grass and Staggered Brick Ground Strip flush on y=71 -->
+    <rect x="0" y="61" width="260" height="3" fill="#22c55e"/>
+    <rect x="0" y="61" width="260" height="1" fill="#4ade80"/>
+    <rect x="0" y="64" width="260" height="7" fill="#b45309"/>
+    <rect x="0" y="64" width="260" height="1" fill="#d97706"/>
+    <rect x="0" y="67" width="260" height="1" fill="#78350f"/>
+    <path d="M 16 64 V 67 M 36 64 V 67 M 56 64 V 67 M 76 64 V 67 M 96 64 V 67 M 116 64 V 67 M 136 64 V 67 M 156 64 V 67 M 176 64 V 67 M 196 64 V 67 M 216 64 V 67 M 236 64 V 67 M 256 64 V 67" stroke="#78350f" stroke-width="2"/>
+    <path d="M 6 68 V 71 M 26 68 V 71 M 46 68 V 71 M 66 68 V 71 M 86 68 V 71 M 106 68 V 71 M 126 68 V 71 M 146 68 V 71 M 166 68 V 71 M 186 68 V 71 M 206 68 V 71 M 226 68 V 71 M 246 68 V 71" stroke="#78350f" stroke-width="2"/>
+
+    <!-- Running and Jumping Chibi 8-bit Pixel Knight (exact character preserved) -->
+    <g class="pka-run-x">
+      <g class="pka-jump-y">
+        <g class="pka-stride">
+          <!-- Billowing Red Cape -->
+          <g class="pka-cape">
+            <rect x="18" y="14" width="12" height="12" fill="#dc2626"/>
+            <rect x="28" y="16" width="6" height="8" fill="#ef4444"/>
+          </g>
+          <!-- Boots -->
+          <rect x="8" y="26" width="6" height="4" fill="#1e293b"/>
+          <rect x="18" y="26" width="6" height="4" fill="#1e293b"/>
+          <!-- Armor Torso and Gold Belt -->
+          <rect x="8" y="14" width="14" height="12" fill="#cbd5e1"/>
+          <rect x="8" y="22" width="14" height="3" fill="#ca8a04"/>
+          <!-- Red Helmet Plume -->
+          <rect x="10" y="-4" width="14" height="5" fill="#ef4444"/>
+          <!-- Helmet and Glowing Cyan Visor -->
+          <rect x="6" y="0" width="18" height="15" fill="#94a3b8"/>
+          <rect x="8" y="2" width="14" height="11" fill="#e2e8f0"/>
+          <rect x="6" y="6" width="10" height="6" fill="#0f172a"/>
+          <rect x="8" y="8" width="3" height="3" fill="#38bdf8"/>
+          <!-- Pixel Sword -->
+          <rect x="-8" y="14" width="14" height="4" fill="#e2e8f0"/>
+          <rect x="-6" y="15" width="10" height="2" fill="#38bdf8"/>
+          <rect x="4" y="12" width="3" height="8" fill="#facc15"/>
+        </g>
       </g>
     </g>
   </g>

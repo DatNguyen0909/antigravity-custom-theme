@@ -1,104 +1,240 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95" width="260" height="95">
   <defs>
-    <linearGradient id="cwaSkyWhale" x1="0%" y1="0%" x2="100%" y2="100%">
+    <clipPath id="cwa-clip">
+      <rect x="0" y="0" width="260" height="71"/>
+    </clipPath>
+    <linearGradient id="cwa-sunset-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c4b5fd" stop-opacity="0.24"/>
+      <stop offset="52%" stop-color="#f9a8d4" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.3"/>
+    </linearGradient>
+    <radialGradient id="cwa-sun-halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.7"/>
+      <stop offset="45%" stop-color="#fb923c" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cwa-sky-whale" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#93c5fd"/>
       <stop offset="55%" stop-color="#818cf8"/>
       <stop offset="100%" stop-color="#ec4899"/>
     </linearGradient>
-    <linearGradient id="cwaBelly" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="cwa-belly" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#fff1f2"/>
       <stop offset="100%" stop-color="#fed7aa"/>
     </linearGradient>
+    <linearGradient id="cwa-rainbow-1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fda4af" stop-opacity="0.72"/>
+      <stop offset="50%" stop-color="#fde047" stop-opacity="0.48"/>
+      <stop offset="100%" stop-color="#fde047" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cwa-rainbow-2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.65"/>
+      <stop offset="55%" stop-color="#c4b5fd" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#c4b5fd" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cwa-waterfall" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.95"/>
+      <stop offset="70%" stop-color="#7dd3fc" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#bae6fd" stop-opacity="0"/>
+    </linearGradient>
     <style>
-      /* Sunset Sky Stage: Cloud Whale glides gracefully across floating islands, tail puffing golden-pink clouds! */
-      .cwa-swimX { animation: cwaGlideX 3.4s linear infinite; }
-      .cwa-swimY { transform-origin: 35px 20px; animation: cwaGlideY 1.15s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
-      .cwa-tail { transform-origin: 58px 20px; animation: cwaFluke 0.65s ease-in-out infinite alternate; }
-      .cwa-puff1 { animation: cwaPuff 1.1s ease-out infinite; opacity: 0; }
-      .cwa-puff2 { animation: cwaPuff 1.1s ease-out 0.55s infinite; opacity: 0; }
-      .cwa-isle1 { animation: cwaIsleBob 2.6s ease-in-out infinite alternate; }
-      .cwa-isle2 { animation: cwaIsleBob 2.6s ease-in-out 1.3s infinite alternate; }
+      /* Silky 60fps Ghibli sunset sky stage: decoupled linear X + sine cubic-bezier Y */
+      .cwa-swim-x { animation: cwaGlideX 3.8s linear infinite; }
+      .cwa-swim-y { transform-origin: 35px 20px; animation: cwaGlideY 1.3s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .cwa-tail { transform-origin: 58px 20px; animation: cwaFluke 0.7s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .cwa-puff1 { animation: cwaPuff 1.2s ease-out infinite; opacity: 0; }
+      .cwa-puff2 { animation: cwaPuff 1.2s ease-out 0.4s infinite; opacity: 0; }
+      .cwa-puff3 { animation: cwaPuff 1.2s ease-out 0.8s infinite; opacity: 0; }
+      .cwa-isle1 { animation: cwaIsleBob 2.8s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .cwa-isle2 { animation: cwaIsleBob 3.1s cubic-bezier(0.37, 0, 0.63, 1) -1.4s infinite alternate; }
+      .cwa-isle3 { animation: cwaIsleBob 2.4s cubic-bezier(0.37, 0, 0.63, 1) -0.8s infinite alternate; }
+      .cwa-bg-clouds { animation: cwaParallax 22s linear infinite; }
+      .cwa-fg-clouds { animation: cwaParallax 13s linear -4s infinite; }
+      .cwa-star-a { animation: cwaStarPulse 1.8s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .cwa-star-b { animation: cwaStarPulse 2.3s cubic-bezier(0.37, 0, 0.63, 1) -1.1s infinite alternate; }
+      .cwa-sun-pulse { transform-origin: 132px 26px; animation: cwaSunPulse 3.2s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .cwa-fall-flow { stroke-dasharray: 4 3; animation: cwaWaterFlow 0.7s linear infinite; }
 
       @keyframes cwaGlideX {
-        0%   { transform: translateX(210px); opacity: 0; }
+        0%   { transform: translateX(255px); opacity: 0; }
         7%   { opacity: 1; }
-        93%  { opacity: 1; }
-        100% { transform: translateX(-75px); opacity: 0; }
+        92%  { opacity: 1; }
+        100% { transform: translateX(-85px); opacity: 0; }
       }
       @keyframes cwaGlideY {
-        0%   { transform: translateY(15px) rotate(-4.5deg); }
-        100% { transform: translateY(29px) rotate(4.5deg); }
+        0%   { transform: translateY(14px) rotate(-4.2deg); }
+        100% { transform: translateY(28px) rotate(4.2deg); }
       }
-      @keyframes cwaFluke { 0% { transform: rotate(-16deg); } 100% { transform: rotate(18deg); } }
+      @keyframes cwaFluke {
+        0%   { transform: rotate(-16deg); }
+        100% { transform: rotate(18deg); }
+      }
       @keyframes cwaPuff {
-        0% { opacity: 0.9; transform: translate(0, 0) scale(0.5); }
-        100% { opacity: 0; transform: translate(26px, -6px) scale(1.4); }
+        0%   { opacity: 0.9; transform: translate(0, 0) scale(0.45); }
+        100% { opacity: 0; transform: translate(28px, -7px) scale(1.45); }
       }
-      @keyframes cwaIsleBob { 0% { transform: translateY(-2px); } 100% { transform: translateY(3px); } }
+      @keyframes cwaIsleBob {
+        0%   { transform: translateY(-2.5px); }
+        100% { transform: translateY(2.5px); }
+      }
+      @keyframes cwaParallax {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-260px); }
+      }
+      @keyframes cwaStarPulse {
+        0%   { opacity: 0.25; }
+        100% { opacity: 1; }
+      }
+      @keyframes cwaSunPulse {
+        0%   { transform: scale(0.96); opacity: 0.88; }
+        100% { transform: scale(1.05); opacity: 1; }
+      }
+      @keyframes cwaWaterFlow {
+        0%   { stroke-dashoffset: 7; }
+        100% { stroke-dashoffset: 0; }
+      }
     </style>
   </defs>
 
-  <!-- Sunset Sun Disc -->
-  <circle cx="130" cy="24" r="16" fill="#fde047" opacity="0.35"/>
-  <circle cx="130" cy="24" r="11" fill="#fb923c" opacity="0.45"/>
+  <g clip-path="url(#cwa-clip)">
+    <!-- Pastel Peach-Lavender-Gold Sunset Sky Glow -->
+    <rect x="0" y="0" width="260" height="71" fill="url(#cwa-sunset-sky)"/>
 
-  <!-- Left Floating Sky Island (with tiny tree va waterfall) -->
-  <g class="cwa-isle1">
-    <g transform="translate(28, 28)">
-      <polygon points="4,14 36,14 26,32 14,32" fill="#92400e"/>
-      <polygon points="10,14 30,14 23,28" fill="#78350f"/>
-      <ellipse cx="20" cy="13" rx="18" ry="4.5" fill="#4ade80"/>
-      <!-- Tiny sunset tree -->
-      <rect x="18" y="4" width="3" height="8" fill="#78350f"/>
-      <circle cx="19.5" cy="3" r="6" fill="#f472b6"/>
-      <!-- Sky waterfall -->
-      <path d="M 25 15 Q 27 28 25 40" fill="none" stroke="#bae6fd" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+    <!-- Radiant Sunset Sun Disc and Halo -->
+    <g class="cwa-sun-pulse">
+      <circle cx="132" cy="26" r="32" fill="url(#cwa-sun-halo)"/>
+      <circle cx="132" cy="26" r="15" fill="#fde047" opacity="0.45"/>
+      <circle cx="132" cy="26" r="10.5" fill="#fb923c" opacity="0.62"/>
+      <circle cx="132" cy="26" r="7" fill="#fef9c3" opacity="0.72"/>
+    </g>
+
+    <!-- Twinkling Golden Stars -->
+    <g fill="#fef08a">
+      <path class="cwa-star-a" d="M 20 8 L 21.2 11 L 24 12 L 21.2 13 L 20 16 L 18.8 13 L 16 12 L 18.8 11 Z"/>
+      <circle class="cwa-star-b" cx="76" cy="9" r="1.4"/>
+      <path class="cwa-star-b" d="M 102 6 L 103 8.2 L 105.2 9 L 103 9.8 L 102 12 L 101 9.8 L 98.8 9 L 101 8.2 Z"/>
+      <circle class="cwa-star-a" cx="168" cy="11" r="1.5"/>
+      <path class="cwa-star-a" d="M 238 8 L 239 10.2 L 241.2 11 L 239 11.8 L 238 14 L 237 11.8 L 234.8 11 L 237 10.2 Z"/>
+      <circle class="cwa-star-b" cx="192" cy="6" r="1.2" fill="#ffffff"/>
+      <circle class="cwa-star-a" cx="56" cy="18" r="1.1" fill="#fde68a"/>
+    </g>
+
+    <!-- Background Parallax Fluffy Sunset Clouds -->
+    <g class="cwa-bg-clouds" opacity="0.58">
+      <g>
+        <path d="M 8 24 Q 14 16 24 19 Q 32 13 42 19 Q 50 17 54 24 Z" fill="#fbcfe8"/>
+        <path d="M 94 20 Q 100 13 110 16 Q 118 11 126 17 Q 132 16 135 20 Z" fill="#fed7aa"/>
+        <path d="M 164 25 Q 172 17 183 20 Q 192 14 202 20 Q 210 18 214 25 Z" fill="#ddd6fe"/>
+      </g>
+      <g transform="translate(260, 0)">
+        <path d="M 8 24 Q 14 16 24 19 Q 32 13 42 19 Q 50 17 54 24 Z" fill="#fbcfe8"/>
+        <path d="M 94 20 Q 100 13 110 16 Q 118 11 126 17 Q 132 16 135 20 Z" fill="#fed7aa"/>
+        <path d="M 164 25 Q 172 17 183 20 Q 192 14 202 20 Q 210 18 214 25 Z" fill="#ddd6fe"/>
+      </g>
+    </g>
+
+    <!-- Distant Mid-Right Mini Floating Sky Island -->
+    <g class="cwa-isle3" opacity="0.78">
+      <g transform="translate(152, 34) scale(0.75)">
+        <polygon points="4,10 24,10 17,22 11,22" fill="#a16207"/>
+        <ellipse cx="14" cy="9.5" rx="11" ry="3.2" fill="#6ee7b7"/>
+        <rect x="13" y="3" width="2" height="6" fill="#78350f"/>
+        <circle cx="14" cy="2" r="4" fill="#fda4af"/>
+      </g>
+    </g>
+
+    <!-- Left Floating Sky Island (with blossom tree and shimmering waterfall) -->
+    <g class="cwa-isle1">
+      <g transform="translate(24, 27)">
+        <polygon points="4,14 38,14 28,33 14,33" fill="#92400e"/>
+        <polygon points="10,14 32,14 24,29" fill="#78350f"/>
+        <polygon points="16,14 26,14 22,22" fill="#b45309" opacity="0.5"/>
+        <ellipse cx="21" cy="13" rx="19" ry="4.8" fill="#4ade80"/>
+        <ellipse cx="19" cy="12" rx="13" ry="2.4" fill="#86efac" opacity="0.7"/>
+        <!-- Tiny Ghibli sunset blossom tree -->
+        <rect x="16" y="4" width="3" height="8.5" fill="#78350f"/>
+        <circle cx="17.5" cy="3" r="6" fill="#f472b6"/>
+        <circle cx="14" cy="4.5" r="3.8" fill="#f9a8d4"/>
+        <circle cx="21" cy="4.5" r="3.5" fill="#fbcfe8"/>
+        <!-- Tiny glowing lantern dot -->
+        <circle cx="29" cy="10.5" r="1.5" fill="#fef08a"/>
+        <!-- Shimmering sky waterfall -->
+        <path d="M 26 15 Q 28 28 26 42" fill="none" stroke="url(#cwa-waterfall)" stroke-width="3.2" stroke-linecap="round"/>
+        <path class="cwa-fall-flow" d="M 26 15 Q 28 28 26 42" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" opacity="0.8"/>
+      </g>
+    </g>
+
+    <!-- Right Floating Sky Island (with autumn sunset tree and waterfall wisp) -->
+    <g class="cwa-isle2">
+      <g transform="translate(194, 25)">
+        <polygon points="4,12 34,12 24,29 14,29" fill="#92400e"/>
+        <polygon points="10,12 28,12 21,25" fill="#78350f"/>
+        <ellipse cx="19" cy="11" rx="17" ry="4.2" fill="#34d399"/>
+        <ellipse cx="17" cy="10.2" rx="11" ry="2" fill="#6ee7b7" opacity="0.75"/>
+        <!-- Sunset amber tree -->
+        <rect x="17" y="3" width="2.6" height="7.5" fill="#78350f"/>
+        <circle cx="18.3" cy="2" r="5.5" fill="#fb923c"/>
+        <circle cx="15" cy="3.5" r="3.2" fill="#fdba74"/>
+        <circle cx="21.5" cy="3.2" r="3" fill="#fde047" opacity="0.8"/>
+        <!-- Tiny waterfall wisp -->
+        <path d="M 11 13 Q 10 24 11 36" fill="none" stroke="url(#cwa-waterfall)" stroke-width="2.2" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- Gliding Cloud Whale with Soft Rainbow Mist Trail (exact character preserved) -->
+    <g class="cwa-swim-x">
+      <g class="cwa-swim-y">
+        <!-- Soft Rainbow Mist Trail -->
+        <path d="M 56 17 Q 76 12 96 16 Q 108 18 118 14" fill="none" stroke="url(#cwa-rainbow-1)" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M 56 22 Q 74 26 94 21 Q 106 18 116 22" fill="none" stroke="url(#cwa-rainbow-2)" stroke-width="4" stroke-linecap="round"/>
+
+        <!-- Cloud Puffs created by tail flicks -->
+        <g class="cwa-puff1" transform="translate(64, 18)">
+          <circle cx="0" cy="0" r="5" fill="#fce7f3"/>
+          <circle cx="5" cy="2" r="4" fill="#fed7aa"/>
+        </g>
+        <g class="cwa-puff2" transform="translate(64, 22)">
+          <circle cx="0" cy="0" r="4.5" fill="#ffffff"/>
+          <circle cx="4" cy="-2" r="3.5" fill="#fbcfe8"/>
+        </g>
+        <g class="cwa-puff3" transform="translate(66, 15)">
+          <circle cx="0" cy="0" r="3.5" fill="#fef08a" opacity="0.85"/>
+          <circle cx="4" cy="2" r="3" fill="#ddd6fe"/>
+        </g>
+
+        <!-- Tail Fluke -->
+        <g class="cwa-tail">
+          <path d="M 54 20 Q 66 14 70 4 Q 74 10 66 19 Q 74 24 68 31 Q 60 27 54 23 Z" fill="url(#cwa-sky-whale)" stroke="#4338ca" stroke-width="1.3"/>
+        </g>
+
+        <!-- Whale Body -->
+        <path d="M 4 20 C 2 4, 22 0, 40 5 C 52 8, 58 15, 58 21 C 55 30, 40 34, 20 33 C 8 32, 4 26, 4 20 Z" fill="url(#cwa-sky-whale)" stroke="#4338ca" stroke-width="1.4"/>
+        <path d="M 6 22 C 16 21, 34 23, 50 26 C 42 33, 24 34, 12 31 C 7 29, 5 25, 6 22 Z" fill="url(#cwa-belly)"/>
+
+        <!-- Eye, Cheek, Smile, Fin and Starry Freckles -->
+        <circle cx="15" cy="15" r="2.6" fill="#1e1b4b"/>
+        <circle cx="14.2" cy="14" r="1" fill="#ffffff"/>
+        <ellipse cx="20" cy="18.5" rx="3" ry="1.6" fill="#fb7185" opacity="0.8"/>
+        <path d="M 7 20 Q 12 24 17 21" fill="none" stroke="#312e81" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M 28 24 C 26 32, 34 36, 37 29 Z" fill="#818cf8" stroke="#4338ca" stroke-width="1.2"/>
+        <circle cx="38" cy="11" r="1.4" fill="#fef08a"/>
+        <circle cx="44" cy="14" r="1.1" fill="#ffffff"/>
+        <circle cx="32" cy="9" r="0.9" fill="#fef9c3"/>
+      </g>
+    </g>
+
+    <!-- Foreground Parallax Fluffy Sunset Clouds flush on y=71 -->
+    <g class="cwa-fg-clouds" opacity="0.72">
+      <g>
+        <path d="M 4 71 Q 12 62 24 66 Q 34 59 46 65 Q 56 61 64 71 Z" fill="#fed7aa"/>
+        <path d="M 82 71 Q 90 61 104 65 Q 116 57 129 64 Q 142 59 152 71 Z" fill="#fce7f3"/>
+        <path d="M 176 71 Q 186 62 198 66 Q 210 59 224 65 Q 236 62 244 71 Z" fill="#fbcfe8"/>
+      </g>
+      <g transform="translate(260, 0)">
+        <path d="M 4 71 Q 12 62 24 66 Q 34 59 46 65 Q 56 61 64 71 Z" fill="#fed7aa"/>
+        <path d="M 82 71 Q 90 61 104 65 Q 116 57 129 64 Q 142 59 152 71 Z" fill="#fce7f3"/>
+        <path d="M 176 71 Q 186 62 198 66 Q 210 59 224 65 Q 236 62 244 71 Z" fill="#fbcfe8"/>
+      </g>
     </g>
   </g>
-
-  <!-- Right Floating Sky Island -->
-  <g class="cwa-isle2">
-    <g transform="translate(192, 26)">
-      <polygon points="4,12 32,12 22,28 14,28" fill="#92400e"/>
-      <ellipse cx="18" cy="11" rx="16" ry="4" fill="#34d399"/>
-      <rect x="16.5" y="3" width="2.5" height="7" fill="#78350f"/>
-      <circle cx="17.8" cy="2" r="5" fill="#fb923c"/>
-    </g>
-  </g>
-
-  <!-- Foreground Gliding Cloud Whale -->
-  <g class="cwa-swimX">
-  <g class="cwa-swimY">
-    <!-- Cloud puffs created by tail flicks -->
-    <g class="cwa-puff1" transform="translate(64, 18)">
-      <circle cx="0" cy="0" r="5" fill="#fce7f3"/>
-      <circle cx="5" cy="2" r="4" fill="#fed7aa"/>
-    </g>
-    <g class="cwa-puff2" transform="translate(64, 22)">
-      <circle cx="0" cy="0" r="4.5" fill="#ffffff"/>
-      <circle cx="4" cy="-2" r="3.5" fill="#fbcfe8"/>
-    </g>
-
-    <!-- Tail Fluke -->
-    <g class="cwa-tail">
-      <path d="M 54 20 Q 66 14 70 4 Q 74 10 66 19 Q 74 24 68 31 Q 60 27 54 23 Z" fill="url(#cwaSkyWhale)" stroke="#4338ca" stroke-width="1.3"/>
-    </g>
-
-    <!-- Whale Body -->
-    <path d="M 4 20 C 2 4, 22 0, 40 5 C 52 8, 58 15, 58 21 C 55 30, 40 34, 20 33 C 8 32, 4 26, 4 20 Z" fill="url(#cwaSkyWhale)" stroke="#4338ca" stroke-width="1.4"/>
-    <path d="M 6 22 C 16 21, 34 23, 50 26 C 42 33, 24 34, 12 31 C 7 29, 5 25, 6 22 Z" fill="url(#cwaBelly)"/>
-
-    <!-- Eye, Cheek va Fin -->
-    <circle cx="15" cy="15" r="2.6" fill="#1e1b4b"/>
-    <circle cx="14.2" cy="14" r="1" fill="#ffffff"/>
-    <ellipse cx="20" cy="18.5" rx="3" ry="1.6" fill="#fb7185" opacity="0.8"/>
-    <path d="M 7 20 Q 12 24 17 21" fill="none" stroke="#312e81" stroke-width="1.3" stroke-linecap="round"/>
-    <path d="M 28 24 C 26 32, 34 36, 37 29 Z" fill="#818cf8" stroke="#4338ca" stroke-width="1.2"/>
-    <circle cx="38" cy="11" r="1.4" fill="#fef08a"/>
-    <circle cx="44" cy="14" r="1.1" fill="#ffffff"/>
-  </g>
-  </g>
-
-  <!-- Soft Sunset Cloud Wisps flush on y=70 -->
-  <path d="M 88 70 Q 94 62 106 65 Q 116 58 128 64 Q 140 60 148 70 Z" fill="#fce7f3" opacity="0.65"/>
 </svg>

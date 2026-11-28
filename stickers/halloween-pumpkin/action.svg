@@ -1,125 +1,255 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95" width="260" height="95">
   <defs>
-    <radialGradient id="hpaMoon" cx="45%" cy="45%" r="55%">
-      <stop offset="0%" stop-color="#fef08a"/>
-      <stop offset="55%" stop-color="#fb923c"/>
-      <stop offset="100%" stop-color="#dc2626"/>
+    <clipPath id="hpa-clip">
+      <rect x="0" y="0" width="260" height="71"/>
+    </clipPath>
+    <linearGradient id="hpa-night-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1035" stop-opacity="0.34"/>
+      <stop offset="55%" stop-color="#4c1d95" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#7c2d12" stop-opacity="0.26"/>
+    </linearGradient>
+    <radialGradient id="hpa-moon-aura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fb923c" stop-opacity="0.52"/>
+      <stop offset="55%" stop-color="#dc2626" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#7f1d1d" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="hpaPump" cx="45%" cy="38%" r="60%">
+    <radialGradient id="hpa-moon" cx="42%" cy="42%" r="58%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="48%" stop-color="#fb923c"/>
+      <stop offset="85%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </radialGradient>
+    <radialGradient id="hpa-pump" cx="45%" cy="38%" r="60%">
       <stop offset="0%" stop-color="#fb923c"/>
       <stop offset="70%" stop-color="#ea580c"/>
       <stop offset="100%" stop-color="#9a3412"/>
     </radialGradient>
-    <clipPath id="hpaClip">
-      <rect x="0" y="0" width="260" height="71"/>
-    </clipPath>
     <style>
-      .hpa-flyerX { animation: hpaFlyAcrossX 3.2s linear infinite; }
-      .hpa-flyerY { transform-origin: 6px 14px; animation: hpaFlyAcrossY 0.95s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
-      .hpa-ghost-buddyX { animation: hpaGhostFollowX 3.2s linear infinite; }
-      .hpa-ghost-buddyY { transform-origin: 0px 4px; animation: hpaGhostFollowY 1.05s cubic-bezier(0.37, 0, 0.63, 1) -0.4s infinite alternate; }
-      .hpa-bat1 { animation: hpaBatFlap 0.35s ease-in-out infinite alternate; transform-origin: 0px 0px; }
-      .hpa-moon-pulse { transform-origin: 214px 22px; animation: hpaMoonGlow 2.4s ease-in-out infinite alternate; }
-      .hpa-candy-drop { animation: hpaDropCandy 3.2s linear infinite; opacity: 0; }
+      /* Silky 60fps Blood-Moon Halloween stage: decoupled linear X + sine cubic-bezier Y */
+      .hpa-flyer-x { animation: hpaFlyAcrossX 3.5s linear infinite; }
+      .hpa-flyer-y { transform-origin: 6px 14px; animation: hpaFlyAcrossY 1.05s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .hpa-ghost-x { animation: hpaGhostFollowX 3.5s linear infinite; }
+      .hpa-ghost-y { transform-origin: 0px 4px; animation: hpaGhostFollowY 1.15s cubic-bezier(0.37, 0, 0.63, 1) -0.45s infinite alternate; }
+      .hpa-bat-flap1 { transform-origin: 0px 0px; animation: hpaBatFlap 0.32s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .hpa-bat-flap2 { transform-origin: 0px 0px; animation: hpaBatFlap 0.38s cubic-bezier(0.37, 0, 0.63, 1) -0.15s infinite alternate; }
+      .hpa-bat-bob { animation: hpaBatBob 1.4s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .hpa-moon-pulse { transform-origin: 208px 24px; animation: hpaMoonGlow 2.8s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .hpa-cloud-drift { animation: hpaCloudDrift 18s linear infinite; }
+      .hpa-candy1 { animation: hpaDropCandy1 3.5s linear infinite; opacity: 0; }
+      .hpa-candy2 { animation: hpaDropCandy2 3.5s linear infinite; opacity: 0; }
+      .hpa-spark1 { animation: hpaSparkle 1.4s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .hpa-spark2 { animation: hpaSparkle 1.9s cubic-bezier(0.37, 0, 0.63, 1) -0.8s infinite alternate; }
+      .hpa-eye-flicker { animation: hpaEyeFlicker 2.2s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
 
       @keyframes hpaFlyAcrossX {
-        0%   { transform: translateX(245px); opacity: 0; }
+        0%   { transform: translateX(255px); opacity: 0; }
         7%   { opacity: 1; }
         93%  { opacity: 1; }
-        100% { transform: translateX(-50px); opacity: 0; }
+        100% { transform: translateX(-55px); opacity: 0; }
       }
       @keyframes hpaFlyAcrossY {
-        0%   { transform: translateY(12px) rotate(-4.5deg); }
-        100% { transform: translateY(26px) rotate(4.5deg); }
+        0%   { transform: translateY(11px) rotate(-4.2deg); }
+        100% { transform: translateY(25px) rotate(4.2deg); }
       }
       @keyframes hpaGhostFollowX {
-        0%   { transform: translateX(278px); opacity: 0; }
+        0%   { transform: translateX(292px); opacity: 0; }
         7%   { opacity: 1; }
         93%  { opacity: 1; }
-        100% { transform: translateX(-17px); opacity: 0; }
+        100% { transform: translateX(-18px); opacity: 0; }
       }
       @keyframes hpaGhostFollowY {
-        0%   { transform: translateY(15px) rotate(-5deg); }
-        100% { transform: translateY(31px) rotate(5deg); }
+        0%   { transform: translateY(14px) rotate(-5deg); }
+        100% { transform: translateY(29px) rotate(5deg); }
       }
       @keyframes hpaBatFlap {
-        0% { transform: scaleY(1); }
-        100% { transform: scaleY(0.45); }
+        0%   { transform: scaleY(1); }
+        100% { transform: scaleY(0.42); }
+      }
+      @keyframes hpaBatBob {
+        0%   { transform: translateY(-2.5px); }
+        100% { transform: translateY(2.5px); }
       }
       @keyframes hpaMoonGlow {
-        0% { transform: scale(0.97); opacity: 0.9; }
+        0%   { transform: scale(0.97); opacity: 0.92; }
         100% { transform: scale(1.04); opacity: 1; }
       }
-      @keyframes hpaDropCandy {
-        0%, 32% { opacity: 0; transform: translate(142px, 28px) rotate(0deg); }
-        38%, 68% { opacity: 1; transform: translate(134px, 52px) rotate(140deg); }
-        80%, 100% { opacity: 0; transform: translate(130px, 65px) rotate(240deg); }
+      @keyframes hpaCloudDrift {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-260px); }
+      }
+      @keyframes hpaDropCandy1 {
+        0%, 30%   { opacity: 0; transform: translate(152px, 26px) rotate(0deg); }
+        38%, 68%  { opacity: 1; transform: translate(142px, 50px) rotate(130deg); }
+        80%, 100% { opacity: 0; transform: translate(136px, 64px) rotate(230deg); }
+      }
+      @keyframes hpaDropCandy2 {
+        0%, 54%   { opacity: 0; transform: translate(86px, 24px) rotate(0deg); }
+        62%, 86%  { opacity: 1; transform: translate(78px, 49px) rotate(-120deg); }
+        95%, 100% { opacity: 0; transform: translate(74px, 63px) rotate(-210deg); }
+      }
+      @keyframes hpaSparkle {
+        0%   { opacity: 0.25; }
+        100% { opacity: 1; }
+      }
+      @keyframes hpaEyeFlicker {
+        0%   { opacity: 0.65; }
+        100% { opacity: 1; }
       }
     </style>
   </defs>
 
-  <g clip-path="url(#hpaClip)">
-    <!-- Glowing Blood-Orange Full Moon -->
+  <g clip-path="url(#hpa-clip)">
+    <!-- Midnight Blood-Moon Sky Glow -->
+    <rect x="0" y="0" width="260" height="71" fill="url(#hpa-night-sky)"/>
+
+    <!-- Twinkling Night Stars and Candy Sparkles -->
+    <g fill="#fde68a">
+      <circle class="hpa-spark1" cx="18" cy="10" r="1.2"/>
+      <circle class="hpa-spark2" cx="68" cy="8" r="1.4" fill="#f9a8d4"/>
+      <path class="hpa-spark1" d="M 118 6 L 119 8.5 L 121.5 9.5 L 119 10.5 L 118 13 L 117 10.5 L 114.5 9.5 L 117 8.5 Z"/>
+      <circle class="hpa-spark2" cx="154" cy="12" r="1.3" fill="#c4b5fd"/>
+      <circle class="hpa-spark1" cx="246" cy="9" r="1.2"/>
+    </g>
+
+    <!-- Huge Glowing Crimson-Amber Full Moon -->
     <g class="hpa-moon-pulse">
-      <circle cx="214" cy="22" r="19" fill="#f97316" opacity="0.24"/>
-      <circle cx="214" cy="22" r="14" fill="url(#hpaMoon)"/>
+      <circle cx="208" cy="24" r="29" fill="url(#hpa-moon-aura)"/>
+      <circle cx="208" cy="24" r="17.5" fill="url(#hpa-moon)"/>
+      <!-- Subtle Moon Craters -->
+      <circle cx="202" cy="19" r="3" fill="#ea580c" opacity="0.28"/>
+      <circle cx="215" cy="27" r="3.6" fill="#991b1b" opacity="0.24"/>
+      <circle cx="206" cy="31" r="2" fill="#991b1b" opacity="0.22"/>
     </g>
 
-    <!-- Spooky Mist Hills, Haunted Castle Spire and Tombstones flush on y=70 -->
-    <path d="M4 70 Q55 54 115 64 T256 60 L256 71 L4 71 Z" fill="#1e1035" opacity="0.92"/>
+    <!-- Eerie Drifting Night Clouds across the Moon -->
+    <g class="hpa-cloud-drift" opacity="0.52">
+      <g>
+        <path d="M 12 22 Q 20 16 32 19 Q 42 15 52 21 Q 58 20 62 23 Z" fill="#3b0764"/>
+        <path d="M 112 18 Q 122 12 134 16 Q 144 12 154 18 Z" fill="#4c1d95"/>
+        <path d="M 184 30 Q 196 24 210 28 Q 222 23 236 29 Q 242 29 246 31 Z" fill="#2e1065"/>
+      </g>
+      <g transform="translate(260, 0)">
+        <path d="M 12 22 Q 20 16 32 19 Q 42 15 52 21 Q 58 20 62 23 Z" fill="#3b0764"/>
+        <path d="M 112 18 Q 122 12 134 16 Q 144 12 154 18 Z" fill="#4c1d95"/>
+        <path d="M 184 30 Q 196 24 210 28 Q 222 23 236 29 Q 242 29 246 31 Z" fill="#2e1065"/>
+      </g>
+    </g>
+
+    <!-- Rolling Spooky Mist Hills flush on y=71 -->
+    <path d="M 0 71 L 0 62 Q 52 51 112 61 T 260 57 L 260 71 Z" fill="#1e1035" opacity="0.94"/>
+    <path d="M 0 71 L 0 66 Q 75 58 150 66 T 260 64 L 260 71 Z" fill="#130924" opacity="0.96"/>
+
+    <!-- Haunted Castle Spire (Left) -->
     <g fill="#130924" stroke="#581c87" stroke-width="1">
-      <polygon points="28,66 28,34 38,18 48,34 48,66"/>
-      <polygon points="23,38 38,14 53,38"/>
-      <rect x="35" y="40" width="6" height="9" rx="3" fill="#facc15" stroke="none"/>
-    </g>
-    <path d="M174 66 L174 44 M174 52 L163 42 M174 48 L186 38" stroke="#2e1065" stroke-width="3" stroke-linecap="round"/>
-    <path d="M92 67 L92 54 A7 7 0 0 1 106 54 L106 67 Z" fill="#334155" stroke="#64748b" stroke-width="1.2"/>
-    <line x1="99" y1="55" x2="99" y2="62" stroke="#94a3b8" stroke-width="1.5"/>
-    <line x1="96" y1="58" x2="102" y2="58" stroke="#94a3b8" stroke-width="1.5"/>
-    <ellipse cx="122" cy="64" rx="6" ry="4.5" fill="#ea580c" stroke="#431407" stroke-width="1.2"/>
-    <circle cx="120" cy="63" r="1" fill="#fef08a"/>
-    <circle cx="124" cy="63" r="1" fill="#fef08a"/>
-
-    <!-- Ambient Bats -->
-    <g transform="translate(190, 18)">
-      <path class="hpa-bat1" d="M-8,0 Q-4,-5 0,-1 Q4,-5 8,0 Q4,2 0,3 Q-4,2 -8,0 Z" fill="#3b0764"/>
-    </g>
-    <g transform="translate(234, 34) scale(0.85)">
-      <path class="hpa-bat1" d="M-8,0 Q-4,-5 0,-1 Q4,-5 8,0 Q4,2 0,3 Q-4,2 -8,0 Z" fill="#3b0764"/>
+      <polygon points="24,68 24,36 34,20 44,36 44,68"/>
+      <polygon points="19,39 34,15 49,39"/>
+      <polygon points="44,68 44,47 52,38 56,47 56,68"/>
+      <rect class="hpa-eye-flicker" x="31" y="41" width="6" height="9" rx="3" fill="#facc15" stroke="none"/>
+      <rect x="48.5" y="50" width="3" height="5" rx="1.5" fill="#fb923c" stroke="none"/>
     </g>
 
-    <!-- Dropped Halloween Candy -->
-    <g class="hpa-candy-drop">
+    <!-- Gothic Crooked Wrought-Iron Fence along y=58..71 -->
+    <g stroke="#3b0764" stroke-width="1.3" stroke-linecap="round">
+      <line x1="58" y1="62" x2="112" y2="61"/>
+      <line x1="58" y1="67" x2="112" y2="66.5"/>
+      <path d="M 62 70 L 63 57 M 70 70 L 69.2 58 M 78 70 L 79 56.5 M 86 70 L 85.5 58"/>
+      <line x1="136" y1="63" x2="170" y2="61.5"/>
+      <path d="M 140 70 L 139 58 M 148 70 L 149 57 M 156 70 L 155.5 58.5 M 164 70 L 165 57.5"/>
+    </g>
+
+    <!-- Silhouette Tombstones -->
+    <g transform="rotate(-4 99 67)">
+      <path d="M 92 69 L 92 55 A 7 7 0 0 1 106 55 L 106 69 Z" fill="#334155" stroke="#64748b" stroke-width="1.2"/>
+      <line x1="99" y1="56" x2="99" y2="63" stroke="#94a3b8" stroke-width="1.5"/>
+      <line x1="96" y1="59" x2="102" y2="59" stroke="#94a3b8" stroke-width="1.5"/>
+    </g>
+    <g transform="translate(198, 4) rotate(7 12 64)">
+      <path d="M 6 67 L 6 58 A 5 5 0 0 1 16 58 L 16 67 Z" fill="#1e293b" stroke="#475569" stroke-width="1.1"/>
+      <path d="M 9 60 L 13 60 M 11 58.5 L 11 63" stroke="#64748b" stroke-width="1.1"/>
+    </g>
+
+    <!-- Twisted Spooky Tree (Right) -->
+    <g fill="none" stroke="#2e1065" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 176 70 Q 174 58 177 45 Q 178 39 173 34" stroke-width="3.6"/>
+      <path d="M 176 54 Q 167 48 161 40 M 166 45 L 164 36" stroke-width="2.2"/>
+      <path d="M 176 49 Q 186 44 194 35 M 186 42 L 194 42" stroke-width="2.2"/>
+      <path d="M 176 42 Q 181 35 186 30" stroke-width="1.5"/>
+    </g>
+    <!-- Glowing Owl Eyes in Tree -->
+    <g class="hpa-eye-flicker" fill="#fef08a">
+      <circle cx="175" cy="49" r="0.9"/>
+      <circle cx="177.5" cy="49" r="0.9"/>
+    </g>
+
+    <!-- Tiny Ground Jack-o'-Lantern -->
+    <g>
+      <ellipse cx="122" cy="65" rx="6" ry="4.5" fill="#ea580c" stroke="#431407" stroke-width="1.2"/>
+      <rect x="121.2" y="59.5" width="1.6" height="2" fill="#15803d"/>
+      <g class="hpa-eye-flicker" fill="#fef08a">
+        <circle cx="120" cy="64" r="1"/>
+        <circle cx="124" cy="64" r="1"/>
+        <path d="M 119.5 66.8 Q 122 68.4 124.5 66.8" fill="none" stroke="#fef08a" stroke-width="0.9" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- Fluttering Ambient Bats -->
+    <g class="hpa-bat-bob">
+      <g transform="translate(186, 17)">
+        <path class="hpa-bat-flap1" d="M -8,0 Q -4,-5 0,-1 Q 4,-5 8,0 Q 4,2 0,3 Q -4,2 -8,0 Z" fill="#3b0764"/>
+      </g>
+      <g transform="translate(234, 33) scale(0.85)">
+        <path class="hpa-bat-flap2" d="M -8,0 Q -4,-5 0,-1 Q 4,-5 8,0 Q 4,2 0,3 Q -4,2 -8,0 Z" fill="#3b0764"/>
+      </g>
+      <g transform="translate(76, 18) scale(0.72)">
+        <path class="hpa-bat-flap2" d="M -8,0 Q -4,-5 0,-1 Q 4,-5 8,0 Q 4,2 0,3 Q -4,2 -8,0 Z" fill="#4c1d95"/>
+      </g>
+    </g>
+
+    <!-- Floating Dropped Halloween Candies -->
+    <g class="hpa-candy1">
       <polygon points="-5,-3 -2,0 -5,3" fill="#ec4899"/>
       <polygon points="5,-3 2,0 5,3" fill="#ec4899"/>
       <circle cx="0" cy="0" r="3.2" fill="#facc15"/>
     </g>
-
-    <!-- Trailing Cute Baby Ghost Buddy -->
-    <g class="hpa-ghost-buddyX">
-    <g class="hpa-ghost-buddyY">
-      <path d="M-8,6 C-8,-6 8,-6 8,6 L8,12 L4,9 L0,12 L-4,9 L-8,12 Z" fill="#f8fafc" stroke="#6b21a8" stroke-width="1.4" opacity="0.92"/>
-      <circle cx="-3" cy="2" r="1.3" fill="#1e1b4b"/>
-      <circle cx="2" cy="2" r="1.3" fill="#1e1b4b"/>
-      <ellipse cx="-0.5" cy="5" rx="1.5" ry="2" fill="#fb7185"/>
-    </g>
+    <g class="hpa-candy2">
+      <polygon points="-4.5,-2.5 -1.8,0 -4.5,2.5" fill="#a855f7"/>
+      <polygon points="4.5,-2.5 1.8,0 4.5,2.5" fill="#a855f7"/>
+      <circle cx="0" cy="0" r="2.8" fill="#fb923c"/>
     </g>
 
-    <!-- Flying Chibi Pumpkin Witch on Broomstick -->
-    <g class="hpa-flyerX">
-    <g class="hpa-flyerY">
-      <line x1="-14" y1="22" x2="24" y2="24" stroke="#92400e" stroke-width="3.2" stroke-linecap="round"/>
-      <path d="M22 19 L36 15 L34 24 L37 31 L22 27 Z" fill="#f59e0b" stroke="#78350f" stroke-width="1.4"/>
-      <line x1="22" y1="19" x2="22" y2="28" stroke="#facc15" stroke-width="2"/>
-      <path d="M6 16 Q20 14 26 22 Q18 28 6 24 Z" fill="#7e22ce" stroke="#3b0764" stroke-width="1.3"/>
-      <ellipse cx="4" cy="12" rx="14" ry="11.5" fill="url(#hpaPump)" stroke="#431407" stroke-width="1.6"/>
-      <polygon points="-5,10 -1,5 2,10" fill="#fef08a"/>
-      <polygon points="4,10 8,5 11,10" fill="#fef08a"/>
-      <path d="M-5 15 Q3 21 11 15" fill="none" stroke="#fef08a" stroke-width="2" stroke-linecap="round"/>
-      <ellipse cx="4" cy="1" rx="15" ry="4" fill="#7e22ce" stroke="#2e1065" stroke-width="1.5"/>
-      <path d="M-5 0 Q0 -11 9 -13 Q6 -7 12 0 Z" fill="#9333ea" stroke="#2e1065" stroke-width="1.5"/>
-      <rect x="-2" y="-2" width="12" height="2.5" fill="#f97316"/>
+    <!-- Trailing Cute Baby Ghost Buddy (exact character preserved) -->
+    <g class="hpa-ghost-x">
+      <g class="hpa-ghost-y">
+        <path d="M -8,6 C -8,-6 8,-6 8,6 L 8,12 L 4,9 L 0,12 L -4,9 L -8,12 Z" fill="#f8fafc" stroke="#6b21a8" stroke-width="1.4" opacity="0.94"/>
+        <circle cx="-3" cy="2" r="1.3" fill="#1e1b4b"/>
+        <circle cx="2" cy="2" r="1.3" fill="#1e1b4b"/>
+        <ellipse cx="-0.5" cy="5" rx="1.5" ry="2" fill="#fb7185"/>
+      </g>
     </g>
+
+    <!-- Flying Chibi Pumpkin Witch on Broomstick (exact character preserved) -->
+    <g class="hpa-flyer-x">
+      <g class="hpa-flyer-y">
+        <!-- Broomstick sparkle trail -->
+        <circle class="hpa-spark1" cx="41" cy="21" r="1.6" fill="#fef08a"/>
+        <circle class="hpa-spark2" cx="48" cy="26" r="1.2" fill="#c084fc"/>
+        <circle class="hpa-spark1" cx="45" cy="16" r="1" fill="#f9a8d4"/>
+        <!-- Broomstick -->
+        <line x1="-14" y1="22" x2="24" y2="24" stroke="#92400e" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M 22 19 L 36 15 L 34 24 L 37 31 L 22 27 Z" fill="#f59e0b" stroke="#78350f" stroke-width="1.4"/>
+        <line x1="22" y1="19" x2="22" y2="28" stroke="#facc15" stroke-width="2"/>
+        <!-- Flowing Purple Witch Cape -->
+        <path d="M 6 16 Q 20 14 26 22 Q 18 28 6 24 Z" fill="#7e22ce" stroke="#3b0764" stroke-width="1.3"/>
+        <!-- Chibi Pumpkin Head -->
+        <ellipse cx="4" cy="12" rx="14" ry="11.5" fill="url(#hpa-pump)" stroke="#431407" stroke-width="1.6"/>
+        <polygon points="-5,10 -1,5 2,10" fill="#fef08a"/>
+        <polygon points="4,10 8,5 11,10" fill="#fef08a"/>
+        <path d="M -5 15 Q 3 21 11 15" fill="none" stroke="#fef08a" stroke-width="2" stroke-linecap="round"/>
+        <!-- Purple Witch Hat -->
+        <ellipse cx="4" cy="1" rx="15" ry="4" fill="#7e22ce" stroke="#2e1065" stroke-width="1.5"/>
+        <path d="M -5 0 Q 0 -11 9 -13 Q 6 -7 12 0 Z" fill="#9333ea" stroke="#2e1065" stroke-width="1.5"/>
+        <rect x="-2" y="-2" width="12" height="2.5" fill="#f97316"/>
+      </g>
     </g>
   </g>
 </svg>
