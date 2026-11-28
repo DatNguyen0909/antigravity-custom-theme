@@ -32,7 +32,7 @@
   <img src="https://img.shields.io/badge/L%E1%BB%85_H%E1%BB%99i_%26_M%C3%B9a-Auto_Switch-a855f7?style=for-the-badge" alt="Auto Season" />
   <img src="https://img.shields.io/badge/Giao_di%E1%BB%87n-Dark_%26_Light-ec4899?style=for-the-badge" alt="Dark & Light" />
   <br /><br />
-  👉 <a href="https://datnguyen0909.github.io/antigravity-custom-theme/?lang=vi"><b>Mở bản Xem Trước Tương Tác &amp; Nghe Nhạc Trực Tiếp (GitHub Pages — Tiếng Việt)</b></a><br />
+  👉 <a href="https://datnguyen0909.github.io/KuroLab/?lang=vi"><b>Mở bản Xem Trước Tương Tác &amp; Nghe Nhạc Trực Tiếp (GitHub Pages — Tiếng Việt)</b></a><br />
   <i>(Bật thử 🎶 Nhạc nền Studio, gõ chat nghe tiếng phím riêng, rê chuột, bật chế độ Theo Mùa &amp; đổi Dark/Light ngay trên trình duyệt!)</i>
 </p>
 
@@ -93,7 +93,7 @@
 ### 1. Cài đặt (Install)
 1. Clone hoặc tải ZIP dự án này về máy:
    ```bash
-   git clone https://github.com/DatNguyen0909/antigravity-custom-theme.git
+   git clone https://github.com/DatNguyen0909/KuroLab.git
    ```
 2. Đóng ứng dụng **Antigravity** (hoặc cài xong rồi Reload cũng được).
 3. Nhấp đúp chạy file **`install.bat`**.
@@ -113,7 +113,7 @@ Mỗi khi Antigravity cập nhật phiên bản mới, bộ cài của hãng s�
 ## 🏗️ Cấu trúc dự án (Kiến trúc MVVM)
 
 ```text
-antigravity-custom-theme/
+KuroLab/
 ├── index.html                      # Trang Web xem trước tương tác trực tiếp (EN / VI)
 ├── README.md                       # Tài liệu song ngữ tích hợp (English / Tiếng Việt)
 ├── stickers/                       # 21 thư mục linh vật, mỗi thư mục gồm 5 trạng thái SVG (105 file)
@@ -197,7 +197,7 @@ Bạn được tự do cài đặt và trải nghiệm cho mục đích cá nhâ
   <img src="https://img.shields.io/badge/Seasonal_Mode-Auto_Switch-a855f7?style=for-the-badge" alt="Auto Season" />
   <img src="https://img.shields.io/badge/Appearance-Dark_%26_Light-ec4899?style=for-the-badge" alt="Dark & Light" />
   <br /><br />
-  👉 <a href="https://datnguyen0909.github.io/antigravity-custom-theme/?lang=en"><b>Launch Live Interactive Web &amp; Audio Preview (GitHub Pages)</b></a><br />
+  👉 <a href="https://datnguyen0909.github.io/KuroLab/?lang=en"><b>Launch Live Interactive Web &amp; Audio Preview (GitHub Pages)</b></a><br />
   <i>(Turn on 🎶 Studio BGM, type for bespoke keystroke FX, hover bubbles, and toggle Auto-Season &amp; Dark/Light across all 21 themes!)</i>
 </p>
 
@@ -258,7 +258,7 @@ Bạn được tự do cài đặt và trải nghiệm cho mục đích cá nhâ
 ### 1. Install
 1. Clone or download this repository as a ZIP:
    ```bash
-   git clone https://github.com/DatNguyen0909/antigravity-custom-theme.git
+   git clone https://github.com/DatNguyen0909/KuroLab.git
    ```
 2. Close **Antigravity** (or reload the window after installing).
 3. Double-click **`install.bat`**.
@@ -278,7 +278,7 @@ Whenever Antigravity updates to a newer version, its updater replaces `app.asar`
 ## 🏗️ Project Architecture (MVVM)
 
 ```text
-antigravity-custom-theme/
+KuroLab/
 ├── index.html                      # Interactive Live Web Simulator & Gallery (EN / VI)
 ├── README.md                       # In-place Bilingual Documentation (English & Tiếng Việt)
 ├── stickers/                       # 21 mascot folders, 5 animated SVG states each (105 SVGs)
