@@ -159,7 +159,7 @@ antigravity-custom-theme/
 
 ## ☕ Ủng hộ KuroLab (Donate)
 
-Nếu bạn yêu thích sản phẩm của **KuroLab** và muốn tiếp thêm động lực cho những ý tưởng sáng tạo mới mỗi ngày, bạn có thể ủng hộ qua **Ngân hàng / MoMo (VietQR)** hoặc **PayPal.Me (Quốc tế)**:
+Nếu bạn yêu thích sản phẩm của **KuroLab**, hãy gửi chú mèo Kuro một con cá nhé! Sự ủng hộ của bạn sẽ tiếp thêm động lực để KuroLab tiếp tục sáng tạo. Bạn có thể gửi cá qua **Ngân hàng / MoMo (VietQR)** hoặc **PayPal.Me (Quốc tế)**:
 
 <div align="center">
 
@@ -324,7 +324,7 @@ antigravity-custom-theme/
 
 ## ☕ Support KuroLab (Donate)
 
-If you enjoy **KuroLab**’s products and want to fuel new creative ideas every day, you can support us via **PayPal.Me** *(Global)* or **VietQR** *(Vietnam)*:
+If you enjoy **KuroLab**’s creations, send Kuro the cat a little fish! Your support helps KuroLab keep creating. You can send one via **PayPal.Me** *(Global)* or **VietQR** *(Vietnam)*:
 
 <div align="center">
 
