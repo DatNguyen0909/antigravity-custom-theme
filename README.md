@@ -157,9 +157,9 @@ antigravity-custom-theme/
 
 ---
 
-## ☕ Ủng hộ tác giả (Donate)
+## ☕ Ủng hộ KuroLab (Donate)
 
-Nếu bạn yêu thích bộ **21 linh vật Chibi & 105 SVG chuyển động** này và muốn tiếp thêm cà phê cho các bản cập nhật tiếp theo, bạn có thể ủng hộ qua **Ngân hàng / MoMo (VietQR)** hoặc **PayPal.Me (Quốc tế)**:
+Nếu bạn yêu thích sản phẩm của **KuroLab** và muốn tiếp thêm động lực cho những ý tưởng sáng tạo mới mỗi ngày, bạn có thể ủng hộ qua **Ngân hàng / MoMo (VietQR)** hoặc **PayPal.Me (Quốc tế)**:
 
 <div align="center">
 
@@ -168,7 +168,7 @@ Nếu bạn yêu thích bộ **21 linh vật Chibi & 105 SVG chuyển động** 
 | <img src="./assets/techcombank-qr.png" height="185" alt="Techcombank VietQR" /> | <a href="https://paypal.me/TonDat2211" target="_blank"><img src="./assets/paypal-qr.svg" height="185" alt="PayPal.Me QR" /></a> |
 | **Techcombank** • `NGUYEN TAN DAT`<br/>STK: `1103 9801 9912` *(0đ phí)* | <a href="https://paypal.me/TonDat2211" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal.Me%2FTonDat2211-0070BA?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate via PayPal.Me" /></a> |
 
-<sub>Cảm ơn bạn rất nhiều vì đã tiếp năng lượng cho dự án! 💖</sub>
+<sub>Cảm ơn bạn đã ủng hộ sản phẩm của KuroLab! Sự ủng hộ của bạn là động lực để chúng mình sáng tạo mỗi ngày! 💖</sub>
 
 </div>
 
@@ -322,9 +322,9 @@ antigravity-custom-theme/
 
 ---
 
-## ☕ Support the Project (Donate)
+## ☕ Support KuroLab (Donate)
 
-If you enjoy these **21 animated Chibi mascots & 105 live SVGs** and want to fuel future themes & features, you can buy the creator a coffee via **PayPal.Me** *(Global)* or **VietQR** *(Vietnam)*:
+If you enjoy **KuroLab**’s products and want to fuel new creative ideas every day, you can support us via **PayPal.Me** *(Global)* or **VietQR** *(Vietnam)*:
 
 <div align="center">
 
@@ -333,7 +333,7 @@ If you enjoy these **21 animated Chibi mascots & 105 live SVGs** and want to fue
 | <a href="https://paypal.me/TonDat2211" target="_blank"><img src="./assets/paypal-qr.svg" height="185" alt="PayPal.Me QR" /></a> | <img src="./assets/techcombank-qr.png" height="185" alt="Techcombank VietQR" /> |
 | <a href="https://paypal.me/TonDat2211" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal.Me%2FTonDat2211-0070BA?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate via PayPal.Me" /></a> | **Techcombank** • `NGUYEN TAN DAT`<br/>Acc: `1103 9801 9912` |
 
-<sub>Thank you so much for supporting open-source creativity! 💖</sub>
+<sub>Thank you for supporting KuroLab’s products! Your support motivates us to create every day! 💖</sub>
 
 </div>
 
