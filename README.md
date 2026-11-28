@@ -157,19 +157,14 @@ antigravity-custom-theme/
 
 ## ☕ Ủng hộ tác giả (Donate)
 
-Nếu bạn yêu thích bộ **21 linh vật Chibi & 105 SVG chuyển động** này và muốn tiếp thêm cà phê cho các bản cập nhật tiếp theo, bạn có thể ủng hộ qua **PayPal.Me** *(hỗ trợ PayPal, Visa/Mastercard & thanh toán quốc tế)*:
+Nếu bạn yêu thích bộ **21 linh vật Chibi & 105 SVG chuyển động** này và muốn tiếp thêm cà phê cho các bản cập nhật tiếp theo, bạn có thể ủng hộ qua **Ngân hàng / MoMo (VietQR)** hoặc **PayPal.Me (Quốc tế)**:
 
-<p align="center">
-  <a href="https://paypal.me/TonDat2211" target="_blank">
-    <img src="https://img.shields.io/badge/Donate-PayPal.Me%2FTonDat2211-0070BA?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate via PayPal.Me" />
-  </a>
-  <br /><br />
-  <a href="https://paypal.me/TonDat2211" target="_blank">
-    <img src="./assets/paypal-qr.svg" width="155" alt="QR PayPal.Me TonDat2211" />
-  </a>
-  <br />
-  <sub>Quét mã QR hoặc bấm nút trên để mở <b>paypal.me/TonDat2211</b> — Cảm ơn bạn rất nhiều! 💖</sub>
-</p>
+| 🇻🇳 Việt Nam (Ngân hàng / MoMo / ZaloPay) | 🌎 Quốc tế (PayPal / Visa / Mastercard) |
+|:---:|:---:|
+| <img src="./assets/techcombank-qr.png" width="165" alt="Techcombank VietQR" /> | <a href="https://paypal.me/TonDat2211" target="_blank"><img src="./assets/paypal-qr.svg" width="165" alt="PayPal.Me QR" /></a> |
+| **Techcombank** • `NGUYEN TAN DAT`<br/>STK: `1103 9801 9912` *(0đ phí)* | <a href="https://paypal.me/TonDat2211" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal.Me%2FTonDat2211-0070BA?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate via PayPal.Me" /></a> |
+
+<sub>Cảm ơn bạn rất nhiều vì đã tiếp năng lượng cho dự án! 💖</sub>
 
 ---
 
@@ -319,19 +314,14 @@ antigravity-custom-theme/
 
 ## ☕ Support the Project (Donate)
 
-If you enjoy these **21 animated Chibi mascots & 105 live SVGs** and want to fuel future themes & features, you can buy the creator a coffee via **PayPal.Me** *(supports PayPal & international cards)*:
+If you enjoy these **21 animated Chibi mascots & 105 live SVGs** and want to fuel future themes & features, you can buy the creator a coffee via **PayPal.Me** *(Global)* or **VietQR** *(Vietnam)*:
 
-<p align="center">
-  <a href="https://paypal.me/TonDat2211" target="_blank">
-    <img src="https://img.shields.io/badge/Donate-PayPal.Me%2FTonDat2211-0070BA?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate via PayPal.Me" />
-  </a>
-  <br /><br />
-  <a href="https://paypal.me/TonDat2211" target="_blank">
-    <img src="./assets/paypal-qr.svg" width="155" alt="QR PayPal.Me TonDat2211" />
-  </a>
-  <br />
-  <sub>Scan the QR code or click above to open <b>paypal.me/TonDat2211</b> — Thank you for your support! 💖</sub>
-</p>
+| 🌎 International (PayPal / Visa / Mastercard) | 🇻🇳 Vietnam (VietQR / Bank / MoMo) |
+|:---:|:---:|
+| <a href="https://paypal.me/TonDat2211" target="_blank"><img src="./assets/paypal-qr.svg" width="165" alt="PayPal.Me QR" /></a> | <img src="./assets/techcombank-qr.png" width="165" alt="Techcombank VietQR" /> |
+| <a href="https://paypal.me/TonDat2211" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal.Me%2FTonDat2211-0070BA?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate via PayPal.Me" /></a> | **Techcombank** • `NGUYEN TAN DAT`<br/>Acc: `1103 9801 9912` |
+
+<sub>Thank you so much for supporting open-source creativity! 💖</sub>
 
 ---
 

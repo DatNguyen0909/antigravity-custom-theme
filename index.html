@@ -324,11 +324,36 @@
       border: none; background: rgba(255,255,255,0.1); color: inherit; cursor: pointer; font-size: 13px;
     }
     .donate-qr-wrap {
-      display: inline-flex; padding: 10px; border-radius: 16px; background: #fff;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.28); margin: 12px 0 10px;
+      display: inline-flex; padding: 8px; border-radius: 16px; background: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.28); margin: 10px 0 8px;
     }
-    .donate-qr-wrap img { width: 176px; height: 176px; display: block; border-radius: 8px; }
-    .donate-amounts { display: flex; justify-content: center; gap: 7px; flex-wrap: wrap; margin: 10px 0 14px; }
+    .donate-qr-wrap img { width: 186px; height: auto; max-height: 212px; display: block; border-radius: 10px; object-fit: contain; }
+    .donate-tabs {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 12px 0 4px;
+      padding: 4px; border-radius: 12px; background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    body.ag-light-mode .donate-tabs { background: rgba(15,23,42,0.05); border-color: rgba(15,23,42,0.1); }
+    .don-tab-btn {
+      padding: 7px 8px; border-radius: 9px; border: none; cursor: pointer; font-size: 12px; font-weight: 700;
+      background: transparent; color: inherit; opacity: 0.72; transition: all 0.16s ease;
+    }
+    .don-tab-btn.active {
+      background: var(--ag-theme-accent); color: #fff; opacity: 1;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    }
+    .don-bank-meta {
+      display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
+      margin-top: 6px; padding: 8px 12px; border-radius: 11px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      font-size: 12px;
+    }
+    body.ag-light-mode .don-bank-meta { background: rgba(15,23,42,0.04); border-color: rgba(15,23,42,0.12); }
+    .don-copy-btn {
+      padding: 4px 10px; border-radius: 8px; border: none; cursor: pointer; font-size: 11.5px; font-weight: 700;
+      background: var(--ag-theme-accent); color: #fff;
+    }
+    .donate-amounts { display: flex; justify-content: center; gap: 7px; flex-wrap: wrap; margin: 8px 0 12px; }
     .amt-chip {
       padding: 5px 11px; border-radius: 999px; font-size: 12px; font-weight: 700; cursor: pointer;
       border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.07); color: inherit;
@@ -345,50 +370,37 @@
     }
     .donate-primary-btn:hover { transform: translateY(-1px); }
 
-    /* Grand THANK YOU SVG + Surrounding Mascots Celebration Stage */
+    /* Grand Anime THANK YOU Poster Overlay */
     #donate-celebration {
       position: fixed; inset: 0; z-index: 950; pointer-events: none; overflow: hidden;
       display: flex; align-items: center; justify-content: center;
     }
-    .don-stage {
-      position: relative; width: min(560px, 92vw); padding: 26px 24px 22px;
-      border-radius: 26px; text-align: center;
-      background: radial-gradient(circle at 50% 45%, rgba(30, 41, 59, 0.92), rgba(15, 23, 42, 0.96));
-      border: 1.5px solid rgba(244, 114, 182, 0.45);
-      box-shadow: 0 24px 70px rgba(0,0,0,0.62), 0 0 42px rgba(244, 114, 182, 0.35);
-      animation: donStagePop 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    #donate-celebration.active {
+      pointer-events: auto; background: rgba(2, 6, 23, 0.58); backdrop-filter: blur(5px);
+      animation: donFadeIn 0.25s ease;
     }
-    body.ag-light-mode .don-stage {
-      background: radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.97), rgba(248, 250, 252, 0.98));
-      color: #0f172a;
+    .don-poster-card {
+      position: relative; width: min(370px, 86vw); padding: 10px 10px 14px;
+      border-radius: 22px; text-align: center;
+      background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(254, 242, 248, 0.97));
+      border: 2px solid rgba(251, 191, 36, 0.78);
+      box-shadow: 0 26px 80px rgba(0,0,0,0.65), 0 0 46px rgba(244, 114, 182, 0.48);
+      animation: donStagePop 0.48s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      cursor: pointer;
     }
     @keyframes donStagePop {
-      0% { opacity: 0; transform: scale(0.72) translateY(24px); }
-      100% { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    .don-banner-svg {
-      width: min(390px, 78vw); height: auto; display: block; margin: 0 auto;
-    }
-    .don-sub-msg {
-      margin-top: 6px; font-size: 14px; font-weight: 700; color: #fdf2f8;
-      text-shadow: 0 2px 10px rgba(236, 72, 153, 0.5);
-    }
-    body.ag-light-mode .don-sub-msg { color: #be185d; text-shadow: none; }
-    .don-ring-mascot {
-      position: absolute; width: 78px; height: 78px; object-fit: contain;
-      filter: drop-shadow(0 6px 14px rgba(0,0,0,0.48));
-      animation: donMascotRise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both, donMascotCheer 1.15s ease-in-out 0.5s infinite alternate;
-    }
-    @keyframes donMascotRise {
-      0% { opacity: 0; transform: scale(0.35) translateY(28px) rotate(-14deg); }
+      0% { opacity: 0; transform: scale(0.68) translateY(28px) rotate(-3deg); }
       100% { opacity: 1; transform: scale(1) translateY(0) rotate(0deg); }
     }
-    @keyframes donMascotCheer {
-      0% { transform: translateY(0) rotate(-6deg) scale(1); }
-      100% { transform: translateY(-9px) rotate(6deg) scale(1.08); }
+    .don-poster-img {
+      width: 100%; height: auto; max-height: 68vh; object-fit: contain;
+      display: block; border-radius: 14px;
+    }
+    .don-sub-msg {
+      margin-top: 10px; padding: 0 8px; font-size: 13.5px; font-weight: 800; color: #be185d;
     }
     .don-confetti {
-      position: fixed; font-size: 20px; line-height: 1;
+      position: fixed; font-size: 20px; line-height: 1; pointer-events: none;
       animation: donConfettiFall var(--dur, 3.2s) cubic-bezier(0.2, 0.7, 0.4, 1) forwards;
     }
     @keyframes donConfettiFall {
@@ -506,27 +518,50 @@
     </main>
   </div>
 
-  <!-- Donate Modal (PayPal.Me + Scannable Local SVG QR) -->
+  <!-- Donate Modal (2 Tabs: Vietnam VietQR Techcombank + International PayPal.Me) -->
   <div class="donate-backdrop" id="donate-modal" role="dialog" aria-modal="true">
     <div class="donate-card">
       <button type="button" class="donate-close" id="donate-close" aria-label="Close">✕</button>
       <div style="font-size:16.5px; font-weight:800; padding:0 20px;" id="don-title">☕ Support Antigravity Custom Theme</div>
-      <div style="font-size:12.5px; opacity:0.8; margin-top:6px; line-height:1.45;" id="don-desc">
-        Scan the PayPal QR code or click below to buy the creator a coffee!
+      <div style="font-size:12.5px; opacity:0.8; margin-top:5px; line-height:1.45;" id="don-desc">
+        Scan QR or open PayPal.Me to buy the creator a coffee!
       </div>
-      <div class="donate-qr-wrap">
-        <img src="./assets/paypal-qr.svg" alt="PayPal.Me QR Code (paypal.me/TonDat2211)" />
+      <div class="donate-tabs">
+        <button type="button" class="don-tab-btn" id="don-tab-vn">🇻🇳 Ngân hàng / MoMo</button>
+        <button type="button" class="don-tab-btn active" id="don-tab-intl">🌎 PayPal / Visa</button>
       </div>
-      <div style="font-size:11.5px; opacity:0.75; font-family:monospace;">paypal.me/TonDat2211</div>
-      <div class="donate-amounts" id="don-amounts">
-        <button type="button" class="amt-chip" data-amt="2">$2 ☕</button>
-        <button type="button" class="amt-chip active" data-amt="5">$5 🍱</button>
-        <button type="button" class="amt-chip" data-amt="10">$10 🚀</button>
-        <button type="button" class="amt-chip" data-amt="">Custom 💖</button>
+
+      <!-- Tab 1: Vietnam Techcombank VietQR -->
+      <div id="don-pane-vn" style="display:none;">
+        <div class="donate-qr-wrap">
+          <img src="./assets/techcombank-qr.png" alt="Techcombank VietQR - NGUYEN TAN DAT" />
+        </div>
+        <div style="font-size:11.5px; opacity:0.82;" id="don-vn-note">Quét bằng mọi app Ngân hàng VN, MoMo, ZaloPay (0đ phí)</div>
+        <div class="don-bank-meta">
+          <div style="text-align:left; line-height:1.35;">
+            <div style="font-weight:800;">Techcombank • NGUYEN TAN DAT</div>
+            <div style="font-family:monospace; opacity:0.88;">STK: 1103 9801 9912</div>
+          </div>
+          <button type="button" class="don-copy-btn" id="don-copy-stk">📋 Copy STK</button>
+        </div>
       </div>
-      <a class="donate-primary-btn" id="don-paypal-link" href="https://paypal.me/TonDat2211/5" target="_blank" rel="noopener">
-        💳 <span id="don-open-label">Open PayPal.Me ($5)</span>
-      </a>
+
+      <!-- Tab 2: International PayPal.Me -->
+      <div id="don-pane-intl">
+        <div class="donate-qr-wrap">
+          <img src="./assets/paypal-qr.svg" alt="PayPal.Me QR Code (paypal.me/TonDat2211)" />
+        </div>
+        <div style="font-size:11.5px; opacity:0.75; font-family:monospace;">paypal.me/TonDat2211</div>
+        <div class="donate-amounts" id="don-amounts">
+          <button type="button" class="amt-chip" data-amt="2">$2 ☕</button>
+          <button type="button" class="amt-chip active" data-amt="5">$5 🍱</button>
+          <button type="button" class="amt-chip" data-amt="10">$10 🚀</button>
+          <button type="button" class="amt-chip" data-amt="">Custom 💖</button>
+        </div>
+        <a class="donate-primary-btn" id="don-paypal-link" href="https://paypal.me/TonDat2211/5" target="_blank" rel="noopener">
+          💳 <span id="don-open-label">Open PayPal.Me ($5)</span>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -590,10 +625,14 @@
           galHover: 'Hover Panoramic Stage',
           donBtn: '☕ Donate',
           donTitle: '☕ Support Antigravity Custom Theme',
-          donDesc: 'Love these 21 Chibi mascots & studio soundtracks? Scan the QR code or open PayPal.Me to fuel future updates!',
+          donDesc: 'Love these 21 Chibi mascots & studio soundtracks? Support via PayPal (Global) or VietQR (Vietnam)!',
+          donTabVn: '🇻🇳 VN Bank / MoMo',
+          donTabIntl: '🌎 PayPal / Card',
+          donVnNote: 'Scan with any Vietnam Banking app, MoMo, or ZaloPay (0 VND fee)',
+          donCopy: '📋 Copy',
+          donCopied: '✓ Copied!',
           donCustom: 'Custom 💖',
           donOpen: (amt) => amt ? `Open PayPal.Me ($${amt})` : 'Open PayPal.Me',
-          donDoneBtn: 'I Just Donated! (Summon Mascot Parade)',
           donToast: '💖 Thank you so much! All 21 mascots send you love & sparkles! ✨'
         },
         vi: {
@@ -626,10 +665,14 @@
           galHover: 'Rê chuột (Sân khấu ngang)',
           donBtn: '☕ Ủng hộ',
           donTitle: '☕ Ủng hộ Antigravity Custom Theme',
-          donDesc: 'Yêu thích bộ 21 linh vật Chibi & nhạc nền Studio? Quét mã QR PayPal bên dưới hoặc bấm nút để mời tác giả 1 ly cà phê nhé!',
+          donDesc: 'Yêu thích bộ 21 linh vật Chibi & nhạc nền Studio? Quét VietQR (Ngân hàng / MoMo) hoặc PayPal để mời tác giả 1 ly cà phê nhé!',
+          donTabVn: '🇻🇳 Ngân hàng / MoMo',
+          donTabIntl: '🌎 Quốc tế (PayPal)',
+          donVnNote: 'Quét bằng mọi app Ngân hàng VN, MoMo, ZaloPay (0đ phí)',
+          donCopy: '📋 Copy STK',
+          donCopied: '✓ Đã copy!',
           donCustom: 'Tùy chọn 💖',
           donOpen: (amt) => amt ? `Mở PayPal.Me ($${amt})` : 'Mở PayPal.Me',
-          donDoneBtn: 'Mình vừa quét QR / ủng hộ xong! (Gọi dàn linh vật cảm ơn)',
           donToast: '💖 Cảm ơn bạn rất nhiều! Cả 21 linh vật gửi ngàn tim đến bạn! ✨'
         }
       };
@@ -670,56 +713,41 @@
       }
 
       let celebrationTimer = null;
+      function closeDonateCelebration() {
+        clearTimeout(celebrationTimer);
+        const layer = document.getElementById('donate-celebration');
+        if (!layer) return;
+        layer.classList.remove('active');
+        layer.innerHTML = '';
+      }
+
       function triggerDonateCelebration() {
         const layer = document.getElementById('donate-celebration');
         if (!layer) return;
         clearTimeout(celebrationTimer);
         layer.innerHTML = '';
+        layer.classList.add('active');
 
         const ui = UI_TEXT[lang];
-        const stage = document.createElement('div');
-        stage.className = 'don-stage';
-        stage.innerHTML = `
-          <img class="don-banner-svg" src="./assets/thank-you-banner.svg" alt="THANK YOU!" />
+        const card = document.createElement('div');
+        card.className = 'don-poster-card';
+        card.innerHTML = `
+          <img class="don-poster-img" src="./assets/thank-you-poster.jpg" alt="THANK YOU! Anime Mascot Poster" />
           <div class="don-sub-msg">${ui.donToast}</div>
         `;
-
-        // Arrange 8 cheering Chibi mascots (done.svg) right around the THANK YOU! banner
-        const paradeIds = [
-          activeId, 'valentine-cupid', 'jade-dragon', 'tet-lion',
-          'noel-snowman', 'sakura-bunny', 'summer-corgi', 'code-cat'
-        ].filter((v, i, a) => a.indexOf(v) === i).slice(0, 8);
-        const ringSlots = [
-          { top: '-38px', left: '-28px' },
-          { top: '-44px', left: '50%', marginLeft: '-39px' },
-          { top: '-38px', right: '-28px' },
-          { top: '38%', left: '-44px' },
-          { top: '38%', right: '-44px' },
-          { bottom: '-34px', left: '6%' },
-          { bottom: '-38px', left: '50%', marginLeft: '-39px' },
-          { bottom: '-34px', right: '6%' }
-        ];
-        paradeIds.forEach((id, idx) => {
-          const img = document.createElement('img');
-          img.className = 'don-ring-mascot';
-          img.src = './stickers/' + id + '/done.svg';
-          img.alt = id;
-          Object.assign(img.style, ringSlots[idx]);
-          img.style.animationDelay = (idx * 0.07) + 's, ' + (0.5 + idx * 0.07) + 's';
-          stage.appendChild(img);
-        });
-        layer.appendChild(stage);
+        card.addEventListener('click', closeDonateCelebration);
+        layer.appendChild(card);
 
         // Shower of hearts, stars, coins & sparkles
         const glyphs = ['💖', '✨', '🎉', '⭐', '🪙', '🌸', '☕', '💘'];
-        for (let i = 0; i < 32; i++) {
+        for (let i = 0; i < 34; i++) {
           const p = document.createElement('span');
           p.className = 'don-confetti';
           p.textContent = glyphs[i % glyphs.length];
           p.style.left = (4 + Math.random() * 92).toFixed(1) + 'vw';
-          p.style.bottom = (8 + Math.random() * 18).toFixed(1) + 'vh';
-          p.style.setProperty('--dx', ((Math.random() - 0.5) * 150).toFixed(0) + 'px');
-          p.style.setProperty('--dy', (-200 - Math.random() * 340).toFixed(0) + 'px');
+          p.style.bottom = (6 + Math.random() * 20).toFixed(1) + 'vh';
+          p.style.setProperty('--dx', ((Math.random() - 0.5) * 160).toFixed(0) + 'px');
+          p.style.setProperty('--dy', (-220 - Math.random() * 360).toFixed(0) + 'px');
           p.style.setProperty('--rot', ((Math.random() - 0.5) * 320).toFixed(0) + 'deg');
           p.style.setProperty('--dur', (2.2 + Math.random() * 1.8).toFixed(2) + 's');
           p.style.animationDelay = (Math.random() * 0.65).toFixed(2) + 's';
@@ -727,8 +755,8 @@
         }
 
         // Play celebratory chime + switch active mascot to done.svg
-        setAiSimState('done', 5500);
-        celebrationTimer = setTimeout(() => { layer.innerHTML = ''; }, 6200);
+        setAiSimState('done', 6000);
+        celebrationTimer = setTimeout(closeDonateCelebration, 6800);
       }
 
       const bgEl = document.getElementById('ag-custom-bg');
@@ -1009,6 +1037,10 @@
         document.getElementById('donate-btn').textContent = ui.donBtn;
         document.getElementById('don-title').textContent = ui.donTitle;
         document.getElementById('don-desc').textContent = ui.donDesc;
+        document.getElementById('don-tab-vn').textContent = ui.donTabVn;
+        document.getElementById('don-tab-intl').textContent = ui.donTabIntl;
+        document.getElementById('don-vn-note').textContent = ui.donVnNote;
+        document.getElementById('don-copy-stk').textContent = ui.donCopy;
         const customChip = document.querySelector('#don-amounts .amt-chip[data-amt=""]');
         if (customChip) customChip.textContent = ui.donCustom;
         syncDonateAmount(selectedDonAmt);
@@ -1168,26 +1200,50 @@
         setAiSimState('done', 5000);
       });
 
-      // Donate Modal & Auto THANK YOU Celebration Wiring (no extra button needed)
+      // Donate Modal (2 Tabs: VietQR + PayPal) & Auto Anime THANK YOU Poster
       const donateModal = document.getElementById('donate-modal');
+      const donTabVn = document.getElementById('don-tab-vn');
+      const donTabIntl = document.getElementById('don-tab-intl');
+      const donPaneVn = document.getElementById('don-pane-vn');
+      const donPaneIntl = document.getElementById('don-pane-intl');
       let donateOpenedAt = 0;
+
+      function switchDonateTab(which) {
+        const isVn = which === 'vn';
+        donTabVn.classList.toggle('active', isVn);
+        donTabIntl.classList.toggle('active', !isVn);
+        donPaneVn.style.display = isVn ? 'block' : 'none';
+        donPaneIntl.style.display = isVn ? 'none' : 'block';
+      }
+
       function closeDonateModal(checkScanTime) {
         if (!donateModal.classList.contains('open')) return;
         donateModal.classList.remove('open');
-        // If user kept the QR modal open >= 3.5s (scanning on phone), auto-celebrate on close!
+        // If user kept the QR modal open >= 3.5s (scanning on phone), auto-show Anime THANK YOU Poster!
         if (checkScanTime && donateOpenedAt && (Date.now() - donateOpenedAt >= 3500)) {
           triggerDonateCelebration();
         }
         donateOpenedAt = 0;
       }
+
       document.getElementById('donate-btn').addEventListener('click', () => {
         donateOpenedAt = Date.now();
+        switchDonateTab(lang === 'vi' ? 'vn' : 'intl');
         donateModal.classList.add('open');
+      });
+      donTabVn.addEventListener('click', () => switchDonateTab('vn'));
+      donTabIntl.addEventListener('click', () => switchDonateTab('intl'));
+      document.getElementById('don-copy-stk').addEventListener('click', (e) => {
+        const btn = e.currentTarget;
+        try { navigator.clipboard.writeText('110398019912'); } catch (err) {}
+        btn.textContent = UI_TEXT[lang].donCopied;
+        setTimeout(() => { btn.textContent = UI_TEXT[lang].donCopy; }, 1800);
       });
       document.getElementById('donate-close').addEventListener('click', () => closeDonateModal(true));
       donateModal.addEventListener('click', (e) => {
         if (e.target === donateModal) closeDonateModal(true);
       });
+      document.getElementById('donate-celebration').addEventListener('click', closeDonateCelebration);
       document.querySelectorAll('#don-amounts .amt-chip').forEach(ch => {
         ch.addEventListener('click', () => syncDonateAmount(ch.getAttribute('data-amt')));
       });
