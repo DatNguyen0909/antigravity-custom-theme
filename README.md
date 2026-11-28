@@ -179,6 +179,9 @@ Nếu bạn yêu thích bộ **21 linh vật Chibi & 105 SVG chuyển động** 
 **© 2026 KuroLab — All Rights Reserved (Miễn phí cho mục đích sử dụng cá nhân).**  
 Bạn được tự do cài đặt và trải nghiệm cho mục đích cá nhân. Nghiêm cấm sao chép, chỉnh sửa hoặc phân phối lại bộ linh vật SVG, âm thanh Studio và mã nguồn vì mục đích thương mại khi chưa có sự đồng ý của **KuroLab**.
 
+> [!NOTE]
+> **Miễn trừ trách nhiệm (Disclaimer):** **KuroLab** là một dự án tùy biến giao diện cộng đồng hoàn toàn độc lập, **không liên kết, không đại diện và không được bảo trợ bởi Google**. Bộ công cụ chỉ tùy biến hiển thị giao diện và âm thanh cục bộ trên máy người dùng (UI-only), không thu thập dữ liệu, không can thiệp API hay hệ thống máy chủ. Người dùng tự quyết định khi cài đặt và có thể khôi phục nguyên bản bất cứ lúc nào bằng `uninstall.bat`.
+
 </details>
 
 <details name="ag-readme-lang" open>
@@ -340,5 +343,8 @@ If you enjoy these **21 animated Chibi mascots & 105 live SVGs** and want to fue
 
 **© 2026 KuroLab — All Rights Reserved (Free for Personal Use).**  
 Free to install and enjoy for personal use on your own device. Redistribution, resale, or commercial use of the SVG mascot artwork, Studio Audio engine, or source code without prior permission from **KuroLab** is prohibited.
+
+> [!NOTE]
+> **Disclaimer:** **KuroLab** is an independent, unofficial third-party UI customization project and is **not affiliated with, endorsed by, or sponsored by Google**. It only applies local visual & audio customizations (UI-only) without collecting user data or modifying backend APIs. Installation is voluntary and fully reversible at any time via `uninstall.bat`.
 
 </details>
