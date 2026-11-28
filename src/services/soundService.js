@@ -90,6 +90,41 @@ const SoundService = (function () {
         return conv;
     }
 
+    let iosAudioUnlocked = false;
+    function unlockMobileAudio(c) {
+        try {
+            // iOS 17+ Safari: switch audioSession from 'ambient' to 'playback' so sound plays even on Silent Switch!
+            if (typeof navigator !== 'undefined' && navigator.audioSession) {
+                navigator.audioSession.type = 'playback';
+            }
+        } catch (e) {}
+        if (!c) return;
+        if (c.state === 'suspended' || c.state === 'interrupted') {
+            c.resume().catch(() => {});
+        }
+        if (!iosAudioUnlocked) {
+            iosAudioUnlocked = true;
+            try {
+                // Play a 1-sample silent Web Audio buffer to unlock iOS WebKit hardware output
+                const silent = c.createBuffer(1, 1, 22050);
+                const src = c.createBufferSource();
+                src.buffer = silent;
+                src.connect(c.destination);
+                src.start(0);
+            } catch (e) {}
+            try {
+                // Tiny silent HTML5 <audio> pulse forces iOS Safari into Media Playback channel (bypasses Ringer Mute switch)
+                if (typeof Audio !== 'undefined') {
+                    const a = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA');
+                    a.setAttribute('playsinline', '');
+                    a.volume = 0.01;
+                    const p = a.play();
+                    if (p && typeof p.catch === 'function') p.catch(() => {});
+                }
+            } catch (e) {}
+        }
+    }
+
     function ensureContext() {
         if (!ctx) {
             const AC = window.AudioContext || window.webkitAudioContext;
@@ -126,9 +161,7 @@ const SoundService = (function () {
 
             syncGainValues();
         }
-        if (ctx.state === 'suspended') {
-            ctx.resume().catch(() => {});
-        }
+        unlockMobileAudio(ctx);
         return ctx;
     }
 
@@ -1184,7 +1217,7 @@ const SoundService = (function () {
 
     function schedulerLoop() {
         if (!ctx || !state.enabled || !state.bgmEnabled) return;
-        if (ctx.state === 'suspended') return;
+        if (ctx.state !== 'running') return;
 
         const eng = BGM_ENGINES[state.themeId] || BGM_ENGINES['jade-dragon'];
         // If tab was backgrounded and fell behind >0.5s, resync smoothly without burst
@@ -1217,15 +1250,23 @@ const SoundService = (function () {
         if (unlockWired || typeof document === 'undefined') return;
         unlockWired = true;
         const unlock = () => {
-            if (!state.enabled || (!state.sfxEnabled && !state.bgmEnabled)) return;
-            if (ctx && ctx.state === 'suspended') {
-                ctx.resume().then(() => {
-                    if (state.bgmEnabled && !lookaheadTimer) restartBgmIfNeeded();
-                }).catch(() => {});
-            } else if (!ctx && state.bgmEnabled) {
+            if (!state.enabled) return;
+            if (ctx) {
+                unlockMobileAudio(ctx);
+                if (ctx.state !== 'running') {
+                    ctx.resume().then(() => {
+                        if (state.bgmEnabled && !lookaheadTimer) restartBgmIfNeeded();
+                    }).catch(() => {});
+                } else if (state.bgmEnabled && !lookaheadTimer) {
+                    restartBgmIfNeeded();
+                }
+            } else if (state.bgmEnabled) {
                 restartBgmIfNeeded();
             }
         };
+        document.addEventListener('touchstart', unlock, { passive: true });
+        document.addEventListener('touchend', unlock, { passive: true });
+        document.addEventListener('click', unlock, { passive: true });
         document.addEventListener('pointerdown', unlock, { passive: true });
         document.addEventListener('keydown', unlock, { passive: true });
     }

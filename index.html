@@ -1156,12 +1156,18 @@
       }
 
       const IGNORED_PREVIEW_KEYS = /^(Shift|Control|Alt|Meta|CapsLock|Tab|Escape|ArrowUp|ArrowDown|ArrowLeft|ArrowRight)$/;
+      let lastKeydownFx = 0;
       inputEl.addEventListener('keydown', (e) => {
         if (e.ctrlKey || e.metaKey || e.altKey || IGNORED_PREVIEW_KEYS.test(e.key || '')) return;
+        lastKeydownFx = Date.now();
         SoundService.playKeystroke(activeId, e.key === 'Enter' || e.key === ' ');
       });
 
       inputEl.addEventListener('input', () => {
+        // Mobile virtual keyboards often skip standard keydown -> trigger keystroke SFX safely on input
+        if (Date.now() - lastKeydownFx > 60) {
+          SoundService.playKeystroke(activeId, false);
+        }
         const val = inputEl.value.trim();
         if (!val) { clearTyping(); return; }
         const now = Date.now();
