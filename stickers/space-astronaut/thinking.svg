@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="saThSuit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="65%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="saThVisor" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="saThTrim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="saThHolo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.18"/>
+    </linearGradient>
+    <style>
+      .saThHover { animation: saThHoverAnim 2.8s ease-in-out infinite; }
+      .saThJet { transform-origin: 48px 98px; animation: saThJetAnim 0.45s ease-in-out infinite alternate; }
+      .saThBeacon { animation: saThBeaconAnim 2s ease-in-out infinite alternate; }
+      .saThRadarSweep { transform-origin: 96px 72px; animation: saThSweepAnim 2.4s linear infinite; }
+      .saThWave { animation: saThWaveAnim 2s ease-in-out infinite alternate; }
+      .saThHoloPulse { animation: saThHoloAnim 2.5s ease-in-out infinite alternate; }
+      .saThScanLine { animation: saThScanAnim 2.2s linear infinite; }
+
+      @keyframes saThHoverAnim { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-3.5px); } }
+      @keyframes saThJetAnim { 0% { transform: scaleY(0.84); opacity: 0.75; } 100% { transform: scaleY(1.16); opacity: 1; } }
+      @keyframes saThBeaconAnim { 0% { fill: #38bdf8; } 100% { fill: #22d3ee; } }
+      @keyframes saThSweepAnim { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      @keyframes saThWaveAnim { 0% { transform: translateX(-3px); opacity: 0.75; } 100% { transform: translateX(3px); opacity: 1; } }
+      @keyframes saThHoloAnim { 0% { opacity: 0.85; } 100% { opacity: 1; } }
+      @keyframes saThScanAnim { 0% { transform: translateY(0px); opacity: 0.9; } 100% { transform: translateY(24px); opacity: 0.2; } }
+    </style>
+  </defs>
+
+  <g class="saThHover">
+    <!-- Jetpack -->
+    <rect x="23" y="64" width="50" height="33" rx="10" fill="#64748b" stroke="#1e293b" stroke-width="2"/>
+    <g class="saThJet">
+      <path d="M28 97 Q32 110 35 113 Q38 110 40 97 Z" fill="#38bdf8" opacity="0.85"/>
+      <path d="M58 97 Q61 110 63 113 Q66 110 70 97 Z" fill="#38bdf8" opacity="0.85"/>
+      <path d="M31 97 Q35 105 37 107 Q38 105 38 97 Z" fill="#fde047"/>
+      <path d="M60 97 Q63 105 64 107 Q66 105 67 97 Z" fill="#fde047"/>
+    </g>
+
+    <!-- Antenna -->
+    <line x1="48" y1="18" x2="48" y2="8" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round"/>
+    <circle class="saThBeacon" cx="48" cy="7" r="4.8" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5"/>
+    <circle cx="46.5" cy="5.5" r="1.6" fill="#ffffff"/>
+
+    <!-- Suit Body -->
+    <path d="M29 74 C26 90, 31 103, 48 103 C65 103, 70 90, 67 74 Z" fill="url(#saThSuit)" stroke="#1e293b" stroke-width="2.2"/>
+    <path d="M28 73 Q48 80 68 73" fill="none" stroke="url(#saThTrim)" stroke-width="4.2" stroke-linecap="round"/>
+    <rect x="39" y="81" width="18" height="11" rx="3" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+    <circle cx="43.5" cy="86.5" r="2" fill="#38bdf8"/>
+    <circle cx="48" cy="86.5" r="2" fill="#fde047"/>
+    <circle cx="52.5" cy="86.5" r="2" fill="#22d3ee"/>
+
+    <!-- Boots -->
+    <ellipse cx="38" cy="104" rx="7.5" ry="5" fill="url(#saThSuit)" stroke="#1e293b" stroke-width="2"/>
+    <path d="M32 104 Q38 107 44 104" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <ellipse cx="58" cy="104" rx="7.5" ry="5" fill="url(#saThSuit)" stroke="#1e293b" stroke-width="2"/>
+    <path d="M52 104 Q58 107 64 104" fill="none" stroke="#38bdf8" stroke-width="2"/>
+
+    <!-- Helmet -->
+    <circle cx="48" cy="46" r="29" fill="url(#saThSuit)" stroke="#1e293b" stroke-width="2.4"/>
+    <rect x="15" y="40" width="6" height="13" rx="3" fill="url(#saThTrim)" stroke="#1e293b" stroke-width="1.8"/>
+    <rect x="75" y="40" width="6" height="13" rx="3" fill="url(#saThTrim)" stroke="#1e293b" stroke-width="1.8"/>
+
+    <!-- Visor -->
+    <rect x="24" y="27" width="48" height="37" rx="18" fill="url(#saThVisor)" stroke="#38bdf8" stroke-width="2.2"/>
+    <path d="M30 32 Q42 28 57 32" fill="none" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" opacity="0.5"/>
+    <circle cx="30" cy="37" r="2" fill="#ffffff" opacity="0.55"/>
+
+    <!-- Focused Eyes Looking Toward Hologram -->
+    <ellipse cx="38" cy="46.5" rx="5" ry="5.5" fill="#38bdf8"/>
+    <ellipse cx="39.5" cy="46.5" rx="3.4" ry="3.8" fill="#0284c7"/>
+    <circle cx="38" cy="44.5" r="2" fill="#ffffff"/>
+    <path d="M33 41.5 L43 43" fill="none" stroke="#7dd3fc" stroke-width="1.8" stroke-linecap="round"/>
+
+    <ellipse cx="60" cy="46.5" rx="5" ry="5.5" fill="#38bdf8"/>
+    <ellipse cx="61.5" cy="46.5" rx="3.4" ry="3.8" fill="#0284c7"/>
+    <circle cx="60" cy="44.5" r="2" fill="#ffffff"/>
+    <path d="M65 41.5 L55 43" fill="none" stroke="#7dd3fc" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Blush va Thinking Mouth -->
+    <ellipse cx="31" cy="52.5" rx="3.5" ry="2" fill="#f472b6" opacity="0.7"/>
+    <ellipse cx="66" cy="52.5" rx="3.5" ry="2" fill="#f472b6" opacity="0.7"/>
+    <line x1="46" y1="53" x2="52" y2="53" stroke="#bae6fd" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Arms (Right arm raised toward hologram projector) -->
+    <ellipse cx="28" cy="84" rx="6" ry="4.8" transform="rotate(20 28 84)" fill="url(#saThSuit)" stroke="#1e293b" stroke-width="2"/>
+    <ellipse cx="68" cy="80" rx="6.8" ry="4.8" transform="rotate(-25 68 80)" fill="url(#saThSuit)" stroke="#1e293b" stroke-width="2"/>
+    <circle cx="74" cy="77" r="2.2" fill="#22d3ee"/>
+  </g>
+
+  <!-- Floating Cyan Hologram Radar Screen -->
+  <g class="saThHoloPulse">
+    <!-- Projection Beam -->
+    <polygon points="74,77 80,55 80,96" fill="#22d3ee" opacity="0.22"/>
+    <!-- Screen Frame -->
+    <rect x="78" y="52" width="36" height="44" rx="5" fill="url(#saThHolo)" stroke="#22d3ee" stroke-width="1.8"/>
+    <line class="saThScanLine" x1="80" y1="56" x2="112" y2="56" stroke="#7dd3fc" stroke-width="1.5"/>
+
+    <!-- Radar Circle -->
+    <circle cx="96" cy="72" r="11" fill="#0f172a" fill-opacity="0.55" stroke="#38bdf8" stroke-width="1.2"/>
+    <circle cx="96" cy="72" r="6" fill="none" stroke="#38bdf8" stroke-width="0.9" opacity="0.65"/>
+    <line x1="85" y1="72" x2="107" y2="72" stroke="#38bdf8" stroke-width="0.7" opacity="0.5"/>
+    <line x1="96" y1="61" x2="96" y2="83" stroke="#38bdf8" stroke-width="0.7" opacity="0.5"/>
+    <g class="saThRadarSweep">
+      <line x1="96" y1="72" x2="96" y2="61" stroke="#22d3ee" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M96 72 L96 61 A11 11 0 0 1 105 66 Z" fill="#22d3ee" opacity="0.35"/>
+    </g>
+    <circle cx="101" cy="68" r="1.6" fill="#fde047"/>
+
+    <!-- Scanning Data Wave -->
+    <g class="saThWave">
+      <path d="M82 90 Q86 85 90 90 T98 90 T106 90 T111 88" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

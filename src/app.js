@@ -8,6 +8,7 @@ function syncSound() {
         enabled: !!s.enabled,
         sfxEnabled: s.sfxEnabled !== false,
         bgmEnabled: !!s.bgmEnabled,
+        aiChimeEnabled: s.aiChimeEnabled !== false,
         volume: typeof s.soundVolume === 'number' ? s.soundVolume : 55,
         themeId: s.activeTheme
     });
@@ -30,6 +31,13 @@ ThemeViewModel.subscribe((reason) => {
         syncSound();
         return;
     }
+    if (reason === 'ai-state-changed') {
+        if (ThemeViewModel.getState().enabled) {
+            const wrap = document.querySelector('.ag-custom-input-wrapper');
+            if (wrap) ChatView.syncInputSticker(wrap, ThemeViewModel);
+        }
+        return;
+    }
     applyTheme();
     if (reason === 'disk-loaded') {
         SettingsView.refreshIfOpen(ThemeViewModel);
@@ -41,6 +49,13 @@ ChatView.wireTypingEvents(ThemeViewModel);
 function tick() {
     BackgroundView.injectStyles();
     if (ThemeViewModel.getState().enabled) {
+        const aiRes = ThemeViewModel.syncAiStatus(EnvironmentService.detectAiWorking());
+        if (aiRes.justCompleted) {
+            ChatView.celebrateAiDone(ThemeViewModel);
+            if (aiRes.durationMs >= 2000) {
+                SoundService.playDoneChime(ThemeViewModel.getState().activeTheme);
+            }
+        }
         if (EnvironmentService.detectLightMode() !== ThemeViewModel.getLastLightMode()) {
             applyTheme();
         } else {

@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" shape-rendering="crispEdges">
+  <defs>
+    <style>
+      .pkTh-body { transform-origin: 54px 104px; animation: pkThBob 2.2s steps(2) infinite; }
+      .pkTh-plume { transform-origin: 54px 20px; animation: pkThPlume 2.2s steps(2) infinite; }
+      .pkTh-eyes { animation: pkThScan 2.8s steps(3) infinite; }
+      .pkTh-qmark { transform-origin: 84px 20px; animation: pkThQmark 2.4s ease-in-out infinite; }
+      .pkTh-mp-fill { transform-origin: 36px 10px; animation: pkThMpLoad 2.6s steps(6) infinite; }
+      .pkTh-map { transform-origin: 54px 82px; animation: pkThMapTilt 2.8s ease-in-out infinite; }
+      .pkTh-dot1 { animation: pkThBlink 2.0s steps(2) infinite; }
+      .pkTh-dot2 { animation: pkThBlink 2.0s steps(2) 0.5s infinite; }
+
+      @keyframes pkThBob {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-2px); }
+      }
+      @keyframes pkThPlume {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(-2px); }
+      }
+      @keyframes pkThScan {
+        0%, 100% { transform: translateX(-2px); }
+        50% { transform: translateX(2px); }
+      }
+      @keyframes pkThQmark {
+        0%, 100% { transform: translateY(0) scale(1); opacity: 0.9; }
+        50% { transform: translateY(-5px) scale(1.1); opacity: 1; }
+      }
+      @keyframes pkThMpLoad {
+        0% { transform: scaleX(0.15); }
+        80% { transform: scaleX(1); }
+        100% { transform: scaleX(0.15); }
+      }
+      @keyframes pkThMapTilt {
+        0%, 100% { transform: rotate(-2deg); }
+        50% { transform: rotate(2deg); }
+      }
+      @keyframes pkThBlink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.25; }
+      }
+    </style>
+  </defs>
+
+  <!-- Pixel MP Loading Bar at top -->
+  <g>
+    <text x="16" y="13" font-family="Consolas, monospace" font-size="8" font-weight="900" fill="#38bdf8">MP</text>
+    <rect x="32" y="6" width="44" height="9" fill="#0f172a"/>
+    <rect x="34" y="8" width="40" height="5" fill="#1e293b"/>
+    <rect class="pkTh-mp-fill" x="34" y="8" width="40" height="5" fill="#38bdf8"/>
+    <rect x="34" y="8" width="40" height="2" fill="#bae6fd" opacity="0.5"/>
+  </g>
+
+  <!-- Floating Pixel Question Mark above helmet -->
+  <g class="pkTh-qmark">
+    <rect x="82" y="8" width="10" height="3" fill="#facc15"/>
+    <rect x="89" y="11" width="3" height="5" fill="#facc15"/>
+    <rect x="85" y="15" width="7" height="3" fill="#facc15"/>
+    <rect x="85" y="18" width="3" height="3" fill="#facc15"/>
+    <rect x="85" y="23" width="3" height="3" fill="#fef08a"/>
+  </g>
+
+  <!-- 8-bit ground shadow -->
+  <rect x="26" y="106" width="56" height="6" fill="#0f172a" opacity="0.45"/>
+
+  <g class="pkTh-body">
+    <!-- Red pixel cape behind -->
+    <rect x="32" y="64" width="44" height="34" fill="#b91c1c"/>
+    <rect x="28" y="72" width="4" height="24" fill="#991b1b"/>
+
+    <!-- Pixel Boots -->
+    <rect x="38" y="98" width="12" height="8" fill="#334155"/>
+    <rect x="58" y="98" width="12" height="8" fill="#334155"/>
+    <rect x="38" y="102" width="14" height="4" fill="#1e293b"/>
+    <rect x="58" y="102" width="14" height="4" fill="#1e293b"/>
+
+    <!-- Armor Torso -->
+    <rect x="36" y="64" width="36" height="34" fill="#94a3b8"/>
+    <rect x="40" y="68" width="28" height="26" fill="#cbd5e1"/>
+    <rect x="36" y="86" width="36" height="6" fill="#ca8a04"/>
+    <rect x="50" y="86" width="8" height="6" fill="#facc15"/>
+
+    <!-- Sword strapped on back -->
+    <rect x="74" y="42" width="6" height="22" fill="#e2e8f0"/>
+    <rect x="76" y="44" width="2" height="18" fill="#38bdf8"/>
+    <rect x="72" y="62" width="10" height="3" fill="#facc15"/>
+
+    <!-- Red Helmet Plume -->
+    <g class="pkTh-plume">
+      <rect x="46" y="16" width="16" height="7" fill="#ef4444"/>
+      <rect x="42" y="20" width="24" height="5" fill="#dc2626"/>
+      <rect x="62" y="23" width="8" height="5" fill="#b91c1c"/>
+    </g>
+
+    <!-- Chibi Pixel Helmet -->
+    <rect x="32" y="26" width="44" height="40" fill="#64748b"/>
+    <rect x="36" y="30" width="36" height="32" fill="#cbd5e1"/>
+    <rect x="36" y="30" width="36" height="6" fill="#f8fafc"/>
+    <!-- Dark visor opening -->
+    <rect x="38" y="42" width="32" height="15" fill="#0f172a"/>
+    <rect x="52" y="38" width="4" height="10" fill="#94a3b8"/>
+
+    <!-- Focused Scanning Pixel Eyes -->
+    <g class="pkTh-eyes">
+      <rect x="42" y="48" width="6" height="5" fill="#ffffff"/>
+      <rect x="44" y="49" width="4" height="4" fill="#38bdf8"/>
+      <rect x="60" y="48" width="6" height="5" fill="#ffffff"/>
+      <rect x="62" y="49" width="4" height="4" fill="#38bdf8"/>
+    </g>
+
+    <!-- Pixel Dungeon Map held in front with both hands -->
+    <g class="pkTh-map">
+      <!-- Parchment -->
+      <rect x="24" y="70" width="58" height="28" fill="#78350f"/>
+      <rect x="26" y="72" width="54" height="24" fill="#fef3c7"/>
+      <rect x="26" y="72" width="54" height="3" fill="#fde68a"/>
+      <rect x="26" y="93" width="54" height="3" fill="#fcd34d"/>
+      <!-- Dungeon grid rooms -->
+      <rect x="32" y="76" width="10" height="8" fill="#d97706"/>
+      <rect x="34" y="78" width="6" height="4" fill="#fef3c7"/>
+      <rect x="42" y="79" width="10" height="2" fill="#b45309"/>
+      <rect x="52" y="76" width="10" height="10" fill="#d97706"/>
+      <rect x="54" y="78" width="6" height="6" fill="#fef3c7"/>
+      <rect x="62" y="81" width="8" height="2" fill="#b45309"/>
+      <!-- Blinking X target and player dot -->
+      <rect class="pkTh-dot1" x="70" y="78" width="4" height="4" fill="#ef4444"/>
+      <rect class="pkTh-dot2" x="36" y="79" width="2" height="2" fill="#38bdf8"/>
+      <!-- Dashed path -->
+      <rect x="36" y="88" width="4" height="2" fill="#92400e"/>
+      <rect x="44" y="88" width="4" height="2" fill="#92400e"/>
+      <rect x="52" y="88" width="4" height="2" fill="#92400e"/>
+      <!-- Armored Gauntlets gripping map sides -->
+      <rect x="20" y="78" width="8" height="10" fill="#64748b"/>
+      <rect x="22" y="80" width="6" height="6" fill="#cbd5e1"/>
+      <rect x="78" y="78" width="8" height="10" fill="#64748b"/>
+      <rect x="78" y="80" width="6" height="6" fill="#cbd5e1"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="ccThFur" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="ccThHoodie" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <linearGradient id="ccThMug" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <clipPath id="ccThLensL"><rect x="42" y="42" width="15" height="11" rx="3"/></clipPath>
+    <clipPath id="ccThLensR"><rect x="63" y="42" width="15" height="11" rx="3"/></clipPath>
+    <filter id="ccThGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#22c55e" flood-opacity="0.45"/>
+    </filter>
+    <style>
+      .ccTh-body { transform-origin: 60px 104px; animation: ccThBreath 3s ease-in-out infinite; }
+      .ccTh-tail { transform-origin: 84px 96px; animation: ccThTail 2.6s ease-in-out infinite; }
+      .ccTh-code { animation: ccThScroll 2s linear infinite; }
+      .ccTh-sip { transform-origin: 82px 86px; animation: ccThSip 3.2s ease-in-out infinite; }
+      .ccTh-steam1 { animation: ccThSteam 2.2s ease-out infinite; }
+      .ccTh-steam2 { animation: ccThSteam 2.2s 0.8s ease-out infinite; }
+
+      @keyframes ccThBreath { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2.5px); } }
+      @keyframes ccThTail { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(12deg); } }
+      @keyframes ccThScroll { 0% { transform: translateY(0); } 100% { transform: translateY(-9px); } }
+      @keyframes ccThSip { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 45%, 65% { transform: translate(-8px, -11px) rotate(-18deg); } }
+      @keyframes ccThSteam { 0% { opacity: 0; transform: translateY(3px); } 40% { opacity: 0.85; transform: translateY(-3px); } 100% { opacity: 0; transform: translateY(-10px); } }
+    </style>
+  </defs>
+
+  <ellipse cx="60" cy="109" rx="34" ry="6" fill="#020617" opacity="0.5"/>
+
+  <g class="ccTh-body" filter="url(#ccThGlow)">
+    <!-- Tail -->
+    <path class="ccTh-tail" d="M 82 98 Q 104 92 100 70 Q 98 62 93 66 Q 98 84 80 92 Z" fill="url(#ccThFur)" stroke="#334155" stroke-width="1"/>
+
+    <!-- Body in Green Hoodie -->
+    <path d="M 34 106 Q 32 76 60 72 Q 88 76 86 106 Z" fill="url(#ccThHoodie)" stroke="#14532d" stroke-width="1.2"/>
+    <path d="M 54 76 L 56 90 M 66 76 L 64 90" stroke="#bbf7d0" stroke-width="1.6" stroke-linecap="round"/>
+
+    <!-- Head -->
+    <polygon points="38,40 40,16 54,32" fill="url(#ccThFur)" stroke="#334155" stroke-width="1"/>
+    <polygon points="82,40 80,16 66,32" fill="url(#ccThFur)" stroke="#334155" stroke-width="1"/>
+    <polygon points="42,35 43,22 51,31" fill="#fda4af"/>
+    <polygon points="78,35 77,22 69,31" fill="#fda4af"/>
+    <ellipse cx="60" cy="50" rx="25" ry="22" fill="url(#ccThFur)" stroke="#334155" stroke-width="1.2"/>
+    <path d="M 54 30 L 55 37 M 60 29 L 60 37 M 66 30 L 65 37" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Muzzle -->
+    <ellipse cx="60" cy="60" rx="11" ry="7.5" fill="#e2e8f0"/>
+    <path d="M 57.5 56 L 62.5 56 L 60 59 Z" fill="#fb7185"/>
+    <path d="M 56 62 Q 60 61 64 62" fill="none" stroke="#1e293b" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M 46 58 L 34 56 M 46 61 L 34 62 M 74 58 L 86 56 M 74 61 L 86 62" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+
+    <!-- Nerd Glasses with Glowing Green Code Reflection -->
+    <rect x="41" y="41" width="17" height="13" rx="4" fill="#052e16" stroke="#0f172a" stroke-width="2.2"/>
+    <rect x="62" y="41" width="17" height="13" rx="4" fill="#052e16" stroke="#0f172a" stroke-width="2.2"/>
+    <line x1="58" y1="46" x2="62" y2="46" stroke="#0f172a" stroke-width="2"/>
+
+    <g clip-path="url(#ccThLensL)">
+      <g class="ccTh-code">
+        <rect x="43" y="43" width="9" height="1.8" rx="0.9" fill="#4ade80"/>
+        <rect x="45" y="46.5" width="11" height="1.8" rx="0.9" fill="#22c55e"/>
+        <rect x="43" y="50" width="7" height="1.8" rx="0.9" fill="#86efac"/>
+        <rect x="45" y="53.5" width="10" height="1.8" rx="0.9" fill="#4ade80"/>
+        <rect x="43" y="57" width="8" height="1.8" rx="0.9" fill="#22c55e"/>
+      </g>
+    </g>
+    <g clip-path="url(#ccThLensR)">
+      <g class="ccTh-code">
+        <rect x="64" y="43" width="10" height="1.8" rx="0.9" fill="#4ade80"/>
+        <rect x="66" y="46.5" width="8" height="1.8" rx="0.9" fill="#86efac"/>
+        <rect x="64" y="50" width="11" height="1.8" rx="0.9" fill="#22c55e"/>
+        <rect x="66" y="53.5" width="9" height="1.8" rx="0.9" fill="#4ade80"/>
+        <rect x="64" y="57" width="10" height="1.8" rx="0.9" fill="#86efac"/>
+      </g>
+    </g>
+
+    <!-- Left Paw resting on lap -->
+    <ellipse cx="42" cy="94" rx="6.5" ry="4.5" fill="#e2e8f0" stroke="#334155" stroke-width="1.1"/>
+
+    <!-- Right Paw holding Steaming Coffee Mug -->
+    <g class="ccTh-sip">
+      <!-- Steaming wisps -->
+      <path class="ccTh-steam1" d="M 79 70 Q 77 66 80 62" fill="none" stroke="#e2e8f0" stroke-width="1.6" stroke-linecap="round"/>
+      <path class="ccTh-steam2" d="M 85 70 Q 87 66 84 62" fill="none" stroke="#bbf7d0" stroke-width="1.6" stroke-linecap="round"/>
+      <!-- Coffee Mug -->
+      <path d="M 91 77 C 96 77, 96 86, 91 86" fill="none" stroke="#cbd5e1" stroke-width="2.4" stroke-linecap="round"/>
+      <rect x="74" y="74" width="17" height="17" rx="3" fill="url(#ccThMug)" stroke="#334155" stroke-width="1.2"/>
+      <ellipse cx="82.5" cy="75.5" rx="7" ry="2.2" fill="#78350f"/>
+      <!-- Code symbol on mug -->
+      <text x="82.5" y="86.5" font-size="6.5" font-weight="900" fill="#15803d" text-anchor="middle" font-family="monospace">&lt;/&gt;</text>
+      <!-- Cat Paw gripping mug -->
+      <ellipse cx="76" cy="86" rx="5.8" ry="4.2" fill="#e2e8f0" stroke="#334155" stroke-width="1.1"/>
+    </g>
+  </g>
+</svg>

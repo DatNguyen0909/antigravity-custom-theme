@@ -25,7 +25,7 @@
 <p align="center">
   <b>Bộ giao diện Chibi chuyển động toàn diện dành cho Google Antigravity Desktop Client</b><br /><br />
   <img src="https://img.shields.io/badge/Ch%E1%BB%A7_%C4%91%E1%BB%81_Chibi-21_M%E1%BA%ABu-10b981?style=for-the-badge" alt="21 mẫu" />
-  <img src="https://img.shields.io/badge/Vector_Animations-63_File_SVG-f59e0b?style=for-the-badge" alt="63 SVG" />
+  <img src="https://img.shields.io/badge/Vector_Animations-105_File_SVG-f59e0b?style=for-the-badge" alt="105 SVG" />
   <img src="https://img.shields.io/badge/Velvet_Studio_Audio-21_OST_(0_KB_MP3)-06b6d4?style=for-the-badge" alt="Studio Audio" />
   <img src="https://img.shields.io/badge/L%E1%BB%85_H%E1%BB%99i_%26_M%C3%B9a-Auto_Switch-a855f7?style=for-the-badge" alt="Auto Season" />
   <img src="https://img.shields.io/badge/Giao_di%E1%BB%87n-Dark_%26_Light-ec4899?style=for-the-badge" alt="Dark & Light" />
@@ -38,11 +38,11 @@
 
 ## 🌟 Tính năng nổi bật
 
-1. **🎭 Linh vật động theo từng chủ đề (21 mẫu — 63 file SVG siêu nhẹ)**:
-   - Mỗi linh vật có 3 trạng thái riêng biệt: **Tự diễn hoạt cảnh vui mỗi 15s**, **Tư thế phản ứng khi bạn gõ phím** (kèm bong bóng suy nghĩ) và **Sân khấu bối cảnh ngang** khi rê chuột vào đoạn chat.
-2. **🎧 Nhạc nền & Tiếng gõ phím sống động theo từng chủ đề (`0 KB MP3`)**:
-   - Mô phỏng nhạc cụ thực tế (Piano, Guitar thùng, Đàn Tranh, Đàn Hạc, Sáo Trúc, Contrabass) du dương ấm áp, kết hợp Chiptune 8-bit / Synthwave riêng cho nhóm game & vũ trụ.
-   - Có công tắc bật/tắt độc lập cho **🎹 Tiếng phím**, **🎶 Nhạc nền**, nút nghe thử và thanh chỉnh âm lượng.
+1. **🎭 Linh vật động theo từng chủ đề (21 mẫu — 105 file SVG siêu nhẹ)**:
+   - Mỗi linh vật có **5 trạng thái SVG riêng biệt**: **Tự diễn mỗi 15s**, **Phản ứng khi bạn gõ phím**, **Sân khấu ngang khi rê chuột**, và bộ đôi **SVG phản ứng trạng thái AI (`AI Suy nghĩ` & `AI Hoàn thành`)**.
+2. **🎧 Nhạc nền, Tiếng gõ phím & Chuông báo AI sống động (`0 KB MP3`)**:
+   - Mô phỏng nhạc cụ thực tế (Piano, Guitar, Đàn Tranh, Đàn Hạc, Sáo Trúc, Contrabass) cùng Chiptune 8-bit / Synthwave; kèm **🔔 Chuông báo tinh tế khi AI xong việc (`AI Done Chime`)**.
+   - Có công tắc bật/tắt độc lập cho **🎹 Tiếng phím**, **🎶 Nhạc nền**, **🔔 Chuông báo AI**, nút nghe thử và thanh chỉnh âm lượng.
 3. **🗓️ Đồng bộ tự động theo Mùa & Lễ hội (`Seasonal & Holiday Sync`)**:
    - Tự động chuyển đổi linh vật theo 4 mùa và các dịp lễ lớn trong năm (Tết, Valentine, Hè, Trung Thu, Halloween, Noel...) kèm thẻ nổi bật hiển thị **Chủ đề hôm nay**.
 4. **🎨 Tùy biến giao diện toàn diện & Lưu trữ bền vững**:
@@ -114,10 +114,10 @@ Mỗi khi Antigravity cập nhật phiên bản mới, bộ cài của hãng s�
 antigravity-custom-theme/
 ├── index.html                      # Trang Web xem trước tương tác trực tiếp (EN / VI)
 ├── README.md                       # Tài liệu song ngữ tích hợp (English / Tiếng Việt)
-├── stickers/                       # 21 thư mục linh vật, mỗi thư mục gồm 3 trạng thái SVG
-│   ├── jade-dragon/                # idle.svg | action.svg | typing.svg
-│   ├── halloween-pumpkin/          # idle.svg | action.svg | typing.svg
-│   ├── summer-corgi/               # idle.svg | action.svg | typing.svg
+├── stickers/                       # 21 thư mục linh vật, mỗi thư mục gồm 5 trạng thái SVG (105 file)
+│   ├── jade-dragon/                # idle.svg | typing.svg | thinking.svg | done.svg | action.svg
+│   ├── halloween-pumpkin/          # idle.svg | typing.svg | thinking.svg | done.svg | action.svg
+│   ├── summer-corgi/               # idle.svg | typing.svg | thinking.svg | done.svg | action.svg
 │   └── ... (21 thư mục chủ đề)
 ├── src/
 │   ├── models/                     # [MODEL] Dữ liệu thuần (Single Source of Truth - VI & EN)
@@ -149,7 +149,7 @@ antigravity-custom-theme/
 
 ## 🛠️ Cách tự thêm một Chủ đề mới (Chỉ 3 bước)
 
-1. Tạo thư mục mới `stickers/<ten-chu-de>/` gồm 3 file: `idle.svg` (`120×120`), `typing.svg` (`120×120`) và `action.svg` (`260×95`).
+1. Tạo thư mục mới `stickers/<ten-chu-de>/` gồm 5 file: `idle.svg`, `typing.svg`, `thinking.svg`, `done.svg` (`120×120`) và `action.svg` (`260×95`).
 2. Thêm cấu hình màu & hiệu ứng của `<ten-chu-de>` vào `src/models/themes.js`, `src/models/backgrounds.js`, `src/models/decor.js` và animation vào `src/views/styles/mascots.css`.
 3. Chạy `install.bat` — trình đóng gói sẽ tự động nhận diện thư mục mới và nạp vào Antigravity!
 
@@ -169,7 +169,7 @@ Phát hành theo giấy phép **MIT License** — tự do sử dụng, tùy bi�
 <p align="center">
   <b>Animated Chibi Mascot &amp; Glassmorphism UI Theme Engine for Google Antigravity Desktop Client</b><br /><br />
   <img src="https://img.shields.io/badge/Chibi_Themes-21_Presets-10b981?style=for-the-badge" alt="21 Presets" />
-  <img src="https://img.shields.io/badge/Vector_Animations-63_SVGs-f59e0b?style=for-the-badge" alt="63 SVGs" />
+  <img src="https://img.shields.io/badge/Vector_Animations-105_SVGs-f59e0b?style=for-the-badge" alt="105 SVGs" />
   <img src="https://img.shields.io/badge/Velvet_Studio_Audio-21_OSTs_(0_KB_MP3)-06b6d4?style=for-the-badge" alt="Studio Audio" />
   <img src="https://img.shields.io/badge/Seasonal_Mode-Auto_Switch-a855f7?style=for-the-badge" alt="Auto Season" />
   <img src="https://img.shields.io/badge/Appearance-Dark_%26_Light-ec4899?style=for-the-badge" alt="Dark & Light" />
@@ -182,11 +182,11 @@ Phát hành theo giấy phép **MIT License** — tự do sử dụng, tùy bi�
 
 ## 🌟 Key Features
 
-1. **🎭 Animated Mascots per Theme (21 Presets — 63 Lightweight SVGs)**:
-   - Each mascot brings 3 interactive states: **15-second funny auto-skits**, **character-specific typing poses** (with particles & thinking bubbles), and a **panoramic stage scene** on chat hover.
-2. **🎧 Lifelike Theme Soundtracks & Keystroke FX (`0 KB MP3`)**:
-   - Models realistic acoustic instruments (Grand Piano, Nylon Guitar, Guzheng/Zither, Harp, Flute, Upright Bass) alongside retro 8-bit Chiptune & Synthwave for tech/game themes.
-   - Features independent **🎹 Keystroke SFX**, **🎶 Ambient BGM**, **▶️ Preview**, and **🔊 Volume** controls.
+1. **🎭 Animated Mascots per Theme (21 Presets — 105 Lightweight SVGs)**:
+   - Each mascot brings **5 dedicated SVG states**: **15s auto-skits**, **character-specific typing poses**, **panoramic hover stages**, plus **real-time AI Reaction SVGs (`AI Thinking` & `AI Done`)**.
+2. **🎧 Lifelike Theme Soundtracks, Keystroke FX & AI Chime (`0 KB MP3`)**:
+   - Models realistic acoustic instruments (Grand Piano, Guitar, Guzheng, Harp, Flute, Upright Bass) alongside 8-bit Chiptune & Synthwave, plus a subtle **🔔 AI Task Completion Chime**.
+   - Features independent **🎹 Keystroke SFX**, **🎶 Ambient BGM**, **🔔 AI Done Chime**, **▶️ Preview**, and **🔊 Volume** controls.
 3. **🗓️ Automatic Seasonal & Holiday Sync**:
    - Automatically switches mascots across all four seasons and major holidays (Lunar New Year, Valentine, Summer, Mid-Autumn, Halloween, Christmas...) with a highlighted **Today’s Theme** badge.
 4. **🎨 Full UI Personalization & Persistent Storage**:
@@ -258,10 +258,10 @@ Whenever Antigravity updates to a newer version, its updater replaces `app.asar`
 antigravity-custom-theme/
 ├── index.html                      # Interactive Live Web Simulator & Gallery (EN / VI)
 ├── README.md                       # In-place Bilingual Documentation (English & Tiếng Việt)
-├── stickers/                       # 21 mascot folders, 3 animated SVG states each
-│   ├── jade-dragon/                # idle.svg | action.svg | typing.svg
-│   ├── halloween-pumpkin/          # idle.svg | action.svg | typing.svg
-│   ├── summer-corgi/               # idle.svg | action.svg | typing.svg
+├── stickers/                       # 21 mascot folders, 5 animated SVG states each (105 SVGs)
+│   ├── jade-dragon/                # idle.svg | typing.svg | thinking.svg | done.svg | action.svg
+│   ├── halloween-pumpkin/          # idle.svg | typing.svg | thinking.svg | done.svg | action.svg
+│   ├── summer-corgi/               # idle.svg | typing.svg | thinking.svg | done.svg | action.svg
 │   └── ... (21 theme folders)
 ├── src/
 │   ├── models/                     # [MODEL] Single Source of Truth (EN & VI metadata)
@@ -293,7 +293,7 @@ antigravity-custom-theme/
 
 ## 🛠️ How to Add a New Theme (3 Easy Steps)
 
-1. Create `stickers/<theme-id>/` containing `idle.svg` (`120×120`), `typing.svg` (`120×120`), and `action.svg` (`260×95`).
+1. Create `stickers/<theme-id>/` containing `idle.svg`, `typing.svg`, `thinking.svg`, `done.svg` (`120×120`), and `action.svg` (`260×95`).
 2. Add `<theme-id>` entries to `src/models/themes.js`, `src/models/backgrounds.js`, `src/models/decor.js`, and its CSS rules in `src/views/styles/mascots.css`.
 3. Run `install.bat` — the bundler automatically embeds the new folder and deploys it into Antigravity!
 

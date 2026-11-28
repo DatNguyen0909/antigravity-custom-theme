@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="pgDnBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="pgDnBelly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="pgDnHat" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="pgDnScarf" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fb7185"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+    <linearGradient id="pgDnMug" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fda4af"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+    <style>
+      .pgDnHop { transform-origin: 60px 104px; animation: pgDnBounce 2s ease-in-out infinite; }
+      .pgDnFlipL { transform-origin: 32px 66px; animation: pgDnFlapL 1.5s ease-in-out infinite alternate; }
+      .pgDnFlipR { transform-origin: 88px 66px; animation: pgDnMugRaise 2s ease-in-out infinite alternate; }
+      .pgDnSteam1 { animation: pgDnSteamUp 2.2s ease-out infinite; }
+      .pgDnSteam2 { animation: pgDnSteamUp 2.2s ease-out -1.1s infinite; }
+      .pgDnSnow1 { animation: pgDnSnowFall1 3.2s ease-in-out infinite; }
+      .pgDnSnow2 { animation: pgDnSnowFall2 3s ease-in-out -1.3s infinite; }
+      .pgDnSnow3 { transform-origin: 22px 26px; animation: pgDnTwinkle 2.4s ease-in-out infinite; }
+
+      @keyframes pgDnBounce {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-4px); }
+      }
+      @keyframes pgDnFlapL { 0% { transform: rotate(8deg); } 100% { transform: rotate(32deg); } }
+      @keyframes pgDnMugRaise { 0% { transform: rotate(-4deg) translateY(0px); } 100% { transform: rotate(6deg) translateY(-4px); } }
+      @keyframes pgDnSteamUp {
+        0% { transform: translateY(4px) scale(0.8); opacity: 0; }
+        35% { opacity: 0.9; }
+        100% { transform: translateY(-14px) scale(1.1); opacity: 0; }
+      }
+      @keyframes pgDnSnowFall1 {
+        0% { transform: translateY(-6px) rotate(0deg); opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { transform: translateY(24px) rotate(60deg); opacity: 0; }
+      }
+      @keyframes pgDnSnowFall2 {
+        0% { transform: translateY(-6px) rotate(0deg); opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { transform: translateY(22px) rotate(-60deg); opacity: 0; }
+      }
+      @keyframes pgDnTwinkle {
+        0%, 100% { transform: scale(0.65); opacity: 0.5; }
+        50% { transform: scale(1.15); opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <g class="pgDnHop">
+    <!-- Left flapping wing -->
+    <path class="pgDnFlipL" d="M30 62 C14 58, 12 74, 22 82 C29 82, 33 74, 33 66 Z" fill="url(#pgDnBack)" stroke="#0f172a" stroke-width="2"/>
+
+    <!-- Body -->
+    <path d="M31 60 C29 34, 42 24, 60 24 C78 24, 91 34, 89 60 C91 88, 78 104, 60 104 C42 104, 29 88, 31 60 Z" fill="url(#pgDnBack)" stroke="#0f172a" stroke-width="2.2"/>
+    <path d="M36 52 C36 39, 52 40, 60 47 C68 40, 84 39, 84 52 C86 78, 76 101, 60 101 C44 101, 34 78, 36 52 Z" fill="url(#pgDnBelly)"/>
+
+    <!-- Winter hat -->
+    <circle cx="60" cy="10" r="8" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.8"/>
+    <path d="M33 34 C35 16, 46 12, 60 12 C74 12, 85 16, 87 34 Z" fill="url(#pgDnHat)" stroke="#0f172a" stroke-width="2"/>
+    <rect x="30" y="29" width="60" height="10" rx="5" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+    <path d="M40 29 V39 M50 29 V39 M60 29 V39 M70 29 V39 M80 29 V39" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <!-- Cheerful curved eyes -->
+    <path d="M39 54 Q46 46 53 54" fill="none" stroke="#0f172a" stroke-width="2.8" stroke-linecap="round"/>
+    <path d="M67 54 Q74 46 81 54" fill="none" stroke="#0f172a" stroke-width="2.8" stroke-linecap="round"/>
+
+    <ellipse cx="36" cy="59" rx="4.8" ry="2.5" fill="#fb7185" opacity="0.88"/>
+    <ellipse cx="84" cy="59" rx="4.8" ry="2.5" fill="#fb7185" opacity="0.88"/>
+
+    <!-- Happy open beak -->
+    <ellipse cx="60" cy="57" rx="5.8" ry="3.8" fill="#f59e0b" stroke="#78350f" stroke-width="1.5"/>
+    <path d="M56 58 Q60 61.5 64 58" fill="#dc2626" stroke="#78350f" stroke-width="1"/>
+    <ellipse cx="59" cy="55.6" rx="2.2" ry="0.9" fill="#fef08a"/>
+
+    <!-- Scarf -->
+    <path d="M33 67 Q60 75 87 67 Q89 75 85 77 Q60 84 35 77 Q31 75 33 67 Z" fill="url(#pgDnScarf)" stroke="#881337" stroke-width="2"/>
+    <path d="M70 74 L77 92 L66 93 L63 75 Z" fill="url(#pgDnScarf)" stroke="#881337" stroke-width="1.8" stroke-linejoin="round"/>
+
+    <!-- Feet -->
+    <ellipse cx="46" cy="104" rx="7.5" ry="4" fill="#f59e0b" stroke="#78350f" stroke-width="1.8"/>
+    <ellipse cx="74" cy="104" rx="7.5" ry="4" fill="#f59e0b" stroke="#78350f" stroke-width="1.8"/>
+
+    <!-- Right flipper raising steaming mug of hot cocoa -->
+    <g class="pgDnFlipR">
+      <path d="M88 64 C100 62, 104 76, 94 82 C88 82, 86 74, 87 66 Z" fill="url(#pgDnBack)" stroke="#0f172a" stroke-width="2"/>
+      <!-- Cocoa mug -->
+      <path d="M107 62 C113 62, 113 72, 107 72" fill="none" stroke="#881337" stroke-width="2.6" stroke-linecap="round"/>
+      <rect x="90" y="58" width="18" height="19" rx="4" fill="url(#pgDnMug)" stroke="#881337" stroke-width="1.6"/>
+      <ellipse cx="99" cy="59" rx="8.2" ry="2.8" fill="#78350f" stroke="#451a03" stroke-width="1.1"/>
+      <!-- Mini marshmallows -->
+      <rect x="94" y="57" width="4" height="3" rx="1.2" fill="#ffffff"/>
+      <rect x="100" y="57.5" width="3.8" height="2.6" rx="1.1" fill="#fffbeb"/>
+      <!-- Rising steam -->
+      <path class="pgDnSteam1" d="M95 54 Q93 48 96 44" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      <path class="pgDnSteam2" d="M103 53 Q105 47 102 43" fill="none" stroke="#e0f2fe" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sparkling snowflakes -->
+  <g class="pgDnSnow1" transform="translate(18, 42)" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round">
+    <line x1="-5" y1="0" x2="5" y2="0"/>
+    <line x1="0" y1="-5" x2="0" y2="5"/>
+    <line x1="-3.5" y1="-3.5" x2="3.5" y2="3.5"/>
+    <line x1="-3.5" y1="3.5" x2="3.5" y2="-3.5"/>
+  </g>
+  <g class="pgDnSnow2" transform="translate(103, 24)" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round">
+    <line x1="-5" y1="0" x2="5" y2="0"/>
+    <line x1="0" y1="-5" x2="0" y2="5"/>
+    <line x1="-3.5" y1="-3.5" x2="3.5" y2="3.5"/>
+    <line x1="-3.5" y1="3.5" x2="3.5" y2="-3.5"/>
+  </g>
+  <g class="pgDnSnow3" transform="translate(22, 24)" stroke="#bae6fd" stroke-width="1.6" stroke-linecap="round">
+    <line x1="-4.5" y1="0" x2="4.5" y2="0"/>
+    <line x1="0" y1="-4.5" x2="0" y2="4.5"/>
+    <circle cx="0" cy="0" r="1.5" fill="#ffffff" stroke="none"/>
+  </g>
+</svg>

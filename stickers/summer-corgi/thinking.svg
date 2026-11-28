@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="scThFur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="scThRing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <style>
+      .scTh-dog { transform-origin: 58px 104px; animation: scThBob 2.8s ease-in-out infinite; }
+      .scTh-ear-l { transform-origin: 40px 36px; animation: scThEar 3.2s ease-in-out infinite; }
+      .scTh-ear-r { transform-origin: 76px 36px; animation: scThEar 3.2s ease-in-out -1.4s infinite; }
+      .scTh-eyes { animation: scThScan 2.8s ease-in-out infinite; }
+      .scTh-map { transform-origin: 60px 84px; animation: scThMap 2.8s ease-in-out infinite; }
+      .scTh-q { transform-origin: 96px 26px; animation: scThQ 2.4s ease-in-out infinite; }
+
+      @keyframes scThBob {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-2.5px); }
+      }
+      @keyframes scThEar {
+        0%, 82%, 100% { transform: rotate(0deg); }
+        90% { transform: rotate(-8deg); }
+      }
+      @keyframes scThScan {
+        0%, 100% { transform: translateX(-1.5px); }
+        50% { transform: translateX(1.5px); }
+      }
+      @keyframes scThMap {
+        0%, 100% { transform: rotate(-1.5deg); }
+        50% { transform: rotate(1.5deg); }
+      }
+      @keyframes scThQ {
+        0%, 100% { transform: translateY(0) scale(0.95); opacity: 0.8; }
+        50% { transform: translateY(-5px) scale(1.1); opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- Floating Thoughtful Question Mark -->
+  <g class="scTh-q">
+    <text x="96" y="30" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="900" fill="#fde047" stroke="#b45309" stroke-width="2.5" paint-order="stroke" text-anchor="middle">?</text>
+  </g>
+
+  <!-- Sandy beach shadow -->
+  <ellipse cx="58" cy="109" rx="34" ry="5.5" fill="#78350f" opacity="0.32"/>
+
+  <g class="scTh-dog">
+    <!-- Stubby Corgi Paws -->
+    <ellipse cx="44" cy="104" rx="7.5" ry="4.5" fill="#fffbeb" stroke="#78350f" stroke-width="1.8"/>
+    <ellipse cx="72" cy="104" rx="7.5" ry="4.5" fill="#fffbeb" stroke="#78350f" stroke-width="1.8"/>
+
+    <!-- Tropical Turquoise Hawaiian Shirt Torso -->
+    <rect x="34" y="66" width="48" height="32" rx="14" fill="#06b6d4" stroke="#0e7490" stroke-width="2"/>
+    <circle cx="44" cy="76" r="3" fill="#fb7185"/>
+    <circle cx="70" cy="78" r="3" fill="#fde047"/>
+    <path d="M52 66 L58 76 L64 66" fill="#fffbeb" stroke="#0e7490" stroke-width="1.5"/>
+
+    <!-- Yellow Duckie Swim Ring around waist -->
+    <ellipse cx="58" cy="92" rx="33" ry="10.5" fill="url(#scThRing)" stroke="#b45309" stroke-width="2"/>
+    <circle cx="28" cy="85" r="7.5" fill="#fde047" stroke="#b45309" stroke-width="1.8"/>
+    <ellipse cx="21" cy="86" rx="4" ry="2.2" fill="#f97316" stroke="#9a3412" stroke-width="1.2"/>
+    <circle cx="27" cy="83.5" r="1.4" fill="#1e293b"/>
+
+    <!-- Big Pointy Corgi Ears -->
+    <g class="scTh-ear-l">
+      <polygon points="32,42 26,14 48,30" fill="url(#scThFur)" stroke="#78350f" stroke-width="2" stroke-linejoin="round"/>
+      <polygon points="34,39 30,20 44,31" fill="#fda4af"/>
+    </g>
+    <g class="scTh-ear-r">
+      <polygon points="84,42 90,14 68,30" fill="url(#scThFur)" stroke="#78350f" stroke-width="2" stroke-linejoin="round"/>
+      <polygon points="82,39 86,20 72,31" fill="#fda4af"/>
+    </g>
+
+    <!-- Fluffy Corgi Head -->
+    <ellipse cx="58" cy="48" rx="27" ry="23" fill="url(#scThFur)" stroke="#78350f" stroke-width="2.2"/>
+    <path d="M58 28 C52 40, 42 48, 42 58 C42 66, 50 70, 58 70 C66 70, 74 66, 74 58 C74 48, 64 40, 58 28 Z" fill="#fffbeb"/>
+
+    <!-- Sunglasses Pushed Up onto Forehead -->
+    <g transform="translate(0, -13) rotate(-3 58 45)">
+      <line x1="35" y1="45" x2="81" y2="45" stroke="#0f172a" stroke-width="2.4"/>
+      <rect x="38" y="42" width="16" height="9.5" rx="3" fill="#0f172a" stroke="#f8fafc" stroke-width="1.1"/>
+      <rect x="62" y="42" width="16" height="9.5" rx="3" fill="#0f172a" stroke="#f8fafc" stroke-width="1.1"/>
+      <line x1="41" y1="44" x2="45" y2="49" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="65" y1="44" x2="69" y2="49" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round"/>
+    </g>
+
+    <!-- Focused Cute Eyes Studying the Treasure Map -->
+    <g class="scTh-eyes">
+      <circle cx="47" cy="49" r="3.6" fill="#1e293b"/>
+      <circle cx="69" cy="49" r="3.6" fill="#1e293b"/>
+      <circle cx="46" cy="48" r="1.3" fill="#ffffff"/>
+      <circle cx="68" cy="48" r="1.3" fill="#ffffff"/>
+    </g>
+    <path d="M43 44 L51 45" stroke="#78350f" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M73 44 L65 45" stroke="#78350f" stroke-width="1.6" stroke-linecap="round"/>
+
+    <!-- Cute Nose and Concentrated Little Mouth -->
+    <ellipse cx="58" cy="56" rx="4" ry="2.8" fill="#1e293b"/>
+    <path d="M55 61 Q58 60 61 61" fill="none" stroke="#78350f" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Beach Treasure Map held up in front by both paws -->
+    <g class="scTh-map">
+      <path d="M36 70 L84 68 L88 94 L34 96 Z" fill="#fef3c7" stroke="#92400e" stroke-width="2" stroke-linejoin="round"/>
+      <!-- Island outline and waves -->
+      <path d="M42 86 Q50 82 58 86 Q66 82 74 86" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- Dashed treasure trail -->
+      <path d="M44 76 Q54 81 62 75 Q70 72 76 78" fill="none" stroke="#b45309" stroke-width="1.6" stroke-dasharray="3 2"/>
+      <!-- Red X marks the spot -->
+      <path d="M73 75 L79 81 M79 75 L73 81" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
+      <!-- Tiny palm tree icon -->
+      <line x1="46" y1="81" x2="46" y2="75" stroke="#92400e" stroke-width="1.4"/>
+      <path d="M42 75 Q46 72 50 75" fill="none" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round"/>
+      <!-- Corgi Paws holding sides of map -->
+      <ellipse cx="35" cy="82" rx="5.5" ry="4" fill="#fffbeb" stroke="#78350f" stroke-width="1.6"/>
+      <ellipse cx="86" cy="81" rx="5.5" ry="4" fill="#fffbeb" stroke="#78350f" stroke-width="1.6"/>
+    </g>
+  </g>
+</svg>

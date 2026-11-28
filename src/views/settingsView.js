@@ -18,6 +18,7 @@ const SettingsView = (function () {
             soundTestBtn: '▶️ Nghe thử',
             sfxLabel: '🎹 Tiếng gõ phím riêng theo linh vật',
             bgmLabel: '🎶 Nhạc nền thư giãn theo chủ đề',
+            chimeLabel: '🔔 Chuông báo khi AI hoàn thành tác vụ',
             volLabel: '🔊 Âm lượng',
             dimTitle: 'Độ tối',
             dimDesc: 'Điều chỉnh độ rõ của nền để dễ đọc nội dung.',
@@ -42,6 +43,7 @@ const SettingsView = (function () {
             soundTestBtn: '▶️ Test Sound',
             sfxLabel: '🎹 Mascot Keystroke Sound FX',
             bgmLabel: '🎶 Theme Ambient Background Music',
+            chimeLabel: '🔔 AI Task Completion Chime',
             volLabel: '🔊 Volume',
             dimTitle: 'Background Dimming',
             dimDesc: 'Adjust background contrast for comfortable text readability.',
@@ -125,6 +127,7 @@ const SettingsView = (function () {
         const activeSoundMeta = SoundService.getMeta(activeTheme.id, lang);
         const sfxOn = config.sfxEnabled !== false;
         const bgmOn = !!config.bgmEnabled;
+        const chimeOn = config.aiChimeEnabled !== false;
         const vol = typeof config.soundVolume === 'number' ? config.soundVolume : 55;
         const opacityStyle = config.enabled ? '1' : '0.4';
         const pointerStyle = config.enabled ? 'auto' : 'none';
@@ -194,6 +197,13 @@ const SettingsView = (function () {
                         <span style="font-size: 13px; color: #e4e4e7; font-weight: 500;">${txt.bgmLabel}</span>
                         <label class="ag-switch">
                             <input type="checkbox" id="ag-bgm-toggle" ${bgmOn ? 'checked' : ''}>
+                            <span class="ag-toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="ag-sound-row">
+                        <span style="font-size: 13px; color: #e4e4e7; font-weight: 500;">${txt.chimeLabel}</span>
+                        <label class="ag-switch">
+                            <input type="checkbox" id="ag-chime-toggle" ${chimeOn ? 'checked' : ''}>
                             <span class="ag-toggle-slider"></span>
                         </label>
                     </div>
@@ -297,6 +307,14 @@ const SettingsView = (function () {
         if (bgmToggle) {
             bgmToggle.addEventListener('change', (e) => {
                 vm.setBgmEnabled(e.target.checked);
+            });
+        }
+
+        const chimeToggle = panel.querySelector('#ag-chime-toggle');
+        if (chimeToggle) {
+            chimeToggle.addEventListener('change', (e) => {
+                vm.setAiChimeEnabled(e.target.checked);
+                if (e.target.checked) SoundService.playDoneChime(vm.getState().activeTheme, true);
             });
         }
 

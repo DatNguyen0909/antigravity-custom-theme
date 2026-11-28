@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="bunDnFur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#fff1f2"/>
+      <stop offset="100%" stop-color="#fecdd3"/>
+    </linearGradient>
+    <linearGradient id="bunDnEarIn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fda4af"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="bunDnSakura" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fda4af"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+    <style>
+      .bunDnHop { transform-origin: 60px 105px; animation: bunDnBounce 2s ease-in-out infinite; }
+      .bunDnEarL { transform-origin: 40px 42px; animation: bunDnEarL 2s ease-in-out infinite alternate; }
+      .bunDnEarR { transform-origin: 80px 42px; animation: bunDnEarR 2s ease-in-out infinite alternate; }
+      .bunDnDango { transform-origin: 60px 80px; animation: bunDnWave 2s ease-in-out infinite alternate; }
+      .bunDnHeart1 { animation: bunDnPop1 2.4s ease-out infinite; }
+      .bunDnHeart2 { animation: bunDnPop2 2.4s ease-out -1.2s infinite; }
+      .bunDnPetal1 { animation: bunDnDrift1 3.2s ease-in-out infinite; }
+      .bunDnPetal2 { animation: bunDnDrift2 3s ease-in-out -1.4s infinite; }
+
+      @keyframes bunDnBounce {
+        0%, 100% { transform: translateY(0px) scale(1, 1); }
+        45% { transform: translateY(-6px) scale(0.97, 1.04); }
+        65% { transform: translateY(0px) scale(1.03, 0.96); }
+      }
+      @keyframes bunDnEarL { 0% { transform: rotate(-10deg); } 100% { transform: rotate(4deg); } }
+      @keyframes bunDnEarR { 0% { transform: rotate(10deg); } 100% { transform: rotate(-4deg); } }
+      @keyframes bunDnWave { 0% { transform: rotate(-5deg) translateY(0px); } 100% { transform: rotate(5deg) translateY(-3px); } }
+      @keyframes bunDnPop1 {
+        0% { transform: translate(0px, 8px) scale(0.3); opacity: 0; }
+        30% { opacity: 1; transform: translate(-4px, -4px) scale(1.15); }
+        80% { opacity: 0.9; transform: translate(-8px, -16px) scale(1); }
+        100% { transform: translate(-10px, -22px) scale(0.4); opacity: 0; }
+      }
+      @keyframes bunDnPop2 {
+        0% { transform: translate(0px, 8px) scale(0.3); opacity: 0; }
+        30% { opacity: 1; transform: translate(4px, -4px) scale(1.15); }
+        80% { opacity: 0.9; transform: translate(8px, -16px) scale(1); }
+        100% { transform: translate(10px, -22px) scale(0.4); opacity: 0; }
+      }
+      @keyframes bunDnDrift1 {
+        0% { transform: translate(0px, -4px) rotate(0deg); opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { transform: translate(8px, 26px) rotate(55deg); opacity: 0; }
+      }
+      @keyframes bunDnDrift2 {
+        0% { transform: translate(0px, -4px) rotate(0deg); opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { transform: translate(-9px, 24px) rotate(-48deg); opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <g class="bunDnHop">
+    <!-- Tail -->
+    <circle cx="84" cy="92" r="9" fill="url(#bunDnFur)" stroke="#881337" stroke-width="1.8"/>
+
+    <!-- Ears -->
+    <g class="bunDnEarL">
+      <path d="M44 40 C36 10, 26 4, 24 14 C22 24, 30 38, 38 44 Z" fill="url(#bunDnFur)" stroke="#881337" stroke-width="2.2"/>
+      <path d="M41 37 C35 16, 29 12, 28 18 C27 24, 33 34, 38 39 Z" fill="url(#bunDnEarIn)"/>
+    </g>
+    <g class="bunDnEarR">
+      <path d="M76 40 C84 10, 94 4, 96 14 C98 24, 90 38, 82 44 Z" fill="url(#bunDnFur)" stroke="#881337" stroke-width="2.2"/>
+      <path d="M79 37 C85 16, 91 12, 92 18 C93 24, 87 34, 82 39 Z" fill="url(#bunDnEarIn)"/>
+    </g>
+
+    <!-- Body -->
+    <ellipse cx="60" cy="86" rx="22" ry="18" fill="url(#bunDnFur)" stroke="#881337" stroke-width="2.2"/>
+    <path d="M44 74 Q60 80 76 74" fill="none" stroke="#e11d48" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Head -->
+    <path d="M30 56 C28 36, 44 28, 60 28 C76 28, 92 36, 90 56 C92 70, 78 76, 60 76 C42 76, 28 70, 30 56 Z" fill="url(#bunDnFur)" stroke="#881337" stroke-width="2.2"/>
+
+    <!-- Head sakura -->
+    <g transform="translate(38, 30)">
+      <circle cx="0" cy="-6" r="4.5" fill="url(#bunDnSakura)"/>
+      <circle cx="5.7" cy="-1.8" r="4.5" fill="url(#bunDnSakura)"/>
+      <circle cx="3.5" cy="4.8" r="4.5" fill="url(#bunDnSakura)"/>
+      <circle cx="-3.5" cy="4.8" r="4.5" fill="url(#bunDnSakura)"/>
+      <circle cx="-5.7" cy="-1.8" r="4.5" fill="url(#bunDnSakura)"/>
+      <circle cx="0" cy="0" r="3" fill="#fef08a"/>
+    </g>
+
+    <!-- Joyful curved eyes -->
+    <path d="M39 54 Q46 46 53 54" fill="none" stroke="#4c0519" stroke-width="2.8" stroke-linecap="round"/>
+    <path d="M67 54 Q74 46 81 54" fill="none" stroke="#4c0519" stroke-width="2.8" stroke-linecap="round"/>
+
+    <ellipse cx="36" cy="60" rx="5.2" ry="2.6" fill="#fb7185" opacity="0.85"/>
+    <ellipse cx="84" cy="60" rx="5.2" ry="2.6" fill="#fb7185" opacity="0.85"/>
+    <polygon points="58,57 62,57 60,60" fill="#fb7185"/>
+    <path d="M54 62 Q60 69 66 62 Z" fill="#fb7185" stroke="#881337" stroke-width="1.6" stroke-linejoin="round"/>
+
+    <!-- Feet -->
+    <ellipse cx="47" cy="103" rx="7" ry="4.5" fill="url(#bunDnFur)" stroke="#881337" stroke-width="2"/>
+    <ellipse cx="73" cy="103" rx="7" ry="4.5" fill="url(#bunDnFur)" stroke="#881337" stroke-width="2"/>
+
+    <!-- Raised paws holding 3-color Dango skewer -->
+    <g class="bunDnDango">
+      <line x1="36" y1="80" x2="86" y2="80" stroke="#b45309" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="48" cy="80" r="6.2" fill="#fda4af" stroke="#be123c" stroke-width="1.3"/>
+      <circle cx="60" cy="80" r="6.2" fill="#ffffff" stroke="#881337" stroke-width="1.3"/>
+      <circle cx="72" cy="80" r="6.2" fill="#86efac" stroke="#15803d" stroke-width="1.3"/>
+      <circle cx="46" cy="78" r="1.6" fill="#ffffff" opacity="0.8"/>
+      <circle cx="58" cy="78" r="1.6" fill="#fff1f2" opacity="0.9"/>
+      <circle cx="70" cy="78" r="1.6" fill="#ffffff" opacity="0.8"/>
+      <ellipse cx="39" cy="80" rx="5.5" ry="4.2" transform="rotate(-25 39 80)" fill="url(#bunDnFur)" stroke="#881337" stroke-width="1.8"/>
+      <ellipse cx="81" cy="80" rx="5.5" ry="4.2" transform="rotate(25 81 80)" fill="url(#bunDnFur)" stroke="#881337" stroke-width="1.8"/>
+    </g>
+  </g>
+
+  <!-- Popping pink hearts -->
+  <g class="bunDnHeart1">
+    <path d="M22 30 C18 24, 12 26, 16 32 L22 38 L28 32 C32 26, 26 24, 22 30 Z" fill="#f43f5e" stroke="#ffffff" stroke-width="1"/>
+  </g>
+  <g class="bunDnHeart2">
+    <path d="M98 28 C94 22, 88 24, 92 30 L98 36 L104 30 C108 24, 102 22, 98 28 Z" fill="#fb7185" stroke="#ffffff" stroke-width="1"/>
+  </g>
+
+  <!-- Drifting sakura petals -->
+  <path class="bunDnPetal1" d="M16 54 C20 50, 24 52, 22 57 C19 59, 15 57, 16 54 Z" fill="#fda4af" stroke="#e11d48" stroke-width="0.8"/>
+  <path class="bunDnPetal2" d="M102 52 C106 48, 110 50, 108 55 C105 57, 101 55, 102 52 Z" fill="#fecdd3" stroke="#e11d48" stroke-width="0.8"/>
+</svg>

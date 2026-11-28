@@ -415,11 +415,42 @@ function localizeTheme(theme, lang) {
     };
 }
 
+const AI_STATUS_LABELS = {
+    'jade-dragon': ['🐉 Đang luyện linh khí...', '🐉 Gathering Jade Qi...', '✨ Đắc đạo rồi!', '✨ Jade Mastery Done!'],
+    'fire-phoenix': ['🔥 Đang ủ lửa thần...', '🔥 Igniting Embers...', '✨ Niết bàn hoàn tất!', '✨ Blazing Complete!'],
+    'space-astronaut': ['📡 Đang quét radar...', '📡 Scanning Cosmos...', '🚀 Nhiệm vụ hoàn tất!', '🚀 Mission Complete!'],
+    'wise-owl': ['🔍 Đang tra cổ thư...', '🔍 Consulting Scrolls...', '📜 Đã đóng triện xong!', '📜 Wisdom Sealed!'],
+    'moon-witch': ['🔮 Đang soi cầu pha lê...', '🔮 Gazing Crystal Ball...', '✨ Phép thuật hoàn thành!', '✨ Spell Complete!'],
+    'fox-chibi': ['🦊 Đang xoay lửa hồ ly...', '🦊 Spinning Foxfire...', '🔔 Kon-kon! Xong rồi!', '🔔 Kon-kon! All Done!'],
+    'sakura-bunny': ['🔍 Đang soi cánh hoa...', '🔍 Inspecting Petals...', '🍡 Xong rồi! Mời Mochi!', '🍡 Done! Mochi Time!'],
+    'ocean-shark': ['🌊 Đang dò sóng sonar...', '🌊 Pinging Sonar...', '🦈 Săn mồi thành công!', '🦈 Splash! All Done!'],
+    'gangster-pawn': ['♟ Đang tính nước cờ...', '♟ Calculating Moves...', '♛ Chiếu hết! GG!', '♛ Checkmate! GG!'],
+    'ice-penguin': ['🧭 Đang xem la bàn băng...', '🧭 Checking Frost Map...', '☕ Xong rồi! Uống cacao!', '☕ Done! Cocoa Time!'],
+    'ai-robot': ['⚙️ Đang xử lý dữ liệu...', '⚙️ Processing Data...', '✓ Hoàn tất 100%!', '✓ Task Complete!'],
+    'black-cat': ['💡 Đang nảy ý tưởng...', '💡 Brainstorming...', '🐟 Meow~ Xong rồi!', '🐟 Meow~ All Done!'],
+    'noel-snowman': ['🔍 Đang soi danh sách quà...', '🔍 Checking Gift List...', '🎁 Ho Ho Ho! Xong rồi!', '🎁 Ho Ho Ho! Done!'],
+    'tet-lion': ['🏮 Đang bấm quẻ đầu năm...', '🏮 Reading Fortune...', '🧧 Khai xuân thành công!', '🧧 Prosperous Done!'],
+    'code-cat': ['☕ Đang phân tích code...', '☕ Reviewing Code...', '✓ 0 Bugs! Xong rồi!', '✓ 0 Bugs! Shipped!'],
+    'pixel-knight': ['🗺️ Đang dò bản đồ 8-bit...', '🗺️ Scanning Dungeon...', '★ STAGE CLEAR!', '★ STAGE CLEAR!'],
+    'cloud-whale': ['☁️ Đang ngẫm giữa mây...', '☁️ Drifting in Thought...', '🌈 Cầu vồng hiện rồi!', '🌈 Rainbow Complete!'],
+    'halloween-pumpkin': ['🔍 Ma con đang dò kẹo...', '🔍 Scouting Candy Map...', '🍬 Boo-yah! Xong rồi!', '🍬 Boo-yah! All Done!'],
+    'midautumn-carp': ['🏮 Đang soi ánh trăng...', '🏮 Reflecting by Moon...', '🌕 Rằm sáng! Xong rồi!', '🌕 Moonlit Success!'],
+    'valentine-cupid': ['💘 Đang ngắm mục tiêu...', '💘 Locking Target...', '💌 Trúng tim rồi!', '💌 Bullseye! Done!'],
+    'summer-corgi': ['🗺️ Đang xem bản đồ biển...', '🗺️ Reading Beach Map...', '🥥 Aloha! Xong rồi!', '🥥 Aloha! All Done!']
+};
+
 const THEMES = THEME_DEFINITIONS.map(def => {
     const assets = STICKERS[def.id] || {};
+    const ai = AI_STATUS_LABELS[def.id] || ['🧠 Đang suy nghĩ...', '🧠 Thinking...', '✨ Xong rồi!', '✨ Done!'];
     return Object.assign({}, def, {
         sticker: assets.idle || '',
         actionSticker: assets.action || assets.idle || '',
-        typingSticker: assets.typing || null
+        typingSticker: assets.typing || null,
+        thinkingSticker: assets.thinking || null,
+        doneSticker: assets.done || null,
+        aiThinking: ai[0],
+        aiThinkingEn: ai[1],
+        aiDone: ai[2],
+        aiDoneEn: ai[3]
     });
 });

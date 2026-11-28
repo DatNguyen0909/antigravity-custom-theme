@@ -14,6 +14,7 @@ const ThemeViewModel = (function () {
         lang: defaultLang,        // 'en' | 'vi'
         sfxEnabled: true,
         bgmEnabled: false,
+        aiChimeEnabled: true,
         soundVolume: 55
     };
 
@@ -22,6 +23,14 @@ const ThemeViewModel = (function () {
         lastParticle: 0,
         pauseTimer: null,
         clearTimer: null
+    };
+
+    const aiTracker = {
+        status: 'idle',          // 'idle' | 'thinking' | 'done'
+        seenWorkingSince: 0,
+        seenStoppedSince: 0,
+        thinkingStartedAt: 0,
+        doneTimer: null
     };
 
     let lastLightMode = false;
@@ -155,11 +164,65 @@ const ThemeViewModel = (function () {
         StorageService.save(config);
     }
 
+    function setAiChimeEnabled(enabled) {
+        config.aiChimeEnabled = !!enabled;
+        notify('sound-changed');
+        StorageService.save(config);
+    }
+
     function setSoundVolume(vol) {
         const parsed = parseInt(vol, 10);
         config.soundVolume = isNaN(parsed) ? 55 : Math.max(0, Math.min(100, parsed));
         notify('sound-changed');
         StorageService.save(config);
+    }
+
+    // ---- AI Working / Done Reaction State Machine ----
+    function getAiState() {
+        return aiTracker.status;
+    }
+
+    function syncAiStatus(isWorking) {
+        const now = Date.now();
+        if (isWorking) {
+            aiTracker.seenStoppedSince = 0;
+            if (!aiTracker.seenWorkingSince) aiTracker.seenWorkingSince = now;
+            if (aiTracker.status !== 'thinking' && now - aiTracker.seenWorkingSince >= 300) {
+                clearTimeout(aiTracker.doneTimer);
+                aiTracker.status = 'thinking';
+                aiTracker.thinkingStartedAt = now;
+                notify('ai-state-changed');
+                return { state: 'thinking', changed: true, justCompleted: false, durationMs: 0 };
+            }
+            return { state: aiTracker.status, changed: false, justCompleted: false, durationMs: 0 };
+        }
+
+        // Not working now
+        aiTracker.seenWorkingSince = 0;
+        if (aiTracker.status === 'thinking') {
+            if (!aiTracker.seenStoppedSince) aiTracker.seenStoppedSince = now;
+            if (now - aiTracker.seenStoppedSince >= 600) {
+                const durationMs = now - (aiTracker.thinkingStartedAt || now);
+                aiTracker.seenStoppedSince = 0;
+                clearTimeout(aiTracker.doneTimer);
+                if (durationMs >= 1200) {
+                    aiTracker.status = 'done';
+                    notify('ai-state-changed');
+                    aiTracker.doneTimer = setTimeout(() => {
+                        if (aiTracker.status === 'done') {
+                            aiTracker.status = 'idle';
+                            notify('ai-state-changed');
+                        }
+                    }, 5000);
+                    return { state: 'done', changed: true, justCompleted: true, durationMs: durationMs };
+                } else {
+                    aiTracker.status = 'idle';
+                    notify('ai-state-changed');
+                    return { state: 'idle', changed: true, justCompleted: false, durationMs: durationMs };
+                }
+            }
+        }
+        return { state: aiTracker.status, changed: false, justCompleted: false, durationMs: 0 };
     }
 
     // ---- Typing Reaction State Logic ----
@@ -212,7 +275,10 @@ const ThemeViewModel = (function () {
         setLang,
         setSfxEnabled,
         setBgmEnabled,
+        setAiChimeEnabled,
         setSoundVolume,
+        getAiState,
+        syncAiStatus,
         recordKeystroke,
         scheduleTypingTimers,
         resetTypingTimers

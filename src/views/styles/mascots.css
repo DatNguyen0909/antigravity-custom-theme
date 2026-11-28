@@ -405,9 +405,44 @@ body[data-ag-theme="tet-lion"].ag-theme-active .ag-custom-input-wrapper.ag-typin
 body[data-ag-theme="code-cat"].ag-theme-active .ag-custom-input-wrapper.ag-typing > .ag-input-sticker { animation: agTyCodeCat calc(var(--ag-type-speed, 0.9s) * 0.35) ease-in-out infinite alternate !important; transform-origin: 50% 100% !important; }
 @keyframes agTyCodeCat { 0% { transform: translateY(0) rotate(0deg); } 100% { transform: translateY(-3px) rotate(-2deg); } }
 
-/* Themes with a dedicated typing SVG: the SVG animates itself, so disable the CSS motion while typing */
-body.ag-theme-active .ag-custom-input-wrapper.ag-typing:not(.ag-typing-pause).ag-has-typing-svg > .ag-input-sticker {
+/* Themes with a dedicated typing/thinking/done SVG: the SVG animates itself, so disable outer CSS bounce */
+body.ag-theme-active .ag-custom-input-wrapper.ag-typing:not(.ag-typing-pause).ag-has-typing-svg > .ag-input-sticker,
+body.ag-theme-active .ag-custom-input-wrapper.ag-has-ai-svg > .ag-input-sticker {
   animation: none !important;
+}
+
+body.ag-theme-active .ag-custom-input-wrapper.ag-ai-thinking > .ag-input-sticker {
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 10px var(--ag-theme-accent, #38bdf8)) !important;
+}
+body.ag-theme-active .ag-custom-input-wrapper.ag-ai-done > .ag-input-sticker {
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 14px var(--ag-theme-accent, #facc15)) !important;
+}
+
+.ag-ai-badge {
+  position: absolute !important;
+  top: -66px !important;
+  right: 84px !important;
+  padding: 3px 10px !important;
+  border-radius: 12px 12px 3px 12px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+  z-index: 64 !important;
+  background: var(--ag-theme-bubble-bg, rgba(24, 24, 32, 0.94)) !important;
+  border: 1px solid var(--ag-theme-bubble-border, rgba(255, 255, 255, 0.35)) !important;
+  color: var(--ag-theme-bubble-text, #f8fafc) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
+  animation: agAiBadgePop 0.26s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+}
+.ag-ai-badge.is-done {
+  border-color: var(--ag-theme-accent, #facc15) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.38), 0 0 10px var(--ag-theme-bubble-border, rgba(250, 204, 21, 0.5)) !important;
+}
+@keyframes agAiBadgePop {
+  0% { opacity: 0; transform: translateY(6px) scale(0.85); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .ag-type-p {

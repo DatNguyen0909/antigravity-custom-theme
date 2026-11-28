@@ -1239,6 +1239,7 @@ const SoundService = (function () {
         if (typeof next.enabled === 'boolean') state.enabled = next.enabled;
         if (typeof next.sfxEnabled === 'boolean') state.sfxEnabled = next.sfxEnabled;
         if (typeof next.bgmEnabled === 'boolean') state.bgmEnabled = next.bgmEnabled;
+        if (typeof next.aiChimeEnabled === 'boolean') state.aiChimeEnabled = next.aiChimeEnabled;
         if (typeof next.volume === 'number') state.volume = next.volume;
         if (typeof next.themeId === 'string') state.themeId = next.themeId;
 
@@ -1250,6 +1251,46 @@ const SoundService = (function () {
         } else if (prevTheme !== state.themeId || !prevBgm || !prevEnabled || !lookaheadTimer) {
             restartBgmIfNeeded();
         }
+    }
+
+    function playDoneChime(themeId, force) {
+        if (!force && (!state.enabled || state.aiChimeEnabled === false)) return;
+        const c = ensureContext();
+        if (!c) return;
+        const id = themeId || state.themeId || 'jade-dragon';
+        const now = c.currentTime + 0.015;
+        const dest = fxGain || masterGain;
+        try {
+            if (id === 'pixel-knight') {
+                // Retro 8-bit Stage Clear mini fanfare
+                [72, 76, 79, 84].forEach((m, i) => {
+                    toneAt('square', m2f(m), m2f(m), i === 3 ? 0.28 : 0.09, 0.085, now + i * 0.085, dest, 3400);
+                });
+            } else if (id === 'ai-robot' || id === 'space-astronaut') {
+                // Clean futuristic crystalline triad
+                [76, 81, 88].forEach((m, i) => {
+                    toneAt('sine', m2f(m), m2f(m), 0.34, 0.11, now + i * 0.095, dest);
+                    toneAt('triangle', m2f(m + 12), m2f(m + 12), 0.18, 0.04, now + i * 0.095, dest);
+                });
+            } else if (id === 'jade-dragon' || id === 'wise-owl' || id === 'tet-lion' || id === 'midautumn-carp' || id === 'fox-chibi') {
+                // East-Asian pentatonic jade chime
+                [74, 79, 81, 86].forEach((m, i) => {
+                    stringAt('zither', m, 0.16, now + i * 0.09, dest);
+                });
+            } else if (id === 'code-cat' || id === 'gangster-pawn' || id === 'black-cat') {
+                // Warm Lo-fi Rhodes major-7th chime
+                [69, 73, 76, 80].forEach((m, i) => {
+                    toneAt('sine', m2f(m), m2f(m), 0.42, 0.095, now + i * 0.08, dest, 2200);
+                    toneAt('triangle', m2f(m), m2f(m), 0.22, 0.035, now + i * 0.08, dest, 1800);
+                });
+            } else {
+                // Gentle celesta / music-box completion chime
+                [76, 80, 83, 88].forEach((m, i) => {
+                    stringAt('harp', m, 0.15, now + i * 0.085, dest);
+                    toneAt('sine', m2f(m + 12), m2f(m + 12), 0.22, 0.035, now + i * 0.085, dest);
+                });
+            }
+        } catch (e) {}
     }
 
     function playKeystroke(themeId, isSpecial) {
@@ -1288,6 +1329,7 @@ const SoundService = (function () {
     return {
         configure,
         playKeystroke,
+        playDoneChime,
         playSample,
         getMeta,
         stopBgm

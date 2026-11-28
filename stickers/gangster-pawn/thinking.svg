@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="gpThIvory" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#e5e7eb"/>
+      <stop offset="100%" stop-color="#9ca3af"/>
+    </linearGradient>
+    <linearGradient id="gpThBase" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="100%" stop-color="#6b7280"/>
+    </linearGradient>
+    <linearGradient id="gpThGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4b5563"/>
+      <stop offset="45%" stop-color="#030712"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <style>
+      .gpThFedora { transform-origin: 60px 28px; animation: gpThHat 2.8s ease-in-out infinite alternate; }
+      .gpThShades { transform-origin: 60px 48px; animation: gpThPeek 3s ease-in-out infinite; }
+      .gpThTap { transform-origin: 92px 86px; animation: gpThHandTap 1.6s ease-in-out infinite; }
+      .gpThDot1 { animation: gpThDot 2.1s ease-in-out infinite; }
+      .gpThDot2 { animation: gpThDot 2.1s ease-in-out 0.35s infinite; }
+      .gpThDot3 { animation: gpThDot 2.1s ease-in-out 0.7s infinite; }
+
+      @keyframes gpThHat { 0% { transform: rotate(-2.5deg); } 100% { transform: rotate(2deg); } }
+      @keyframes gpThPeek {
+        0%, 100% { transform: translateY(3px); }
+        50% { transform: translateY(5px) rotate(-1.5deg); }
+      }
+      @keyframes gpThHandTap {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        25% { transform: translateY(-4px) rotate(-8deg); }
+        45% { transform: translateY(1px) rotate(4deg); }
+        65% { transform: translateY(-3px) rotate(-6deg); }
+        85% { transform: translateY(1px) rotate(3deg); }
+      }
+      @keyframes gpThDot {
+        0%, 100% { opacity: 0.3; transform: translateY(0px); }
+        50% { opacity: 1; transform: translateY(-3px); }
+      }
+    </style>
+  </defs>
+
+  <!-- Shadow -->
+  <ellipse cx="56" cy="110" rx="34" ry="6" fill="#000000" opacity="0.3"/>
+
+  <!-- Pawn base -->
+  <ellipse cx="56" cy="102" rx="30" ry="7.5" fill="url(#gpThBase)" stroke="#374151" stroke-width="1.5"/>
+  <rect x="28" y="93" width="56" height="8.5" rx="4" fill="url(#gpThIvory)" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Pawn body -->
+  <path d="M36 94 C38 80, 44 70, 48 64 L64 64 C68 70, 74 80, 76 94 Z" fill="url(#gpThIvory)" stroke="#374151" stroke-width="1.6"/>
+  <path d="M41 85 C47 79, 52 77, 56 83 C60 77, 65 79, 71 85 L75 94 L37 94 Z" fill="#111827" stroke="#030712" stroke-width="1.2"/>
+  <path d="M52 81 L56 90 L60 81 Z" fill="#f9fafb"/>
+  <path d="M44 79 Q56 88 68 79" fill="none" stroke="#d1d5db" stroke-width="1.8" stroke-dasharray="2 1.5"/>
+
+  <!-- Neck collar -->
+  <ellipse cx="56" cy="64" rx="14.5" ry="4.2" fill="url(#gpThIvory)" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Head -->
+  <circle cx="56" cy="42" r="20.5" fill="url(#gpThIvory)" stroke="#374151" stroke-width="1.6"/>
+
+  <!-- Fedora -->
+  <g class="gpThFedora">
+    <path d="M31 30 Q56 36 81 30 Q83 34 79 35 Q56 40 33 35 Q29 34 31 30 Z" fill="#111827" stroke="#030712" stroke-width="1"/>
+    <path d="M39 31 C39 18, 47 13, 56 14 C65 13, 73 18, 73 31 Q56 35 39 31 Z" fill="#1f2937" stroke="#030712" stroke-width="1.2"/>
+    <path d="M39 28 Q56 32 73 28 L73 31 Q56 35 39 31 Z" fill="#9ca3af"/>
+  </g>
+
+  <!-- Focused peering eyes visible OVER lowered shades -->
+  <path d="M41 37 L52 39.5" stroke="#111827" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M71 37 L60 39.5" stroke="#111827" stroke-width="2.4" stroke-linecap="round"/>
+  <ellipse cx="47" cy="42" rx="3.2" ry="2.4" fill="#ffffff" stroke="#111827" stroke-width="1.1"/>
+  <circle cx="48" cy="42.4" r="1.4" fill="#030712"/>
+  <ellipse cx="65" cy="42" rx="3.2" ry="2.4" fill="#ffffff" stroke="#111827" stroke-width="1.1"/>
+  <circle cx="66" cy="42.4" r="1.4" fill="#030712"/>
+
+  <!-- Lowered gangster sunglasses -->
+  <g class="gpThShades">
+    <path d="M38 43 L74 43" stroke="#030712" stroke-width="2.1"/>
+    <path d="M39 43 L53 43 L52 49.5 Q46 52 41 49.5 Z" fill="url(#gpThGlass)" stroke="#030712" stroke-width="1.2"/>
+    <path d="M59 43 L73 43 L71 49.5 Q65 52 60 49.5 Z" fill="url(#gpThGlass)" stroke="#030712" stroke-width="1.2"/>
+    <path d="M43 44.5 L46 44.5 L44 47.5" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.65"/>
+    <path d="M63 44.5 L66 44.5 L64 47.5" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.65"/>
+  </g>
+
+  <!-- Calculating mouth and scar -->
+  <path d="M51 56 Q56 55.5 62 56.5" fill="none" stroke="#111827" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M68 52 L72 56 M69 55.5 L71 52.5" stroke="#6b7280" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Mini angled chessboard in front -->
+  <g transform="translate(52, 86)">
+    <polygon points="0,12 24,4 54,12 30,20" fill="#374151" stroke="#111827" stroke-width="1.4" stroke-linejoin="round"/>
+    <polygon points="3,12 15,8 27,12 15,16" fill="#f9fafb"/>
+    <polygon points="15,8 24,5 36,9 27,12" fill="#111827"/>
+    <polygon points="15,16 27,12 39,16 27,19" fill="#111827"/>
+    <polygon points="27,12 36,9 51,12 39,16" fill="#f9fafb"/>
+    <!-- Tiny chess piece on board -->
+    <ellipse cx="26" cy="11" rx="3.2" ry="1.4" fill="#f59e0b" stroke="#78350f" stroke-width="0.8"/>
+    <circle cx="26" cy="7.5" r="2.2" fill="#fde047" stroke="#78350f" stroke-width="0.8"/>
+  </g>
+
+  <!-- Tapping hand -->
+  <g class="gpThTap">
+    <ellipse cx="94" cy="88" rx="6.5" ry="4.5" fill="url(#gpThIvory)" stroke="#374151" stroke-width="1.3"/>
+    <line x1="90" y1="87" x2="90" y2="91" stroke="#6b7280" stroke-width="1"/>
+    <line x1="94" y1="87" x2="94" y2="92" stroke="#6b7280" stroke-width="1"/>
+  </g>
+
+  <!-- Thinking dots -->
+  <g fill="#f59e0b" stroke="#78350f" stroke-width="0.8">
+    <circle class="gpThDot1" cx="88" cy="24" r="2.6"/>
+    <circle class="gpThDot2" cx="96" cy="21" r="3.1"/>
+    <circle class="gpThDot3" cx="105" cy="18" r="3.6"/>
+  </g>
+</svg>

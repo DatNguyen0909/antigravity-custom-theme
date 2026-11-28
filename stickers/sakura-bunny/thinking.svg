@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="bunThFur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#fff1f2"/>
+      <stop offset="100%" stop-color="#fecdd3"/>
+    </linearGradient>
+    <linearGradient id="bunThEarIn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fda4af"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="bunThSakura" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fda4af"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+    <linearGradient id="bunThLens" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.45"/>
+    </linearGradient>
+    <style>
+      .bunThEarL { transform-origin: 40px 42px; animation: bunThEarTiltL 2.4s ease-in-out infinite alternate; }
+      .bunThEarR { transform-origin: 80px 42px; animation: bunThEarTiltR 2.4s ease-in-out infinite alternate; }
+      .bunThBlink { transform-origin: 60px 54px; animation: bunThBlink 3.4s infinite; }
+      .bunThGlass { transform-origin: 82px 92px; animation: bunThInspect 2.6s ease-in-out infinite alternate; }
+      .bunThQ { transform-origin: 96px 26px; animation: bunThFloatQ 2.4s ease-in-out infinite; }
+      .bunThTail { transform-origin: 84px 92px; animation: bunThTailWag 2s ease-in-out infinite alternate; }
+
+      @keyframes bunThEarTiltL { 0% { transform: rotate(-10deg); } 100% { transform: rotate(2deg); } }
+      @keyframes bunThEarTiltR { 0% { transform: rotate(2deg); } 100% { transform: rotate(14deg); } }
+      @keyframes bunThBlink { 0%, 45%, 49%, 95%, 100% { transform: scaleY(1); } 47%, 97% { transform: scaleY(0.08); } }
+      @keyframes bunThInspect { 0% { transform: translate(0px, 0px) rotate(-4deg); } 100% { transform: translate(-4px, -3px) rotate(6deg); } }
+      @keyframes bunThFloatQ {
+        0%, 100% { transform: translateY(0px) rotate(-6deg) scale(0.95); opacity: 0.85; }
+        50% { transform: translateY(-6px) rotate(6deg) scale(1.12); opacity: 1; }
+      }
+      @keyframes bunThTailWag { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }
+    </style>
+  </defs>
+
+  <g>
+    <!-- Tail -->
+    <circle class="bunThTail" cx="84" cy="92" r="9" fill="url(#bunThFur)" stroke="#881337" stroke-width="1.8"/>
+
+    <!-- Tilting ears -->
+    <g class="bunThEarL">
+      <path d="M44 40 C36 10, 26 4, 24 14 C22 24, 30 38, 38 44 Z" fill="url(#bunThFur)" stroke="#881337" stroke-width="2.2"/>
+      <path d="M41 37 C35 16, 29 12, 28 18 C27 24, 33 34, 38 39 Z" fill="url(#bunThEarIn)"/>
+    </g>
+    <g class="bunThEarR">
+      <path d="M76 40 C84 10, 94 4, 96 14 C98 24, 90 38, 82 44 Z" fill="url(#bunThFur)" stroke="#881337" stroke-width="2.2"/>
+      <path d="M79 37 C85 16, 91 12, 92 18 C93 24, 87 34, 82 39 Z" fill="url(#bunThEarIn)"/>
+    </g>
+
+    <!-- Body -->
+    <ellipse cx="60" cy="86" rx="22" ry="18" fill="url(#bunThFur)" stroke="#881337" stroke-width="2.2"/>
+    <path d="M44 74 Q60 80 76 74" fill="none" stroke="#e11d48" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Head -->
+    <path d="M30 56 C28 36, 44 28, 60 28 C76 28, 92 36, 90 56 C92 70, 78 76, 60 76 C42 76, 28 70, 30 56 Z" fill="url(#bunThFur)" stroke="#881337" stroke-width="2.2"/>
+
+    <!-- Head sakura clip -->
+    <g transform="translate(38, 30)">
+      <circle cx="0" cy="-6" r="4.5" fill="url(#bunThSakura)"/>
+      <circle cx="5.7" cy="-1.8" r="4.5" fill="url(#bunThSakura)"/>
+      <circle cx="3.5" cy="4.8" r="4.5" fill="url(#bunThSakura)"/>
+      <circle cx="-3.5" cy="4.8" r="4.5" fill="url(#bunThSakura)"/>
+      <circle cx="-5.7" cy="-1.8" r="4.5" fill="url(#bunThSakura)"/>
+      <circle cx="0" cy="0" r="3" fill="#fef08a"/>
+    </g>
+
+    <!-- Eyes glancing down toward blossom -->
+    <g class="bunThBlink">
+      <ellipse cx="46" cy="54" rx="6.5" ry="7.3" fill="#4c0519"/>
+      <ellipse cx="46.5" cy="55" rx="5.1" ry="5.8" fill="url(#bunThSakura)"/>
+      <ellipse cx="46.5" cy="57" rx="3.6" ry="3" fill="#fda4af"/>
+      <circle cx="44" cy="51.5" r="2.4" fill="#ffffff"/>
+      <circle cx="48.5" cy="57.5" r="1.1" fill="#ffffff"/>
+
+      <ellipse cx="74" cy="54" rx="6.5" ry="7.3" fill="#4c0519"/>
+      <ellipse cx="73.5" cy="55" rx="5.1" ry="5.8" fill="url(#bunThSakura)"/>
+      <ellipse cx="73.5" cy="57" rx="3.6" ry="3" fill="#fda4af"/>
+      <circle cx="71" cy="51.5" r="2.4" fill="#ffffff"/>
+      <circle cx="75.5" cy="57.5" r="1.1" fill="#ffffff"/>
+    </g>
+
+    <ellipse cx="36" cy="60" rx="4.6" ry="2.4" fill="#fb7185" opacity="0.72"/>
+    <ellipse cx="84" cy="60" rx="4.6" ry="2.4" fill="#fb7185" opacity="0.72"/>
+    <polygon points="58,57 62,57 60,60" fill="#fb7185"/>
+    <!-- Curious 'o' mouth -->
+    <circle cx="60" cy="64" r="2.2" fill="#fb7185" stroke="#881337" stroke-width="1.5"/>
+
+    <!-- Feet -->
+    <ellipse cx="47" cy="103" rx="7" ry="4.5" fill="url(#bunThFur)" stroke="#881337" stroke-width="2"/>
+    <ellipse cx="73" cy="103" rx="7" ry="4.5" fill="url(#bunThFur)" stroke="#881337" stroke-width="2"/>
+
+    <!-- Cherry blossom being examined -->
+    <g transform="translate(56, 89)">
+      <circle cx="0" cy="-6" r="5" fill="#fda4af" stroke="#be123c" stroke-width="1.2"/>
+      <circle cx="5.7" cy="-1.8" r="5" fill="#fda4af" stroke="#be123c" stroke-width="1.2"/>
+      <circle cx="3.5" cy="4.8" r="5" fill="#fda4af" stroke="#be123c" stroke-width="1.2"/>
+      <circle cx="-3.5" cy="4.8" r="5" fill="#fda4af" stroke="#be123c" stroke-width="1.2"/>
+      <circle cx="-5.7" cy="-1.8" r="5" fill="#fda4af" stroke="#be123c" stroke-width="1.2"/>
+      <circle cx="0" cy="0" r="3.2" fill="#fef08a"/>
+    </g>
+
+    <!-- Left paw holding blossom -->
+    <ellipse cx="43" cy="88" rx="5.5" ry="4.2" fill="url(#bunThFur)" stroke="#881337" stroke-width="1.8"/>
+
+    <!-- Pink magnifying glass held by right paw -->
+    <g class="bunThGlass">
+      <line x1="69" y1="88" x2="84" y2="96" stroke="#e11d48" stroke-width="4.5" stroke-linecap="round"/>
+      <line x1="69" y1="88" x2="84" y2="96" stroke="#fda4af" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="60" cy="84" r="11" fill="url(#bunThLens)" stroke="#fb7185" stroke-width="3.2"/>
+      <circle cx="60" cy="84" r="11" fill="none" stroke="#881337" stroke-width="1.2"/>
+      <path d="M54 79 A7 7 0 0 1 62 77" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="79" cy="91" rx="5.5" ry="4.2" fill="url(#bunThFur)" stroke="#881337" stroke-width="1.8"/>
+    </g>
+
+    <!-- Floating question mark -->
+    <g class="bunThQ">
+      <path d="M92 22 C92 16, 102 16, 102 22 C102 26, 97 26.5, 97 30" fill="none" stroke="#e11d48" stroke-width="3.4" stroke-linecap="round"/>
+      <circle cx="97" cy="35" r="2.1" fill="#e11d48"/>
+    </g>
+  </g>
+</svg>

@@ -28,10 +28,49 @@ const ChatView = (function () {
         const img = wrap.querySelector(':scope > .ag-input-sticker');
         if (!img) return;
         const theme = vm.getActiveTheme();
+        const aiState = typeof vm.getAiState === 'function' ? vm.getAiState() : 'idle';
         const typingNow = theme.typingSticker && wrap.classList.contains('ag-typing') && !wrap.classList.contains('ag-typing-pause');
+        const aiThinkingNow = !typingNow && aiState === 'thinking' && !!theme.thinkingSticker;
+        const aiDoneNow = !typingNow && aiState === 'done' && !!theme.doneSticker;
+
         wrap.classList.toggle('ag-has-typing-svg', !!theme.typingSticker);
-        const want = typingNow ? theme.typingSticker : theme.sticker;
+        wrap.classList.toggle('ag-ai-thinking', aiState === 'thinking' && !typingNow);
+        wrap.classList.toggle('ag-ai-done', aiState === 'done' && !typingNow);
+        wrap.classList.toggle('ag-has-ai-svg', aiThinkingNow || aiDoneNow);
+
+        let want = theme.sticker;
+        if (typingNow) want = theme.typingSticker;
+        else if (aiThinkingNow) want = theme.thinkingSticker;
+        else if (aiDoneNow) want = theme.doneSticker;
+
         if (img.getAttribute('src') !== want) img.src = want;
+        syncAiBadge(wrap, vm, typingNow ? 'idle' : aiState);
+    }
+
+    function syncAiBadge(wrap, vm, aiState) {
+        if (!wrap) return;
+        const existing = wrap.querySelector(':scope > .ag-ai-badge');
+        if (aiState !== 'thinking' && aiState !== 'done') {
+            if (existing) existing.remove();
+            return;
+        }
+        const st = vm.getState();
+        const theme = vm.getActiveTheme();
+        const isEn = st.lang === 'en';
+        const label = aiState === 'thinking'
+            ? (isEn ? (theme.aiThinkingEn || '🧠 Thinking...') : (theme.aiThinking || '🧠 Đang suy nghĩ...'))
+            : (isEn ? (theme.aiDoneEn || '✨ Done!') : (theme.aiDone || '✨ Xong rồi!'));
+        const badge = existing || document.createElement('span');
+        badge.className = 'ag-ai-badge ' + (aiState === 'done' ? 'is-done' : 'is-thinking');
+        if (badge.textContent !== label) badge.textContent = label;
+        if (!existing) wrap.appendChild(badge);
+    }
+
+    function celebrateAiDone(vm) {
+        const wrap = document.querySelector('.ag-custom-input-wrapper');
+        if (!wrap) return;
+        syncInputSticker(wrap, vm);
+        spawnHoverBurst(wrap, vm.getState().activeTheme);
     }
 
     function clearTypingState(wrap, vm) {
@@ -149,9 +188,9 @@ const ChatView = (function () {
     function cleanupAll() {
         document.querySelectorAll('.ag-custom-user-bubble').forEach(el => el.classList.remove('ag-custom-user-bubble'));
         document.querySelectorAll('.ag-custom-input-wrapper').forEach(el => {
-            el.classList.remove('ag-custom-input-wrapper', 'ag-typing', 'ag-typing-fast', 'ag-typing-pause');
+            el.classList.remove('ag-custom-input-wrapper', 'ag-typing', 'ag-typing-fast', 'ag-typing-pause', 'ag-ai-thinking', 'ag-ai-done', 'ag-has-ai-svg');
         });
-        document.querySelectorAll('.ag-bubble-sticker, .ag-bubble-sticker-action, .ag-input-sticker, .ag-input-sticker-action, .ag-sparkle, .ag-type-p, .ag-think-bubble').forEach(el => el.remove());
+        document.querySelectorAll('.ag-bubble-sticker, .ag-bubble-sticker-action, .ag-input-sticker, .ag-input-sticker-action, .ag-sparkle, .ag-type-p, .ag-think-bubble, .ag-ai-badge').forEach(el => el.remove());
     }
 
     function updateElements(vm) {
@@ -323,6 +362,8 @@ const ChatView = (function () {
 
     return {
         spawnHoverBurst,
+        syncInputSticker,
+        celebrateAiDone,
         wireTypingEvents,
         makeContainersTransparent,
         cleanupAll,

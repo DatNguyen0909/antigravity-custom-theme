@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="fpThBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="50%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#881337"/>
+    </linearGradient>
+    <linearGradient id="fpThGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <linearGradient id="fpThBelly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff1f2"/>
+      <stop offset="100%" stop-color="#fecdd3"/>
+    </linearGradient>
+    <radialGradient id="fpThOrb" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </radialGradient>
+    <radialGradient id="fpThAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fde047" stop-opacity="0.5"/>
+      <stop offset="60%" stop-color="#f472b6" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#e11d48" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .fpThAuraPulse { transform-origin: 60px 62px; animation: fpThAuraAnim 2.6s ease-in-out infinite alternate; }
+      .fpThCrest { transform-origin: 60px 26px; animation: fpThCrestAnim 2.4s ease-in-out infinite alternate; }
+      .fpThWingL { transform-origin: 34px 74px; animation: fpThWingLAnim 2.2s ease-in-out infinite alternate; }
+      .fpThWingR { transform-origin: 86px 74px; animation: fpThWingRAnim 2.2s ease-in-out infinite alternate; }
+      .fpThEmberEye { animation: fpThEyeGlow 2s ease-in-out infinite alternate; }
+      .fpThSpark1 { animation: fpThSparkRise 2.4s ease-in-out infinite; }
+      .fpThSpark2 { animation: fpThSparkRise 2.8s ease-in-out 0.6s infinite; }
+      .fpThSpark3 { animation: fpThSparkRise 2.2s ease-in-out 1.1s infinite; }
+      .fpThOrbRing { transform-origin: 60px 88px; animation: fpThRingSpin 3.2s linear infinite; }
+
+      @keyframes fpThAuraAnim { 0% { transform: scale(0.92); opacity: 0.7; } 100% { transform: scale(1.07); opacity: 1; } }
+      @keyframes fpThCrestAnim { 0% { transform: rotate(-3deg); } 100% { transform: rotate(3deg); } }
+      @keyframes fpThWingLAnim { 0% { transform: rotate(2deg); } 100% { transform: rotate(-5deg); } }
+      @keyframes fpThWingRAnim { 0% { transform: rotate(-2deg); } 100% { transform: rotate(5deg); } }
+      @keyframes fpThEyeGlow { 0% { opacity: 0.78; } 100% { opacity: 1; } }
+      @keyframes fpThSparkRise {
+        0% { transform: translateY(6px) scale(0.6); opacity: 0; }
+        45% { transform: translateY(-4px) scale(1.1); opacity: 1; }
+        100% { transform: translateY(-16px) scale(0.5); opacity: 0; }
+      }
+      @keyframes fpThRingSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+  </defs>
+
+  <!-- Gently Pulsing Fiery Aura -->
+  <g class="fpThAuraPulse">
+    <circle cx="60" cy="62" r="48" fill="url(#fpThAura)"/>
+    <circle cx="60" cy="62" r="42" fill="none" stroke="#fde047" stroke-width="1.2" stroke-dasharray="6 8" opacity="0.55"/>
+  </g>
+
+  <!-- Tail Feathers -->
+  <path d="M40 94 C18 98, 8 80, 14 64 C18 76, 28 84, 42 86 Z" fill="url(#fpThGold)" stroke="#881337" stroke-width="1.8"/>
+  <path d="M80 94 C102 98, 112 80, 106 64 C102 76, 92 84, 78 86 Z" fill="url(#fpThGold)" stroke="#881337" stroke-width="1.8"/>
+
+  <!-- Focused Tucked Wings -->
+  <g class="fpThWingL">
+    <path d="M34 64 C14 56, 10 74, 21 84 C16 88, 23 94, 38 87 Z" fill="url(#fpThBody)" stroke="#4c0519" stroke-width="2"/>
+    <path d="M23 70 Q18 76 28 80" fill="none" stroke="url(#fpThGold)" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+  <g class="fpThWingR">
+    <path d="M86 64 C106 56, 110 74, 99 84 C104 88, 97 94, 82 87 Z" fill="url(#fpThBody)" stroke="#4c0519" stroke-width="2"/>
+    <path d="M97 70 Q102 76 92 80" fill="none" stroke="url(#fpThGold)" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Body -->
+  <ellipse cx="60" cy="82" rx="22" ry="20" fill="url(#fpThBody)" stroke="#4c0519" stroke-width="2.2"/>
+  <ellipse cx="60" cy="85" rx="14" ry="14" fill="url(#fpThBelly)"/>
+
+  <!-- Crest -->
+  <g class="fpThCrest">
+    <path d="M60 26 C53 12, 57 4, 60 3 C63 4, 67 12, 60 26 Z" fill="url(#fpThGold)" stroke="#881337" stroke-width="1.8"/>
+    <path d="M54 27 C42 16, 42 8, 46 8 C50 9, 53 17, 56 26 Z" fill="url(#fpThBody)" stroke="#881337" stroke-width="1.6"/>
+    <path d="M66 27 C78 16, 78 8, 74 8 C70 9, 67 17, 64 26 Z" fill="url(#fpThBody)" stroke="#881337" stroke-width="1.6"/>
+    <circle cx="60" cy="9" r="2.5" fill="#fef08a"/>
+  </g>
+
+  <!-- Head -->
+  <ellipse cx="60" cy="50" rx="28" ry="25" fill="url(#fpThBody)" stroke="#4c0519" stroke-width="2.2"/>
+  <path d="M36 48 C36 36, 84 36, 84 48 C84 65, 68 72, 60 72 C52 72, 36 65, 36 48 Z" fill="url(#fpThBelly)"/>
+
+  <!-- Cheek Feathers va Forehead Gem -->
+  <path d="M32 48 Q22 44 25 54 Q20 58 33 60" fill="url(#fpThGold)" stroke="#881337" stroke-width="1.6"/>
+  <path d="M88 48 Q98 44 95 54 Q100 58 87 60" fill="url(#fpThGold)" stroke="#881337" stroke-width="1.6"/>
+  <path d="M60 31 C64 36, 63 41, 60 43 C57 41, 56 36, 60 31 Z" fill="url(#fpThGold)" stroke="#be185d" stroke-width="1"/>
+
+  <!-- Glowing Analytical Ember Eyes -->
+  <g class="fpThEmberEye">
+    <ellipse cx="47" cy="52" rx="6.5" ry="5.6" fill="#4c0519"/>
+    <ellipse cx="47" cy="52.4" rx="5.2" ry="4.3" fill="#f59e0b"/>
+    <ellipse cx="47" cy="52.6" rx="3.4" ry="2.8" fill="#fef08a"/>
+    <circle cx="45" cy="51.2" r="1.8" fill="#ffffff"/>
+
+    <ellipse cx="73" cy="52" rx="6.5" ry="5.6" fill="#4c0519"/>
+    <ellipse cx="73" cy="52.4" rx="5.2" ry="4.3" fill="#f59e0b"/>
+    <ellipse cx="73" cy="52.6" rx="3.4" ry="2.8" fill="#fef08a"/>
+    <circle cx="71" cy="51.2" r="1.8" fill="#ffffff"/>
+  </g>
+  <!-- Analytical Focused Brows -->
+  <path d="M39 45 L53 48" fill="none" stroke="#881337" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M81 45 L67 48" fill="none" stroke="#881337" stroke-width="2.4" stroke-linecap="round"/>
+
+  <!-- Beak va Blush -->
+  <polygon points="56,56 64,56 60,62" fill="url(#fpThGold)" stroke="#9a3412" stroke-width="1.4" stroke-linejoin="round"/>
+  <ellipse cx="38" cy="58" rx="4" ry="2" fill="#fb7185" opacity="0.6"/>
+  <ellipse cx="82" cy="58" rx="4" ry="2" fill="#fb7185" opacity="0.6"/>
+
+  <!-- Feet -->
+  <ellipse cx="49" cy="101" rx="5.5" ry="3.5" fill="url(#fpThGold)" stroke="#4c0519" stroke-width="1.6"/>
+  <ellipse cx="71" cy="101" rx="5.5" ry="3.5" fill="url(#fpThGold)" stroke="#4c0519" stroke-width="1.6"/>
+
+  <!-- Analyzing Ember Orb -->
+  <circle cx="60" cy="88" r="9" fill="url(#fpThOrb)" stroke="#f59e0b" stroke-width="1.6"/>
+  <circle cx="57" cy="85" r="2.6" fill="#ffffff" opacity="0.9"/>
+  <g class="fpThOrbRing">
+    <circle cx="60" cy="88" r="13" fill="none" stroke="#fde047" stroke-width="1.4" stroke-dasharray="6 6"/>
+    <circle cx="73" cy="88" r="2" fill="#fef08a"/>
+  </g>
+
+  <!-- Floating Calculation Sparks -->
+  <g class="fpThSpark1">
+    <polygon points="20,30 22,25 24,30 29,32 24,34 22,39 20,34 15,32" fill="#fef08a"/>
+    <circle cx="30" cy="22" r="2.2" fill="#f472b6"/>
+  </g>
+  <g class="fpThSpark2">
+    <polygon points="98,26 100,21 102,26 107,28 102,30 100,35 98,30 93,28" fill="#fde047"/>
+    <rect x="88" y="18" width="4" height="4" transform="rotate(45 90 20)" fill="#f59e0b"/>
+  </g>
+  <g class="fpThSpark3">
+    <circle cx="16" cy="52" r="2.5" fill="#fde047"/>
+    <circle cx="105" cy="48" r="2.5" fill="#f472b6"/>
+  </g>
+</svg>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <radialGradient id="mcThBody" cx="45%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="48%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </radialGradient>
+    <radialGradient id="mcThStar" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#fef9c3"/>
+      <stop offset="60%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </radialGradient>
+    <radialGradient id="mcThGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .mcTh-fish { transform-origin: 62px 74px; animation: mcThBob 3.0s ease-in-out infinite; }
+      .mcTh-tail { transform-origin: 62px 98px; animation: mcThTail 2.2s ease-in-out infinite alternate; }
+      .mcTh-lantern { transform-origin: 32px 62px; animation: mcThLantern 2.8s ease-in-out infinite; }
+      .mcTh-glow { transform-origin: 22px 34px; animation: mcThPulse 2.4s ease-in-out infinite; }
+      .mcTh-ripple1 { transform-origin: 58px 108px; animation: mcThRip 3.2s ease-out infinite; }
+      .mcTh-ripple2 { transform-origin: 58px 108px; animation: mcThRip 3.2s ease-out 1.6s infinite; }
+
+      @keyframes mcThBob {
+        0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+        50% { transform: translateY(-4px) rotate(1.5deg); }
+      }
+      @keyframes mcThTail {
+        0% { transform: rotate(-7deg); }
+        100% { transform: rotate(8deg); }
+      }
+      @keyframes mcThLantern {
+        0%, 100% { transform: rotate(-5deg); }
+        50% { transform: rotate(6deg); }
+      }
+      @keyframes mcThPulse {
+        0%, 100% { transform: scale(0.9); opacity: 0.7; }
+        50% { transform: scale(1.18); opacity: 1; }
+      }
+      @keyframes mcThRip {
+        0% { transform: scale(0.75); opacity: 0.75; }
+        100% { transform: scale(1.25); opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- Glowing Moon Ripples on Water -->
+  <ellipse cx="58" cy="108" rx="34" ry="6" fill="#451a03" opacity="0.32"/>
+  <ellipse class="mcTh-ripple1" cx="58" cy="108" rx="36" ry="7" fill="none" stroke="#fde047" stroke-width="1.5"/>
+  <ellipse class="mcTh-ripple2" cx="58" cy="108" rx="36" ry="7" fill="none" stroke="#fef08a" stroke-width="1.3"/>
+  <ellipse cx="26" cy="106" rx="14" ry="3.2" fill="#fde047" opacity="0.35"/>
+
+  <g class="mcTh-fish">
+    <!-- Flowing Fan Tail -->
+    <g class="mcTh-tail">
+      <path d="M62 94 C46 104, 40 114, 52 114 C58 114, 61 107, 62 104 C63 107, 66 114, 72 114 C84 114, 78 104, 62 94 Z" fill="#f97316" stroke="#9a3412" stroke-width="1.8"/>
+      <path d="M62 96 L54 110 M62 96 L70 110" stroke="#fde047" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- Dorsal Crown Fin on head -->
+    <path d="M52 30 Q62 16 72 30 Z" fill="#ef4444" stroke="#991b1b" stroke-width="1.8"/>
+    <circle cx="62" cy="24" r="3.5" fill="#fef08a"/>
+
+    <!-- Side Pectoral Fins (left fin raised holding star lantern) -->
+    <path d="M36 62 C22 50, 22 66, 36 72 Z" fill="#fb923c" stroke="#9a3412" stroke-width="1.8"/>
+    <path d="M88 66 C102 62, 104 76, 88 78 Z" fill="#fb923c" stroke="#9a3412" stroke-width="1.8"/>
+
+    <!-- Chubby Chibi Carp Body -->
+    <ellipse cx="62" cy="64" rx="28" ry="33" fill="url(#mcThBody)" stroke="#7c2d12" stroke-width="2.3"/>
+    <ellipse cx="62" cy="73" rx="18" ry="20" fill="#fef3c7" opacity="0.88"/>
+    <path d="M52 68 a5 5 0 0 0 10 0 a5 5 0 0 0 10 0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M57 77 a5 5 0 0 0 10 0" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"/>
+
+    <!-- Golden Whiskers -->
+    <path d="M40 58 Q28 54 26 47" fill="none" stroke="#facc15" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M84 58 Q96 54 98 47" fill="none" stroke="#facc15" stroke-width="2.2" stroke-linecap="round"/>
+
+    <!-- Thoughtful Eyes glancing toward glowing lantern -->
+    <circle cx="50" cy="50" r="5" fill="#1e1b4b"/>
+    <circle cx="74" cy="50" r="5" fill="#1e1b4b"/>
+    <circle cx="48" cy="48.5" r="1.9" fill="#ffffff"/>
+    <circle cx="72" cy="48.5" r="1.9" fill="#ffffff"/>
+    <path d="M45 43 Q50 41 55 43" fill="none" stroke="#7c2d12" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M69 43 Q74 41 79 43" fill="none" stroke="#7c2d12" stroke-width="1.6" stroke-linecap="round"/>
+
+    <!-- Rosy Cheeks and Cute Thoughtful Mouth -->
+    <ellipse cx="42" cy="56" rx="4" ry="2.4" fill="#f43f5e" opacity="0.6"/>
+    <ellipse cx="82" cy="56" rx="4" ry="2.4" fill="#f43f5e" opacity="0.6"/>
+    <ellipse cx="62" cy="56" rx="3.4" ry="2.8" fill="#ef4444" stroke="#7c2d12" stroke-width="1.5"/>
+
+    <!-- Raised Glowing 5-Point Star Lantern illuminating ripples -->
+    <g class="mcTh-lantern">
+      <line x1="28" y1="58" x2="22" y2="38" stroke="#92400e" stroke-width="2.4" stroke-linecap="round"/>
+      <circle class="mcTh-glow" cx="22" cy="34" r="20" fill="url(#mcThGlow)"/>
+      <polygon points="22,18 25.5,28 36,28 27.5,34.5 31,45 22,38.5 13,45 16.5,34.5 8,28 18.5,28" fill="url(#mcThStar)" stroke="#b91c1c" stroke-width="1.5" stroke-linejoin="round"/>
+      <circle cx="22" cy="33" r="3.2" fill="#ffffff" opacity="0.9"/>
+      <line x1="22" y1="45" x2="22" y2="55" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

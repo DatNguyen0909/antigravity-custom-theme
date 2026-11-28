@@ -49,9 +49,36 @@ const EnvironmentService = (function () {
         } catch (e) {}
     }
 
+    function detectAiWorking() {
+        try {
+            // 1. Check composer/input area for an active Stop / Cancel generation button
+            const wrap = document.querySelector('.ag-custom-input-wrapper');
+            const scope = (wrap && wrap.parentElement) ? wrap.parentElement : document;
+            const stopBtns = scope.querySelectorAll('button, [role="button"]');
+            for (let i = 0; i < stopBtns.length; i++) {
+                const b = stopBtns[i];
+                if (b.closest('#ag-custom-theme-panel')) continue;
+                const r = b.getBoundingClientRect();
+                if (r.width === 0 || r.height === 0) continue;
+                const label = ((b.getAttribute('aria-label') || '') + ' ' + (b.getAttribute('title') || '') + ' ' + (b.textContent || '')).trim();
+                if (/\b(stop|cancel|abort)\b/i.test(label) && !/cancel\s+edit/i.test(label)) {
+                    return true;
+                }
+            }
+            // 2. Check main chat area for explicit streaming / thinking / busy indicators
+            const busyEl = document.querySelector('[data-streaming="true"], [aria-busy="true"]:not(#ag-custom-theme-panel *)');
+            if (busyEl && !busyEl.closest('#ag-custom-theme-panel, nav, aside')) {
+                const r = busyEl.getBoundingClientRect();
+                if (r.width > 0 && r.height > 0) return true;
+            }
+        } catch (e) {}
+        return false;
+    }
+
     return {
         detectLightMode,
         isFloatingOrOverlay,
-        restartActionSticker
+        restartActionSticker,
+        detectAiWorking
     };
 })();

@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="foxThFur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="55%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#9a3412"/>
+    </linearGradient>
+    <linearGradient id="foxThCream" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="foxThGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <radialGradient id="foxThFire" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#fde047"/>
+      <stop offset="78%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </radialGradient>
+    <style>
+      .foxThHead { transform-origin: 60px 68px; animation: foxThHeadTilt 3s ease-in-out infinite alternate; }
+      .foxThTailL { transform-origin: 38px 88px; animation: foxThWagL 2.1s ease-in-out infinite alternate; }
+      .foxThTailR { transform-origin: 82px 88px; animation: foxThWagR 2.1s ease-in-out infinite alternate; }
+      .foxThEarL { transform-origin: 42px 34px; animation: foxThEarL 2.8s ease-in-out infinite; }
+      .foxThEarR { transform-origin: 78px 34px; animation: foxThEarR 2.8s ease-in-out -1.4s infinite; }
+      .foxThBlink { transform-origin: 60px 52px; animation: foxThBlink 3.4s infinite; }
+      .foxThWisp1 { transform-origin: 60px 26px; animation: foxThOrbit1 3.2s linear infinite; }
+      .foxThWisp2 { transform-origin: 60px 26px; animation: foxThOrbit2 3.2s linear infinite; }
+      .foxThWisp3 { transform-origin: 60px 26px; animation: foxThOrbit3 3.2s linear infinite; }
+      .foxThFlicker { animation: foxThPulse 2s ease-in-out infinite alternate; }
+
+      @keyframes foxThHeadTilt { 0% { transform: rotate(-3deg); } 100% { transform: rotate(3.5deg); } }
+      @keyframes foxThWagL { 0% { transform: rotate(-10deg); } 100% { transform: rotate(10deg); } }
+      @keyframes foxThWagR { 0% { transform: rotate(10deg); } 100% { transform: rotate(-10deg); } }
+      @keyframes foxThEarL { 0%, 82%, 100% { transform: rotate(0deg); } 90% { transform: rotate(-8deg); } }
+      @keyframes foxThEarR { 0%, 82%, 100% { transform: rotate(0deg); } 90% { transform: rotate(8deg); } }
+      @keyframes foxThBlink { 0%, 46%, 50%, 96%, 100% { transform: scaleY(1); } 48%, 98% { transform: scaleY(0.1); } }
+      @keyframes foxThOrbit1 {
+        0% { transform: translate(-38px, 6px) scale(0.95); opacity: 0.95; }
+        25% { transform: translate(0px, -12px) scale(1.1); opacity: 1; }
+        50% { transform: translate(38px, 6px) scale(0.95); opacity: 0.95; }
+        75% { transform: translate(0px, 16px) scale(0.8); opacity: 0.65; }
+        100% { transform: translate(-38px, 6px) scale(0.95); opacity: 0.95; }
+      }
+      @keyframes foxThOrbit2 {
+        0% { transform: translate(22px, -9px) scale(1.05); opacity: 1; }
+        25% { transform: translate(32px, 12px) scale(0.85); opacity: 0.75; }
+        50% { transform: translate(-22px, 12px) scale(0.85); opacity: 0.75; }
+        75% { transform: translate(-32px, -9px) scale(1.05); opacity: 1; }
+        100% { transform: translate(22px, -9px) scale(1.05); opacity: 1; }
+      }
+      @keyframes foxThOrbit3 {
+        0% { transform: translate(18px, 14px) scale(0.82); opacity: 0.7; }
+        25% { transform: translate(-34px, 10px) scale(0.92); opacity: 0.9; }
+        50% { transform: translate(-18px, -11px) scale(1.08); opacity: 1; }
+        75% { transform: translate(34px, -6px) scale(1); opacity: 0.98; }
+        100% { transform: translate(18px, 14px) scale(0.82); opacity: 0.7; }
+      }
+      @keyframes foxThPulse { 0% { opacity: 0.85; } 100% { opacity: 1; } }
+    </style>
+  </defs>
+
+  <g>
+    <!-- Fluffy wagging twin tails -->
+    <g class="foxThTailL">
+      <path d="M36 92 C12 96, 6 72, 18 58 C26 62, 32 76, 40 86 Z" fill="url(#foxThFur)" stroke="#431407" stroke-width="2"/>
+      <path d="M18 58 C12 65, 13 73, 21 74 C24 68, 23 62, 18 58 Z" fill="url(#foxThCream)"/>
+    </g>
+    <g class="foxThTailR">
+      <path d="M84 92 C108 96, 114 72, 102 58 C94 62, 88 76, 80 86 Z" fill="url(#foxThFur)" stroke="#431407" stroke-width="2"/>
+      <path d="M102 58 C108 65, 107 73, 99 74 C96 68, 97 62, 102 58 Z" fill="url(#foxThCream)"/>
+    </g>
+
+    <!-- Body -->
+    <ellipse cx="60" cy="88" rx="22" ry="18" fill="url(#foxThFur)" stroke="#431407" stroke-width="2.2"/>
+    <ellipse cx="60" cy="90" rx="14" ry="14" fill="url(#foxThCream)"/>
+
+    <!-- Red shrine collar and bell -->
+    <path d="M42 75 Q60 82 78 75" fill="none" stroke="#dc2626" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="60" cy="79" r="4.5" fill="url(#foxThGold)" stroke="#431407" stroke-width="1.4"/>
+
+    <!-- Feet -->
+    <ellipse cx="46" cy="105" rx="6.5" ry="4" fill="#431407"/>
+    <ellipse cx="74" cy="105" rx="6.5" ry="4" fill="#431407"/>
+
+    <!-- Crossed arms -->
+    <path d="M40 86 C48 83, 58 84, 67 89 C69 92, 64 95, 56 93 C48 92, 42 91, 40 86 Z" fill="url(#foxThFur)" stroke="#431407" stroke-width="1.9" stroke-linejoin="round"/>
+    <path d="M80 86 C72 83, 62 84, 53 89 C51 92, 56 95, 64 93 C72 92, 78 91, 80 86 Z" fill="url(#foxThFur)" stroke="#431407" stroke-width="1.9" stroke-linejoin="round"/>
+    <ellipse cx="52" cy="90" rx="4.2" ry="3.2" fill="#431407"/>
+    <ellipse cx="68" cy="90" rx="4.2" ry="3.2" fill="#431407"/>
+
+    <!-- Thinking head group -->
+    <g class="foxThHead">
+      <g class="foxThEarL">
+        <path d="M34 44 C24 20, 22 8, 30 10 C40 12, 48 26, 50 36 Z" fill="url(#foxThFur)" stroke="#431407" stroke-width="2.2"/>
+        <path d="M35 40 C28 24, 27 15, 31 16 C37 18, 43 28, 45 36 Z" fill="url(#foxThCream)"/>
+        <path d="M27 13 C25 10, 28 9, 32 11 C30 14, 28 14, 27 13 Z" fill="#431407"/>
+      </g>
+      <g class="foxThEarR">
+        <path d="M86 44 C96 20, 98 8, 90 10 C80 12, 72 26, 70 36 Z" fill="url(#foxThFur)" stroke="#431407" stroke-width="2.2"/>
+        <path d="M85 40 C92 24, 93 15, 89 16 C83 18, 77 28, 75 36 Z" fill="url(#foxThCream)"/>
+        <path d="M93 13 C95 10, 92 9, 88 11 C90 14, 92 14, 93 13 Z" fill="#431407"/>
+      </g>
+
+      <path d="M30 52 C30 34, 44 28, 60 28 C76 28, 90 34, 90 52 C96 58, 92 68, 84 71 C76 76, 68 77, 60 77 C52 77, 44 76, 36 71 C28 68, 24 58, 30 52 Z" fill="url(#foxThFur)" stroke="#431407" stroke-width="2.2"/>
+      <path d="M30 57 C38 50, 48 54, 60 54 C72 54, 82 50, 90 57 C88 70, 74 76, 60 76 C46 76, 32 70, 30 57 Z" fill="url(#foxThCream)"/>
+
+      <path d="M60 34 C63 39, 62 44, 60 46 C58 44, 57 39, 60 34 Z" fill="#dc2626"/>
+      <circle cx="53" cy="41" r="1.8" fill="#dc2626"/>
+      <circle cx="67" cy="41" r="1.8" fill="#dc2626"/>
+
+      <!-- Thoughtful upward-looking eyes -->
+      <g class="foxThBlink">
+        <ellipse cx="46" cy="54" rx="6.5" ry="7.2" fill="#431407"/>
+        <ellipse cx="47" cy="53.5" rx="5.1" ry="5.8" fill="#ea580c"/>
+        <ellipse cx="47.5" cy="54.8" rx="3.5" ry="3" fill="#fde047"/>
+        <circle cx="44.5" cy="50.5" r="2.4" fill="#ffffff"/>
+        <circle cx="49" cy="55.5" r="1.1" fill="#ffffff"/>
+
+        <ellipse cx="74" cy="54" rx="6.5" ry="7.2" fill="#431407"/>
+        <ellipse cx="75" cy="53.5" rx="5.1" ry="5.8" fill="#ea580c"/>
+        <ellipse cx="75.5" cy="54.8" rx="3.5" ry="3" fill="#fde047"/>
+        <circle cx="72.5" cy="50.5" r="2.4" fill="#ffffff"/>
+        <circle cx="77" cy="55.5" r="1.1" fill="#ffffff"/>
+      </g>
+
+      <!-- Thoughtful brows -->
+      <path d="M40 45 Q46 43 51 46" fill="none" stroke="#431407" stroke-width="1.7" stroke-linecap="round"/>
+      <path d="M69 46 Q74 43 80 45" fill="none" stroke="#431407" stroke-width="1.7" stroke-linecap="round"/>
+
+      <ellipse cx="36" cy="61" rx="4.5" ry="2.2" fill="#fb7185" opacity="0.72"/>
+      <ellipse cx="84" cy="61" rx="4.5" ry="2.2" fill="#fb7185" opacity="0.72"/>
+      <polygon points="58,58 62,58 60,60.5" fill="#431407"/>
+      <path d="M56 63 Q60 61.5 64 63" fill="none" stroke="#431407" stroke-width="1.8" stroke-linecap="round"/>
+    </g>
+
+    <!-- 3 glowing orbiting foxfire wisps -->
+    <g class="foxThWisp1">
+      <g class="foxThFlicker" transform="translate(60, 26)">
+        <path d="M0 -10 C6 -4, 7 4, 0 7 C-7 4, -6 -4, 0 -10 Z" fill="url(#foxThFire)" stroke="#ea580c" stroke-width="1.1"/>
+        <circle cx="-1" cy="1" r="2" fill="#ffffff" opacity="0.9"/>
+      </g>
+    </g>
+    <g class="foxThWisp2">
+      <g class="foxThFlicker" transform="translate(60, 26)">
+        <path d="M0 -9 C5 -3.5, 6 3.5, 0 6 C-6 3.5, -5 -3.5, 0 -9 Z" fill="url(#foxThFire)" stroke="#ea580c" stroke-width="1.1"/>
+        <circle cx="-1" cy="1" r="1.8" fill="#ffffff" opacity="0.9"/>
+      </g>
+    </g>
+    <g class="foxThWisp3">
+      <g class="foxThFlicker" transform="translate(60, 26)">
+        <path d="M0 -8.5 C4.5 -3, 5.5 3, 0 5.5 C-5.5 3, -4.5 -3, 0 -8.5 Z" fill="url(#foxThFire)" stroke="#ea580c" stroke-width="1.1"/>
+        <circle cx="-0.8" cy="1" r="1.6" fill="#ffffff" opacity="0.9"/>
+      </g>
+    </g>
+  </g>
+</svg>

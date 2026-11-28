@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="vcDnHair" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="vcDnToga" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff1f2"/>
+      <stop offset="100%" stop-color="#fecdd3"/>
+    </linearGradient>
+    <style>
+      .vcDn-body { transform-origin: 60px 68px; animation: vcDnFloat 2.2s ease-in-out infinite; }
+      .vcDn-wing-l { transform-origin: 42px 66px; animation: vcDnFlapL 0.65s ease-in-out infinite alternate; }
+      .vcDn-wing-r { transform-origin: 78px 66px; animation: vcDnFlapR 0.65s ease-in-out infinite alternate; }
+      .vcDn-h1 { transform-origin: 20px 30px; animation: vcDnHeart 2.2s ease-in-out infinite; }
+      .vcDn-h2 { transform-origin: 100px 28px; animation: vcDnHeart 2.4s ease-in-out 0.5s infinite; }
+      .vcDn-h3 { transform-origin: 18px 62px; animation: vcDnHeart 2.6s ease-in-out 1.0s infinite; }
+      .vcDn-h4 { transform-origin: 102px 60px; animation: vcDnHeart 2.3s ease-in-out 0.3s infinite; }
+      .vcDn-sp1 { transform-origin: 30px 18px; animation: vcDnSparkle 2.0s ease-in-out infinite; }
+      .vcDn-sp2 { transform-origin: 90px 16px; animation: vcDnSparkle 2.0s ease-in-out 0.7s infinite; }
+
+      @keyframes vcDnFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-7px); }
+      }
+      @keyframes vcDnFlapL {
+        0% { transform: rotate(-10deg); }
+        100% { transform: rotate(18deg); }
+      }
+      @keyframes vcDnFlapR {
+        0% { transform: rotate(10deg); }
+        100% { transform: rotate(-18deg); }
+      }
+      @keyframes vcDnHeart {
+        0%, 100% { transform: translateY(0) scale(0.9); opacity: 0.85; }
+        50% { transform: translateY(-7px) scale(1.15); opacity: 1; }
+      }
+      @keyframes vcDnSparkle {
+        0%, 100% { transform: scale(0.7); opacity: 0.5; }
+        50% { transform: scale(1.25); opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- Bursting Pink-Red Hearts and Sparkles -->
+  <path class="vcDn-h1" d="M20 38 C11 31, 10 21, 16 21 C18 21, 19.5 22.5, 20 24.5 C20.5 22.5, 22 21, 24 21 C30 21, 29 31, 20 38 Z" fill="#f43f5e" stroke="#9f1239" stroke-width="1.3"/>
+  <path class="vcDn-h2" d="M100 36 C91 29, 90 19, 96 19 C98 19, 99.5 20.5, 100 22.5 C100.5 20.5, 102 19, 104 19 C110 19, 109 29, 100 36 Z" fill="#fb7185" stroke="#9f1239" stroke-width="1.3"/>
+  <path class="vcDn-h3" d="M18 68 C12 63, 11 56, 15.5 56 C16.8 56, 17.6 57, 18 58.2 C18.4 57, 19.2 56, 20.5 56 C25 56, 24 63, 18 68 Z" fill="#fda4af" stroke="#e11d48" stroke-width="1.1"/>
+  <path class="vcDn-h4" d="M102 66 C96 61, 95 54, 99.5 54 C100.8 54, 101.6 55, 102 56.2 C102.4 55, 103.2 54, 104.5 54 C109 54, 108 61, 102 66 Z" fill="#f43f5e" stroke="#881337" stroke-width="1.1"/>
+  <polygon class="vcDn-sp1" points="30,13 31.5,16.5 35,18 31.5,19.5 30,23 28.5,19.5 25,18 28.5,16.5" fill="#fde047"/>
+  <polygon class="vcDn-sp2" points="90,11 91.5,14.5 95,16 91.5,17.5 90,21 88.5,17.5 85,16 88.5,14.5" fill="#fde047"/>
+
+  <!-- Soft rosy cloud shadow -->
+  <ellipse cx="60" cy="109" rx="26" ry="5" fill="#881337" opacity="0.26"/>
+
+  <g class="vcDn-body">
+    <!-- Feathered Angel Wings -->
+    <g class="vcDn-wing-l">
+      <path d="M42 66 C18 52, 14 72, 28 78 C20 82, 26 90, 42 80 Z" fill="#ffffff" stroke="#fb7185" stroke-width="1.8"/>
+    </g>
+    <g class="vcDn-wing-r">
+      <path d="M78 66 C102 52, 106 72, 92 78 C100 82, 94 90, 78 80 Z" fill="#ffffff" stroke="#fb7185" stroke-width="1.8"/>
+    </g>
+
+    <!-- Chibi Feet -->
+    <ellipse cx="52" cy="99" rx="5.5" ry="4" fill="#fed7aa" stroke="#9a3412" stroke-width="1.5"/>
+    <ellipse cx="68" cy="99" rx="5.5" ry="4" fill="#fed7aa" stroke="#9a3412" stroke-width="1.5"/>
+
+    <!-- Silk Cherub Toga + Pink Ribbon Sash -->
+    <path d="M42 66 L78 66 L82 94 Q60 98 38 94 Z" fill="url(#vcDnToga)" stroke="#f43f5e" stroke-width="1.8"/>
+    <path d="M44 68 L76 88" stroke="#f43f5e" stroke-width="4.5" stroke-linecap="round"/>
+
+    <!-- Chibi Head -->
+    <circle cx="60" cy="46" r="22" fill="#ffedd5" stroke="#9a3412" stroke-width="2"/>
+
+    <!-- Curly Golden Hair and Floating Halo -->
+    <ellipse cx="60" cy="15" rx="14" ry="4" fill="none" stroke="#facc15" stroke-width="2.4"/>
+    <path d="M37 42 C34 24, 52 18, 61 23 C71 18, 86 25, 83 42 C78 34, 70 31, 60 33 C50 31, 42 34, 37 42 Z" fill="url(#vcDnHair)" stroke="#b45309" stroke-width="1.8"/>
+    <circle cx="40" cy="34" r="5.5" fill="url(#vcDnHair)" stroke="#b45309" stroke-width="1.5"/>
+    <circle cx="80" cy="34" r="5.5" fill="url(#vcDnHair)" stroke="#b45309" stroke-width="1.5"/>
+    <circle cx="60" cy="26" r="6" fill="url(#vcDnHair)" stroke="#b45309" stroke-width="1.5"/>
+
+    <!-- Happy Smiling '^ ^' Eyes -->
+    <path d="M46 48 Q51 42 56 48" fill="none" stroke="#881337" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M64 48 Q69 42 74 48" fill="none" stroke="#881337" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Rosy Blush and Joyful Smile -->
+    <ellipse cx="44" cy="53" rx="4.5" ry="2.4" fill="#fb7185" opacity="0.75"/>
+    <ellipse cx="76" cy="53" rx="4.5" ry="2.4" fill="#fb7185" opacity="0.75"/>
+    <path d="M55 53 Q60 59 65 53" fill="none" stroke="#9a3412" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Wax-Sealed Love Letter hugged in front -->
+    <g>
+      <rect x="44" y="69" width="32" height="22" rx="3" fill="#ffffff" stroke="#f43f5e" stroke-width="1.8"/>
+      <polyline points="45,70 60,82 75,70" fill="none" stroke="#fb7185" stroke-width="1.6" stroke-linejoin="round"/>
+      <!-- Red Heart Wax Seal -->
+      <path d="M60 86 C56 83, 55.5 79, 58.2 79 C59.2 79, 59.8 79.6, 60 80.5 C60.2 79.6, 60.8 79, 61.8 79 C64.5 79, 64 83, 60 86 Z" fill="#e11d48" stroke="#881337" stroke-width="0.9"/>
+      <!-- Chibi Hands hugging letter -->
+      <circle cx="43" cy="80" r="4.2" fill="#ffedd5" stroke="#9a3412" stroke-width="1.5"/>
+      <circle cx="77" cy="80" r="4.2" fill="#ffedd5" stroke="#9a3412" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

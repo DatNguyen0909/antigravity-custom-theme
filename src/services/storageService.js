@@ -79,6 +79,7 @@ const StorageService = (function () {
                     lang: config.lang,
                     sfxEnabled: config.sfxEnabled,
                     bgmEnabled: config.bgmEnabled,
+                    aiChimeEnabled: config.aiChimeEnabled,
                     soundVolume: config.soundVolume
                 });
                 const changes = {};

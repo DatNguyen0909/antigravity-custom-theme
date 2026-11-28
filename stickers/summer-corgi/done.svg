@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="scDnFur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="scDnRing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <style>
+      .scDn-dog { transform-origin: 56px 104px; animation: scDnDance 2.0s ease-in-out infinite; }
+      .scDn-drink { transform-origin: 86px 68px; animation: scDnToast 2.0s ease-in-out infinite; }
+      .scDn-fl1 { transform-origin: 18px 28px; animation: scDnFlower 2.6s ease-in-out infinite; }
+      .scDn-fl2 { transform-origin: 102px 26px; animation: scDnFlower 2.8s ease-in-out 0.6s infinite; }
+      .scDn-sp1 { transform-origin: 24px 58px; animation: scDnSparkle 2.0s ease-in-out infinite; }
+      .scDn-sp2 { transform-origin: 104px 66px; animation: scDnSparkle 2.2s ease-in-out 0.5s infinite; }
+
+      @keyframes scDnDance {
+        0%, 100% { transform: translateY(0) rotate(-3deg); }
+        25% { transform: translateY(-6px) rotate(0deg); }
+        50% { transform: translateY(0) rotate(3deg); }
+        75% { transform: translateY(-6px) rotate(0deg); }
+      }
+      @keyframes scDnToast {
+        0%, 100% { transform: rotate(-6deg) translateY(0); }
+        50% { transform: rotate(8deg) translateY(-5px); }
+      }
+      @keyframes scDnFlower {
+        0%, 100% { transform: scale(0.92) rotate(-8deg); }
+        50% { transform: scale(1.1) rotate(12deg); }
+      }
+      @keyframes scDnSparkle {
+        0%, 100% { transform: scale(0.7); opacity: 0.55; }
+        50% { transform: scale(1.25); opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- Tropical Hibiscus Flowers and Sparkles -->
+  <g class="scDn-fl1">
+    <circle cx="18" cy="22" r="4.5" fill="#fb7185"/>
+    <circle cx="24" cy="26" r="4.5" fill="#f43f5e"/>
+    <circle cx="22" cy="33" r="4.5" fill="#fb7185"/>
+    <circle cx="14" cy="33" r="4.5" fill="#f43f5e"/>
+    <circle cx="12" cy="26" r="4.5" fill="#fb7185"/>
+    <circle cx="18" cy="28" r="2.6" fill="#fde047"/>
+  </g>
+  <g class="scDn-fl2">
+    <circle cx="102" cy="20" r="4.2" fill="#f472b6"/>
+    <circle cx="108" cy="24" r="4.2" fill="#ec4899"/>
+    <circle cx="106" cy="30" r="4.2" fill="#f472b6"/>
+    <circle cx="98" cy="30" r="4.2" fill="#ec4899"/>
+    <circle cx="96" cy="24" r="4.2" fill="#f472b6"/>
+    <circle cx="102" cy="26" r="2.4" fill="#fef08a"/>
+  </g>
+  <polygon class="scDn-sp1" points="24,52 25.8,56.2 30,58 25.8,59.8 24,64 22.2,59.8 18,58 22.2,56.2" fill="#fde047"/>
+  <polygon class="scDn-sp2" points="104,61 105.5,64.5 109,66 105.5,67.5 104,71 102.5,67.5 99,66 102.5,64.5" fill="#38bdf8"/>
+
+  <!-- Sandy beach shadow -->
+  <ellipse cx="56" cy="109" rx="34" ry="5.5" fill="#78350f" opacity="0.3"/>
+
+  <g class="scDn-dog">
+    <!-- Stubby Dancing Corgi Paws -->
+    <ellipse cx="42" cy="103" rx="7.5" ry="4.5" transform="rotate(-10 42 103)" fill="#fffbeb" stroke="#78350f" stroke-width="1.8"/>
+    <ellipse cx="70" cy="103" rx="7.5" ry="4.5" transform="rotate(10 70 103)" fill="#fffbeb" stroke="#78350f" stroke-width="1.8"/>
+
+    <!-- Tropical Turquoise Hawaiian Shirt Torso -->
+    <rect x="32" y="66" width="48" height="32" rx="14" fill="#06b6d4" stroke="#0e7490" stroke-width="2"/>
+    <circle cx="42" cy="76" r="3" fill="#fb7185"/>
+    <circle cx="68" cy="78" r="3" fill="#fde047"/>
+    <path d="M50 66 L56 76 L62 66" fill="#fffbeb" stroke="#0e7490" stroke-width="1.5"/>
+
+    <!-- Yellow Duckie Swim Ring around waist -->
+    <ellipse cx="56" cy="90" rx="33" ry="11" fill="url(#scDnRing)" stroke="#b45309" stroke-width="2"/>
+    <circle cx="28" cy="83" r="8" fill="#fde047" stroke="#b45309" stroke-width="1.8"/>
+    <ellipse cx="21" cy="84" rx="4.2" ry="2.4" fill="#f97316" stroke="#9a3412" stroke-width="1.2"/>
+    <circle cx="27" cy="81.5" r="1.5" fill="#1e293b"/>
+
+    <!-- Left Paw raised dancing -->
+    <ellipse cx="28" cy="68" rx="6" ry="4.2" transform="rotate(-35 28 68)" fill="#fffbeb" stroke="#78350f" stroke-width="1.6"/>
+
+    <!-- Big Pointy Corgi Ears -->
+    <polygon points="30,42 24,14 46,30" fill="url(#scDnFur)" stroke="#78350f" stroke-width="2" stroke-linejoin="round"/>
+    <polygon points="32,39 28,20 42,31" fill="#fda4af"/>
+    <polygon points="82,42 88,14 66,30" fill="url(#scDnFur)" stroke="#78350f" stroke-width="2" stroke-linejoin="round"/>
+    <polygon points="80,39 84,20 70,31" fill="#fda4af"/>
+
+    <!-- Fluffy Corgi Head -->
+    <ellipse cx="56" cy="48" rx="27" ry="23" fill="url(#scDnFur)" stroke="#78350f" stroke-width="2.2"/>
+    <path d="M56 28 C50 40, 40 48, 40 58 C40 66, 48 70, 56 70 C64 70, 72 66, 72 58 C72 48, 62 40, 56 28 Z" fill="#fffbeb"/>
+
+    <!-- Cool Dark Sunglasses -->
+    <line x1="31" y1="45" x2="81" y2="45" stroke="#0f172a" stroke-width="2.5"/>
+    <rect x="34" y="42" width="18" height="11" rx="3" fill="#0f172a" stroke="#f8fafc" stroke-width="1.2"/>
+    <rect x="60" y="42" width="18" height="11" rx="3" fill="#0f172a" stroke="#f8fafc" stroke-width="1.2"/>
+    <line x1="37" y1="44" x2="42" y2="50" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="63" y1="44" x2="68" y2="50" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Rosy Cheeks, Cute Nose, Big Happy Open Smile and Pink Tongue -->
+    <ellipse cx="38" cy="56" rx="4" ry="2.2" fill="#fb7185" opacity="0.65"/>
+    <ellipse cx="74" cy="56" rx="4" ry="2.2" fill="#fb7185" opacity="0.65"/>
+    <ellipse cx="56" cy="55" rx="4.2" ry="3" fill="#1e293b"/>
+    <path d="M50 59 Q56 65 62 59" fill="none" stroke="#78350f" stroke-width="2" stroke-linecap="round"/>
+    <path d="M52 60 Q56 69 60 60 Z" fill="#fb7185" stroke="#9f1239" stroke-width="1.1"/>
+
+    <!-- Chilled Coconut Drink Raised High in Celebration -->
+    <g class="scDn-drink">
+      <line x1="92" y1="54" x2="99" y2="40" stroke="#f43f5e" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="92" cy="62" r="11" fill="#16a34a" stroke="#14532d" stroke-width="1.8"/>
+      <ellipse cx="92" cy="55" rx="7" ry="2.6" fill="#fefce8"/>
+      <!-- Pink cocktail umbrella -->
+      <path d="M78 47 Q86 38 94 47 Z" fill="#ec4899" stroke="#831843" stroke-width="1.2"/>
+      <line x1="86" y1="47" x2="90" y2="55" stroke="#92400e" stroke-width="1.5"/>
+      <!-- Raised Right Paw holding coconut -->
+      <ellipse cx="83" cy="68" rx="5.5" ry="4" fill="#fffbeb" stroke="#78350f" stroke-width="1.6"/>
+    </g>
+  </g>
+</svg>

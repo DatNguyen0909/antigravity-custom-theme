@@ -268,12 +268,12 @@
       background: var(--ag-theme-accent); color: #fff;
     }
 
-    /* Gallery View (All 63 SVGs) */
+    /* Gallery View (All 105 SVGs) */
     .gallery-view {
       display: none; flex: 1; overflow-y: auto; padding: 22px 26px 40px;
     }
     .gallery-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 16px;
     }
     .gal-card {
       border-radius: 14px; padding: 16px; background: rgba(15, 23, 42, 0.68);
@@ -281,16 +281,18 @@
     }
     body.ag-light-mode .gal-card { background: rgba(255,255,255,0.88); border-color: rgba(15,23,42,0.1); }
     .gal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; font-weight: 700; font-size: 14.5px; }
-    .gal-stages { display: grid; grid-template-columns: 90px 90px 1fr; gap: 10px; align-items: center; }
+    .gal-stages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; align-items: stretch; }
     .gal-box {
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       padding: 8px 6px; border-radius: 10px; background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07); min-height: 98px; text-align: center;
+      border: 1px solid rgba(255,255,255,0.07); min-height: 96px; text-align: center;
     }
+    .gal-box.is-wide { grid-column: 1 / -1; min-height: 88px; }
     body.ag-light-mode .gal-box { background: rgba(15,23,42,0.03); border-color: rgba(15,23,42,0.07); }
-    .gal-box img.sq { width: 64px; height: 64px; object-fit: contain; }
-    .gal-box img.wide { width: 100%; max-width: 185px; height: 68px; object-fit: contain; }
-    .gal-lbl { font-size: 10.5px; opacity: 0.72; margin-top: 6px; font-weight: 600; }
+    .gal-box img.sq { width: 58px; height: 58px; object-fit: contain; }
+    .gal-box img.wide { width: 100%; max-width: 240px; height: 68px; object-fit: contain; }
+    .gal-lbl { font-size: 10px; opacity: 0.75; margin-top: 5px; font-weight: 600; }
+    .ai-demo-bar { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-left: auto; }
 
     @media (max-width: 860px) {
       .shell { grid-template-columns: 1fr; grid-template-rows: auto auto 1fr; }
@@ -314,7 +316,7 @@
       </div>
       <div class="controls">
         <button class="seg-btn active" id="tab-sim">💬 Chat Simulator</button>
-        <button class="seg-btn" id="tab-gal">🎨 63-SVG Showcase</button>
+        <button class="seg-btn" id="tab-gal">🎨 105-SVG Showcase</button>
         <button class="seg-btn" id="season-btn" title="Auto-switch mascot by current season / holiday">🗓️ Auto-Season</button>
         <button class="seg-btn active" id="sfx-btn" title="Toggle mascot keystroke sound FX">🎹 SFX: ON</button>
         <button class="seg-btn" id="bgm-btn" title="Toggle theme studio background music">🎶 BGM: OFF</button>
@@ -357,6 +359,10 @@
       <section class="chat-sim" id="view-sim">
         <div class="hint-banner">
           <span id="hint-text"></span>
+          <div class="ai-demo-bar">
+            <button type="button" class="seg-btn" id="ai-think-btn" style="padding:4px 9px; font-size:11.5px;">🧠 AI Thinking</button>
+            <button type="button" class="seg-btn" id="ai-done-btn" style="padding:4px 9px; font-size:11.5px;">🎉 AI Done + Chime</button>
+          </div>
         </div>
 
         <div class="messages" id="msg-list">
@@ -409,7 +415,9 @@
       STICKERS[id] = {
         idle: './stickers/' + id + '/idle.svg',
         action: './stickers/' + id + '/action.svg',
-        typing: './stickers/' + id + '/typing.svg'
+        typing: './stickers/' + id + '/typing.svg',
+        thinking: './stickers/' + id + '/thinking.svg',
+        done: './stickers/' + id + '/done.svg'
       };
     });
   </script>
@@ -422,7 +430,9 @@
       const UI_TEXT = {
         en: {
           tabSim: '💬 Chat Simulator',
-          tabGal: '🎨 63-SVG Showcase',
+          tabGal: '🎨 105-SVG Showcase',
+          aiThinkBtn: '🧠 AI Thinking',
+          aiDoneBtn: '🎉 AI Done + Chime',
           seasonOff: '🗓️ Auto-Season',
           seasonOn: (lbl) => `🗓️ ${lbl}`,
           seasonCardTitle: '🗓️ Seasonal & Holiday Sync',
@@ -436,18 +446,22 @@
           bgmOff: '🎶 BGM: OFF',
           dim: 'Dim',
           sideTitle: (n) => `Choose Theme (${n} presets)`,
-          hint: '💡 <b>Try interacting:</b> Toggle <b>🎶 BGM: ON</b> to hear <b>21 Studio Acoustic &amp; Chiptune Soundtracks</b> • Type below for <b>bespoke keystroke FX</b> • Hover any bubble for the <b>panoramic stage</b>!',
+          hint: '💡 <b>Try interacting:</b> Type &amp; Send below (or click <b>🧠 AI Thinking / 🎉 AI Done</b>) to see dedicated AI reaction SVGs &amp; Chime • Toggle <b>🎶 BGM: ON</b>!',
           bubble1: 'Hover over this chat bubble to trigger the full panoramic hover stage! ✨',
-          aiMsg: 'Welcome! Explore all <b>21 Chibi themes</b> on the left — turn on <b>🎶 BGM</b> to experience our <b>Velvet Studio Audio Engine</b> (try <b>🐾 Midnight Cat’s 2-Movement Rainy Piano</b>, <b>⛄ Christmas Piano</b>, <b>♟ Jazz Lounge</b> &amp; <b>🗡️ 8-Bit Chiptune</b>), or <b>type below</b>!',
-          placeholder: 'Type here to watch the mascot react to every keystroke...',
+          aiMsg: 'Welcome! Explore all <b>21 Chibi themes (105 animated SVGs)</b> on the left — click <b>🧠 AI Thinking</b> / <b>🎉 AI Done</b> or <b>send a message below</b> to watch your mascot react to AI states with bespoke SVGs &amp; Chime!',
+          placeholder: 'Type & press Enter to test Typing -> AI Thinking -> AI Done...',
           send: 'Send ↵',
-          galIdle: 'Idle + 15s Skit',
-          galTyping: 'While Typing',
-          galHover: 'Hover Stage'
+          galIdle: 'Idle + 15s',
+          galTyping: 'Typing',
+          galThinking: 'AI Thinking',
+          galDone: 'AI Done',
+          galHover: 'Hover Panoramic Stage'
         },
         vi: {
           tabSim: '💬 Mô phỏng khung Chat',
-          tabGal: '🎨 Trưng bày 63 SVG',
+          tabGal: '🎨 Trưng bày 105 SVG',
+          aiThinkBtn: '🧠 AI Suy nghĩ',
+          aiDoneBtn: '🎉 AI Xong + Chuông',
           seasonOff: '🗓️ Theo mùa',
           seasonOn: (lbl) => `🗓️ ${lbl}`,
           seasonCardTitle: '🗓️ Đồng bộ theo Mùa & Lễ hội',
@@ -461,14 +475,16 @@
           bgmOff: '🎶 Nhạc: TẮT',
           dim: 'Độ tối',
           sideTitle: (n) => `Chọn chủ đề (${n} mẫu)`,
-          hint: '💡 <b>Thử tương tác:</b> Bật <b>🎶 Nhạc: BẬT</b> để thưởng thức <b>21 bản hòa tấu Piano, Guitar, Đàn Tranh &amp; 8-Bit</b> • Gõ chữ bên dưới để nghe <b>tiếng phím riêng</b> • Rê chuột xem <b>sân khấu ngang</b>!',
+          hint: '💡 <b>Thử tương tác:</b> Gõ &amp; Gửi tin nhắn (hoặc bấm <b>🧠 AI Suy nghĩ / 🎉 AI Xong</b>) để xem SVG phản ứng AI + chuông báo • Bật <b>🎶 Nhạc: BẬT</b>!',
           bubble1: 'Rê chuột vào bong bóng chat này để xem hoạt cảnh bay lượn / hành động ngang nhé! ✨',
-          aiMsg: 'Chào bạn! Khám phá trọn bộ <b>21 chủ đề Chibi</b> ở cột trái — bật thử <b>🎶 Nhạc: BẬT</b> để nghe <b>Velvet Studio Audio</b> (đặc biệt là <b>🐾 Mèo Than Đêm Mưa 2 Chương</b>, <b>⛄ Piano Giáng Sinh</b>, <b>♟ Jazz Lounge</b> &amp; <b>🗡️ Chiptune 8-bit</b>), hoặc <b>gõ vào ô bên dưới</b> nhé!',
-          placeholder: 'Gõ thử vào đây để xem linh vật phản ứng theo từng phím gõ...',
+          aiMsg: 'Chào bạn! Khám phá trọn bộ <b>21 chủ đề Chibi (105 file SVG động)</b> ở cột trái — bấm <b>🧠 AI Suy nghĩ</b> / <b>🎉 AI Xong</b> hoặc <b>gửi thử tin nhắn bên dưới</b> để xem linh vật đổi sang SVG suy nghĩ &amp; ăn mừng kèm chuông báo nhé!',
+          placeholder: 'Gõ & bấm Enter để thử trọn chu trình: Gõ phím → AI Suy nghĩ → AI Xong...',
           send: 'Gửi ↵',
           galIdle: 'Tĩnh + 15s',
-          galTyping: 'Khi đang gõ',
-          galHover: 'Rê chuột (Sân khấu)'
+          galTyping: 'Đang gõ',
+          galThinking: 'AI Suy nghĩ',
+          galDone: 'AI Xong',
+          galHover: 'Rê chuột (Sân khấu ngang)'
         }
       };
 
@@ -490,6 +506,8 @@
       let isLight = false;
       let bgDim = 65;
       let lang = detectInitialLang();
+      let aiSimState = 'idle'; // 'idle' | 'thinking' | 'done'
+      let aiSimTimer = null;
       const typeState = { keys: [], lastParticle: 0, pauseTimer: null, clearTimer: null };
 
       const bgEl = document.getElementById('ag-custom-bg');
@@ -578,7 +596,52 @@
       function syncInputSticker() {
         const t = getTheme();
         const typingNow = composer.classList.contains('ag-typing') && !composer.classList.contains('ag-typing-pause');
-        inputSticker.src = typingNow ? t.typingSticker : t.sticker;
+        const aiThinkNow = !typingNow && aiSimState === 'thinking' && !!t.thinkingSticker;
+        const aiDoneNow = !typingNow && aiSimState === 'done' && !!t.doneSticker;
+
+        composer.classList.toggle('ag-ai-thinking', aiSimState === 'thinking' && !typingNow);
+        composer.classList.toggle('ag-ai-done', aiSimState === 'done' && !typingNow);
+        composer.classList.toggle('ag-has-ai-svg', aiThinkNow || aiDoneNow);
+
+        let want = t.sticker;
+        if (typingNow) want = t.typingSticker;
+        else if (aiThinkNow) want = t.thinkingSticker;
+        else if (aiDoneNow) want = t.doneSticker;
+        inputSticker.src = want;
+
+        const existingBadge = composer.querySelector(':scope > .ag-ai-badge');
+        const effState = typingNow ? 'idle' : aiSimState;
+        if (effState === 'thinking' || effState === 'done') {
+          const badge = existingBadge || document.createElement('span');
+          badge.className = 'ag-ai-badge ' + (effState === 'done' ? 'is-done' : 'is-thinking');
+          badge.textContent = effState === 'thinking'
+            ? (lang === 'en' ? t.aiThinkingEn : t.aiThinking)
+            : (lang === 'en' ? t.aiDoneEn : t.aiDone);
+          if (!existingBadge) composer.appendChild(badge);
+        } else if (existingBadge) {
+          existingBadge.remove();
+        }
+
+        const tb = document.getElementById('ai-think-btn');
+        const db = document.getElementById('ai-done-btn');
+        if (tb) tb.classList.toggle('active', aiSimState === 'thinking');
+        if (db) db.classList.toggle('active', aiSimState === 'done');
+      }
+
+      function setAiSimState(nextState, autoResetMs) {
+        clearTimeout(aiSimTimer);
+        aiSimState = nextState;
+        syncInputSticker();
+        if (nextState === 'done') {
+          spawnHoverBurst(composer, activeId);
+          SoundService.playDoneChime(activeId, true);
+        }
+        if (autoResetMs > 0) {
+          aiSimTimer = setTimeout(() => {
+            aiSimState = 'idle';
+            syncInputSticker();
+          }, autoResetMs);
+        }
       }
 
       function buildCards() {
@@ -636,6 +699,14 @@
                 <div class="gal-lbl">${ui.galTyping}</div>
               </div>
               <div class="gal-box">
+                <img class="sq" src="${t.thinkingSticker}" alt="${loc.name} thinking" />
+                <div class="gal-lbl">${ui.galThinking}</div>
+              </div>
+              <div class="gal-box">
+                <img class="sq" src="${t.doneSticker}" alt="${loc.name} done" />
+                <div class="gal-lbl">${ui.galDone}</div>
+              </div>
+              <div class="gal-box is-wide">
                 <img class="wide" src="${t.actionSticker}" alt="${loc.name} hover" />
                 <div class="gal-lbl">${ui.galHover}</div>
               </div>
@@ -712,6 +783,8 @@
         document.documentElement.lang = lang;
         document.getElementById('tab-sim').textContent = ui.tabSim;
         document.getElementById('tab-gal').textContent = ui.tabGal;
+        document.getElementById('ai-think-btn').textContent = ui.aiThinkBtn;
+        document.getElementById('ai-done-btn').textContent = ui.aiDoneBtn;
         document.getElementById('dim-title').textContent = ui.dim;
         document.getElementById('lang-select').value = lang;
         document.getElementById('side-title').textContent = ui.sideTitle(THEMES.length);
@@ -856,6 +929,16 @@
         msgList.scrollTop = msgList.scrollHeight;
         inputEl.value = '';
         clearTyping();
+        // Simulate AI Thinking -> AI Done + Chime cycle
+        setAiSimState('thinking', 0);
+        aiSimTimer = setTimeout(() => setAiSimState('done', 5000), 2200);
+      });
+
+      document.getElementById('ai-think-btn').addEventListener('click', () => {
+        setAiSimState(aiSimState === 'thinking' ? 'idle' : 'thinking', 0);
+      });
+      document.getElementById('ai-done-btn').addEventListener('click', () => {
+        setAiSimState('done', 5000);
       });
 
       // Top & Sidebar Seasonal Sync Controls

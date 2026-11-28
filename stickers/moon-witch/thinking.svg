@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="mwThHat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581c87"/>
+      <stop offset="55%" stop-color="#3b0764"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="mwThHair" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5d0fe"/>
+      <stop offset="55%" stop-color="#d8b4fe"/>
+      <stop offset="100%" stop-color="#9333ea"/>
+    </linearGradient>
+    <linearGradient id="mwThSkin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="100%" stop-color="#fde6d8"/>
+    </linearGradient>
+    <linearGradient id="mwThGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="mwThEye" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4c1d95"/>
+      <stop offset="55%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#f0abfc"/>
+    </linearGradient>
+    <radialGradient id="mwThOrb" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#e879f9"/>
+      <stop offset="75%" stop-color="#9333ea"/>
+      <stop offset="100%" stop-color="#3b0764"/>
+    </radialGradient>
+    <style>
+      .mwThCharm { transform-origin: 91px 20px; animation: mwThCharmAnim 2.4s ease-in-out infinite alternate; }
+      .mwThHairL { transform-origin: 30px 58px; animation: mwThHairLAnim 2.8s ease-in-out infinite alternate; }
+      .mwThHairR { transform-origin: 90px 58px; animation: mwThHairRAnim 2.8s ease-in-out infinite alternate; }
+      .mwThSwirl { transform-origin: 60px 93px; animation: mwThSwirlAnim 2.8s linear infinite; }
+      .mwThOrbit { transform-origin: 60px 93px; animation: mwThOrbitAnim 3.2s linear infinite; }
+      .mwThOrbGlow { transform-origin: 60px 93px; animation: mwThGlowAnim 2.2s ease-in-out infinite alternate; }
+      .mwThHandL { transform-origin: 40px 92px; animation: mwThHandLAnim 2.4s ease-in-out infinite alternate; }
+      .mwThHandR { transform-origin: 80px 92px; animation: mwThHandRAnim 2.4s ease-in-out infinite alternate; }
+
+      @keyframes mwThCharmAnim { 0% { transform: rotate(-8deg); } 100% { transform: rotate(10deg); } }
+      @keyframes mwThHairLAnim { 0% { transform: rotate(0deg); } 100% { transform: rotate(4deg); } }
+      @keyframes mwThHairRAnim { 0% { transform: rotate(0deg); } 100% { transform: rotate(-4deg); } }
+      @keyframes mwThSwirlAnim { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      @keyframes mwThOrbitAnim { 0% { transform: rotate(0deg); } 100% { transform: rotate(-360deg); } }
+      @keyframes mwThGlowAnim { 0% { transform: scale(0.94); opacity: 0.7; } 100% { transform: scale(1.08); opacity: 1; } }
+      @keyframes mwThHandLAnim { 0% { transform: translateY(0px); } 100% { transform: translateY(-2.5px); } }
+      @keyframes mwThHandRAnim { 0% { transform: translateY(-2.5px); } 100% { transform: translateY(0px); } }
+    </style>
+  </defs>
+
+  <!-- Back Hair -->
+  <path class="mwThHairL" d="M 24 54 C 14 68, 12 88, 22 96 C 26 90, 28 82, 32 78 Z" fill="url(#mwThHair)" stroke="#581c87" stroke-width="1.5"/>
+  <path class="mwThHairR" d="M 96 54 C 106 68, 108 88, 98 96 C 94 90, 92 82, 88 78 Z" fill="url(#mwThHair)" stroke="#581c87" stroke-width="1.5"/>
+
+  <!-- Robe -->
+  <path d="M 32 80 C 30 92, 36 100, 60 100 C 84 100, 90 92, 88 80 Z" fill="url(#mwThHat)" stroke="#a855f7" stroke-width="1.5"/>
+  <path d="M 46 82 L 60 94 L 74 82 Z" fill="#f3e8ff"/>
+
+  <!-- Face -->
+  <path d="M 32 58 C 32 42, 44 36, 60 36 C 76 36, 88 42, 88 58 C 90 74, 78 83, 60 83 C 42 83, 30 74, 32 58 Z" fill="url(#mwThSkin)" stroke="#701a75" stroke-width="1.5"/>
+
+  <!-- Focused Sparkling Violet Eyes -->
+  <ellipse cx="45" cy="63" rx="7.2" ry="7.6" fill="url(#mwThEye)"/>
+  <path d="M 36 57.5 L 53 59.5" fill="none" stroke="#3b0764" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="45" cy="64" rx="3.4" ry="4" fill="#2e1065"/>
+  <circle cx="43" cy="61" r="2.2" fill="#ffffff"/>
+  <polygon points="45,67 46,69 48,69.5 46,70 45,72 44,70 42,69.5 44,69" fill="#fef08a"/>
+
+  <ellipse cx="75" cy="63" rx="7.2" ry="7.6" fill="url(#mwThEye)"/>
+  <path d="M 84 57.5 L 67 59.5" fill="none" stroke="#3b0764" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="75" cy="64" rx="3.4" ry="4" fill="#2e1065"/>
+  <circle cx="73" cy="61" r="2.2" fill="#ffffff"/>
+  <polygon points="75,67 76,69 78,69.5 76,70 75,72 74,70 72,69.5 74,69" fill="#fef08a"/>
+
+  <!-- Blush va Focused Mouth -->
+  <ellipse cx="35" cy="70" rx="4.8" ry="2.6" fill="#f472b6" opacity="0.6"/>
+  <ellipse cx="85" cy="70" rx="4.8" ry="2.6" fill="#f472b6" opacity="0.6"/>
+  <circle cx="60" cy="73.5" r="2.1" fill="#9d174d"/>
+
+  <!-- Side Bangs va Front Bangs -->
+  <path d="M 28 54 C 24 66, 26 82, 33 88 C 34 78, 34 66, 36 58 Z" fill="url(#mwThHair)" stroke="#581c87" stroke-width="1.3"/>
+  <path d="M 92 54 C 96 66, 94 82, 87 88 C 86 78, 86 66, 84 58 Z" fill="url(#mwThHair)" stroke="#581c87" stroke-width="1.3"/>
+  <path d="M 32 48 C 36 58, 44 52, 48 60 C 52 50, 58 58, 62 60 C 66 50, 74 58, 76 52 C 82 56, 86 58, 88 48 Z" fill="url(#mwThHair)" stroke="#581c87" stroke-width="1.3"/>
+
+  <!-- Witch Hat -->
+  <ellipse cx="60" cy="44" rx="46" ry="11" fill="#1e1b4b"/>
+  <path d="M 26 42 C 34 22, 52 8, 78 6 C 88 6, 96 14, 92 22 C 84 18, 76 18, 72 24 C 76 30, 82 36, 92 42 Z" fill="url(#mwThHat)" stroke="#c084fc" stroke-width="1.8" stroke-linejoin="round"/>
+  <g class="mwThCharm">
+    <line x1="91" y1="20" x2="98" y2="30" stroke="#fbbf24" stroke-width="1.3"/>
+    <path d="M 103 28 A 7 7 0 1 1 94 37 A 5.5 5.5 0 1 0 103 28 Z" fill="url(#mwThGold)" stroke="#fef08a" stroke-width="0.8"/>
+  </g>
+  <path d="M 29 40 Q 60 47 90 40" fill="none" stroke="#ec4899" stroke-width="5" stroke-linecap="round"/>
+  <rect x="53" y="36" width="14" height="11" rx="2.5" fill="url(#mwThGold)" stroke="#92400e" stroke-width="1.2"/>
+  <rect x="56" y="39" width="8" height="5" rx="1" fill="#581c87"/>
+  <path d="M 12 44 C 28 34, 92 34, 108 44 C 94 52, 26 52, 12 44 Z" fill="url(#mwThHat)" stroke="#c084fc" stroke-width="1.6"/>
+  <polygon points="48,22 49.5,25 53,26 49.5,27.5 48,31 46.5,27.5 43,26 46.5,25" fill="#fef08a"/>
+
+  <!-- Glowing Purple Crystal Ball va Orbiting Mini Stars -->
+  <g class="mwThOrbGlow">
+    <circle cx="60" cy="93" r="18" fill="#c084fc" opacity="0.28"/>
+  </g>
+  <!-- Stand -->
+  <path d="M 49 107 Q 60 103 71 107 L 73 111 Q 60 113 47 111 Z" fill="url(#mwThGold)" stroke="#92400e" stroke-width="1.2"/>
+  <!-- Crystal Sphere -->
+  <circle cx="60" cy="93" r="13.5" fill="url(#mwThOrb)" stroke="#f0abfc" stroke-width="1.5"/>
+  <g class="mwThSwirl">
+    <path d="M 52 93 A 8 8 0 0 1 66 88" fill="none" stroke="#fef08a" stroke-width="1.6" stroke-linecap="round" opacity="0.85"/>
+    <path d="M 68 94 A 8 8 0 0 1 54 98" fill="none" stroke="#f5d0fe" stroke-width="1.6" stroke-linecap="round" opacity="0.85"/>
+  </g>
+  <ellipse cx="55" cy="87" rx="3.5" ry="2" transform="rotate(-25 55 87)" fill="#ffffff" opacity="0.75"/>
+
+  <!-- Orbiting Mini Stars -->
+  <g class="mwThOrbit">
+    <ellipse cx="60" cy="93" rx="22" ry="7.5" fill="none" stroke="#e879f9" stroke-width="1.1" stroke-dasharray="5 5" opacity="0.75"/>
+    <polygon points="82,90 83,92.5 85.5,93 83,94 82,96.5 81,94 78.5,93 81,92.5" fill="#fef08a"/>
+    <polygon points="38,90 39,92.5 41.5,93 39,94 38,96.5 37,94 34.5,93 37,92.5" fill="#f0abfc"/>
+    <circle cx="60" cy="85.5" r="1.8" fill="#ffffff"/>
+  </g>
+
+  <!-- Hovering Hands -->
+  <g class="mwThHandL">
+    <ellipse cx="41" cy="92" rx="6" ry="4.8" transform="rotate(-15 41 92)" fill="url(#mwThSkin)" stroke="#701a75" stroke-width="1.3"/>
+  </g>
+  <g class="mwThHandR">
+    <ellipse cx="79" cy="92" rx="6" ry="4.8" transform="rotate(15 79 92)" fill="url(#mwThSkin)" stroke="#701a75" stroke-width="1.3"/>
+  </g>
+</svg>

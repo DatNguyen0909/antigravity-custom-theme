@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="smDnSnow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="65%" stop-color="#f0f9ff"/>
+      <stop offset="100%" stop-color="#bae6fd"/>
+    </linearGradient>
+    <linearGradient id="smDnRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="55%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <linearGradient id="smDnGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="smDnGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="55%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <linearGradient id="smDnCarrot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <style>
+      .smDn-body { transform-origin: 60px 104px; animation: smDnJump 2.2s ease-in-out infinite; }
+      .smDn-bell { transform-origin: 84px 72px; animation: smDnRing 1.6s ease-in-out infinite; }
+      .smDn-lid { transform-origin: 26px 76px; animation: smDnPop 2.4s ease-in-out infinite; }
+      .smDn-stars { transform-origin: 28px 66px; animation: smDnBurst 2.4s ease-out infinite; }
+      .smDn-twinkle { transform-origin: 102px 24px; animation: smDnTwinkle 2.1s ease-in-out infinite; }
+
+      @keyframes smDnJump { 0%, 100% { transform: translateY(0) scale(1, 1); } 50% { transform: translateY(-5px) scale(1.02, 0.98); } }
+      @keyframes smDnRing { 0%, 100% { transform: rotate(-10deg); } 25% { transform: rotate(16deg); } 50% { transform: rotate(-14deg); } 75% { transform: rotate(12deg); } }
+      @keyframes smDnPop { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 45%, 70% { transform: translate(-7px, -13px) rotate(-32deg); } }
+      @keyframes smDnBurst { 0%, 100% { opacity: 0.3; transform: translateY(4px) scale(0.7); } 50% { opacity: 1; transform: translateY(-8px) scale(1.12); } }
+      @keyframes smDnTwinkle { 0%, 100% { opacity: 0.4; transform: scale(0.6); } 50% { opacity: 1; transform: scale(1.2); } }
+    </style>
+  </defs>
+
+  <!-- Snowy ground shadow -->
+  <ellipse cx="60" cy="109" rx="36" ry="6.5" fill="#052e16" opacity="0.45"/>
+  <ellipse cx="60" cy="108" rx="28" ry="4" fill="#e0f2fe" opacity="0.75"/>
+
+  <g class="smDn-body">
+    <!-- Left Twig Arm cheering -->
+    <g stroke="#78350f" stroke-width="3" stroke-linecap="round" fill="none">
+      <path d="M 38 72 L 22 56"/>
+      <path d="M 27 61 L 24 52"/>
+      <path d="M 29 63 L 19 63"/>
+    </g>
+
+    <!-- Right Twig Arm Ringing Golden Bell -->
+    <g class="smDn-bell">
+      <g stroke="#78350f" stroke-width="3" stroke-linecap="round" fill="none">
+        <path d="M 82 72 L 99 56"/>
+        <path d="M 93 61 L 97 52"/>
+      </g>
+      <!-- Golden Bell -->
+      <g transform="translate(101, 52) rotate(18)">
+        <path d="M -8 4 C -8 -6, -5 -10, 0 -10 C 5 -10, 8 -6, 8 4 L 10 8 L -10 8 Z" fill="url(#smDnGold)" stroke="#92400e" stroke-width="1.3"/>
+        <circle cx="0" cy="9.5" r="2.6" fill="#b45309"/>
+        <circle cx="0" cy="-11.5" r="2" fill="#facc15" stroke="#92400e" stroke-width="1"/>
+        <!-- Sound wave arcs -->
+        <path d="M -14 -4 Q -17 0 -14 4 M 14 -4 Q 17 0 14 4" fill="none" stroke="#fef08a" stroke-width="1.8" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- Lower Snowball Body -->
+    <circle cx="60" cy="82" r="24.5" fill="url(#smDnSnow)" stroke="#7dd3fc" stroke-width="1.2"/>
+    <circle cx="60" cy="75" r="2.6" fill="#1e293b"/>
+    <circle cx="60" cy="84" r="2.6" fill="#1e293b"/>
+    <circle cx="60" cy="93" r="2.6" fill="#1e293b"/>
+    <path d="M 70 74 Q 76 70 78 75 Q 73 78 70 74 Z" fill="#16a34a"/>
+    <circle cx="70" cy="75" r="2" fill="#ef4444"/>
+
+    <!-- Upper Snowball Head -->
+    <circle cx="60" cy="50" r="20" fill="url(#smDnSnow)" stroke="#7dd3fc" stroke-width="1.2"/>
+
+    <!-- Cozy Red va Gold Striped Scarf -->
+    <path d="M 41 62 Q 60 70 79 62 Q 81 68 76 70 Q 60 76 44 70 Q 39 68 41 62 Z" fill="url(#smDnRed)"/>
+    <path d="M 46 64 L 46 71 M 55 66 L 55 73 M 65 66 L 65 73 M 74 64 L 74 71" stroke="#facc15" stroke-width="2"/>
+    <path d="M 47 67 L 42 86 L 51 87 L 53 69 Z" fill="url(#smDnRed)"/>
+    <path d="M 43 81 L 51 82" stroke="#facc15" stroke-width="2.2"/>
+
+    <!-- Rosy Cheeks -->
+    <ellipse cx="45" cy="55" rx="4.5" ry="2.6" fill="#fb7185" opacity="0.75"/>
+    <ellipse cx="75" cy="55" rx="4.5" ry="2.6" fill="#fb7185" opacity="0.75"/>
+
+    <!-- Joyful Happy Smiling Eyes ^ ^ -->
+    <path d="M 46 49 Q 51 43 56 49" fill="none" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M 64 49 Q 69 43 74 49" fill="none" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+
+    <!-- Big Joyful Smile -->
+    <path d="M 52 58 Q 60 65 68 58" fill="none" stroke="#1e293b" stroke-width="2.4" stroke-linecap="round"/>
+    <!-- Carrot Nose -->
+    <path d="M 59 51 L 73 54 L 59 56 Z" fill="url(#smDnCarrot)" stroke="#c2410c" stroke-width="0.8" stroke-linejoin="round"/>
+
+    <!-- Santa Hat -->
+    <path d="M 39 38 Q 56 12 84 26 Q 92 31 90 42 Q 77 32 76 38 Z" fill="url(#smDnRed)"/>
+    <rect x="37" y="33" width="46" height="9" rx="4.5" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <circle cx="90" cy="42" r="6.5" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+
+    <!-- Festive Popping Gift Box with Red-Green Ribbons va Stars -->
+    <g>
+      <!-- Stars va Ribbons popping out -->
+      <g class="smDn-stars">
+        <path d="M 27 56 L 28.8 60.2 L 33 62 L 28.8 63.8 L 27 68 L 25.2 63.8 L 21 62 L 25.2 60.2 Z" fill="#facc15"/>
+        <path d="M 16 64 Q 19 60 22 65" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+        <path d="M 34 64 Q 37 59 40 65" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <!-- Box Body -->
+      <rect x="15" y="82" width="24" height="20" rx="2.5" fill="url(#smDnRed)" stroke="#991b1b" stroke-width="1.2"/>
+      <rect x="25" y="82" width="4.5" height="20" fill="url(#smDnGreen)"/>
+      <rect x="15" y="90" width="24" height="4.5" fill="url(#smDnGreen)"/>
+      <!-- Popping Lid -->
+      <g class="smDn-lid">
+        <rect x="13" y="76" width="28" height="6.5" rx="1.8" fill="#dc2626" stroke="#991b1b" stroke-width="1.1"/>
+        <rect x="25" y="76" width="4.5" height="6.5" fill="#10b981"/>
+        <path d="M 27 76 C 20 69, 17 76, 27 76 C 37 76, 34 69, 27 76 Z" fill="none" stroke="#facc15" stroke-width="2.4"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Sparkling Festive Star Top Right -->
+  <g class="smDn-twinkle">
+    <path d="M 102 16 L 104 22 L 110 24 L 104 26 L 102 32 L 100 26 L 94 24 L 100 22 Z" fill="#facc15"/>
+  </g>
+</svg>

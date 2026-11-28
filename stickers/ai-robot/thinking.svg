@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="botThBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="65%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="botThScreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="botThNeon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <clipPath id="botThBarClip">
+      <rect x="42" y="51" width="36" height="5" rx="2.5"/>
+    </clipPath>
+    <style>
+      .botTh-float { animation: botThFloat 2.8s ease-in-out infinite; }
+      .botTh-head { transform-origin: 60px 48px; animation: botThTilt 3.2s ease-in-out infinite; }
+      .botTh-bar { animation: botThLoad 2.2s ease-in-out infinite; }
+      .botTh-antenna { transform-origin: 60px 14px; animation: botThPulse 2s ease-in-out infinite; }
+      .botTh-ring { transform-origin: 60px 14px; animation: botThRing 2s ease-out infinite; }
+      .botTh-gear { transform-origin: 96px 26px; animation: botThSpin 3.4s linear infinite; }
+      .botTh-orbit { transform-origin: 60px 44px; animation: botThOrbit 3.4s ease-in-out infinite alternate; }
+      .botTh-hand-r { transform-origin: 86px 78px; animation: botThChin 3.2s ease-in-out infinite; }
+      .botTh-dot1 { animation: botThDot 2.1s infinite; }
+      .botTh-dot2 { animation: botThDot 2.1s 0.35s infinite; }
+      .botTh-dot3 { animation: botThDot 2.1s 0.7s infinite; }
+
+      @keyframes botThFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+      @keyframes botThTilt { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(3deg); } }
+      @keyframes botThLoad { 0% { transform: translateX(-34px); } 65% { transform: translateX(0px); } 100% { transform: translateX(36px); } }
+      @keyframes botThPulse { 0%, 100% { transform: scale(0.9); opacity: 0.75; } 50% { transform: scale(1.25); opacity: 1; } }
+      @keyframes botThRing { 0% { transform: scale(0.6); opacity: 0.9; } 100% { transform: scale(2.1); opacity: 0; } }
+      @keyframes botThSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      @keyframes botThOrbit { 0% { transform: translateY(0px); } 100% { transform: translateY(-4px); } }
+      @keyframes botThChin { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-6deg); } }
+      @keyframes botThDot { 0%, 60%, 100% { opacity: 0.3; transform: scale(0.85); } 30% { opacity: 1; transform: scale(1.15); } }
+    </style>
+  </defs>
+
+  <ellipse cx="60" cy="110" rx="17" ry="4" fill="#38bdf8" opacity="0.5"/>
+  <ellipse cx="60" cy="110" rx="9" ry="2" fill="#ffffff" opacity="0.85"/>
+
+  <g class="botTh-float">
+    <!-- Body -->
+    <path d="M40 73 C38 93, 46 104, 60 104 C74 104, 82 93, 80 73 Z" fill="url(#botThBody)" stroke="#334155" stroke-width="2.2"/>
+    <polygon points="60,79 68,87 60,95 52,87" fill="url(#botThNeon)" stroke="#1e293b" stroke-width="1.5"/>
+    <polygon points="60,82 65,87 60,92 55,87" fill="#ffffff" opacity="0.85"/>
+
+    <!-- Left Hand resting -->
+    <ellipse cx="30" cy="83" rx="6" ry="8" transform="rotate(16 30 83)" fill="url(#botThBody)" stroke="#334155" stroke-width="2"/>
+
+    <!-- Head + Pulsing Antenna -->
+    <g class="botTh-head">
+      <!-- Antenna stem -->
+      <line x1="60" y1="24" x2="60" y2="14" stroke="#334155" stroke-width="2.4" stroke-linecap="round"/>
+      <circle class="botTh-ring" cx="60" cy="14" r="5" fill="none" stroke="#38bdf8" stroke-width="1.6"/>
+      <circle class="botTh-antenna" cx="60" cy="14" r="4" fill="url(#botThNeon)" stroke="#1e293b" stroke-width="1.2"/>
+
+      <!-- Head Shell -->
+      <rect x="27" y="24" width="66" height="48" rx="24" fill="url(#botThBody)" stroke="#334155" stroke-width="2.3"/>
+      <rect x="20" y="38" width="7" height="20" rx="3.5" fill="#1e293b" stroke="url(#botThNeon)" stroke-width="1.8"/>
+      <rect x="93" y="38" width="7" height="20" rx="3.5" fill="#1e293b" stroke="url(#botThNeon)" stroke-width="1.8"/>
+
+      <!-- Visor Screen -->
+      <rect x="33" y="31" width="54" height="34" rx="17" fill="url(#botThScreen)" stroke="#475569" stroke-width="1.8"/>
+      <path d="M40 35 Q55 32 72 35" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.32"/>
+
+      <!-- Thinking Eyes looking slightly up -->
+      <ellipse cx="47" cy="43" rx="5" ry="4.5" fill="#38bdf8"/>
+      <ellipse cx="48" cy="41.5" rx="2.6" ry="2.2" fill="#e0f2fe"/>
+      <ellipse cx="73" cy="43" rx="5" ry="4.5" fill="#38bdf8"/>
+      <ellipse cx="74" cy="41.5" rx="2.6" ry="2.2" fill="#e0f2fe"/>
+
+      <!-- Animated Loading Bar on Visor -->
+      <rect x="42" y="51" width="36" height="5" rx="2.5" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+      <g clip-path="url(#botThBarClip)">
+        <rect class="botTh-bar" x="42" y="51" width="28" height="5" rx="2.5" fill="url(#botThNeon)"/>
+      </g>
+
+      <!-- Tiny thinking dots -->
+      <circle class="botTh-dot1" cx="54" cy="60" r="1.2" fill="#38bdf8"/>
+      <circle class="botTh-dot2" cx="60" cy="60" r="1.2" fill="#818cf8"/>
+      <circle class="botTh-dot3" cx="66" cy="60" r="1.2" fill="#38bdf8"/>
+    </g>
+
+    <!-- Right Hand raised to chin -->
+    <g class="botTh-hand-r">
+      <ellipse cx="81" cy="72" rx="6" ry="7.5" transform="rotate(-32 81 72)" fill="url(#botThBody)" stroke="#334155" stroke-width="2"/>
+    </g>
+
+    <!-- Orbiting Holographic Gear -->
+    <g class="botTh-orbit">
+      <g class="botTh-gear" opacity="0.9">
+        <circle cx="96" cy="26" r="8.5" fill="#0f172a" fill-opacity="0.35" stroke="url(#botThNeon)" stroke-width="2"/>
+        <path d="M96 14 L96 18 M96 34 L96 38 M84 26 L88 26 M104 26 L108 26 M87.5 17.5 L90.3 20.3 M101.7 31.7 L104.5 34.5 M104.5 17.5 L101.7 20.3 M90.3 31.7 L87.5 34.5" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="96" cy="26" r="3" fill="#e0f2fe"/>
+      </g>
+      <!-- Small secondary hologram dot -->
+      <circle cx="22" cy="24" r="3" fill="#818cf8" opacity="0.75"/>
+      <circle cx="17" cy="31" r="1.8" fill="#38bdf8" opacity="0.65"/>
+    </g>
+  </g>
+</svg>

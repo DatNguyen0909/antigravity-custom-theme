@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="mwDnHat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581c87"/>
+      <stop offset="55%" stop-color="#3b0764"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="mwDnHair" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5d0fe"/>
+      <stop offset="55%" stop-color="#d8b4fe"/>
+      <stop offset="100%" stop-color="#9333ea"/>
+    </linearGradient>
+    <linearGradient id="mwDnSkin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="100%" stop-color="#fde6d8"/>
+    </linearGradient>
+    <linearGradient id="mwDnGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <style>
+      .mwDnBounce { animation: mwDnBounceAnim 2.2s ease-in-out infinite; }
+      .mwDnCharm { transform-origin: 91px 20px; animation: mwDnCharmAnim 2s ease-in-out infinite alternate; }
+      .mwDnHairL { transform-origin: 30px 58px; animation: mwDnHairLAnim 2.2s ease-in-out infinite alternate; }
+      .mwDnHairR { transform-origin: 90px 58px; animation: mwDnHairRAnim 2.2s ease-in-out infinite alternate; }
+      .mwDnWand { transform-origin: 48px 92px; animation: mwDnWandAnim 2s ease-in-out infinite; }
+      .mwDnHatStar { transform-origin: 48px 26px; animation: mwDnTwinkle 2s ease-in-out infinite alternate; }
+      .mwDnConfetti1 { transform-origin: 94px 76px; animation: mwDnBurst1 2.4s ease-out infinite; }
+      .mwDnConfetti2 { transform-origin: 94px 76px; animation: mwDnBurst2 2.4s ease-out 0.6s infinite; }
+      .mwDnConfetti3 { transform-origin: 22px 26px; animation: mwDnTwinkle 2.2s ease-in-out 0.4s infinite alternate; }
+
+      @keyframes mwDnBounceAnim { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-4px); } }
+      @keyframes mwDnCharmAnim { 0% { transform: rotate(-14deg); } 100% { transform: rotate(16deg); } }
+      @keyframes mwDnHairLAnim { 0% { transform: rotate(0deg); } 100% { transform: rotate(7deg); } }
+      @keyframes mwDnHairRAnim { 0% { transform: rotate(0deg); } 100% { transform: rotate(-7deg); } }
+      @keyframes mwDnWandAnim {
+        0%, 100% { transform: rotate(-14deg); }
+        50% { transform: rotate(12deg); }
+      }
+      @keyframes mwDnTwinkle { 0% { transform: scale(0.7); opacity: 0.5; } 100% { transform: scale(1.3); opacity: 1; } }
+      @keyframes mwDnBurst1 {
+        0% { transform: translate(0px, 0px) scale(0.4); opacity: 0; }
+        35% { transform: translate(6px, -12px) scale(1.1); opacity: 1; }
+        100% { transform: translate(12px, -24px) scale(0.7); opacity: 0; }
+      }
+      @keyframes mwDnBurst2 {
+        0% { transform: translate(0px, 0px) scale(0.4); opacity: 0; }
+        35% { transform: translate(-4px, -14px) scale(1.1); opacity: 1; }
+        100% { transform: translate(-8px, -26px) scale(0.7); opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Twinkling Confetti -->
+  <g class="mwDnConfetti3">
+    <polygon points="18,18 19.5,22 23.5,23.5 19.5,25 18,29 16.5,25 12.5,23.5 16.5,22" fill="#fef08a"/>
+    <circle cx="28" cy="14" r="2.2" fill="#e879f9"/>
+  </g>
+
+  <g class="mwDnBounce">
+    <!-- Back Hair -->
+    <path class="mwDnHairL" d="M 24 54 C 14 68, 12 88, 22 96 C 26 90, 28 82, 32 78 Z" fill="url(#mwDnHair)" stroke="#581c87" stroke-width="1.5"/>
+    <path class="mwDnHairR" d="M 96 54 C 106 68, 108 88, 98 96 C 94 90, 92 82, 88 78 Z" fill="url(#mwDnHair)" stroke="#581c87" stroke-width="1.5"/>
+
+    <!-- Robe -->
+    <path d="M 32 80 C 30 92, 36 100, 60 100 C 84 100, 90 92, 88 80 Z" fill="url(#mwDnHat)" stroke="#a855f7" stroke-width="1.5"/>
+    <path d="M 46 82 L 60 96 L 74 82 Z" fill="#f3e8ff"/>
+    <polygon points="60,80 62,84 66,85 62,87 60,91 58,87 54,85 58,84" fill="url(#mwDnGold)"/>
+
+    <!-- Face -->
+    <path d="M 32 58 C 32 42, 44 36, 60 36 C 76 36, 88 42, 88 58 C 90 74, 78 84, 60 84 C 42 84, 30 74, 32 58 Z" fill="url(#mwDnSkin)" stroke="#701a75" stroke-width="1.5"/>
+
+    <!-- Joyful Happy Curved Eyes -->
+    <path d="M 38 64 Q 45 55 52 64" fill="none" stroke="#3b0764" stroke-width="2.8" stroke-linecap="round"/>
+    <path d="M 68 64 Q 75 55 82 64" fill="none" stroke="#3b0764" stroke-width="2.8" stroke-linecap="round"/>
+
+    <!-- Rosy Blush va Cheerful Open Smile -->
+    <ellipse cx="35" cy="70" rx="5.5" ry="3" fill="#f472b6" opacity="0.8"/>
+    <ellipse cx="85" cy="70" rx="5.5" ry="3" fill="#f472b6" opacity="0.8"/>
+    <path d="M 54 71 Q 60 79 66 71 Z" fill="#ec4899" stroke="#9d174d" stroke-width="1.4" stroke-linejoin="round"/>
+
+    <!-- Bangs -->
+    <path d="M 28 54 C 24 66, 26 82, 33 88 C 34 78, 34 66, 36 58 Z" fill="url(#mwDnHair)" stroke="#581c87" stroke-width="1.3"/>
+    <path d="M 92 54 C 96 66, 94 82, 87 88 C 86 78, 86 66, 84 58 Z" fill="url(#mwDnHair)" stroke="#581c87" stroke-width="1.3"/>
+    <path d="M 32 48 C 36 58, 44 52, 48 60 C 52 50, 58 58, 62 60 C 66 50, 74 58, 76 52 C 82 56, 86 58, 88 48 Z" fill="url(#mwDnHair)" stroke="#581c87" stroke-width="1.3"/>
+
+    <!-- Twinkling Witch Hat -->
+    <ellipse cx="60" cy="44" rx="46" ry="11" fill="#1e1b4b"/>
+    <path d="M 26 42 C 34 22, 52 8, 78 6 C 88 6, 96 14, 92 22 C 84 18, 76 18, 72 24 C 76 30, 82 36, 92 42 Z" fill="url(#mwDnHat)" stroke="#c084fc" stroke-width="1.8" stroke-linejoin="round"/>
+    <g class="mwDnCharm">
+      <line x1="91" y1="20" x2="98" y2="30" stroke="#fbbf24" stroke-width="1.3"/>
+      <path d="M 103 28 A 7 7 0 1 1 94 37 A 5.5 5.5 0 1 0 103 28 Z" fill="url(#mwDnGold)" stroke="#fef08a" stroke-width="0.8"/>
+    </g>
+    <path d="M 29 40 Q 60 47 90 40" fill="none" stroke="#ec4899" stroke-width="5" stroke-linecap="round"/>
+    <rect x="53" y="36" width="14" height="11" rx="2.5" fill="url(#mwDnGold)" stroke="#92400e" stroke-width="1.2"/>
+    <rect x="56" y="39" width="8" height="5" rx="1" fill="#581c87"/>
+    <path d="M 12 44 C 28 34, 92 34, 108 44 C 94 52, 26 52, 12 44 Z" fill="url(#mwDnHat)" stroke="#c084fc" stroke-width="1.6"/>
+    <!-- Twinkling Hat Stars -->
+    <g class="mwDnHatStar">
+      <polygon points="48,21 49.8,24.8 53.5,26 49.8,27.5 48,31.5 46.2,27.5 42.5,26 46.2,24.8" fill="#fef08a"/>
+      <polygon points="68,14 69,16.5 71.5,17.2 69,18.2 68,20.5 67,18.2 64.5,17.2 67,16.5" fill="#f0abfc"/>
+    </g>
+
+    <!-- Waving Magic Star Wand -->
+    <g class="mwDnWand">
+      <line x1="48" y1="94" x2="92" y2="78" stroke="url(#mwDnGold)" stroke-width="3" stroke-linecap="round"/>
+      <polygon points="94,77 97,70 100,76 107,77 101,81 103,88 97,84 91,87 93,81 88,77" fill="url(#mwDnGold)" stroke="#ffffff" stroke-width="1"/>
+    </g>
+
+    <!-- Hands -->
+    <ellipse cx="46" cy="92" rx="6" ry="5" fill="url(#mwDnSkin)" stroke="#701a75" stroke-width="1.3"/>
+    <ellipse cx="74" cy="92" rx="6" ry="5" fill="url(#mwDnSkin)" stroke="#701a75" stroke-width="1.3"/>
+  </g>
+
+  <!-- Bursting Purple-Gold Star Confetti -->
+  <g class="mwDnConfetti1">
+    <polygon points="96,64 97.5,67.5 101,68.5 97.5,70 96,73.5 94.5,70 91,68.5 94.5,67.5" fill="#fef08a"/>
+    <rect x="103" y="60" width="4" height="4" transform="rotate(30 105 62)" fill="#e879f9"/>
+    <circle cx="88" cy="58" r="2.2" fill="#c084fc"/>
+  </g>
+  <g class="mwDnConfetti2">
+    <polygon points="84,66 85.5,69.5 89,70.5 85.5,72 84,75.5 82.5,72 79,70.5 82.5,69.5" fill="#f0abfc"/>
+    <rect x="96" y="54" width="4" height="4" transform="rotate(-25 98 56)" fill="#fbbf24"/>
+    <circle cx="106" cy="70" r="2" fill="#fef08a"/>
+  </g>
+</svg>

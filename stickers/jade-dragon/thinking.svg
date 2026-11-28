@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="jdThBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="60%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="jdThBelly" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5"/>
+      <stop offset="100%" stop-color="#a7f3d0"/>
+    </linearGradient>
+    <linearGradient id="jdThGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <radialGradient id="jdThPearl" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#6ee7b7"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </radialGradient>
+    <radialGradient id="jdThAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.55"/>
+      <stop offset="65%" stop-color="#10b981" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .jdThFloat { animation: jdThFloatAnim 3s ease-in-out infinite; }
+      .jdThWingL { transform-origin: 28px 74px; animation: jdThWingLAnim 2.4s ease-in-out infinite alternate; }
+      .jdThWingR { transform-origin: 92px 74px; animation: jdThWingRAnim 2.4s ease-in-out infinite alternate; }
+      .jdThTail { transform-origin: 84px 88px; animation: jdThTailAnim 2.8s ease-in-out infinite alternate; }
+      .jdThOrbSpin { transform-origin: 60px 93px; animation: jdThSpinAnim 2.6s linear infinite; }
+      .jdThOrbPulse { transform-origin: 60px 93px; animation: jdThPulseAnim 2.2s ease-in-out infinite alternate; }
+      .jdThCloudL { animation: jdThCloudLAnim 3.2s ease-in-out infinite alternate; }
+      .jdThCloudR { animation: jdThCloudRAnim 3.2s ease-in-out infinite alternate; }
+      .jdThQiSwirl { transform-origin: 60px 66px; animation: jdThQiAnim 3.5s linear infinite; }
+      .jdThDot1 { animation: jdThDotAnim 2.1s ease-in-out infinite; }
+      .jdThDot2 { animation: jdThDotAnim 2.1s ease-in-out 0.35s infinite; }
+      .jdThDot3 { animation: jdThDotAnim 2.1s ease-in-out 0.7s infinite; }
+
+      @keyframes jdThFloatAnim { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-4px); } }
+      @keyframes jdThWingLAnim { 0% { transform: rotate(-4deg); } 100% { transform: rotate(6deg); } }
+      @keyframes jdThWingRAnim { 0% { transform: rotate(4deg); } 100% { transform: rotate(-6deg); } }
+      @keyframes jdThTailAnim { 0% { transform: rotate(-5deg); } 100% { transform: rotate(6deg); } }
+      @keyframes jdThSpinAnim { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      @keyframes jdThPulseAnim { 0% { transform: scale(0.94); opacity: 0.9; } 100% { transform: scale(1.08); opacity: 1; } }
+      @keyframes jdThCloudLAnim { 0% { transform: translate(0px, 0px); opacity: 0.7; } 100% { transform: translate(-4px, -4px); opacity: 0.95; } }
+      @keyframes jdThCloudRAnim { 0% { transform: translate(0px, 0px); opacity: 0.7; } 100% { transform: translate(4px, -4px); opacity: 0.95; } }
+      @keyframes jdThQiAnim { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      @keyframes jdThDotAnim { 0%, 100% { opacity: 0.35; transform: translateY(0px); } 50% { opacity: 1; transform: translateY(-3px); } }
+    </style>
+  </defs>
+
+  <!-- Swirling Jade Qi Aura -->
+  <circle cx="60" cy="64" r="46" fill="url(#jdThAura)"/>
+  <g class="jdThQiSwirl" opacity="0.65">
+    <path d="M 18 66 A 42 42 0 0 1 56 24" fill="none" stroke="#6ee7b7" stroke-width="2" stroke-linecap="round" stroke-dasharray="10 8"/>
+    <path d="M 102 66 A 42 42 0 0 1 64 108" fill="none" stroke="#fef08a" stroke-width="2" stroke-linecap="round" stroke-dasharray="8 9"/>
+  </g>
+
+  <!-- Floating Jade Clouds -->
+  <g class="jdThCloudL">
+    <path d="M 10 98 Q 10 91 18 91 Q 21 86 28 88 Q 35 88 35 95 Q 35 100 28 100 L 14 100 Q 10 100 10 98 Z" fill="#a7f3d0" stroke="#10b981" stroke-width="1.2"/>
+  </g>
+  <g class="jdThCloudR">
+    <path d="M 86 98 Q 86 91 93 91 Q 96 86 103 88 Q 110 88 110 95 Q 110 100 103 100 L 90 100 Q 86 100 86 98 Z" fill="#a7f3d0" stroke="#10b981" stroke-width="1.2"/>
+  </g>
+
+  <g class="jdThFloat">
+    <!-- Tail -->
+    <g class="jdThTail">
+      <path d="M 84 86 Q 106 82 104 64 Q 102 53 93 57 Q 98 66 89 74" fill="none" stroke="url(#jdThBody)" stroke-width="7.5" stroke-linecap="round"/>
+      <path d="M 93 55 C 97 46, 110 48, 106 59 C 112 57, 110 66, 100 63 Z" fill="url(#jdThGold)"/>
+    </g>
+
+    <!-- Wings -->
+    <g class="jdThWingL">
+      <path d="M 28 68 C 9 56, 7 74, 17 82 C 13 86, 21 89, 30 84 Z" fill="#059669" stroke="#6ee7b7" stroke-width="1.5"/>
+      <path d="M 26 71 C 15 63, 14 75, 21 80" fill="none" stroke="#a7f3d0" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    <g class="jdThWingR">
+      <path d="M 92 68 C 111 56, 113 74, 103 82 C 107 86, 99 89, 90 84 Z" fill="#059669" stroke="#6ee7b7" stroke-width="1.5"/>
+      <path d="M 94 71 C 105 63, 106 75, 99 80" fill="none" stroke="#a7f3d0" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- Meditating Body -->
+    <ellipse cx="60" cy="84" rx="23" ry="17" fill="url(#jdThBody)" stroke="#065f46" stroke-width="1.5"/>
+    <ellipse cx="60" cy="86" rx="15" ry="13" fill="url(#jdThBelly)"/>
+    <path d="M 48 82 Q 60 86 72 82" fill="none" stroke="#6ee7b7" stroke-width="1.5"/>
+    <path d="M 50 89 Q 60 93 70 89" fill="none" stroke="#6ee7b7" stroke-width="1.5"/>
+
+    <!-- Horns -->
+    <path d="M 43 34 C 38 18, 26 12, 20 16 C 24 22, 32 24, 36 36 Z" fill="url(#jdThGold)" stroke="#b45309" stroke-width="1"/>
+    <path d="M 33 23 C 32 14, 26 10, 24 12 C 26 16, 28 20, 30 25 Z" fill="url(#jdThGold)"/>
+    <path d="M 77 34 C 82 18, 94 12, 100 16 C 96 22, 88 24, 84 36 Z" fill="url(#jdThGold)" stroke="#b45309" stroke-width="1"/>
+    <path d="M 87 23 C 88 14, 94 10, 96 12 C 94 16, 92 20, 90 25 Z" fill="url(#jdThGold)"/>
+
+    <!-- Ears -->
+    <path d="M 28 46 C 12 38, 10 54, 26 60 Z" fill="url(#jdThBody)" stroke="#065f46" stroke-width="1.5"/>
+    <path d="M 26 49 C 16 44, 16 53, 25 56 Z" fill="#fde68a"/>
+    <path d="M 92 46 C 108 38, 110 54, 94 60 Z" fill="url(#jdThBody)" stroke="#065f46" stroke-width="1.5"/>
+    <path d="M 94 49 C 104 44, 104 53, 95 56 Z" fill="#fde68a"/>
+
+    <!-- Head -->
+    <path d="M 28 55 C 28 34, 42 26, 60 26 C 78 26, 92 34, 92 55 C 95 71, 82 80, 60 80 C 38 80, 25 71, 28 55 Z" fill="url(#jdThBody)" stroke="#064e3b" stroke-width="1.8"/>
+    <polygon points="60,21 55,29 65,29" fill="url(#jdThGold)" stroke="#b45309" stroke-width="0.8"/>
+    <polygon points="60,29 56,35 64,35" fill="url(#jdThGold)"/>
+    <polygon points="60,35 64,41 60,47 56,41" fill="#fef08a" stroke="#d97706" stroke-width="1"/>
+
+    <!-- Thoughtful Narrowed Eyes -->
+    <ellipse cx="44" cy="54" rx="7.2" ry="5.5" fill="#064e3b"/>
+    <ellipse cx="44" cy="54.8" rx="5.8" ry="4.2" fill="#fbbf24"/>
+    <ellipse cx="44" cy="55" rx="3" ry="3.2" fill="#022c22"/>
+    <circle cx="42" cy="53.5" r="1.8" fill="#ffffff"/>
+    <path d="M 35 50 Q 44 49 52 51" fill="none" stroke="#064e3b" stroke-width="2.4" stroke-linecap="round"/>
+
+    <ellipse cx="76" cy="54" rx="7.2" ry="5.5" fill="#064e3b"/>
+    <ellipse cx="76" cy="54.8" rx="5.8" ry="4.2" fill="#fbbf24"/>
+    <ellipse cx="76" cy="55" rx="3" ry="3.2" fill="#022c22"/>
+    <circle cx="74" cy="53.5" r="1.8" fill="#ffffff"/>
+    <path d="M 68 51 Q 76 49 85 50" fill="none" stroke="#064e3b" stroke-width="2.4" stroke-linecap="round"/>
+
+    <!-- Focused Brows -->
+    <path d="M 37 45 Q 44 43 50 47" fill="none" stroke="#fef08a" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 83 45 Q 76 43 70 47" fill="none" stroke="#fef08a" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Blush -->
+    <ellipse cx="34" cy="62" rx="5.2" ry="3" fill="#fb7185" opacity="0.55"/>
+    <ellipse cx="86" cy="62" rx="5.2" ry="3" fill="#fb7185" opacity="0.55"/>
+
+    <!-- Snout va Calm Thoughtful Mouth -->
+    <ellipse cx="60" cy="61" rx="11" ry="7" fill="#6ee7b7" stroke="#047857" stroke-width="1.2"/>
+    <circle cx="56" cy="59" r="1.5" fill="#064e3b"/>
+    <circle cx="64" cy="59" r="1.5" fill="#064e3b"/>
+    <path d="M 56 64 Q 60 66 64 64" fill="none" stroke="#064e3b" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Whiskers -->
+    <path d="M 49 61 C 36 59, 24 65, 16 60" fill="none" stroke="url(#jdThGold)" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M 71 61 C 84 59, 96 65, 104 60" fill="none" stroke="url(#jdThGold)" stroke-width="2.2" stroke-linecap="round"/>
+
+    <!-- Meditating Paws Holding Qi Orb -->
+    <ellipse cx="43" cy="91" rx="7" ry="5.2" transform="rotate(-15 43 91)" fill="url(#jdThBody)" stroke="#064e3b" stroke-width="1.5"/>
+    <circle cx="46" cy="89" r="1.4" fill="#fef08a"/>
+    <circle cx="46" cy="93" r="1.4" fill="#fef08a"/>
+    <ellipse cx="77" cy="91" rx="7" ry="5.2" transform="rotate(15 77 91)" fill="url(#jdThBody)" stroke="#064e3b" stroke-width="1.5"/>
+    <circle cx="74" cy="89" r="1.4" fill="#fef08a"/>
+    <circle cx="74" cy="93" r="1.4" fill="#fef08a"/>
+
+    <!-- Spinning Glowing Jade Orb -->
+    <g class="jdThOrbPulse">
+      <circle cx="60" cy="93" r="14" fill="#6ee7b7" opacity="0.28"/>
+      <circle cx="60" cy="93" r="9.5" fill="url(#jdThPearl)" stroke="#ffffff" stroke-width="1.2"/>
+    </g>
+    <g class="jdThOrbSpin">
+      <ellipse cx="60" cy="93" rx="14.5" ry="4.5" fill="none" stroke="#fef08a" stroke-width="1.6" stroke-dasharray="14 8" stroke-linecap="round"/>
+      <circle cx="74.5" cy="93" r="2.2" fill="#fef08a"/>
+      <circle cx="45.5" cy="93" r="1.8" fill="#ffffff"/>
+    </g>
+  </g>
+
+  <!-- Subtle Thinking Dots -->
+  <circle class="jdThDot1" cx="94" cy="22" r="2.2" fill="#fef08a"/>
+  <circle class="jdThDot2" cx="102" cy="18" r="2.7" fill="#6ee7b7"/>
+  <circle class="jdThDot3" cx="110" cy="14" r="3.2" fill="#fef08a"/>
+</svg>
