@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95" width="260" height="95">
   <defs>
+    <!-- Existing Character and Effect Gradients -->
     <linearGradient id="wIvory" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#ffffff"/>
       <stop offset="60%" stop-color="#e5e7eb"/>
@@ -25,6 +26,65 @@
       <stop offset="50%" stop-color="#f3f4f6" stop-opacity="0.85"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
     </radialGradient>
+
+    <!-- Film-Noir Mafia Backdrop Gradients and Clip -->
+    <clipPath id="gpBgClip">
+      <rect x="0" y="0" width="260" height="71"/>
+    </clipPath>
+    <linearGradient id="gpBgSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" stop-opacity="0.44"/>
+      <stop offset="55%" stop-color="#1e293b" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#451a03" stop-opacity="0.24"/>
+    </linearGradient>
+    <radialGradient id="gpBgWarmGlow" cx="76%" cy="55%" r="55%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#b45309" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gpBgSpotGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.34"/>
+      <stop offset="55%" stop-color="#f59e0b" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="gpBgSpotSlate" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0" stop-opacity="0.24"/>
+      <stop offset="60%" stop-color="#94a3b8" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#475569" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="gpBgCityFar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.62"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.82"/>
+    </linearGradient>
+    <linearGradient id="gpBgCityNear" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111827" stop-opacity="0.78"/>
+      <stop offset="100%" stop-color="#030712" stop-opacity="0.90"/>
+    </linearGradient>
+    <radialGradient id="gpBgLampGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.72"/>
+      <stop offset="45%" stop-color="#f59e0b" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gpBgSmokeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#cbd5e1" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#cbd5e1" stop-opacity="0.16"/>
+      <stop offset="70%" stop-color="#94a3b8" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="gpBgMarble" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="28%" stop-color="#1f2937"/>
+      <stop offset="52%" stop-color="#111827"/>
+      <stop offset="78%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+    <linearGradient id="gpBgBrassTrim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#92400e" stop-opacity="0.5"/>
+      <stop offset="30%" stop-color="#fbbf24" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#fef08a" stop-opacity="0.95"/>
+      <stop offset="75%" stop-color="#d97706" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#78350f" stop-opacity="0.5"/>
+    </linearGradient>
+
     <style>
       /* Toàn bộ kịch bản chạy trong chu kỳ 5s */
       .rook { animation: rookPath 5s linear infinite; transform-box: fill-box; transform-origin: 50% 60%; }
@@ -40,6 +100,51 @@
       .gsmoke { animation: smokeSeq 5s ease-out infinite; }
       .sweat { animation: sweatSeq 5s ease-out infinite; }
       .tile-row { animation: tileShift 2s linear infinite; }
+
+      /* Film-Noir Atmospheric Backdrop Animations */
+      .gpBg-beam-l { transform-origin: 58px -6px; animation: gpBgSweepL 5.2s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .gpBg-beam-r { transform-origin: 204px -6px; animation: gpBgSweepR 4.6s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .gpBg-smoke1 { animation: gpBgSmokeDrift1 7.5s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .gpBg-smoke2 { animation: gpBgSmokeDrift2 9.0s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .gpBg-neon { animation: gpBgNeonPulse 2.8s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .gpBg-lamp { animation: gpBgLampPulse 2.4s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+      .gpBg-mote1 { animation: gpBgMoteFloat 4.2s linear infinite; }
+      .gpBg-mote2 { animation: gpBgMoteFloat 5.0s linear -1.8s infinite; }
+      .gpBg-mote3 { animation: gpBgMoteFloat 3.8s linear -2.9s infinite; }
+
+      @keyframes gpBgSweepL {
+        0% { transform: rotate(-11deg); opacity: 0.72; }
+        100% { transform: rotate(13deg); opacity: 1; }
+      }
+      @keyframes gpBgSweepR {
+        0% { transform: rotate(10deg); opacity: 0.75; }
+        100% { transform: rotate(-12deg); opacity: 1; }
+      }
+      @keyframes gpBgSmokeDrift1 {
+        0% { transform: translateX(-10px) translateY(1px); opacity: 0.55; }
+        100% { transform: translateX(14px) translateY(-2px); opacity: 0.88; }
+      }
+      @keyframes gpBgSmokeDrift2 {
+        0% { transform: translateX(12px) translateY(0px); opacity: 0.45; }
+        100% { transform: translateX(-14px) translateY(-2.5px); opacity: 0.78; }
+      }
+      @keyframes gpBgNeonPulse {
+        0%, 82% { opacity: 0.92; }
+        86% { opacity: 0.42; }
+        90% { opacity: 0.96; }
+        94% { opacity: 0.55; }
+        100% { opacity: 0.95; }
+      }
+      @keyframes gpBgLampPulse {
+        0% { opacity: 0.78; }
+        100% { opacity: 1; }
+      }
+      @keyframes gpBgMoteFloat {
+        0% { transform: translate(0px, 8px); opacity: 0; }
+        20% { opacity: 0.85; }
+        80% { opacity: 0.75; }
+        100% { transform: translate(6px, -16px); opacity: 0; }
+      }
 
       @keyframes rookPath {
         0% { transform: translate(-70px, 0) rotate(0deg); opacity: 1; }
@@ -121,113 +226,201 @@
     </style>
   </defs>
 
-  <!-- NỀN BÀN CỜ TRẮNG ĐEN DỌC MÉP CHAT -->
-  <g class="tile-row">
-    <polygon points="6,70 18,62 248,62 256,70" fill="#111827" stroke="#e5e7eb" stroke-width="1.2"/>
-    <polygon points="10,69 22,63 50,63 42,69" fill="#f3f4f6"/>
-    <polygon points="74,69 80,63 108,63 106,69" fill="#f3f4f6"/>
-    <polygon points="138,69 138,63 166,63 170,69" fill="#f3f4f6"/>
-    <polygon points="202,69 196,63 224,63 234,69" fill="#f3f4f6"/>
-  </g>
+  <g clip-path="url(#gpBgClip)">
+    <!-- FILM-NOIR MAFIA ATMOSPHERIC SKY -->
+    <rect x="0" y="0" width="260" height="71" fill="url(#gpBgSky)"/>
+    <rect x="0" y="0" width="260" height="71" fill="url(#gpBgWarmGlow)"/>
 
-  <!-- QUÂN XE ĐEN CẦM CHÙY XÔNG TỚI -->
-  <g class="rook">
-    <g class="rook-bob">
-      <!-- Chùy gai -->
-      <g class="mace">
-        <line x1="12" y1="46" x2="26" y2="18" stroke="#78350f" stroke-width="3" stroke-linecap="round"/>
-        <circle cx="27" cy="16" r="6" fill="url(#steelG)" stroke="#1f2937" stroke-width="1"/>
-        <path d="M 27 7 L 27 10 M 27 22 L 27 25 M 18 16 L 21 16 M 33 16 L 36 16 M 21 10 L 23 12 M 31 20 L 33 22 M 33 10 L 31 12 M 21 22 L 23 20" stroke="#1f2937" stroke-width="2" stroke-linecap="round"/>
-      </g>
-      <!-- Đế -->
-      <ellipse cx="0" cy="66" rx="15" ry="3.5" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="1"/>
-      <rect x="-14" y="58" width="28" height="7" rx="2" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="1"/>
-      <!-- Thân tháp -->
-      <path d="M -10 58 L -9 36 L 9 36 L 10 58 Z" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="1"/>
-      <!-- Lỗ châu mai -->
-      <path d="M -13 36 L -13 24 L -8 24 L -8 28 L -3 28 L -3 24 L 3 24 L 3 28 L 8 28 L 8 24 L 13 24 L 13 36 Z" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="1"/>
-      <!-- Mặt hung hăng -->
-      <path d="M -6 39 L -1 41 M 8 39 L 3 41" stroke="#f9fafb" stroke-width="1.6" stroke-linecap="round"/>
-      <circle cx="-3" cy="43" r="1.6" fill="#ef4444"/>
-      <circle cx="5" cy="43" r="1.6" fill="#ef4444"/>
-      <path d="M -2 50 Q 2 47 6 50" fill="none" stroke="#f9fafb" stroke-width="1.4" stroke-linecap="round"/>
-      <!-- Tay cầm chùy -->
-      <circle cx="12" cy="46" r="3" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="0.8"/>
+    <!-- DRAMATIC GOLDEN-SLATE SPOTLIGHT BEAMS SWEEPING FROM ABOVE -->
+    <g class="gpBg-beam-l">
+      <polygon points="52,-6 66,-6 112,71 22,71" fill="url(#gpBgSpotSlate)"/>
     </g>
-  </g>
+    <g class="gpBg-beam-r">
+      <polygon points="196,-6 212,-6 254,71 152,71" fill="url(#gpBgSpotGold)"/>
+    </g>
 
-  <!-- HIỆU ỨNG LÓE SÁNG BIẾN HÌNH -->
-  <g class="burst">
-    <circle cx="216" cy="46" r="22" fill="url(#flashG)"/>
-    <path d="M 216 18 L 219 40 L 244 46 L 219 52 L 216 74 L 213 52 L 188 46 L 213 40 Z" fill="#ffffff" opacity="0.9"/>
-  </g>
+    <!-- DISTANT SMOKY NOIR CITY SKYLINE SILHOUETTE -->
+    <g fill="url(#gpBgCityFar)">
+      <path d="M 0 65 L 0 36 L 14 36 L 14 26 L 26 26 L 26 39 L 42 39 L 42 22 L 48 22 L 50 15 L 52 22 L 58 22 L 58 34 L 78 34 L 78 25 L 96 25 L 96 42 L 118 42 L 118 28 L 126 24 L 134 28 L 134 40 L 154 40 L 154 21 L 172 21 L 172 35 L 194 35 L 194 27 L 210 27 L 210 38 L 232 38 L 232 23 L 246 23 L 246 33 L 260 33 L 260 65 Z"/>
+    </g>
+    <!-- NEAR NOIR BUILDINGS WITH LIT WINDOWS AND NEON SIGNS -->
+    <g fill="url(#gpBgCityNear)">
+      <rect x="4" y="42" width="24" height="23"/>
+      <rect x="64" y="39" width="26" height="26"/>
+      <rect x="108" y="45" width="24" height="20"/>
+      <rect x="160" y="37" width="28" height="28"/>
+      <rect x="226" y="41" width="28" height="24"/>
+    </g>
+    <!-- Warm Glowing Noir Windows -->
+    <g fill="#fbbf24" opacity="0.65">
+      <rect x="9" y="46" width="3" height="3.5" rx="0.4"/>
+      <rect x="16" y="46" width="3" height="3.5" rx="0.4" opacity="0.45"/>
+      <rect x="9" y="53" width="3" height="3.5" rx="0.4"/>
+      <rect x="70" y="43" width="3.5" height="4" rx="0.4"/>
+      <rect x="78" y="43" width="3.5" height="4" rx="0.4" opacity="0.5"/>
+      <rect x="78" y="51" width="3.5" height="4" rx="0.4"/>
+      <rect x="114" y="49" width="3" height="3.5" rx="0.4" opacity="0.7"/>
+      <rect x="122" y="49" width="3" height="3.5" rx="0.4"/>
+      <rect x="166" y="42" width="3.5" height="4" rx="0.4"/>
+      <rect x="174" y="42" width="3.5" height="4" rx="0.4" opacity="0.55"/>
+      <rect x="166" y="50" width="3.5" height="4" rx="0.4" opacity="0.7"/>
+      <rect x="233" y="46" width="3.5" height="4" rx="0.4"/>
+      <rect x="241" y="46" width="3.5" height="4" rx="0.4" opacity="0.5"/>
+    </g>
+    <!-- Glowing Noir Neon Signs -->
+    <g class="gpBg-neon">
+      <rect x="67" y="34" width="14" height="3.2" rx="1" fill="#f43f5e" opacity="0.88"/>
+      <rect x="65" y="32.5" width="18" height="6" rx="2" fill="#f43f5e" opacity="0.22"/>
+      <rect x="164" y="31" width="16" height="3.4" rx="1" fill="#fbbf24" opacity="0.88"/>
+      <rect x="162" y="29.5" width="20" height="6.2" rx="2" fill="#fbbf24" opacity="0.22"/>
+    </g>
 
-  <!-- CHỐT GANGSTER (ĐEO KÍNH ĐEN, MŨ PHỚT) -->
-  <g class="pawn">
-    <ellipse cx="216" cy="66" rx="14" ry="3.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
-    <rect x="203" y="59" width="26" height="6" rx="2.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
-    <path d="M 206 60 C 207 52, 210 47, 212 44 L 220 44 C 222 47, 225 52, 226 60 Z" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
-    <path d="M 208 56 Q 216 52 224 56 L 225 60 L 207 60 Z" fill="#111827"/>
-    <ellipse cx="216" cy="44" rx="8" ry="2.4" fill="url(#wIvory)" stroke="#374151" stroke-width="1"/>
-    <circle cx="216" cy="34" r="10" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
-    <path d="M 204 28 Q 216 31 228 28 L 227 31 Q 216 33 205 31 Z" fill="#111827"/>
-    <path d="M 208 29 C 208 21, 212 18, 216 18 C 220 18, 224 21, 224 29 Z" fill="#1f2937"/>
-    <path d="M 208 27 L 224 27 L 224 29 L 208 29 Z" fill="#9ca3af"/>
-    <path d="M 206 34 L 226 34" stroke="#030712" stroke-width="1.4"/>
-    <path d="M 206 34 L 214 34 L 213 38 Q 210 39.5 207 38 Z" fill="url(#glassG)"/>
-    <path d="M 218 34 L 226 34 L 225 38 Q 222 39.5 219 38 Z" fill="url(#glassG)"/>
-    <path d="M 212 41 Q 216 42 220 40" fill="none" stroke="#111827" stroke-width="1.2" stroke-linecap="round"/>
-    <!-- Giọt mồ hôi khi xe tới gần -->
-    <path class="sweat" d="M 229 26 C 231 29, 231 31, 229 31 C 227 31, 227 29, 229 26 Z" fill="#93c5fd" opacity="0.9"/>
-  </g>
+    <!-- VINTAGE NOIR STREETLAMPS WITH WARM HALO -->
+    <g class="gpBg-lamp">
+      <!-- Left Streetlamp -->
+      <line x1="36" y1="64" x2="36" y2="39" stroke="#334155" stroke-width="1.6"/>
+      <path d="M 36 39 Q 36 35 41 36" fill="none" stroke="#334155" stroke-width="1.3" stroke-linecap="round"/>
+      <circle cx="41" cy="37.5" r="10" fill="url(#gpBgLampGlow)"/>
+      <circle cx="41" cy="37.5" r="1.8" fill="#fef08a"/>
+      <!-- Mid-Right Streetlamp -->
+      <line x1="146" y1="64" x2="146" y2="41" stroke="#334155" stroke-width="1.5"/>
+      <path d="M 146 41 Q 146 37 141 38" fill="none" stroke="#334155" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="141" cy="39.5" r="9.5" fill="url(#gpBgLampGlow)"/>
+      <circle cx="141" cy="39.5" r="1.7" fill="#fef08a"/>
+    </g>
 
-  <!-- HẬU GANGSTER RÚT SÚNG -->
-  <g class="queen">
-    <ellipse cx="216" cy="66" rx="15" ry="3.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
-    <rect x="202" y="59" width="28" height="6" rx="2.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
-    <path d="M 205 60 C 207 48, 209 40, 210 32 L 222 32 C 223 40, 225 48, 227 60 Z" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
-    <!-- Áo choàng đen gangster -->
-    <path d="M 207 54 Q 216 48 225 54 L 226 60 L 206 60 Z" fill="#111827"/>
-    <ellipse cx="216" cy="32" rx="9" ry="2.6" fill="url(#wIvory)" stroke="#374151" stroke-width="1"/>
-    <circle cx="216" cy="23" r="8.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
-    <!-- Vương miện Hậu -->
-    <path d="M 206 17 L 205 8 L 209.5 12 L 212 5 L 216 11 L 220 5 L 222.5 12 L 227 8 L 226 17 Z" fill="url(#wIvory)" stroke="#374151" stroke-width="1"/>
-    <circle cx="205" cy="7.5" r="1.6" fill="#111827"/>
-    <circle cx="212" cy="4.5" r="1.6" fill="#111827"/>
-    <circle cx="220" cy="4.5" r="1.6" fill="#111827"/>
-    <circle cx="227" cy="7.5" r="1.6" fill="#111827"/>
-    <!-- Kính đen -->
-    <path d="M 207 23 L 225 23" stroke="#030712" stroke-width="1.4"/>
-    <path d="M 207 23 L 214 23 L 213 27 Q 210 28.5 208 27 Z" fill="url(#glassG)"/>
-    <path d="M 218 23 L 225 23 L 224 27 Q 222 28.5 219 27 Z" fill="url(#glassG)"/>
-    <path d="M 212 30 Q 216 31.5 220 29" fill="none" stroke="#111827" stroke-width="1.2" stroke-linecap="round"/>
-    <!-- Tay cầm súng lục chĩa về phía Xe -->
-    <g class="gun-arm">
-      <path d="M 210 44 L 200 44" stroke="#e5e7eb" stroke-width="5" stroke-linecap="round"/>
-      <path d="M 210 44 L 200 44" fill="none" stroke="#374151" stroke-width="0.8"/>
-      <rect x="182" y="36.5" width="16" height="5" rx="1" fill="#111827" stroke="#9ca3af" stroke-width="0.7"/>
-      <path d="M 192 41 L 198 41 L 199 48 L 194 48 Z" fill="#1f2937" stroke="#9ca3af" stroke-width="0.7"/>
-      <circle cx="200" cy="44" r="3" fill="url(#wIvory)" stroke="#374151" stroke-width="0.8"/>
-      <!-- Khói súng -->
-      <g class="gsmoke">
-        <circle cx="180" cy="36" r="2.6" fill="#d1d5db"/>
-        <circle cx="178" cy="32" r="2" fill="#9ca3af"/>
+    <!-- DRIFTING ATMOSPHERIC NOIR SMOKE WISPS -->
+    <g class="gpBg-smoke1">
+      <path d="M -8 56 Q 38 46 86 55 T 180 51 T 268 56 L 268 64 L -8 64 Z" fill="url(#gpBgSmokeGrad)"/>
+    </g>
+    <g class="gpBg-smoke2">
+      <path d="M -10 47 Q 52 38 112 46 T 226 42 L 268 46 L 268 54 L -10 54 Z" fill="url(#gpBgSmokeGrad)" opacity="0.72"/>
+    </g>
+
+    <!-- SUBTLE FLOATING GOLD DUST AND SPARKLE MOTES -->
+    <g fill="#fef08a">
+      <circle class="gpBg-mote1" cx="54" cy="34" r="1.1"/>
+      <circle class="gpBg-mote2" cx="118" cy="28" r="1.2" fill="#fbbf24"/>
+      <circle class="gpBg-mote3" cx="188" cy="26" r="1.1"/>
+      <path class="gpBg-mote2" d="M 92 20 L 93 22 L 95 23 L 93 24 L 92 26 L 91 24 L 89 23 L 91 22 Z" opacity="0.8"/>
+      <path class="gpBg-mote1" d="M 218 16 L 219 18 L 221 19 L 219 20 L 218 22 L 217 20 L 215 19 L 217 18 Z" fill="#fde047" opacity="0.85"/>
+    </g>
+
+    <!-- POLISHED DARK-MARBLE STAGE TRIM ALONG Y=71 -->
+    <g>
+      <rect x="0" y="68" width="260" height="3" fill="url(#gpBgMarble)"/>
+      <path d="M 18 71 L 28 68 M 74 71 L 88 68 M 142 71 L 154 68 M 208 71 L 222 68" stroke="#64748b" stroke-width="0.7" opacity="0.35"/>
+      <line x1="2" y1="68.5" x2="258" y2="68.5" stroke="url(#gpBgBrassTrim)" stroke-width="0.9"/>
+    </g>
+
+    <!-- NỀN BÀN CỜ TRẮNG ĐEN DỌC MÉP CHAT -->
+    <g class="tile-row">
+      <polygon points="6,70 18,62 248,62 256,70" fill="#111827" stroke="#e5e7eb" stroke-width="1.2"/>
+      <polygon points="10,69 22,63 50,63 42,69" fill="#f3f4f6"/>
+      <polygon points="74,69 80,63 108,63 106,69" fill="#f3f4f6"/>
+      <polygon points="138,69 138,63 166,63 170,69" fill="#f3f4f6"/>
+      <polygon points="202,69 196,63 224,63 234,69" fill="#f3f4f6"/>
+    </g>
+
+    <!-- QUÂN XE ĐEN CẦM CHÙY XÔNG TỚI -->
+    <g class="rook">
+      <g class="rook-bob">
+        <!-- Chùy gai -->
+        <g class="mace">
+          <line x1="12" y1="46" x2="26" y2="18" stroke="#78350f" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="27" cy="16" r="6" fill="url(#steelG)" stroke="#1f2937" stroke-width="1"/>
+          <path d="M 27 7 L 27 10 M 27 22 L 27 25 M 18 16 L 21 16 M 33 16 L 36 16 M 21 10 L 23 12 M 31 20 L 33 22 M 33 10 L 31 12 M 21 22 L 23 20" stroke="#1f2937" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <!-- Đế -->
+        <ellipse cx="0" cy="66" rx="15" ry="3.5" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="1"/>
+        <rect x="-14" y="58" width="28" height="7" rx="2" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="1"/>
+        <!-- Thân tháp -->
+        <path d="M -10 58 L -9 36 L 9 36 L 10 58 Z" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="1"/>
+        <!-- Lỗ châu mai -->
+        <path d="M -13 36 L -13 24 L -8 24 L -8 28 L -3 28 L -3 24 L 3 24 L 3 28 L 8 28 L 8 24 L 13 24 L 13 36 Z" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="1"/>
+        <!-- Mặt hung hăng -->
+        <path d="M -6 39 L -1 41 M 8 39 L 3 41" stroke="#f9fafb" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="-3" cy="43" r="1.6" fill="#ef4444"/>
+        <circle cx="5" cy="43" r="1.6" fill="#ef4444"/>
+        <path d="M -2 50 Q 2 47 6 50" fill="none" stroke="#f9fafb" stroke-width="1.4" stroke-linecap="round"/>
+        <!-- Tay cầm chùy -->
+        <circle cx="12" cy="46" r="3" fill="url(#bEbony)" stroke="#9ca3af" stroke-width="0.8"/>
       </g>
     </g>
-  </g>
 
-  <!-- LỬA ĐẦU NÒNG -->
-  <g class="muzzle">
-    <path d="M 181 39 L 172 34 L 175 38.5 L 166 39 L 175 40 L 172 44 Z" fill="#fef08a" stroke="#f59e0b" stroke-width="0.8"/>
-  </g>
-  <!-- VIÊN ĐẠN -->
-  <g class="bullet">
-    <rect x="170" y="38" width="6" height="2.4" rx="1.2" fill="#f3f4f6"/>
-    <path d="M 176 39.2 L 188 39.2" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
-  </g>
-  <!-- CHỮ BANG! KHI TRÚNG ĐẠN -->
-  <g class="pow">
-    <path d="M 150 14 L 155 24 L 166 20 L 160 30 L 170 36 L 158 37 L 158 48 L 150 40 L 141 48 L 142 37 L 130 36 L 140 30 L 134 20 L 145 24 Z" fill="#ffffff" stroke="#111827" stroke-width="1.4"/>
-    <text x="150" y="35" font-family="Impact, Arial Black, sans-serif" font-size="10" font-weight="900" fill="#111827" text-anchor="middle">BANG!</text>
+    <!-- HIỆU ỨNG LÓE SÁNG BIẾN HÌNH -->
+    <g class="burst">
+      <circle cx="216" cy="46" r="22" fill="url(#flashG)"/>
+      <path d="M 216 18 L 219 40 L 244 46 L 219 52 L 216 74 L 213 52 L 188 46 L 213 40 Z" fill="#ffffff" opacity="0.9"/>
+    </g>
+
+    <!-- CHỐT GANGSTER (ĐEO KÍNH ĐEN, MŨ PHỚT) -->
+    <g class="pawn">
+      <ellipse cx="216" cy="66" rx="14" ry="3.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+      <rect x="203" y="59" width="26" height="6" rx="2.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+      <path d="M 206 60 C 207 52, 210 47, 212 44 L 220 44 C 222 47, 225 52, 226 60 Z" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+      <path d="M 208 56 Q 216 52 224 56 L 225 60 L 207 60 Z" fill="#111827"/>
+      <ellipse cx="216" cy="44" rx="8" ry="2.4" fill="url(#wIvory)" stroke="#374151" stroke-width="1"/>
+      <circle cx="216" cy="34" r="10" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+      <path d="M 204 28 Q 216 31 228 28 L 227 31 Q 216 33 205 31 Z" fill="#111827"/>
+      <path d="M 208 29 C 208 21, 212 18, 216 18 C 220 18, 224 21, 224 29 Z" fill="#1f2937"/>
+      <path d="M 208 27 L 224 27 L 224 29 L 208 29 Z" fill="#9ca3af"/>
+      <path d="M 206 34 L 226 34" stroke="#030712" stroke-width="1.4"/>
+      <path d="M 206 34 L 214 34 L 213 38 Q 210 39.5 207 38 Z" fill="url(#glassG)"/>
+      <path d="M 218 34 L 226 34 L 225 38 Q 222 39.5 219 38 Z" fill="url(#glassG)"/>
+      <path d="M 212 41 Q 216 42 220 40" fill="none" stroke="#111827" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- Giọt mồ hôi khi xe tới gần -->
+      <path class="sweat" d="M 229 26 C 231 29, 231 31, 229 31 C 227 31, 227 29, 229 26 Z" fill="#93c5fd" opacity="0.9"/>
+    </g>
+
+    <!-- HẬU GANGSTER RÚT SÚNG -->
+    <g class="queen">
+      <ellipse cx="216" cy="66" rx="15" ry="3.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+      <rect x="202" y="59" width="28" height="6" rx="2.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+      <path d="M 205 60 C 207 48, 209 40, 210 32 L 222 32 C 223 40, 225 48, 227 60 Z" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+      <!-- Áo choàng đen gangster -->
+      <path d="M 207 54 Q 216 48 225 54 L 226 60 L 206 60 Z" fill="#111827"/>
+      <ellipse cx="216" cy="32" rx="9" ry="2.6" fill="url(#wIvory)" stroke="#374151" stroke-width="1"/>
+      <circle cx="216" cy="23" r="8.5" fill="url(#wIvory)" stroke="#374151" stroke-width="1.1"/>
+      <!-- Vương miện Hậu -->
+      <path d="M 206 17 L 205 8 L 209.5 12 L 212 5 L 216 11 L 220 5 L 222.5 12 L 227 8 L 226 17 Z" fill="url(#wIvory)" stroke="#374151" stroke-width="1"/>
+      <circle cx="205" cy="7.5" r="1.6" fill="#111827"/>
+      <circle cx="212" cy="4.5" r="1.6" fill="#111827"/>
+      <circle cx="220" cy="4.5" r="1.6" fill="#111827"/>
+      <circle cx="227" cy="7.5" r="1.6" fill="#111827"/>
+      <!-- Kính đen -->
+      <path d="M 207 23 L 225 23" stroke="#030712" stroke-width="1.4"/>
+      <path d="M 207 23 L 214 23 L 213 27 Q 210 28.5 208 27 Z" fill="url(#glassG)"/>
+      <path d="M 218 23 L 225 23 L 224 27 Q 222 28.5 219 27 Z" fill="url(#glassG)"/>
+      <path d="M 212 30 Q 216 31.5 220 29" fill="none" stroke="#111827" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- Tay cầm súng lục chĩa về phía Xe -->
+      <g class="gun-arm">
+        <path d="M 210 44 L 200 44" stroke="#e5e7eb" stroke-width="5" stroke-linecap="round"/>
+        <path d="M 210 44 L 200 44" fill="none" stroke="#374151" stroke-width="0.8"/>
+        <rect x="182" y="36.5" width="16" height="5" rx="1" fill="#111827" stroke="#9ca3af" stroke-width="0.7"/>
+        <path d="M 192 41 L 198 41 L 199 48 L 194 48 Z" fill="#1f2937" stroke="#9ca3af" stroke-width="0.7"/>
+        <circle cx="200" cy="44" r="3" fill="url(#wIvory)" stroke="#374151" stroke-width="0.8"/>
+        <!-- Khói súng -->
+        <g class="gsmoke">
+          <circle cx="180" cy="36" r="2.6" fill="#d1d5db"/>
+          <circle cx="178" cy="32" r="2" fill="#9ca3af"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- LỬA ĐẦU NÒNG -->
+    <g class="muzzle">
+      <path d="M 181 39 L 172 34 L 175 38.5 L 166 39 L 175 40 L 172 44 Z" fill="#fef08a" stroke="#f59e0b" stroke-width="0.8"/>
+    </g>
+    <!-- VIÊN ĐẠN -->
+    <g class="bullet">
+      <rect x="170" y="38" width="6" height="2.4" rx="1.2" fill="#f3f4f6"/>
+      <path d="M 176 39.2 L 188 39.2" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+    </g>
+    <!-- CHỮ BANG! KHI TRÚNG ĐẠN -->
+    <g class="pow">
+      <path d="M 150 14 L 155 24 L 166 20 L 160 30 L 170 36 L 158 37 L 158 48 L 150 40 L 141 48 L 142 37 L 130 36 L 140 30 L 134 20 L 145 24 Z" fill="#ffffff" stroke="#111827" stroke-width="1.4"/>
+      <text x="150" y="35" font-family="Impact, Arial Black, sans-serif" font-size="10" font-weight="900" fill="#111827" text-anchor="middle">BANG!</text>
+    </g>
   </g>
 </svg>
