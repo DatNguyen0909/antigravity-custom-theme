@@ -49,6 +49,7 @@
       @keyframes mwThHandLAnim { 0% { transform: translateY(0px); } 100% { transform: translateY(-2.5px); } }
       @keyframes mwThHandRAnim { 0% { transform: translateY(-2.5px); } 100% { transform: translateY(0px); } }
     </style>
+  <ellipse cx="60" cy="110" rx="28" ry="4.5" fill="#020617" opacity="0.34"/>
   </defs>
 
   <!-- Back Hair -->

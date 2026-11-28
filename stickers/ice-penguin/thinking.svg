@@ -34,6 +34,7 @@
       @keyframes pgThHoldR { 0% { transform: rotate(4deg); } 100% { transform: rotate(-4deg); } }
       @keyframes pgThPulse { 0% { opacity: 0.45; } 100% { opacity: 0.9; } }
     </style>
+  <ellipse cx="60" cy="110" rx="28" ry="4.5" fill="#020617" opacity="0.34"/>
   </defs>
 
   <!-- Glacier ice floe -->

@@ -56,6 +56,7 @@
         100% { transform: translate(-9px, 24px) rotate(-48deg); opacity: 0; }
       }
     </style>
+  <ellipse cx="60" cy="110" rx="28" ry="4.5" fill="#020617" opacity="0.34"/>
   </defs>
 
   <g class="bunDnHop">

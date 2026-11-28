@@ -1,4 +1,4 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
   <defs>
     <linearGradient id="bcFur" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#3f3f46"/>
@@ -33,6 +33,7 @@
       @keyframes bcYarnHop { 0% { transform: translate(-4px, 0); } 100% { transform: translate(4px, -4px); } }
       @keyframes bcThread { 0% { transform: translateY(0); } 100% { transform: translateY(-3px); } }
     </style>
+  <ellipse cx="60" cy="110" rx="28" ry="4.5" fill="#020617" opacity="0.34"/>
   </defs>
 
   <!-- Sợi len đỏ bung dài uốn lượn quanh người mèo -->

@@ -7,14 +7,18 @@
     </linearGradient>
     <style>
       .portal-spin { animation: holoPulse 2s ease-in-out infinite alternate; }
-      .bot-hover { animation: cyberDash 3.4s ease-in-out infinite; }
+      .bot-hoverX { animation: cyberDashX 3.4s linear infinite; }
+      .bot-hoverY { animation: cyberDashY 0.95s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; transform-origin: 58px 42px; }
       @keyframes holoPulse { 0% { opacity: 0.55; transform: scaleY(0.92); } 100% { opacity: 0.95; transform: scaleY(1.06); } }
-      @keyframes cyberDash {
-        0% { transform: translate(118px, 6px) rotate(-3deg); }
-        25% { transform: translate(58px, -6px) rotate(4deg); }
-        50% { transform: translate(10px, 6px) rotate(-3deg); }
-        75% { transform: translate(64px, 8px) rotate(-5deg); }
-        100% { transform: translate(118px, 6px) rotate(-3deg); }
+      @keyframes cyberDashX {
+        0% { transform: translateX(-20px); opacity: 0; }
+        7% { opacity: 1; }
+        93% { opacity: 1; }
+        100% { transform: translateX(166px); opacity: 0; }
+      }
+      @keyframes cyberDashY {
+        0% { transform: translateY(-6px) rotate(-4deg); }
+        100% { transform: translateY(8px) rotate(4deg); }
       }
     </style>
   </defs>
@@ -28,7 +32,8 @@
   </g>
 
   <!-- ROBOT AI CHIBI LƯỚT VÁN ĐỆM TỪ TRƯỜNG GIỮA 2 CỔNG HOLOGRAM -->
-  <g class="bot-hover">
+  <g class="bot-hoverX">
+  <g class="bot-hoverY">
     <!-- Ván trượt đệm từ trường (Hoverboard) -->
     <ellipse cx="58" cy="58" rx="22" ry="4.5" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
     <ellipse cx="58" cy="62" rx="16" ry="2.5" fill="#38bdf8" opacity="0.6"/>
@@ -40,5 +45,6 @@
     <path d="M 56 32 Q 58 29 60 32 M 63 32 Q 65 29 67 32" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
     <line x1="60" y1="22" x2="60" y2="15" stroke="#64748b" stroke-width="2"/>
     <circle cx="60" cy="14" r="2.8" fill="#38bdf8"/>
+  </g>
   </g>
 </svg>

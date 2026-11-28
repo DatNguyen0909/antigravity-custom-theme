@@ -1,64 +1,284 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 95" width="260" height="95">
   <defs>
-    <linearGradient id="foxFur" x1="0%" y1="0%" x2="100%" y2="100%">
+    <radialGradient id="fxAutumnSky" cx="50%" cy="65%" r="65%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#9a3412" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#431407" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fxFur" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fdba74"/>
-      <stop offset="55%" stop-color="#f97316"/>
+      <stop offset="52%" stop-color="#f97316"/>
       <stop offset="100%" stop-color="#c2410c"/>
     </linearGradient>
-    <linearGradient id="toriiRed" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="fxCream" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="fxToriiRed" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="55%" stop-color="#dc2626"/>
       <stop offset="100%" stop-color="#991b1b"/>
     </linearGradient>
+    <linearGradient id="fxToriiBack" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f87171" stop-opacity="0.72"/>
+      <stop offset="100%" stop-color="#991b1b" stop-opacity="0.65"/>
+    </linearGradient>
+    <linearGradient id="fxStone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d6d3d1"/>
+      <stop offset="60%" stop-color="#a8a29e"/>
+      <stop offset="100%" stop-color="#57534e"/>
+    </linearGradient>
+    <radialGradient id="fxLanternGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef9c3" stop-opacity="0.9"/>
+      <stop offset="45%" stop-color="#fbbf24" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fxFireOrb" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#fde047"/>
+      <stop offset="80%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </radialGradient>
+    <linearGradient id="fxHillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c2410c" stop-opacity="0.48"/>
+      <stop offset="100%" stop-color="#7c2d12" stop-opacity="0.68"/>
+    </linearGradient>
+    <linearGradient id="fxTrail" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#fbbf24" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#fef08a" stop-opacity="0.95"/>
+    </linearGradient>
+    <clipPath id="fxStageClip">
+      <rect x="0" y="0" width="260" height="71"/>
+    </clipPath>
     <style>
-      .fox-dash { animation: kitsuneRun 3.4s ease-in-out infinite; }
-      .fox-tail { animation: wagFoxTail 0.35s ease-in-out infinite alternate; transform-origin: 36px 46px; }
-      .fire-orb { animation: floatOrb 1.2s ease-in-out infinite alternate; }
-      @keyframes kitsuneRun {
-        0% { transform: translate(118px, 8px) rotate(-3deg); }
-        25% { transform: translate(58px, -6px) rotate(6deg); }
-        50% { transform: translate(10px, 6px) rotate(-4deg); }
-        75% { transform: translate(64px, 10px) rotate(-5deg); }
-        100% { transform: translate(118px, 8px) rotate(-3deg); }
+      .fxFlyX {
+        animation: fxTravelX 3.5s linear infinite;
       }
-      @keyframes wagFoxTail { 0% { transform: rotate(-12deg); } 100% { transform: rotate(14deg); } }
-      @keyframes floatOrb { 0% { transform: translateY(-3px); } 100% { transform: translateY(3px); } }
+      .fxDashY {
+        animation: fxBoundY 0.56s cubic-bezier(0.33, 1, 0.68, 1) infinite;
+      }
+      .fxTailWag {
+        transform-origin: -14px 48px;
+        animation: fxTailSwing 0.34s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
+      }
+      .fxLegs {
+        transform-origin: 0px 52px;
+        animation: fxStride 0.28s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
+      }
+      .fxLanternPulse {
+        animation: fxGlowPulse 1.6s ease-in-out infinite alternate;
+      }
+      .fxWispA {
+        animation: fxFloatWisp 1.5s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
+      }
+      .fxWispB {
+        animation: fxFloatWisp 1.9s cubic-bezier(0.37, 0, 0.63, 1) -0.7s infinite alternate;
+      }
+      .fxLeaf1 {
+        animation: fxDriftLeaf1 3.2s linear infinite;
+      }
+      .fxLeaf2 {
+        animation: fxDriftLeaf2 3.8s linear -1.5s infinite;
+      }
+      .fxLeaf3 {
+        animation: fxDriftLeaf3 2.9s linear -0.8s infinite;
+      }
+
+      @keyframes fxTravelX {
+        0% { transform: translateX(-45px); opacity: 0; }
+        8% { opacity: 1; }
+        92% { opacity: 1; }
+        100% { transform: translateX(305px); opacity: 0; }
+      }
+      @keyframes fxBoundY {
+        0%, 100% { transform: translateY(4px) rotate(3deg) scale(1.04, 0.96); }
+        50% { transform: translateY(-9px) rotate(-4deg) scale(0.97, 1.04); }
+      }
+      @keyframes fxTailSwing {
+        0% { transform: rotate(-10deg); }
+        100% { transform: rotate(12deg); }
+      }
+      @keyframes fxStride {
+        0% { transform: rotate(-12deg); }
+        100% { transform: rotate(12deg); }
+      }
+      @keyframes fxGlowPulse {
+        0% { opacity: 0.6; }
+        100% { opacity: 1; }
+      }
+      @keyframes fxFloatWisp {
+        0% { transform: translateY(-4px) scale(0.95); }
+        100% { transform: translateY(3px) scale(1.06); }
+      }
+      @keyframes fxDriftLeaf1 {
+        0% { transform: translate(0px, -6px) rotate(0deg); opacity: 0; }
+        15% { opacity: 0.95; }
+        85% { opacity: 0.95; }
+        100% { transform: translate(-28px, 34px) rotate(140deg); opacity: 0; }
+      }
+      @keyframes fxDriftLeaf2 {
+        0% { transform: translate(0px, -4px) rotate(20deg); opacity: 0; }
+        15% { opacity: 0.9; }
+        85% { opacity: 0.9; }
+        100% { transform: translate(-34px, 38px) rotate(-130deg); opacity: 0; }
+      }
+      @keyframes fxDriftLeaf3 {
+        0% { transform: translate(0px, -5px) rotate(-15deg); opacity: 0; }
+        15% { opacity: 0.9; }
+        85% { opacity: 0.9; }
+        100% { transform: translate(-24px, 32px) rotate(110deg); opacity: 0; }
+      }
     </style>
   </defs>
 
-  <!-- CỔNG TORII ĐỎ NHẬT BẢN BÊN TRÁI -->
-  <g opacity="0.92">
-    <path d="M 16 26 Q 46 31 76 26 L 74 31 Q 46 35 18 31 Z" fill="url(#toriiRed)" stroke="#fef08a" stroke-width="1"/>
-    <rect x="22" y="35" width="48" height="4" rx="1.5" fill="url(#toriiRed)"/>
-    <rect x="27" y="30" width="5.5" height="36" rx="1" fill="url(#toriiRed)"/>
-    <rect x="59" y="30" width="5.5" height="36" rx="1" fill="url(#toriiRed)"/>
-  </g>
+  <g clip-path="url(#fxStageClip)">
+    <!-- Warm Autumn Shrine Glow -->
+    <ellipse cx="130" cy="54" rx="135" ry="42" fill="url(#fxAutumnSky)"/>
 
-  <!-- HỒ LY CHIBI (KITSUNE) PHÓNG QUA CỔNG TORII va LỬA HỒ LY -->
-  <g class="fox-dash">
-    <!-- Chiếc đuôi bông xù vẫy -->
-    <g class="fox-tail">
-      <path d="M 38 46 C 22 32, 6 32, 2 44 C 6 56, 22 58, 38 50 Z" fill="url(#foxFur)" stroke="#7c2d12" stroke-width="1.3"/>
-      <path d="M 2 44 C 6 38, 12 37, 16 42 C 12 48, 6 49, 2 44 Z" fill="#fff7ed"/>
+    <!-- Autumn Shrine Hills va Pathway -->
+    <path d="M 0 65 Q 65 53 130 62 T 260 60 L 260 71 L 0 71 Z" fill="url(#fxHillGrad)"/>
+    <path d="M 8 71 Q 130 64 252 71 Z" fill="#fef3c7" opacity="0.22"/>
+
+    <!-- Autumn Maple Foliage Accents at Edges -->
+    <g opacity="0.88">
+      <circle cx="10" cy="14" r="14" fill="#dc2626"/>
+      <circle cx="24" cy="10" r="11" fill="#ea580c"/>
+      <circle cx="6" cy="24" r="10" fill="#f59e0b"/>
+      <circle cx="248" cy="12" r="14" fill="#dc2626"/>
+      <circle cx="234" cy="9" r="11" fill="#ea580c"/>
+      <circle cx="254" cy="22" r="10" fill="#f59e0b"/>
     </g>
-    <!-- Thân Hồ Ly Chibi đang phóng -->
-    <path d="M 34 46 C 42 36, 62 36, 72 44 C 76 50, 70 58, 56 58 C 42 58, 32 52, 34 46 Z" fill="url(#foxFur)" stroke="#7c2d12" stroke-width="1.3"/>
-    <!-- Yếm trắng va Chuông vàng -->
-    <path d="M 60 44 C 68 44, 72 48, 70 54 C 64 56, 58 54, 60 44 Z" fill="#fff7ed"/>
-    <circle cx="69" cy="49" r="3.2" fill="#fbbf24" stroke="#78350f" stroke-width="0.9"/>
-    <!-- Đầu Hồ Ly va Đôi tai nhọn -->
-    <circle cx="72" cy="36" r="11" fill="url(#foxFur)" stroke="#7c2d12" stroke-width="1.3"/>
-    <polygon points="64,28 60,14 72,24" fill="url(#foxFur)" stroke="#7c2d12" stroke-width="1.2"/>
-    <polygon points="74,26 78,12 82,28" fill="url(#foxFur)" stroke="#7c2d12" stroke-width="1.2"/>
-    <ellipse cx="77" cy="36" rx="2.8" ry="3.2" fill="#431407"/>
-    <circle cx="78" cy="34.8" r="1.2" fill="#ffffff"/>
-    <ellipse cx="74" cy="40" rx="2.4" ry="1.2" fill="#fb7185" opacity="0.65"/>
-  </g>
 
-  <!-- ĐÈN LỒNG ĐỎ va LỬA HỒ LY (KITSUNE-BI) BÊN PHẢI -->
-  <g class="fire-orb">
-    <circle cx="206" cy="46" r="9" fill="#fb923c" opacity="0.3"/>
-    <path d="M 206 52 C 201 52, 199 46, 203 41 C 205 37, 206 33, 206 33 C 206 33, 211 39, 211 45 C 211 50, 209 52, 206 52 Z" fill="#fbbf24" stroke="#ea580c" stroke-width="1.2"/>
-    <circle cx="232" cy="38" r="7" fill="#fef08a" opacity="0.25"/>
-    <path d="M 232 43 C 228 43, 227 38, 230 34 C 232 31, 232 28, 232 28 C 232 28, 236 33, 236 38 C 236 41, 234 43, 232 43 Z" fill="#fde047" stroke="#f97316" stroke-width="1"/>
+    <!-- Background Torii Gate (Depth Layer, Right-Center) -->
+    <g transform="translate(148, 17) scale(0.76)">
+      <path d="M 0 12 Q 28 18 56 12 L 54 17 Q 28 22 2 17 Z" fill="url(#fxToriiBack)"/>
+      <path d="M -2 10 Q 28 15 58 10 L 56 13 Q 28 18 0 13 Z" fill="#292524" opacity="0.72"/>
+      <rect x="6" y="23" width="44" height="3.8" rx="1" fill="url(#fxToriiBack)"/>
+      <rect x="11" y="16" width="4.8" height="44" rx="1" fill="url(#fxToriiBack)"/>
+      <rect x="40.2" y="16" width="4.8" height="44" rx="1" fill="url(#fxToriiBack)"/>
+      <rect x="25" y="17" width="6" height="7" rx="0.8" fill="#fbbf24" opacity="0.75"/>
+    </g>
+
+    <!-- Foreground Detailed Red Torii Gate (Left) -->
+    <g transform="translate(18, 12)">
+      <!-- Pillar Base Pedestals -->
+      <rect x="10.5" y="53" width="9" height="6" rx="1" fill="#292524"/>
+      <rect x="44.5" y="53" width="9" height="6" rx="1" fill="#292524"/>
+      <!-- Pillars -->
+      <rect x="12" y="16" width="6" height="40" rx="1" fill="url(#fxToriiRed)" stroke="#7f1d1d" stroke-width="0.7"/>
+      <rect x="46" y="16" width="6" height="40" rx="1" fill="url(#fxToriiRed)" stroke="#7f1d1d" stroke-width="0.7"/>
+      <!-- Nuki Tie Beam -->
+      <rect x="6" y="24" width="52" height="4.5" rx="1.2" fill="url(#fxToriiRed)" stroke="#7f1d1d" stroke-width="0.7"/>
+      <!-- Center Gold Shrine Plaque -->
+      <rect x="28.5" y="17.5" width="7" height="9" rx="1" fill="#1c1917" stroke="#fbbf24" stroke-width="1"/>
+      <line x1="32" y1="19.5" x2="32" y2="24.5" stroke="#fef08a" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- Curved Kasagi Top Beam -->
+      <path d="M 1 12 Q 32 18 63 12 L 60 18 Q 32 23 4 18 Z" fill="url(#fxToriiRed)" stroke="#7f1d1d" stroke-width="0.7"/>
+      <path d="M -1 9.5 Q 32 15.5 65 9.5 L 63 13 Q 32 18.5 1 13 Z" fill="#1c1917"/>
+    </g>
+
+    <!-- Warm Glowing Stone Lanterns (Toro) -->
+    <!-- Center-Left Stone Lantern -->
+    <g transform="translate(96, 36)">
+      <circle class="fxLanternPulse" cx="8" cy="14" r="12" fill="url(#fxLanternGlow)"/>
+      <rect x="3" y="30" width="10" height="4.5" rx="1" fill="url(#fxStone)" stroke="#44403c" stroke-width="0.7"/>
+      <rect x="5.5" y="20" width="5" height="10" fill="url(#fxStone)" stroke="#44403c" stroke-width="0.7"/>
+      <rect x="3.5" y="11" width="9" height="9" rx="1" fill="url(#fxStone)" stroke="#44403c" stroke-width="0.7"/>
+      <rect x="5.5" y="12.8" width="5" height="5.5" rx="0.8" fill="#fef08a"/>
+      <path d="M 0 11 Q 8 4 16 11 Z" fill="url(#fxStone)" stroke="#44403c" stroke-width="0.7"/>
+      <circle cx="8" cy="5.5" r="1.6" fill="#a8a29e" stroke="#44403c" stroke-width="0.6"/>
+    </g>
+
+    <!-- Right Stone Lantern -->
+    <g transform="translate(222, 33) scale(1.08)">
+      <circle class="fxLanternPulse" cx="8" cy="14" r="13" fill="url(#fxLanternGlow)"/>
+      <rect x="3" y="30" width="10" height="4.5" rx="1" fill="url(#fxStone)" stroke="#44403c" stroke-width="0.7"/>
+      <rect x="5.5" y="20" width="5" height="10" fill="url(#fxStone)" stroke="#44403c" stroke-width="0.7"/>
+      <rect x="3.5" y="11" width="9" height="9" rx="1" fill="url(#fxStone)" stroke="#44403c" stroke-width="0.7"/>
+      <rect x="5.5" y="12.8" width="5" height="5.5" rx="0.8" fill="#fef08a"/>
+      <path d="M 0 11 Q 8 4 16 11 Z" fill="url(#fxStone)" stroke="#44403c" stroke-width="0.7"/>
+      <circle cx="8" cy="5.5" r="1.6" fill="#a8a29e" stroke="#44403c" stroke-width="0.6"/>
+    </g>
+
+    <!-- Ambient Kitsune-bi Foxfire Wisps -->
+    <g class="fxWispA">
+      <circle cx="132" cy="24" r="7" fill="url(#fxLanternGlow)"/>
+      <path d="M 132 28 C 129 28, 128 24, 130.5 21 C 131.5 19.5, 132 17.5, 132 17.5 C 132 17.5, 135 21, 135 24.5 C 135 27, 133.8 28, 132 28 Z" fill="url(#fxFireOrb)"/>
+    </g>
+    <g class="fxWispB">
+      <circle cx="204" cy="24" r="8" fill="url(#fxLanternGlow)"/>
+      <path d="M 204 29 C 200.5 29, 199.5 24.5, 202 21 C 203.2 19, 204 16.5, 204 16.5 C 204 16.5, 207.5 20.5, 207.5 24.8 C 207.5 27.6, 206 29, 204 29 Z" fill="url(#fxFireOrb)"/>
+    </g>
+
+    <!-- Drifting Autumn Maple Leaves -->
+    <g class="fxLeaf1">
+      <path d="M 88 12 L 90 15 L 93 14 L 91 17 L 93 20 L 89.5 19 L 88 22 L 86.5 19 L 83 20 L 85 17 L 83 14 L 86 15 Z" fill="#ef4444" stroke="#991b1b" stroke-width="0.4"/>
+    </g>
+    <g class="fxLeaf2">
+      <path d="M 182 10 L 183.8 12.8 L 186.5 12 L 184.8 14.5 L 186.5 17 L 183.5 16.2 L 182 18.8 L 180.5 16.2 L 177.5 17 L 179.2 14.5 L 177.5 12 L 180.2 12.8 Z" fill="#f97316" stroke="#9a3412" stroke-width="0.4"/>
+    </g>
+    <g class="fxLeaf3">
+      <path d="M 236 16 L 237.5 18.4 L 240 17.8 L 238.5 20 L 240 22 L 237.2 21.4 L 236 23.6 L 234.8 21.4 L 232 22 L 233.5 20 L 232 17.8 L 234.5 18.4 Z" fill="#f59e0b" stroke="#b45309" stroke-width="0.4"/>
+    </g>
+
+    <!-- FOREGROUND MASCOT: Chibi Kitsune Fox dashing smoothly -->
+    <g class="fxFlyX">
+      <g class="fxDashY">
+        <!-- Glowing Foxfire va Ember Trail behind Fox -->
+        <path d="M -54 49 Q -36 52 -19 47" fill="none" stroke="url(#fxTrail)" stroke-width="2.8" stroke-linecap="round"/>
+        <circle cx="-46" cy="46" r="2.2" fill="#fde047" opacity="0.85"/>
+        <circle cx="-35" cy="51" r="1.6" fill="#fb923c" opacity="0.9"/>
+        <path d="M -28 45 C -30.5 45, -31 42, -29 39.5 C -28 38.2, -28 37, -28 37 C -28 37, -25.5 39.8, -25.5 42.5 C -25.5 44.2, -26.5 45, -28 45 Z" fill="url(#fxFireOrb)"/>
+
+        <!-- Fluffy Wagging Fox Tail -->
+        <g class="fxTailWag">
+          <path d="M -11 47 C -23 36, -35 37, -37 46 C -34 55, -21 56, -10 50 Z" fill="url(#fxFur)" stroke="#431407" stroke-width="1.2"/>
+          <path d="M -37 46 C -34 41, -28 40, -24 44 C -28 49, -33 50, -37 46 Z" fill="url(#fxCream)"/>
+        </g>
+
+        <!-- Dashing Legs -->
+        <g class="fxLegs" stroke="#431407" stroke-width="1.1">
+          <ellipse cx="-8" cy="55" rx="4.2" ry="2.4" transform="rotate(-18 -8 55)" fill="#431407"/>
+          <ellipse cx="10" cy="55" rx="4.2" ry="2.4" transform="rotate(20 10 55)" fill="#431407"/>
+        </g>
+
+        <!-- Kitsune Body -->
+        <path d="M -13 48 C -7 39, 9 39, 17 46 C 20 51, 15 57, 3 57 C -8 57, -15 53, -13 48 Z" fill="url(#fxFur)" stroke="#431407" stroke-width="1.2"/>
+        <!-- Cream Chest va Belly -->
+        <path d="M 5 46 C 12 45, 16 49, 14 54 C 9 56, 3 54, 5 46 Z" fill="url(#fxCream)"/>
+        <!-- Red Shrine Collar va Gold Bell -->
+        <path d="M 8 44 Q 14 47 18 44" fill="none" stroke="#dc2626" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="15" cy="48.5" r="2.8" fill="#fbbf24" stroke="#431407" stroke-width="0.8"/>
+        <circle cx="15.5" cy="48" r="0.8" fill="#fef9c3"/>
+
+        <!-- Pointed Fox Ears -->
+        <g>
+          <path d="M 10 31 L 6 19 L 17 27 Z" fill="url(#fxFur)" stroke="#431407" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="M 10.5 29 L 8.5 22.5 L 15 27.5 Z" fill="url(#fxCream)"/>
+          <polygon points="6,19 8.5,21.5 6.8,22.8" fill="#431407"/>
+
+          <path d="M 19 29 L 23 17 L 26 30 Z" fill="url(#fxFur)" stroke="#431407" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="M 20.2 28.5 L 22.8 21 L 24.6 29 Z" fill="url(#fxCream)"/>
+          <polygon points="23,17 21.6,20.2 24.2,20.4" fill="#431407"/>
+        </g>
+
+        <!-- Kitsune Head -->
+        <path d="M 7 37 C 7 29, 13 26, 19 27 C 25 28, 29 33, 28 39 C 27 44, 21 47, 15 46 C 10 45, 7 42, 7 37 Z" fill="url(#fxFur)" stroke="#431407" stroke-width="1.2"/>
+        <!-- Cream Cheek Fluff -->
+        <path d="M 9 39 C 14 37, 22 37, 27 39 C 26 44, 20 46.5, 14.5 45.5 C 11 44.5, 9 42, 9 39 Z" fill="url(#fxCream)"/>
+        <!-- Red Forehead Shrine Marking -->
+        <path d="M 19 29.5 C 20.5 31.2, 20.2 32.8, 19 33.6 C 17.8 32.8, 17.5 31.2, 19 29.5 Z" fill="#dc2626"/>
+        <!-- Sparkling Amber Eye -->
+        <ellipse cx="22.2" cy="36.5" rx="2.5" ry="2.9" fill="#431407"/>
+        <ellipse cx="22.4" cy="36.8" rx="1.8" ry="2.1" fill="#ea580c"/>
+        <ellipse cx="22.4" cy="37.6" rx="1.2" ry="1.1" fill="#fde047"/>
+        <circle cx="23.1" cy="35.5" r="0.95" fill="#ffffff"/>
+        <!-- Blush, Nose va Cheerful Grin -->
+        <ellipse cx="18.2" cy="40.5" rx="2.2" ry="1.1" fill="#fb7185" opacity="0.72"/>
+        <polygon points="26.5,38.5 28.5,38.5 27.6,39.8" fill="#431407"/>
+        <path d="M 24.5 41.2 Q 26.2 42.4 27.4 40.8" fill="none" stroke="#431407" stroke-width="0.95" stroke-linecap="round"/>
+      </g>
+    </g>
   </g>
 </svg>

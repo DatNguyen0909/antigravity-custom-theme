@@ -6,14 +6,18 @@
       <stop offset="100%" stop-color="#0f172a"/>
     </linearGradient>
     <style>
-      .cat-prowl { animation: nightCatJump 3.4s ease-in-out infinite; }
+      .cat-prowlX { animation: nightCatJumpX 3.4s linear infinite; }
+      .cat-prowlY { animation: nightCatJumpY 0.9s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; transform-origin: 54px 42px; }
       .yarn-roll { animation: rollYarn 1.7s ease-in-out infinite alternate; transform-origin: 210px 56px; }
-      @keyframes nightCatJump {
-        0% { transform: translate(115px, 8px) rotate(0deg); }
-        25% { transform: translate(65px, -12px) rotate(-10deg); }
-        50% { transform: translate(16px, 8px) rotate(4deg); }
-        75% { transform: translate(68px, -8px) rotate(8deg); }
-        100% { transform: translate(115px, 8px) rotate(0deg); }
+      @keyframes nightCatJumpX {
+        0% { transform: translateX(-35px); opacity: 0; }
+        7% { opacity: 1; }
+        93% { opacity: 1; }
+        100% { transform: translateX(175px); opacity: 0; }
+      }
+      @keyframes nightCatJumpY {
+        0% { transform: translateY(-10px) rotate(-7deg); }
+        100% { transform: translateY(8px) rotate(6deg); }
       }
       @keyframes rollYarn {
         0% { transform: translateX(-8px) rotate(-40deg); }
@@ -31,7 +35,8 @@
   </g>
 
   <!-- MÈO ĐEN CHIBI NHẢY TRÊN MÁI NHÀ ĐÊM TRĂNG -->
-  <g class="cat-prowl">
+  <g class="cat-prowlX">
+  <g class="cat-prowlY">
     <!-- Đuôi mèo cong -->
     <path d="M 36 48 C 22 42, 18 28, 26 24" fill="none" stroke="#1e293b" stroke-width="4.5" stroke-linecap="round"/>
     <!-- Thân va Đầu Mèo Đen -->
@@ -43,6 +48,7 @@
     <ellipse cx="73" cy="38" rx="3" ry="3.2" fill="#fbbf24"/>
     <ellipse cx="73" cy="38" rx="1.1" ry="2.6" fill="#0f172a"/>
     <circle cx="64" cy="49" r="3.2" fill="#fbbf24" stroke="#78350f" stroke-width="0.9"/>
+  </g>
   </g>
 
   <!-- CUỘN LEN VÀNG LĂN BÊN PHẢI -->

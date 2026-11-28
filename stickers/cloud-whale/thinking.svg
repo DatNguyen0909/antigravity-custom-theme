@@ -50,6 +50,7 @@
         50% { opacity: 1; transform: translateY(-2px); }
       }
     </style>
+  <ellipse cx="60" cy="110" rx="28" ry="4.5" fill="#020617" opacity="0.34"/>
   </defs>
 
   <!-- Back Sunset Cloud Cushion -->

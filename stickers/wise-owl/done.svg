@@ -43,6 +43,7 @@
       }
       @keyframes woDnSparkAnim { 0%, 100% { transform: scale(0.65); opacity: 0.4; } 50% { transform: scale(1.25); opacity: 1; } }
     </style>
+  <ellipse cx="60" cy="110" rx="28" ry="4.5" fill="#020617" opacity="0.34"/>
   </defs>
 
   <!-- Sparkles -->

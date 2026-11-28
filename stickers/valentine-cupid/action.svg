@@ -8,17 +8,21 @@
       <rect x="0" y="0" width="260" height="71"/>
     </clipPath>
     <style>
-      .vca-flyer { animation: vcaFlyAcross 3.2s ease-in-out infinite; }
+      .vca-flyerX { animation: vcaFlyAcrossX 3.2s linear infinite; }
+      .vca-flyerY { transform-origin: 0px 6px; animation: vcaFlyAcrossY 0.95s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
       .vca-wing { transform-origin: 8px 6px; animation: vcaWingFlap 0.3s ease-in-out infinite alternate; }
       .vca-heart1 { transform-origin: 155px 24px; animation: vcaHeartPop1 3.2s ease-out infinite; }
       .vca-heart2 { transform-origin: 84px 18px; animation: vcaHeartPop2 3.2s ease-out infinite; }
 
-      @keyframes vcaFlyAcross {
-        0%   { transform: translate(236px, 32px) rotate(4deg); }
-        25%  { transform: translate(172px, 18px) rotate(-5deg); }
-        50%  { transform: translate(112px, 30px) rotate(4deg); }
-        75%  { transform: translate(52px, 16px) rotate(-4deg); }
-        100% { transform: translate(-40px, 26px) rotate(2deg); }
+      @keyframes vcaFlyAcrossX {
+        0%   { transform: translateX(245px); opacity: 0; }
+        7%   { opacity: 1; }
+        93%  { opacity: 1; }
+        100% { transform: translateX(-48px); opacity: 0; }
+      }
+      @keyframes vcaFlyAcrossY {
+        0%   { transform: translateY(16px) rotate(-4.5deg); }
+        100% { transform: translateY(31px) rotate(4.5deg); }
       }
       @keyframes vcaWingFlap {
         0% { transform: rotate(-10deg) scaleY(1); }
@@ -61,7 +65,8 @@
     </g>
 
     <!-- Flying Chibi Cupid -->
-    <g class="vca-flyer">
+    <g class="vca-flyerX">
+    <g class="vca-flyerY">
       <path class="vca-wing" d="M8 6 C18 -8, 28 -2, 20 8 C26 10, 22 17, 10 12 Z" fill="#ffffff" stroke="#fb7185" stroke-width="1.4"/>
       <ellipse cx="8" cy="14" rx="11" ry="8" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.4"/>
       <ellipse cx="-2" cy="-11" rx="8" ry="2.2" fill="none" stroke="#facc15" stroke-width="1.6"/>
@@ -72,6 +77,7 @@
       <path d="M-14 -4 C-22 2, -22 14, -14 20" fill="none" stroke="#facc15" stroke-width="2.4" stroke-linecap="round"/>
       <line x1="-10" y1="8" x2="-26" y2="8" stroke="#b45309" stroke-width="1.6"/>
       <circle cx="-26" cy="8" r="2.8" fill="#f43f5e"/>
+    </g>
     </g>
   </g>
 </svg>

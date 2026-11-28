@@ -40,6 +40,7 @@
       @keyframes jdDnTossAnim { 0%, 100% { transform: translateY(4px) scale(0.95); } 50% { transform: translateY(-6px) scale(1.08); } }
       @keyframes jdDnTwinkle { 0%, 100% { transform: scale(0.7); opacity: 0.45; } 50% { transform: scale(1.25); opacity: 1; } }
     </style>
+  <ellipse cx="60" cy="110" rx="28" ry="4.5" fill="#020617" opacity="0.34"/>
   </defs>
 
   <!-- Jade Clouds Base -->

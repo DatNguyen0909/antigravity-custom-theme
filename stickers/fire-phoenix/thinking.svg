@@ -47,6 +47,7 @@
       }
       @keyframes fpThRingSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
+  <ellipse cx="60" cy="110" rx="28" ry="4.5" fill="#020617" opacity="0.34"/>
   </defs>
 
   <!-- Gently Pulsing Fiery Aura -->

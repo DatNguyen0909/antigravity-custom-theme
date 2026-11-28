@@ -35,6 +35,7 @@
         100% { opacity: 0; transform: translate(12px, 24px) scale(1.15); }
       }
     </style>
+  <ellipse cx="60" cy="110" rx="28" ry="4.5" fill="#020617" opacity="0.34"/>
   </defs>
 
   <path d="M 18 100 Q 20 88 34 88 Q 46 80 62 86 Q 78 80 90 88 Q 102 88 102 100 Z" fill="#fce7f3" opacity="0.8"/>

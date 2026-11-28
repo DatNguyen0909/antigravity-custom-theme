@@ -35,6 +35,7 @@
       @keyframes fxOrbit { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
       @keyframes fxPaw { 0% { transform: translateY(0); } 100% { transform: translateY(-6px); } }
     </style>
+  <ellipse cx="60" cy="110" rx="28" ry="4.5" fill="#020617" opacity="0.34"/>
   </defs>
 
   <!-- Hai đuôi hồ ly xòe vẫy cực nhanh -->

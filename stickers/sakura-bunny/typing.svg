@@ -38,6 +38,7 @@
         100% { opacity: 0; transform: translate(-18px, 34px) rotate(140deg); }
       }
     </style>
+  <ellipse cx="60" cy="110" rx="28" ry="4.5" fill="#020617" opacity="0.34"/>
   </defs>
 
   <!-- Cánh hoa anh đào rơi -->
