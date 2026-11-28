@@ -444,23 +444,25 @@
     }
 
     @media (max-width: 860px) {
-      body { overflow-y: auto; overflow-x: hidden; }
+      html, body { width: 100%; max-width: 100vw; overflow: hidden; }
       .shell {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto 1fr;
-        height: auto;
-        min-height: 100dvh;
+        grid-template-columns: 126px minmax(0, 1fr);
+        grid-template-rows: auto minmax(0, 1fr);
+        height: 100dvh;
+        width: 100vw;
+        max-width: 100vw;
+        overflow: hidden;
       }
       .topbar {
+        grid-column: 1 / -1;
         flex-direction: column;
         align-items: stretch;
         gap: 6px;
-        padding: 8px 12px;
-        position: sticky;
-        top: 0;
-        z-index: 60;
+        padding: 7px 10px;
+        min-width: 0;
+        width: 100%;
       }
-      .brand { font-size: 13.5px; justify-content: space-between; }
+      .brand { font-size: 13px; justify-content: space-between; gap: 6px; }
       .controls {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -471,36 +473,76 @@
       }
       .controls::-webkit-scrollbar { display: none; }
       .controls > * { flex-shrink: 0; }
+      .seg-btn, .donate-btn, .gh-link, .lang-select { padding: 5px 9px; font-size: 11.5px; }
+
+      /* Left Theme Sidebar just like PC (compact vertical column) */
       .sidebar {
+        min-width: 0;
         max-height: none;
-        padding: 8px 12px 10px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 8px 6px 14px;
+        border-right: 1px solid rgba(255,255,255,0.12);
+        border-bottom: none;
+        -webkit-overflow-scrolling: touch;
       }
-      .season-sync-card { padding: 8px 10px; margin-bottom: 8px; }
-      .season-desc { display: none; }
-      .side-title { margin-bottom: 6px; }
-      .theme-list { flex-direction: row; overflow-x: auto; padding-bottom: 4px; gap: 8px; -webkit-overflow-scrolling: touch; }
-      .ag-theme-card { min-width: 195px; padding: 8px 10px; }
-      .stage { overflow: visible; }
+      .season-sync-card { padding: 6px; margin-bottom: 8px; }
+      .season-head { flex-direction: column; align-items: flex-start; gap: 5px; }
+      .season-title { font-size: 10.5px; }
+      .season-desc, .ag-season-callout { display: none; }
+      .side-title { font-size: 10px; margin-bottom: 6px; text-align: center; }
+      .theme-list {
+        flex-direction: column;
+        overflow-x: hidden;
+        gap: 7px;
+        padding-bottom: 8px;
+      }
+      .ag-theme-card { min-width: 0; width: 100%; padding: 7px 6px; border-radius: 10px; }
+      .card-row { flex-direction: column-reverse; align-items: center; text-align: center; gap: 4px; }
+      .card-quote, .card-desc { display: none; }
+      .card-name { font-size: 11px; line-height: 1.25; }
+      .ag-card-sticker { width: 44px; height: 44px; }
+
+      /* Right Chat Stage & Gallery */
+      .stage { min-width: 0; height: 100%; overflow: hidden; }
       .chat-sim {
-        padding: 12px 12px 16px;
-        min-height: 58dvh;
-        overflow: visible;
+        padding: 10px 10px 10px;
+        height: 100%;
+        min-height: 0;
+        overflow: hidden;
       }
-      .hint-banner { padding: 8px 10px; font-size: 11.5px; flex-direction: column; align-items: flex-start; gap: 6px; }
-      .ai-demo-bar { margin-left: 0; }
-      .messages { overflow: visible; flex: 1 0 auto; padding-bottom: 18px; }
+      .hint-banner { padding: 7px 9px; font-size: 10.5px; flex-direction: column; align-items: flex-start; gap: 5px; margin-bottom: 8px; }
+      .ai-demo-bar { margin-left: 0; gap: 4px; }
+      .ai-demo-bar .seg-btn { font-size: 10.5px !important; padding: 3px 7px !important; }
+      .messages {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+        padding: 28px 2px 10px;
+        gap: 18px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .ag-custom-user-bubble { max-width: 92%; font-size: 12.5px; padding: 9px 11px; }
+      .ai-msg { max-width: 95%; font-size: 12px; padding: 9px 11px; }
       .ag-custom-input-wrapper {
-        position: sticky;
-        bottom: 10px;
-        z-index: 45;
-        margin-top: 44px;
-        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+        position: relative;
+        margin-top: 28px;
+        padding: 8px 9px;
+        gap: 6px;
+        flex-shrink: 0;
       }
-      .gallery-view { overflow: visible; padding: 12px 12px 32px; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      .gal-stages { grid-template-columns: repeat(2, 1fr); }
+      .ag-custom-input-wrapper > .ag-input-sticker { width: 52px; height: 52px; top: -44px; right: 8px; }
+      #demo-input { font-size: 12.5px; min-width: 0; }
+      .send-btn { padding: 6px 10px; font-size: 11.5px; flex-shrink: 0; }
+
+      .gallery-view { height: 100%; overflow-y: auto; padding: 10px 8px 28px; -webkit-overflow-scrolling: touch; }
+      .gallery-grid { grid-template-columns: 1fr; gap: 10px; }
+      .gal-card { padding: 10px; }
+      .gal-head { font-size: 12.5px; flex-wrap: wrap; gap: 4px; }
+      .gal-stages { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+      .gal-box { min-height: 78px; padding: 6px 4px; }
+      .gal-box img.sq { width: 46px; height: 46px; }
     }
   </style>
 </head>
