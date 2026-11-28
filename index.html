@@ -380,21 +380,54 @@
       animation: donFadeIn 0.25s ease;
     }
     .don-poster-card {
-      position: relative; width: min(370px, 86vw); padding: 10px 10px 14px;
+      position: relative; width: min(390px, 88vw); padding: 10px 10px 14px;
       border-radius: 22px; text-align: center;
       background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(254, 242, 248, 0.97));
-      border: 2px solid rgba(251, 191, 36, 0.78);
-      box-shadow: 0 26px 80px rgba(0,0,0,0.65), 0 0 46px rgba(244, 114, 182, 0.48);
+      border: 2px solid rgba(251, 191, 36, 0.82);
+      box-shadow: 0 26px 80px rgba(0,0,0,0.65), 0 0 50px rgba(244, 114, 182, 0.5);
       animation: donStagePop 0.48s cubic-bezier(0.22, 1, 0.36, 1) forwards;
       cursor: pointer;
     }
     @keyframes donStagePop {
-      0% { opacity: 0; transform: scale(0.68) translateY(28px) rotate(-3deg); }
+      0% { opacity: 0; transform: scale(0.68) translateY(28px) rotate(-2.5deg); }
       100% { opacity: 1; transform: scale(1) translateY(0) rotate(0deg); }
     }
+    .don-poster-frame {
+      position: relative; width: 100%; border-radius: 14px; overflow: hidden;
+      background: #e0f2fe;
+    }
     .don-poster-img {
-      width: 100%; height: auto; max-height: 68vh; object-fit: contain;
-      display: block; border-radius: 14px;
+      width: 100%; height: auto; max-height: 68vh; object-fit: cover;
+      display: block; transform-origin: 50% 60%;
+      animation: donKenBurns 6.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    }
+    @keyframes donKenBurns {
+      0% { transform: scale(1.0) translateY(0); }
+      100% { transform: scale(1.09) translateY(-6px); }
+    }
+    .don-poster-shine {
+      position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.42) 48%, rgba(254,240,138,0.28) 54%, transparent 70%);
+      transform: translateX(-130%);
+      animation: donShineSweep 3.2s ease-in-out 0.3s infinite;
+    }
+    @keyframes donShineSweep {
+      0% { transform: translateX(-130%); }
+      55%, 100% { transform: translateX(130%); }
+    }
+    .don-poster-ty-svg {
+      position: absolute; top: 3%; left: 50%; width: 82%; height: auto;
+      transform: translateX(-50%); pointer-events: none; z-index: 4;
+      filter: drop-shadow(0 8px 18px rgba(15, 23, 42, 0.32)) drop-shadow(0 0 18px rgba(255, 255, 255, 0.85));
+      animation: donTyDrop 0.65s cubic-bezier(0.22, 1, 0.36, 1) both, donTyFloat 2.0s cubic-bezier(0.37, 0, 0.63, 1) 0.65s infinite alternate;
+    }
+    @keyframes donTyDrop {
+      0% { opacity: 0; transform: translate(-50%, -26px) scale(0.45); }
+      100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+    }
+    @keyframes donTyFloat {
+      0% { transform: translate(-50%, 0) scale(1); }
+      100% { transform: translate(-50%, -7px) scale(1.04); }
     }
     .don-sub-msg {
       margin-top: 10px; padding: 0 8px; font-size: 13.5px; font-weight: 800; color: #be185d;
@@ -732,7 +765,11 @@
         const card = document.createElement('div');
         card.className = 'don-poster-card';
         card.innerHTML = `
-          <img class="don-poster-img" src="./assets/thank-you-poster.jpg" alt="THANK YOU! Anime Mascot Poster" />
+          <div class="don-poster-frame">
+            <img class="don-poster-img" src="./assets/thank-you-poster.jpg" alt="THANK YOU! High-Angle Anime Mascot Poster" />
+            <div class="don-poster-shine"></div>
+            <img class="don-poster-ty-svg" src="./assets/thank-you-banner.svg" alt="THANK YOU!" />
+          </div>
           <div class="don-sub-msg">${ui.donToast}</div>
         `;
         card.addEventListener('click', closeDonateCelebration);
