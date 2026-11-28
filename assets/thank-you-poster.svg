@@ -1,0 +1,523 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 620" width="480" height="620">
+  <defs>
+    <!-- Luminous Anime Rainbow Pastel Sky &amp; Meadow Gradients -->
+    <linearGradient id="apSky" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#bae6fd"/>
+      <stop offset="32%" stop-color="#e0f2fe"/>
+      <stop offset="58%" stop-color="#fce7f3"/>
+      <stop offset="82%" stop-color="#fef9c3"/>
+      <stop offset="100%" stop-color="#e0e7ff"/>
+    </linearGradient>
+    <radialGradient id="apSun" cx="50%" cy="22%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#fef9c3" stop-opacity="0.55"/>
+      <stop offset="70%" stop-color="#fbcfe8" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="apMeadow" cx="50%" cy="52%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.88"/>
+      <stop offset="48%" stop-color="#dcfce7" stop-opacity="0.72"/>
+      <stop offset="82%" stop-color="#fae8ff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.3"/>
+    </radialGradient>
+
+    <!-- Anime Cel-Shaded Mascot Gradients -->
+    <linearGradient id="apPhxWing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="45%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+    <linearGradient id="apWhale" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbcfe8"/>
+      <stop offset="50%" stop-color="#c4b5fd"/>
+      <stop offset="100%" stop-color="#7dd3fc"/>
+    </linearGradient>
+    <linearGradient id="apHoodie" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <linearGradient id="apCatFur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fed7aa"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+    <linearGradient id="apDragon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="60%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <radialGradient id="apPearl" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#a7f3d0"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </radialGradient>
+    <linearGradient id="apBlackCat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="55%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="apAmberEye" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="55%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#fef08a"/>
+    </linearGradient>
+    <linearGradient id="apCorgi" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fdba74"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <linearGradient id="apFox" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <linearGradient id="apFeather" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="35%" stop-color="#fde047"/>
+      <stop offset="70%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+
+    <!-- Glossy Anime Lettering Gradients -->
+    <linearGradient id="tyLav" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f3e8ff"/><stop offset="30%" stop-color="#d8b4fe"/><stop offset="100%" stop-color="#a855f7"/></linearGradient>
+    <linearGradient id="tyPink" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffe4e6"/><stop offset="30%" stop-color="#fda4af"/><stop offset="100%" stop-color="#fb7185"/></linearGradient>
+    <linearGradient id="tySky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e0f2fe"/><stop offset="30%" stop-color="#7dd3fc"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="tyMint" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d1fae5"/><stop offset="30%" stop-color="#6ee7b7"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="tyGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fef9c3"/><stop offset="30%" stop-color="#fde047"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient>
+
+    <filter id="apSoftGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3.5" flood-color="#5b3158" flood-opacity="0.22"/>
+    </filter>
+    <filter id="apTyShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#7c3aed" flood-opacity="0.26"/>
+    </filter>
+
+    <style>
+      .ink { stroke: #4a2545; stroke-width: 2.3; stroke-linejoin: round; stroke-linecap: round; }
+      .ink-sm { stroke: #4a2545; stroke-width: 1.7; stroke-linejoin: round; stroke-linecap: round; }
+
+      /* Sky Sunburst Slow Spin */
+      .ap-rays { transform-origin: 240px 150px; animation: apRaySpin 24s linear infinite; }
+      @keyframes apRaySpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+      /* Articulated Mascot Animations (Pure Sine 60fps) */
+      .m-phx-body { transform-origin: 240px 230px; animation: mFloat 2.2s cubic-bezier(0.37,0,0.63,1) infinite alternate; }
+      .m-phx-wl { transform-origin: 224px 232px; animation: mFlapL 0.72s cubic-bezier(0.37,0,0.63,1) infinite alternate; }
+      .m-phx-wr { transform-origin: 256px 232px; animation: mFlapR 0.72s cubic-bezier(0.37,0,0.63,1) infinite alternate; }
+
+      .m-whale { transform-origin: 392px 210px; animation: mWhaleSwim 2.8s cubic-bezier(0.37,0,0.63,1) infinite alternate; }
+      .m-whale-tail { transform-origin: 430px 214px; animation: mWag 1.1s cubic-bezier(0.37,0,0.63,1) infinite alternate; }
+
+      .m-codecat { transform-origin: 240px 410px; animation: mHop 1.35s cubic-bezier(0.37,0,0.63,1) infinite alternate; }
+      .m-cc-arml { transform-origin: 204px 378px; animation: mWaveL 0.62s cubic-bezier(0.37,0,0.63,1) infinite alternate; }
+      .m-cc-armr { transform-origin: 276px 378px; animation: mWaveR 0.62s cubic-bezier(0.37,0,0.63,1) infinite alternate; }
+
+      .m-dragon { transform-origin: 128px 468px; animation: mHop 1.65s cubic-bezier(0.37,0,0.63,1) 0.25s infinite alternate; }
+      .m-drg-pearl { transform-origin: 130px 456px; animation: mPulse 1.3s ease-in-out infinite alternate; }
+      .m-drg-tail { transform-origin: 96px 468px; animation: mWag 1.0s cubic-bezier(0.37,0,0.63,1) infinite alternate; }
+
+      .m-bcat { transform-origin: 348px 462px; animation: mHop 1.5s cubic-bezier(0.37,0,0.63,1) 0.45s infinite alternate; }
+      .m-bcat-tail { transform-origin: 382px 462px; animation: mWag 0.95s cubic-bezier(0.37,0,0.63,1) infinite alternate; }
+      .m-blink { transform-origin: center; transform-box: fill-box; animation: mBlink 3.8s infinite; }
+
+      .m-bunny { transform-origin: 120px 330px; animation: mHop 1.15s cubic-bezier(0.37,0,0.63,1) 0.15s infinite alternate; }
+      .m-corgi { transform-origin: 368px 340px; animation: mHop 1.25s cubic-bezier(0.37,0,0.63,1) 0.35s infinite alternate; }
+      .m-corgi-cup { transform-origin: 404px 338px; animation: mWaveR 0.75s cubic-bezier(0.37,0,0.63,1) infinite alternate; }
+
+      .m-fox { transform-origin: 76px 548px; animation: mHop 1.4s cubic-bezier(0.37,0,0.63,1) 0.5s infinite alternate; }
+      .m-fox-tail { transform-origin: 46px 544px; animation: mWag 0.85s cubic-bezier(0.37,0,0.63,1) infinite alternate; }
+
+      .m-snow { transform-origin: 398px 548px; animation: mHop 1.45s cubic-bezier(0.37,0,0.63,1) 0.1s infinite alternate; }
+      .m-snow-arml { transform-origin: 372px 526px; animation: mWaveL 0.7s cubic-bezier(0.37,0,0.63,1) infinite alternate; }
+      .m-snow-armr { transform-origin: 424px 526px; animation: mWaveR 0.7s cubic-bezier(0.37,0,0.63,1) infinite alternate; }
+
+      /* Rising Petals, Feathers &amp; Sparkles */
+      .ap-rise1 { animation: apRise 4.4s linear infinite; }
+      .ap-rise2 { animation: apRise 5.2s linear 1.4s infinite; }
+      .ap-rise3 { animation: apRise 4.8s linear 2.6s infinite; }
+      .ap-twinkle { transform-origin: center; transform-box: fill-box; animation: apTwinkle 1.4s ease-in-out infinite alternate; }
+      .ap-twinkle2 { transform-origin: center; transform-box: fill-box; animation: apTwinkle 1.4s ease-in-out 0.6s infinite alternate; }
+
+      /* Glossy Anime THANK YOU! Foreground Lettering */
+      .ty-outer { font-family: 'Fredoka','Arial Rounded MT Bold','Nunito','Comic Sans MS',sans-serif; font-weight: 900; fill: #fff; stroke: #fff; stroke-width: 13; stroke-linejoin: round; paint-order: stroke fill; }
+      .ty-ext { font-family: 'Fredoka','Arial Rounded MT Bold','Nunito','Comic Sans MS',sans-serif; font-weight: 900; fill: #5b3158; stroke: #5b3158; stroke-width: 7.5; stroke-linejoin: round; paint-order: stroke fill; }
+      .ty-face { font-family: 'Fredoka','Arial Rounded MT Bold','Nunito','Comic Sans MS',sans-serif; font-weight: 900; stroke: #5b3158; stroke-width: 4.2; stroke-linejoin: round; paint-order: stroke fill; }
+      .ty-gl { font-family: 'Fredoka','Arial Rounded MT Bold','Nunito','Comic Sans MS',sans-serif; font-weight: 900; fill: #fff; opacity: 0.36; }
+      .ty-l1 { animation: tyWave 1.2s cubic-bezier(0.37,0,0.63,1) 0.00s infinite alternate; }
+      .ty-l2 { animation: tyWave 1.2s cubic-bezier(0.37,0,0.63,1) 0.11s infinite alternate; }
+      .ty-l3 { animation: tyWave 1.2s cubic-bezier(0.37,0,0.63,1) 0.22s infinite alternate; }
+      .ty-l4 { animation: tyWave 1.2s cubic-bezier(0.37,0,0.63,1) 0.33s infinite alternate; }
+      .ty-l5 { animation: tyWave 1.2s cubic-bezier(0.37,0,0.63,1) 0.44s infinite alternate; }
+      .ty-l6 { animation: tyWave 1.2s cubic-bezier(0.37,0,0.63,1) 0.16s infinite alternate; }
+      .ty-l7 { animation: tyWave 1.2s cubic-bezier(0.37,0,0.63,1) 0.28s infinite alternate; }
+      .ty-l8 { animation: tyWave 1.2s cubic-bezier(0.37,0,0.63,1) 0.40s infinite alternate; }
+      .ty-l9 { animation: tyWave 1.2s cubic-bezier(0.37,0,0.63,1) 0.52s infinite alternate; }
+
+      @keyframes mFloat { 0% { transform: translateY(0px); } 100% { transform: translateY(-10px); } }
+      @keyframes mHop { 0% { transform: translateY(0px) scale(1,1); } 100% { transform: translateY(-8px) scale(0.98,1.03); } }
+      @keyframes mFlapL { 0% { transform: rotate(-10deg); } 100% { transform: rotate(16deg); } }
+      @keyframes mFlapR { 0% { transform: rotate(10deg); } 100% { transform: rotate(-16deg); } }
+      @keyframes mWaveL { 0% { transform: rotate(-14deg); } 100% { transform: rotate(16deg); } }
+      @keyframes mWaveR { 0% { transform: rotate(14deg); } 100% { transform: rotate(-16deg); } }
+      @keyframes mWag { 0% { transform: rotate(-14deg); } 100% { transform: rotate(16deg); } }
+      @keyframes mWhaleSwim { 0% { transform: translate(0,0) rotate(-3deg); } 100% { transform: translate(-8px,-9px) rotate(4deg); } }
+      @keyframes mPulse { 0% { transform: scale(0.94); opacity: 0.9; } 100% { transform: scale(1.1); opacity: 1; } }
+      @keyframes mBlink { 0%,46%,50%,95%,100% { transform: scaleY(1); } 48%,97% { transform: scaleY(0.1); } }
+      @keyframes apRise { 0% { transform: translateY(40px) rotate(0deg); opacity: 0; } 15% { opacity: 0.95; } 85% { opacity: 0.9; } 100% { transform: translateY(-180px) rotate(28deg); opacity: 0; } }
+      @keyframes apTwinkle { 0% { transform: scale(0.75); opacity: 0.65; } 100% { transform: scale(1.22); opacity: 1; } }
+      @keyframes tyWave { 0% { transform: translateY(0px); } 100% { transform: translateY(-7px); } }
+    </style>
+  </defs>
+
+  <!-- 1. Luminous Anime Sky &amp; Sunburst Rays -->
+  <rect width="480" height="620" rx="18" fill="url(#apSky)"/>
+  <g class="ap-rays" opacity="0.34">
+    <polygon points="240,150 180,-120 260,-120" fill="#ffffff"/>
+    <polygon points="240,150 380,-100 450,-40" fill="#ffffff"/>
+    <polygon points="240,150 560,80 560,170" fill="#ffffff"/>
+    <polygon points="240,150 520,340 460,420" fill="#ffffff"/>
+    <polygon points="240,150 280,520 190,520" fill="#ffffff"/>
+    <polygon points="240,150 20,420 -40,340" fill="#ffffff"/>
+    <polygon points="240,150 -80,170 -80,80" fill="#ffffff"/>
+    <polygon points="240,150 30,-40 100,-100" fill="#ffffff"/>
+  </g>
+  <rect width="480" height="620" rx="18" fill="url(#apSun)"/>
+
+  <!-- 2. High-Angle Top-Down Pastel Cloud &amp; Petal Meadow Below -->
+  <ellipse cx="240" cy="435" rx="265" ry="205" fill="url(#apMeadow)"/>
+  <!-- Fluffy Pastel Cloud Ring framing bottom/sides -->
+  <g fill="#ffffff" opacity="0.72">
+    <circle cx="42" cy="598" r="56"/><circle cx="128" cy="614" r="64"/><circle cx="240" cy="622" r="70"/>
+    <circle cx="352" cy="614" r="64"/><circle cx="442" cy="596" r="56"/>
+    <circle cx="16" cy="370" r="38"/><circle cx="466" cy="365" r="40"/>
+  </g>
+  <!-- Scattered meadow petals -->
+  <g fill="#fda4af" opacity="0.65">
+    <ellipse cx="184" cy="522" rx="6" ry="3.2" transform="rotate(-24 184 522)"/>
+    <ellipse cx="292" cy="542" rx="6" ry="3.2" transform="rotate(28 292 542)"/>
+    <ellipse cx="238" cy="570" rx="5.5" ry="3" transform="rotate(-12 238 570)"/>
+    <ellipse cx="155" cy="382" rx="5" ry="2.8" transform="rotate(35 155 382)"/>
+    <ellipse cx="326" cy="390" rx="5" ry="2.8" transform="rotate(-30 326 390)"/>
+  </g>
+
+  <!-- 3. UPPER ROW MASCOTS (Looking UP joyfully!) -->
+  <!-- 3a. Fire Phoenix (Upper Center, spreading fiery wings) -->
+  <g class="m-phx-body" filter="url(#apSoftGlow)">
+    <g class="m-phx-wl">
+      <path d="M226,232 C192,208 164,186 150,178 C156,198 168,214 184,226 C168,224 156,222 148,224 C166,238 190,248 224,244 Z" fill="url(#apPhxWing)" class="ink"/>
+    </g>
+    <g class="m-phx-wr">
+      <path d="M254,232 C288,208 316,186 330,178 C324,198 312,214 296,226 C312,224 324,222 332,224 C314,238 290,248 256,244 Z" fill="url(#apPhxWing)" class="ink"/>
+    </g>
+    <!-- Body &amp; Crest -->
+    <ellipse cx="240" cy="242" rx="18" ry="20" fill="url(#apPhxWing)" class="ink"/>
+    <path d="M234,218 Q240,196 246,218 Q252,204 252,222 Q240,214 228,222 Q228,204 234,218 Z" fill="#fde047" class="ink-sm"/>
+    <circle cx="240" cy="226" r="14" fill="#fb7185" class="ink"/>
+    <!-- Happy upward anime eyes -->
+    <path d="M231,224 Q234,219 237,224" fill="none" class="ink-sm"/>
+    <path d="M243,224 Q246,219 249,224" fill="none" class="ink-sm"/>
+    <polygon points="237,227 243,227 240,232" fill="#fde047" class="ink-sm"/>
+  </g>
+
+  <!-- 3b. Sunset Cloud Whale (Upper Right, swimming in sky) -->
+  <g class="m-whale" filter="url(#apSoftGlow)">
+    <g class="m-whale-tail">
+      <path d="M428,212 Q446,196 456,204 Q448,216 458,226 Q444,232 426,218 Z" fill="url(#apWhale)" class="ink"/>
+    </g>
+    <path d="M350,214 C350,186 392,178 426,198 C436,204 436,222 424,228 C398,238 354,234 350,214 Z" fill="url(#apWhale)" class="ink"/>
+    <path d="M354,218 C374,220 404,220 422,216 C412,232 374,234 354,218 Z" fill="#fff1f2" opacity="0.88"/>
+    <path d="M368,208 Q373,202 378,208" fill="none" class="ink-sm"/>
+    <ellipse cx="364" cy="214" rx="4.5" ry="2.2" fill="#fb7185" opacity="0.65"/>
+    <circle cx="394" cy="196" r="2.2" fill="#fef08a"/>
+    <circle cx="404" cy="202" r="1.6" fill="#ffffff"/>
+  </g>
+
+  <!-- 4. MID ROW MASCOTS (Sakura Bunny Left, Summer Corgi Right) -->
+  <!-- 4a. Sakura Bunny (Mid Left, holding pink-green mochi looking UP) -->
+  <g class="m-bunny" filter="url(#apSoftGlow)">
+    <ellipse cx="116" cy="364" rx="28" ry="8" fill="#5b3158" opacity="0.14"/>
+    <!-- Long ears -->
+    <ellipse cx="98" cy="272" rx="10" ry="26" transform="rotate(-14 98 272)" fill="#fff5f7" class="ink"/>
+    <ellipse cx="98" cy="273" rx="5" ry="18" transform="rotate(-14 98 273)" fill="#fda4af"/>
+    <ellipse cx="136" cy="272" rx="10" ry="26" transform="rotate(14 136 272)" fill="#fff5f7" class="ink"/>
+    <ellipse cx="136" cy="273" rx="5" ry="18" transform="rotate(14 136 273)" fill="#fda4af"/>
+    <!-- Body &amp; Head tilted UP -->
+    <ellipse cx="117" cy="342" rx="24" ry="22" fill="#fff5f7" class="ink"/>
+    <circle cx="117" cy="308" r="26" fill="#ffffff" class="ink"/>
+    <!-- Sakura blossom on ear -->
+    <g transform="translate(134, 286)">
+      <circle cx="0" cy="-5" r="4.5" fill="#fda4af"/><circle cx="5" cy="-1" r="4.5" fill="#fda4af"/>
+      <circle cx="3" cy="4" r="4.5" fill="#fda4af"/><circle cx="-3" cy="4" r="4.5" fill="#fda4af"/>
+      <circle cx="-5" cy="-1" r="4.5" fill="#fda4af"/><circle cx="0" cy="0" r="2.6" fill="#fde047"/>
+    </g>
+    <!-- Happy smiling upward eyes -->
+    <path d="M102,302 Q107,295 112,302" fill="none" class="ink"/>
+    <path d="M122,302 Q127,295 132,302" fill="none" class="ink"/>
+    <ellipse cx="98" cy="310" rx="5" ry="2.8" fill="#fda4af" opacity="0.8"/>
+    <ellipse cx="136" cy="310" rx="5" ry="2.8" fill="#fda4af" opacity="0.8"/>
+    <path d="M113,310 Q117,315 121,310" fill="none" class="ink-sm"/>
+    <!-- Mochi held up -->
+    <circle cx="110" cy="336" r="8" fill="#fda4af" class="ink-sm"/>
+    <circle cx="124" cy="336" r="8" fill="#bbf7d0" class="ink-sm"/>
+  </g>
+
+  <!-- 4b. Summer Corgi (Mid Right, sunglasses + waving coconut drink UP!) -->
+  <g class="m-corgi" filter="url(#apSoftGlow)">
+    <ellipse cx="366" cy="376" rx="30" ry="8" fill="#5b3158" opacity="0.14"/>
+    <!-- Big Corgi Ears -->
+    <polygon points="340,298 332,264 360,286" fill="url(#apCorgi)" class="ink"/>
+    <polygon points="342,292 337,272 354,286" fill="#fed7aa"/>
+    <polygon points="392,298 400,264 372,286" fill="url(#apCorgi)" class="ink"/>
+    <polygon points="390,292 395,272 378,286" fill="#fed7aa"/>
+    <!-- Body &amp; Head -->
+    <ellipse cx="366" cy="350" rx="26" ry="24" fill="url(#apCorgi)" class="ink"/>
+    <ellipse cx="366" cy="354" rx="16" ry="18" fill="#ffffff"/>
+    <ellipse cx="366" cy="314" rx="28" ry="24" fill="url(#apCorgi)" class="ink"/>
+    <path d="M342,316 Q366,304 390,316 Q388,338 366,338 Q344,338 342,316 Z" fill="#ffffff"/>
+    <!-- Cool Sunglasses with cyan shine -->
+    <rect x="342" y="301" width="21" height="13" rx="5" fill="#0f172a" class="ink-sm"/>
+    <rect x="369" y="301" width="21" height="13" rx="5" fill="#0f172a" class="ink-sm"/>
+    <line x1="363" y1="306" x2="369" y2="306" class="ink-sm"/>
+    <line x1="346" y1="304" x2="352" y2="310" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <line x1="373" y1="304" x2="379" y2="310" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <!-- Happy open tongue smile -->
+    <ellipse cx="366" cy="318" rx="4" ry="2.6" fill="#4a2545"/>
+    <path d="M358,323 Q366,332 374,323 Z" fill="#fb7185" class="ink-sm"/>
+    <!-- Waving Coconut Drink -->
+    <g class="m-corgi-cup">
+      <circle cx="404" cy="336" r="13" fill="#78350f" class="ink-sm"/>
+      <ellipse cx="404" cy="326" rx="10" ry="4" fill="#fef3c7" class="ink-sm"/>
+      <line x1="406" y1="326" x2="414" y2="310" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M407,311 Q415,302 423,313 Z" fill="#fb7185" class="ink-sm"/>
+    </g>
+  </g>
+
+  <!-- 5. HERO CENTER TRIO (Hacker Code Cat, Jade Dragon, Midnight Black Cat) -->
+  <!-- 5a. Hacker Code Cat (Center Hero in green hoodie raising BOTH paws!) -->
+  <g class="m-codecat" filter="url(#apSoftGlow)">
+    <ellipse cx="240" cy="442" rx="38" ry="10" fill="#5b3158" opacity="0.16"/>
+    <!-- Raised Cheering Hoodie Arms -->
+    <g class="m-cc-arml">
+      <path d="M208,386 Q180,368 172,344" fill="none" stroke="#16a34a" stroke-width="18" stroke-linecap="round"/>
+      <path d="M208,386 Q180,368 172,344" fill="none" stroke="#4ade80" stroke-width="13" stroke-linecap="round"/>
+      <circle cx="170" cy="340" r="10" fill="#fed7aa" class="ink-sm"/>
+      <circle cx="170" cy="341" r="3.5" fill="#fda4af"/>
+    </g>
+    <g class="m-cc-armr">
+      <path d="M272,386 Q300,368 308,344" fill="none" stroke="#16a34a" stroke-width="18" stroke-linecap="round"/>
+      <path d="M272,386 Q300,368 308,344" fill="none" stroke="#4ade80" stroke-width="13" stroke-linecap="round"/>
+      <circle cx="310" cy="340" r="10" fill="#fed7aa" class="ink-sm"/>
+      <circle cx="310" cy="341" r="3.5" fill="#fda4af"/>
+    </g>
+    <!-- Green Hoodie Body -->
+    <path d="M206,436 Q204,374 240,368 Q276,374 274,436 Z" fill="url(#apHoodie)" class="ink"/>
+    <path d="M232,374 L234,394 M248,374 L246,394" stroke="#dcfce7" stroke-width="2.4" stroke-linecap="round"/>
+    <!-- Cat Ears &amp; Head Looking UP -->
+    <polygon points="208,332 204,296 230,316" fill="url(#apCatFur)" class="ink"/>
+    <polygon points="211,326 209,306 225,318" fill="#fda4af"/>
+    <polygon points="272,332 276,296 250,316" fill="url(#apCatFur)" class="ink"/>
+    <polygon points="269,326 271,306 255,318" fill="#fda4af"/>
+    <ellipse cx="240" cy="340" rx="36" ry="30" fill="url(#apCatFur)" class="ink"/>
+    <ellipse cx="240" cy="348" rx="28" ry="20" fill="#fff7ed"/>
+    <!-- Glowing Green Hacker Glasses -->
+    <rect x="208" y="324" width="28" height="20" rx="7" fill="#ecfdf5" fill-opacity="0.88" stroke="#16a34a" stroke-width="3"/>
+    <rect x="244" y="324" width="28" height="20" rx="7" fill="#ecfdf5" fill-opacity="0.88" stroke="#16a34a" stroke-width="3"/>
+    <line x1="236" y1="333" x2="244" y2="333" stroke="#16a34a" stroke-width="3"/>
+    <!-- Joyful squinting happy anime eyes behind glasses -->
+    <path d="M214,335 Q222,327 230,335" fill="none" class="ink"/>
+    <path d="M250,335 Q258,327 266,335" fill="none" class="ink"/>
+    <ellipse cx="212" cy="347" rx="5.5" ry="2.8" fill="#fda4af" opacity="0.78"/>
+    <ellipse cx="268" cy="347" rx="5.5" ry="2.8" fill="#fda4af" opacity="0.78"/>
+    <path d="M232,347 Q240,360 248,347 Z" fill="#fb7185" class="ink-sm"/>
+  </g>
+
+  <!-- 5b. Jade Dragon (Front Left, huge sparkling anime eyes looking UP + glowing pearl!) -->
+  <g class="m-dragon" filter="url(#apSoftGlow)">
+    <ellipse cx="132" cy="502" rx="38" ry="10" fill="#5b3158" opacity="0.16"/>
+    <!-- Wagging Dragon Tail -->
+    <g class="m-drg-tail">
+      <path d="M98,476 Q66,466 72,442 Q82,456 102,462 Z" fill="url(#apDragon)" class="ink"/>
+    </g>
+    <!-- Body -->
+    <ellipse cx="132" cy="470" rx="30" ry="28" fill="url(#apDragon)" class="ink"/>
+    <ellipse cx="132" cy="474" rx="18" ry="20" fill="#d1fae5"/>
+    <!-- Golden Horns &amp; Cute Head Looking UP -->
+    <path d="M108,412 Q96,386 112,396 Q116,386 122,406 Z" fill="#fde047" class="ink-sm"/>
+    <path d="M156,412 Q168,386 152,396 Q148,386 142,406 Z" fill="#fde047" class="ink-sm"/>
+    <ellipse cx="132" cy="426" rx="34" ry="28" fill="url(#apDragon)" class="ink"/>
+    <!-- Huge Sparkling Anime Eyes looking UP -->
+    <g class="m-blink">
+      <ellipse cx="117" cy="422" rx="9" ry="10.5" fill="#4a2545"/>
+      <ellipse cx="117" cy="423" rx="7" ry="8.5" fill="url(#apAmberEye)"/>
+      <circle cx="114" cy="418" r="3.4" fill="#ffffff"/>
+      <circle cx="120" cy="426" r="1.6" fill="#ffffff"/>
+      <ellipse cx="147" cy="422" rx="9" ry="10.5" fill="#4a2545"/>
+      <ellipse cx="147" cy="423" rx="7" ry="8.5" fill="url(#apAmberEye)"/>
+      <circle cx="144" cy="418" r="3.4" fill="#ffffff"/>
+      <circle cx="150" cy="426" r="1.6" fill="#ffffff"/>
+    </g>
+    <ellipse cx="104" cy="432" rx="5" ry="2.6" fill="#fda4af" opacity="0.75"/>
+    <ellipse cx="160" cy="432" rx="5" ry="2.6" fill="#fda4af" opacity="0.75"/>
+    <path d="M125,434 Q132,441 139,434" fill="none" class="ink-sm"/>
+    <!-- Glowing Jade Pearl held up -->
+    <g class="m-drg-pearl">
+      <circle cx="132" cy="464" r="13" fill="url(#apPearl)" stroke="#ffffff" stroke-width="2"/>
+    </g>
+    <circle cx="114" cy="466" r="8" fill="url(#apDragon)" class="ink-sm"/>
+    <circle cx="150" cy="466" r="8" fill="url(#apDragon)" class="ink-sm"/>
+  </g>
+
+  <!-- 5c. Midnight Black Cat (Front Right, big golden anime eyes + red bell looking UP!) -->
+  <g class="m-bcat" filter="url(#apSoftGlow)">
+    <ellipse cx="348" cy="498" rx="34" ry="9" fill="#5b3158" opacity="0.16"/>
+    <g class="m-bcat-tail">
+      <path d="M376,472 Q406,456 398,430 Q392,424 388,434 Q392,452 370,464 Z" fill="url(#apBlackCat)" class="ink"/>
+    </g>
+    <ellipse cx="348" cy="470" rx="26" ry="24" fill="url(#apBlackCat)" class="ink"/>
+    <!-- Red Collar &amp; Gold Bell -->
+    <path d="M326,456 Q348,465 370,456" fill="none" stroke="#ef4444" stroke-width="5.5" stroke-linecap="round"/>
+    <circle cx="348" cy="463" r="6.5" fill="#facc15" class="ink-sm"/>
+    <!-- Ears &amp; Head -->
+    <polygon points="322,422 318,388 342,408" fill="url(#apBlackCat)" class="ink"/>
+    <polygon points="324,416 323,398 338,410" fill="#fda4af"/>
+    <polygon points="374,422 378,388 354,408" fill="url(#apBlackCat)" class="ink"/>
+    <polygon points="372,416 373,398 358,410" fill="#fda4af"/>
+    <ellipse cx="348" cy="430" rx="32" ry="26" fill="url(#apBlackCat)" class="ink"/>
+    <!-- Sparkling Golden Anime Eyes looking UP -->
+    <g class="m-blink">
+      <ellipse cx="334" cy="426" rx="8.5" ry="10" fill="url(#apAmberEye)" stroke="#0f172a" stroke-width="1.4"/>
+      <ellipse cx="334" cy="425" rx="4.2" ry="6.2" fill="#0f172a"/>
+      <circle cx="331" cy="421" r="3" fill="#ffffff"/>
+      <circle cx="337" cy="429" r="1.4" fill="#ffffff"/>
+      <ellipse cx="362" cy="426" rx="8.5" ry="10" fill="url(#apAmberEye)" stroke="#0f172a" stroke-width="1.4"/>
+      <ellipse cx="362" cy="425" rx="4.2" ry="6.2" fill="#0f172a"/>
+      <circle cx="359" cy="421" r="3" fill="#ffffff"/>
+      <circle cx="365" cy="429" r="1.4" fill="#ffffff"/>
+    </g>
+    <ellipse cx="320" cy="436" rx="4.5" ry="2.4" fill="#fb7185" opacity="0.72"/>
+    <ellipse cx="376" cy="436" rx="4.5" ry="2.4" fill="#fb7185" opacity="0.72"/>
+    <path d="M342,436 Q348,444 354,436 Z" fill="#fb7185" stroke="#ffffff" stroke-width="1"/>
+  </g>
+
+  <!-- 6. BOTTOM CORNER MASCOTS (Kitsune Fox Left, Christmas Snowman Right) -->
+  <!-- 6a. Kitsune Fox (Bottom Left) -->
+  <g class="m-fox" filter="url(#apSoftGlow)">
+    <g class="m-fox-tail">
+      <path d="M52,554 Q18,540 24,514 Q42,520 56,542 Z" fill="url(#apFox)" class="ink"/>
+      <path d="M24,514 Q32,516 36,524 Q28,526 24,514 Z" fill="#ffffff"/>
+    </g>
+    <ellipse cx="76" cy="558" rx="22" ry="18" fill="url(#apFox)" class="ink"/>
+    <polygon points="56,522 52,494 72,510" fill="url(#apFox)" class="ink"/>
+    <polygon points="96,522 100,494 80,510" fill="url(#apFox)" class="ink"/>
+    <ellipse cx="76" cy="530" rx="24" ry="20" fill="url(#apFox)" class="ink"/>
+    <path d="M54,532 Q76,522 98,532 Q94,550 76,550 Q58,550 54,532 Z" fill="#fff7ed"/>
+    <path d="M64,526 Q68,520 72,526" fill="none" class="ink-sm"/>
+    <path d="M80,526 Q84,520 88,526" fill="none" class="ink-sm"/>
+    <path d="M72,535 Q76,541 80,535 Z" fill="#fb7185" class="ink-sm"/>
+  </g>
+
+  <!-- 6b. Christmas Snowman (Bottom Right waving mittens UP!) -->
+  <g class="m-snow" filter="url(#apSoftGlow)">
+    <g class="m-snow-arml">
+      <line x1="376" y1="534" x2="354" y2="514" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="352" cy="512" r="7" fill="#ef4444" class="ink-sm"/>
+    </g>
+    <g class="m-snow-armr">
+      <line x1="420" y1="534" x2="442" y2="514" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="444" cy="512" r="7" fill="#ef4444" class="ink-sm"/>
+    </g>
+    <circle cx="398" cy="552" r="24" fill="#ffffff" class="ink"/>
+    <circle cx="398" cy="516" r="20" fill="#ffffff" class="ink"/>
+    <!-- Striped Scarf -->
+    <rect x="378" y="530" width="40" height="8" rx="4" fill="#10b981" class="ink-sm"/>
+    <rect x="404" y="534" width="9" height="16" rx="3" fill="#ef4444" class="ink-sm"/>
+    <!-- Santa Hat -->
+    <path d="M378,504 Q398,476 420,498 L418,504 Z" fill="#ef4444" class="ink-sm"/>
+    <rect x="376" y="500" width="44" height="7" rx="3.5" fill="#ffffff" class="ink-sm"/>
+    <circle cx="422" cy="498" r="5" fill="#ffffff" class="ink-sm"/>
+    <circle cx="391" cy="514" r="2.6" fill="#4a2545"/>
+    <circle cx="405" cy="514" r="2.6" fill="#4a2545"/>
+    <polygon points="398,517 409,520 398,522" fill="#f97316" class="ink-sm"/>
+  </g>
+
+  <!-- 7. RISING RAINBOW FEATHERS, SAKURA PETALS &amp; SPARKLES (Drifting UP toward Viewer!) -->
+  <g class="ap-rise1">
+    <path d="M58,240 Q42,216 62,196 Q74,218 58,240 Z" fill="url(#apFeather)" class="ink-sm"/>
+    <ellipse cx="176" cy="272" rx="7" ry="3.8" fill="#fda4af" transform="rotate(-28 176 272)"/>
+    <ellipse cx="322" cy="268" rx="7" ry="3.8" fill="#fbcfe8" transform="rotate(24 322 268)"/>
+  </g>
+  <g class="ap-rise2">
+    <path d="M428,440 Q448,412 432,390 Q416,414 428,440 Z" fill="url(#apFeather)" class="ink-sm"/>
+    <ellipse cx="96" cy="422" rx="6.5" ry="3.5" fill="#fda4af" transform="rotate(30 96 422)"/>
+    <ellipse cx="242" cy="496" rx="7" ry="3.8" fill="#fef08a" transform="rotate(-18 242 496)"/>
+  </g>
+  <g class="ap-rise3">
+    <path d="M244,580 Q222,554 242,530 Q258,554 244,580 Z" fill="url(#apFeather)" class="ink-sm"/>
+    <ellipse cx="360" cy="410" rx="6" ry="3.2" fill="#fda4af" transform="rotate(-22 360 410)"/>
+  </g>
+
+  <!-- Twinkling Anime 4-Point Stars -->
+  <g class="ap-twinkle" transform="translate(56, 118)"><path d="M0,-10 L2.5,-2.5 L10,0 L2.5,2.5 L0,10 L-2.5,2.5 L-10,0 L-2.5,-2.5 Z" fill="#fef08a" stroke="#5b3158" stroke-width="1.2"/></g>
+  <g class="ap-twinkle2" transform="translate(426, 110)"><path d="M0,-11 L2.8,-2.8 L11,0 L2.8,2.8 L0,11 L-2.8,2.8 L-11,0 L-2.8,-2.8 Z" fill="#fda4af" stroke="#5b3158" stroke-width="1.2"/></g>
+  <g class="ap-twinkle" transform="translate(182, 186)"><path d="M0,-7 L1.8,-1.8 L7,0 L1.8,1.8 L0,7 L-1.8,1.8 L-7,0 L-1.8,-1.8 Z" fill="#ffffff"/></g>
+  <g class="ap-twinkle2" transform="translate(310, 184)"><path d="M0,-7 L1.8,-1.8 L7,0 L1.8,1.8 L0,7 L-1.8,1.8 L-7,0 L-1.8,-1.8 Z" fill="#fef08a"/></g>
+
+  <!-- 8. FOREGROUND GLOSSY ANIME "THANK YOU!" FACING THE VIEWER -->
+  <g filter="url(#apTyShadow)" text-anchor="middle">
+    <g font-size="66">
+      <g class="ty-l1" transform="rotate(-7, 108, 92)">
+        <text x="108" y="96" class="ty-outer">T</text>
+        <text x="108" y="100" class="ty-ext">T</text>
+        <text x="108" y="96" class="ty-face" fill="url(#tyLav)">T</text>
+        <text x="107" y="92" class="ty-gl" font-size="62">T</text>
+      </g>
+      <g class="ty-l2" transform="rotate(-3, 174, 86)">
+        <text x="174" y="92" class="ty-outer">H</text>
+        <text x="174" y="96" class="ty-ext">H</text>
+        <text x="174" y="92" class="ty-face" fill="url(#tyPink)">H</text>
+        <text x="173" y="88" class="ty-gl" font-size="62">H</text>
+      </g>
+      <g class="ty-l3">
+        <text x="240" y="90" class="ty-outer">A</text>
+        <text x="240" y="94" class="ty-ext">A</text>
+        <text x="240" y="90" class="ty-face" fill="url(#tySky)">A</text>
+        <text x="239" y="86" class="ty-gl" font-size="62">A</text>
+      </g>
+      <g class="ty-l4" transform="rotate(3, 306, 86)">
+        <text x="306" y="92" class="ty-outer">N</text>
+        <text x="306" y="96" class="ty-ext">N</text>
+        <text x="306" y="92" class="ty-face" fill="url(#tyMint)">N</text>
+        <text x="305" y="88" class="ty-gl" font-size="62">N</text>
+      </g>
+      <g class="ty-l5" transform="rotate(7, 372, 92)">
+        <text x="372" y="96" class="ty-outer">K</text>
+        <text x="372" y="100" class="ty-ext">K</text>
+        <text x="372" y="96" class="ty-face" fill="url(#tyGold)">K</text>
+        <text x="371" y="92" class="ty-gl" font-size="62">K</text>
+      </g>
+    </g>
+    <g font-size="64">
+      <g class="ty-l6" transform="rotate(-5, 156, 156)">
+        <text x="156" y="162" class="ty-outer">Y</text>
+        <text x="156" y="166" class="ty-ext">Y</text>
+        <text x="156" y="162" class="ty-face" fill="url(#tyPink)">Y</text>
+        <text x="155" y="158" class="ty-gl" font-size="60">Y</text>
+      </g>
+      <g class="ty-l7" transform="rotate(-1, 224, 158)">
+        <text x="224" y="164" class="ty-outer">O</text>
+        <text x="224" y="168" class="ty-ext">O</text>
+        <text x="224" y="164" class="ty-face" fill="url(#tyGold)">O</text>
+        <text x="223" y="160" class="ty-gl" font-size="60">O</text>
+      </g>
+      <g class="ty-l8" transform="rotate(3, 292, 156)">
+        <text x="292" y="162" class="ty-outer">U</text>
+        <text x="292" y="166" class="ty-ext">U</text>
+        <text x="292" y="162" class="ty-face" fill="url(#tyMint)">U</text>
+        <text x="291" y="158" class="ty-gl" font-size="60">U</text>
+      </g>
+      <g class="ty-l9" transform="rotate(9, 344, 154)">
+        <text x="344" y="160" class="ty-outer">!</text>
+        <text x="344" y="164" class="ty-ext">!</text>
+        <text x="344" y="160" class="ty-face" fill="url(#tyLav)">!</text>
+        <text x="343" y="156" class="ty-gl" font-size="58">!</text>
+      </g>
+    </g>
+  </g>
+</svg>
