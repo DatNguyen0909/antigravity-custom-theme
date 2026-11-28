@@ -416,9 +416,9 @@
       55%, 100% { transform: translateX(130%); }
     }
     .don-poster-ty-svg {
-      position: absolute; top: 3%; left: 50%; width: 82%; height: auto;
+      position: absolute; top: 1.5%; left: 50%; width: 74%; height: auto;
       transform: translateX(-50%); pointer-events: none; z-index: 4;
-      filter: drop-shadow(0 8px 18px rgba(15, 23, 42, 0.32)) drop-shadow(0 0 18px rgba(255, 255, 255, 0.85));
+      filter: drop-shadow(0 8px 18px rgba(76, 29, 75, 0.28)) drop-shadow(0 0 18px rgba(255, 255, 255, 0.92));
       animation: donTyDrop 0.65s cubic-bezier(0.22, 1, 0.36, 1) both, donTyFloat 2.0s cubic-bezier(0.37, 0, 0.63, 1) 0.65s infinite alternate;
     }
     @keyframes donTyDrop {
@@ -766,8 +766,9 @@
         card.className = 'don-poster-card';
         card.innerHTML = `
           <div class="don-poster-frame">
-            <img class="don-poster-img" src="./assets/thank-you-poster.svg" alt="THANK YOU! Animated Anime Mascot Poster" />
+            <img class="don-poster-img" src="./assets/thank-you-poster.jpg" alt="THANK YOU! High-Angle Anime Mascot Poster" />
             <div class="don-poster-shine"></div>
+            <img class="don-poster-ty-svg" src="./assets/thank-you-banner.svg" alt="THANK YOU!" />
           </div>
           <div class="don-sub-msg">${ui.donToast}</div>
         `;
